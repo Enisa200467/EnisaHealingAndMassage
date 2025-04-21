@@ -1,16 +1,14 @@
 ---
-# YAML Front Matter (Data about the content)
-title: 'Klassieke Ontspanningsmassage'
-description: 'Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.'
-icon: 'i-heroicons-user-group' # Optional: Icon used on the detail page heading
-duration: '60 minuten'
-price: '€ 65'
-# Add other fields if needed, e.g., image: '/images/massage-classic.jpg'
+title: Klassieke Ontspanningsmassage
+description: Ervaar diepe ontspanning en verlichting van spierspanning met onze
+  traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te
+  komen.
+icon: i-heroicons-user-group
+duration: 60 minuten
+price: € 65
 ---
 
 # Main Content (Written in Markdown)
-
-De Klassieke Ontspanningsmassage is een van de meest bekende en populaire massagevormen, gericht op het **verminderen van spierspanning** en het bevorderen van een **diep gevoel van rust** en welzijn.
 
 ## Wat kun je verwachten?
 
