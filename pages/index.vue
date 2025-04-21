@@ -132,9 +132,16 @@
                   <template #footer>
                     <UButton
                       variant="outline"
-                      :to="`/boeken?service=${massage.id}`"
-                      label="Meer Info / Boeken"
+                      :to="`/behandelingen/${massage.slug}`"
+                      label="Meer Info"
                       size="sm"
+                    />
+                    <!-- Keep a separate Book Now button if desired, linking to the main booking page -->
+                    <UButton
+                      :to="'/boeken'"
+                      label="Direct Boeken"
+                      size="sm"
+                      class="ml-2"
                     />
                     <!-- Or just a generic book button -->
                     <!-- <UButton to="/boeken" label="Boek Nu" size="sm" /> -->
@@ -166,32 +173,33 @@ useSeoMeta({
   // twitterCard: 'summary_large_image',
 });
 
-// Define the structure for the Tabs component
-// Use appropriate icons from https://icones.js.org/ (included via @nuxt/icon)
 const massageTypes = ref([
   {
     label: 'Helende Behandelingen',
-    slot: 'item', // Use the #item slot template
+    slot: 'item',
     massages: [
       {
         id: 'healing-1',
+        slug: 'energetische-healing-sessie',
         title: 'Energetische Healing Sessie',
         description:
-          'Een diepgaande sessie gericht op het herstellen van de energiebalans en het loslaten van blokkades. Werkt op fysiek, mentaal en emotioneel niveau.',
+          'Een diepgaande sessie gericht op het herstellen van de energiebalans...',
         icon: 'i-heroicons-sun',
       },
       {
         id: 'healing-2',
+        slug: 'chakra-balancering',
         title: 'Chakra Balancering',
         description:
-          "Brengt de energiecentra (chakra's) in het lichaam in harmonie voor een betere doorstroming en vitaliteit.",
+          "Brengt de energiecentra (chakra's) in het lichaam in harmonie...",
         icon: 'i-heroicons-sparkles',
       },
       {
         id: 'healing-3',
+        slug: 'intuitieve-lichaamsmassage',
         title: 'Intuïtieve Lichaamsmassage',
         description:
-          'Een zachte massage waarbij intuïtief wordt ingespeeld op wat jouw lichaam nodig heeft voor heling en loslaten.',
+          'Een zachte massage waarbij intuïtief wordt ingespeeld op wat jouw lichaam nodig heeft...',
         icon: 'i-heroicons-heart',
       },
     ],
@@ -200,27 +208,31 @@ const massageTypes = ref([
     label: 'Reguliere Massages',
     slot: 'item',
     massages: [
+      // --- THIS IS THE ONE WE CREATED THE .md FILE FOR ---
       {
         id: 'relax-1',
+        slug: 'klassieke-ontspanningsmassage',
         title: 'Klassieke Ontspanningsmassage',
         description:
-          'Een traditionele massage met zachte tot medium druk om spierspanning te verlichten en diepe ontspanning te bevorderen.',
+          'Een traditionele massage met zachte tot medium druk om spierspanning te verlichten...',
         icon: 'i-heroicons-user-group',
-      }, // Placeholder icon
+      },
       {
         id: 'relax-2',
+        slug: 'zweedse-massage',
         title: 'Zweedse Massage',
         description:
-          'Populaire techniek met verschillende knedingen en strijkingen om de bloedsomloop te stimuleren en spieren los te maken.',
+          'Populaire techniek met verschillende knedingen en strijkingen...',
         icon: 'i-heroicons-hand-thumb-up',
-      }, // Placeholder icon
+      },
       {
         id: 'sport-1',
+        slug: 'sportmassage',
         title: 'Sportmassage (Voorbereidend/Herstel)',
         description:
-          'Stevigere massage gericht op spierherstel, flexibiliteit en het voorkomen van blessures. Zowel voor als na inspanning.',
+          'Stevigere massage gericht op spierherstel, flexibiliteit...',
         icon: 'i-heroicons-bolt',
-      }, // Placeholder icon
+      },
     ],
   },
 ]);
