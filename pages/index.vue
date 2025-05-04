@@ -141,7 +141,7 @@
                   <template #footer>
                     <UButton
                       variant="outline"
-                      :to="`/behandelingen/${massage.slug}`"
+                      :to="`/treatments/${massage.slug}`"
                       label="Meer Info"
                       size="sm"
                     />

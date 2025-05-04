@@ -6,6 +6,7 @@ export default defineAppConfig({
       // This will be used for buttons, active states, highlights, etc.
       // Nuxt UI will automatically select appropriate shades (e.g., purple-500, purple-600).
       primary: 'purple',
+      secondary: 'teal',
       neutral: 'gray',
     },
 

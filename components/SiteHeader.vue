@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-primary-50">
-    <div class="flex items-center py-2 mb-2 mx-auto max-w-6xl w-full">
+  <div class="bg-primary-50 sticky top-0 z-50 shadow-md mb-4">
+    <UContainer class="flex items-center py-2">
       <ULink to="/"
         ><UAvatar src="https://github.com/benjamincanac.png" class="mr-2" />
         EnisaHealingAndMassage
@@ -22,7 +22,7 @@
         :icon-position="'left'"
         :icon-color="'white'"
       />
-    </div>
+    </UContainer>
   </div>
 </template>
 
