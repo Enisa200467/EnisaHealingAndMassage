@@ -10,7 +10,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <article v-if="treatment">
+  <article v-if="treatment" class="mt-4">
     <UContainer>
       <ContentRenderer :value="treatment" />
     </UContainer>
