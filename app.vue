@@ -56,3 +56,11 @@ useHead({
     </main>
   </UApp>
 </template>
+
+<style>
+.calendly-badge-widget {
+  z-index: 9999 !important;
+  bottom: 20px !important;
+  right: 360px !important;
+}
+</style>
