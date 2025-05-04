@@ -10,6 +10,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <ContentRenderer v-if="treatment" :value="treatment" />
+  <article v-if="treatment" class="max-w-7xl mx-auto w-full py-8">
+    <ContentRenderer :value="treatment" />
+  </article>
   <div v-else>Home not found</div>
 </template>

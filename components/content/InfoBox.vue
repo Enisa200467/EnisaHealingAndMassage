@@ -48,10 +48,10 @@ const props = defineProps({
 const boxClasses = computed(() => {
   switch (props.type) {
     case 'warning':
-      return 'bg-orange-50 border-orange-200 dark:bg-orange-900/30 dark:border-orange-700/50';
+      return 'bg-orange-50 border-orange-200 dark:bg-orange-900/30 dark:border-orange-700/50 max-w-3xl';
     // Add 'success', etc. if needed
     default: // 'info'
-      return 'bg-purple-50 border-purple-200 dark:bg-purple-900/30 dark:border-purple-700/50';
+      return 'bg-purple-50 border-purple-200 dark:bg-purple-900/30 dark:border-purple-700/50 max-w-3xl';
   }
 });
 

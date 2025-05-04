@@ -34,8 +34,8 @@
           <UButton
             to="#behandelingen"
             size="xl"
-            variant="outline"
-            color="primary"
+            variant="solid"
+            color="secondary"
             icon="i-heroicons-sparkles"
             label="Ontdek de Behandelingen"
             aria-label="Scroll naar de beschikbare behandelingen"
@@ -45,13 +45,18 @@
     </section>
 
     <!-- Intro Section -->
-    <section class="py-16 bg-gradient-to-b sm:py-24">
+    <section class="py-16 sm:py-24">
       <UContainer>
         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
-          <div>
-            <!-- Placeholder for an image of the masseuse or practice -->
-            <NuxtImg
-              src="/images/placeholder.webp"
+          <UCarousel
+            v-slot="{ item }"
+            dots
+            loop
+            :autoplay="{ delay: 3000 }"
+            :items="items"
+            class="w-full max-w-md mx-auto"
+            ><NuxtImg
+              :src="item"
               alt="[Naam Masseuse], uw therapeut voor
             heling en ontspanning"
               class="object-cover w-full h-auto rounded-lg shadow-lg aspect-square"
@@ -59,7 +64,8 @@
               quality="75"
               loading="lazy"
             />
-          </div>
+          </UCarousel>
+          <!-- Placeholder for an image of the masseuse or practice -->
           <div
             class="prose prose-lg text-gray-700 max-w-none prose-headings:text-green-800 prose-a:text-green-600"
           >
@@ -92,7 +98,10 @@
     </section>
 
     <!-- Services/Products Section -->
-    <section id="behandelingen" class="py-16 sm:py-24 scroll-mt-20">
+    <section
+      id="behandelingen"
+      class="py-16 sm:py-24 scroll-mt-20 bg-primary-50"
+    >
       <UContainer>
         <div class="text-center">
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -236,4 +245,13 @@ const massageTypes = ref([
     ],
   },
 ]);
+
+const items = [
+  'https://picsum.photos/640/640?random=1',
+  'https://picsum.photos/640/640?random=2',
+  'https://picsum.photos/640/640?random=3',
+  'https://picsum.photos/640/640?random=4',
+  'https://picsum.photos/640/640?random=5',
+  'https://picsum.photos/640/640?random=6',
+];
 </script>

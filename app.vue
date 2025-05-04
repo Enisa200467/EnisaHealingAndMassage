@@ -48,12 +48,11 @@ useHead({
 
 <template>
   <UApp>
-    <main class="flex flex-col min-h-screen ml-2 lg:ml-64 mr-2 lg:mr-64">
-      <!-- <Header /> TODO -->
-      <div class="flex-grow">
-        <NuxtPage />
-      </div>
-      <!-- <Footer /> TODO -->
+    <!-- <main class="flex flex-col min-h-screen ml-2 lg:ml-64 mr-2 lg:mr-64"> -->
+    <main class="flex flex-col min-h-screen">
+      <SiteHeader />
+      <NuxtPage />
+      <SiteFooter />
     </main>
   </UApp>
 </template>

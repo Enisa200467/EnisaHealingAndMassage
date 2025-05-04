@@ -1,6 +1,6 @@
 <template>
   <div
-    class="not-prose my-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800/50 p-6"
+    class="not-prose my-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800/50 p-6 max-w-3xl" 
   >
     <h3
       v-if="title"

@@ -4,7 +4,10 @@
   >
     <slot />
   </h1>
-  <slot name="subtitle" />
+  <div class="max-w-3xl">
+
+    <slot name="subtitle" />
+  </div>
 </template>
 
 <script setup lang="ts"></script>
