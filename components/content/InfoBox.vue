@@ -24,23 +24,16 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-// Define props with types
-const props = defineProps({
-  // Optional title for the box
-  title: {
-    type: String,
-    default: '',
-  },
-  // Optional icon name (e.g., 'i-heroicons-clock')
-  icon: {
-    type: String,
-    default: '',
-  },
-  // Optional type for different styling (could add 'warning', 'success' later)
-  type: {
-    type: String,
-    default: 'info', // Default style
-  },
+interface Props {
+  title?: string;
+  icon?: string;
+  type?: 'info' | 'warning' | 'success';
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  title: '',
+  icon: '',
+  type: 'info',
 });
 
 // Computed classes based on the 'type' prop for easy styling variations

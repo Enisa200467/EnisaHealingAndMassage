@@ -5,9 +5,10 @@
     <slot />
   </h1>
   <div class="max-w-3xl">
-
     <slot name="subtitle" />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// No props needed for this component as it uses slots
+</script>

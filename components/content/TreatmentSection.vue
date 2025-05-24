@@ -1,0 +1,58 @@
+<script setup lang="ts">
+defineProps<{
+  title?: string;
+  image?: string;
+  imageAlt?: string;
+  items?: string[];
+}>();
+</script>
+
+<template>
+  <section class="not-prose">
+    <UContainer class="py-12 sm:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+        <!-- Image -->
+        <div class="lg:col-span-1">
+          <div class="relative">
+            <NuxtImg
+              v-if="image"
+              :src="image"
+              :alt="imageAlt || 'Behandeling'"
+              class="w-full h-64 sm:h-80 lg:h-64 object-cover rounded-xl shadow-lg"
+              format="webp"
+              quality="80"
+              loading="lazy"
+              sizes="sm:100vw lg:33vw"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"/>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="lg:col-span-2">
+          <h2 v-if="title" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+            {{ title }}
+          </h2>
+          
+          <div class="prose prose-gray max-w-none">
+            <slot />
+          </div>
+
+          <ul v-if="items && items.length" class="mt-6 space-y-3">
+            <li 
+              v-for="(item, index) in items" 
+              :key="index"
+              class="flex items-start gap-3"
+            >
+              <UIcon 
+                name="i-heroicons-check-circle" 
+                class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0"
+              />
+              <span class="text-gray-700">{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </UContainer>
+  </section>
+</template>

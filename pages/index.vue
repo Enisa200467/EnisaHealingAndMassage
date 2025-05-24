@@ -23,8 +23,11 @@
           Ervaar de kracht van helende aanraking en gun jezelf een moment van
           pure rust.
         </p>
-        <div class="flex items-center justify-center gap-4">
+        <div
+          class="flex flex-col sm:grid sm:grid-cols-2 items-center gap-4 max-w-2xs md:max-w-fit mx-auto"
+        >
           <UButton
+            class="w-full"
             color="primary"
             size="xl"
             icon="i-heroicons-calendar-days"
@@ -32,6 +35,7 @@
             aria-label="Boek nu direct je sessie"
           />
           <UButton
+            class="w-full"
             to="#behandelingen"
             size="xl"
             variant="solid"

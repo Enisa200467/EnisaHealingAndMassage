@@ -1,38 +1,34 @@
 <template>
-  <div
-    class="not-prose my-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800/50 p-6 max-w-3xl" 
-  >
+  <div class="not-prose">
     <h3
       v-if="title"
-      class="text-lg font-semibold mb-4 text-purple-700 dark:text-purple-400"
+      class="text-xl font-semibold text-gray-900 mb-6"
     >
       {{ title }}
     </h3>
     <ul class="space-y-3">
-      <li v-for="(item, index) in items" :key="index" class="flex items-start">
+      <li v-for="(item, index) in items" :key="index" class="flex items-start gap-3">
         <UIcon
           name="i-heroicons-check-circle"
-          class="w-5 h-5 mr-3 mt-1 text-purple-500 flex-shrink-0"
+          class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0"
         />
-        <span class="text-neutral-700 dark:text-neutral-300">{{ item }}</span>
+        <span class="text-gray-700">{{ item }}</span>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
-// Using defineProps for type safety (optional but recommended)
-defineProps({
-  // Title for the list (optional)
-  title: {
-    type: String,
-    default: 'Voordelen van deze behandeling:',
-  },
-  // Array of benefit strings passed from Markdown
-  items: {
-    type: Array as () => string[],
-    default: () => [],
-  },
+// For Nuxt Content components, we can access attributes passed from the component call
+// These will come from the frontmatter data in the component usage
+interface Props {
+  title?: string;
+  items?: string[];
+}
+
+withDefaults(defineProps<Props>(), {
+  title: 'Voordelen van deze behandeling:',
+  items: () => [],
 });
 </script>
 

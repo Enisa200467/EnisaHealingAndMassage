@@ -19,18 +19,11 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  src: {
-    type: String,
-    required: true,
-  },
-  alt: {
-    type: String,
-    required: true,
-  },
-  caption: {
-    type: String,
-    default: '',
-  },
-});
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+defineProps<Props>();
 </script>

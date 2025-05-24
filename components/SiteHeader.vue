@@ -1,89 +1,117 @@
 <template>
   <div class="bg-primary-50 sticky top-0 z-50 shadow-md">
-    <UContainer class="flex items-center py-2">
-      <ULink to="/"
-        ><UAvatar src="https://github.com/benjamincanac.png" class="mr-2" />
-        EnisaHealingAndMassage
-      </ULink>
+    <USlideover>
+      <UContainer class="flex items-center justify-between py-2">
+        <!-- Logo/Brand Link -->
+        <ULink to="/" class="flex items-center" aria-label="Home">
+          <UAvatar src="https://github.com/benjamincanac.png" class="mr-2" />
+          EnisaHealingAndMassage
+        </ULink>
 
-      <USeparator orientation="vertical" class="h-10 mx-2" />
-      <!-- Desktop Navigation using UNavigationMenu -->
-      <UNavigationMenu
-        class="ml-4"
-        :items="navigationItems"
-        highlight-color="primary"
-      />
-      <UButton
-        class="ml-auto"
-        size="md"
-        :to="'/boeken'"
-        icon="i-heroicons-calendar-days"
-        :label="'Boek Nu'"
-        :icon-position="'left'"
-        :icon-color="'white'"
-      />
-    </UContainer>
+        <!-- Desktop Navigation & Boek Nu Button -->
+        <div class="hidden lg:flex items-center">
+          <USeparator orientation="vertical" class="h-10 mx-2" />
+
+          <template v-if="$device.isDesktop">
+            <UNavigationMenu
+              class="ml-4"
+              :orientation="'horizontal'"
+              :items="navigationItems"
+              highlight-color="primary"
+            />
+            <UButton
+              class="ml-4"
+              size="md"
+              :to="'/boeken'"
+              icon="i-heroicons-calendar-days"
+              :label="'Boek Nu'"
+              :icon-position="'left'"
+              :icon-color="'white'"
+            />
+          </template>
+        </div>
+
+        <!-- Mobile Hamburger Button & Boek Nu Button -->
+        <div class="lg:hidden flex items-center">
+          <UButton
+            color="primary"
+            variant="ghost"
+            icon="i-heroicons-bars-3"
+            aria-label="Open Menu"
+            @click="isMobileMenuOpen = true"
+          />
+        </div>
+      </UContainer>
+
+      <!-- Mobile Menu Slideover -->
+      <template #header>
+        <h1>Enisa Healing & Massage</h1>
+      </template>
+      <template #close>
+        <UButton icon="i-lucide-search" color="primary" variant="solid" />
+      </template>
+      <template #body>
+        <UNavigationMenu :orientation="'vertical'" :items="navigationItems" />
+      </template>
+    </USlideover>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui';
-import { ref } from 'vue';
 
 const treatmentLinksDesktop = [
   {
     label: 'Alle Behandelingen',
-    description: 'Bekijk een overzicht van alle massages en healings.', // Optional description
+    description: 'Bekijk een overzicht van alle massages en healings.',
     to: '/behandelingen',
-    icon: 'i-heroicons-list-bullet', // Optional icon
+    icon: 'i-heroicons-list-bullet',
   },
   {
     label: 'Energetische Healing',
     description: 'Herstel balans en vitaliteit.',
     to: '/behandelingen/energetische-healing-sessie',
-    icon: 'i-heroicons-sparkles', // Example icon
+    icon: 'i-heroicons-sparkles',
   },
   {
     label: 'Chakra Balancering',
     description: 'Harmoniseer uw energiecentra.',
     to: '/behandelingen/chakra-balancering',
-    icon: 'i-heroicons-adjustments-horizontal', // Example icon
+    icon: 'i-heroicons-adjustments-horizontal',
   },
   {
     label: 'Klassieke Ontspanning',
     description: 'Pure ontspanning voor lichaam en geest.',
     to: '/behandelingen/klassieke-ontspanningsmassage',
-    icon: 'i-heroicons-user-group', // Example icon (adjust as needed)
+    icon: 'i-heroicons-user-group',
   },
-  // Add other treatments...
 ];
 
 const navigationItems = ref<NavigationMenuItem[][]>([
   [
     {
       label: 'Home',
-      icon: 'i-heroicons-home', // Optional icon for desktop menu
+      icon: 'i-heroicons-home',
       to: '/',
     },
     {
       label: 'Over Mij',
-      icon: 'i-heroicons-user', // Optional icon
+      icon: 'i-heroicons-user',
       to: '/over-mij',
     },
     {
       label: 'Behandelingen',
-      icon: 'i-heroicons-sparkles', // Optional icon
-      children: treatmentLinksDesktop, // Nested items for the dropdown
+      icon: 'i-heroicons-sparkles',
+      children: treatmentLinksDesktop,
     },
     {
       label: 'Contact',
-      icon: 'i-heroicons-envelope', // Optional icon
+      icon: 'i-heroicons-envelope',
       to: '/contact',
     },
-    // Boek Nu is handled by a separate button for emphasis, but could be added here:
-    // { label: 'Boek Nu', to: '/boeken', icon: 'i-heroicons-calendar-days' }
   ],
-  // You can add more groups of items in separate arrays if needed
-  // Example: [[ item1, item2 ], [ item3 ]]
 ]);
+
+// State for mobile menu visibility
+const isMobileMenuOpen = ref(false);
 </script>

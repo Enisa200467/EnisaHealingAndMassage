@@ -62,5 +62,17 @@ useHead({
   z-index: 9999 !important;
   bottom: 20px !important;
   right: 360px !important;
+
+  @media screen and (max-width: 1920px) {
+    right: 145px !important;
+  }
+
+  @media screen and (max-width: 1024px) {
+    right: 45px !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    right: 5px !important;
+  }
 }
 </style>
