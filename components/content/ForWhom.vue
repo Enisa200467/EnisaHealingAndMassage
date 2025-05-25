@@ -11,9 +11,6 @@ defineProps<{
       {{ title }}
     </h3>
     
-    <div class="prose prose-gray max-w-none mb-6">
-      <slot />
-    </div>
 
     <ul v-if="items && items.length" class="space-y-3">
       <li 

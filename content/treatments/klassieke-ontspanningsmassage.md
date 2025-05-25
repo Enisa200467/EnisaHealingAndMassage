@@ -57,4 +57,44 @@ items:
   - Nog niet eerder een massage hebt gehad
 ---
 ::
+::
+
+::expandableInfo
+---
+title: Meer over de klassieke massage
+---
+
+### Geschiedenis en Achtergrond
+
+De klassieke massage, ook wel Zweedse massage genoemd, is ontwikkeld in de 19e eeuw door Per Henrik Ling. Deze massagevorm combineert verschillende technieken die gericht zijn op het verbeteren van de spier- en gewrichtsfunctie.
+
+### Wetenschappelijke Voordelen
+
+Onderzoek toont aan dat klassieke massage:
+- **Cortisol verlaagt**: Vermindert het stresshormoon cortisol met gemiddeld 31%
+- **Serotonine verhoogt**: Stimuleert de productie van gelukshormonen
+- **Bloeddruk verlaagt**: Helpt bij het reguleren van een gezonde bloeddruk
+- **Immuunsysteem versterkt**: Verhoogt het aantal witte bloedcellen
+
+### Contra-indicaties
+
+Gelieve vooraf te melden bij:
+- Koorts of griepverschijnselen
+- Acute ontstekingen of infecties
+- Recente operaties (binnen 6 weken)
+- Huidaandoeningen in het behandelgebied
+- Trombose of ernstige hart- en vaatziekten
+- Zwangerschap (eerste trimester)
+
+Bij twijfel over geschiktheid, overleg altijd eerst met je huisarts.
+
+### Nazorg
+
+Na de massage:
+- Drink voldoende water om afvalstoffen uit te spoelen
+- Vermijd alcohol en zware maaltijden
+- Gun jezelf rust en tijd om na te genieten
+- Lichte hoofdpijn of moeheid is normaal en verdwijnt binnen 24 uur
+
+::
 

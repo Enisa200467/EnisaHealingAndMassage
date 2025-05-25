@@ -11,9 +11,7 @@ useSeoMeta({
 
 <template>
   <article v-if="treatment" class="mt-4">
-    <UContainer>
-      <ContentRenderer :value="treatment" />
-    </UContainer>
+    <ContentRenderer :value="treatment" />
   </article>
   <div v-else>Home not found</div>
 </template>

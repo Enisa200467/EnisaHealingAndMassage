@@ -165,6 +165,13 @@ items:
 ---
 
 ::
+
+## ::expandableInfo
+
+## title: Meer informatie
+
+Detailed content here that can be expanded/collapsed
+::
 ```
 
 ### Image Optimization

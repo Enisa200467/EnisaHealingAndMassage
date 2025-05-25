@@ -8,8 +8,8 @@ defineProps<{
 </script>
 
 <template>
-  <section class="not-prose">
-    <UContainer class="py-12 sm:py-16">
+  <section class="not-prose w-full">
+    <UContainer class="pt-4 pb-8 sm:py-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
         <!-- Image -->
         <div class="lg:col-span-1">

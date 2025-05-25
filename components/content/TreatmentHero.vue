@@ -32,12 +32,12 @@ const intensityData = computed(() => {
 
 <template>
   <section class="not-prose">
-    <UContainer class="py-12 sm:py-16">
+    <UContainer class="pb-6 sm:pt-12 pt-4">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
         <!-- Title Section -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-500">
               {{ title }}
             </h1>
           </div>
