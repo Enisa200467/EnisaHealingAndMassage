@@ -12,13 +12,13 @@
               Behandelingen
             </h4>
             <ul class="space-y-2">
-              <li v-for="treatment in treatmentItems" :key="treatment.to">
-                <NuxtLink
-                  :to="treatment.to"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
+              <li v-for="(item, index) in footerLinks.services" :key="index">
+                <ULink
+                  :to="item.path"
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
                 >
-                  {{ treatment.label }}
-                </NuxtLink>
+                  {{ item.label }}
+                </ULink>
               </li>
             </ul>
           </div>
@@ -30,32 +30,28 @@
             </h4>
             <ul class="space-y-2">
               <li>
-                <NuxtLink
+                <ULink
                   :to="routes.pages.about"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Over Mij</NuxtLink
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
                 >
+                  Over Mij
+                </ULink>
               </li>
               <li>
-                <NuxtLink
-                  to="/werkwijze"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Werkwijze</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink
-                  to="/tarieven"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Tarieven</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink
+                <ULink
                   :to="routes.pages.contact"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Contact</NuxtLink
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
                 >
+                  Contact
+                </ULink>
+              </li>
+              <li>
+                <ULink
+                  :to="routes.pages.tarieven"
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+                >
+                  Tarieven
+                </ULink>
               </li>
             </ul>
           </div>
@@ -66,26 +62,13 @@
               Informatie
             </h4>
             <ul class="space-y-2">
-              <li>
-                <NuxtLink
-                  to="/faq"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Veelgestelde Vragen</NuxtLink
+              <li v-for="(item, index) in footerLinks.info" :key="index">
+                <ULink
+                  :to="item.path"
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
                 >
-              </li>
-              <li>
-                <NuxtLink
-                  to="/blog"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Blog</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink
-                  to="/privacybeleid"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Privacybeleid</NuxtLink
-                >
+                  {{ item.label }}
+                </ULink>
               </li>
             </ul>
           </div>
@@ -93,22 +76,19 @@
           <!-- Column 4: Boeken -->
           <div>
             <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
-              Boeken
+              Afspraak
             </h4>
             <ul class="space-y-2">
               <li>
-                <NuxtLink
+                <UButton
                   :to="routes.pages.booking"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Direct Boeken</NuxtLink
+                  variant="link"
+                  :padded="false"
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+                  icon="i-heroicons-calendar-days"
                 >
-              </li>
-              <li>
-                <NuxtLink
-                  to="/cadeaubon"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Cadeaubon</NuxtLink
-                >
+                  Boek Nu
+                </UButton>
               </li>
             </ul>
           </div>
@@ -138,37 +118,19 @@
             v-slot="{ item }"
             :items="reviews"
             :ui="{ item: 'basis-full' }"
-            indicators
             arrows
-            loop
-            autoplay
-            autoplay-interval="5000"
+            indicators
             class="w-full max-w-xs mx-auto"
           >
-            <UCard class="text-center h-48 flex flex-col justify-center">
-              <!-- Fixed height card -->
-              <q class="italic text-neutral-600 dark:text-neutral-400 text-sm">
-                {{ item.text }}
-              </q>
+            <UCard class="text-center">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                "{{ item.text }}"
+              </p>
               <p
-                class="mt-2 font-semibold text-neutral-800 dark:text-neutral-200 text-sm"
+                class="text-xs font-medium text-neutral-500 dark:text-neutral-400 mt-2"
               >
                 - {{ item.author }}
               </p>
-              <div class="mt-1 flex justify-center">
-                <UIcon
-                  v-for="i in item.score"
-                  :key="i"
-                  name="i-heroicons-star-solid"
-                  class="w-4 h-4 text-yellow-400"
-                />
-                <UIcon
-                  v-for="i in 5 - item.score"
-                  :key="i + 5"
-                  name="i-heroicons-star"
-                  class="w-4 h-4 text-neutral-300 dark:text-neutral-600"
-                />
-              </div>
             </UCard>
           </UCarousel>
           <p
@@ -184,8 +146,8 @@
       <div
         class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-400"
       >
-        &copy; {{ new Date().getFullYear() }} Praktijk [Naam]. Alle rechten
-        voorbehouden.
+        &copy; {{ new Date().getFullYear() }} Enisa Healing & Massage. Alle
+        rechten voorbehouden.
       </div>
     </UContainer>
   </footer>
@@ -197,11 +159,22 @@ import { ref, computed } from 'vue';
 // Use routes composable for centralized route management
 const routes = useRoutes();
 
-// Load dynamic treatment navigation
-const { data: treatmentItems } = await useAsyncData(
-  'footer-treatment-navigation',
-  () => getTreatmentNavigationItems()
-);
+// Statically define footer links based on routes
+const footerLinks = {
+  services: Object.entries(routes.treatments).map(([slug, path]) => ({
+    label: slug
+      .split('-')
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' '), // Simple title from slug
+    path,
+  })),
+  info: [
+    { label: 'Veelgestelde Vragen', path: routes.pages.faq },
+    { label: 'Blog', path: routes.pages.blog },
+    // Tarieven is now under Praktijk, so removed from here to avoid duplication if desired
+    // { label: 'Tarieven', path: routes.pages.tarieven },
+  ],
+};
 
 // Placeholder reviews - Replace with your actual data source
 const reviews = ref([
