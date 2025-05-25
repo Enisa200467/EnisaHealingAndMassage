@@ -12,42 +12,14 @@
               Behandelingen
             </h4>
             <ul class="space-y-2">
-              <li>
+              <li v-for="treatment in treatmentItems" :key="treatment.to">
                 <NuxtLink
-                  to="/behandelingen/energetische-healing-sessie"
+                  :to="treatment.to"
                   class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Energetische Healing</NuxtLink
                 >
+                  {{ treatment.label }}
+                </NuxtLink>
               </li>
-              <li>
-                <NuxtLink
-                  to="/behandelingen/chakra-balancering"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Chakra Balancering</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink
-                  to="/behandelingen/klassieke-ontspanningsmassage"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Ontspanningsmassage</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink
-                  to="/behandelingen/zweedse-massage"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Zweedse Massage</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink
-                  to="/behandelingen/sportmassage"
-                  class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
-                  >Sportmassage</NuxtLink
-                >
-              </li>
-              <!-- Add more links -->
             </ul>
           </div>
 
@@ -59,7 +31,7 @@
             <ul class="space-y-2">
               <li>
                 <NuxtLink
-                  to="/over-mij"
+                  :to="routes.pages.about"
                   class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
                   >Over Mij</NuxtLink
                 >
@@ -80,7 +52,7 @@
               </li>
               <li>
                 <NuxtLink
-                  to="/contact"
+                  :to="routes.pages.contact"
                   class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
                   >Contact</NuxtLink
                 >
@@ -126,7 +98,7 @@
             <ul class="space-y-2">
               <li>
                 <NuxtLink
-                  to="/boeken"
+                  :to="routes.pages.booking"
                   class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400"
                   >Direct Boeken</NuxtLink
                 >
@@ -221,6 +193,15 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+
+// Use routes composable for centralized route management
+const routes = useRoutes();
+
+// Load dynamic treatment navigation
+const { data: treatmentItems } = await useAsyncData(
+  'footer-treatment-navigation',
+  () => getTreatmentNavigationItems()
+);
 
 // Placeholder reviews - Replace with your actual data source
 const reviews = ref([

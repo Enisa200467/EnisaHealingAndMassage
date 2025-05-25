@@ -22,7 +22,7 @@
             <UButton
               class="ml-4"
               size="md"
-              :to="'/boeken'"
+              :to="routes.pages.booking"
               icon="i-heroicons-calendar-days"
               :label="'Boek Nu'"
               :icon-position="'left'"
@@ -60,54 +60,38 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui';
 
-const treatmentLinksDesktop = [
-  {
-    label: 'Alle Behandelingen',
-    description: 'Bekijk een overzicht van alle massages en healings.',
-    to: '/behandelingen',
-    icon: 'i-heroicons-list-bullet',
-  },
-  {
-    label: 'Energetische Healing',
-    description: 'Herstel balans en vitaliteit.',
-    to: '/behandelingen/energetische-healing-sessie',
-    icon: 'i-heroicons-sparkles',
-  },
-  {
-    label: 'Chakra Balancering',
-    description: 'Harmoniseer uw energiecentra.',
-    to: '/behandelingen/chakra-balancering',
-    icon: 'i-heroicons-adjustments-horizontal',
-  },
-  {
-    label: 'Klassieke Ontspanning',
-    description: 'Pure ontspanning voor lichaam en geest.',
-    to: '/behandelingen/klassieke-ontspanningsmassage',
-    icon: 'i-heroicons-user-group',
-  },
-];
+const routes = useRoutes();
 
-const navigationItems = ref<NavigationMenuItem[][]>([
+// Load dynamic treatment navigation items
+const { data: treatmentNavigationItems } = await useAsyncData(
+  'treatment-navigation',
+  async () => {
+    return await routes.getTreatmentNavigationItems();
+  }
+);
+
+// Create navigation items with dynamic treatment data
+const navigationItems = computed<NavigationMenuItem[][]>(() => [
   [
     {
       label: 'Home',
       icon: 'i-heroicons-home',
-      to: '/',
+      to: routes.pages.home,
     },
     {
       label: 'Over Mij',
       icon: 'i-heroicons-user',
-      to: '/over-mij',
+      to: routes.pages.about,
     },
     {
       label: 'Behandelingen',
       icon: 'i-heroicons-sparkles',
-      children: treatmentLinksDesktop,
+      children: treatmentNavigationItems.value || [],
     },
     {
       label: 'Contact',
       icon: 'i-heroicons-envelope',
-      to: '/contact',
+      to: routes.pages.contact,
     },
   ],
 ]);

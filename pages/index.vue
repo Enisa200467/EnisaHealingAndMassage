@@ -30,6 +30,7 @@
             class="w-full"
             color="primary"
             size="xl"
+            :to="routes.pages.booking"
             icon="i-heroicons-calendar-days"
             label="Boek Nu Je Sessie"
             aria-label="Boek nu direct je sessie"
@@ -92,7 +93,7 @@
             <UButton
               variant="link"
               icon="i-heroicons-arrow-right-circle"
-              to="/over-mij"
+              :to="routes.pages.about"
               label="Lees meer over mijn aanpak"
               :padded="false"
             />
@@ -145,13 +146,13 @@
                   <template #footer>
                     <UButton
                       variant="outline"
-                      :to="`/treatments/${massage.slug}`"
+                      :to="massage.slug"
                       label="Meer Info"
                       size="sm"
                     />
                     <!-- Keep a separate Book Now button if desired, linking to the main booking page -->
                     <UButton
-                      :to="'/boeken'"
+                      :to="routes.pages.booking"
                       label="Direct Boeken"
                       size="sm"
                       class="ml-2"
@@ -170,7 +171,52 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed } from 'vue';
+
+// Use routes composable for centralized route management
+const routes = useRoutes();
+
+// Fetch dynamic treatment data
+const { data: allTreatments } = await useAsyncData(
+  'homepage-treatments',
+  async () => {
+    // Get all treatments with full metadata
+    const treatments = await queryCollection('treatments').all();
+
+    return treatments.map((treatment) => ({
+      id: treatment._id || treatment.slug,
+      slug: treatment.path,
+      title: treatment.title,
+      description: treatment.description,
+      icon: treatment.meta.icon || 'i-heroicons-sparkles',
+      category: treatment.meta.category || 'healing',
+    }));
+  }
+);
+
+// Group treatments by category for the tabs
+const massageTypes = computed(() => {
+  if (!allTreatments.value) return [];
+  const healingTreatments = allTreatments.value.filter(
+    (treatment) => treatment.category === 'healing'
+  );
+  const massageTreatments = allTreatments.value.filter(
+    (treatment) => treatment.category === 'massage'
+  );
+
+  return [
+    {
+      label: 'Helende Behandelingen',
+      slot: 'item',
+      massages: healingTreatments,
+    },
+    {
+      label: 'Reguliere Massages',
+      slot: 'item',
+      massages: massageTreatments,
+    },
+  ];
+});
 
 // Define SEO meta tags for this page
 useSeoMeta({
@@ -185,70 +231,6 @@ useSeoMeta({
   // Add twitter card tags if needed
   // twitterCard: 'summary_large_image',
 });
-
-const massageTypes = ref([
-  {
-    label: 'Helende Behandelingen',
-    slot: 'item',
-    massages: [
-      {
-        id: 'healing-1',
-        slug: 'energetische-healing-sessie',
-        title: 'Energetische Healing Sessie',
-        description:
-          'Een diepgaande sessie gericht op het herstellen van de energiebalans...',
-        icon: 'i-heroicons-sun',
-      },
-      {
-        id: 'healing-2',
-        slug: 'chakra-balancering',
-        title: 'Chakra Balancering',
-        description:
-          "Brengt de energiecentra (chakra's) in het lichaam in harmonie...",
-        icon: 'i-heroicons-sparkles',
-      },
-      {
-        id: 'healing-3',
-        slug: 'intuitieve-lichaamsmassage',
-        title: 'Intuïtieve Lichaamsmassage',
-        description:
-          'Een zachte massage waarbij intuïtief wordt ingespeeld op wat jouw lichaam nodig heeft...',
-        icon: 'i-heroicons-heart',
-      },
-    ],
-  },
-  {
-    label: 'Reguliere Massages',
-    slot: 'item',
-    massages: [
-      // --- THIS IS THE ONE WE CREATED THE .md FILE FOR ---
-      {
-        id: 'relax-1',
-        slug: 'klassieke-ontspanningsmassage',
-        title: 'Klassieke Ontspanningsmassage',
-        description:
-          'Een traditionele massage met zachte tot medium druk om spierspanning te verlichten...',
-        icon: 'i-heroicons-user-group',
-      },
-      {
-        id: 'relax-2',
-        slug: 'zweedse-massage',
-        title: 'Zweedse Massage',
-        description:
-          'Populaire techniek met verschillende knedingen en strijkingen...',
-        icon: 'i-heroicons-hand-thumb-up',
-      },
-      {
-        id: 'sport-1',
-        slug: 'sportmassage',
-        title: 'Sportmassage (Voorbereidend/Herstel)',
-        description:
-          'Stevigere massage gericht op spierherstel, flexibiliteit...',
-        icon: 'i-heroicons-bolt',
-      },
-    ],
-  },
-]);
 
 const items = [
   'https://picsum.photos/640/640?random=1',

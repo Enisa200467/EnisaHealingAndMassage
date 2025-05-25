@@ -1,4 +1,7 @@
 <template>
+  <UContainer>
+
+ 
   <div class="not-prose my-6 p-5 rounded-lg border" :class="boxClasses">
     <div v-if="title || icon" class="flex items-center mb-3">
       <UIcon
@@ -18,7 +21,7 @@
       <!-- This slot will render the Markdown content placed inside the component tags -->
       <slot />
     </div>
-  </div>
+  </div> </UContainer>
 </template>
 
 <script setup lang="ts">

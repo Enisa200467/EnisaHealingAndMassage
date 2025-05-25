@@ -6,6 +6,7 @@ price: '€ 65'
 intensity: 2
 intensityLabel: 'Zacht tot Medium (naar wens aanpasbaar)'
 icon: 'i-heroicons-user-group'
+category: 'massage'
 ---
 
 ::treatmentHero

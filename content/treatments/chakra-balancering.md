@@ -6,6 +6,7 @@ price: '€ 70'
 intensity: 1
 intensityLabel: 'Zeer Zacht (Energetisch werk)'
 icon: 'i-heroicons-sparkles'
+category: 'healing'
 ---
 
 ::treatmentHero

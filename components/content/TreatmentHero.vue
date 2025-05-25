@@ -10,6 +10,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+const routes = useRoutes();
 
 // Intensity labels for each rating
 const intensityLabels = {
@@ -91,6 +92,7 @@ const intensityData = computed(() => {
                 color="primary" 
                 size="lg" 
                 block
+                :to="routes.pages.booking"
                 icon="i-heroicons-calendar"
               >
                 Afspraak maken
