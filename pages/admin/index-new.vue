@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import AdminPage from '~/features/admin/AdminPage.vue'
-
-// Protect admin routes
-definePageMeta({
-  middleware: 'auth'
-})
 </script>
 
 <template>
