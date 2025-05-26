@@ -14,6 +14,7 @@
         <template v-if="$device.isDesktop">
           <UNavigationMenu
             class="ml-4"
+            arrow
             :orientation="'horizontal'"
             :items="navigationItems"
           />
@@ -27,44 +28,18 @@
         </template>
       </div>
 
-      <!-- Mobile Hamburger Button & Boek Nu Button -->
       <div class="lg:hidden flex items-center">
         <UButton
           color="primary"
           variant="ghost"
           icon="i-heroicons-bars-3"
           aria-label="Open Menu"
-          @click="isMobileMenuOpen = true"
+          @click="isMobileMenuOpen = !isMobileMenuOpen"
         />
       </div>
     </UContainer>
 
-    <!-- Mobile Menu Slideover -->
-    <UCard
-      v-if="isMobileMenuOpen"
-      class="lg:hidden flex flex-col flex-1"
-      :ui="{
-        ring: '',
-        divide: 'divide-y divide-gray-100 dark:divide-gray-800',
-      }"
-    >
-      <template #header>
-        <div class="flex items-center justify-between">
-          <h3
-            class="text-base font-semibold leading-6 text-gray-900 dark:text-white"
-          >
-            Menu
-          </h3>
-          <UButton
-            color="gray"
-            variant="ghost"
-            icon="i-heroicons-x-mark-20-solid"
-            class="-my-1"
-            @click="isMobileMenuOpen = false"
-          />
-        </div>
-      </template>
-
+    <UCard v-if="isMobileMenuOpen" class="lg:hidden flex flex-col flex-1">
       <UNavigationMenu :orientation="'vertical'" :items="navigationItems" />
 
       <template #footer>

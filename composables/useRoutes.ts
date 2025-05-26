@@ -7,7 +7,7 @@ interface BreadcrumbItem {
 
 interface TreatmentData {
   slug?: string;
-  _path: string;
+  path: string;
   title: string;
   _file?: string;
   description?: string;
@@ -58,28 +58,28 @@ export const useRoutes = () => {
       items: [
         {
           slug: 'intuitieve-lichaamsmassage',
-          _path: '/behandelingen/intuitieve-lichaamsmassage',
+          path: '/behandelingen/intuitieve-lichaamsmassage',
           title: 'Intuitieve Lichaamsmassage',
           description: 'Intuitive body massage for relaxation and healing.',
           icon: 'massage-intuitive',
         },
         {
           slug: 'klassieke-ontspanningsmassage',
-          _path: '/behandelingen/klassieke-ontspanningsmassage',
+          path: '/behandelingen/klassieke-ontspanningsmassage',
           title: 'Klassieke Ontspanningsmassage',
           description: 'Classic relaxation massage to relieve tension.',
           icon: 'massage-classic',
         },
         {
           slug: 'sportmassage',
-          _path: '/behandelingen/sportmassage',
+          path: '/behandelingen/sportmassage',
           title: 'Sportmassage',
           description: 'Sports massage for athletes and active individuals.',
           icon: 'massage-sport',
         },
         {
           slug: 'zweedse-massage',
-          _path: '/behandelingen/zweedse-massage',
+          path: '/behandelingen/zweedse-massage',
           title: 'Zweedse Massage',
           description: 'Swedish massage for deep relaxation.',
           icon: 'massage-swedish',
