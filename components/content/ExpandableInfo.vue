@@ -13,8 +13,8 @@ const isExpanded = ref(props.expanded);
 </script>
 
 <template>
-  <section class="additional-info bg-primary-50 w-full">
-    <UContainer class="sm:pb-12 sm:pt-6 py-10">
+  <section class="additional-info  w-full">
+    <UContainer class="sm:pb-24 sm:pt-6 py-10">
       <div class="max-w-4xl ">
         <UButton
           variant="subtle"

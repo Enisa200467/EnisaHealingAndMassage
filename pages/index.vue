@@ -105,7 +105,7 @@
     <!-- Services/Products Section -->
     <section
       id="behandelingen"
-      class="py-16 sm:py-24 scroll-mt-20 bg-primary-50"
+      class="py-16 sm:py-24 scroll-mt-20 bg-gradient-to-br from-primary-50 to-secondary-50"
     >
       <UContainer>
         <div class="text-center">

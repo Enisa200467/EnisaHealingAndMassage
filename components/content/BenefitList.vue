@@ -1,20 +1,28 @@
 <template>
   <div class="not-prose">
-    <h3
-      v-if="title"
-      class="text-2xl sm:text-3xl font-bold text-neutral-900 mb-6"
-    >
-      {{ title }}
-    </h3>
-    <ul class="space-y-4">
-      <li v-for="(item, index) in items" :key="index" class="flex items-start gap-3">
-        <UIcon
-          name="i-mdi-check-circle"
-          class="w-5 h-5 text-green-500 mt-1 flex-shrink-0"
-        />
-        <span class="text-neutral-700 text-lg">{{ item }}</span>
-      </li>
-    </ul>
+    <UCard>
+      <template #header>
+        <div class="flex items-center gap-3">
+          <UIcon
+            name="i-mdi-star-circle"
+            class="w-6 h-6 text-primary-500"
+          />
+          <h3 class="text-xl font-semibold">
+            {{ title }}
+          </h3>
+        </div>
+      </template>
+
+      <ul v-if="items && items.length" class="space-y-3">
+        <li v-for="(item, index) in items" :key="index" class="flex items-start gap-3">
+          <UIcon
+            name="i-mdi-check-circle"
+            class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
+          />
+          <span class="text-neutral-600">{{ item }}</span>
+        </li>
+      </ul>
+    </UCard>
   </div>
 </template>
 
