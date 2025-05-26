@@ -134,7 +134,7 @@
           >
             Klantervaringen
           </h4>
-          <div v-if="reviews.length > 0" class="text-center mb-4">
+          <div v-if="displayReviews.length > 0" class="text-center mb-4">
             <span class="font-medium text-neutral-700 dark:text-neutral-300"
               >Gemiddelde Score:</span
             >
@@ -144,9 +144,9 @@
             <UIcon name="i-mdi-star" class="w-4 h-4 ml-1 text-yellow-400" />
           </div>
           <UCarousel
-            v-if="reviews.length > 0"
+            v-if="displayReviews.length > 0"
             v-slot="{ item }"
-            :items="reviews"
+            :items="displayReviews"
             :ui="{ item: 'basis-full' }"
             arrows
             indicators
@@ -163,6 +163,16 @@
               </p>
             </UCard>
           </UCarousel>
+          <div
+            v-else-if="isLoading"
+            class="text-center text-sm text-neutral-500 dark:text-neutral-400"
+          >
+            <UIcon
+              name="i-mdi-loading"
+              class="w-4 h-4 animate-spin mx-auto mb-2"
+            />
+            <p>Reviews laden...</p>
+          </div>
           <p
             v-else
             class="text-center text-sm text-neutral-500 dark:text-neutral-400"
@@ -184,7 +194,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import type { Review, ReviewStats } from '~/types/reviews';
 
 // Use routes composable for centralized route management
 const routes = useRoutes();
@@ -202,42 +212,64 @@ const footerLinks = {
   ],
 };
 
-// Placeholder reviews - Replace with your actual data source
-const reviews = ref([
-  {
-    id: 1,
-    author: 'Anna V.',
-    score: 5,
-    text: 'Heerlijk ontspannen, voelde me als herboren!',
-  },
-  {
-    id: 2,
-    author: 'Bart L.',
-    score: 4,
-    text: 'Professionele aanpak, veel minder last van mijn rug.',
-  },
-  {
-    id: 3,
-    author: 'Chantal S.',
-    score: 5,
-    text: 'De energetische healing was een bijzondere ervaring.',
-  },
-  {
-    id: 4,
-    author: 'Dirk M.',
-    score: 5,
-    text: 'Echt een aanrader, kom zeker terug.',
-  },
-]);
+// Reviews data from API
+const reviews = ref<Review[]>([]);
+const reviewStats = ref<ReviewStats>({
+  total: 0,
+  approved: 0,
+  pending: 0,
+  rejected: 0,
+  averageRating: 0,
+});
+const isLoading = ref(true);
 
-// Calculate average score
+// Transform reviews for display
+const displayReviews = computed(() => {
+  return reviews.value.map((review) => ({
+    id: review.id,
+    author: review.name,
+    score: review.rating,
+    text: review.review,
+  }));
+});
+
+// Calculate average score from stats
 const averageScore = computed(() => {
-  if (reviews.value.length === 0) return 0;
-  const totalScore = reviews.value.reduce(
-    (sum, review) => sum + review.score,
-    0
-  );
-  return (totalScore / reviews.value.length).toFixed(1); // Rounded to one decimal place
+  return reviewStats.value.averageRating.toFixed(1);
+});
+
+// Load reviews data
+const loadReviewsData = async () => {
+  try {
+    isLoading.value = true;
+
+    // Fetch both reviews and stats concurrently
+    const [reviewsResponse, statsResponse] = await Promise.all([
+      $fetch<{ data: { reviews: Review[] } }>('/api/reviews?limit=4'), // Get only 4 reviews for footer
+      $fetch<{ data: ReviewStats }>('/api/reviews/stats'),
+    ]);
+
+    reviews.value = reviewsResponse.data.reviews;
+    reviewStats.value = statsResponse.data;
+  } catch (error) {
+    console.error('Error loading reviews data for footer:', error);
+    // Keep empty arrays as fallback - don't show error in footer
+    reviews.value = [];
+    reviewStats.value = {
+      total: 0,
+      approved: 0,
+      pending: 0,
+      rejected: 0,
+      averageRating: 0,
+    };
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+// Load data on component mount
+onMounted(() => {
+  loadReviewsData();
 });
 </script>
 

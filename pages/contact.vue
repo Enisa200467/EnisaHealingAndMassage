@@ -174,49 +174,49 @@ useSeoMeta({
             <UCard>
               <UForm class="space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <UFormGroup label="Voornaam" required>
+                  <UFormField label="Voornaam" required>
                     <UInput placeholder="Je voornaam" icon="i-mdi-account" />
-                  </UFormGroup>
-                  <UFormGroup label="Achternaam" required>
+                  </UFormField>
+                  <UFormField label="Achternaam" required>
                     <UInput placeholder="Je achternaam" />
-                  </UFormGroup>
+                  </UFormField>
                 </div>
 
-                <UFormGroup label="E-mailadres" required>
+                <UFormField label="E-mailadres" required>
                   <UInput
                     type="email"
                     placeholder="je@email.nl"
                     icon="i-mdi-email"
                   />
-                </UFormGroup>
+                </UFormField>
 
-                <UFormGroup label="Telefoonnummer">
+                <UFormField label="Telefoonnummer">
                   <UInput
                     type="tel"
                     placeholder="+31 6 12 34 56 78"
                     icon="i-mdi-phone"
                   />
-                </UFormGroup>
+                </UFormField>
 
-                <UFormGroup label="Onderwerp" required>
+                <UFormField label="Onderwerp" required>
                   <USelect
-                    :options="[
-                      { label: 'Algemene vraag', value: 'general' },
-                      { label: 'Afspraak maken', value: 'appointment' },
-                      { label: 'Behandeling informatie', value: 'treatment' },
-                      { label: 'Tarieven', value: 'pricing' },
-                      { label: 'Anders', value: 'other' },
+                    :items="[
+                      'Algemene vraag',
+                      'Afspraak maken',
+                      'Behandeling informatie',
+                      'Tarieven',
+                      'Anders',
                     ]"
                     placeholder="Selecteer een onderwerp"
                   />
-                </UFormGroup>
+                </UFormField>
 
-                <UFormGroup label="Bericht" required>
+                <UFormField label="Bericht" required>
                   <UTextarea
                     placeholder="Vertel me waar ik je mee kan helpen..."
                     :rows="5"
                   />
-                </UFormGroup>
+                </UFormField>
 
                 <div class="flex items-start gap-3">
                   <UCheckbox />
@@ -345,10 +345,6 @@ useSeoMeta({
 
             <!-- Directions -->
             <div>
-              <h3 class="text-xl font-semibold text-neutral-900 mb-4">
-                Routebeschrijving
-              </h3>
-
               <div class="space-y-4">
                 <UCard>
                   <template #header>

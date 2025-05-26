@@ -46,41 +46,41 @@
               class="space-y-6"
               @submit="onSubmit"
             >
-              <UFormGroup label="Naam" name="name" required>
+              <UFormField label="Naam" name="name" required>
                 <UInput
                   v-model="reviewForm.name"
                   placeholder="Je voornaam"
                   icon="i-mdi-account"
                 />
-              </UFormGroup>
+              </UFormField>
 
-              <UFormGroup label="E-mailadres" name="email" required>
+              <UFormField label="E-mailadres" name="email" required>
                 <UInput
                   v-model="reviewForm.email"
                   type="email"
                   placeholder="je.email@voorbeeld.nl"
                   icon="i-mdi-email"
                 />
-              </UFormGroup>
+              </UFormField>
 
-              <UFormGroup label="Behandeling" name="treatment">
+              <UFormField label="Behandeling" name="treatment">
                 <USelect
                   v-model="reviewForm.treatment"
-                  :options="treatmentOptions"
+                  :items="treatmentOptions"
                   placeholder="Selecteer de behandeling (optioneel)"
                 />
-              </UFormGroup>
+              </UFormField>
 
-              <UFormGroup label="Beoordeling" name="rating" required>
+              <UFormField label="Beoordeling" name="rating" required>
                 <div class="space-y-2">
                   <StarRating v-model="reviewForm.rating" :show-text="true" />
                   <p class="text-sm text-neutral-500 dark:text-neutral-400">
                     Klik op de sterren om je beoordeling te geven
                   </p>
                 </div>
-              </UFormGroup>
+              </UFormField>
 
-              <UFormGroup label="Je review" name="review" required>
+              <UFormField label="Je review" name="review" required>
                 <UTextarea
                   v-model="reviewForm.review"
                   placeholder="Beschrijf je ervaring met de behandeling..."
@@ -98,7 +98,7 @@
                     >
                   </div>
                 </template>
-              </UFormGroup>
+              </UFormField>
 
               <div class="bg-blue-50 dark:bg-blue-950 p-4 rounded-lg">
                 <div class="flex gap-3">
@@ -116,21 +116,14 @@
                   </div>
                 </div>
               </div>
-
-              <template #footer>
-                <div class="flex justify-end gap-3">
-                  <UButton type="button" variant="ghost" @click="resetForm">
-                    Reset
-                  </UButton>
-                  <UButton
-                    type="submit"
-                    :loading="isSubmitting"
-                    :disabled="!isFormValid"
-                  >
-                    Review Versturen
-                  </UButton>
-                </div>
-              </template>
+              <div class="flex justify-end gap-3">
+                <UButton type="button" variant="ghost" @click="resetForm">
+                  Reset
+                </UButton>
+                <UButton type="submit" :loading="isSubmitting">
+                  Review Versturen
+                </UButton>
+              </div>
             </UForm>
           </UCard>
         </div>
@@ -278,27 +271,14 @@ const isSubmitting = ref(false);
 
 // Treatment options for dropdown
 const treatmentOptions = [
-  { label: 'Chakra Balancering', value: 'Chakra Balancering' },
-  {
-    label: 'Energetische Healing Sessie',
-    value: 'Energetische Healing Sessie',
-  },
-  { label: 'Reiki Behandeling', value: 'Reiki Behandeling' },
-  { label: 'Ontspanningsmassage', value: 'Ontspanningsmassage' },
-  { label: 'Therapeutische Massage', value: 'Therapeutische Massage' },
-  { label: 'Hot Stone Massage', value: 'Hot Stone Massage' },
-  { label: 'Zwangerschapsmassage', value: 'Zwangerschapsmassage' },
+  'Chakra Balancering',
+  'Energetische Healing Sessie',
+  'Reiki Behandeling',
+  'Ontspanningsmassage',
+  'Therapeutische Massage',
+  'Hot Stone Massage',
+  'Zwangerschapsmassage',
 ];
-
-// Form validation
-const isFormValid = computed(() => {
-  try {
-    reviewSchema.parse(reviewForm);
-    return true;
-  } catch {
-    return false;
-  }
-});
 
 // Composables
 const { submitReview } = useReviews();
@@ -375,7 +355,7 @@ const onSubmit = async () => {
         description:
           'Bedankt voor je review. Deze wordt binnenkort gepubliceerd na controle.',
         icon: 'i-mdi-check-circle',
-        color: 'green',
+        color: 'success',
       });
       resetForm();
       // Refresh stats after successful submission
@@ -386,7 +366,7 @@ const onSubmit = async () => {
         description:
           result.error || 'Er is iets misgegaan. Probeer het later opnieuw.',
         icon: 'i-mdi-alert-circle',
-        color: 'red',
+        color: 'error',
       });
     }
   } catch (error) {
@@ -395,7 +375,7 @@ const onSubmit = async () => {
       title: 'Fout bij versturen',
       description: 'Er is iets misgegaan. Probeer het later opnieuw.',
       icon: 'i-mdi-alert-circle',
-      color: 'red',
+      color: 'error',
     });
   } finally {
     isSubmitting.value = false;

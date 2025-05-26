@@ -1,5 +1,6 @@
+import { serverSupabaseServiceRole } from '#supabase/server';
 export default defineEventHandler(async (event) => {
-  const supabase = useSupabaseServiceRole();
+  const supabase = serverSupabaseServiceRole(event);
 
   try {
     const { data, error } = await supabase
@@ -20,7 +21,7 @@ export default defineEventHandler(async (event) => {
         approved: data.approved || 0,
         pending: data.pending || 0,
         rejected: data.rejected || 0,
-        averageRating: parseFloat(data.average_rating) || 0,
+        averageRating: parseFloat(data.average_rating!.toString()) || 0,
       },
     };
   } catch (error: any) {

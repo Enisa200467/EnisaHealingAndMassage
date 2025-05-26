@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { serverSupabaseServiceRole } from '#supabase/server';
 
 const reviewSubmissionSchema = z.object({
   name: z.string().min(2, 'Naam moet minimaal 2 karakters lang zijn'),
@@ -9,9 +10,9 @@ const reviewSubmissionSchema = z.object({
 });
 
 export default defineEventHandler(async (event) => {
-  const supabase = useSupabaseServiceRole();
+  const supabase = serverSupabaseServiceRole(event);
 
-  if (getMethod(event) === 'POST') {
+  if (event.method === 'POST') {
     try {
       const body = await readBody(event);
       const validatedData = reviewSubmissionSchema.parse(body);
