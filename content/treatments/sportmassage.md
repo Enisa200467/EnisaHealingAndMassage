@@ -5,7 +5,7 @@ duration: '50 minuten'
 price: '€ 75'
 intensity: 4
 intensityLabel: 'Stevig (Diepe druk voor sporters)'
-icon: 'i-heroicons-bolt'
+icon: 'i-mdi-lightning-bolt'
 category: 'massage'
 ---
 
@@ -17,7 +17,7 @@ duration: 50 minuten
 price: € 75
 intensity: 4
 intensityLabel: Stevig (Diepe druk voor sporters)
-icon: i-heroicons-bolt
+icon: i-mdi-lightning-bolt
 ---
 ::
 
@@ -99,7 +99,7 @@ Studies tonen aan dat sportmassage:
 ::infoBox
 ---
 type: warning
-icon: i-heroicons-exclamation-triangle
+icon: i-mdi-alert
 title: Contra-indicaties
 ---
 

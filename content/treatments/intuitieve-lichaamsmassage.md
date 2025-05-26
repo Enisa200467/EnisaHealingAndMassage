@@ -5,7 +5,7 @@ duration: '90 minuten'
 price: '€ 95'
 intensity: 2
 intensityLabel: 'Zacht (Intuïtief en volgend)'
-icon: 'i-heroicons-heart'
+icon: 'i-mdi-heart'
 category: 'healing'
 ---
 
@@ -17,7 +17,7 @@ duration: 90 minuten
 price: € 95
 intensity: 2
 intensityLabel: Zacht (Intuïtief en volgend)
-icon: i-heroicons-heart
+icon: i-mdi-heart
 ---
 ::
 
@@ -100,7 +100,7 @@ Na een intuïtieve massage is het belangrijk om tijd te nemen voor integratie. D
 ::infoBox
 ---
 type: info
-icon: i-heroicons-heart
+icon: i-mdi-heart
 title: Voorbereiding en intentie
 ---
 
@@ -117,7 +117,7 @@ Voor de massage kunnen we samen een intentie zetten voor wat je wilt ervaren of 
 ::infoBox
 ---
 type: warning
-icon: i-heroicons-shield-check
+icon: i-mdi-shield-check
 title: Veiligheid en professionaliteit
 ---
 

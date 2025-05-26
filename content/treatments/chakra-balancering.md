@@ -5,7 +5,7 @@ duration: '60 minuten'
 price: '€ 70'
 intensity: 1
 intensityLabel: 'Zeer Zacht (Energetisch werk)'
-icon: 'i-heroicons-sparkles'
+icon: 'i-mdi-sparkles'
 category: 'healing'
 ---
 
@@ -17,7 +17,7 @@ duration: 60 minuten
 price: € 70
 intensity: 1
 intensityLabel: Zeer Zacht (Energetisch werk)
-icon: i-heroicons-sparkles
+icon: i-mdi-sparkles
 ---
 ::
 

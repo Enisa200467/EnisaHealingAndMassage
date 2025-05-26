@@ -44,8 +44,8 @@ defineProps<{
               :key="index"
               class="flex items-start gap-3"
             >
-              <UIcon 
-                name="i-heroicons-check-circle" 
+              <UIcon
+name="i-mdi-check-circle" 
                 class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0"
               />
               <span class="text-gray-700">{{ item }}</span>

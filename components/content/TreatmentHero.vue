@@ -52,7 +52,7 @@ const intensityData = computed(() => {
           <UCard class="shadow-lg border border-primary-100">
             <template #header>
               <div class="flex items-center gap-2">
-                <UIcon name="i-heroicons-clock" class="w-5 h-5 text-primary-500" />
+                <UIcon name="i-mdi-clock" class="w-5 h-5 text-primary-500" />
                 <h3 class="font-semibold text-gray-900">Behandelingsdetails</h3>
               </div>
             </template>
@@ -93,7 +93,7 @@ const intensityData = computed(() => {
                 size="lg" 
                 block
                 :to="routes.pages.booking"
-                icon="i-heroicons-calendar"
+                icon="i-mdi-calendar"
               >
                 Afspraak maken
               </UButton>

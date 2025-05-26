@@ -5,7 +5,7 @@ duration: '60 minuten'
 price: '€ 65'
 intensity: 2
 intensityLabel: 'Zacht tot Medium (naar wens aanpasbaar)'
-icon: 'i-heroicons-user-group'
+icon: 'i-mdi-account-group'
 category: 'massage'
 ---
 
@@ -17,7 +17,7 @@ duration: 60 minuten
 price: € 65
 intensity: 2
 intensityLabel: Zacht tot Medium (naar wens aanpasbaar)
-icon: i-heroicons-user-group
+icon: i-mdi-account-group
 ---
 ::
 

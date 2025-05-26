@@ -31,7 +31,7 @@
             color="primary"
             size="xl"
             :to="routes.pages.booking"
-            icon="i-heroicons-calendar-days"
+            icon="i-mdi-calendar"
             label="Boek Nu Je Sessie"
             aria-label="Boek nu direct je sessie"
           />
@@ -41,7 +41,7 @@
             size="xl"
             variant="solid"
             color="secondary"
-            icon="i-heroicons-sparkles"
+            icon="i-mdi-sparkles"
             label="Ontdek de Behandelingen"
             aria-label="Scroll naar de beschikbare behandelingen"
           />
@@ -92,7 +92,7 @@
             </p>
             <UButton
               variant="link"
-              icon="i-heroicons-arrow-right-circle"
+              icon="i-mdi-arrow-right-circle"
               :to="routes.pages.about"
               label="Lees meer over mijn aanpak"
               :padded="false"
@@ -132,11 +132,15 @@
                   variant="outline"
                 >
                   <template #header>
-                    <h3 class="text-lg font-semibold leading-6">
-                      <UIcon :name="massage.icon" class="mr-2" />{{
-                        massage.title
-                      }}
-                    </h3>
+                    <div class="flex items-center">
+                      <UIcon
+                        :name="massage.icon"
+                        class="mr-2 text-primary-500"
+                      />
+                      <h3 class="text-lg font-semibold leading-6">
+                        {{ massage.title }}
+                      </h3>
+                    </div>
                   </template>
 
                   <p class="text-sm text-gray-600 grow">
@@ -179,17 +183,26 @@ const routes = useRoutes();
 // Fetch dynamic treatment data
 const { data: allTreatments } = await useAsyncData(
   'homepage-treatments',
-  async () => {
+  async (): Promise<
+    {
+      id: string;
+      slug: string;
+      title: string;
+      description: string;
+      icon: string;
+      category: string;
+    }[]
+  > => {
     // Get all treatments with full metadata
     const treatments = await queryCollection('treatments').all();
 
     return treatments.map((treatment) => ({
-      id: treatment._id || treatment.slug,
+      id: treatment.id,
       slug: treatment.path,
       title: treatment.title,
       description: treatment.description,
-      icon: treatment.meta.icon || 'i-heroicons-sparkles',
-      category: treatment.meta.category || 'healing',
+      icon: (treatment.meta.icon as string) || 'i-mdi-sparkles',
+      category: (treatment.meta.category as string) || 'healing',
     }));
   }
 );

@@ -10,6 +10,28 @@ export default defineAppConfig({
       neutral: 'gray',
     },
 
+    // Configure default MDI icons for UI components
+    icons: {
+      arrowLeft: 'i-mdi-arrow-left',
+      arrowRight: 'i-mdi-arrow-right',
+      check: 'i-mdi-check',
+      chevronDoubleLeft: 'i-mdi-chevron-double-left',
+      chevronDoubleRight: 'i-mdi-chevron-double-right',
+      chevronDown: 'i-mdi-chevron-down',
+      chevronLeft: 'i-mdi-chevron-left',
+      chevronRight: 'i-mdi-chevron-right',
+      chevronUp: 'i-mdi-chevron-up',
+      close: 'i-mdi-close',
+      ellipsis: 'i-mdi-dots-horizontal',
+      external: 'i-mdi-open-in-new',
+      folder: 'i-mdi-folder',
+      folderOpen: 'i-mdi-folder-open',
+      loading: 'i-mdi-loading',
+      minus: 'i-mdi-minus',
+      plus: 'i-mdi-plus',
+      search: 'i-mdi-magnify',
+    },
+
     // Set the neutral/gray color family to 'neutral'.
     // 'neutral' in Tailwind CSS provides warmer grays compared to the default 'cool' gray,
     // fitting the "Warm Stone Grey/Taupe" and "Creamy Off-White" requirements.

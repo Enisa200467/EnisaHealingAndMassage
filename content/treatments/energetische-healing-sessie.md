@@ -5,7 +5,7 @@ duration: '75 minuten'
 price: '€ 85'
 intensity: 1
 intensityLabel: 'Zeer Zacht (Energetisch werk)'
-icon: 'i-heroicons-sun'
+icon: 'i-mdi-weather-sunny'
 category: 'healing'
 ---
 
@@ -17,7 +17,7 @@ duration: 75 minuten
 price: € 85
 intensity: 1
 intensityLabel: Zeer Zacht (Energetisch werk)
-icon: i-heroicons-sun
+icon: i-mdi-weather-sunny
 ---
 ::
 
@@ -95,7 +95,7 @@ Hoewel energetische healing nog niet volledig wetenschappelijk bewezen is, laten
 ::infoBox
 ---
 type: warning
-icon: i-heroicons-exclamation-triangle
+icon: i-mdi-alert
 title: Belangrijke informatie
 ---
 

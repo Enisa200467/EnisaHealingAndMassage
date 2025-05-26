@@ -22,7 +22,7 @@
             class="ml-4"
             size="md"
             :to="routes.pages.booking"
-            icon="i-heroicons-calendar-days"
+            icon="i-mdi-calendar"
             :label="'Boek Nu'"
           />
         </template>
@@ -32,7 +32,7 @@
         <UButton
           color="primary"
           variant="ghost"
-          icon="i-heroicons-bars-3"
+          icon="i-mdi-menu"
           aria-label="Open Menu"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
         />
@@ -47,7 +47,7 @@
           block
           size="md"
           :to="routes.pages.booking"
-          icon="i-heroicons-calendar-days"
+          icon="i-mdi-calendar"
           :label="'Boek Nu'"
           @click="isMobileMenuOpen = false"
         />
@@ -84,33 +84,33 @@ const massageNavEntries: NavigationMenuItem[] =
 const navigationItems = ref<NavigationMenuItem[]>([
   {
     label: 'Home',
-    icon: 'i-heroicons-home',
+    icon: 'i-mdi-home',
     to: routes.pages.home,
   },
   {
     label: 'Over Mij',
-    icon: 'i-heroicons-user',
+    icon: 'i-mdi-account',
     to: routes.pages.about,
   },
   {
     label: 'Behandelingen',
-    icon: 'i-heroicons-sparkles',
+    icon: 'i-mdi-sparkles',
     children: [
       {
         label: 'Healing',
-        icon: 'i-heroicons-sparkles',
+        icon: 'i-mdi-meditation',
         children: healingNavEntries,
       },
       {
         label: 'Massage',
-        icon: 'i-heroicons-hand-raised',
+        icon: 'i-mdi-hand-back-right',
         children: massageNavEntries,
       },
     ],
   },
   {
     label: 'Contact',
-    icon: 'i-heroicons-envelope',
+    icon: 'i-mdi-email',
     to: routes.pages.contact,
   },
 ]);

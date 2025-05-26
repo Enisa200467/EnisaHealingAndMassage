@@ -108,7 +108,7 @@ Example patterns:
 ```markdown
 ## ::infoBox
 
-icon: i-heroicons-clock
+icon: i-mdi-clock
 title: Behandelingsdetails
 
 ---
@@ -146,7 +146,7 @@ subtitle: Treatment subtitle
 duration: 60 minuten
 price: € 70
 intensity: Zeer Zacht
-icon: i-heroicons-sparkles
+icon: i-mdi-sparkles
 
 ---
 

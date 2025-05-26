@@ -23,11 +23,11 @@ const isExpanded = ref(props.expanded);
           @click="isExpanded = !isExpanded"
         >
           <div class="flex items-center gap-3">
-            <UIcon name="i-heroicons-information-circle" size="24" class="text-primary-500" />
+            <UIcon name="i-mdi-information" size="24" class="text-primary-500" />
             <h2 class="text-xl font-semibold">{{ title }}</h2>
           </div>
           <UIcon 
-            :name="isExpanded ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'" 
+            :name="isExpanded ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'" 
             size="24"
             class="text-primary-500 transition-transform duration-200"
           />

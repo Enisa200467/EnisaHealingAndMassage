@@ -85,7 +85,7 @@
                   variant="link"
                   :padded="false"
                   class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
-                  icon="i-heroicons-calendar-days"
+                  icon="i-mdi-calendar"
                 >
                   Boek Nu
                 </UButton>
@@ -108,10 +108,7 @@
             <span class="font-bold text-primary-600 dark:text-primary-400 ml-1"
               >{{ averageScore }}/5</span
             >
-            <UIcon
-              name="i-heroicons-star-solid"
-              class="w-4 h-4 ml-1 text-yellow-400"
-            />
+            <UIcon name="i-mdi-star" class="w-4 h-4 ml-1 text-yellow-400" />
           </div>
           <UCarousel
             v-if="reviews.length > 0"

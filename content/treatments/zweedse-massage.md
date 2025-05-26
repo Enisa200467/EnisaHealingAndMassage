@@ -5,7 +5,7 @@ duration: '60 minuten'
 price: '€ 70'
 intensity: 3
 intensityLabel: 'Medium (Aangenaam stevige druk)'
-icon: 'i-heroicons-hand-thumb-up'
+icon: 'i-mdi-thumb-up'
 category: 'massage'
 ---
 
@@ -17,7 +17,7 @@ duration: 60 minuten
 price: € 70
 intensity: 3
 intensityLabel: Medium (Aangenaam stevige druk)
-icon: i-heroicons-hand-thumb-up
+icon: i-mdi-thumb-up
 ---
 ::
 
@@ -100,7 +100,7 @@ Onderzoek toont aan dat Zweedse massage effectief is voor:
 ::infoBox
 ---
 type: info
-icon: i-heroicons-information-circle
+icon: i-mdi-information
 title: Voorbereiding en nazorg
 ---
 

@@ -114,9 +114,9 @@ const breadcrumbs = routes.generateBreadcrumbs(
   '/behandelingen/chakra-balancering'
 );
 // Returns: [
-//   { label: 'Home', path: '/', icon: 'i-heroicons-home' },
-//   { label: 'Behandelingen', path: '/behandelingen', icon: 'i-heroicons-sparkles' },
-//   { label: 'Chakra Balancering', path: '/behandelingen/chakra-balancering', icon: 'i-heroicons-document-text' }
+//   { label: 'Home', path: '/', icon: 'i-mdi-home' },
+//   { label: 'Behandelingen', path: '/behandelingen', icon: 'i-mdi-sparkles' },
+//   { label: 'Chakra Balancering', path: '/behandelingen/chakra-balancering', icon: 'i-mdi-file-document' }
 // ]
 ```
 
