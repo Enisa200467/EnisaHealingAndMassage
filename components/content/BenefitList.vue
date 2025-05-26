@@ -2,17 +2,17 @@
   <div class="not-prose">
     <h3
       v-if="title"
-      class="text-xl font-semibold text-gray-900 mb-6"
+      class="text-2xl sm:text-3xl font-bold text-neutral-900 mb-6"
     >
       {{ title }}
     </h3>
-    <ul class="space-y-3">
+    <ul class="space-y-4">
       <li v-for="(item, index) in items" :key="index" class="flex items-start gap-3">
         <UIcon
-name="i-mdi-check-circle"
-          class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0"
+          name="i-mdi-check-circle"
+          class="w-5 h-5 text-green-500 mt-1 flex-shrink-0"
         />
-        <span class="text-gray-700">{{ item }}</span>
+        <span class="text-neutral-700 text-lg">{{ item }}</span>
       </li>
     </ul>
   </div>

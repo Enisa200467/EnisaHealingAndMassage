@@ -196,12 +196,7 @@ const footerLinks = {
     healing: routes.treatments.healing.items,
     massage: routes.treatments.massage.items,
   },
-  info: [
-    { label: 'Veelgestelde Vragen', path: routes.pages.faq },
-    { label: 'Blog', path: routes.pages.blog },
-    // Tarieven is now under Praktijk, so removed from here to avoid duplication if desired
-    // { label: 'Tarieven', path: routes.pages.tarieven },
-  ],
+  info: [{ label: 'Veelgestelde Vragen', path: routes.pages.faq }],
 };
 
 // Placeholder reviews - Replace with your actual data source

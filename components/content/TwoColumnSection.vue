@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <section class="not-prose bg-primary-50 w-full">
-    <UContainer class="py-6 sm:py-12">
+  <section class="not-prose bg-neutral-50 py-16 sm:py-24">
+    <UContainer>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         <slot />
       </div>
