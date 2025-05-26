@@ -43,9 +43,7 @@ const faqItems = ref<AccordionItem[]>([
   <article>
     <UContainer class="my-16 sm:my-12">
       <header class="mb-16 sm:mb-12">
-        <h1
-          class="text-3xl font-bold tracking-tight text-primary-600 dark:text-primary-400 sm:text-4xl"
-        >
+        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
           Veelgestelde Vragen
         </h1>
         <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">

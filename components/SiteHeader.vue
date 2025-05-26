@@ -3,8 +3,8 @@
     <UContainer class="flex items-center justify-between py-2">
       <!-- Logo/Brand Link -->
       <ULink to="/" class="flex items-center" aria-label="Home">
-        <UAvatar src="https://github.com/benjamincanac.png" class="mr-2" />
-        EnisaHealingAndMassage
+        <UAvatar src="https://github.com/benjamincanac.png" class="mr-6" />
+        Enisa Healing & Massage
       </ULink>
 
       <!-- Desktop Navigation & Boek Nu Button -->
@@ -15,8 +15,8 @@
           <UNavigationMenu
             class="ml-4"
             arrow
-            :orientation="'horizontal'"
-            :items="navigationItems"
+            orientation="horizontal"
+            :items="desktopNavItems"
           />
           <UButton
             class="ml-4"
@@ -40,7 +40,7 @@
     </UContainer>
 
     <UCard v-if="isMobileMenuOpen" class="lg:hidden flex flex-col flex-1">
-      <UNavigationMenu :orientation="'vertical'" :items="navigationItems" />
+      <UNavigationMenu :orientation="'vertical'" :items="mobileNavItems" />
 
       <template #footer>
         <UButton
@@ -66,16 +66,17 @@ const healingNavEntries: NavigationMenuItem[] =
   routes.treatments.healing.items.map((item) => ({
     label: routes.slugToTitle(item.slug),
     to: item.path,
+    icon: item.icon || 'i-mdi-meditation', // Default icon if not specified
   }));
 
 const massageNavEntries: NavigationMenuItem[] =
   routes.treatments.massage.items.map((item) => ({
     label: routes.slugToTitle(item.slug),
     to: item.path,
+    icon: item.icon || 'i-mdi-hand-back-right', // Default icon if not specified
   }));
 
-// Create navigation items with static treatment data
-const navigationItems = ref<NavigationMenuItem[]>([
+const mobileNavItems = ref<NavigationMenuItem[]>([
   {
     label: 'Home',
     icon: 'i-mdi-home',
@@ -106,6 +107,40 @@ const navigationItems = ref<NavigationMenuItem[]>([
     label: 'Contact',
     icon: 'i-mdi-email',
     to: routes.pages.contact,
+  },
+  {
+    label: 'Reviews',
+    icon: 'i-mdi-star',
+    to: routes.pages.reviews,
+  },
+]);
+
+// Create navigation items with static treatment data
+const desktopNavItems = ref<NavigationMenuItem[]>([
+  {
+    label: 'Home',
+    icon: 'i-mdi-home',
+    to: routes.pages.home,
+  },
+  {
+    label: 'Over Mij',
+    icon: 'i-mdi-account',
+    to: routes.pages.about,
+  },
+  {
+    label: 'Behandelingen',
+    icon: 'i-mdi-sparkles',
+    children: [...healingNavEntries, ...massageNavEntries],
+  },
+  {
+    label: 'Contact',
+    icon: 'i-mdi-email',
+    to: routes.pages.contact,
+  },
+  {
+    label: 'Reviews',
+    icon: 'i-mdi-star',
+    to: routes.pages.reviews,
   },
 ]);
 

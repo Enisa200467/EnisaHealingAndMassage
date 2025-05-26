@@ -24,7 +24,7 @@ const isExpanded = ref(props.expanded);
         >
           <div class="flex items-center gap-3">
             <UIcon name="i-mdi-information" size="24" class="text-primary-500" />
-            <h2 class="text-xl font-semibold">{{ title }}</h2>
+            <h2 class="text-xl font-semibold text-gray-900">{{ title }}</h2>
           </div>
           <UIcon 
             :name="isExpanded ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'" 
@@ -58,7 +58,6 @@ const isExpanded = ref(props.expanded);
 <style scoped>
 /* Use :deep() to style nested markdown content */
 .additional-info :deep(h3) {
-  color: rgb(126 34 206); /* primary-600 equivalent */
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -103,7 +102,6 @@ const isExpanded = ref(props.expanded);
 }
 
 .additional-info :deep(.prose h3) {
-  color: rgb(126 34 206);
   font-size: 1.75rem;
   font-weight: 700;
   margin-top: 2rem;

@@ -196,7 +196,10 @@ const footerLinks = {
     healing: routes.treatments.healing.items,
     massage: routes.treatments.massage.items,
   },
-  info: [{ label: 'Veelgestelde Vragen', path: routes.pages.faq }],
+  info: [
+    { label: 'Veelgestelde Vragen', path: routes.pages.faq },
+    { label: 'Reviews & Ervaringen', path: routes.pages.reviews },
+  ],
 };
 
 // Placeholder reviews - Replace with your actual data source
