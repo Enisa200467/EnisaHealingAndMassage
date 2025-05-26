@@ -14,6 +14,7 @@ This is a **mobile-first Nuxt 3 website** for a healing and massage therapy prac
 - **@nuxt/icon** for iconography
 - **@nuxtjs/device** for device detection
 - **Tailwind CSS** for styling
+- **Bun** for package management and build tool
 
 ## Development Principless
 

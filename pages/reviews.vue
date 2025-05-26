@@ -204,7 +204,7 @@
 
               <template #footer>
                 <p class="text-xs text-neutral-400 dark:text-neutral-500">
-                  {{ formatDate(review.date) }}
+                  {{ formatDate(review.created_at) }}
                 </p>
               </template>
             </UCard>
@@ -243,6 +243,7 @@
 
 <script setup lang="ts">
 import { z } from 'zod';
+import type { Review, ReviewStats } from '~/types/reviews';
 
 // SEO Meta
 useSeoMeta({
@@ -299,68 +300,25 @@ const isFormValid = computed(() => {
   }
 });
 
-// Mock reviews data (in a real app, this would come from an API)
-const allReviews = ref([
-  {
-    id: 1,
-    name: 'Sarah',
-    treatment: 'Chakra Balancering',
-    rating: 5,
-    review:
-      'Fantastische ervaring! Ik voelde me na de behandeling veel rustiger en meer in balans. Enisa heeft een zeer ontspannende manier van behandelen.',
-    date: new Date('2024-01-15'),
-  },
-  {
-    id: 2,
-    name: 'Mark',
-    treatment: 'Therapeutische Massage',
-    rating: 5,
-    review:
-      'Professionele aanpak en zeer effectief voor mijn rugklachten. Enisa weet precies welke technieken te gebruiken om spanning weg te nemen.',
-    date: new Date('2024-01-10'),
-  },
-  {
-    id: 3,
-    name: 'Linda',
-    treatment: 'Reiki Behandeling',
-    rating: 4,
-    review:
-      'Een bijzondere ervaring die me veel rust heeft gebracht. De behandeling was heel ontspannend en ik sliep die nacht veel beter.',
-    date: new Date('2024-01-05'),
-  },
-  {
-    id: 4,
-    name: 'Johan',
-    treatment: 'Hot Stone Massage',
-    rating: 5,
-    review:
-      'Geweldige massage! De warme stenen waren heel ontspannend en mijn spieren voelden daarna veel losser. Zeker een aanrader.',
-    date: new Date('2023-12-28'),
-  },
-  {
-    id: 5,
-    name: 'Emma',
-    treatment: 'Ontspanningsmassage',
-    rating: 5,
-    review:
-      'Perfect voor na een stressvolle periode. Enisa heeft gouden handen en creëert een zeer rustgevende sfeer. Kom zeker terug!',
-    date: new Date('2023-12-20'),
-  },
-  {
-    id: 6,
-    name: 'Peter',
-    treatment: 'Energetische Healing Sessie',
-    rating: 4,
-    review:
-      'Interessante ervaring waarbij ik veel energie voelde stromen. Voelde me daarna vernieuwd en vol energie. Unieke behandeling.',
-    date: new Date('2023-12-15'),
-  },
-]);
+// Composables
+const { submitReview } = useReviews();
+const toast = useToast();
+
+// Reviews data
+const allReviews = ref<Review[]>([]);
+const reviewStats = ref<ReviewStats>({
+  total: 0,
+  approved: 0,
+  pending: 0,
+  rejected: 0,
+  averageRating: 0,
+});
 
 // Reviews display state
 const reviewsPerPage = 6;
 const currentPage = ref(1);
 const loadingMore = ref(false);
+const isLoadingReviews = ref(true);
 
 const displayedReviews = computed(() => {
   return allReviews.value.slice(0, currentPage.value * reviewsPerPage);
@@ -371,37 +329,68 @@ const hasMoreReviews = computed(() => {
 });
 
 const averageRating = computed(() => {
-  if (allReviews.value.length === 0) return 0;
-  const sum = allReviews.value.reduce((acc, review) => acc + review.rating, 0);
-  return sum / allReviews.value.length;
+  return reviewStats.value.averageRating;
 });
+
+// Load reviews data
+const loadReviews = async () => {
+  try {
+    isLoadingReviews.value = true;
+    const response = await $fetch<{ data: { reviews: Review[] } }>(
+      '/api/reviews'
+    );
+    allReviews.value = response.data.reviews;
+  } catch (error) {
+    console.error('Error loading reviews:', error);
+  } finally {
+    isLoadingReviews.value = false;
+  }
+};
+
+// Load review statistics
+const loadStats = async () => {
+  try {
+    const { data } = await $fetch<{ data: ReviewStats }>('/api/reviews/stats');
+    reviewStats.value = data;
+  } catch (error) {
+    console.error('Error loading stats:', error);
+  }
+};
+
+// Refresh stats after successful submission
+const refreshStats = async () => {
+  await loadStats();
+};
 
 // Methods
 const onSubmit = async () => {
   isSubmitting.value = true;
 
   try {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const result = await submitReview(reviewForm);
 
-    // In a real app, you would send the data to your backend
-    console.log('Review submitted:', reviewForm);
-
-    // Show success message
-    const toast = useToast();
-    toast.add({
-      title: 'Review verzonden!',
-      description:
-        'Bedankt voor je review. Deze wordt binnenkort gepubliceerd na controle.',
-      icon: 'i-mdi-check-circle',
-      color: 'green',
-    });
-
-    // Reset form
-    resetForm();
+    if (result.success) {
+      toast.add({
+        title: 'Review verzonden!',
+        description:
+          'Bedankt voor je review. Deze wordt binnenkort gepubliceerd na controle.',
+        icon: 'i-mdi-check-circle',
+        color: 'green',
+      });
+      resetForm();
+      // Refresh stats after successful submission
+      await refreshStats();
+    } else {
+      toast.add({
+        title: 'Fout bij versturen',
+        description:
+          result.error || 'Er is iets misgegaan. Probeer het later opnieuw.',
+        icon: 'i-mdi-alert-circle',
+        color: 'red',
+      });
+    }
   } catch (error) {
     console.error('Error submitting review:', error);
-    const toast = useToast();
     toast.add({
       title: 'Fout bij versturen',
       description: 'Er is iets misgegaan. Probeer het later opnieuw.',
@@ -433,11 +422,16 @@ const loadMoreReviews = async () => {
   loadingMore.value = false;
 };
 
-const formatDate = (date: Date) => {
+const formatDate = (date: string) => {
   return new Intl.DateTimeFormat('nl-NL', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(date);
+  }).format(new Date(date));
 };
+
+// Load data on mount
+onMounted(async () => {
+  await Promise.all([loadReviews(), loadStats()]);
+});
 </script>

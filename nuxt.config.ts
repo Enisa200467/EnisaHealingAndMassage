@@ -13,10 +13,19 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/device',
+    '@nuxtjs/supabase',
   ],
   ui: {
     colorMode: false,
   },
-
+  supabase: {
+    redirectOptions: {
+      login: '/login',
+      callback: '/admin',
+      include: ['/admin(/*)?'],
+      exclude: [],
+      saveRedirectToCookie: false,
+    },
+  },
   css: ['~/assets/css/main.css'],
 });
