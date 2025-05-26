@@ -88,9 +88,21 @@ export const useRoutes = () => {
     },
   } as const;
 
+  /**
+   * Converts a slug string to a properly formatted title
+   * (e.g. 'chakra-balancering' → 'Chakra Balancering')
+   */
+  const slugToTitle = (slug: string): string => {
+    return slug
+      .split('-')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   return {
     pages,
     treatments,
+    slugToTitle,
   };
 };
 

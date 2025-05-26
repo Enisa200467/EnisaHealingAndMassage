@@ -64,19 +64,13 @@ const routes = useRoutes();
 // Statically define treatment navigation items
 const healingNavEntries: NavigationMenuItem[] =
   routes.treatments.healing.items.map((item) => ({
-    label: item.slug
-      .split('-')
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(' '), // Simple title from slug
+    label: routes.slugToTitle(item.slug),
     to: item.path,
   }));
 
 const massageNavEntries: NavigationMenuItem[] =
   routes.treatments.massage.items.map((item) => ({
-    label: item.slug
-      .split('-')
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(' '), // Simple title from slug
+    label: routes.slugToTitle(item.slug),
     to: item.path,
   }));
 

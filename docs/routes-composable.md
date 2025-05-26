@@ -85,6 +85,15 @@ const valid = routes.routeExists('/over-mij'); // true
 const invalid = routes.routeExists('/non-existent'); // false
 ```
 
+### `slugToTitle(slug: string)`
+
+Convert a slug string to a properly formatted title:
+
+```typescript
+const title = routes.slugToTitle('chakra-balancering');
+// Returns: 'Chakra Balancering'
+```
+
 ## Navigation Helpers
 
 ### `getTreatmentNavigationItems()`

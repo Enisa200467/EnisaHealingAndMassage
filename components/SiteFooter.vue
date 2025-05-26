@@ -11,16 +11,49 @@
             <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
               Behandelingen
             </h4>
-            <ul class="space-y-2">
-              <li v-for="(item, index) in footerLinks.services" :key="index">
-                <ULink
-                  :to="item.path"
-                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+            <!-- Healing category -->
+            <div class="mb-3">
+              <h5
+                class="text-xs font-bold text-neutral-700 dark:text-neutral-400 mb-1"
+              >
+                {{ routes.treatments.healing.title }}
+              </h5>
+              <ul class="space-y-1">
+                <li
+                  v-for="(item, index) in footerLinks.services.healing"
+                  :key="index"
                 >
-                  {{ item.label }}
-                </ULink>
-              </li>
-            </ul>
+                  <ULink
+                    :to="item.path"
+                    class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+                  >
+                    {{ item.title }}
+                  </ULink>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Massage category -->
+            <div>
+              <h5
+                class="text-xs font-bold text-neutral-700 dark:text-neutral-400 mb-1"
+              >
+                {{ routes.treatments.massage.title }}
+              </h5>
+              <ul class="space-y-1">
+                <li
+                  v-for="(item, index) in footerLinks.services.massage"
+                  :key="index"
+                >
+                  <ULink
+                    :to="item.path"
+                    class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+                  >
+                    {{ item.title }}
+                  </ULink>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <!-- Column 2: Praktijk Info -->
@@ -158,13 +191,11 @@ const routes = useRoutes();
 
 // Statically define footer links based on routes
 const footerLinks = {
-  services: Object.entries(routes.treatments).map(([slug, path]) => ({
-    label: slug
-      .split('-')
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(' '), // Simple title from slug
-    path,
-  })),
+  // Group services by category (healing and massage)
+  services: {
+    healing: routes.treatments.healing.items,
+    massage: routes.treatments.massage.items,
+  },
   info: [
     { label: 'Veelgestelde Vragen', path: routes.pages.faq },
     { label: 'Blog', path: routes.pages.blog },
