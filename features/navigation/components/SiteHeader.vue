@@ -18,11 +18,15 @@
             orientation="horizontal"
             :items="desktopNavItems"
           />
+
           <UButton
+            id="Setmore_button_iframe"
             class="ml-4"
             size="md"
-            :to="routes.pages.booking"
+            as="a"
+            href="https://enisahealingmassage.setmore.com"
             icon="i-mdi-calendar"
+            aria-label="Boek een afspraak met Enisa Healing & Massage"
             :label="'Boek Nu'"
           />
         </template>
@@ -44,9 +48,11 @@
 
       <template #footer>
         <UButton
+          id="Setmore_button_iframe"
           block
           size="md"
-          :to="routes.pages.booking"
+          as="a"
+          href="https://enisahealingmassage.setmore.com"
           icon="i-mdi-calendar"
           :label="'Boek Nu'"
           @click="isMobileMenuOpen = false"
