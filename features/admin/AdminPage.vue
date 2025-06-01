@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useAdminReviews } from './composables/useAdminReviews';
-
 // SEO Meta
 useSeoMeta({
   title: 'Admin Dashboard - Enisa Healing & Massage',
@@ -24,15 +22,12 @@ watch(
   { immediate: true }
 );
 
-const { getAllReviews, getDetailedStats } = useAdminReviews();
-
 // Only render if user is authenticated
 const isAuthenticated = computed(() => !!user.value);
 </script>
 
 <template>
   <div v-if="isAuthenticated">
-    <AdminDashboard />
     <AdminReviewsManager />
   </div>
 

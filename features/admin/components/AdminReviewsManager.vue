@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Review, ReviewStats } from '~/types/reviews';
+import type { Review, ReviewStats } from '~/features/reviews/types/reviews';
 
 // SEO Meta
 useSeoMeta({

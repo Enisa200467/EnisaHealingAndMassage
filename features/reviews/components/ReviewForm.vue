@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import type { ReviewFormData } from '../types/reviews';
+import type { ReviewSubmission } from '../types/reviews';
 
 const emit = defineEmits<{
-  submit: [data: ReviewFormData];
+  submit: [data: ReviewSubmission];
 }>();
 
-const formData = reactive<ReviewFormData>({
+const formData = reactive<ReviewSubmission>({
   name: '',
   email: '',
   rating: 5,
   treatment: '',
-  content: '',
+  review: '',
 });
 
 const treatments = [
@@ -60,32 +60,32 @@ const onSubmit = async () => {
     <form class="space-y-6" @submit.prevent="onSubmit">
       <!-- Personal Information -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <UFormGroup label="Naam" required>
+        <UFormField label="Naam" required>
           <UInput v-model="formData.name" placeholder="Je naam" required />
-        </UFormGroup>
+        </UFormField>
 
-        <UFormGroup label="E-mailadres" required>
+        <UFormField label="E-mailadres" required>
           <UInput
             v-model="formData.email"
             type="email"
             placeholder="je@email.nl"
             required
           />
-        </UFormGroup>
+        </UFormField>
       </div>
 
       <!-- Rating -->
-      <UFormGroup label="Beoordeling" required>
+      <UFormField label="Beoordeling" required>
         <div class="flex items-center gap-4">
           <StarRating v-model="formData.rating" :editable="true" size="lg" />
           <span class="text-sm text-neutral-600">
             {{ formData.rating }} van 5 sterren
           </span>
         </div>
-      </UFormGroup>
+      </UFormField>
 
       <!-- Treatment -->
-      <UFormGroup
+      <UFormField
         label="Behandeling"
         description="Welke behandeling heb je ondergaan?"
       >
@@ -94,12 +94,12 @@ const onSubmit = async () => {
           :options="treatments"
           placeholder="Selecteer een behandeling"
         />
-      </UFormGroup>
+      </UFormField>
 
       <!-- Review Content -->
-      <UFormGroup label="Je Review" required>
+      <UFormField label="Je Review" required>
         <UTextarea
-          v-model="formData.content"
+          v-model="formData.review"
           placeholder="Vertel over je ervaring met de behandeling..."
           :rows="6"
           required
@@ -109,7 +109,7 @@ const onSubmit = async () => {
             Deel je eerlijke ervaring om anderen te helpen bij hun keuze.
           </p>
         </template>
-      </UFormGroup>
+      </UFormField>
 
       <!-- Privacy Notice -->
       <div class="bg-blue-50 p-4 rounded-lg">
