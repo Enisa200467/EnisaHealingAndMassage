@@ -2,13 +2,26 @@
   <div class="bg-primary-50 sticky top-0 z-50 shadow-md">
     <UContainer class="flex items-center justify-between py-2">
       <!-- Logo/Brand Link -->
-      <ULink to="/" class="flex items-center" aria-label="Home">
-        <UAvatar src="https://github.com/benjamincanac.png" class="mr-6" />
-        Enisa Healing & Massage
+      <ULink
+        to="/"
+        class="flex items-center"
+        aria-label="Naar homepage - Enisa Healing & Massage"
+      >
+        <UAvatar
+          src="https://github.com/benjamincanac.png"
+          class="mr-6"
+          alt="Enisa profiel foto"
+        />
+        <span class="font-semibold text-lg">Enisa Healing & Massage</span>
       </ULink>
 
       <!-- Desktop Navigation & Boek Nu Button -->
-      <div class="hidden lg:flex items-center">
+      <nav
+        id="navigation"
+        class="hidden lg:flex items-center"
+        role="navigation"
+        aria-label="Hoofdnavigatie"
+      >
         <USeparator orientation="vertical" class="h-10 mx-2" />
 
         <template v-if="$device.isDesktop">
@@ -17,6 +30,7 @@
             arrow
             orientation="horizontal"
             :items="desktopNavItems"
+            aria-label="Desktop navigatiemenu"
           />
 
           <UButton
@@ -26,25 +40,39 @@
             as="a"
             href="https://enisahealingmassage.setmore.com"
             icon="i-mdi-calendar"
-            aria-label="Boek een afspraak met Enisa Healing & Massage"
+            aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem"
             :label="'Boek Nu'"
           />
         </template>
-      </div>
+      </nav>
 
       <div class="lg:hidden flex items-center">
         <UButton
           color="primary"
           variant="ghost"
           icon="i-mdi-menu"
-          aria-label="Open Menu"
-          @click="isMobileMenuOpen = !isMobileMenuOpen"
+          :aria-label="
+            isMobileMenuOpen ? 'Sluit navigatiemenu' : 'Open navigatiemenu'
+          "
+          :aria-expanded="isMobileMenuOpen"
+          aria-controls="mobile-menu"
+          @click="toggleMobileMenu"
         />
       </div>
     </UContainer>
 
-    <UCard v-if="isMobileMenuOpen" class="lg:hidden flex flex-col flex-1">
-      <UNavigationMenu :orientation="'vertical'" :items="mobileNavItems" />
+    <UCard
+      v-if="isMobileMenuOpen"
+      id="mobile-menu"
+      class="lg:hidden flex flex-col flex-1"
+      role="navigation"
+      aria-label="Mobiele navigatie"
+    >
+      <UNavigationMenu
+        :orientation="'vertical'"
+        :items="mobileNavItems"
+        aria-label="Mobiel navigatiemenu"
+      />
 
       <template #footer>
         <UButton
@@ -54,8 +82,9 @@
           as="a"
           href="https://enisahealingmassage.setmore.com"
           icon="i-mdi-calendar"
+          aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem"
           :label="'Boek Nu'"
-          @click="isMobileMenuOpen = false"
+          @click="closeMobileMenu"
         />
       </template>
     </UCard>
@@ -150,6 +179,43 @@ const desktopNavItems = ref<NavigationMenuItem[]>([
   },
 ]);
 
-// State for mobile menu visibility
+// State for mobile menu visibility with enhanced accessibility
 const isMobileMenuOpen = ref(false);
+
+// Enhanced mobile menu toggle with focus management
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+
+  // Focus management for accessibility
+  if (isMobileMenuOpen.value) {
+    nextTick(() => {
+      // Focus first menu item when opening
+      const firstMenuItem = document.querySelector(
+        '#mobile-menu button, #mobile-menu a'
+      );
+      if (firstMenuItem) {
+        (firstMenuItem as HTMLElement).focus();
+      }
+    });
+  }
+};
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false;
+};
+
+// Close mobile menu when escape key is pressed
+onMounted(() => {
+  const handleEscape = (event: KeyboardEvent) => {
+    if (event.key === 'Escape' && isMobileMenuOpen.value) {
+      closeMobileMenu();
+    }
+  };
+
+  document.addEventListener('keydown', handleEscape);
+
+  onUnmounted(() => {
+    document.removeEventListener('keydown', handleEscape);
+  });
+});
 </script>

@@ -17,7 +17,7 @@ defineProps<{
             <NuxtImg
               v-if="image"
               :src="image"
-              :alt="imageAlt || 'Behandeling'"
+              :alt="imageAlt || `Afbeelding van ${title || 'behandeling'}`"
               class="w-full h-64 sm:h-80 lg:h-64 object-cover rounded-xl shadow-lg"
               format="webp"
               quality="80"
@@ -47,6 +47,7 @@ defineProps<{
               <UIcon
                 name="i-mdi-check-circle" 
                 class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0"
+                aria-hidden="true"
               />
               <span class="text-neutral-700 text-lg">{{ item }}</span>
             </li>

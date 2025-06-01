@@ -1,6 +1,9 @@
 <template>
   <footer
+    id="footer"
     class="bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 mt-auto py-12"
+    role="contentinfo"
+    aria-label="Site footer"
   >
     <UContainer>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">

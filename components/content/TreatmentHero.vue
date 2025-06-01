@@ -38,7 +38,7 @@ const intensityData = computed(() => {
         <!-- Title Section -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-6">
-            <UIcon v-if="icon" :name="icon" class="w-8 h-8 text-primary-600" />
+            <UIcon v-if="icon" :name="icon" class="w-8 h-8 text-primary-600" aria-hidden="true" />
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900">
               {{ title }}
             </h1>
@@ -50,13 +50,14 @@ const intensityData = computed(() => {
 
         <!-- Price Box -->
         <div class="lg:col-span-1">
-          <UCard class="shadow-lg border border-primary-200 bg-white">
+          <UCard class="shadow-lg border border-primary-200 bg-white" role="region" aria-labelledby="pricing-info">
             <template #header>
               <div class="flex items-center gap-2">
-                <UIcon name="i-mdi-clock-outline" class="w-5 h-5 text-primary-500" />
-                <h3 class="font-semibold text-neutral-900">Behandelingsdetails</h3>
+                <UIcon name="i-mdi-clock-outline" class="w-5 h-5 text-primary-500" aria-hidden="true" />
+                <h2 id="pricing-info" class="font-semibold text-neutral-900">Behandelingsdetails</h2>
               </div>
-            </template>            <div class="space-y-4">
+            </template>            
+            <div class="space-y-4">
               <div v-if="duration" class="flex justify-between items-center">
                 <span class="text-neutral-600">Duur:</span>
                 <span class="font-medium text-neutral-900">{{ duration }}</span>
@@ -70,12 +71,13 @@ const intensityData = computed(() => {
                   <span class="text-neutral-600">Intensiteit:</span>
                   <div class="flex items-center gap-2">
                     <!-- Intensity dots -->
-                    <div class="flex items-center gap-1">
+                    <div class="flex items-center gap-1" role="img" :aria-label="`Intensiteit ${intensityData.rating} van 5`">
                       <div 
                         v-for="dot in 5" 
                         :key="dot"
                         class="w-2 h-2 rounded-full"
                         :class="dot <= intensityData.rating ? 'bg-primary-500' : 'bg-neutral-200'"
+                        :aria-hidden="true"
                       />
                     </div>
                   </div>
@@ -93,6 +95,7 @@ const intensityData = computed(() => {
                 block
                 :to="routes.pages.booking"
                 icon="i-mdi-calendar"
+                aria-label="Boek een afspraak voor deze behandeling"
               >
                 Afspraak maken
               </UButton>

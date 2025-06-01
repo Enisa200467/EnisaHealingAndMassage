@@ -12,25 +12,31 @@ useSeoMeta({
   title: 'Boek Een Afspraak - Enisa Healing & Massage',
   description:
     'Boek eenvoudig online een afspraak voor massage of healing behandelingen. Kies je gewenste behandeling, datum en tijd. Direct bevestiging per e-mail.',
+  ogTitle: 'Boek Een Afspraak - Enisa Healing & Massage',
+  ogDescription:
+    'Plan direct je behandeling online. Kies uit healing sessies, massages en ontspanningsbehandelingen.',
+  twitterTitle: 'Boek Een Afspraak - Enisa Healing & Massage',
+  twitterDescription:
+    'Plan direct je behandeling online. Kies uit healing sessies, massages en ontspanningsbehandelingen.',
 });
 </script>
 
 <template>
-  <div>
+  <article>
     <BookingHero />
 
     <UContainer class="py-16 sm:py-24">
       <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-neutral-900 mb-4">
+        <header class="text-center mb-12">
+          <h1 class="text-3xl font-bold text-neutral-900 mb-4">
             Kies je gewenste behandeling en tijd
-          </h2>
+          </h1>
           <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
             Gebruik onze online agenda om direct een afspraak in te plannen.
             Selecteer je behandeling, kies een beschikbare tijd en ontvang
             direct een bevestiging.
           </p>
-        </div>
+        </header>
 
         <!-- Setmore Booking Integration -->
         <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
@@ -44,7 +50,7 @@ useSeoMeta({
               variant="solid"
               size="xl"
               icon="i-mdi-calendar-heart"
-              aria-label="Open booking calendar"
+              aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling"
             >
               Open Agenda & Boek Afspraak
             </UButton>
@@ -56,7 +62,7 @@ useSeoMeta({
         </div>
       </div>
     </UContainer>
-  </div>
+  </article>
 </template>
 
 <style scoped>

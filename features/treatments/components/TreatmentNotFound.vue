@@ -1,5 +1,41 @@
 <script setup lang="ts">
-// Error state component for treatments
+// Error state component for treatments with proper SEO handling
+useSeoMeta({
+  title: 'Behandeling Niet Gevonden - Enisa Healing & Massage',
+  description:
+    'De opgevraagde behandeling bestaat niet. Bekijk ons complete aanbod van healing en massage behandelingen.',
+  robots: 'noindex,nofollow',
+});
+
+const routes = useRoutes();
+
+// Popular treatments for display
+const popularTreatments = [
+  {
+    name: 'Chakra Balancering',
+    icon: 'i-mdi-sparkles',
+    path:
+      routes.treatments.healing.items.find(
+        (item) => item.slug === 'chakra-balancering'
+      )?.path || '/behandelingen/chakra-balancering',
+  },
+  {
+    name: 'Klassieke Ontspanningsmassage',
+    icon: 'i-mdi-spa',
+    path:
+      routes.treatments.massage.items.find(
+        (item) => item.slug === 'klassieke-ontspanningsmassage'
+      )?.path || '/behandelingen/klassieke-ontspanningsmassage',
+  },
+  {
+    name: 'Sportmassage',
+    icon: 'i-mdi-lightning-bolt',
+    path:
+      routes.treatments.massage.items.find(
+        (item) => item.slug === 'sportmassage'
+      )?.path || '/behandelingen/sportmassage',
+  },
+];
 </script>
 
 <template>
@@ -35,23 +71,22 @@
                 Populaire behandelingen:
               </h3>
               <ul class="space-y-1 text-sm text-neutral-600">
-                <li class="flex items-center gap-2">
+                <li
+                  v-for="treatment in popularTreatments"
+                  :key="treatment.name"
+                  class="flex items-center gap-2"
+                >
                   <UIcon
-                    name="i-mdi-sparkles"
+                    :name="treatment.icon"
                     class="w-4 h-4 text-primary-500"
+                    aria-hidden="true"
                   />
-                  <span>Chakra Balancering</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <UIcon
-                    name="i-mdi-account-group"
-                    class="w-4 h-4 text-secondary-500"
-                  />
-                  <span>Klassieke Ontspanningsmassage</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <UIcon name="i-mdi-dumbbell" class="w-4 h-4 text-green-500" />
-                  <span>Sportmassage</span>
+                  <ULink
+                    :to="treatment.path"
+                    class="hover:text-primary-600 transition-colors"
+                  >
+                    {{ treatment.name }}
+                  </ULink>
                 </li>
               </ul>
             </div>

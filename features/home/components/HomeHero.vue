@@ -1,9 +1,13 @@
 <template>
-  <section class="relative text-center text-white">
+  <section
+    class="relative text-center text-white"
+    aria-labelledby="hero-heading"
+  >
     <!-- Background Image using NuxtImg -->
     <NuxtImg
       src="/images/placeholder.webp"
-      alt="Ontspannende massage omgeving"
+      alt=""
+      role="presentation"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"
       format="webp"
       quality="80"
@@ -11,6 +15,7 @@
     />
     <UContainer class="py-32 md:py-48">
       <h1
+        id="hero-heading"
         class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-md"
       >
         Vind Balans en Diepe Ontspanning
@@ -21,6 +26,8 @@
       </p>
       <div
         class="flex flex-col sm:grid sm:grid-cols-2 items-center gap-4 max-w-2xs md:max-w-fit mx-auto"
+        role="group"
+        aria-label="Hoofdacties"
       >
         <UButton
           class="w-full"
@@ -29,7 +36,7 @@
           :to="routes.pages.booking"
           icon="i-mdi-calendar"
           label="Boek Nu Je Sessie"
-          aria-label="Boek nu direct je sessie"
+          aria-label="Boek nu direct een afspraak voor je sessie"
         />
         <UButton
           class="w-full"
@@ -39,7 +46,7 @@
           color="secondary"
           icon="i-mdi-sparkles"
           label="Ontdek de Behandelingen"
-          aria-label="Scroll naar de beschikbare behandelingen"
+          aria-label="Scroll naar de sectie met beschikbare behandelingen"
         />
       </div>
     </UContainer>

@@ -1,27 +1,38 @@
 <script setup lang="ts">
-// This component shows related treatments
+const routes = useRoutes();
+
+// Get related treatments organized by category
+const healingTreatments = routes.treatments.healing.items.slice(0, 3);
+const massageTreatments = routes.treatments.massage.items.slice(0, 3);
 </script>
 
 <template>
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24" aria-labelledby="related-treatments-heading">
     <UContainer>
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-neutral-900 mb-4">
+        <header class="text-center mb-12">
+          <h2
+            id="related-treatments-heading"
+            class="text-3xl font-bold text-neutral-900 mb-4"
+          >
             Andere Behandelingen
           </h2>
           <p class="text-neutral-600 max-w-2xl mx-auto">
             Ontdek onze andere healing en massage behandelingen die perfect
             kunnen aanvullen op jouw welzijnsreis.
           </p>
-        </div>
+        </header>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Healing Treatment -->
           <UCard class="group hover:shadow-lg transition-shadow duration-300">
             <template #header>
               <div class="flex items-center gap-3">
-                <UIcon name="i-mdi-sparkles" class="w-6 h-6 text-primary-500" />
+                <UIcon
+                  name="i-mdi-sparkles"
+                  class="w-6 h-6 text-primary-500"
+                  aria-hidden="true"
+                />
                 <h3 class="text-lg font-semibold">Healing Behandelingen</h3>
               </div>
             </template>
@@ -30,17 +41,34 @@
               <p class="text-neutral-600 text-sm">
                 Energetische behandelingen voor diepere genezing en balans.
               </p>
-              <ul class="space-y-1 text-xs text-neutral-500">
-                <li>• Chakra Balancering</li>
-                <li>• Energetische Healing</li>
-                <li>• Reiki Behandeling</li>
+              <ul class="space-y-2 text-sm" role="list">
+                <li
+                  v-for="treatment in healingTreatments"
+                  :key="treatment.slug"
+                >
+                  <ULink
+                    :to="treatment.path"
+                    class="flex items-center gap-2 text-neutral-700 hover:text-primary-600 transition-colors group"
+                  >
+                    <UIcon
+                      :name="treatment.icon || 'i-mdi-sparkles'"
+                      class="w-4 h-4 text-primary-500 group-hover:text-primary-600"
+                      aria-hidden="true"
+                    />
+                    {{ treatment.title }}
+                  </ULink>
+                </li>
               </ul>
             </div>
 
             <template #footer>
               <UButton to="/behandelingen" variant="ghost" size="sm" block>
                 Bekijk Healing
-                <UIcon name="i-mdi-arrow-right" class="w-4 h-4 ml-1" />
+                <UIcon
+                  name="i-mdi-arrow-right"
+                  class="w-4 h-4 ml-1"
+                  aria-hidden="true"
+                />
               </UButton>
             </template>
           </UCard>
@@ -52,6 +80,7 @@
                 <UIcon
                   name="i-mdi-account-group"
                   class="w-6 h-6 text-secondary-500"
+                  aria-hidden="true"
                 />
                 <h3 class="text-lg font-semibold">Massage Behandelingen</h3>
               </div>
@@ -61,17 +90,34 @@
               <p class="text-neutral-600 text-sm">
                 Traditionele massages voor ontspanning en herstel.
               </p>
-              <ul class="space-y-1 text-xs text-neutral-500">
-                <li>• Klassieke Massage</li>
-                <li>• Zweedse Massage</li>
-                <li>• Sportmassage</li>
+              <ul class="space-y-2 text-sm" role="list">
+                <li
+                  v-for="treatment in massageTreatments"
+                  :key="treatment.slug"
+                >
+                  <ULink
+                    :to="treatment.path"
+                    class="flex items-center gap-2 text-neutral-700 hover:text-secondary-600 transition-colors group"
+                  >
+                    <UIcon
+                      :name="treatment.icon || 'i-mdi-account-group'"
+                      class="w-4 h-4 text-secondary-500 group-hover:text-secondary-600"
+                      aria-hidden="true"
+                    />
+                    {{ treatment.title }}
+                  </ULink>
+                </li>
               </ul>
             </div>
 
             <template #footer>
               <UButton to="/behandelingen" variant="ghost" size="sm" block>
                 Bekijk Massages
-                <UIcon name="i-mdi-arrow-right" class="w-4 h-4 ml-1" />
+                <UIcon
+                  name="i-mdi-arrow-right"
+                  class="w-4 h-4 ml-1"
+                  aria-hidden="true"
+                />
               </UButton>
             </template>
           </UCard>
@@ -82,7 +128,11 @@
           >
             <template #header>
               <div class="flex items-center gap-3">
-                <UIcon name="i-mdi-heart" class="w-6 h-6 text-green-500" />
+                <UIcon
+                  name="i-mdi-heart"
+                  class="w-6 h-6 text-green-500"
+                  aria-hidden="true"
+                />
                 <h3 class="text-lg font-semibold">Alle Behandelingen</h3>
               </div>
             </template>
@@ -102,7 +152,11 @@
             <template #footer>
               <UButton to="/behandelingen" size="sm" block>
                 Alle Behandelingen
-                <UIcon name="i-mdi-arrow-right" class="w-4 h-4 ml-1" />
+                <UIcon
+                  name="i-mdi-arrow-right"
+                  class="w-4 h-4 ml-1"
+                  aria-hidden="true"
+                />
               </UButton>
             </template>
           </UCard>

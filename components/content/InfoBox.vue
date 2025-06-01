@@ -9,6 +9,7 @@
         :name="icon"
         class="w-5 h-5 mr-2 flex-shrink-0"
         :class="iconClasses"
+        aria-hidden="true"
       />
       <h4 v-if="title" class="font-semibold" :class="titleClasses">
         {{ title }}

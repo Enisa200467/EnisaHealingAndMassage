@@ -13,23 +13,26 @@ const isExpanded = ref(props.expanded);
 </script>
 
 <template>
-  <section class="additional-info  w-full">
+  <section class="additional-info w-full">
     <UContainer class="sm:pb-24 sm:pt-6 py-10">
-      <div class="max-w-4xl ">
+      <div class="max-w-4xl">
         <UButton
           variant="subtle"
           size="lg"
           class="w-full justify-between text-left p-6 bg-white/80 hover:bg-white border border-pink-200 rounded-xl shadow-sm"
+          :aria-expanded="isExpanded"
+          :aria-controls="`expandable-content-${Math.random().toString(36).substr(2, 9)}`"
           @click="isExpanded = !isExpanded"
         >
           <div class="flex items-center gap-3">
-            <UIcon name="i-mdi-information" size="24" class="text-primary-500" />
+            <UIcon name="i-mdi-information" size="24" class="text-primary-500" aria-hidden="true" />
             <h2 class="text-xl font-semibold text-gray-900">{{ title }}</h2>
           </div>
           <UIcon 
             :name="isExpanded ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'" 
             size="24"
             class="text-primary-500 transition-transform duration-200"
+            :aria-hidden="true"
           />
         </UButton>
 
@@ -41,7 +44,13 @@ const isExpanded = ref(props.expanded);
           leave-from-class="opacity-100 max-h-[1000px]"
           leave-to-class="opacity-0 max-h-0"
         >
-          <div v-show="isExpanded" class="overflow-hidden">
+          <div 
+            v-show="isExpanded" 
+            :id="`expandable-content-${Math.random().toString(36).substr(2, 9)}`"
+            class="overflow-hidden"
+            role="region"
+            :aria-label="title"
+          >
             <div class="mt-4 p-8 bg-white/80 rounded-xl border border-pink-200 shadow-sm">
               <div class="prose prose-lg prose-gray max-w-none">
                 <slot />

@@ -1,16 +1,69 @@
 <script setup lang="ts">
-useSeoMeta({
+const { setPageSEO, businessInfo } = useGlobalSEO();
+
+// Generate Person schema for Enisa
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Enisa',
+  jobTitle: 'Massagetherapeut en Healing Practitioner',
+  description:
+    'Gecertificeerd massagetherapeut en healing practitioner gespecialiseerd in holistische gezondheid en welzijn.',
+  worksFor: {
+    '@type': 'Organization',
+    name: businessInfo.name,
+    url: businessInfo.url,
+  },
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Gecertificeerd Massagetherapeut (NVMT)',
+      credentialCategory: 'Professional Certification',
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Reiki Master Level III',
+      credentialCategory: 'Professional Certification',
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Chakra Healing Specialist',
+      credentialCategory: 'Professional Certification',
+    },
+  ],
+  knowsAbout: [
+    'Massage Therapy',
+    'Energy Healing',
+    'Reiki',
+    'Chakra Balancing',
+    'Holistic Health',
+    'Stress Management',
+    'Swedish Massage',
+    'Sports Massage',
+  ],
+  email: businessInfo.email,
+  telephone: businessInfo.telephone,
+  address: businessInfo.address,
+  sameAs: [],
+};
+
+// Set comprehensive SEO with person schema
+setPageSEO({
   title: 'Over Mij - Enisa Healing & Massage',
   description:
-    'Leer meer over Enisa, gecertificeerd massagetherapeut en healing practitioner. Ontdek haar achtergrond, ervaring en passie voor holistische gezondheid.',
+    'Leer meer over Enisa, gecertificeerd massagetherapeut en healing practitioner met 10+ jaar ervaring. Ontdek haar achtergrond, certificeringen en passie voor holistische gezondheid.',
+  path: '/over-mij',
+  type: 'profile',
+  structuredData: [personSchema],
 });
 </script>
 
 <template>
-  <div>
+  <article role="main" aria-labelledby="about-heading">
     <!-- Hero Section -->
     <section
       class="bg-gradient-to-br from-primary-50 to-secondary-50 py-16 sm:py-24"
+      aria-labelledby="about-heading"
     >
       <UContainer>
         <div class="max-w-7xl mx-auto">
@@ -18,6 +71,7 @@ useSeoMeta({
             <!-- Content -->
             <div class="text-center lg:text-left">
               <h1
+                id="about-heading"
                 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6"
               >
                 Over Mij
@@ -29,6 +83,8 @@ useSeoMeta({
               </p>
               <div
                 class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                role="group"
+                aria-label="Contact en afspraak opties"
               >
                 <UButton to="/contact" size="lg" icon="i-mdi-email">
                   Neem Contact Op
@@ -49,14 +105,16 @@ useSeoMeta({
               <div class="relative">
                 <NuxtImg
                   src="/images/placeholder.webp"
-                  alt="Enisa - Massagetherapeut en Healing Practitioner"
+                  alt="Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie"
                   class="w-80 h-80 object-cover rounded-full shadow-2xl"
                   format="webp"
                   quality="80"
                   loading="eager"
+                  sizes="320px"
                 />
                 <div
                   class="absolute -bottom-4 -right-4 bg-primary-500 text-white p-4 rounded-full shadow-lg"
+                  aria-hidden="true"
                 >
                   <UIcon name="i-mdi-heart" class="w-8 h-8" />
                 </div>
@@ -272,5 +330,5 @@ useSeoMeta({
         </section>
       </div>
     </UContainer>
-  </div>
+  </article>
 </template>

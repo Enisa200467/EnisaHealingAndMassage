@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import type { AccordionItem } from '@nuxt/ui';
 
-// Define SEO meta tags for this page
-useSeoMeta({
-  title: 'Veelgestelde Vragen - Enisa Healing & Massage',
-  description:
-    'Vind antwoorden op veelgestelde vragen over behandelingen, boekingen en meer bij Enisa Healing & Massage.',
-  ogTitle: 'Veelgestelde Vragen - Enisa Healing & Massage',
-  ogDescription: 'Bekijk de FAQ voor meer informatie over onze diensten.',
-});
+const { generateFAQSchema, setPageSEO } = useGlobalSEO();
 
 const faqItems = ref<AccordionItem[]>([
   {
@@ -36,14 +29,52 @@ const faqItems = ref<AccordionItem[]>([
     content:
       'Ja, er is voldoende gratis parkeergelegenheid in de buurt van de praktijk.',
   },
+  {
+    label: 'Wat kan ik verwachten tijdens mijn eerste behandeling?',
+    content:
+      'Tijdens uw eerste afspraak nemen we uitgebreid de tijd voor een intake gesprek om uw behoeften en verwachtingen te bespreken. Vervolgens wordt de behandeling volledig op maat uitgevoerd.',
+  },
+  {
+    label: 'Zijn de behandelingen geschikt voor zwangere vrouwen?',
+    content:
+      'Ja, wij bieden speciale zwangerschapsmassages aan die veilig zijn tijdens de zwangerschap. Gelieve dit wel vooraf te vermelden bij het boeken.',
+  },
+  {
+    label: 'Hoe lang duurt een gemiddelde behandeling?',
+    content:
+      'De meeste behandelingen duren tussen de 60 en 90 minuten. De exacte duur hangt af van het type behandeling dat u kiest.',
+  },
+  {
+    label: 'Kan ik een behandeling annuleren of verzetten?',
+    content:
+      'Ja, u kunt uw afspraak tot 24 uur van tevoren kosteloos annuleren of verzetten. Voor wijzigingen binnen 24 uur kunnen kosten in rekening worden gebracht.',
+  },
 ]);
+
+// Generate structured data for FAQ
+const faqData = faqItems.value.map((item) => ({
+  question: item.label || '',
+  answer: item.content || '',
+}));
+
+// Set comprehensive SEO with structured data
+setPageSEO({
+  title: 'Veelgestelde Vragen - Enisa Healing & Massage',
+  description:
+    'Vind antwoorden op veelgestelde vragen over behandelingen, boekingen en meer bij Enisa Healing & Massage.',
+  path: '/faq',
+  structuredData: [generateFAQSchema(faqData)],
+});
 </script>
 
 <template>
-  <article>
+  <article role="main" aria-labelledby="faq-heading">
     <UContainer class="my-16 sm:my-12">
       <header class="mb-16 sm:mb-12">
-        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h1
+          id="faq-heading"
+          class="text-3xl font-bold tracking-tight sm:text-4xl"
+        >
           Veelgestelde Vragen
         </h1>
         <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
@@ -51,9 +82,12 @@ const faqItems = ref<AccordionItem[]>([
         </p>
       </header>
 
-      <div class="max-w-3xl">
-        <UAccordion :items="faqItems" />
-      </div>
+      <section class="max-w-3xl" aria-labelledby="faq-heading">
+        <UAccordion
+          :items="faqItems"
+          aria-label="Veelgestelde vragen over Enisa Healing & Massage"
+        />
+      </section>
     </UContainer>
   </article>
 </template>

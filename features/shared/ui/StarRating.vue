@@ -1,5 +1,9 @@
 <template>
-  <div class="flex items-center gap-1">
+  <div
+    class="flex items-center gap-1"
+    role="group"
+    :aria-label="`Beoordeling: ${modelValue} van 5 sterren`"
+  >
     <button
       v-for="star in 5"
       :key="star"
@@ -12,6 +16,8 @@
         interactive ? 'cursor-pointer' : 'cursor-default',
       ]"
       :disabled="!interactive"
+      :aria-label="`${star} van 5 sterren`"
+      :aria-pressed="interactive ? star <= modelValue : undefined"
       @click="interactive && handleStarClick(star)"
       @mouseover="interactive && handleMouseOver(star)"
       @mouseleave="interactive && handleMouseLeave()"
@@ -23,11 +29,13 @@
             : 'i-mdi-star-outline'
         "
         class="w-6 h-6"
+        aria-hidden="true"
       />
     </button>
     <span
       v-if="showText && modelValue > 0"
       class="ml-2 text-sm text-neutral-600 dark:text-neutral-400"
+      aria-live="polite"
     >
       {{ ratingText }}
     </span>

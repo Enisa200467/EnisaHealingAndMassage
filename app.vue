@@ -1,12 +1,19 @@
 <template>
   <UApp>
-    <!-- <main class="flex flex-col min-h-screen ml-2 lg:ml-64 mr-2 lg:mr-64"> -->
-    <main class="flex flex-col min-h-screen">
+    <SkipNavigation />
+    <div class="flex flex-col min-h-screen">
       <SiteHeader />
-      <NuxtPage />
+      <main
+        id="main-content"
+        class="flex-1"
+        role="main"
+        aria-label="Main content"
+      >
+        <NuxtPage />
+      </main>
       <SiteFooter />
       <BookingWidget />
-    </main>
+    </div>
   </UApp>
 </template>
 

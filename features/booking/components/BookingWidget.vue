@@ -57,8 +57,12 @@ const handleBookingClick = () => {
     variant="solid"
     size="xl"
     icon="i-mdi-calendar"
-    aria-label="Boek een afspraak met Enisa Healing & Massage"
+    aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
+    role="button"
+    tabindex="0"
     @click="handleBookingClick"
+    @keydown.enter="handleBookingClick"
+    @keydown.space.prevent="handleBookingClick"
   >
     <span class="hidden sm:inline">Boek Afspraak</span>
     <span class="sm:hidden">Boek</span>

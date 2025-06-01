@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24" aria-labelledby="intro-heading">
     <UContainer>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
         <UCarousel
@@ -9,10 +9,11 @@
           :autoplay="{ delay: 3000 }"
           :items="carouselItems"
           class="w-full max-w-md mx-auto"
+          aria-label="Fotogalerij van Enisa"
         >
           <NuxtImg
             :src="item"
-            alt="[Naam Masseuse], uw therapeut voor heling en ontspanning"
+            alt="Enisa, uw therapeut voor heling en ontspanning in een rustige omgeving"
             class="object-cover w-full h-auto rounded-lg shadow-lg aspect-square"
             format="webp"
             quality="75"
@@ -23,7 +24,7 @@
         <div
           class="prose prose-lg text-gray-700 max-w-none prose-headings:text-green-800 prose-a:text-green-600"
         >
-          <h2>Maak Kennis Met [Naam Masseuse]</h2>
+          <h2 id="intro-heading">Maak Kennis Met Enisa</h2>
           <p>
             Welkom! Mijn naam is [Naam Masseuse] en mijn passie ligt bij het
             begeleiden van mensen naar een dieper gevoel van welzijn en balans.

@@ -2,12 +2,7 @@
 import { useReviews } from './composables/useReviews';
 import type { Review, ReviewStats as ReviewStatsType } from './types/reviews';
 
-// SEO Meta
-useSeoMeta({
-  title: 'Reviews & Ervaringen - Enisa Healing & Massage',
-  description:
-    'Lees de ervaringen van onze cliënten en deel je eigen ervaring. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.',
-});
+const { setPageSEO, businessInfo } = useGlobalSEO();
 
 const { getApprovedReviews, getReviewStats, submitReview } = useReviews();
 
@@ -43,8 +38,69 @@ const loadReviews = async () => {
   }
 };
 
+// Generate review schema once data is loaded
+const generateReviewSchemas = () => {
+  if (!allReviews.value.length) return [];
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': businessInfo.url,
+    name: businessInfo.name,
+    url: businessInfo.url,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: reviewStats.value.averageRating.toFixed(1),
+      reviewCount: reviewStats.value.approved,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: allReviews.value.map((review) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: review.name,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: review.review,
+      datePublished: review.created_at,
+    })),
+  };
+
+  return [organizationSchema];
+};
+
+// Set enhanced SEO with review schema after data loads
+watchEffect(() => {
+  if (!isLoading.value && allReviews.value.length) {
+    const reviewSchemas = generateReviewSchemas();
+    setPageSEO({
+      title: 'Reviews & Ervaringen - Enisa Healing & Massage',
+      description: `Lees de ervaringen van onze ${
+        reviewStats.value.approved
+      } cliënten met een gemiddelde score van ${reviewStats.value.averageRating.toFixed(
+        1
+      )}/5. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.`,
+      path: '/reviews',
+      structuredData: reviewSchemas,
+    });
+  } else {
+    // Fallback SEO without structured data
+    useSeoMeta({
+      title: 'Reviews & Ervaringen - Enisa Healing & Massage',
+      description:
+        'Lees de ervaringen van onze cliënten en deel je eigen ervaring. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.',
+    });
+  }
+});
+
 // Handle review submission
-const handleReviewSubmission = async (reviewData: any) => {
+const handleReviewSubmission = async (reviewData: Partial<Review>) => {
   const result = await submitReview(reviewData);
   if (result.success) {
     // Optionally reload reviews or show success message

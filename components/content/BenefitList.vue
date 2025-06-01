@@ -6,6 +6,7 @@
           <UIcon
             name="i-mdi-star-circle"
             class="w-6 h-6 text-primary-500"
+            aria-hidden="true"
           />
           <h3 class="text-xl font-semibold">
             {{ title }}
@@ -18,6 +19,7 @@
           <UIcon
             name="i-mdi-check-circle"
             class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
+            aria-hidden="true"
           />
           <span class="text-neutral-600">{{ item }}</span>
         </li>
