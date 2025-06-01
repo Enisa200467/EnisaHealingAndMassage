@@ -1,34 +1,33 @@
 <script setup lang="ts">
-import AdminDashboard from './components/AdminDashboard.vue'
-import AdminReviewsManager from './components/AdminReviewsManager.vue'
-import { useAdminReviews } from './composables/useAdminReviews'
+import { useAdminReviews } from './composables/useAdminReviews';
 
 // SEO Meta
 useSeoMeta({
   title: 'Admin Dashboard - Enisa Healing & Massage',
-  description: 'Admin dashboard voor het beheren van reviews en andere content.',
+  description:
+    'Admin dashboard voor het beheren van reviews en andere content.',
   robots: 'noindex, nofollow',
-})
+});
 
 // Authentication check
-const user = useSupabaseUser()
-const router = useRouter()
+const user = useSupabaseUser();
+const router = useRouter();
 
 // Redirect if not authenticated
 watch(
   user,
   (newUser) => {
     if (!newUser) {
-      router.push('/login')
+      router.push('/login');
     }
   },
   { immediate: true }
-)
+);
 
-const { getAllReviews, getDetailedStats } = useAdminReviews()
+const { getAllReviews, getDetailedStats } = useAdminReviews();
 
 // Only render if user is authenticated
-const isAuthenticated = computed(() => !!user.value)
+const isAuthenticated = computed(() => !!user.value);
 </script>
 
 <template>
@@ -36,7 +35,7 @@ const isAuthenticated = computed(() => !!user.value)
     <AdminDashboard />
     <AdminReviewsManager />
   </div>
-  
+
   <div v-else class="min-h-screen flex items-center justify-center">
     <div class="text-center">
       <h1 class="text-2xl font-bold text-neutral-900 mb-4">

@@ -20,8 +20,8 @@
               <h3 class="font-semibold">Hoe maak ik een afspraak?</h3>
             </template>
             <p class="text-neutral-600 text-sm">
-              Je kunt online boeken via onze website, bellen, mailen of
-              WhatsApp gebruiken. Online boeken is 24/7 beschikbaar.
+              Je kunt online boeken via onze website, bellen, mailen of WhatsApp
+              gebruiken. Online boeken is 24/7 beschikbaar.
             </p>
           </UCard>
 
@@ -30,9 +30,9 @@
               <h3 class="font-semibold">Wat moet ik meenemen?</h3>
             </template>
             <p class="text-neutral-600 text-sm">
-              Je hoeft niets mee te nemen. Handdoeken en alle benodigdheden
-              zijn aanwezig. Draag comfortabele kleding die je makkelijk uit
-              kunt trekken.
+              Je hoeft niets mee te nemen. Handdoeken en alle benodigdheden zijn
+              aanwezig. Draag comfortabele kleding die je makkelijk uit kunt
+              trekken.
             </p>
           </UCard>
 

@@ -10,13 +10,18 @@
       preload
     />
     <UContainer class="py-32 md:py-48">
-      <h1 class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-md">
+      <h1
+        class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-md"
+      >
         Vind Balans en Diepe Ontspanning
       </h1>
       <p class="mb-8 text-lg leading-8 text-gray-200 lg:text-xl drop-shadow">
-        Ervaar de kracht van helende aanraking en gun jezelf een moment van pure rust.
+        Ervaar de kracht van helende aanraking en gun jezelf een moment van pure
+        rust.
       </p>
-      <div class="flex flex-col sm:grid sm:grid-cols-2 items-center gap-4 max-w-2xs md:max-w-fit mx-auto">
+      <div
+        class="flex flex-col sm:grid sm:grid-cols-2 items-center gap-4 max-w-2xs md:max-w-fit mx-auto"
+      >
         <UButton
           class="w-full"
           color="primary"
@@ -42,5 +47,5 @@
 </template>
 
 <script setup lang="ts">
-const routes = useRoutes()
+const routes = useRoutes();
 </script>

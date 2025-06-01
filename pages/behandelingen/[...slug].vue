@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import TreatmentPage from '~/features/treatments/TreatmentPage.vue'
-
 const slug = useRoute().params.slug;
 const { data: treatment } = await useAsyncData(`treatment-${slug}`, () => {
   return queryCollection('treatments').path(`/treatments/${slug}`).first();

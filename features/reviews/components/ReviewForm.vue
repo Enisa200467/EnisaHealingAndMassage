@@ -1,45 +1,51 @@
 <script setup lang="ts">
-import type { ReviewFormData } from '../types/reviews'
+import type { ReviewFormData } from '../types/reviews';
 
 const emit = defineEmits<{
-  submit: [data: ReviewFormData]
-}>()
+  submit: [data: ReviewFormData];
+}>();
 
 const formData = reactive<ReviewFormData>({
   name: '',
   email: '',
   rating: 5,
   treatment: '',
-  content: ''
-})
+  content: '',
+});
 
 const treatments = [
   { value: 'chakra-balancering', label: 'Chakra Balancering' },
-  { value: 'energetische-healing-sessie', label: 'Energetische Healing Sessie' },
+  {
+    value: 'energetische-healing-sessie',
+    label: 'Energetische Healing Sessie',
+  },
   { value: 'intuitieve-lichaamsmassage', label: 'Intuitieve Lichaamsmassage' },
-  { value: 'klassieke-ontspanningsmassage', label: 'Klassieke Ontspanningsmassage' },
+  {
+    value: 'klassieke-ontspanningsmassage',
+    label: 'Klassieke Ontspanningsmassage',
+  },
   { value: 'sportmassage', label: 'Sportmassage' },
-  { value: 'zweedse-massage', label: 'Zweedse Massage' }
-]
+  { value: 'zweedse-massage', label: 'Zweedse Massage' },
+];
 
-const isSubmitting = ref(false)
+const isSubmitting = ref(false);
 
 const onSubmit = async () => {
-  isSubmitting.value = true
+  isSubmitting.value = true;
   try {
-    emit('submit', formData)
+    emit('submit', formData);
     // Reset form after successful submission
     Object.assign(formData, {
       name: '',
       email: '',
       rating: 5,
       treatment: '',
-      content: ''
-    })
+      content: '',
+    });
   } finally {
-    isSubmitting.value = false
+    isSubmitting.value = false;
   }
-}
+};
 </script>
 
 <template>
@@ -51,20 +57,16 @@ const onSubmit = async () => {
       </div>
     </template>
 
-    <form @submit.prevent="onSubmit" class="space-y-6">
+    <form class="space-y-6" @submit.prevent="onSubmit">
       <!-- Personal Information -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <UFormGroup label="Naam" required>
-          <UInput 
-            v-model="formData.name" 
-            placeholder="Je naam"
-            required
-          />
+          <UInput v-model="formData.name" placeholder="Je naam" required />
         </UFormGroup>
-        
+
         <UFormGroup label="E-mailadres" required>
-          <UInput 
-            v-model="formData.email" 
+          <UInput
+            v-model="formData.email"
             type="email"
             placeholder="je@email.nl"
             required
@@ -75,11 +77,7 @@ const onSubmit = async () => {
       <!-- Rating -->
       <UFormGroup label="Beoordeling" required>
         <div class="flex items-center gap-4">
-          <StarRating 
-            v-model="formData.rating" 
-            :editable="true" 
-            size="lg" 
-          />
+          <StarRating v-model="formData.rating" :editable="true" size="lg" />
           <span class="text-sm text-neutral-600">
             {{ formData.rating }} van 5 sterren
           </span>
@@ -87,8 +85,11 @@ const onSubmit = async () => {
       </UFormGroup>
 
       <!-- Treatment -->
-      <UFormGroup label="Behandeling" description="Welke behandeling heb je ondergaan?">
-        <USelectMenu 
+      <UFormGroup
+        label="Behandeling"
+        description="Welke behandeling heb je ondergaan?"
+      >
+        <USelectMenu
           v-model="formData.treatment"
           :options="treatments"
           placeholder="Selecteer een behandeling"
@@ -97,7 +98,7 @@ const onSubmit = async () => {
 
       <!-- Review Content -->
       <UFormGroup label="Je Review" required>
-        <UTextarea 
+        <UTextarea
           v-model="formData.content"
           placeholder="Vertel over je ervaring met de behandeling..."
           :rows="6"
@@ -113,13 +114,23 @@ const onSubmit = async () => {
       <!-- Privacy Notice -->
       <div class="bg-blue-50 p-4 rounded-lg">
         <div class="flex items-start gap-3">
-          <UIcon name="i-mdi-information" class="w-5 h-5 text-blue-600 mt-0.5" />
+          <UIcon
+            name="i-mdi-information"
+            class="w-5 h-5 text-blue-600 mt-0.5"
+          />
           <div class="text-sm text-blue-800">
             <p class="font-medium mb-1">Review Beleid</p>
             <ul class="space-y-1 text-blue-700">
-              <li>• Je review wordt eerst gecontroleerd voordat deze wordt gepubliceerd</li>
-              <li>• We respecteren je privacy en delen geen persoonlijke gegevens</li>
-              <li>• Alleen constructieve en eerlijke reviews worden geplaatst</li>
+              <li>
+                • Je review wordt eerst gecontroleerd voordat deze wordt
+                gepubliceerd
+              </li>
+              <li>
+                • We respecteren je privacy en delen geen persoonlijke gegevens
+              </li>
+              <li>
+                • Alleen constructieve en eerlijke reviews worden geplaatst
+              </li>
             </ul>
           </div>
         </div>
@@ -128,14 +139,8 @@ const onSubmit = async () => {
 
     <template #footer>
       <div class="flex justify-end gap-3">
-        <UButton variant="outline" type="button">
-          Annuleren
-        </UButton>
-        <UButton 
-          type="submit" 
-          :loading="isSubmitting"
-          @click="onSubmit"
-        >
+        <UButton variant="outline" type="button"> Annuleren </UButton>
+        <UButton type="submit" :loading="isSubmitting" @click="onSubmit">
           Review Versturen
         </UButton>
       </div>

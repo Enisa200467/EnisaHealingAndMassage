@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@nuxtjs/supabase',
   ],
-  
+
   // Feature-based auto-imports
   imports: {
     dirs: [
@@ -23,20 +23,20 @@ export default defineNuxtConfig({
       'features/*/utils',
       'features/shared/composables',
       'features/shared/utils',
-    ]
+    ],
   },
-  
+
   // Feature-based component auto-registration
   components: [
     {
       path: '~/features',
       pathPrefix: false,
-      pattern: '**/*.vue'
+      pattern: '**/*.vue',
     },
     {
       path: '~/components',
-      pathPrefix: false
-    }
+      pathPrefix: false,
+    },
   ],
   ui: {
     colorMode: false,

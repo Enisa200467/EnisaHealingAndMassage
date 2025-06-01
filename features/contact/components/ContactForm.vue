@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { ContactFormData } from '../types/contact.types'
+import type { ContactFormData } from '../types/contact.types';
 
 // Define emits
 interface Emits {
-  (e: 'submit', data: ContactFormData): void
+  (e: 'submit', data: ContactFormData): void;
 }
 
-const emit = defineEmits<Emits>()
+const emit = defineEmits<Emits>();
 
 // Form state
 const formData = reactive<ContactFormData>({
@@ -17,35 +17,37 @@ const formData = reactive<ContactFormData>({
   subject: '',
   message: '',
   agreeToTerms: false,
-})
+});
 
-const isSubmitting = ref(false)
+const isSubmitting = ref(false);
 
 const handleSubmit = async () => {
   if (!formData.agreeToTerms) {
-    return
+    return;
   }
-  
-  isSubmitting.value = true
+
+  isSubmitting.value = true;
   try {
-    emit('submit', { ...formData })
+    emit('submit', { ...formData });
   } finally {
-    isSubmitting.value = false
+    isSubmitting.value = false;
   }
-}
+};
 </script>
 
 <template>
   <div>
-    <h2 class="text-3xl font-bold text-neutral-900 mb-8">
-      Stuur een bericht
-    </h2>
+    <h2 class="text-3xl font-bold text-neutral-900 mb-8">Stuur een bericht</h2>
 
     <UCard>
       <UForm class="space-y-6" @submit="handleSubmit">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <UFormField label="Voornaam" required>
-            <UInput v-model="formData.firstName" placeholder="Je voornaam" icon="i-mdi-account" />
+            <UInput
+              v-model="formData.firstName"
+              placeholder="Je voornaam"
+              icon="i-mdi-account"
+            />
           </UFormField>
           <UFormField label="Achternaam" required>
             <UInput v-model="formData.lastName" placeholder="Je achternaam" />
@@ -103,10 +105,10 @@ const handleSubmit = async () => {
           </p>
         </div>
 
-        <UButton 
-          type="submit" 
-          size="lg" 
-          block 
+        <UButton
+          type="submit"
+          size="lg"
+          block
           icon="i-mdi-send"
           :loading="isSubmitting"
           :disabled="!formData.agreeToTerms"

@@ -19,16 +19,17 @@
             loading="lazy"
           />
         </UCarousel>
-        
-        <div class="prose prose-lg text-gray-700 max-w-none prose-headings:text-green-800 prose-a:text-green-600">
+
+        <div
+          class="prose prose-lg text-gray-700 max-w-none prose-headings:text-green-800 prose-a:text-green-600"
+        >
           <h2>Maak Kennis Met [Naam Masseuse]</h2>
           <p>
             Welkom! Mijn naam is [Naam Masseuse] en mijn passie ligt bij het
-            begeleiden van mensen naar een dieper gevoel van welzijn en
-            balans. Met een holistische benadering combineer ik [korte
-            beschrijving van technieken, bijv. intuïtieve massage, energetisch
-            werk] om zowel fysieke spanning los te laten als innerlijke rust
-            te bevorderen.
+            begeleiden van mensen naar een dieper gevoel van welzijn en balans.
+            Met een holistische benadering combineer ik [korte beschrijving van
+            technieken, bijv. intuïtieve massage, energetisch werk] om zowel
+            fysieke spanning los te laten als innerlijke rust te bevorderen.
           </p>
           <p>
             Of je nu komt voor verlichting van specifieke klachten, behoefte
@@ -51,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-const routes = useRoutes()
+const routes = useRoutes();
 
 const carouselItems = [
   'https://picsum.photos/640/640?random=1',
@@ -60,5 +61,5 @@ const carouselItems = [
   'https://picsum.photos/640/640?random=4',
   'https://picsum.photos/640/640?random=5',
   'https://picsum.photos/640/640?random=6',
-]
+];
 </script>

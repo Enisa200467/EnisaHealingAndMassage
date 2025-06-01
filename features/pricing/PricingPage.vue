@@ -17,6 +17,7 @@
 // SEO Meta tags for pricing page
 useSeoMeta({
   title: 'Tarieven - Enisa Healing & Massage',
-  description: 'Overzicht van alle tarieven voor massage en healing behandelingen. Transparante prijzen zonder verborgen kosten. Bekijk ook onze kortingspakketten.',
-})
+  description:
+    'Overzicht van alle tarieven voor massage en healing behandelingen. Transparante prijzen zonder verborgen kosten. Bekijk ook onze kortingspakketten.',
+});
 </script>

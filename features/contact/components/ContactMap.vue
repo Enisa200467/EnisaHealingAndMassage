@@ -13,9 +13,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <!-- Map Placeholder -->
           <UCard>
-            <div class="bg-neutral-100 h-80 flex items-center justify-center rounded-lg">
+            <div
+              class="bg-neutral-100 h-80 flex items-center justify-center rounded-lg"
+            >
               <div class="text-center">
-                <UIcon name="i-mdi-map" class="w-16 h-16 text-neutral-400 mx-auto mb-4" />
+                <UIcon
+                  name="i-mdi-map"
+                  class="w-16 h-16 text-neutral-400 mx-auto mb-4"
+                />
                 <p class="text-neutral-500">Google Maps embed</p>
                 <p class="text-sm text-neutral-400">
                   Hier komt de interactieve kaart
@@ -43,7 +48,10 @@
               <UCard>
                 <template #header>
                   <div class="flex items-center gap-2">
-                    <UIcon name="i-mdi-train" class="w-5 h-5 text-secondary-500" />
+                    <UIcon
+                      name="i-mdi-train"
+                      class="w-5 h-5 text-secondary-500"
+                    />
                     <span class="font-medium">Openbaar vervoer</span>
                   </div>
                 </template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 interface Props {
-  treatment: any
+  treatment: any;
 }
 
-const props = defineProps<Props>()
-const routes = useRoutes()
+const props = defineProps<Props>();
+const routes = useRoutes();
 </script>
 
 <template>
@@ -38,8 +38,8 @@ const routes = useRoutes()
 
               <div class="space-y-4">
                 <p class="text-neutral-600">
-                  Plan direct je {{ treatment.title?.toLowerCase() }} in via
-                  ons boekingssysteem.
+                  Plan direct je {{ treatment.title?.toLowerCase() }} in via ons
+                  boekingssysteem.
                 </p>
                 <ul class="space-y-2 text-sm text-neutral-600">
                   <li class="flex items-center gap-2">

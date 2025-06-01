@@ -18,15 +18,10 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Healing Treatment -->
-          <UCard
-            class="group hover:shadow-lg transition-shadow duration-300"
-          >
+          <UCard class="group hover:shadow-lg transition-shadow duration-300">
             <template #header>
               <div class="flex items-center gap-3">
-                <UIcon
-                  name="i-mdi-sparkles"
-                  class="w-6 h-6 text-primary-500"
-                />
+                <UIcon name="i-mdi-sparkles" class="w-6 h-6 text-primary-500" />
                 <h3 class="text-lg font-semibold">Healing Behandelingen</h3>
               </div>
             </template>
@@ -51,9 +46,7 @@
           </UCard>
 
           <!-- Massage Treatment -->
-          <UCard
-            class="group hover:shadow-lg transition-shadow duration-300"
-          >
+          <UCard class="group hover:shadow-lg transition-shadow duration-300">
             <template #header>
               <div class="flex items-center gap-3">
                 <UIcon
@@ -96,13 +89,12 @@
 
             <div class="space-y-3">
               <p class="text-neutral-600 text-sm">
-                Bekijk ons complete aanbod aan healing en massage
-                behandelingen.
+                Bekijk ons complete aanbod aan healing en massage behandelingen.
               </p>
               <div class="bg-green-50 p-3 rounded-lg">
                 <p class="text-xs text-green-700 font-medium">
-                  💡 Niet zeker welke behandeling het beste bij je past?
-                  Bekijk alle opties!
+                  💡 Niet zeker welke behandeling het beste bij je past? Bekijk
+                  alle opties!
                 </p>
               </div>
             </div>

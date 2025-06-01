@@ -4,9 +4,7 @@
 
 <template>
   <div>
-    <h2 class="text-3xl font-bold text-neutral-900 mb-8">
-      Contactgegevens
-    </h2>
+    <h2 class="text-3xl font-bold text-neutral-900 mb-8">Contactgegevens</h2>
 
     <!-- Contact Cards -->
     <div class="space-y-6 mb-12">
@@ -37,7 +35,10 @@
           <div>
             <h3 class="font-semibold text-neutral-900 mb-2">E-mail</h3>
             <p class="text-neutral-600 mb-2">
-              <ULink href="mailto:info@enisahealing.nl" class="hover:text-secondary-600">
+              <ULink
+                href="mailto:info@enisahealing.nl"
+                class="hover:text-secondary-600"
+              >
                 info@enisahealing.nl
               </ULink>
             </p>
@@ -72,7 +73,11 @@
           <div>
             <h3 class="font-semibold text-neutral-900 mb-2">WhatsApp</h3>
             <p class="text-neutral-600 mb-2">
-              <ULink href="https://wa.me/31612345678" target="_blank" class="hover:text-green-600">
+              <ULink
+                href="https://wa.me/31612345678"
+                target="_blank"
+                class="hover:text-green-600"
+              >
                 +31 6 12 34 56 78
               </ULink>
             </p>
@@ -87,7 +92,13 @@
       <UButton to="/boeken" size="lg" icon="i-mdi-calendar" class="flex-1">
         Boek Direct Online
       </UButton>
-      <UButton href="tel:+31612345678" size="lg" variant="outline" icon="i-mdi-phone" class="flex-1">
+      <UButton
+        href="tel:+31612345678"
+        size="lg"
+        variant="outline"
+        icon="i-mdi-phone"
+        class="flex-1"
+      >
         Bel Nu
       </UButton>
     </div>

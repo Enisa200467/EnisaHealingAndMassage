@@ -76,7 +76,7 @@ All pages now follow the same simple pattern:
 
 ```vue
 <script setup lang="ts">
-import FeaturePage from '~/features/feature/FeaturePage.vue'
+import FeaturePage from '~/features/feature/FeaturePage.vue';
 </script>
 
 <template>

@@ -15,7 +15,10 @@
 
       <div class="space-y-4">
         <div class="flex items-start gap-3">
-          <UIcon name="i-mdi-clock-outline" class="w-5 h-5 text-neutral-400 mt-0.5" />
+          <UIcon
+            name="i-mdi-clock-outline"
+            class="w-5 h-5 text-neutral-400 mt-0.5"
+          />
           <div>
             <p class="font-medium text-neutral-900">Openingstijden</p>
             <div class="text-sm text-neutral-600 space-y-1">
@@ -27,12 +30,15 @@
         </div>
 
         <div class="flex items-start gap-3">
-          <UIcon name="i-mdi-map-marker" class="w-5 h-5 text-neutral-400 mt-0.5" />
+          <UIcon
+            name="i-mdi-map-marker"
+            class="w-5 h-5 text-neutral-400 mt-0.5"
+          />
           <div>
             <p class="font-medium text-neutral-900">Locatie</p>
             <p class="text-sm text-neutral-600">
-              Wellness Centrum<br>
-              Voorbeeldstraat 123<br>
+              Wellness Centrum<br />
+              Voorbeeldstraat 123<br />
               1234 AB Amsterdam
             </p>
           </div>
@@ -63,13 +69,17 @@
       <div class="space-y-3">
         <div class="border-l-4 border-primary-200 pl-4">
           <h4 class="font-medium text-neutral-900">Healing</h4>
-          <p class="text-sm text-neutral-600">Energetische behandelingen voor balans en welzijn</p>
+          <p class="text-sm text-neutral-600">
+            Energetische behandelingen voor balans en welzijn
+          </p>
           <p class="text-sm text-primary-600 font-medium">Vanaf € 65</p>
         </div>
 
         <div class="border-l-4 border-secondary-200 pl-4">
           <h4 class="font-medium text-neutral-900">Massage</h4>
-          <p class="text-sm text-neutral-600">Ontspanning en herstel voor lichaam en geest</p>
+          <p class="text-sm text-neutral-600">
+            Ontspanning en herstel voor lichaam en geest
+          </p>
           <p class="text-sm text-secondary-600 font-medium">Vanaf € 70</p>
         </div>
       </div>
@@ -91,7 +101,10 @@
         </div>
         <div class="flex items-start gap-2">
           <UIcon name="i-mdi-alert" class="w-4 h-4 text-orange-500 mt-0.5" />
-          <p>Bij annulering binnen 24 uur rekenen we 50% van de behandelingskosten</p>
+          <p>
+            Bij annulering binnen 24 uur rekenen we 50% van de
+            behandelingskosten
+          </p>
         </div>
         <div class="flex items-start gap-2">
           <UIcon name="i-mdi-close" class="w-4 h-4 text-red-500 mt-0.5" />
@@ -103,7 +116,10 @@
     <!-- Help -->
     <UCard class="bg-gradient-to-br from-primary-50 to-secondary-50">
       <div class="text-center">
-        <UIcon name="i-mdi-help-circle" class="w-8 h-8 text-primary-500 mx-auto mb-3" />
+        <UIcon
+          name="i-mdi-help-circle"
+          class="w-8 h-8 text-primary-500 mx-auto mb-3"
+        />
         <h3 class="font-semibold text-neutral-900 mb-2">Hulp Nodig?</h3>
         <p class="text-sm text-neutral-600 mb-4">
           Heb je vragen over het boeken of over onze behandelingen?

@@ -1,33 +1,35 @@
-import type { ContactFormData } from '../types/contact.types'
+import type { ContactFormData } from '../types/contact.types';
 
 export const useContact = () => {
-  const toast = useToast()
+  const toast = useToast();
 
   const submitContactForm = async (data: ContactFormData) => {
     try {
       // In a real implementation, this would send to an API endpoint
-      console.log('Submitting contact form:', data)
-      
+      console.log('Submitting contact form:', data);
+
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       toast.add({
         title: 'Bericht verzonden!',
-        description: 'Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.',
-        color: 'green'
-      })
-      
-      return { success: true }
+        description:
+          'Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.',
+        color: 'green',
+      });
+
+      return { success: true };
     } catch (error) {
       toast.add({
         title: 'Fout bij verzenden',
-        description: 'Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op.',
-        color: 'red'
-      })
-      
-      return { success: false, error }
+        description:
+          'Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op.',
+        color: 'red',
+      });
+
+      return { success: false, error };
     }
-  }
+  };
 
   const getContactInfo = () => {
     return {
@@ -37,13 +39,13 @@ export const useContact = () => {
       whatsapp: '+31612345678',
       hours: [
         { day: 'Maandag - Zaterdag', hours: '9:00 - 18:00' },
-        { day: 'Zondag', hours: 'Gesloten' }
-      ]
-    }
-  }
+        { day: 'Zondag', hours: 'Gesloten' },
+      ],
+    };
+  };
 
   return {
     submitContactForm,
-    getContactInfo
-  }
-}
+    getContactInfo,
+  };
+};
