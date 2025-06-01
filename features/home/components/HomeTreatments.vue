@@ -39,7 +39,7 @@
                 <template #footer>
                   <UButton
                     variant="outline"
-                    :to="massage.slug"
+                    :to="massage.path"
                     label="Meer Info"
                     size="sm"
                   />
@@ -60,59 +60,19 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-
 const routes = useRoutes();
 
-// Fetch dynamic treatment data
-const { data: allTreatments } = await useAsyncData(
-  'homepage-treatments',
-  async (): Promise<
-    {
-      id: string;
-      slug: string;
-      title: string;
-      description: string;
-      icon: string;
-      category: string;
-    }[]
-  > => {
-    // Get all treatments with full metadata
-    const treatments = await queryCollection('treatments').all();
-
-    return treatments.map((treatment) => ({
-      id: treatment.id,
-      slug: treatment.path,
-      title: treatment.title,
-      description: treatment.description,
-      icon: (treatment.meta.icon as string) || 'i-mdi-sparkles',
-      category: (treatment.meta.category as string) || 'healing',
-    }));
-  }
-);
-
 // Group treatments by category for the tabs
-const massageTypes = computed(() => {
-  if (!allTreatments.value) return [];
-
-  const healingTreatments = allTreatments.value.filter(
-    (treatment) => treatment.category === 'healing'
-  );
-  const massageTreatments = allTreatments.value.filter(
-    (treatment) => treatment.category === 'massage'
-  );
-
-  return [
-    {
-      label: 'Helende Behandelingen',
-      slot: 'item',
-      massages: healingTreatments,
-    },
-    {
-      label: 'Reguliere Massages',
-      slot: 'item',
-      massages: massageTreatments,
-    },
-  ];
-});
+const massageTypes = [
+  {
+    label: 'Helende Behandelingen',
+    slot: 'item',
+    massages: routes.treatments.healing.items,
+  },
+  {
+    label: 'Reguliere Massages',
+    slot: 'item',
+    massages: routes.treatments.massage.items,
+  },
+];
 </script>
