@@ -1,383 +1,437 @@
 <template>
-  <UContainer class="py-8">
-    <div class="space-y-8">
-      <header>
-        <h1 class="text-3xl font-bold mb-4">SEO & Accessibility Audit</h1>
-        <p class="text-gray-600">
-          Comprehensive analysis of SEO performance and accessibility compliance
-        </p>
-      </header>
+  <div class="space-y-8">
+    <header>
+      <h1 class="text-3xl font-bold mb-4">SEO & Accessibility Audit</h1>
+      <p class="text-gray-600">
+        Comprehensive analysis of SEO performance and accessibility compliance
+        for all pages
+      </p>
+    </header>
 
-      <!-- Audit Actions -->
-      <div class="flex gap-4">
-        <UButton :loading="loading.seo" color="primary" @click="runSEOAudit">
-          Run SEO Audit
-        </UButton>
-        <UButton
-          :loading="loading.a11y"
-          color="secondary"
-          @click="runA11yAudit"
-        >
-          Run Accessibility Audit
-        </UButton>
-        <UButton :loading="loading.full" color="success" @click="runFullAudit">
-          Run Full Audit
-        </UButton>
-      </div>
-
-      <!-- SEO Results -->
-      <UCard v-if="seoResults" class="space-y-4">
-        <template #header>
-          <h2 class="text-xl font-semibold">SEO Audit Results</h2>
-        </template>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="text-center p-4 bg-green-50 rounded-lg">
-            <div class="text-2xl font-bold text-green-600">
-              {{ seoResults.score }}%
-            </div>
-            <div class="text-sm text-green-800">SEO Score</div>
-          </div>
-          <div class="text-center p-4 bg-blue-50 rounded-lg">
-            <div class="text-2xl font-bold text-blue-600">
-              {{ seoResults.passed }}
-            </div>
-            <div class="text-sm text-blue-800">Tests Passed</div>
-          </div>
-          <div class="text-center p-4 bg-red-50 rounded-lg">
-            <div class="text-2xl font-bold text-red-600">
-              {{ seoResults.failed }}
-            </div>
-            <div class="text-sm text-red-800">Issues Found</div>
-          </div>
-        </div>
-
-        <div v-if="seoResults.issues.length > 0" class="space-y-2">
-          <h3 class="font-semibold text-red-600">SEO Issues:</h3>
-          <ul class="space-y-1">
-            <li
-              v-for="issue in seoResults.issues"
-              :key="issue.test"
-              class="text-sm"
-            >
-              <span class="font-medium">{{ issue.test }}:</span>
-              {{ issue.message }}
-            </li>
-          </ul>
-        </div>
-      </UCard>
-
-      <!-- A11y Results -->
-      <UCard v-if="a11yResults" class="space-y-4">
-        <template #header>
-          <h2 class="text-xl font-semibold">Accessibility Audit Results</h2>
-        </template>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="text-center p-4 bg-green-50 rounded-lg">
-            <div class="text-2xl font-bold text-green-600">
-              {{ a11yResults.summary.score }}%
-            </div>
-            <div class="text-sm text-green-800">A11y Score</div>
-          </div>
-          <div class="text-center p-4 bg-blue-50 rounded-lg">
-            <div class="text-2xl font-bold text-blue-600">
-              {{ a11yResults.summary.passed }}
-            </div>
-            <div class="text-sm text-blue-800">Tests Passed</div>
-          </div>
-          <div class="text-center p-4 bg-red-50 rounded-lg">
-            <div class="text-2xl font-bold text-red-600">
-              {{ a11yResults.summary.failed }}
-            </div>
-            <div class="text-sm text-red-800">Issues Found</div>
-          </div>
-        </div>
-
-        <div v-if="a11yResults.issues.length > 0" class="space-y-4">
-          <h3 class="font-semibold text-red-600">Accessibility Issues:</h3>
-
-          <div class="space-y-3">
-            <details
-              v-for="(issues, category) in groupedA11yIssues"
-              :key="category"
-              class="border rounded-lg p-3"
-            >
-              <summary class="font-medium cursor-pointer">
-                {{ category }} ({{ issues.length }} issues)
-              </summary>
-              <ul class="mt-2 space-y-1 ml-4">
-                <li
-                  v-for="issue in issues"
-                  :key="issue.message"
-                  class="text-sm"
-                >
-                  <span class="font-medium">{{ issue.message }}</span>
-                  <div v-if="issue.element" class="text-xs text-gray-500 mt-1">
-                    Element: {{ issue.element }}
-                  </div>
-                </li>
-              </ul>
-            </details>
-          </div>
-        </div>
-      </UCard>
-
-      <!-- Performance Metrics -->
-      <UCard v-if="performanceMetrics" class="space-y-4">
-        <template #header>
-          <h2 class="text-xl font-semibold">Performance Metrics</h2>
-        </template>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="text-center p-3 bg-gray-50 rounded-lg">
-            <div class="text-lg font-bold">
-              {{ performanceMetrics.domElements }}
-            </div>
-            <div class="text-xs text-gray-600">DOM Elements</div>
-          </div>
-          <div class="text-center p-3 bg-gray-50 rounded-lg">
-            <div class="text-lg font-bold">{{ performanceMetrics.images }}</div>
-            <div class="text-xs text-gray-600">Images</div>
-          </div>
-          <div class="text-center p-3 bg-gray-50 rounded-lg">
-            <div class="text-lg font-bold">
-              {{ performanceMetrics.headings }}
-            </div>
-            <div class="text-xs text-gray-600">Headings</div>
-          </div>
-          <div class="text-center p-3 bg-gray-50 rounded-lg">
-            <div class="text-lg font-bold">{{ performanceMetrics.links }}</div>
-            <div class="text-xs text-gray-600">Links</div>
-          </div>
-        </div>
-      </UCard>
+    <!-- Audit Actions -->
+    <div class="flex gap-4 flex-wrap">
+      <UButton
+        :loading="loading.current"
+        color="primary"
+        @click="runCurrentPageAudit"
+      >
+        Audit Current Page
+      </UButton>
+      <UButton :loading="loading.all" color="success" @click="runAllPagesAudit">
+        Audit All Pages
+      </UButton>
+      <UButton
+        v-if="auditResults.length > 0"
+        :loading="loading.export"
+        color="neutral"
+        variant="outline"
+        @click="exportResults"
+      >
+        Export Results
+      </UButton>
     </div>
-  </UContainer>
+
+    <!-- Overall Summary -->
+    <UCard v-if="auditResults.length > 0" class="space-y-4">
+      <template #header>
+        <h2 class="text-xl font-semibold">Audit Summary</h2>
+      </template>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-blue-50 rounded-lg">
+          <div class="text-2xl font-bold text-blue-600">
+            {{ auditResults.length }}
+          </div>
+          <div class="text-sm text-blue-800">Pages Audited</div>
+        </div>
+        <div class="text-center p-4 bg-green-50 rounded-lg">
+          <div class="text-2xl font-bold text-green-600">
+            {{ overallStats.averageSEOScore }}%
+          </div>
+          <div class="text-sm text-green-800">Avg SEO Score</div>
+        </div>
+        <div class="text-center p-4 bg-yellow-50 rounded-lg">
+          <div class="text-2xl font-bold text-yellow-600">
+            {{ overallStats.averageA11yScore }}%
+          </div>
+          <div class="text-sm text-yellow-800">Avg A11y Score</div>
+        </div>
+        <div class="text-center p-4 bg-red-50 rounded-lg">
+          <div class="text-2xl font-bold text-red-600">
+            {{ overallStats.totalIssues }}
+          </div>
+          <div class="text-sm text-red-800">Total Issues</div>
+        </div>
+      </div>
+    </UCard>
+
+    <!-- Individual Page Results - Manual Accordion Style -->
+    <div v-if="auditResults.length > 0" class="space-y-4">
+      <h2 class="text-2xl font-semibold mb-4">Page-by-Page Results</h2>
+
+      <div class="space-y-3">
+        <div
+          v-for="(result, index) in auditResults"
+          :key="result.url"
+          class="border border-gray-200 rounded-lg overflow-hidden"
+        >
+          <!-- Accordion Header -->
+          <button
+            class="w-full p-4 bg-white hover:bg-gray-50 flex items-center justify-between text-left"
+            @click="toggleAccordion(index)"
+          >
+            <div class="flex items-center gap-3">
+              <UIcon
+                :name="getPageIcon(result)"
+                class="w-5 h-5"
+                :class="{
+                  'text-green-600': getPageStatusColor(result) === 'success',
+                  'text-yellow-600': getPageStatusColor(result) === 'warning',
+                  'text-red-600': getPageStatusColor(result) === 'error',
+                  'text-blue-600': getPageStatusColor(result) === 'primary',
+                }"
+              />
+              <div>
+                <h3 class="font-medium text-gray-900">{{ result.title }}</h3>
+                <p class="text-sm text-gray-600">{{ result.url }}</p>
+              </div>
+              <UBadge
+                :color="getPageBadgeColor(result)"
+                variant="subtle"
+                size="sm"
+              >
+                {{ getPageStatus(result) }}
+              </UBadge>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-sm text-gray-600">
+                SEO: {{ result.seo?.score || 0 }}% | A11y:
+                {{ result.a11y?.summary.score || 0 }}%
+              </div>
+              <UIcon
+                :name="
+                  expandedAccordions.includes(index)
+                    ? 'i-mdi-chevron-up'
+                    : 'i-mdi-chevron-down'
+                "
+                class="w-4 h-4 text-gray-400"
+              />
+            </div>
+          </button>
+
+          <!-- Accordion Content -->
+          <div
+            v-if="expandedAccordions.includes(index)"
+            class="border-t border-gray-200 bg-gray-50 p-4"
+          >
+            <PageAuditDetail :result="result" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading States -->
+    <UCard v-if="loading.all || loading.current" class="text-center py-8">
+      <div class="space-y-4">
+        <div
+          class="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"
+        />
+        <p class="text-gray-600">
+          {{
+            loading.all ? 'Auditing all pages...' : 'Auditing current page...'
+          }}
+        </p>
+        <div
+          v-if="loading.all && auditProgress.current > 0"
+          class="max-w-xs mx-auto"
+        >
+          <div class="flex justify-between text-sm text-gray-600 mb-1">
+            <span>Progress</span>
+            <span>{{ auditProgress.current }}/{{ auditProgress.total }}</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div
+              class="bg-blue-500 h-2 rounded-full transition-all duration-300"
+              :style="{
+                width: `${
+                  (auditProgress.current / auditProgress.total) * 100
+                }%`,
+              }"
+            />
+          </div>
+        </div>
+      </div>
+    </UCard>
+
+    <!-- Empty State -->
+    <UCard
+      v-if="!loading.all && !loading.current && auditResults.length === 0"
+      class="text-center py-8"
+    >
+      <div class="space-y-4">
+        <UIcon
+          name="i-mdi-chart-line"
+          class="w-16 h-16 text-gray-400 mx-auto"
+        />
+        <h3 class="text-lg font-semibold text-gray-900">No Audit Results</h3>
+        <p class="text-gray-600">
+          Run an audit to see SEO and accessibility analysis for your pages.
+        </p>
+        <div class="flex gap-3 justify-center">
+          <UButton @click="runCurrentPageAudit"> Audit Current Page </UButton>
+          <UButton variant="outline" @click="runAllPagesAudit">
+            Audit All Pages
+          </UButton>
+        </div>
+      </div>
+    </UCard>
+  </div>
 </template>
 
 <script setup lang="ts">
-interface SEOIssue {
-  test: string;
-  message: string;
-  severity: 'error' | 'warning' | 'info';
-}
+import type {
+  PageAuditResults,
+  AuditableRoute,
+} from '../composables/useMultiPageSEOAudit';
+import { useMultiPageSEOAudit } from '../composables/useMultiPageSEOAudit';
 
-interface SEOResults {
-  score: number;
-  passed: number;
-  failed: number;
-  issues: SEOIssue[];
-}
-
-const { generateA11yReport } = useA11yValidator();
+const { auditSinglePage, getAuditableRoutes } = useMultiPageSEOAudit();
 
 const loading = ref({
-  seo: false,
-  a11y: false,
-  full: false,
+  current: false,
+  all: false,
+  export: false,
 });
 
-const seoResults = ref<SEOResults | null>(null);
-const a11yResults = ref<any | null>(null);
-const performanceMetrics = ref<any | null>(null);
-
-const groupedA11yIssues = computed(() => {
-  if (!a11yResults.value?.issues) return {};
-
-  const grouped: { [key: string]: any[] } = {};
-
-  a11yResults.value.issues.forEach((issue: any) => {
-    // Determine category based on message content
-    let category = 'General';
-    if (
-      issue.message.toLowerCase().includes('image') ||
-      issue.message.toLowerCase().includes('alt')
-    ) {
-      category = 'Images';
-    } else if (issue.message.toLowerCase().includes('heading')) {
-      category = 'Headings';
-    } else if (
-      issue.message.toLowerCase().includes('form') ||
-      issue.message.toLowerCase().includes('label')
-    ) {
-      category = 'Forms';
-    } else if (
-      issue.message.toLowerCase().includes('keyboard') ||
-      issue.message.toLowerCase().includes('tabindex')
-    ) {
-      category = 'Keyboard Navigation';
-    } else if (
-      issue.message.toLowerCase().includes('contrast') ||
-      issue.message.toLowerCase().includes('color')
-    ) {
-      category = 'Color & Contrast';
-    }
-
-    if (!grouped[category]) {
-      grouped[category] = [];
-    }
-    grouped[category].push(issue);
-  });
-
-  return grouped;
+const auditResults = ref<PageAuditResults[]>([]);
+const auditProgress = ref({
+  current: 0,
+  total: 0,
 });
 
-const runSEOAudit = async () => {
-  loading.value.seo = true;
+// Accordion state management
+const expandedAccordions = ref<number[]>([]);
+
+// Toggle accordion function
+const toggleAccordion = (index: number) => {
+  const expandedIndex = expandedAccordions.value.indexOf(index);
+  if (expandedIndex >= 0) {
+    expandedAccordions.value.splice(expandedIndex, 1);
+  } else {
+    expandedAccordions.value.push(index);
+  }
+};
+
+// Computed properties for overall statistics
+const overallStats = computed(() => {
+  if (auditResults.value.length === 0) {
+    return {
+      averageSEOScore: 0,
+      averageA11yScore: 0,
+      totalIssues: 0,
+    };
+  }
+
+  const validSEOResults = auditResults.value.filter((r) => r.seo !== null);
+  const validA11yResults = auditResults.value.filter((r) => r.a11y !== null);
+
+  const averageSEOScore =
+    validSEOResults.length > 0
+      ? Math.round(
+          validSEOResults.reduce((sum, r) => sum + (r.seo?.score || 0), 0) /
+            validSEOResults.length
+        )
+      : 0;
+
+  const averageA11yScore =
+    validA11yResults.length > 0
+      ? Math.round(
+          validA11yResults.reduce(
+            (sum, r) => sum + (r.a11y?.summary.score || 0),
+            0
+          ) / validA11yResults.length
+        )
+      : 0;
+
+  const totalIssues = auditResults.value.reduce((sum, r) => {
+    return sum + (r.seo?.failed || 0) + (r.a11y?.summary.failed || 0);
+  }, 0);
+
+  return {
+    averageSEOScore,
+    averageA11yScore,
+    totalIssues,
+  };
+});
+
+// Helper functions for page status indicators
+const getPageStatusColor = (
+  result: PageAuditResults
+): 'primary' | 'success' | 'warning' | 'error' => {
+  if (result.error) return 'error';
+
+  const seoScore = result.seo?.score || 0;
+  const a11yScore = result.a11y?.summary.score || 0;
+  const avgScore = (seoScore + a11yScore) / 2;
+
+  if (avgScore >= 80) return 'success';
+  if (avgScore >= 60) return 'warning';
+  return 'error';
+};
+
+const getPageBadgeColor = (
+  result: PageAuditResults
+): 'primary' | 'success' | 'warning' | 'error' => {
+  if (result.error) return 'error';
+
+  const seoScore = result.seo?.score || 0;
+  const a11yScore = result.a11y?.summary.score || 0;
+  const avgScore = (seoScore + a11yScore) / 2;
+
+  if (avgScore >= 80) return 'success';
+  if (avgScore >= 60) return 'warning';
+  return 'error';
+};
+
+const getPageStatus = (result: PageAuditResults) => {
+  if (result.error) return 'Error';
+
+  const seoScore = result.seo?.score || 0;
+  const a11yScore = result.a11y?.summary.score || 0;
+  const avgScore = (seoScore + a11yScore) / 2;
+
+  if (avgScore >= 80) return 'Excellent';
+  if (avgScore >= 60) return 'Good';
+  return 'Needs Work';
+};
+
+const getPageIcon = (result: PageAuditResults) => {
+  if (result.error) return 'i-mdi-alert-circle';
+  if (result.isLoading) return 'i-mdi-loading';
+
+  const seoScore = result.seo?.score || 0;
+  const a11yScore = result.a11y?.summary.score || 0;
+  const avgScore = (seoScore + a11yScore) / 2;
+
+  if (avgScore >= 80) return 'i-mdi-check-circle';
+  if (avgScore >= 60) return 'i-mdi-alert';
+  return 'i-mdi-close-circle';
+};
+
+// Audit functions
+const runCurrentPageAudit = async () => {
+  loading.value.current = true;
 
   try {
-    const issues: SEOIssue[] = [];
-    let passed = 0;
+    const currentPath = window.location.pathname;
+    const routes = getAuditableRoutes();
+    const currentRoute = routes.find(
+      (r: AuditableRoute) => r.path === currentPath
+    ) || {
+      path: currentPath,
+      title: document.title || 'Current Page',
+      category: 'page' as const,
+    };
 
-    // Check meta title
-    const title = document.querySelector('title')?.textContent;
-    if (!title) {
-      issues.push({
-        test: 'Title Tag',
-        message: 'Missing title tag',
-        severity: 'error',
-      });
-    } else if (title.length < 30) {
-      issues.push({
-        test: 'Title Tag',
-        message: 'Title too short (< 30 characters)',
-        severity: 'warning',
-      });
-    } else if (title.length > 60) {
-      issues.push({
-        test: 'Title Tag',
-        message: 'Title too long (> 60 characters)',
-        severity: 'warning',
-      });
-    } else {
-      passed++;
-    }
+    const result = await auditSinglePage(currentRoute);
 
-    // Check meta description
-    const description = document
-      .querySelector('meta[name="description"]')
-      ?.getAttribute('content');
-    if (!description) {
-      issues.push({
-        test: 'Meta Description',
-        message: 'Missing meta description',
-        severity: 'error',
-      });
-    } else if (description.length < 120) {
-      issues.push({
-        test: 'Meta Description',
-        message: 'Description too short (< 120 characters)',
-        severity: 'warning',
-      });
-    } else if (description.length > 160) {
-      issues.push({
-        test: 'Meta Description',
-        message: 'Description too long (> 160 characters)',
-        severity: 'warning',
-      });
-    } else {
-      passed++;
-    }
-
-    // Check H1 tags
-    const h1Tags = document.querySelectorAll('h1');
-    if (h1Tags.length === 0) {
-      issues.push({
-        test: 'H1 Tag',
-        message: 'No H1 tag found',
-        severity: 'error',
-      });
-    } else if (h1Tags.length > 1) {
-      issues.push({
-        test: 'H1 Tag',
-        message: 'Multiple H1 tags found',
-        severity: 'warning',
-      });
-    } else {
-      passed++;
-    }
-
-    // Check images without alt text
-    const imagesWithoutAlt = document.querySelectorAll('img:not([alt])');
-    if (imagesWithoutAlt.length > 0) {
-      issues.push({
-        test: 'Image Alt Text',
-        message: `${imagesWithoutAlt.length} images missing alt text`,
-        severity: 'error',
-      });
-    } else {
-      passed++;
-    }
-
-    // Check canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      issues.push({
-        test: 'Canonical URL',
-        message: 'Missing canonical URL',
-        severity: 'warning',
-      });
-    } else {
-      passed++;
-    }
-
-    // Check Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    const ogDescription = document.querySelector(
-      'meta[property="og:description"]'
+    // Replace existing result for this page or add new one
+    const existingIndex = auditResults.value.findIndex(
+      (r: PageAuditResults) => r.url === result.url
     );
-    const ogImage = document.querySelector('meta[property="og:image"]');
-
-    if (!ogTitle || !ogDescription || !ogImage) {
-      issues.push({
-        test: 'Open Graph',
-        message: 'Missing essential Open Graph tags',
-        severity: 'warning',
-      });
+    if (existingIndex >= 0) {
+      auditResults.value[existingIndex] = result;
     } else {
-      passed++;
+      auditResults.value.unshift(result);
+    }
+  } finally {
+    loading.value.current = false;
+  }
+};
+
+const runAllPagesAudit = async () => {
+  loading.value.all = true;
+
+  try {
+    const routes = getAuditableRoutes();
+    auditProgress.value = {
+      current: 0,
+      total: routes.length,
+    };
+
+    auditResults.value = [];
+
+    // Process pages with progress tracking
+    for (let i = 0; i < routes.length; i++) {
+      const route = routes[i];
+      auditProgress.value.current = i;
+
+      try {
+        const result = await auditSinglePage(route);
+        auditResults.value.push(result);
+      } catch (error) {
+        // Add error result for failed audits
+        auditResults.value.push({
+          url: route.path,
+          title: route.title,
+          seo: null,
+          a11y: null,
+          performance: null,
+          isLoading: false,
+          error: error instanceof Error ? error.message : 'Unknown error',
+        });
+      }
+
+      // Small delay to prevent overwhelming the browser
+      if (i < routes.length - 1) {
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      }
     }
 
-    const total = passed + issues.length;
-    const score = Math.round((passed / total) * 100);
-
-    seoResults.value = {
-      score,
-      passed,
-      failed: issues.length,
-      issues,
-    };
+    auditProgress.value.current = routes.length;
   } finally {
-    loading.value.seo = false;
+    loading.value.all = false;
   }
 };
 
-const runA11yAudit = async () => {
-  loading.value.a11y = true;
+const exportResults = async () => {
+  loading.value.export = true;
 
   try {
-    a11yResults.value = generateA11yReport();
-  } finally {
-    loading.value.a11y = false;
-  }
-};
-
-const runFullAudit = async () => {
-  loading.value.full = true;
-
-  try {
-    await Promise.all([runSEOAudit(), runA11yAudit()]);
-
-    // Collect performance metrics
-    performanceMetrics.value = {
-      domElements: document.querySelectorAll('*').length,
-      images: document.querySelectorAll('img').length,
-      headings: document.querySelectorAll('h1, h2, h3, h4, h5, h6').length,
-      links: document.querySelectorAll('a').length,
+    const exportData = {
+      timestamp: new Date().toISOString(),
+      summary: overallStats.value,
+      results: auditResults.value.map((result) => ({
+        url: result.url,
+        title: result.title,
+        seo: result.seo,
+        a11y: result.a11y
+          ? {
+              score: result.a11y.summary.score,
+              passed: result.a11y.summary.passed,
+              failed: result.a11y.summary.failed,
+              issues: result.a11y.issues.map((issue) => issue.message),
+            }
+          : null,
+        performance: result.performance,
+        error: result.error,
+      })),
     };
+
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], {
+      type: 'application/json',
+    });
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `seo-audit-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   } finally {
-    loading.value.full = false;
+    loading.value.export = false;
   }
 };
 
