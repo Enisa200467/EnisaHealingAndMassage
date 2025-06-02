@@ -139,6 +139,11 @@ const mobileNavItems = ref<NavigationMenuItem[]>([
     ],
   },
   {
+    label: 'Tarieven',
+    icon: 'i-mdi-currency-eur',
+    to: routes.pages.tarieven,
+  },
+  {
     label: 'Contact',
     icon: 'i-mdi-email',
     to: routes.pages.contact,
@@ -166,6 +171,11 @@ const desktopNavItems = ref<NavigationMenuItem[]>([
     label: 'Behandelingen',
     icon: 'i-mdi-sparkles',
     children: [...healingNavEntries, ...massageNavEntries],
+  },
+  {
+    label: 'Tarieven',
+    icon: 'i-mdi-currency-eur',
+    to: routes.pages.tarieven,
   },
   {
     label: 'Contact',
