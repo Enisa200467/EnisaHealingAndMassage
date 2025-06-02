@@ -33,13 +33,13 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/scripts',
-    '@nuxt/test-utils',
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/device',
     '@nuxtjs/supabase',
     'nuxt-schema-org',
+    '@nuxt/scripts',
+    '@nuxt/test-utils',
   ],
 
   // Feature-based auto-imports

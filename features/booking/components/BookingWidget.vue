@@ -110,4 +110,8 @@ const handleBookingClick = () => {
 iframe {
   border-radius: 12px !important;
 }
+
+#setmore-overlay {
+  z-index: 9999 !important;
+}
 </style>
