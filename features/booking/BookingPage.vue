@@ -1,12 +1,5 @@
 <script setup lang="ts">
-// Extend Window interface to include setmore
-declare global {
-  interface Window {
-    setmore?: {
-      init: () => void;
-    };
-  }
-}
+const { isLoading } = useSetmore();
 
 useSeoMeta({
   title: 'Boek Een Afspraak - Enisa Healing & Massage',
@@ -50,9 +43,12 @@ useSeoMeta({
               variant="solid"
               size="xl"
               icon="i-mdi-calendar-heart"
+              :loading="isLoading"
+              :disabled="isLoading"
               aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling"
             >
-              Open Agenda & Boek Afspraak
+              <span v-if="!isLoading">Open Agenda & Boek Afspraak</span>
+              <span v-if="isLoading">Boekingssysteem laden...</span>
             </UButton>
           </div>
 

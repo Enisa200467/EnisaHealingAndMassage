@@ -12,12 +12,12 @@ const routes = useRoutes();
 // Popular treatments for display
 const popularTreatments = [
   {
-    name: 'Chakra Balancering',
+    name: 'Chakra Healing',
     icon: 'i-mdi-sparkles',
     path:
       routes.treatments.healing.items.find(
-        (item) => item.slug === 'chakra-balancering'
-      )?.path || '/behandelingen/chakra-balancering',
+        (item) => item.slug === 'chakra-healing'
+      )?.path || '/behandelingen/chakra-healing',
   },
   {
     name: 'Klassieke Ontspanningsmassage',

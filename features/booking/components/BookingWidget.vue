@@ -1,50 +1,7 @@
 <script setup lang="ts">
 // Component for Setmore booking widget integration
 
-// Extend Window interface to include setmore
-declare global {
-  interface Window {
-    setmore?: {
-      init: () => void;
-    };
-  }
-}
-
-const isScriptLoaded = ref(false);
-
-onMounted(() => {
-  // Ensure the script is loaded when component mounts
-  if (
-    typeof window !== 'undefined' &&
-    !document.getElementById('setmore_script')
-  ) {
-    const script = document.createElement('script');
-    script.id = 'setmore_script';
-    script.type = 'text/javascript';
-    script.src =
-      'https://assets.setmore.com/integration/static/setmoreIframeLive.js';
-    script.async = true;
-
-    // Wait for script to load before marking as ready
-    script.onload = () => {
-      isScriptLoaded.value = true;
-    };
-
-    document.head.appendChild(script);
-  } else {
-    // Script already exists, mark as loaded
-    isScriptLoaded.value = true;
-  }
-});
-
-// Handle click to ensure iframe behavior
-const handleBookingClick = () => {
-  // If script is loaded and setmore is available, let it handle the click
-  if (isScriptLoaded.value && window.setmore) {
-    // Setmore will handle this, don't follow the link
-    return;
-  }
-};
+const { isLoading } = useSetmore();
 </script>
 
 <template>
@@ -57,15 +14,16 @@ const handleBookingClick = () => {
     variant="solid"
     size="xl"
     icon="i-mdi-calendar"
+    :loading="isLoading"
+    :disabled="isLoading"
     aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
     role="button"
     tabindex="0"
-    @click="handleBookingClick"
-    @keydown.enter="handleBookingClick"
-    @keydown.space.prevent="handleBookingClick"
   >
-    <span class="hidden sm:inline">Boek Afspraak</span>
-    <span class="sm:hidden">Boek</span>
+    <span v-if="!isLoading" class="hidden sm:inline">Boek Afspraak</span>
+    <span v-if="!isLoading" class="sm:hidden">Boek</span>
+    <span v-if="isLoading" class="hidden sm:inline">Laden...</span>
+    <span v-if="isLoading" class="sm:hidden">...</span>
   </UButton>
 </template>
 

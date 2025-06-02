@@ -34,7 +34,7 @@ const pricingSchema = {
       position: 1,
       item: {
         '@type': 'Service',
-        name: 'Chakra Balancering',
+        name: 'Chakra Healing',
         description: 'Energetische healing voor balans in je chakras',
         provider: {
           '@type': 'Organization',
@@ -72,6 +72,25 @@ const pricingSchema = {
       position: 3,
       item: {
         '@type': 'Service',
+        name: 'Healing op Afstand',
+        description: 'Krachtige energetische healing vanuit je eigen omgeving',
+        provider: {
+          '@type': 'Organization',
+          name: businessInfo.name,
+        },
+        offers: {
+          '@type': 'Offer',
+          price: '55',
+          priceCurrency: 'EUR',
+          availability: 'https://schema.org/InStock',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      item: {
+        '@type': 'Service',
         name: 'Klassieke Ontspanningsmassage',
         description: 'Traditionele massage voor diepe ontspanning',
         provider: {
@@ -88,7 +107,7 @@ const pricingSchema = {
     },
     {
       '@type': 'ListItem',
-      position: 4,
+      position: 5,
       item: {
         '@type': 'Service',
         name: 'Zweedse Massage',
@@ -107,7 +126,7 @@ const pricingSchema = {
     },
     {
       '@type': 'ListItem',
-      position: 5,
+      position: 6,
       item: {
         '@type': 'Service',
         name: 'Sportmassage',
@@ -126,7 +145,7 @@ const pricingSchema = {
     },
     {
       '@type': 'ListItem',
-      position: 6,
+      position: 7,
       item: {
         '@type': 'Service',
         name: 'Intuïtieve Lichaamsmassage',

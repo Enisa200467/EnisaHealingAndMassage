@@ -39,10 +39,10 @@ export const useRoutes = () => {
       title: 'Healing',
       items: [
         {
-          slug: 'chakra-balancering',
-          path: '/behandelingen/chakra-balancering',
-          title: 'Chakra Balancering',
-          description: 'Balancing your chakras for holistic well-being.',
+          slug: 'chakra-healing',
+          path: '/behandelingen/chakra-healing',
+          title: 'Chakra Healing',
+          description: 'Healing your chakras for holistic well-being.',
           icon: 'i-mdi-meditation',
         },
         {
@@ -52,38 +52,24 @@ export const useRoutes = () => {
           description: 'Energy healing session to restore balance.',
           icon: 'i-mdi-sparkles',
         },
+        {
+          slug: 'healing-op-afstand',
+          path: '/behandelingen/healing-op-afstand',
+          title: 'Healing op Afstand',
+          description: 'Powerful distance healing from your own home.',
+          icon: 'i-mdi-earth',
+        },
       ],
     },
     massage: {
       title: 'Massage',
       items: [
         {
-          slug: 'intuitieve-lichaamsmassage',
-          path: '/behandelingen/intuitieve-lichaamsmassage',
-          title: 'Intuitieve Lichaamsmassage',
-          description: 'Intuitive body massage for relaxation and healing.',
-          icon: 'i-mdi-heart-pulse',
-        },
-        {
-          slug: 'klassieke-ontspanningsmassage',
-          path: '/behandelingen/klassieke-ontspanningsmassage',
-          title: 'Klassieke Ontspanningsmassage',
+          slug: 'ontspanningsmassage',
+          path: '/behandelingen/ontspanningsmassage',
+          title: 'Ontspanningsmassage',
           description: 'Classic relaxation massage to relieve tension.',
           icon: 'i-mdi-spa',
-        },
-        {
-          slug: 'sportmassage',
-          path: '/behandelingen/sportmassage',
-          title: 'Sportmassage',
-          description: 'Sports massage for athletes and active individuals.',
-          icon: 'i-mdi-run',
-        },
-        {
-          slug: 'zweedse-massage',
-          path: '/behandelingen/zweedse-massage',
-          title: 'Zweedse Massage',
-          description: 'Swedish massage for deep relaxation.',
-          icon: 'i-mdi-leaf',
         },
       ],
     },
@@ -91,7 +77,7 @@ export const useRoutes = () => {
 
   /**
    * Converts a slug string to a properly formatted title
-   * (e.g. 'chakra-balancering' → 'Chakra Balancering')
+   * (e.g. 'chakra-healing' → 'Chakra Healing')
    */
   const slugToTitle = (slug: string): string => {
     return slug

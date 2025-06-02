@@ -80,13 +80,22 @@ export default defineEventHandler(async (event) => {
         'Herstel de natuurlijke energiestroom in je lichaam met een intuïtieve energetische healing.',
     },
     {
-      url: '/behandelingen/chakra-balancering',
+      url: '/behandelingen/chakra-healing',
       priority: '0.8',
       changefreq: 'monthly',
       lastmod: '2024-11-25',
-      title: 'Chakra Balancering - Enisa Healing & Massage',
+      title: 'Chakra Healing - Enisa Healing & Massage',
       description:
         'Breng je chakras in balans en herstel de energiestroom door je lichaam.',
+    },
+    {
+      url: '/behandelingen/healing-op-afstand',
+      priority: '0.8',
+      changefreq: 'monthly',
+      lastmod: '2025-06-02',
+      title: 'Healing op Afstand - Enisa Healing & Massage',
+      description:
+        'Ontvang krachtige energetische healing vanuit je eigen vertrouwde omgeving. Effectieve behandeling op afstand.',
     },
     {
       url: '/behandelingen/klassieke-ontspanningsmassage',

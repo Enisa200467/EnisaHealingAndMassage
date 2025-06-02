@@ -271,7 +271,7 @@ const isSubmitting = ref(false);
 
 // Treatment options for dropdown
 const treatmentOptions = [
-  'Chakra Balancering',
+  'Chakra Healing',
   'Energetische Healing Sessie',
   'Reiki Behandeling',
   'Ontspanningsmassage',

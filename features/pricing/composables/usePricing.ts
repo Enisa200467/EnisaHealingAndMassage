@@ -20,11 +20,11 @@ export interface Package {
 export const usePricing = () => {
   const healingTreatments: Treatment[] = [
     {
-      name: 'Chakra Balancering',
+      name: 'Chakra Healing',
       duration: '60 minuten',
       price: '€70',
       description:
-        "Energetische balancering van je chakra's voor innerlijke harmonie",
+        "Energetische healing van je chakra's voor innerlijke harmonie",
       intensity: 1,
       intensityLabel: 'Zeer Zacht',
       benefits: [
@@ -45,6 +45,20 @@ export const usePricing = () => {
         'Diepe ontspanning',
         'Energetische reiniging',
         'Spirituele groei',
+      ],
+    },
+    {
+      name: 'Healing op Afstand',
+      duration: '45 minuten',
+      price: '€55',
+      description:
+        'Krachtige energetische healing vanuit je eigen vertrouwde omgeving',
+      intensity: 1,
+      intensityLabel: 'Zeer Zacht',
+      benefits: [
+        'Healing vanuit eigen omgeving',
+        'Geen reistijd nodig',
+        'Flexibele timing',
       ],
     },
   ];

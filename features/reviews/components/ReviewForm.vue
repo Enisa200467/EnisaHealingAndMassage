@@ -14,7 +14,7 @@ const formData = reactive<ReviewSubmission>({
 });
 
 const treatments = [
-  { value: 'chakra-balancering', label: 'Chakra Balancering' },
+  { value: 'chakra-healing', label: 'Chakra Healing' },
   {
     value: 'energetische-healing-sessie',
     label: 'Energetische Healing Sessie',

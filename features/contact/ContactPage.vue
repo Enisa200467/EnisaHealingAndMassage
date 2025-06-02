@@ -29,7 +29,7 @@ const businessContactSchema = {
           '@type': 'Service',
           name: 'Healing Behandelingen',
           description:
-            'Energetische healing sessies, chakra balancering en Reiki behandelingen',
+            'Energetische healing sessies, chakra healing en Reiki behandelingen',
         },
       },
       {

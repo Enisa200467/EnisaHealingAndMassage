@@ -1,6 +1,6 @@
 ---
-title: 'Klassieke Ontspanningsmassage'
-description: 'Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.'
+title: 'Ontspanningsmassage'
+description: 'Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele massage. Ideaal om stress te verminderen en tot rust te komen.'
 duration: '60 minuten'
 price: '€ 65'
 intensity: 2
@@ -11,8 +11,8 @@ category: 'massage'
 
 ::treatmentHero
 ---
-title: Klassieke Ontspanningsmassage
-subtitle: De Klassieke Ontspanningsmassage is een van de meest bekende en populaire massagevormen, gericht op het verminderen van spierspanning en het bevorderen van een diep gevoel van rust en welzijn.
+title: Ontspanningsmassage
+subtitle: De Ontspanningsmassage is een van de meest bekende en populaire massagevormen, gericht op het verminderen van spierspanning en het bevorderen van een diep gevoel van rust en welzijn.
 duration: 60 minuten
 price: € 65
 intensity: 2
@@ -25,7 +25,7 @@ icon: i-mdi-account-group
 ---
 title: Wat kun je verwachten?
 image: /images/placeholder.webp
-imageAlt: Sfeerbeeld van een klassieke massage
+imageAlt: Sfeerbeeld van een massage
 items:
   - "<strong>Strijkingen (Effleurage):</strong> Lange, vloeiende bewegingen."
   - "<strong>Knedingen (Petrissage):</strong> Stevigere technieken."
@@ -62,16 +62,16 @@ items:
 
 ::expandableInfo
 ---
-title: Meer over de klassieke massage
+title: Meer over de massage
 ---
 
 ### Geschiedenis en Achtergrond
 
-De klassieke massage, ook wel Zweedse massage genoemd, is ontwikkeld in de 19e eeuw door Per Henrik Ling. Deze massagevorm combineert verschillende technieken die gericht zijn op het verbeteren van de spier- en gewrichtsfunctie.
+De massage, ook wel Zweedse massage genoemd, is ontwikkeld in de 19e eeuw door Per Henrik Ling. Deze massagevorm combineert verschillende technieken die gericht zijn op het verbeteren van de spier- en gewrichtsfunctie.
 
 ### Wetenschappelijke Voordelen
 
-Onderzoek toont aan dat klassieke massage:
+Onderzoek toont aan dat massage:
 - **Cortisol verlaagt**: Vermindert het stresshormoon cortisol met gemiddeld 31%
 - **Serotonine verhoogt**: Stimuleert de productie van gelukshormonen
 - **Bloeddruk verlaagt**: Helpt bij het reguleren van een gezonde bloeddruk

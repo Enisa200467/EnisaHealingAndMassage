@@ -17,8 +17,8 @@ const routes = useRoutes();
   <NuxtLink :to="routes.pages.booking">Boek Nu</NuxtLink>
 
   <!-- Use treatment routes -->
-  <NuxtLink :to="routes.treatments['chakra-balancering']">
-    Chakra Balancering
+  <NuxtLink :to="routes.treatments['chakra-healing']">
+    Chakra Healing
   </NuxtLink>
 </template>
 ```
@@ -44,7 +44,7 @@ pages: {
 
 ```typescript
 treatments: {
-  'chakra-balancering': '/behandelingen/chakra-balancering',
+  'chakra-healing': '/behandelingen/chakra-healing',
   'klassieke-ontspanningsmassage': '/behandelingen/klassieke-ontspanningsmassage',
   'energetische-healing-sessie': '/behandelingen/energetische-healing-sessie',
   'zweedse-massage': '/behandelingen/zweedse-massage',
@@ -60,8 +60,8 @@ treatments: {
 Get a treatment path by slug, with fallback generation:
 
 ```typescript
-const path = routes.getTreatmentPath('chakra-balancering');
-// Returns: '/behandelingen/chakra-balancering'
+const path = routes.getTreatmentPath('chakra-healing');
+// Returns: '/behandelingen/chakra-healing'
 
 const fallbackPath = routes.getTreatmentPath('new-treatment');
 // Returns: '/behandelingen/new-treatment'
@@ -72,7 +72,7 @@ const fallbackPath = routes.getTreatmentPath('new-treatment');
 Check if a treatment route exists:
 
 ```typescript
-const exists = routes.treatmentExists('chakra-balancering'); // true
+const exists = routes.treatmentExists('chakra-healing'); // true
 const notExists = routes.treatmentExists('non-existent'); // false
 ```
 
@@ -90,8 +90,8 @@ const invalid = routes.routeExists('/non-existent'); // false
 Convert a slug string to a properly formatted title:
 
 ```typescript
-const title = routes.slugToTitle('chakra-balancering');
-// Returns: 'Chakra Balancering'
+const title = routes.slugToTitle('chakra-healing');
+// Returns: 'Chakra Healing'
 ```
 
 ## Navigation Helpers
@@ -119,13 +119,11 @@ const nav = routes.getNavigationRoutes();
 Generate breadcrumb navigation:
 
 ```typescript
-const breadcrumbs = routes.generateBreadcrumbs(
-  '/behandelingen/chakra-balancering'
-);
+const breadcrumbs = routes.generateBreadcrumbs('/behandelingen/chakra-healing');
 // Returns: [
 //   { label: 'Home', path: '/', icon: 'i-mdi-home' },
 //   { label: 'Behandelingen', path: '/behandelingen', icon: 'i-mdi-sparkles' },
-//   { label: 'Chakra Balancering', path: '/behandelingen/chakra-balancering', icon: 'i-mdi-file-document' }
+//   { label: 'Chakra Healing', path: '/behandelingen/chakra-healing', icon: 'i-mdi-file-document' }
 // ]
 ```
 
@@ -134,7 +132,7 @@ const breadcrumbs = routes.generateBreadcrumbs(
 Get related treatment suggestions:
 
 ```typescript
-const related = routes.getRelatedTreatments('chakra-balancering', 3);
+const related = routes.getRelatedTreatments('chakra-healing', 3);
 // Returns array of related treatments excluding the current one
 ```
 

@@ -8,7 +8,7 @@
         aria-label="Naar homepage - Enisa Healing & Massage"
       >
         <UAvatar
-          src="https://github.com/benjamincanac.png"
+          src="/images/icon.webp"
           class="mr-6"
           alt="Enisa profiel foto"
         />
