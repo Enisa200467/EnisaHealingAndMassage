@@ -8,14 +8,15 @@
 
 <style scoped>
 .skip-navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  pointer-events: none;
 }
 
 .skip-link {
-  position: absolute;
+  position: fixed;
   top: -40px;
   left: 6px;
   background: #1f2937;
@@ -26,6 +27,7 @@
   font-size: 14px;
   font-weight: 600;
   transition: top 0.3s;
+  pointer-events: auto;
 }
 
 .skip-link:focus {
