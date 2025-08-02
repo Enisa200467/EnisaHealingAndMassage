@@ -276,3 +276,13 @@ useSeoMeta({
 - Styling: Utility-first with Tailwind, custom CSS in `/assets/css/`
 
 Remember: This is a health and wellness website, so prioritize trust signals, professional presentation, and user experience that conveys calm and reliability.
+
+## Admin
+
+### Admin auth
+
+The admin pages is protected with an auth layer.
+During dev you can login through the `/admin/login` page with the following credentials:
+
+- Email: `matthijs@test.nl'
+- Password: `test1234`

@@ -1,13 +1,10 @@
 import type {
   Treatment,
   CreateTreatmentInput,
-  UpdateTreatmentInput,
   TreatmentFormData,
 } from '../types/treatment.types';
-import type { Database } from '~/types/database.types';
 
 export const useAdminTreatments = () => {
-  const supabase = useSupabaseClient<Database>();
   const treatments = ref<Treatment[]>([]);
   const loading = ref(false);
   const error = ref<string | null>(null);
@@ -52,6 +49,35 @@ export const useAdminTreatments = () => {
     };
   };
 
+  // Convert form data to database format for updates (preserves existing slug if name hasn't changed significantly)
+  const formatForDatabaseUpdate = (
+    formData: TreatmentFormData,
+    existingTreatment?: Treatment
+  ) => {
+    const baseData = {
+      name: formData.name,
+      description: formData.description,
+      duration_minutes: formData.duration_minutes,
+      price_cents: eurosToCents(formData.price_euros),
+      intensity: formData.intensity,
+      intensity_label: formData.intensity_label,
+      icon: formData.icon,
+      category: formData.category,
+      display_order: formData.display_order,
+      is_active: formData.is_active,
+    };
+
+    // Only regenerate slug if name has changed
+    if (existingTreatment && existingTreatment.name !== formData.name) {
+      return {
+        ...baseData,
+        slug: generateSlug(formData.name),
+      };
+    }
+
+    return baseData;
+  };
+
   // Convert database format to form data
   const formatForForm = (treatment: Treatment): TreatmentFormData => {
     return {
@@ -74,14 +100,8 @@ export const useAdminTreatments = () => {
       loading.value = true;
       error.value = null;
 
-      const { data, error: fetchError } = await supabase
-        .from('treatments')
-        .select('*')
-        .order('display_order', { ascending: true });
-
-      if (fetchError) throw fetchError;
-
-      treatments.value = data || [];
+      const response = await $fetch<{ data: Treatment[] }>('/api/admin/treatments');
+      treatments.value = response.data || [];
     } catch (err) {
       error.value =
         err instanceof Error ? err.message : 'Failed to fetch treatments';
@@ -101,18 +121,15 @@ export const useAdminTreatments = () => {
 
       const treatmentData = formatForDatabase(formData);
 
-      const { data, error: createError } = await supabase
-        .from('treatments')
-        .insert([treatmentData])
-        .select()
-        .single();
-
-      if (createError) throw createError;
+      const response = await $fetch<{ data: Treatment }>('/api/admin/treatments', {
+        method: 'POST',
+        body: treatmentData,
+      });
 
       // Refresh the treatments list
       await fetchTreatments();
 
-      return data;
+      return response.data;
     } catch (err) {
       error.value =
         err instanceof Error ? err.message : 'Failed to create treatment';
@@ -132,26 +149,26 @@ export const useAdminTreatments = () => {
       loading.value = true;
       error.value = null;
 
-      const treatmentData = formatForDatabase(formData);
-      const updateData: UpdateTreatmentInput = {
-        id,
-        ...treatmentData,
-        is_active: formData.is_active,
-      };
+      // Find the existing treatment for comparison
+      const existingTreatment = treatments.value.find((t) => t.id === id);
+      if (!existingTreatment) {
+        throw new Error(`Treatment with ID ${id} not found in local data`);
+      }
 
-      const { data, error: updateError } = await supabase
-        .from('treatments')
-        .update(updateData)
-        .eq('id', id)
-        .select()
-        .single();
+      const updateData = formatForDatabaseUpdate(formData, existingTreatment);
 
-      if (updateError) throw updateError;
+      console.log('Updating treatment with data:', updateData);
+      console.log('Treatment ID:', id);
+
+      const response = await $fetch<{ data: Treatment }>(`/api/admin/treatments/${id}`, {
+        method: 'PUT',
+        body: updateData,
+      });
 
       // Refresh the treatments list
       await fetchTreatments();
 
-      return data;
+      return response.data;
     } catch (err) {
       error.value =
         err instanceof Error ? err.message : 'Failed to update treatment';
@@ -168,12 +185,9 @@ export const useAdminTreatments = () => {
       loading.value = true;
       error.value = null;
 
-      const { error: deleteError } = await supabase
-        .from('treatments')
-        .delete()
-        .eq('id', id);
-
-      if (deleteError) throw deleteError;
+      await $fetch(`/api/admin/treatments/${id}`, {
+        method: 'DELETE',
+      });
 
       // Refresh the treatments list
       await fetchTreatments();
@@ -198,12 +212,10 @@ export const useAdminTreatments = () => {
       loading.value = true;
       error.value = null;
 
-      const { error: updateError } = await supabase
-        .from('treatments')
-        .update({ is_active: isActive })
-        .eq('id', id);
-
-      if (updateError) throw updateError;
+      await $fetch(`/api/admin/treatments/${id}/toggle-status`, {
+        method: 'PATCH',
+        body: { is_active: isActive },
+      });
 
       // Refresh the treatments list
       await fetchTreatments();
@@ -229,20 +241,12 @@ export const useAdminTreatments = () => {
       loading.value = true;
       error.value = null;
 
-      // Update each treatment's display order
-      const updatePromises = treatmentUpdates.map((update) =>
-        supabase
-          .from('treatments')
-          .update({ display_order: update.display_order })
-          .eq('id', update.id)
-      );
-
-      const results = await Promise.all(updatePromises);
-
-      // Check if any updates failed
-      const hasError = results.some((result) => result.error);
-      if (hasError) {
-        throw new Error('Failed to update some treatment orders');
+      // Update each treatment's display order sequentially
+      for (const update of treatmentUpdates) {
+        await $fetch(`/api/admin/treatments/${update.id}`, {
+          method: 'PUT',
+          body: { display_order: update.display_order },
+        });
       }
 
       // Refresh the treatments list
