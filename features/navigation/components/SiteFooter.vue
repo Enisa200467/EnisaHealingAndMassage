@@ -12,7 +12,7 @@
           <!-- Column 1: Behandelingen -->
           <div>
             <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
-              Behandelingen v2
+              Behandelingen v4
             </h4>
             <!-- Healing category -->
             <div class="mb-3">
