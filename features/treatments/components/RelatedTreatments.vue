@@ -2,8 +2,12 @@
 const routes = useRoutes();
 
 // Get related treatments organized by category
-const healingTreatments = routes.treatments.healing.items.slice(0, 3);
-const massageTreatments = routes.treatments.massage.items.slice(0, 3);
+const healingTreatments = computed(() =>
+  routes.treatments.value.healing.items.slice(0, 3)
+);
+const massageTreatments = computed(() =>
+  routes.treatments.value.massage.items.slice(0, 3)
+);
 </script>
 
 <template>

@@ -10,12 +10,12 @@ useSeoMeta({
 const routes = useRoutes();
 
 // Popular treatments for display
-const popularTreatments = [
+const popularTreatments = computed(() => [
   {
     name: 'Chakra Balancering',
     icon: 'i-mdi-sparkles',
     path:
-      routes.treatments.healing.items.find(
+      routes.treatments.value.healing.items.find(
         (item) => item.slug === 'chakra-balancering'
       )?.path || '/behandelingen/chakra-balancering',
   },
@@ -23,7 +23,7 @@ const popularTreatments = [
     name: 'Klassieke Ontspanningsmassage',
     icon: 'i-mdi-spa',
     path:
-      routes.treatments.massage.items.find(
+      routes.treatments.value.massage.items.find(
         (item) => item.slug === 'klassieke-ontspanningsmassage'
       )?.path || '/behandelingen/klassieke-ontspanningsmassage',
   },
@@ -31,11 +31,11 @@ const popularTreatments = [
     name: 'Sportmassage',
     icon: 'i-mdi-lightning-bolt',
     path:
-      routes.treatments.massage.items.find(
+      routes.treatments.value.massage.items.find(
         (item) => item.slug === 'sportmassage'
       )?.path || '/behandelingen/sportmassage',
   },
-];
+]);
 </script>
 
 <template>
