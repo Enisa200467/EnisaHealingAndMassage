@@ -1,70 +1,73 @@
 ---
-title: 'Chakra Balancering'
-description: 'Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.'
-duration: '60 minuten'
-price: '€ 70'
-intensity: 1
-intensityLabel: 'Zeer Zacht (Energetisch werk)'
-icon: 'i-mdi-sparkles'
-category: 'healing'
----
-
-::treatmentHero
----
 title: Chakra Balancering
-subtitle: Chakra Balancering is een subtiele energetische behandeling gericht op het harmoniseren van de energiecentra (chakra's) in je lichaam. Het helpt bij het oplossen van blokkades en bevordert een gevoel van innerlijke rust, balans en vitaliteit.
+description: Herstel de harmonie en energiestroom in je lichaam met een zachte
+  Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen
+  van emotioneel en fysiek welzijn.
 duration: 60 minuten
 price: € 70
 intensity: 1
 intensityLabel: Zeer Zacht (Energetisch werk)
 icon: i-mdi-sparkles
+category: healing
+---
+
+::treatment-hero
+---
+intensity: 1
+duration: 60 minuten
+icon: i-mdi-sparkles
+intensityLabel: Zeer Zacht (Energetisch werk)
+price: € 70
+subtitle: Chakra Balancering is een subtiele energetische behandeling gericht op
+  het harmoniseren van de energiecentra (chakra's) in je lichaam. Het helpt bij
+  het oplossen van blokkades en bevordert een gevoel van innerlijke rust, balans
+  en vitaliteit.
+title: Chakra Balancering
 ---
 ::
 
-::treatmentSection
+::treatment-section
 ---
-title: Wat kun je verwachten?
-image: /images/placeholder-chakra.webp
-imageAlt: Sfeerbeeld van een chakra balancering sessie
 items:
   - "Handoplegging: Zachte aanraking of handen net boven de chakra-punten."
   - "Visualisatie: Geleide meditaties om de energiestroom te ondersteunen."
-  - "Ademhalingstechnieken: Om ontspanning te verdiepen en energie te laten stromen."
-  - "Eventueel gebruik van kristallen of klankschalen: Ter ondersteuning van het balanceringsproces."
+  - "Ademhalingstechnieken: Om ontspanning te verdiepen en energie te laten
+    stromen."
+  - "Eventueel gebruik van kristallen of klankschalen: Ter ondersteuning van het
+    balanceringsproces."
+image: /images/placeholder-chakra.webp
+imageAlt: Sfeerbeeld van een chakra balancering sessie
+title: Wat kun je verwachten?
 ---
 ::
 
-::twoColumnSection
-::benefitList
----
-title: Belangrijkste Voordelen
-items:
-  - Vermindert stress en bevordert diepe ontspanning
-  - Helpt bij het loslaten van emotionele blokkades
-  - Verbetert de energiestroom en vitaliteit
-  - Verhoogt het gevoel van innerlijke rust en balans
-  - Ondersteunt spirituele groei en bewustwording
----
+::two-column-section
+  :::benefit-list
+  ---
+  items:
+    - Vermindert stress en bevordert diepe ontspanning
+    - Helpt bij het loslaten van emotionele blokkades
+    - Verbetert de energiestroom en vitaliteit
+    - Verhoogt het gevoel van innerlijke rust en balans
+    - Ondersteunt spirituele groei en bewustwording
+  title: Belangrijkste Voordelen
+  ---
+  :::
+
+  :::for-whom
+  ---
+  items:
+    - Je uit balans voelt, zowel fysiek als emotioneel
+    - Last hebt van stress, vermoeidheid of onrust
+    - Op zoek bent naar diepere ontspanning en innerlijke rust
+    - Emotionele blokkades wilt aanpakken
+    - Je spirituele ontwikkeling wilt ondersteunen
+  title: Voor Wie?
+  ---
+  :::
 ::
 
-::forWhom
----
-title: Voor Wie?
-items:
-  - Je uit balans voelt, zowel fysiek als emotioneel
-  - Last hebt van stress, vermoeidheid of onrust
-  - Op zoek bent naar diepere ontspanning en innerlijke rust
-  - Emotionele blokkades wilt aanpakken
-  - Je spirituele ontwikkeling wilt ondersteunen
----
-::
-::
-
-::expandableInfo
----
-title: Meer over chakra balancering
----
-
+::expandable-info{title="Meer over chakra balancering"}
 ### De Zeven Hoofdchakra's
 
 Chakra's zijn energiecentra in je lichaam. De zeven hoofdchakra's zijn:
@@ -80,6 +83,7 @@ Chakra's zijn energiecentra in je lichaam. De zeven hoofdchakra's zijn:
 ### Tekenen van Onbalans
 
 Blokkades kunnen zich uiten als:
+
 - **Fysiek**: Vermoeidheid, spanning, pijn in specifieke lichaamsgebieden
 - **Emotioneel**: Angst, woede, verdriet dat vasthoudt
 - **Mentaal**: Concentratieproblemen, negatieve gedachtepatronen
@@ -92,6 +96,7 @@ Energetisch werk is gebaseerd op het principe dat alles energie is. Door zachte 
 ### Wat Kun Je Verwachten?
 
 Tijdens en na de sessie kun je ervaren:
+
 - Warmte, tintelingen of trillingen
 - Diepe ontspanning en rust
 - Emotionele releases (soms tranen)
@@ -104,5 +109,4 @@ Tijdens en na de sessie kun je ervaren:
 - Resultaten zijn zeer individueel en subtiel
 - Meerdere sessies kunnen nodig zijn voor optimaal resultaat
 - Open houding en intentie versterken het effect
-
 ::
