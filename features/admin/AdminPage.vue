@@ -45,7 +45,22 @@ const isAuthenticated = computed(() => !!user.value);
         </header>
 
         <!-- Quick Actions -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <UCard class="p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Behandelingen</h3>
+                <p class="text-neutral-600 text-sm mb-4">
+                  Beheer behandelingen en tarieven
+                </p>
+                <UButton to="/admin/treatments" icon="i-mdi-spa" size="sm">
+                  Behandelingen
+                </UButton>
+              </div>
+              <UIcon name="i-mdi-spa" class="w-12 h-12 text-primary-500" />
+            </div>
+          </UCard>
+
           <UCard class="p-6">
             <div class="flex items-center justify-between">
               <div>
@@ -57,7 +72,7 @@ const isAuthenticated = computed(() => !!user.value);
                   Ga naar Reviews
                 </UButton>
               </div>
-              <UIcon name="i-mdi-star" class="w-12 h-12 text-primary-500" />
+              <UIcon name="i-mdi-star" class="w-12 h-12 text-secondary-500" />
             </div>
           </UCard>
 
@@ -78,7 +93,7 @@ const isAuthenticated = computed(() => !!user.value);
               </div>
               <UIcon
                 name="i-mdi-search-web"
-                class="w-12 h-12 text-secondary-500"
+                class="w-12 h-12 text-primary-600"
               />
             </div>
           </UCard>

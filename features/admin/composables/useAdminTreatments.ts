@@ -1,0 +1,278 @@
+import type {
+  Treatment,
+  CreateTreatmentInput,
+  UpdateTreatmentInput,
+  TreatmentFormData,
+} from '../types/treatment.types';
+import type { Database } from '~/types/database.types';
+
+export const useAdminTreatments = () => {
+  const supabase = useSupabaseClient<Database>();
+  const treatments = ref<Treatment[]>([]);
+  const loading = ref(false);
+  const error = ref<string | null>(null);
+
+  // Helper function to generate slug from name
+  const generateSlug = (name: string): string => {
+    return name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single
+      .trim();
+  };
+
+  // Convert euros to cents
+  const eurosToCents = (euros: number): number => {
+    return Math.round(euros * 100);
+  };
+
+  // Convert cents to euros
+  const centsToEuros = (cents: number): number => {
+    return cents / 100;
+  };
+
+  // Convert form data to database format
+  const formatForDatabase = (
+    formData: TreatmentFormData
+  ): CreateTreatmentInput => {
+    return {
+      name: formData.name,
+      slug: generateSlug(formData.name),
+      description: formData.description,
+      duration_minutes: formData.duration_minutes,
+      price_cents: eurosToCents(formData.price_euros),
+      intensity: formData.intensity,
+      intensity_label: formData.intensity_label,
+      icon: formData.icon,
+      category: formData.category,
+      display_order: formData.display_order,
+    };
+  };
+
+  // Convert database format to form data
+  const formatForForm = (treatment: Treatment): TreatmentFormData => {
+    return {
+      name: treatment.name,
+      description: treatment.description || '',
+      duration_minutes: treatment.duration_minutes,
+      price_euros: centsToEuros(treatment.price_cents),
+      intensity: treatment.intensity || 1,
+      intensity_label: treatment.intensity_label || '',
+      icon: treatment.icon || '',
+      category: treatment.category || '',
+      display_order: treatment.display_order,
+      is_active: treatment.is_active,
+    };
+  };
+
+  // Fetch all treatments
+  const fetchTreatments = async (): Promise<void> => {
+    try {
+      loading.value = true;
+      error.value = null;
+
+      const { data, error: fetchError } = await supabase
+        .from('treatments')
+        .select('*')
+        .order('display_order', { ascending: true });
+
+      if (fetchError) throw fetchError;
+
+      treatments.value = data || [];
+    } catch (err) {
+      error.value =
+        err instanceof Error ? err.message : 'Failed to fetch treatments';
+      console.error('Error fetching treatments:', err);
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // Create a new treatment
+  const createTreatment = async (
+    formData: TreatmentFormData
+  ): Promise<Treatment | null> => {
+    try {
+      loading.value = true;
+      error.value = null;
+
+      const treatmentData = formatForDatabase(formData);
+
+      const { data, error: createError } = await supabase
+        .from('treatments')
+        .insert([treatmentData])
+        .select()
+        .single();
+
+      if (createError) throw createError;
+
+      // Refresh the treatments list
+      await fetchTreatments();
+
+      return data;
+    } catch (err) {
+      error.value =
+        err instanceof Error ? err.message : 'Failed to create treatment';
+      console.error('Error creating treatment:', err);
+      return null;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // Update an existing treatment
+  const updateTreatment = async (
+    id: string,
+    formData: TreatmentFormData
+  ): Promise<Treatment | null> => {
+    try {
+      loading.value = true;
+      error.value = null;
+
+      const treatmentData = formatForDatabase(formData);
+      const updateData: UpdateTreatmentInput = {
+        id,
+        ...treatmentData,
+        is_active: formData.is_active,
+      };
+
+      const { data, error: updateError } = await supabase
+        .from('treatments')
+        .update(updateData)
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (updateError) throw updateError;
+
+      // Refresh the treatments list
+      await fetchTreatments();
+
+      return data;
+    } catch (err) {
+      error.value =
+        err instanceof Error ? err.message : 'Failed to update treatment';
+      console.error('Error updating treatment:', err);
+      return null;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // Delete a treatment
+  const deleteTreatment = async (id: string): Promise<boolean> => {
+    try {
+      loading.value = true;
+      error.value = null;
+
+      const { error: deleteError } = await supabase
+        .from('treatments')
+        .delete()
+        .eq('id', id);
+
+      if (deleteError) throw deleteError;
+
+      // Refresh the treatments list
+      await fetchTreatments();
+
+      return true;
+    } catch (err) {
+      error.value =
+        err instanceof Error ? err.message : 'Failed to delete treatment';
+      console.error('Error deleting treatment:', err);
+      return false;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // Toggle treatment active status
+  const toggleTreatmentStatus = async (
+    id: string,
+    isActive: boolean
+  ): Promise<boolean> => {
+    try {
+      loading.value = true;
+      error.value = null;
+
+      const { error: updateError } = await supabase
+        .from('treatments')
+        .update({ is_active: isActive })
+        .eq('id', id);
+
+      if (updateError) throw updateError;
+
+      // Refresh the treatments list
+      await fetchTreatments();
+
+      return true;
+    } catch (err) {
+      error.value =
+        err instanceof Error
+          ? err.message
+          : 'Failed to update treatment status';
+      console.error('Error updating treatment status:', err);
+      return false;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // Update display order for multiple treatments
+  const updateDisplayOrder = async (
+    treatmentUpdates: { id: string; display_order: number }[]
+  ): Promise<boolean> => {
+    try {
+      loading.value = true;
+      error.value = null;
+
+      // Update each treatment's display order
+      const updatePromises = treatmentUpdates.map((update) =>
+        supabase
+          .from('treatments')
+          .update({ display_order: update.display_order })
+          .eq('id', update.id)
+      );
+
+      const results = await Promise.all(updatePromises);
+
+      // Check if any updates failed
+      const hasError = results.some((result) => result.error);
+      if (hasError) {
+        throw new Error('Failed to update some treatment orders');
+      }
+
+      // Refresh the treatments list
+      await fetchTreatments();
+
+      return true;
+    } catch (err) {
+      error.value =
+        err instanceof Error ? err.message : 'Failed to update display order';
+      console.error('Error updating display order:', err);
+      return false;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  return {
+    treatments: readonly(treatments),
+    loading: readonly(loading),
+    error: readonly(error),
+    fetchTreatments,
+    createTreatment,
+    updateTreatment,
+    deleteTreatment,
+    toggleTreatmentStatus,
+    updateDisplayOrder,
+    formatForForm,
+    formatForDatabase,
+    eurosToCents,
+    centsToEuros,
+    generateSlug,
+  };
+};

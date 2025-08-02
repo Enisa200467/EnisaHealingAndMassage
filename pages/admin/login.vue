@@ -104,7 +104,7 @@ const handleLogin = async () => {
 
           <UForm :state="formData" class="space-y-6" @submit="handleLogin">
             <!-- Email Field -->
-            <UFormGroup label="E-mailadres" required :error="errors.email">
+            <UFormField label="E-mailadres" required :error="errors.email">
               <UInput
                 v-model="formData.email"
                 type="email"
@@ -112,10 +112,10 @@ const handleLogin = async () => {
                 icon="i-mdi-email"
                 autocomplete="username"
               />
-            </UFormGroup>
+            </UFormField>
 
             <!-- Password Field -->
-            <UFormGroup label="Wachtwoord" required :error="errors.password">
+            <UFormField label="Wachtwoord" required :error="errors.password">
               <UInput
                 v-model="formData.password"
                 type="password"
@@ -123,7 +123,7 @@ const handleLogin = async () => {
                 icon="i-mdi-lock"
                 autocomplete="current-password"
               />
-            </UFormGroup>
+            </UFormField>
 
             <!-- General Error Message -->
             <UAlert

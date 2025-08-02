@@ -96,22 +96,24 @@ import type { NavigationMenuItem } from '@nuxt/ui';
 
 const routes = useRoutes();
 
-// Statically define treatment navigation items
-const healingNavEntries: NavigationMenuItem[] =
-  routes.treatments.healing.items.map((item) => ({
-    label: routes.slugToTitle(item.slug),
+// Reactively define treatment navigation items
+const healingNavEntries = computed<NavigationMenuItem[]>(() =>
+  routes.treatments.value.healing.items.map((item) => ({
+    label: item.title || routes.slugToTitle(item.slug || ''),
     to: item.path,
     icon: item.icon || 'i-mdi-meditation', // Default icon if not specified
-  }));
+  }))
+);
 
-const massageNavEntries: NavigationMenuItem[] =
-  routes.treatments.massage.items.map((item) => ({
-    label: routes.slugToTitle(item.slug),
+const massageNavEntries = computed<NavigationMenuItem[]>(() =>
+  routes.treatments.value.massage.items.map((item) => ({
+    label: item.title || routes.slugToTitle(item.slug || ''),
     to: item.path,
     icon: item.icon || 'i-mdi-hand-back-right', // Default icon if not specified
-  }));
+  }))
+);
 
-const mobileNavItems = ref<NavigationMenuItem[]>([
+const mobileNavItems = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',
     icon: 'i-mdi-home',
@@ -129,12 +131,12 @@ const mobileNavItems = ref<NavigationMenuItem[]>([
       {
         label: 'Healing',
         icon: 'i-mdi-meditation',
-        children: healingNavEntries,
+        children: healingNavEntries.value,
       },
       {
         label: 'Massage',
         icon: 'i-mdi-hand-back-right',
-        children: massageNavEntries,
+        children: massageNavEntries.value,
       },
     ],
   },
@@ -155,8 +157,8 @@ const mobileNavItems = ref<NavigationMenuItem[]>([
   },
 ]);
 
-// Create navigation items with static treatment data
-const desktopNavItems = ref<NavigationMenuItem[]>([
+// Create navigation items with dynamic treatment data
+const desktopNavItems = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',
     icon: 'i-mdi-home',
@@ -170,7 +172,7 @@ const desktopNavItems = ref<NavigationMenuItem[]>([
   {
     label: 'Behandelingen',
     icon: 'i-mdi-sparkles',
-    children: [...healingNavEntries, ...massageNavEntries],
+    children: [...healingNavEntries.value, ...massageNavEntries.value],
   },
   {
     label: 'Tarieven',

@@ -5,21 +5,15 @@ interface BreadcrumbItem {
   icon: string;
 }
 
-interface TreatmentData {
-  slug?: string;
-  path: string;
-  title: string;
-  _file?: string;
-  description?: string;
-  category?: string;
-  icon?: string;
-}
-
 /**
  * Composable for managing all application routes
- * Provides centralized access to static page routes and treatment routes.
+ * Provides centralized access to static page routes and dynamic treatment routes.
+ * Now integrates with Supabase treatment data for dynamic content.
  */
 export const useRoutes = () => {
+  const { compatibleTreatments, fetchTreatments, loading, error } =
+    useTreatments();
+
   // Static page routes
   const pages = {
     home: '/',
@@ -33,8 +27,8 @@ export const useRoutes = () => {
     reviews: '/reviews',
   } as const;
 
-  // Static treatment routes
-  const treatments = {
+  // Static treatment routes - used as fallback when dynamic data is not available
+  const staticTreatments = {
     healing: {
       title: 'Healing',
       items: [
@@ -89,6 +83,30 @@ export const useRoutes = () => {
     },
   } as const;
 
+  // Use dynamic treatments with proper fallback handling
+  const treatments = computed(() => {
+    // Always provide a safe fallback structure
+    const safeHealingItems = compatibleTreatments.value?.healing?.items || [];
+    const safeMassageItems = compatibleTreatments.value?.massage?.items || [];
+
+    return {
+      healing: {
+        title: 'Healing',
+        items:
+          safeHealingItems.length > 0
+            ? safeHealingItems
+            : staticTreatments.healing.items,
+      },
+      massage: {
+        title: 'Massage',
+        items:
+          safeMassageItems.length > 0
+            ? safeMassageItems
+            : staticTreatments.massage.items,
+      },
+    };
+  });
+
   /**
    * Converts a slug string to a properly formatted title
    * (e.g. 'chakra-balancering' → 'Chakra Balancering')
@@ -100,14 +118,24 @@ export const useRoutes = () => {
       .join(' ');
   };
 
+  // Initialize treatment data if not already loaded
+  // Make sure to fetch treatments on both client and server side
+  if (!loading.value && !error.value) {
+    fetchTreatments();
+  }
+
   return {
     pages,
     treatments,
     slugToTitle,
+    // Expose treatment state for components that need it
+    loading: readonly(loading),
+    error: readonly(error),
+    refresh: fetchTreatments,
   };
 };
 
 // Export types for better TypeScript support
 export type PageRoutes = ReturnType<typeof useRoutes>['pages'];
 export type TreatmentRoutes = ReturnType<typeof useRoutes>['treatments'];
-export type { BreadcrumbItem, TreatmentData };
+export type { BreadcrumbItem };

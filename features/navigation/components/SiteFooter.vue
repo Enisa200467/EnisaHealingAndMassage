@@ -19,7 +19,7 @@
               <h5
                 class="text-xs font-bold text-neutral-700 dark:text-neutral-400 mb-1"
               >
-                {{ routes.treatments.healing.title }}
+                Healing
               </h5>
               <ul class="space-y-1">
                 <li
@@ -41,7 +41,7 @@
               <h5
                 class="text-xs font-bold text-neutral-700 dark:text-neutral-400 mb-1"
               >
-                {{ routes.treatments.massage.title }}
+                Massage
               </h5>
               <ul class="space-y-1">
                 <li
@@ -202,18 +202,18 @@ import type { Review, ReviewStats } from '~/types/reviews';
 // Use routes composable for centralized route management
 const routes = useRoutes();
 
-// Statically define footer links based on routes
-const footerLinks = {
+// Reactively define footer links based on routes
+const footerLinks = computed(() => ({
   // Group services by category (healing and massage)
   services: {
-    healing: routes.treatments.healing.items,
-    massage: routes.treatments.massage.items,
+    healing: routes.treatments.value.healing.items,
+    massage: routes.treatments.value.massage.items,
   },
   info: [
     { label: 'Veelgestelde Vragen', path: routes.pages.faq },
     { label: 'Reviews & Ervaringen', path: routes.pages.reviews },
   ],
-};
+}));
 
 // Reviews data from API
 const reviews = ref<Review[]>([]);

@@ -8,6 +8,12 @@ const navigationItems = [
     description: 'Hoofdoverzicht en admin dashboard',
   },
   {
+    label: 'Behandelingen',
+    to: '/admin/treatments',
+    icon: 'i-mdi-spa',
+    description: 'Beheer behandelingen en tarieven',
+  },
+  {
     label: 'Reviews',
     to: '/admin/reviews',
     icon: 'i-mdi-star',
