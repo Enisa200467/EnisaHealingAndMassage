@@ -9,59 +9,53 @@ subtitle: Een diepgaande energetische behandeling waarbij ik intuïtief werk met
 ---
 ::
 
-::treatmentSection
+::treatment-section
 ---
-title: Wat kun je verwachten?
-image: /images/placeholder.webp
-imageAlt: Energetische healing in een rustige omgeving
 items:
   - Een intake gesprek om je behoeften te begrijpen
   - Ontspannen liggen op de behandeltafel, volledig gekleed
   - Zachte aanraking en hands-on healing technieken
   - Intuïtief werken met je energieveld
   - Nabespreking en integratie van de ervaring
+  - Test v2
+image: /images/placeholder.webp
+imageAlt: Energetische healing in een rustige omgeving
+title: Wat kun je verwachten?
 ---
-
 Tijdens een energetische healing sessie werk ik intuïtief met de natuurlijke energiestroom in je lichaam. Deze zachte behandeling helpt bij het oplossen van energetische blokkades en het herstellen van balans op fysiek, emotioneel en mentaal niveau.
 ::
 
-::twoColumnSection
+::two-column-section
+  :::benefit-list
+  ---
+  items:
+    - Diepe ontspanning en innerlijke rust
+    - Oplossen van energetische blokkades
+    - Versterking van je natuurlijke zelfhelende vermogen
+    - Emotionele balans en helderheid
+    - Verbetering van de energiestroom
+    - Ondersteuning bij stressklachten
+    - Verhoging van vitaliteit en levenslust
+  title: Belangrijkste Voordelen
+  ---
+  :::
 
-::benefitList
----
-title: Belangrijkste Voordelen
-items:
-  - Diepe ontspanning en innerlijke rust
-  - Oplossen van energetische blokkades
-  - Versterking van je natuurlijke zelfhelende vermogen
-  - Emotionele balans en helderheid
-  - Verbetering van de energiestroom
-  - Ondersteuning bij stressklachten
-  - Verhoging van vitaliteit en levenslust
----
+  :::for-whom
+  ---
+  items:
+    - Op zoek bent naar diepgaande ontspanning
+    - Energetische blokkades voelt
+    - Stress of emotionele spanning ervaart
+    - Je natuurlijke balans wilt herstellen
+    - Open staat voor energetisch werk
+    - Lichamelijke klachten hebt zonder duidelijke oorzaak
+    - Meer vitaliteit en levenslust wilt ervaren
+  title: Geschikt voor jou als je
+  ---
+  :::
 ::
 
-::forWhom
----
-title: Geschikt voor jou als je
-items:
-  - Op zoek bent naar diepgaande ontspanning
-  - Energetische blokkades voelt
-  - Stress of emotionele spanning ervaart
-  - Je natuurlijke balans wilt herstellen
-  - Open staat voor energetisch werk
-  - Lichamelijke klachten hebt zonder duidelijke oorzaak
-  - Meer vitaliteit en levenslust wilt ervaren
----
-::
-
-::
-
-::expandableInfo
----
-title: Meer informatie over energetische healing
----
-
+::expandable-info{title="Meer informatie over energetische healing"}
 ### Hoe werkt energetische healing?
 
 Energetische healing is gebaseerd op het principe dat alles energie is en dat blokkades in onze energiestroom kunnen leiden tot onbalans en klachten. Tijdens de behandeling werk ik intuïtief met verschillende technieken om je energieveld te harmoniseren.
@@ -77,15 +71,8 @@ Energetische healing is geschikt voor iedereen die openstaat voor deze vorm van 
 ### Wetenschappelijke achtergrond
 
 Hoewel energetische healing nog niet volledig wetenschappelijk bewezen is, laten studies zien dat hands-on healing technieken kunnen bijdragen aan ontspanning en welzijn door activering van het parasympathische zenuwstelsel.
-
 ::
 
-::infoBox
----
-type: warning
-icon: i-mdi-alert
-title: Belangrijke informatie
----
-
+::info-box{icon="i-mdi-alert" title="Belangrijke informatie" type="warning"}
 Energetische healing is een aanvullende behandeling en vervangt geen medische zorg. Bij ernstige klachten adviseer ik altijd om ook medisch advies in te winnen. Deze behandeling is niet geschikt tijdens de eerste drie maanden van de zwangerschap.
 ::
