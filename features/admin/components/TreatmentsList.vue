@@ -17,6 +17,9 @@ withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emits>();
 
+// Get dynamic routes
+const routes = useRoutes();
+
 // Format price for display
 const formatPrice = (priceCents: number): string => {
   return `€ ${(priceCents / 100).toFixed(2)}`;
@@ -66,9 +69,21 @@ const getCategoryColor = (category?: string | null) => {
         </p>
       </div>
 
-      <UButton icon="i-mdi-plus" :disabled="loading" @click="emit('create')">
-        Nieuwe Behandeling
-      </UButton>
+      <div class="flex items-center gap-3">
+        <UButton
+          :to="routes.admin.docs"
+          variant="ghost"
+          icon="i-mdi-help-circle"
+          size="sm"
+          aria-label="Open documentatie"
+        >
+          Hulp
+        </UButton>
+
+        <UButton icon="i-mdi-plus" :disabled="loading" @click="emit('create')">
+          Nieuwe Behandeling
+        </UButton>
+      </div>
     </div>
 
     <!-- Statistics -->
