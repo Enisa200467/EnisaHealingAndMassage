@@ -1,8 +1,28 @@
 <script setup lang="ts">
 import type { TreatmentsCollectionItem } from '@nuxt/content';
 
+interface TreatmentData {
+  id: string;
+  name: string;
+  slug: string;
+  description?: string;
+  duration_minutes: number;
+  price_cents: number;
+  price_formatted: string;
+  duration_formatted: string;
+  intensity?: number;
+  intensity_label?: string;
+  icon?: string;
+  category?: string;
+  is_active: boolean;
+  display_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
 interface Props {
   treatment: TreatmentsCollectionItem | null;
+  treatmentData?: TreatmentData | null;
 }
 
 const props = defineProps<Props>();
@@ -17,20 +37,29 @@ interface StructuredDataItem {
 }
 
 // Enhanced SEO with structured data for health services
-if (props.treatment) {
+if (props.treatment || props.treatmentData) {
+  // Use database data when available, fall back to content data
+  const title =
+    props.treatmentData?.name || props.treatment?.title || 'Treatment';
+  const description =
+    props.treatmentData?.description || props.treatment?.description || '';
+  const price =
+    props.treatmentData?.price_formatted ||
+    (props.treatment?.meta?.price as string);
+
   // Generate structured data for this specific treatment
   const healthServiceSchema = generateHealthServiceSchema(
-    props.treatment.title,
-    props.treatment.description,
-    (props.treatment.meta?.price as string) || undefined
+    title,
+    description,
+    price
   );
 
   // Additional treatment-specific schema
   const treatmentSchema: StructuredDataItem = {
     '@context': 'https://schema.org',
     '@type': 'MedicalProcedure',
-    name: props.treatment.title,
-    description: props.treatment.description,
+    name: title,
+    description: description,
     provider: {
       '@type': 'Organization',
       name: 'Enisa Healing & Massage',
@@ -42,13 +71,21 @@ if (props.treatment) {
     },
   };
 
-  // Add optional fields if they exist
-  if (props.treatment.meta?.duration) {
+  // Add optional fields - prioritize database data
+  if (props.treatmentData?.duration_minutes) {
+    treatmentSchema.duration = `PT${props.treatmentData.duration_minutes}M`;
+  } else if (props.treatment?.meta?.duration) {
     treatmentSchema.duration = `PT${props.treatment.meta.duration}`;
   }
 
-  if (
-    props.treatment.meta?.price &&
+  if (props.treatmentData?.price_formatted) {
+    treatmentSchema.cost = {
+      '@type': 'MonetaryAmount',
+      currency: 'EUR',
+      value: (props.treatmentData.price_cents / 100).toString(),
+    };
+  } else if (
+    props.treatment?.meta?.price &&
     typeof props.treatment.meta.price === 'string'
   ) {
     treatmentSchema.cost = {
@@ -60,9 +97,11 @@ if (props.treatment) {
 
   // Set comprehensive page SEO
   setPageSEO({
-    title: `${props.treatment.title} - Enisa Healing & Massage`,
-    description: props.treatment.description,
-    path: `/behandelingen/${props.treatment.path}`,
+    title: `${title} - Enisa Healing & Massage`,
+    description: description,
+    path: `/behandelingen/${
+      props.treatmentData?.slug || props.treatment?.path || ''
+    }`,
     type: 'article',
     structuredData: [healthServiceSchema, treatmentSchema],
   });
@@ -79,15 +118,17 @@ const breadcrumbs = computed(() => [
   { path: '/', label: 'Home', icon: 'i-mdi-home' },
   { path: '/behandelingen', label: 'Behandelingen', icon: 'i-mdi-heart-pulse' },
   {
-    path: `/behandelingen/${props.treatment?.path || ''}`,
-    label: props.treatment?.title || 'Behandeling',
+    path: `/behandelingen/${
+      props.treatmentData?.slug || props.treatment?.path || ''
+    }`,
+    label: props.treatmentData?.name || props.treatment?.title || 'Behandeling',
     icon: 'i-mdi-sparkles',
   },
 ]);
 </script>
 
 <template>
-  <article v-if="treatment">
+  <article v-if="treatment || treatmentData">
     <!-- Breadcrumbs -->
     <UContainer class="py-4">
       <nav
@@ -127,10 +168,23 @@ const breadcrumbs = computed(() => [
     </UContainer>
 
     <!-- Content Renderer -->
-    <ContentRenderer :value="treatment" />
+    <ContentRenderer v-if="treatment" :value="treatment" />
+
+    <!-- If only database data exists, show basic treatment info -->
+    <div v-else-if="treatmentData" class="py-16">
+      <UContainer>
+        <div class="max-w-4xl mx-auto prose prose-lg">
+          <h2>{{ treatmentData.name }}</h2>
+          <p v-if="treatmentData.description">
+            {{ treatmentData.description }}
+          </p>
+          <p>Meer details over deze behandeling zijn binnenkort beschikbaar.</p>
+        </div>
+      </UContainer>
+    </div>
 
     <!-- Call-to-Action Section -->
-    <TreatmentCTA :treatment="treatment" />
+    <TreatmentCTA :treatment="treatment || { title: treatmentData?.name }" />
 
     <!-- Related Treatments -->
     <RelatedTreatments />

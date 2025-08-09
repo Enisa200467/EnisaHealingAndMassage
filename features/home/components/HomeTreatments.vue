@@ -25,7 +25,10 @@
               >
                 <template #header>
                   <div class="flex items-center">
-                    <UIcon :name="massage.icon" class="mr-2 text-primary-500" />
+                    <UIcon
+                      :name="massage.icon || 'i-mdi-sparkles'"
+                      class="mr-2 text-primary-500"
+                    />
                     <h3 class="text-lg font-semibold leading-6">
                       {{ massage.title }}
                     </h3>
@@ -63,16 +66,16 @@
 const routes = useRoutes();
 
 // Group treatments by category for the tabs
-const massageTypes = [
+const massageTypes = computed(() => [
   {
     label: 'Helende Behandelingen',
     slot: 'item',
-    massages: routes.treatments.healing.items,
+    massages: routes.treatments.value.healing.items,
   },
   {
     label: 'Reguliere Massages',
     slot: 'item',
-    massages: routes.treatments.massage.items,
+    massages: routes.treatments.value.massage.items,
   },
-];
+]);
 </script>

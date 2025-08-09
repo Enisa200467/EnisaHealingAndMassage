@@ -1,23 +1,38 @@
 <script setup lang="ts">
+// Get dynamic routes
+const routes = useRoutes();
+
 // Navigation items for admin section
 const navigationItems = [
   {
     label: 'Dashboard',
-    to: '/admin',
+    to: routes.admin.dashboard,
     icon: 'i-mdi-view-dashboard',
     description: 'Hoofdoverzicht en admin dashboard',
   },
   {
+    label: 'Behandelingen',
+    to: routes.admin.treatments,
+    icon: 'i-mdi-spa',
+    description: 'Beheer behandelingen en tarieven',
+  },
+  {
     label: 'Reviews',
-    to: '/admin/reviews',
+    to: routes.admin.reviews,
     icon: 'i-mdi-star',
     description: 'Beheer en modereer reviews',
   },
   {
     label: 'SEO Overzicht',
-    to: '/admin/seo-overview',
+    to: routes.admin.seoOverview,
     icon: 'i-mdi-search-web',
     description: 'SEO analyse en optimalisatie tools',
+  },
+  {
+    label: 'Documentatie',
+    to: routes.admin.docs,
+    icon: 'i-mdi-book-open-variant',
+    description: 'Handleiding voor behandelingen beheren',
   },
 ];
 
