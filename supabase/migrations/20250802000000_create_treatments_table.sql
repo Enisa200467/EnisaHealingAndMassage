@@ -101,10 +101,19 @@ INSERT INTO treatments (name, slug, description, duration_minutes, price_cents, 
     'i-mdi-account-group',
     'massage',
     3
+  ),
+  (
+    'Energetische Healing Sessie',
+    'energetische-healing-sessie',
+    'Herstel de natuurlijke energiestroom in je lichaam met een intuïtieve energetische healing. Perfect voor diepgaande ontspanning en het oplossen van energetische blokkades.',
+    75,
+    8500, -- €85.00 in cents
+    1,
+    'Zeer Zacht (Energetisch werk)',
+    'i-mdi-weather-sunny',
+    'healing',
+    4
   );
-
--- Add more treatments from the existing content files (these would be added manually or through the admin interface)
--- Energetische Healing Sessie, Sportmassage, Zweedse Massage would be added here or through the admin interface
 
 -- Create a view for formatted treatment data
 CREATE OR REPLACE VIEW treatments_formatted AS

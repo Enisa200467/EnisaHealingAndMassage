@@ -1,23 +1,11 @@
 ---
 title: 'Klassieke Ontspanningsmassage'
 description: 'Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.'
-duration: '60 minuten'
-price: '€ 65'
-intensity: 2
-intensityLabel: 'Zacht tot Medium (naar wens aanpasbaar)'
-icon: 'i-mdi-account-group'
-category: 'massage'
 ---
 
 ::treatmentHero
 ---
-title: Klassieke Ontspanningsmassage
 subtitle: De Klassieke Ontspanningsmassage is een van de meest bekende en populaire massagevormen, gericht op het verminderen van spierspanning en het bevorderen van een diep gevoel van rust en welzijn.
-duration: 60 minuten
-price: € 65
-intensity: 2
-intensityLabel: Zacht tot Medium (naar wens aanpasbaar)
-icon: i-mdi-account-group
 ---
 ::
 

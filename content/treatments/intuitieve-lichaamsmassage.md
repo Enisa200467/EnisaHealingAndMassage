@@ -1,23 +1,11 @@
 ---
 title: 'Intuïtieve Lichaamsmassage'
 description: 'Een zachte, intuïtieve massage waarbij volledig wordt ingespeeld op wat jouw lichaam op dat moment nodig heeft. Een unieke ervaring van diepe verbinding en ontspanning.'
-duration: '90 minuten'
-price: '€ 95'
-intensity: 2
-intensityLabel: 'Zacht (Intuïtief en volgend)'
-icon: 'i-mdi-heart'
-category: 'healing'
 ---
 
 ::treatmentHero
 ---
-title: Intuïtieve Lichaamsmassage
 subtitle: Een bijzondere massage waarbij ik volledig intuïtief te werk ga en volg wat jouw lichaam in het moment nodig heeft. Een diepgaande ervaring van verbinding, acceptatie en healing op alle niveaus.
-duration: 90 minuten
-price: € 95
-intensity: 2
-intensityLabel: Zacht (Intuïtief en volgend)
-icon: i-mdi-heart
 ---
 ::
 

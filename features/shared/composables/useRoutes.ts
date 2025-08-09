@@ -1,18 +1,35 @@
 // Types for better TypeScript support
 interface BreadcrumbItem {
-  label: string;
   path: string;
-  icon: string;
+  label: string;
+  icon?: string;
+}
+
+interface TreatmentData {
+  id: string;
+  name: string;
+  slug: string;
+  description?: string;
+  duration_minutes: number;
+  price_cents: number;
+  price_formatted: string;
+  duration_formatted: string;
+  intensity?: number;
+  intensity_label?: string;
+  icon?: string;
+  category?: string;
+  is_active: boolean;
+  display_order: number;
+  created_at: string;
+  updated_at: string;
 }
 
 /**
  * Composable for managing all application routes
- * Provides centralized access to static page routes and dynamic treatment routes.
- * Now integrates with Supabase treatment data for dynamic content.
+ * Now uses database-driven treatment data with static page routes
  */
 export const useRoutes = () => {
-  const { compatibleTreatments, fetchTreatments, loading, error } =
-    useTreatments();
+  const { fetchAllTreatments } = useTreatmentData();
 
   // Static page routes
   const pages = {
@@ -27,82 +44,67 @@ export const useRoutes = () => {
     reviews: '/reviews',
   } as const;
 
-  // Static treatment routes - used as fallback when dynamic data is not available
-  const staticTreatments = {
-    healing: {
-      title: 'Healing',
-      items: [
-        {
-          slug: 'chakra-balancering',
-          path: '/behandelingen/chakra-balancering',
-          title: 'Chakra Balancering',
-          description: 'Balancing your chakras for holistic well-being.',
-          icon: 'i-mdi-meditation',
-        },
-        {
-          slug: 'energetische-healing-sessie',
-          path: '/behandelingen/energetische-healing-sessie',
-          title: 'Energetische Healing Sessie',
-          description: 'Energy healing session to restore balance.',
-          icon: 'i-mdi-sparkles',
-        },
-      ],
-    },
-    massage: {
-      title: 'Massage',
-      items: [
-        {
-          slug: 'intuitieve-lichaamsmassage',
-          path: '/behandelingen/intuitieve-lichaamsmassage',
-          title: 'Intuitieve Lichaamsmassage',
-          description: 'Intuitive body massage for relaxation and healing.',
-          icon: 'i-mdi-heart-pulse',
-        },
-        {
-          slug: 'klassieke-ontspanningsmassage',
-          path: '/behandelingen/klassieke-ontspanningsmassage',
-          title: 'Klassieke Ontspanningsmassage',
-          description: 'Classic relaxation massage to relieve tension.',
-          icon: 'i-mdi-spa',
-        },
-        {
-          slug: 'sportmassage',
-          path: '/behandelingen/sportmassage',
-          title: 'Sportmassage',
-          description: 'Sports massage for athletes and active individuals.',
-          icon: 'i-mdi-run',
-        },
-        {
-          slug: 'zweedse-massage',
-          path: '/behandelingen/zweedse-massage',
-          title: 'Zweedse Massage',
-          description: 'Swedish massage for deep relaxation.',
-          icon: 'i-mdi-leaf',
-        },
-      ],
-    },
-  } as const;
+  // Dynamic treatment data from database
+  const treatmentData = ref<TreatmentData[]>([]);
+  const loading = ref(false);
+  const error = ref<string | null>(null);
 
-  // Use dynamic treatments with proper fallback handling
+  // Fetch treatments from database
+  const fetchTreatments = async () => {
+    if (loading.value) return;
+
+    try {
+      loading.value = true;
+      error.value = null;
+      treatmentData.value = await fetchAllTreatments();
+    } catch (err) {
+      error.value =
+        err instanceof Error ? err.message : 'Failed to fetch treatments';
+      console.error('Error fetching treatments for routes:', err);
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // Auto-fetch treatments on initialization
+  if (import.meta.client) {
+    fetchTreatments();
+  }
+
+  // Computed treatments organized by category
   const treatments = computed(() => {
-    // Always provide a safe fallback structure
-    const safeHealingItems = compatibleTreatments.value?.healing?.items || [];
-    const safeMassageItems = compatibleTreatments.value?.massage?.items || [];
+    const healingItems = treatmentData.value
+      .filter((t: TreatmentData) => t.category === 'healing')
+      .map((t: TreatmentData) => ({
+        slug: t.slug,
+        path: `/behandelingen/${t.slug}`,
+        title: t.name,
+        description: t.description || '',
+        icon: t.icon || 'i-mdi-sparkles',
+        price: t.price_formatted,
+        duration: t.duration_formatted,
+      }));
+
+    const massageItems = treatmentData.value
+      .filter((t: TreatmentData) => t.category === 'massage')
+      .map((t: TreatmentData) => ({
+        slug: t.slug,
+        path: `/behandelingen/${t.slug}`,
+        title: t.name,
+        description: t.description || '',
+        icon: t.icon || 'i-mdi-spa',
+        price: t.price_formatted,
+        duration: t.duration_formatted,
+      }));
 
     return {
       healing: {
         title: 'Healing',
-        items:
-          safeHealingItems.length > 0
-            ? safeHealingItems
-            : staticTreatments.healing.items,
+        items: healingItems,
       },
       massage: {
         title: 'Massage',
-        items:
-          safeMassageItems.length > 0
-            ? safeMassageItems
-            : staticTreatments.massage.items,
+        items: massageItems,
       },
     };
   });
@@ -117,12 +119,6 @@ export const useRoutes = () => {
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
   };
-
-  // Initialize treatment data if not already loaded
-  // Make sure to fetch treatments on both client and server side
-  if (!loading.value && !error.value) {
-    fetchTreatments();
-  }
 
   return {
     pages,
