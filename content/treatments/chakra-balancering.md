@@ -1,6 +1,16 @@
 ---
 title: 'Chakra Balancering'
 description: 'Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.'
+category: 'healing'
+featured_image: '/images/chakra-balancing.webp'
+draft: false
+date: '2024-08-09'
+author: 'Enisa'
+tags: 
+  - 'chakra'
+  - 'energetisch'
+  - 'balancering'
+  - 'spiritueel'
 ---
 
 ::treatmentHero

@@ -44,6 +44,16 @@ export const useRoutes = () => {
     reviews: '/reviews',
   } as const;
 
+  // Admin routes
+  const admin = {
+    dashboard: '/admin',
+    login: '/admin/login',
+    treatments: '/admin/treatments',
+    reviews: '/admin/reviews',
+    seoOverview: '/admin/seo-overview',
+    docs: '/admin/docs',
+  } as const;
+
   // Dynamic treatment data from database
   const treatmentData = ref<TreatmentData[]>([]);
   const loading = ref(false);
@@ -122,6 +132,7 @@ export const useRoutes = () => {
 
   return {
     pages,
+    admin,
     treatments,
     slugToTitle,
     // Expose treatment state for components that need it
@@ -133,5 +144,6 @@ export const useRoutes = () => {
 
 // Export types for better TypeScript support
 export type PageRoutes = ReturnType<typeof useRoutes>['pages'];
+export type AdminRoutes = ReturnType<typeof useRoutes>['admin'];
 export type TreatmentRoutes = ReturnType<typeof useRoutes>['treatments'];
 export type { BreadcrumbItem };

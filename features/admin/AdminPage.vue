@@ -7,6 +7,9 @@ useSeoMeta({
   robots: 'noindex, nofollow',
 });
 
+// Get dynamic routes
+const routes = useRoutes();
+
 // Authentication check
 const user = useSupabaseUser();
 const router = useRouter();
@@ -32,6 +35,9 @@ const isAuthenticated = computed(() => !!user.value);
       <!-- Admin Navigation -->
       <AdminNavigation />
 
+      <!-- Dynamic Routes & Studio Demo -->
+      <DynamicRoutesDemo />
+
       <!-- Dashboard Overview -->
       <div class="space-y-8">
         <!-- Page Header -->
@@ -53,8 +59,12 @@ const isAuthenticated = computed(() => !!user.value);
                 <p class="text-neutral-600 text-sm mb-4">
                   Beheer behandelingen en tarieven
                 </p>
-                <UButton to="/admin/treatments" icon="i-mdi-spa" size="sm">
-                  Behandelingen
+                <UButton
+                  :to="routes.admin.treatments"
+                  icon="i-mdi-spa"
+                  size="sm"
+                >
+                  Beheren
                 </UButton>
               </div>
               <UIcon name="i-mdi-spa" class="w-12 h-12 text-primary-500" />
@@ -68,7 +78,7 @@ const isAuthenticated = computed(() => !!user.value);
                 <p class="text-neutral-600 text-sm mb-4">
                   Modereer en beheer klant reviews
                 </p>
-                <UButton to="/admin/reviews" icon="i-mdi-star" size="sm">
+                <UButton :to="routes.admin.reviews" icon="i-mdi-star" size="sm">
                   Ga naar Reviews
                 </UButton>
               </div>
@@ -84,7 +94,7 @@ const isAuthenticated = computed(() => !!user.value);
                   Controleer en optimaliseer SEO prestaties
                 </p>
                 <UButton
-                  to="/admin/seo-overview"
+                  :to="routes.admin.seoOverview"
                   icon="i-mdi-search-web"
                   size="sm"
                 >

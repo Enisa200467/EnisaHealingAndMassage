@@ -45,6 +45,7 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@nuxt/scripts',
     '@nuxt/test-utils',
+    '@nuxthq/studio',
   ],
 
   // Feature-based auto-imports
