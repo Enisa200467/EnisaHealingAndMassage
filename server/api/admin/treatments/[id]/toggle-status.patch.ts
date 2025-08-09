@@ -36,7 +36,9 @@ export default defineEventHandler(async (event) => {
 
     return {
       data: treatment,
-      message: `Treatment ${is_active ? 'activated' : 'deactivated'} successfully`,
+      message: `Treatment ${
+        is_active ? 'activated' : 'deactivated'
+      } successfully`,
     };
   } catch (error: unknown) {
     if (error && typeof error === 'object' && 'issues' in error) {

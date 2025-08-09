@@ -100,7 +100,9 @@ export const useAdminTreatments = () => {
       loading.value = true;
       error.value = null;
 
-      const response = await $fetch<{ data: Treatment[] }>('/api/admin/treatments');
+      const response = await $fetch<{ data: Treatment[] }>(
+        '/api/admin/treatments'
+      );
       treatments.value = response.data || [];
     } catch (err) {
       error.value =
@@ -121,10 +123,13 @@ export const useAdminTreatments = () => {
 
       const treatmentData = formatForDatabase(formData);
 
-      const response = await $fetch<{ data: Treatment }>('/api/admin/treatments', {
-        method: 'POST',
-        body: treatmentData,
-      });
+      const response = await $fetch<{ data: Treatment }>(
+        '/api/admin/treatments',
+        {
+          method: 'POST',
+          body: treatmentData,
+        }
+      );
 
       // Refresh the treatments list
       await fetchTreatments();
@@ -160,10 +165,13 @@ export const useAdminTreatments = () => {
       console.log('Updating treatment with data:', updateData);
       console.log('Treatment ID:', id);
 
-      const response = await $fetch<{ data: Treatment }>(`/api/admin/treatments/${id}`, {
-        method: 'PUT',
-        body: updateData,
-      });
+      const response = await $fetch<{ data: Treatment }>(
+        `/api/admin/treatments/${id}`,
+        {
+          method: 'PUT',
+          body: updateData,
+        }
+      );
 
       // Refresh the treatments list
       await fetchTreatments();
