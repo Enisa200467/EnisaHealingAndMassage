@@ -75,9 +75,9 @@ export default defineNuxtConfig({
   supabase: {
     redirectOptions: {
       login: '/admin/login',
-      callback: '/admin',
+      callback: '/admin/docs',
       include: ['/admin(/*)?'],
-      exclude: [],
+      exclude: undefined,
       saveRedirectToCookie: false,
     },
   },
