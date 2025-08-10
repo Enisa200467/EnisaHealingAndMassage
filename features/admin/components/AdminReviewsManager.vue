@@ -8,20 +8,8 @@ useSeoMeta({
   robots: 'noindex, nofollow',
 });
 
-// Authentication check
+// Authentication check - let Supabase handle redirects
 const user = useSupabaseUser();
-const router = useRouter();
-
-// Redirect if not authenticated
-watch(
-  user,
-  (newUser) => {
-    if (!newUser) {
-      router.push('/login');
-    }
-  },
-  { immediate: true }
-);
 
 // Composables
 const { getAllReviews, updateReviewStatus, deleteReview, getDetailedStats } =
