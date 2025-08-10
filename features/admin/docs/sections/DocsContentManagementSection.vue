@@ -118,6 +118,78 @@
         </div>
 
         <h3 class="text-xl font-bold text-gray-900 mt-12 mb-8">
+          Setmore Integratie en Prijs Synchronisatie
+        </h3>
+
+        <div class="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+          <h4
+            class="text-lg font-semibold text-red-900 mb-3 flex items-center gap-2"
+          >
+            <UIcon name="i-mdi-sync-alert" class="w-6 h-6" />
+            Kritiek: Prijs Synchronisatie Vereist
+          </h4>
+          <div class="text-red-800 space-y-3">
+            <p>
+              <strong
+                >De website en
+                <a
+                  href="https://www.setmore.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >Setmore</a
+                >
+                werken met verschillende systemen:</strong
+              >
+            </p>
+            <ul class="space-y-2 ml-4">
+              <li>
+                • <strong>Website:</strong> Toont prijzen uit de database (admin
+                interface)
+              </li>
+              <li>
+                •
+                <strong
+                  ><a
+                    href="https://www.setmore.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="text-blue-600 hover:text-blue-800 underline"
+                    >Setmore</a
+                  >:</strong
+                >
+                Eigen prijssysteem voor afspraken maken
+              </li>
+              <li>
+                • <strong>Probleem:</strong> Systemen synchroniseren NIET
+                automatisch
+              </li>
+            </ul>
+
+            <div class="bg-red-100 border border-red-300 rounded p-3 mt-4">
+              <p class="font-semibold">
+                Verplichte Workflow bij Prijswijzigingen:
+              </p>
+              <ol class="mt-2 space-y-1">
+                <li>1. Wijzig prijs in admin interface (deze website)</li>
+                <li>
+                  2. Log in op
+                  <a
+                    href="https://www.setmore.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="text-blue-600 hover:text-blue-800 underline"
+                    >Setmore</a
+                  >
+                  en pas dezelfde prijs aan
+                </li>
+                <li>3. Controleer beide systemen op correctheid</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-12 mb-8">
           Beschikbare Content Components
         </h3>
 

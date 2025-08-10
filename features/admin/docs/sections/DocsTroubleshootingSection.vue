@@ -60,6 +60,43 @@ const routes = useRoutes();
             </ul>
           </div>
 
+          <div class="border-l-4 border-red-500 pl-4">
+            <h4 class="font-semibold text-red-700">
+              Verschillende prijzen tussen website en Setmore
+            </h4>
+            <ul class="text-gray-700">
+              <li>Website toont prijzen uit de database</li>
+              <li>
+                <a
+                  href="https://www.setmore.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >Setmore</a
+                >
+                heeft zijn eigen prijssysteem voor afspraken
+              </li>
+              <li>Beide moeten handmatig gesynchroniseerd worden</li>
+              <li>
+                Update altijd beide systemen bij prijswijzigingen:
+                <ul class="ml-4 mt-1">
+                  <li>1. Wijzig prijs in admin interface (database)</li>
+                  <li>
+                    2. Log in op
+                    <a
+                      href="https://www.setmore.com/"
+                      target="_blank"
+                      rel="noopener"
+                      class="text-blue-600 hover:text-blue-800 underline"
+                      >Setmore</a
+                    >
+                    en pas dezelfde prijs aan
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
           <div class="border-l-4 border-blue-500 pl-4">
             <h4 class="font-semibold text-blue-700">
               Content wordt niet correct weergegeven

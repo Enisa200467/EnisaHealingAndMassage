@@ -60,6 +60,22 @@
                 <strong>Icoon:</strong> Icon naam (bijvoorbeeld: i-mdi-spa)
               </li>
             </ul>
+            <div
+              class="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3"
+            >
+              <p class="text-amber-800 text-sm">
+                <strong>⚠️ Belangrijk:</strong> Voeg ook dezelfde behandeling
+                met identieke prijs toe aan
+                <a
+                  href="https://www.setmore.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >Setmore</a
+                >
+                voor afspraken!
+              </p>
+            </div>
           </li>
           <li>
             <strong>Opslaan</strong>
