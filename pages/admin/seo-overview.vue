@@ -7,20 +7,8 @@ useSeoMeta({
   robots: 'noindex, nofollow',
 });
 
-// Authentication check
+// Authentication check - let Supabase handle redirects
 const user = useSupabaseUser();
-const router = useRouter();
-
-// Redirect if not authenticated
-watch(
-  user,
-  (newUser) => {
-    if (!newUser) {
-      router.push('/admin/login');
-    }
-  },
-  { immediate: true }
-);
 
 // Only render if user is authenticated
 const isAuthenticated = computed(() => !!user.value);
