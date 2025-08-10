@@ -72,7 +72,7 @@ onMounted(async () => {
                 <code class="text-purple-700">{{ treatment.to }}</code>
               </div>
             </template>
-            <div v-else class="text-purple-600">Loading...</div>
+            <div v-else class="text-purple-600">Aan het laden...</div>
           </div>
         </div>
 

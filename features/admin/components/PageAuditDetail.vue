@@ -7,11 +7,9 @@
         <p class="text-sm text-gray-600">{{ result.url }}</p>
       </div>
       <div class="flex items-center gap-2">
-        <UBadge v-if="result.error" color="error" variant="soft">
-          Error
-        </UBadge>
+        <UBadge v-if="result.error" color="error" variant="soft"> Fout </UBadge>
         <UBadge v-else-if="result.isLoading" color="primary" variant="soft">
-          Loading
+          Laden
         </UBadge>
         <ULink
           :to="result.url"
@@ -29,7 +27,7 @@
       v-if="result.error"
       color="error"
       variant="soft"
-      :title="'Audit Error'"
+      :title="'Controle Fout'"
       :description="result.error"
       icon="i-mdi-alert-circle"
     />
@@ -39,7 +37,7 @@
       <div
         class="animate-spin w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full mx-auto mb-2"
       />
-      <p class="text-sm text-gray-600">Auditing page...</p>
+      <p class="text-sm text-gray-600">Pagina controleren...</p>
     </div>
 
     <!-- Results -->
@@ -56,13 +54,13 @@
           <div class="text-2xl font-bold text-green-600">
             {{ result.a11y?.summary.score || 0 }}%
           </div>
-          <div class="text-sm text-green-800">A11y Score</div>
+          <div class="text-sm text-green-800">Toegankelijkheid</div>
         </div>
         <div class="text-center p-4 bg-purple-50 rounded-lg">
           <div class="text-2xl font-bold text-purple-600">
             {{ result.performance?.domElements || 0 }}
           </div>
-          <div class="text-sm text-purple-800">DOM Elements</div>
+          <div class="text-sm text-purple-800">DOM Elementen</div>
         </div>
       </div>
 
@@ -71,7 +69,7 @@
         <template #header>
           <div class="flex items-center gap-2">
             <UIcon name="i-mdi-search-web" class="w-5 h-5" />
-            <h4 class="text-lg font-semibold">SEO Analysis</h4>
+            <h4 class="text-lg font-semibold">SEO Analyse</h4>
           </div>
         </template>
 
@@ -80,24 +78,24 @@
             <div class="text-lg font-bold text-green-600">
               {{ result.seo.passed }}
             </div>
-            <div class="text-xs text-green-800">Tests Passed</div>
+            <div class="text-xs text-green-800">Tests Geslaagd</div>
           </div>
           <div class="text-center p-3 bg-red-50 rounded-lg">
             <div class="text-lg font-bold text-red-600">
               {{ result.seo.failed }}
             </div>
-            <div class="text-xs text-red-800">Issues Found</div>
+            <div class="text-xs text-red-800">Problemen Gevonden</div>
           </div>
           <div class="text-center p-3 bg-blue-50 rounded-lg">
             <div class="text-lg font-bold text-blue-600">
               {{ result.seo.score }}%
             </div>
-            <div class="text-xs text-blue-800">Overall Score</div>
+            <div class="text-xs text-blue-800">Totaalscore</div>
           </div>
         </div>
 
         <div v-if="result.seo.issues.length > 0" class="space-y-3">
-          <h5 class="font-medium text-red-600">Issues to Fix:</h5>
+          <h5 class="font-medium text-red-600">Problemen om op te lossen:</h5>
           <div class="space-y-2">
             <div
               v-for="issue in result.seo.issues"
@@ -119,7 +117,7 @@
 
         <div v-else class="text-center py-4 text-green-600">
           <UIcon name="i-mdi-check-circle" class="w-8 h-8 mx-auto mb-2" />
-          <p class="font-medium">No SEO issues found!</p>
+          <p class="font-medium">Geen SEO problemen gevonden!</p>
         </div>
       </UCard>
 
@@ -128,7 +126,7 @@
         <template #header>
           <div class="flex items-center gap-2">
             <UIcon name="i-mdi-wheelchair-accessibility" class="w-5 h-5" />
-            <h4 class="text-lg font-semibold">Accessibility Analysis</h4>
+            <h4 class="text-lg font-semibold">Toegankelijkheidsanalyse</h4>
           </div>
         </template>
 
@@ -137,19 +135,19 @@
             <div class="text-lg font-bold text-blue-600">
               {{ result.a11y.summary.total }}
             </div>
-            <div class="text-xs text-blue-800">Total Tests</div>
+            <div class="text-xs text-blue-800">Totaal Tests</div>
           </div>
           <div class="text-center p-3 bg-green-50 rounded-lg">
             <div class="text-lg font-bold text-green-600">
               {{ result.a11y.summary.passed }}
             </div>
-            <div class="text-xs text-green-800">Passed</div>
+            <div class="text-xs text-green-800">Geslaagd</div>
           </div>
           <div class="text-center p-3 bg-red-50 rounded-lg">
             <div class="text-lg font-bold text-red-600">
               {{ result.a11y.summary.failed }}
             </div>
-            <div class="text-xs text-red-800">Failed</div>
+            <div class="text-xs text-red-800">Gefaald</div>
           </div>
           <div class="text-center p-3 bg-yellow-50 rounded-lg">
             <div class="text-lg font-bold text-yellow-600">
@@ -160,7 +158,7 @@
         </div>
 
         <div v-if="result.a11y.issues.length > 0" class="space-y-3">
-          <h5 class="font-medium text-red-600">Accessibility Issues:</h5>
+          <h5 class="font-medium text-red-600">Toegankelijkheidsproblemen:</h5>
           <div class="space-y-2">
             <div
               v-for="issue in result.a11y.issues"
@@ -183,7 +181,7 @@
 
         <div v-else class="text-center py-4 text-green-600">
           <UIcon name="i-mdi-check-circle" class="w-8 h-8 mx-auto mb-2" />
-          <p class="font-medium">No accessibility issues found!</p>
+          <p class="font-medium">Geen toegankelijkheidsproblemen gevonden!</p>
         </div>
       </UCard>
 
@@ -192,7 +190,7 @@
         <template #header>
           <div class="flex items-center gap-2">
             <UIcon name="i-mdi-speedometer" class="w-5 h-5" />
-            <h4 class="text-lg font-semibold">Performance Metrics</h4>
+            <h4 class="text-lg font-semibold">Prestatiemetrics</h4>
           </div>
         </template>
 
@@ -201,19 +199,19 @@
             <div class="text-lg font-bold text-gray-700">
               {{ result.performance.domElements }}
             </div>
-            <div class="text-xs text-gray-600">DOM Elements</div>
+            <div class="text-xs text-gray-600">DOM Elementen</div>
           </div>
           <div class="text-center p-3 bg-gray-50 rounded-lg">
             <div class="text-lg font-bold text-gray-700">
               {{ result.performance.images }}
             </div>
-            <div class="text-xs text-gray-600">Images</div>
+            <div class="text-xs text-gray-600">Afbeeldingen</div>
           </div>
           <div class="text-center p-3 bg-gray-50 rounded-lg">
             <div class="text-lg font-bold text-gray-700">
               {{ result.performance.headings }}
             </div>
-            <div class="text-xs text-gray-600">Headings</div>
+            <div class="text-xs text-gray-600">Koppen</div>
           </div>
           <div class="text-center p-3 bg-gray-50 rounded-lg">
             <div class="text-lg font-bold text-gray-700">
