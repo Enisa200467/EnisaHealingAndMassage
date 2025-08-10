@@ -3,7 +3,7 @@ import type { Review, ReviewStats } from '~/features/reviews/types/reviews';
 
 // SEO Meta
 useSeoMeta({
-  title: 'Admin Dashboard - Enisa Healing & Massage',
+  title: 'Beheer Dashboard - Enisa Healing & Massage',
   description: 'Admin dashboard voor het beheren van reviews en content',
   robots: 'noindex, nofollow',
 });
@@ -137,7 +137,7 @@ const handleStatusUpdate = async (
 
     if (result.success) {
       toast.add({
-        title: 'Success',
+        title: 'Gelukt',
         description: `Review ${
           status === 'approved' ? 'goedgekeurd' : 'afgewezen'
         }`,
@@ -245,7 +245,7 @@ onMounted(async () => {
         <div class="flex items-center justify-between mb-6">
           <div>
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
-              Admin Dashboard
+              Beheer Dashboard
             </h1>
             <p class="text-gray-600 dark:text-gray-300 mt-2">
               Beheer reviews en bekijk statistieken

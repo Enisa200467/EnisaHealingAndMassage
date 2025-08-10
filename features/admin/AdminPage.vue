@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // SEO Meta
 useSeoMeta({
-  title: 'Admin Dashboard - Enisa Healing & Massage',
+  title: 'Beheer Dashboard - Enisa Healing & Massage',
   description:
     'Admin dashboard voor het beheren van reviews en andere content.',
   robots: 'noindex, nofollow',
@@ -35,15 +35,12 @@ const isAuthenticated = computed(() => !!user.value);
       <!-- Admin Navigation -->
       <AdminNavigation />
 
-      <!-- Dynamic Routes & Studio Demo -->
-      <DynamicRoutesDemo />
-
       <!-- Dashboard Overview -->
       <div class="space-y-8">
         <!-- Page Header -->
         <header>
           <h1 class="text-3xl font-bold text-neutral-900 mb-2">
-            Admin Dashboard
+            Beheer Dashboard
           </h1>
           <p class="text-neutral-600">
             Welkom terug! Beheer je website content en reviews.
@@ -130,10 +127,10 @@ const isAuthenticated = computed(() => !!user.value);
   <div v-else class="min-h-screen flex items-center justify-center">
     <div class="text-center">
       <h1 class="text-2xl font-bold text-neutral-900 mb-4">
-        Authenticating...
+        Bezig met authenticeren...
       </h1>
       <p class="text-neutral-600">
-        Please wait while we verify your credentials.
+        Even geduld terwijl we je gegevens verifiëren.
       </p>
     </div>
   </div>

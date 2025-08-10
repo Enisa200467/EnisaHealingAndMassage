@@ -3,7 +3,7 @@ import type { Treatment, TreatmentFormData } from './types/treatment.types';
 
 // SEO Meta
 useSeoMeta({
-  title: 'Behandelingen Beheer - Admin Dashboard',
+  title: 'Behandelingen Beheer - Beheer Dashboard',
   description:
     'Beheer alle behandelingen en hun details in het admin dashboard.',
   robots: 'noindex, nofollow',
@@ -300,10 +300,10 @@ const isAuthenticated = computed(() => !!user.value);
   <div v-else class="min-h-screen flex items-center justify-center">
     <div class="text-center">
       <h1 class="text-2xl font-bold text-neutral-900 mb-4">
-        Authenticating...
+        Bezig met authenticeren...
       </h1>
       <p class="text-neutral-600">
-        Please wait while we verify your credentials.
+        Even geduld terwijl we je gegevens verifiëren.
       </p>
     </div>
   </div>

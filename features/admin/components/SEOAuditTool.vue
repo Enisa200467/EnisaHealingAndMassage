@@ -1,10 +1,10 @@
 <template>
   <div class="space-y-8">
     <header>
-      <h1 class="text-3xl font-bold mb-4">SEO & Accessibility Audit</h1>
+      <h1 class="text-3xl font-bold mb-4">SEO & Toegankelijkheidscontrole</h1>
       <p class="text-gray-600">
-        Comprehensive analysis of SEO performance and accessibility compliance
-        for all pages
+        Uitgebreide analyse van SEO prestaties en toegankelijkheidsnaleving voor
+        alle pagina's
       </p>
     </header>
 
@@ -15,10 +15,10 @@
         color="primary"
         @click="runCurrentPageAudit"
       >
-        Audit Current Page
+        Controleer Huidige Pagina
       </UButton>
       <UButton :loading="loading.all" color="success" @click="runAllPagesAudit">
-        Audit All Pages
+        Controleer Alle Pagina's
       </UButton>
       <UButton
         v-if="auditResults.length > 0"
@@ -27,14 +27,14 @@
         variant="outline"
         @click="exportResults"
       >
-        Export Results
+        Exporteer Resultaten
       </UButton>
     </div>
 
     <!-- Overall Summary -->
     <UCard v-if="auditResults.length > 0" class="space-y-4">
       <template #header>
-        <h2 class="text-xl font-semibold">Audit Summary</h2>
+        <h2 class="text-xl font-semibold">Controle Overzicht</h2>
       </template>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -42,32 +42,32 @@
           <div class="text-2xl font-bold text-blue-600">
             {{ auditResults.length }}
           </div>
-          <div class="text-sm text-blue-800">Pages Audited</div>
+          <div class="text-sm text-blue-800">Pagina's Gecontroleerd</div>
         </div>
         <div class="text-center p-4 bg-green-50 rounded-lg">
           <div class="text-2xl font-bold text-green-600">
             {{ overallStats.averageSEOScore }}%
           </div>
-          <div class="text-sm text-green-800">Avg SEO Score</div>
+          <div class="text-sm text-green-800">Gem. SEO Score</div>
         </div>
         <div class="text-center p-4 bg-yellow-50 rounded-lg">
           <div class="text-2xl font-bold text-yellow-600">
             {{ overallStats.averageA11yScore }}%
           </div>
-          <div class="text-sm text-yellow-800">Avg A11y Score</div>
+          <div class="text-sm text-yellow-800">Gem. Toegankelijkheid</div>
         </div>
         <div class="text-center p-4 bg-red-50 rounded-lg">
           <div class="text-2xl font-bold text-red-600">
             {{ overallStats.totalIssues }}
           </div>
-          <div class="text-sm text-red-800">Total Issues</div>
+          <div class="text-sm text-red-800">Totaal Problemen</div>
         </div>
       </div>
     </UCard>
 
     <!-- Individual Page Results - Manual Accordion Style -->
     <div v-if="auditResults.length > 0" class="space-y-4">
-      <h2 class="text-2xl font-semibold mb-4">Page-by-Page Results</h2>
+      <h2 class="text-2xl font-semibold mb-4">Resultaten per Pagina</h2>
 
       <div class="space-y-3">
         <div
@@ -138,7 +138,9 @@
         />
         <p class="text-gray-600">
           {{
-            loading.all ? 'Auditing all pages...' : 'Auditing current page...'
+            loading.all
+              ? "Alle pagina's controleren..."
+              : 'Huidige pagina controleren...'
           }}
         </p>
         <div
@@ -146,7 +148,7 @@
           class="max-w-xs mx-auto"
         >
           <div class="flex justify-between text-sm text-gray-600 mb-1">
-            <span>Progress</span>
+            <span>Voortgang</span>
             <span>{{ auditProgress.current }}/{{ auditProgress.total }}</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-2">
@@ -173,14 +175,19 @@
           name="i-mdi-chart-line"
           class="w-16 h-16 text-gray-400 mx-auto"
         />
-        <h3 class="text-lg font-semibold text-gray-900">No Audit Results</h3>
+        <h3 class="text-lg font-semibold text-gray-900">
+          Geen Controleresultaten
+        </h3>
         <p class="text-gray-600">
-          Run an audit to see SEO and accessibility analysis for your pages.
+          Voer een controle uit om SEO en toegankelijkheidsanalyse voor je
+          pagina's te bekijken.
         </p>
         <div class="flex gap-3 justify-center">
-          <UButton @click="runCurrentPageAudit"> Audit Current Page </UButton>
+          <UButton @click="runCurrentPageAudit">
+            Controleer Huidige Pagina
+          </UButton>
           <UButton variant="outline" @click="runAllPagesAudit">
-            Audit All Pages
+            Controleer Alle Pagina's
           </UButton>
         </div>
       </div>

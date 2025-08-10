@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // SEO meta tags
 useSeoMeta({
-  title: 'Admin Login - Enisa Healing & Massage',
+  title: 'Admin Inloggen - Enisa Healing & Massage',
   description: 'Login pagina voor admin beheer van Enisa Healing & Massage',
   robots: 'noindex, nofollow',
 });
@@ -94,7 +94,9 @@ const handleLogin = async () => {
           <template #header>
             <div class="flex items-center justify-center">
               <div class="text-center">
-                <h1 class="text-2xl font-bold text-neutral-900">Admin Login</h1>
+                <h1 class="text-2xl font-bold text-neutral-900">
+                  Admin Inloggen
+                </h1>
                 <p class="text-sm text-neutral-600 mt-1">
                   Log in om het admin panel te beheren
                 </p>
