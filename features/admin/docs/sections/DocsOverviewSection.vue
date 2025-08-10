@@ -32,6 +32,16 @@
               en componenten
             </li>
             <li>
+              <strong>Setmore integratie:</strong> Voor afspraken maken en
+              agenda beheer (<a
+                href="https://www.setmore.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 hover:text-blue-800 underline"
+                >setmore.com</a
+              >)
+            </li>
+            <li>
               <strong>Slug:</strong> URL-vriendelijke identifier (automatisch
               gegenereerd)
             </li>
@@ -70,6 +80,36 @@
             benodigde componenten, composables en types georganiseerd per
             functionaliteit.
           </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-6">
+          <h3
+            class="text-lg font-semibold text-amber-900 mb-2 flex items-center gap-2"
+          >
+            <UIcon name="i-mdi-sync-alert" class="w-5 h-5" />
+            Belangrijke Waarschuwing: Setmore Prijs Synchronisatie
+          </h3>
+          <p class="text-amber-800 mb-2">
+            <strong
+              >Prijzen moeten identiek zijn in de database en Setmore!</strong
+            >
+          </p>
+          <ul class="text-amber-800 space-y-1">
+            <li>• De website toont prijzen uit de database</li>
+            <li>
+              •
+              <a
+                href="https://www.setmore.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 hover:text-blue-800 underline"
+                >Setmore</a
+              >
+              wordt gebruikt voor afspraken maken en agenda beheer
+            </li>
+            <li>• Verschillende prijzen leiden tot verwarring bij klanten</li>
+            <li>• Controleer altijd beide systemen bij prijswijzigingen</li>
+          </ul>
         </div>
       </div>
     </UCard>

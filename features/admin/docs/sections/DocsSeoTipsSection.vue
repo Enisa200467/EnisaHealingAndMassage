@@ -86,6 +86,54 @@
           <li>Review schema voor klantbeoordelingen</li>
         </ul>
 
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">
+          Prijs Consistentie & Gebruikersvertrouwen
+        </h3>
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
+          <p class="text-amber-800 mb-2">
+            <strong
+              >Prijsconsistentie is cruciaal voor SEO en conversie:</strong
+            >
+          </p>
+          <ul class="text-amber-800 space-y-1">
+            <li>• Google beoordeelt prijsnauwkeurigheid als trustfactor</li>
+            <li>• Verschillende prijzen leiden tot hoge bounce rates</li>
+            <li>• Klanten verlaten de site bij prijsverwarring</li>
+            <li>• Consistentie verhoogt conversieratio's</li>
+          </ul>
+        </div>
+        <ul>
+          <li>
+            <strong>Controleer altijd:</strong> Website prijs =
+            <a
+              href="https://www.setmore.com/"
+              target="_blank"
+              rel="noopener"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >Setmore</a
+            >
+            prijs
+          </li>
+          <li>
+            <strong>Update beide systemen:</strong> Database én
+            <a
+              href="https://www.setmore.com/"
+              target="_blank"
+              rel="noopener"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >Setmore</a
+            >
+          </li>
+          <li>
+            <strong>Test regelmatig:</strong> Boekingsflow van website naar
+            Setmore
+          </li>
+          <li>
+            <strong>Monitor reviews:</strong> Let op klachten over
+            prijsverschillen
+          </li>
+        </ul>
+
         <div class="bg-green-50 border border-green-200 rounded-lg p-4 mt-6">
           <h4
             class="text-lg font-semibold text-green-900 mb-2 flex items-center gap-2"

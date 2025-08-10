@@ -44,6 +44,21 @@
               </li>
               <li><strong>Status:</strong> Schakel tussen actief/inactief</li>
             </ul>
+            <div
+              class="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-2"
+            >
+              <p class="text-amber-800 text-sm">
+                <strong>⚠️ Belangrijk:</strong> Pas ook de prijs aan in
+                <a
+                  href="https://www.setmore.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >Setmore</a
+                >
+                om verwarring bij klanten te voorkomen!
+              </p>
+            </div>
           </li>
           <li>
             <strong>Opslaan</strong>

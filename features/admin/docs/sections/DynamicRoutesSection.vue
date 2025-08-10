@@ -133,7 +133,20 @@ onMounted(async () => {
               <ul class="text-sm text-purple-700 space-y-1">
                 <li>
                   • <strong>Database:</strong> Bewaart metadata (prijs, duur,
-                  intensiteit)
+                  intensiteit) - website prijzen
+                </li>
+                <li>
+                  •
+                  <strong
+                    ><a
+                      href="https://www.setmore.com/"
+                      target="_blank"
+                      rel="noopener"
+                      class="text-blue-600 hover:text-blue-800 underline"
+                      >Setmore</a
+                    >:</strong
+                  >
+                  Afspraken maken en agenda beheer - moet gelijke prijzen hebben
                 </li>
                 <li>
                   • <strong>Studio CMS:</strong> Beheert rijke content en
