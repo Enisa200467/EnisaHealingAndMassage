@@ -304,6 +304,144 @@ Uitgebreide content die ingeklapt kan worden
             conflicten leiden.
           </p>
         </div>
+
+        <section id="content-template" class="scroll-mt-8">
+          <h3 class="text-xl font-bold text-gray-900 mt-12 mb-6">
+            Content Bestand Template
+          </h3>
+
+          <p class="leading-relaxed mb-6">
+            Na het aanmaken van de database record via de admin interface, moet
+            je een bijbehorend content bestand maken in Nuxt Studio:
+          </p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-6">
+            <div class="flex items-start gap-3">
+              <UIcon name="i-mdi-folder" class="w-5 h-5 text-blue-600 mt-0.5" />
+              <div>
+                <p class="font-semibold mb-2 text-blue-900">
+                  Bestandslocatie in Nuxt Studio:
+                </p>
+                <code class="bg-blue-100 px-2 py-1 rounded text-blue-800"
+                  >/content/treatments/[slug].md</code
+                >
+                <p class="text-sm text-blue-700 mt-2">
+                  Waarbij [slug] de slug is die je hebt ingevoerd in de admin
+                  interface
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="text-lg font-semibold mb-4">
+            Basis template voor nieuw content bestand:
+          </h4>
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-1 mb-6">
+            <pre
+              class="bg-gray-100 rounded-lg p-4 text-sm overflow-x-auto m-0"
+            ><code>---
+title: Naam van de Behandeling
+description: SEO beschrijving voor deze behandeling (150-160 karakters)
+---
+
+## ::treatmentHero
+subtitle: Korte beschrijving van de behandeling
+---
+::
+
+## ::treatmentSection
+title: Wat kun je verwachten?
+image: /images/behandeling-foto.webp
+imageAlt: Beschrijvende alt tekst voor de foto
+items:
+- Eerste verwachting of stap
+- Tweede verwachting of stap
+- Derde verwachting of stap
+---
+::
+
+## ::twoColumnSection
+---
+
+### ::benefitList
+title: Belangrijkste Voordelen
+items:
+- Voordeel 1
+- Voordeel 2
+- Voordeel 3
+---
+::
+
+### ::forWhom
+title: Voor wie is deze behandeling?
+items:
+- Doelgroep 1
+- Doelgroep 2
+- Doelgroep 3
+---
+::
+
+::
+
+## ::infoBox
+icon: i-mdi-information
+title: Belangrijk om te weten
+---
+Eventuele belangrijke informatie, waarschuwingen of opmerkingen.
+::
+
+## ::expandableInfo
+title: Meer informatie
+---
+Uitgebreide informatie die ingeklapt kan worden om de pagina overzichtelijk te houden.
+::</code></pre>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+            <h4
+              class="text-lg font-semibold text-green-900 mb-3 flex items-center gap-2"
+            >
+              <UIcon name="i-mdi-lightbulb" class="w-5 h-5" />
+              Template Gebruik Tips
+            </h4>
+            <ul class="text-green-800 space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 mt-0.5">✓</span>
+                <span
+                  >Kopieer deze template naar Nuxt Studio en pas de content
+                  aan</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 mt-0.5">✓</span>
+                <span
+                  >Gebruik dezelfde title als in de database voor
+                  consistentie</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 mt-0.5">✓</span>
+                <span
+                  >Voeg altijd een subtitle toe in de treatmentHero
+                  component</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 mt-0.5">✓</span>
+                <span
+                  >Upload afbeeldingen via de Nuxt Studio media manager</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 mt-0.5">✓</span>
+                <span
+                  >Test de pagina na publicatie om er zeker van te zijn dat
+                  alles correct wordt weergegeven</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
     </UCard>
   </section>
