@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 sm:py-24" aria-labelledby="intro-heading">
+  <section class="py-16 sm:py-24 bg-purple-50" aria-labelledby="intro-heading">
     <UContainer>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
         <UCarousel
@@ -22,7 +22,7 @@
         </UCarousel>
 
         <div
-          class="prose prose-lg text-gray-700 max-w-none prose-headings:text-green-800 prose-a:text-green-600"
+          class="prose prose-lg text-gray-800 max-w-none prose-headings:text-purple-800 prose-a:text-purple-600"
         >
           <h2 id="intro-heading">Maak Kennis Met Enisa</h2>
           <p>

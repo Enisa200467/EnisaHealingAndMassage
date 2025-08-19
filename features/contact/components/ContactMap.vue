@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-purple-50">
     <UContainer>
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl font-bold text-neutral-900 mb-8 text-center">

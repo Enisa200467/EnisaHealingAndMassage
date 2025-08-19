@@ -1,15 +1,17 @@
 <template>
   <div>
     <PricingHero />
-    <UContainer class="py-16 sm:py-24">
-      <div class="max-w-7xl mx-auto">
-        <PricingHealingSection />
-        <PricingMassageSection />
-        <PricingPackagesSection />
-        <PricingInfoSection />
-        <PricingCTA />
-      </div>
-    </UContainer>
+    <section class="py-16 sm:py-24 bg-purple-50">
+      <UContainer>
+        <div class="max-w-7xl mx-auto">
+          <PricingHealingSection />
+          <PricingMassageSection />
+          <PricingPackagesSection />
+          <PricingInfoSection />
+          <PricingCTA />
+        </div>
+      </UContainer>
+    </section>
   </div>
 </template>
 

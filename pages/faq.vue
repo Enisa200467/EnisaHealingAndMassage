@@ -69,25 +69,27 @@ setPageSEO({
 
 <template>
   <article role="main" aria-labelledby="faq-heading">
-    <UContainer class="my-16 sm:my-12">
-      <header class="mb-16 sm:mb-12">
-        <h1
-          id="faq-heading"
-          class="text-3xl font-bold tracking-tight sm:text-4xl"
-        >
-          Veelgestelde Vragen
-        </h1>
-        <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
-          Vind hier antwoorden op de meest voorkomende vragen.
-        </p>
-      </header>
+    <section class="py-16 sm:py-24 bg-purple-50">
+      <UContainer>
+        <header class="mb-16 sm:mb-12">
+          <h1
+            id="faq-heading"
+            class="text-3xl font-bold tracking-tight sm:text-4xl"
+          >
+            Veelgestelde Vragen
+          </h1>
+          <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
+            Vind hier antwoorden op de meest voorkomende vragen.
+          </p>
+        </header>
 
-      <section class="max-w-3xl" aria-labelledby="faq-heading">
-        <UAccordion
-          :items="faqItems"
-          aria-label="Veelgestelde vragen over Enisa Healing & Massage"
-        />
-      </section>
-    </UContainer>
+        <section class="max-w-3xl" aria-labelledby="faq-heading">
+          <UAccordion
+            :items="faqItems"
+            aria-label="Veelgestelde vragen over Enisa Healing & Massage"
+          />
+        </section>
+      </UContainer>
+    </section>
   </article>
 </template>

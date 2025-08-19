@@ -136,24 +136,26 @@ onMounted(() => {
     </section>
 
     <!-- Reviews List -->
-    <UContainer class="py-16 sm:py-24">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <!-- Reviews Display -->
-          <div class="lg:col-span-2">
-            <ReviewsList
-              :reviews="allReviews"
-              :loading="isLoading"
-              @load-more="loadReviews"
-            />
-          </div>
+    <section class="py-16 sm:py-24 bg-purple-50">
+      <UContainer>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Reviews Display -->
+            <div class="lg:col-span-2">
+              <ReviewsList
+                :reviews="allReviews"
+                :loading="isLoading"
+                @load-more="loadReviews"
+              />
+            </div>
 
-          <!-- Review Form -->
-          <div class="lg:col-span-1">
-            <ReviewForm @submit="handleReviewSubmission" />
+            <!-- Review Form -->
+            <div class="lg:col-span-1">
+              <ReviewForm @submit="handleReviewSubmission" />
+            </div>
           </div>
         </div>
-      </div>
-    </UContainer>
+      </UContainer>
+    </section>
   </div>
 </template>
