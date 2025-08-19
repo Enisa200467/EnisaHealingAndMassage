@@ -1,3 +1,15 @@
+<script setup lang="ts">
+interface Emits {
+  (e: 'nav-to-content'): void;
+}
+
+const emit = defineEmits<Emits>();
+
+const handleNavigateToContent = () => {
+  emit('nav-to-content');
+};
+</script>
+
 <template>
   <section id="create-treatment" class="scroll-mt-8">
     <UCard>
@@ -89,78 +101,40 @@
         <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">
           2. Content Bestand Aanmaken
         </h3>
-        <p>
+        <p class="leading-relaxed mb-4">
           Na het aanmaken van de database record, moet je een bijbehorend
-          content bestand maken:
+          content bestand maken via Nuxt Studio.
         </p>
 
-        <div class="bg-gray-100 rounded-lg p-4 my-4">
-          <p class="font-semibold mb-2">Bestandslocatie:</p>
-          <code>/content/treatments/[slug].md</code>
-          <p class="text-sm text-gray-600 mt-1">
-            Waarbij [slug] de slug is die je hebt ingevoerd
-          </p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div class="flex items-start gap-4">
+            <UIcon
+              name="i-mdi-arrow-right-circle"
+              class="w-8 h-8 text-blue-600 mt-1"
+            />
+            <div>
+              <h4 class="text-lg font-semibold text-blue-900 mb-2">
+                Ga naar Content Beheer
+              </h4>
+              <p class="text-blue-800 mb-4 leading-relaxed">
+                Voor gedetailleerde instructies over het aanmaken van content
+                bestanden, het gebruik van templates, en het werken met Nuxt
+                Studio, bekijk de Content Beheer sectie.
+              </p>
+              <p class="text-sm text-blue-700 mb-4">
+                Je vindt daar een complete template en stap-voor-stap
+                instructies voor het maken van behandeling content.
+              </p>
+              <button
+                class="text-sm text-blue-600 font-medium hover:text-blue-800 transition-all duration-200 cursor-pointer bg-blue-100 hover:bg-blue-200 px-4 py-2 rounded-lg border border-blue-300 hover:border-blue-400 hover:shadow-sm flex items-center gap-2 group"
+                @click="handleNavigateToContent"
+              >
+                <span>📍 Content Beheer → Content Bestand Template</span>
+                <UIcon name="i-mdi-arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </button>
+            </div>
+          </div>
         </div>
-
-        <h4>Basis template voor content bestand:</h4>
-        <pre
-          class="bg-gray-100 rounded-lg p-4 text-sm overflow-x-auto"
-        ><code>---
-title: Naam van de Behandeling
-description: SEO beschrijving voor deze behandeling (150-160 karakters)
----
-
-## ::treatmentHero
-subtitle: Korte beschrijving van de behandeling
----
-::
-
-## ::treatmentSection
-title: Wat kun je verwachten?
-image: /images/behandeling-foto.webp
-imageAlt: Beschrijvende alt tekst voor de foto
-items:
-- Eerste verwachting of stap
-- Tweede verwachting of stap
-- Derde verwachting of stap
----
-::
-
-## ::twoColumnSection
----
-
-### ::benefitList
-title: Belangrijkste Voordelen
-items:
-- Voordeel 1
-- Voordeel 2
-- Voordeel 3
----
-::
-
-### ::forWhom
-title: Voor wie is deze behandeling?
-items:
-- Doelgroep 1
-- Doelgroep 2
-- Doelgroep 3
----
-::
-
-::
-
-## ::infoBox
-icon: i-mdi-information
-title: Belangrijk om te weten
----
-Eventuele belangrijke informatie, waarschuwingen of opmerkingen.
-::
-
-## ::expandableInfo
-title: Meer informatie
----
-Uitgebreide informatie die ingeklapt kan worden om de pagina overzichtelijk te houden.
-::</code></pre>
       </div>
     </UCard>
   </section>

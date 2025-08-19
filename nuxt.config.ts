@@ -82,4 +82,14 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    // Private keys (only available on the server-side)
+    resendApiKey: process.env.RESEND_API_KEY,
+    contactEmail: process.env.CONTACT_EMAIL || 'info@enisahealing.nl',
+    // Public keys (also exposed to the client-side)
+    public: {
+      // Add public config if needed
+    },
+  },
 });

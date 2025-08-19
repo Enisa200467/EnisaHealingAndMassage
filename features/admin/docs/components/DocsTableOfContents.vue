@@ -6,6 +6,7 @@ interface Section {
 
 interface Props {
   sections: Section[];
+  activeTab?: string;
 }
 
 interface Emits {
@@ -14,6 +15,20 @@ interface Emits {
 
 defineProps<Props>();
 const emit = defineEmits<Emits>();
+
+// Tab icons
+const tabIcons = {
+  treatments: 'i-mdi-spa',
+  content: 'i-mdi-file-document-edit',
+  technical: 'i-mdi-cog',
+};
+
+// Tab labels
+const tabLabels = {
+  treatments: 'Behandelingen',
+  content: 'Content',
+  technical: 'Technisch',
+};
 </script>
 
 <template>
@@ -21,8 +36,15 @@ const emit = defineEmits<Emits>();
     <UCard class="sticky top-8">
       <template #header>
         <h2 class="font-semibold flex items-center gap-2">
-          <UIcon name="i-mdi-format-list-bulleted" class="w-5 h-5" />
-          Inhoudsopgave
+          <UIcon
+            :name="activeTab ? tabIcons[activeTab as keyof typeof tabIcons] : 'i-mdi-format-list-bulleted'"
+            class="w-5 h-5"
+          />
+          {{
+            activeTab
+              ? `${tabLabels[activeTab as keyof typeof tabLabels]} Gids`
+              : 'Inhoudsopgave'
+          }}
         </h2>
       </template>
 

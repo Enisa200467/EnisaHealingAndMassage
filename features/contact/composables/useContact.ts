@@ -5,27 +5,57 @@ export const useContact = () => {
 
   const submitContactForm = async (data: ContactFormData) => {
     try {
-      // In a real implementation, this would send to an API endpoint
-      console.log('Submitting contact form:', data);
-
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Send contact form data to the server API endpoint
+      const response = await $fetch('/api/contact', {
+        method: 'POST',
+        body: data,
+      });
 
       toast.add({
         title: 'Bericht verzonden!',
         description:
           'Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.',
-        color: 'green',
+        color: 'success',
       });
 
-      return { success: true };
-    } catch (error) {
-      toast.add({
-        title: 'Fout bij verzenden',
-        description:
-          'Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op.',
-        color: 'red',
-      });
+      return { success: true, data: response };
+    } catch (error: unknown) {
+      // Handle validation errors specifically
+      if (
+        error &&
+        typeof error === 'object' &&
+        'status' in error &&
+        error.status === 400
+      ) {
+        const errorData = error as {
+          data?: { data?: Array<{ message: string }> };
+        };
+        if (errorData.data?.data) {
+          const validationErrors = errorData.data.data
+            .map((issue) => issue.message)
+            .join(', ');
+
+          toast.add({
+            title: 'Validatiefout',
+            description: validationErrors,
+            color: 'error',
+          });
+        } else {
+          toast.add({
+            title: 'Fout bij verzenden',
+            description:
+              'Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op.',
+            color: 'error',
+          });
+        }
+      } else {
+        toast.add({
+          title: 'Fout bij verzenden',
+          description:
+            'Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op.',
+          color: 'error',
+        });
+      }
 
       return { success: false, error };
     }
