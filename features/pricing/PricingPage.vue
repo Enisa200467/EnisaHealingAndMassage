@@ -43,7 +43,7 @@ const pricingSchema = computed(() => {
   let position = 1;
 
   // Add healing treatments
-  healingTreatments.value.forEach(treatment => {
+  healingTreatments.value.forEach((treatment) => {
     itemListElement.push({
       '@type': 'ListItem',
       position: position++,
@@ -57,7 +57,7 @@ const pricingSchema = computed(() => {
         },
         offers: {
           '@type': 'Offer',
-          price: (treatment.price.replace('€', '')),
+          price: treatment.price.replace('€', ''),
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
         },
@@ -66,7 +66,7 @@ const pricingSchema = computed(() => {
   });
 
   // Add massage treatments
-  massageTreatments.value.forEach(treatment => {
+  massageTreatments.value.forEach((treatment) => {
     itemListElement.push({
       '@type': 'ListItem',
       position: position++,
@@ -80,7 +80,7 @@ const pricingSchema = computed(() => {
         },
         offers: {
           '@type': 'Offer',
-          price: (treatment.price.replace('€', '')),
+          price: treatment.price.replace('€', ''),
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
         },

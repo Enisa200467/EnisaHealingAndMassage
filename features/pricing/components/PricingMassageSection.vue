@@ -12,7 +12,10 @@
 
     <!-- Loading State -->
     <div v-if="loading" class="text-center py-12">
-      <UIcon name="i-mdi-loading" class="w-8 h-8 animate-spin mx-auto mb-4 text-secondary-500" />
+      <UIcon
+        name="i-mdi-loading"
+        class="w-8 h-8 animate-spin mx-auto mb-4 text-secondary-500"
+      />
       <p class="text-neutral-600">Behandelingen laden...</p>
     </div>
 
@@ -106,5 +109,6 @@
 </template>
 
 <script setup lang="ts">
-const { massageTreatments, getIntensityDots, loading, error } = useDatabasePricing();
+const { massageTreatments, getIntensityDots, loading, error } =
+  useDatabasePricing();
 </script>

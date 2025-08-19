@@ -30,7 +30,7 @@ export interface PricingPackage {
  */
 export const useDatabasePricing = () => {
   const { fetchAllTreatments } = useTreatmentData();
-  
+
   // Reactive state
   const treatments = ref<Treatment[]>([]);
   const loading = ref(false);
@@ -59,7 +59,7 @@ export const useDatabasePricing = () => {
         'Verbeterde flexibiliteit',
         'Pijnverlichting',
       ],
-      'sportmassage': [
+      sportmassage: [
         'Herstel na sport',
         'Blessure preventie',
         'Prestatieverbetering',
@@ -78,11 +78,7 @@ export const useDatabasePricing = () => {
 
     // Default benefits by category
     if (treatment.category === 'healing') {
-      return [
-        'Energetische balans',
-        'Innerlijke rust',
-        'Spirituele groei',
-      ];
+      return ['Energetische balans', 'Innerlijke rust', 'Spirituele groei'];
     }
 
     if (treatment.category === 'massage') {
@@ -94,15 +90,13 @@ export const useDatabasePricing = () => {
     }
 
     // Generic fallback
-    return [
-      'Ontspanning',
-      'Welzijn verbetering',
-      'Stress vermindering',
-    ];
+    return ['Ontspanning', 'Welzijn verbetering', 'Stress vermindering'];
   };
 
   // Format treatment data for pricing display
-  const formatTreatmentForPricing = (treatment: Treatment): PricingTreatment => {
+  const formatTreatmentForPricing = (
+    treatment: Treatment
+  ): PricingTreatment => {
     return {
       id: treatment.id,
       name: treatment.name,
@@ -142,9 +136,16 @@ export const useDatabasePricing = () => {
       error.value = null;
 
       const dbTreatments = await fetchAllTreatments();
-      
+
+      // If no treatments from database, use fallback data for development
+      if (dbTreatments.length === 0) {
+        console.warn('No treatments found in database, using fallback data');
+        treatments.value = getFallbackTreatments();
+        return;
+      }
+
       // Convert to the format expected by this composable
-      treatments.value = dbTreatments.map(treatment => ({
+      treatments.value = dbTreatments.map((treatment) => ({
         id: treatment.id,
         name: treatment.name,
         slug: treatment.slug,
@@ -161,17 +162,96 @@ export const useDatabasePricing = () => {
         updated_at: treatment.updated_at,
       }));
     } catch (err) {
-      error.value = err instanceof Error ? err.message : 'Failed to fetch treatments';
+      error.value =
+        err instanceof Error ? err.message : 'Failed to fetch treatments';
       console.error('Error fetching treatments for pricing:', err);
+
+      // Use fallback data when there's an error
+      console.warn('Using fallback treatments due to fetch error');
+      treatments.value = getFallbackTreatments();
     } finally {
       loading.value = false;
     }
   };
 
+  // Fallback treatments data for when database is not available
+  const getFallbackTreatments = (): Treatment[] => {
+    return [
+      {
+        id: '1',
+        name: 'Chakra Balancering',
+        slug: 'chakra-balancering',
+        description:
+          'Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.',
+        duration_minutes: 60,
+        price_cents: 7000,
+        intensity: 1,
+        intensity_label: 'Zeer Zacht',
+        icon: 'i-mdi-sparkles',
+        category: 'healing',
+        is_active: true,
+        display_order: 1,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+      {
+        id: '2',
+        name: 'Energetische Healing Sessie',
+        slug: 'energetische-healing-sessie',
+        description:
+          'Herstel de natuurlijke energiestroom in je lichaam met een intuïtieve energetische healing. Perfect voor diepgaande ontspanning en het oplossen van energetische blokkades.',
+        duration_minutes: 75,
+        price_cents: 8500,
+        intensity: 1,
+        intensity_label: 'Zeer Zacht',
+        icon: 'i-mdi-weather-sunny',
+        category: 'healing',
+        is_active: true,
+        display_order: 2,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+      {
+        id: '3',
+        name: 'Klassieke Ontspanningsmassage',
+        slug: 'klassieke-ontspanningsmassage',
+        description:
+          'Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.',
+        duration_minutes: 60,
+        price_cents: 6500,
+        intensity: 2,
+        intensity_label: 'Zacht',
+        icon: 'i-mdi-account-group',
+        category: 'massage',
+        is_active: true,
+        display_order: 3,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+      {
+        id: '4',
+        name: 'Intuïtieve Lichaamsmassage',
+        slug: 'intuitieve-lichaamsmassage',
+        description:
+          'Een zachte, intuïtieve massage waarbij volledig wordt ingespeeld op wat jouw lichaam op dat moment nodig heeft. Een unieke ervaring van diepe verbinding en ontspanning.',
+        duration_minutes: 90,
+        price_cents: 9500,
+        intensity: 2,
+        intensity_label: 'Zacht',
+        icon: 'i-mdi-heart',
+        category: 'massage',
+        is_active: true,
+        display_order: 4,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+    ];
+  };
+
   // Computed healing treatments
   const healingTreatments = computed<PricingTreatment[]>(() => {
     return treatments.value
-      .filter(t => t.category === 'healing' && t.is_active)
+      .filter((t) => t.category === 'healing' && t.is_active)
       .sort((a, b) => a.display_order - b.display_order)
       .map(formatTreatmentForPricing);
   });
@@ -179,7 +259,7 @@ export const useDatabasePricing = () => {
   // Computed massage treatments
   const massageTreatments = computed<PricingTreatment[]>(() => {
     return treatments.value
-      .filter(t => t.category === 'massage' && t.is_active)
+      .filter((t) => t.category === 'massage' && t.is_active)
       .sort((a, b) => a.display_order - b.display_order)
       .map(formatTreatmentForPricing);
   });
