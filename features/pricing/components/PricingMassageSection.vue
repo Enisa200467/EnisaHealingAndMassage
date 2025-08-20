@@ -10,10 +10,30 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Loading State -->
+    <div v-if="loading" class="text-center py-12">
+      <UIcon
+        name="i-mdi-loading"
+        class="w-8 h-8 animate-spin mx-auto mb-4 text-secondary-500"
+      />
+      <p class="text-neutral-600">Behandelingen laden...</p>
+    </div>
+
+    <!-- Error State -->
+    <UAlert
+      v-else-if="error"
+      icon="i-mdi-alert-circle"
+      color="error"
+      variant="soft"
+      :title="error"
+      class="mb-6"
+    />
+
+    <!-- Treatments Grid -->
+    <div v-else class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <UCard
         v-for="treatment in massageTreatments"
-        :key="treatment.name"
+        :key="treatment.id"
         class="h-full"
       >
         <template #header>
@@ -75,12 +95,10 @@
 
         <template #footer>
           <UButton
-            :to="`/boeken?treatment=${treatment.name
-              .toLowerCase()
-              .replace(/\s+/g, '-')}`"
+            :to="`/boeken?treatment=${treatment.slug}`"
             block
             icon="i-mdi-calendar"
-            color="teal"
+            color="secondary"
           >
             Boek {{ treatment.name }}
           </UButton>
@@ -91,5 +109,6 @@
 </template>
 
 <script setup lang="ts">
-const { massageTreatments, getIntensityDots } = usePricing();
+const { massageTreatments, getIntensityDots, loading, error } =
+  useDatabasePricing();
 </script>
