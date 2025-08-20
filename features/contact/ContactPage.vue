@@ -60,16 +60,14 @@ setPageSEO({
     <ContactHero />
 
     <!-- Main Content -->
-    <section class="py-16 sm:py-24 bg-purple-50">
-      <UContainer>
-        <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <ContactInfo />
-            <ContactForm @submit="submitContactForm" />
-          </div>
+    <PageSection purple>
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <ContactInfo />
+          <ContactForm @submit="submitContactForm" />
         </div>
-      </UContainer>
-    </section>
+      </div>
+    </PageSection>
 
     <ContactFAQ />
     <ContactMap />

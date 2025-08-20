@@ -25,45 +25,43 @@ useSeoMeta({
   <article>
     <BookingHero />
 
-    <section class="py-16 sm:py-24 bg-purple-50">
-      <UContainer>
-        <div class="max-w-4xl mx-auto">
-          <header class="text-center mb-12">
-            <h1 class="text-3xl font-bold text-neutral-900 mb-4">
-              Kies je gewenste behandeling en tijd
-            </h1>
-            <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Gebruik onze online agenda om direct een afspraak in te plannen.
-              Selecteer je behandeling, kies een beschikbare tijd en ontvang
-              direct een bevestiging.
-            </p>
-          </header>
+    <PageSection purple>
+      <div class="max-w-4xl mx-auto">
+        <header class="text-center mb-12">
+          <h1 class="text-3xl font-bold text-neutral-900 mb-4">
+            Kies je gewenste behandeling en tijd
+          </h1>
+          <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Gebruik onze online agenda om direct een afspraak in te plannen.
+            Selecteer je behandeling, kies een beschikbare tijd en ontvang
+            direct een bevestiging.
+          </p>
+        </header>
 
-          <!-- Setmore Booking Integration -->
-          <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
-            <div class="text-center mb-8">
-              <UButton
-                id="Setmore_button_iframe"
-                as="a"
-                href="https://enisahealingmassage.setmore.com"
-                class="setmore-booking-button"
-                color="primary"
-                variant="solid"
-                size="xl"
-                icon="i-mdi-calendar-heart"
-                aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling"
-              >
-                Open Agenda & Boek Afspraak
-              </UButton>
-            </div>
+        <!-- Setmore Booking Integration -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
+          <div class="text-center mb-8">
+            <UButton
+              id="Setmore_button_iframe"
+              as="a"
+              href="https://enisahealingmassage.setmore.com"
+              class="setmore-booking-button"
+              color="primary"
+              variant="solid"
+              size="xl"
+              icon="i-mdi-calendar-heart"
+              aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling"
+            >
+              Open Agenda & Boek Afspraak
+            </UButton>
+          </div>
 
-            <div class="border-t pt-8">
-              <BookingInfo />
-            </div>
+          <div class="border-t pt-8">
+            <BookingInfo />
           </div>
         </div>
-      </UContainer>
-    </section>
+      </div>
+    </PageSection>
   </article>
 </template>
 

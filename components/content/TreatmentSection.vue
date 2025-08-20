@@ -8,9 +8,8 @@ defineProps<{
 </script>
 
 <template>
-  <section class="not-prose py-16 sm:py-24">
-    <UContainer>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+  <PageSection purple not-prose>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
         <!-- Image -->
         <div class="lg:col-span-1">
           <div class="relative">
@@ -54,6 +53,5 @@ defineProps<{
           </ul>
         </div>
       </div>
-    </UContainer>
-  </section>
+  </PageSection>
 </template>

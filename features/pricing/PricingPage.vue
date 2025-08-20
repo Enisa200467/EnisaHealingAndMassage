@@ -1,17 +1,21 @@
 <template>
   <div>
     <PricingHero />
-    <section class="py-16 sm:py-24 bg-purple-50">
-      <UContainer>
-        <div class="max-w-7xl mx-auto">
-          <PricingHealingSection />
-          <PricingMassageSection />
-          <PricingPackagesSection />
-          <PricingInfoSection />
-          <PricingCTA />
-        </div>
-      </UContainer>
-    </section>
+    <PageSection purple padding="sm">
+      <PricingHealingSection />
+    </PageSection>
+    <PageSection padding="sm">
+      <PricingMassageSection />
+    </PageSection>
+    <PageSection purple padding="sm">
+      <PricingPackagesSection />
+    </PageSection>
+    <PageSection padding="sm">
+      <PricingInfoSection />
+    </PageSection>
+    <PageSection purple padding="sm">
+      <PricingCTA />
+    </PageSection>
   </div>
 </template>
 
