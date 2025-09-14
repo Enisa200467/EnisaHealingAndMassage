@@ -10,17 +10,18 @@
       </p>
     </div>
 
+    <!-- Treatments Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <UCard
         v-for="treatment in healingTreatments"
-        :key="treatment.name"
+        :key="treatment.title"
         class="h-full"
       >
         <template #header>
           <div class="flex justify-between items-start">
             <div>
               <h3 class="text-xl font-semibold text-neutral-900 mb-1">
-                {{ treatment.name }}
+                {{ treatment.title }}
               </h3>
               <p class="text-sm text-neutral-500">
                 {{ treatment.duration }}
@@ -75,13 +76,11 @@
 
         <template #footer>
           <UButton
-            :to="`/boeken?treatment=${treatment.name
-              .toLowerCase()
-              .replace(/\s+/g, '-')}`"
+            :to="`/boeken?treatment=${treatment.slug}`"
             block
             icon="i-mdi-calendar"
           >
-            Boek {{ treatment.name }}
+            Boek {{ treatment.title }}
           </UButton>
         </template>
       </UCard>
@@ -90,5 +89,14 @@
 </template>
 
 <script setup lang="ts">
-const { healingTreatments, getIntensityDots } = usePricing();
+import type { TreatmentData } from '~/features/treatments/store';
+
+const { getIntensityDots } = useDatabasePricing();
+interface Treatment extends TreatmentData {
+  benefits: string[];
+}
+
+defineProps<{
+  healingTreatments: Treatment[];
+}>();
 </script>

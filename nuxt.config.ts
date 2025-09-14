@@ -22,7 +22,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/site.webmanifest' },
       ],
     },
@@ -45,6 +44,7 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@nuxt/scripts',
     '@nuxt/test-utils',
+    '@pinia/nuxt',
   ],
 
   // Feature-based auto-imports

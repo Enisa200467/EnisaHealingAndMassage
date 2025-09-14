@@ -12,51 +12,33 @@
           <!-- Column 1: Behandelingen -->
           <div>
             <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
-              Behandelingen v4
+              Behandelingen
             </h4>
-            <!-- Healing category -->
-            <div class="mb-3">
-              <h5
-                class="text-xs font-bold text-neutral-700 dark:text-neutral-400 mb-1"
-              >
-                Healing
-              </h5>
-              <ul class="space-y-1">
-                <li
-                  v-for="(item, index) in footerLinks.services.healing"
-                  :key="index"
+            <template
+              v-for="category in treatmentCategories"
+              :key="category.title"
+            >
+              <div class="mb-4">
+                <h5
+                  class="font-medium text-neutral-800 dark:text-neutral-200 mb-2"
                 >
-                  <ULink
-                    :to="item.path"
-                    class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+                  {{ category.title }}
+                </h5>
+                <ul class="space-y-2">
+                  <li
+                    v-for="treatment in category.items"
+                    :key="treatment.title"
                   >
-                    {{ item.title }}
-                  </ULink>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Massage category -->
-            <div>
-              <h5
-                class="text-xs font-bold text-neutral-700 dark:text-neutral-400 mb-1"
-              >
-                Massage
-              </h5>
-              <ul class="space-y-1">
-                <li
-                  v-for="(item, index) in footerLinks.services.massage"
-                  :key="index"
-                >
-                  <ULink
-                    :to="item.path"
-                    class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
-                  >
-                    {{ item.title }}
-                  </ULink>
-                </li>
-              </ul>
-            </div>
+                    <ULink
+                      :to="useTreatmentStore().getTreatmentPath(treatment.slug)"
+                      class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+                    >
+                      {{ treatment.title }}
+                    </ULink>
+                  </li>
+                </ul>
+              </div>
+            </template>
           </div>
 
           <!-- Column 2: Praktijk Info -->
@@ -197,18 +179,16 @@
 </template>
 
 <script setup lang="ts">
+import { useTreatmentStore } from '~/features/treatments/store';
 import type { Review, ReviewStats } from '~/types/reviews';
 
 // Use routes composable for centralized route management
 const routes = useRoutes();
 
+const { treatmentCategories } = useTreatmentStore();
+
 // Reactively define footer links based on routes
 const footerLinks = computed(() => ({
-  // Group services by category (healing and massage)
-  services: {
-    healing: routes.treatments.value.healing.items,
-    massage: routes.treatments.value.massage.items,
-  },
   info: [
     { label: 'Veelgestelde Vragen', path: routes.pages.faq },
     { label: 'Reviews & Ervaringen', path: routes.pages.reviews },

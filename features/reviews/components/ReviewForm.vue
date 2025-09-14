@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTreatmentStore } from '~/features/treatments/store';
 import type { ReviewSubmission } from '../types/reviews';
 
 const emit = defineEmits<{
@@ -8,40 +9,28 @@ const emit = defineEmits<{
 const formData = reactive<ReviewSubmission>({
   name: '',
   email: '',
-  rating: 5,
+  rating: 0,
   treatment: '',
   review: '',
 });
+const { treatments: treatmentsData } = useTreatmentStore();
 
-const treatments = [
-  { value: 'chakra-balancering', label: 'Chakra Balancering' },
-  {
-    value: 'energetische-healing-sessie',
-    label: 'Energetische Healing Sessie',
-  },
-  { value: 'intuitieve-lichaamsmassage', label: 'Intuitieve Lichaamsmassage' },
-  {
-    value: 'klassieke-ontspanningsmassage',
-    label: 'Klassieke Ontspanningsmassage',
-  },
-  { value: 'sportmassage', label: 'Sportmassage' },
-  { value: 'zweedse-massage', label: 'Zweedse Massage' },
-];
-
+const treatments = computed(() =>
+  treatmentsData.map((treatment) => treatment.name)
+);
 const isSubmitting = ref(false);
 
 const onSubmit = async () => {
   isSubmitting.value = true;
   try {
     emit('submit', formData);
-    // Reset form after successful submission
-    Object.assign(formData, {
-      name: '',
-      email: '',
-      rating: 5,
-      treatment: '',
-      content: '',
-    });
+
+    // Reset form after submission
+    formData.name = '';
+    formData.email = '';
+    formData.rating = 5;
+    formData.treatment = '';
+    formData.review = '';
   } finally {
     isSubmitting.value = false;
   }
@@ -57,9 +46,10 @@ const onSubmit = async () => {
       </div>
     </template>
 
-    <form class="space-y-6" @submit.prevent="onSubmit">
+    <USkeleton v-if="isSubmitting" class="h-12 w-12 rounded-full" />
+    <form v-else class="space-y-6" @submit.prevent="onSubmit">
       <!-- Personal Information -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <UFormField label="Naam" required>
           <UInput v-model="formData.name" placeholder="Je naam" required />
         </UFormField>
@@ -75,7 +65,7 @@ const onSubmit = async () => {
       </div>
 
       <!-- Rating -->
-      <UFormField label="Beoordeling" required>
+      <UFormField label="Beoordeling" required class="mb-4">
         <div class="flex items-center gap-4">
           <StarRating v-model="formData.rating" :editable="true" size="lg" />
           <span class="text-sm text-neutral-600">
@@ -88,16 +78,17 @@ const onSubmit = async () => {
       <UFormField
         label="Behandeling"
         description="Welke behandeling heb je ondergaan?"
+        class="mb-4"
       >
         <USelectMenu
           v-model="formData.treatment"
-          :options="treatments"
+          :items="treatments"
           placeholder="Selecteer een behandeling"
         />
       </UFormField>
 
       <!-- Review Content -->
-      <UFormField label="Je Review" required>
+      <UFormField label="Je Review" required class="mb-4">
         <UTextarea
           v-model="formData.review"
           placeholder="Vertel over je ervaring met de behandeling..."

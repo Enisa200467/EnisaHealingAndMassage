@@ -25,7 +25,7 @@ useSeoMeta({
   <article>
     <BookingHero />
 
-    <UContainer class="py-16 sm:py-24">
+    <PageSection primary>
       <div class="max-w-4xl mx-auto">
         <header class="text-center mb-12">
           <h1 class="text-3xl font-bold text-neutral-900 mb-4">
@@ -61,7 +61,7 @@ useSeoMeta({
           </div>
         </div>
       </div>
-    </UContainer>
+    </PageSection>
   </article>
 </template>
 

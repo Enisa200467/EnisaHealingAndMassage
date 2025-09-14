@@ -62,9 +62,11 @@ defineProps<Props>();
               <div>
                 <h4 class="font-medium text-neutral-900">{{ review.name }}</h4>
                 <div class="flex items-center gap-2">
-                  <StarRating :rating="review.rating" size="sm" />
+                  <StarRating v-model="review.rating" size="sm" />
                   <span class="text-sm text-neutral-500">
-                    {{ new Date(review.createdAt).toLocaleDateString('nl-NL') }}
+                    {{
+                      new Date(review.created_at).toLocaleDateString('nl-NL')
+                    }}
                   </span>
                 </div>
               </div>
@@ -81,7 +83,7 @@ defineProps<Props>();
 
           <!-- Review Content -->
           <div class="prose prose-neutral max-w-none">
-            <p class="text-neutral-700 leading-relaxed">{{ review.content }}</p>
+            <p class="text-neutral-700 leading-relaxed">{{ review.review }}</p>
           </div>
 
           <!-- Review Status -->

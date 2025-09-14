@@ -1,17 +1,57 @@
 <script setup lang="ts">
-interface ReviewStats {
-  total: number;
-  approved: number;
-  pending: number;
-  rejected: number;
-  averageRating: number;
-}
-
 interface Props {
-  stats: ReviewStats;
+  stats: {
+    '1': number;
+    '2': number;
+    '3': number;
+    '4': number;
+    '5': number;
+  };
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+const ratings = computed(() => props.stats);
+
+const averageRating = computed(() => {
+  const totalRatings =
+    ratings.value['1'] +
+    ratings.value['2'] +
+    ratings.value['3'] +
+    ratings.value['4'] +
+    ratings.value['5'];
+  if (totalRatings === 0) return 0;
+
+  const weightedSum =
+    ratings.value['1'] * 1 +
+    ratings.value['2'] * 2 +
+    ratings.value['3'] * 3 +
+    ratings.value['4'] * 4 +
+    ratings.value['5'] * 5;
+
+  return weightedSum / totalRatings;
+});
+
+const total = computed(() => {
+  return (
+    ratings.value['1'] +
+    ratings.value['2'] +
+    ratings.value['3'] +
+    ratings.value['4'] +
+    ratings.value['5']
+  );
+});
+
+const recommendationRate = computed(() => {
+  const totalRatings =
+    ratings.value['1'] +
+    ratings.value['2'] +
+    ratings.value['3'] +
+    ratings.value['4'] +
+    ratings.value['5'];
+  if (totalRatings === 0) return 0;
+
+  return (ratings.value['4'] + ratings.value['5']) / totalRatings;
+});
 </script>
 
 <template>
@@ -22,10 +62,10 @@ defineProps<Props>();
       <!-- Average Rating -->
       <div class="text-center">
         <div class="flex items-center justify-center mb-2">
-          <StarRating :rating="stats.averageRating" size="lg" />
+          <StarRating v-model="averageRating" size="lg" />
         </div>
         <div class="text-3xl font-bold text-neutral-900 mb-1">
-          {{ stats.averageRating.toFixed(1) }}
+          {{ averageRating.toFixed(1) }}
         </div>
         <p class="text-sm text-neutral-600">Gemiddelde waardering</p>
       </div>
@@ -37,7 +77,7 @@ defineProps<Props>();
           class="w-8 h-8 text-primary-500 mx-auto mb-2"
         />
         <div class="text-3xl font-bold text-neutral-900 mb-1">
-          {{ stats.approved }}
+          {{ total }}
         </div>
         <p class="text-sm text-neutral-600">Gepubliceerde reviews</p>
       </div>
@@ -49,18 +89,14 @@ defineProps<Props>();
           class="w-8 h-8 text-green-500 mx-auto mb-2"
         />
         <div class="text-3xl font-bold text-neutral-900 mb-1">
-          {{ Math.round((stats.approved / Math.max(stats.total, 1)) * 100) }}%
+          {{ Math.round(recommendationRate * 100) }}%
         </div>
         <p class="text-sm text-neutral-600">Positieve ervaringen</p>
       </div>
     </div>
 
     <!-- Rating Distribution -->
-    <div v-if="stats.approved > 0" class="mt-8 pt-6 border-t border-white/20">
-      <h3 class="text-sm font-medium text-neutral-700 mb-4 text-center">
-        Waardering verdeling
-      </h3>
-
+    <div v-if="total > 0" class="mt-8 pt-6 border-t border-white/20">
       <div class="space-y-2">
         <div
           v-for="rating in [5, 4, 3, 2, 1]"
@@ -78,11 +114,13 @@ defineProps<Props>();
                   ? 'bg-yellow-500'
                   : 'bg-red-500',
               ]"
-              :style="{ width: `${Math.random() * 80 + 10}%` }"
+              :style="{
+                width: `${((ratings[rating] / total) * 100).toFixed(1)}%`,
+              }"
             />
           </div>
           <span class="text-sm text-neutral-500 w-8">{{
-            Math.floor(Math.random() * 20)
+            ratings[rating]
           }}</span>
         </div>
       </div>

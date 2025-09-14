@@ -130,7 +130,10 @@ const handleNavigateToContent = () => {
                 @click="handleNavigateToContent"
               >
                 <span>📍 Content Beheer → Content Bestand Template</span>
-                <UIcon name="i-mdi-arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                <UIcon
+                  name="i-mdi-arrow-right"
+                  class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+                />
               </button>
             </div>
           </div>

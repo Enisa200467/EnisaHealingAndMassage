@@ -1,2 +1,28 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+@theme static {
+  --color-rose-v2-50: var(--color-rose-50);
+  --color-rose-v2-100: var(--color-rose-100);
+  --color-rose-v2-200: var(--color-rose-200);
+  --color-rose-v2-300: var(--color-rose-300);
+  --color-rose-v2-400: var(--color-rose-400);
+  --color-rose-v2-500: var(--color-rose-400);
+  --color-rose-v2-600: var(--color-rose-400);
+  --color-rose-v2-700: var(--color-rose-400);
+  --color-rose-v2-800: var(--color-rose-500);
+  --color-rose-v2-900: var(--color-rose-500);
+  --color-rose-v2-950: var(--color-rose-500);
+
+  --color-amber-v2-50: #f9f2f3;
+  --color-amber-v2-100: #f1dfe0;
+  --color-amber-v2-200: #e3c0c2;
+  --color-amber-v2-300: #d29fa1;
+  --color-amber-v2-400: #ad7274; /* base */
+  --color-amber-v2-500: #925e60;
+  --color-amber-v2-600: #794c4e;
+  --color-amber-v2-700: #613c3d;
+  --color-amber-v2-800: #4a2c2d;
+  --color-amber-v2-900: #331d1e;
+  --color-amber-v2-950: #1f1011;
+}

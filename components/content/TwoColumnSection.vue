@@ -3,11 +3,9 @@
 </script>
 
 <template>
-  <section class="not-prose  py-16 sm:py-24">
-    <UContainer>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-        <slot />
-      </div>
-    </UContainer>
-  </section>
+  <PageSection not-prose>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <slot />
+    </div>
+  </PageSection>
 </template>

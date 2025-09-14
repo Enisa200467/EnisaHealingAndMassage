@@ -130,42 +130,44 @@ const breadcrumbs = computed(() => [
 <template>
   <article v-if="treatment || treatmentData">
     <!-- Breadcrumbs -->
-    <UContainer class="py-4">
-      <nav
-        aria-label="Breadcrumb navigatie"
-        class="flex items-center gap-2 text-sm"
-      >
-        <ol class="flex items-center gap-2" role="list">
-          <li
-            v-for="(crumb, index) in breadcrumbs"
-            :key="crumb.path"
-            class="flex items-center gap-2"
-          >
-            <ULink
-              :to="crumb.path"
-              :class="[
-                'flex items-center gap-1',
-                index === breadcrumbs.length - 1
-                  ? 'text-neutral-900 font-medium'
-                  : 'text-neutral-500 hover:text-neutral-700',
-              ]"
-              :aria-current="
-                index === breadcrumbs.length - 1 ? 'page' : undefined
-              "
+    <div class="py-4 bg-secondary-200">
+      <UContainer>
+        <nav
+          aria-label="Breadcrumb navigatie"
+          class="flex items-center gap-2 text-sm"
+        >
+          <ol class="flex items-center gap-2" role="list">
+            <li
+              v-for="(crumb, index) in breadcrumbs"
+              :key="crumb.path"
+              class="flex items-center gap-2"
             >
-              <UIcon :name="crumb.icon" class="w-4 h-4" aria-hidden="true" />
-              {{ crumb.label }}
-            </ULink>
-            <UIcon
-              v-if="index < breadcrumbs.length - 1"
-              name="i-mdi-chevron-right"
-              class="w-4 h-4 text-neutral-400"
-              aria-hidden="true"
-            />
-          </li>
-        </ol>
-      </nav>
-    </UContainer>
+              <ULink
+                :to="crumb.path"
+                :class="[
+                  'flex items-center gap-1',
+                  index === breadcrumbs.length - 1
+                    ? 'text-neutral-900 font-medium'
+                    : 'text-neutral-500 hover:text-neutral-700',
+                ]"
+                :aria-current="
+                  index === breadcrumbs.length - 1 ? 'page' : undefined
+                "
+              >
+                <UIcon :name="crumb.icon" class="w-4 h-4" aria-hidden="true" />
+                {{ crumb.label }}
+              </ULink>
+              <UIcon
+                v-if="index < breadcrumbs.length - 1"
+                name="i-mdi-chevron-right"
+                class="w-4 h-4 text-neutral-400"
+                aria-hidden="true"
+              />
+            </li>
+          </ol>
+        </nav>
+      </UContainer>
+    </div>
 
     <!-- Content Renderer -->
     <ContentRenderer v-if="treatment" :value="treatment" />

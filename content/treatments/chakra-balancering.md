@@ -35,7 +35,7 @@ items:
     stromen."
   - "Eventueel gebruik van kristallen of klankschalen: Ter ondersteuning van het
     balanceringsproces."
-image: /images/placeholder-chakra.webp
+image: /images/chakra-healing.webp
 imageAlt: Sfeerbeeld van een chakra balancering sessie
 title: Wat kun je verwachten?
 ---

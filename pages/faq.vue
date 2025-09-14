@@ -69,7 +69,7 @@ setPageSEO({
 
 <template>
   <article role="main" aria-labelledby="faq-heading">
-    <UContainer class="my-16 sm:my-12">
+    <PageSection primary>
       <header class="mb-16 sm:mb-12">
         <h1
           id="faq-heading"
@@ -77,8 +77,9 @@ setPageSEO({
         >
           Veelgestelde Vragen
         </h1>
-        <p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
-          Vind hier antwoorden op de meest voorkomende vragen.
+        <p class="mt-6 text-lg leading-8 text-neutral-600">
+          Hier vind je antwoorden op de meest gestelde vragen over onze
+          behandelingen, werkwijze en praktijk.
         </p>
       </header>
 
@@ -88,6 +89,6 @@ setPageSEO({
           aria-label="Veelgestelde vragen over Enisa Healing & Massage"
         />
       </section>
-    </UContainer>
+    </PageSection>
   </article>
 </template>

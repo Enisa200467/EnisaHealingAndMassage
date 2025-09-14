@@ -1,10 +1,12 @@
+import { useTreatmentStore } from '~/features/treatments/store';
+
 /**
  * Client-side plugin to initialize treatment data
  * Ensures treatment data is loaded early in the application lifecycle
  */
 export default defineNuxtPlugin(async () => {
   // Initialize the treatments composable to fetch data
-  const { fetchTreatments } = useTreatments();
+  const { fetchTreatments } = useTreatmentStore();
 
   try {
     await fetchTreatments();

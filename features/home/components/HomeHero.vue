@@ -5,7 +5,7 @@
   >
     <!-- Background Image using NuxtImg -->
     <NuxtImg
-      src="/images/placeholder.webp"
+      src="/images/hero.png"
       alt=""
       role="presentation"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"

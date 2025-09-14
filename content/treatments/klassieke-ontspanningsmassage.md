@@ -12,7 +12,7 @@ subtitle: De Klassieke Ontspanningsmassage is een van de meest bekende en popula
 ::treatmentSection
 ---
 title: Wat kun je verwachten?
-image: /images/placeholder.webp
+image: /images/massage.webp
 imageAlt: Sfeerbeeld van een klassieke massage
 items:
   - "<strong>Strijkingen (Effleurage):</strong> Lange, vloeiende bewegingen."
