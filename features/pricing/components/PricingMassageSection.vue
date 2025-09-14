@@ -32,7 +32,7 @@
     <!-- Treatments Grid -->
     <div v-else class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <UCard
-        v-for="treatment in massageTreatments"
+        v-for="treatment in treatments"
         :key="treatment.title"
         class="h-full"
       >
@@ -113,11 +113,17 @@ import type { TreatmentData } from '~/features/treatments/store';
 
 const { getIntensityDots, loading, error } = useDatabasePricing();
 
-interface Treatment extends TreatmentData {
+export interface Treatment {
+  treatment: TreatmentData;
   benefits: string[];
 }
 
-defineProps<{
+const props = defineProps<{
   massageTreatments: Treatment[];
 }>();
+
+const treatments = props.massageTreatments.map((t) => ({
+  ...t.treatment,
+  benefits: t.benefits,
+}));
 </script>

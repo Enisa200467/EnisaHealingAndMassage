@@ -13,7 +13,7 @@
     <!-- Treatments Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <UCard
-        v-for="treatment in healingTreatments"
+        v-for="treatment in treatments"
         :key="treatment.title"
         class="h-full"
       >
@@ -92,11 +92,17 @@
 import type { TreatmentData } from '~/features/treatments/store';
 
 const { getIntensityDots } = useDatabasePricing();
-interface Treatment extends TreatmentData {
+export interface Treatment {
+  treatment: TreatmentData;
   benefits: string[];
 }
 
-defineProps<{
+const props = defineProps<{
   healingTreatments: Treatment[];
 }>();
+
+const treatments = props.healingTreatments.map((t) => ({
+  ...t.treatment,
+  benefits: t.benefits,
+}));
 </script>
