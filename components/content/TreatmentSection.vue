@@ -11,19 +11,16 @@ defineProps<{
   <PageSection purple not-prose>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
         <!-- Image -->
-        <div class="lg:col-span-1">
-          <div class="relative">
-            <NuxtImg
-              v-if="image"
+        <div v-if="image" class="lg:col-span-1">
+          <div class="relative w-full  object-cover rounded-xl  shadow-lg overflow-hidden">
+            <NuxtPicture
               :src="image"
               :alt="imageAlt || `Afbeelding van ${title || 'behandeling'}`"
-              class="w-full h-64 sm:h-80 lg:h-64 object-cover rounded-xl shadow-lg"
               format="webp"
-              quality="80"
+              quality="90"
               loading="lazy"
               sizes="sm:100vw lg:33vw"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"/>
           </div>
         </div>
 

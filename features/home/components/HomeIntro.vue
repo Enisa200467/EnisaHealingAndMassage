@@ -50,12 +50,5 @@
 <script setup lang="ts">
 const routes = useRoutes();
 
-const carouselItems = [
-  'https://picsum.photos/640/640?random=1',
-  'https://picsum.photos/640/640?random=2',
-  'https://picsum.photos/640/640?random=3',
-  'https://picsum.photos/640/640?random=4',
-  'https://picsum.photos/640/640?random=5',
-  'https://picsum.photos/640/640?random=6',
-];
+const carouselItems = ['/images/massage.webp', '/images/chakra-healing.webp'];
 </script>
