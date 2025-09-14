@@ -62,7 +62,7 @@ setPageSEO({
   <article role="main" aria-labelledby="about-heading">
     <!-- Hero Section -->
     <section
-      class="bg-gradient-to-br from-primary-50 to-secondary-50 py-16 sm:py-24"
+      class="bg-gradient-to-b from-secondary-200 to-primary-50 py-16 sm:py-24"
       aria-labelledby="about-heading"
     >
       <UContainer>
@@ -104,20 +104,14 @@ setPageSEO({
             <div class="flex justify-center lg:justify-end">
               <div class="relative">
                 <NuxtImg
-                  src="/images/placeholder.webp"
+                  src="/images/enisa-intro.jpg"
                   alt="Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie"
                   class="w-80 h-80 object-cover rounded-full shadow-2xl"
-                  format="webp"
+                  format="jpg"
                   quality="80"
                   loading="eager"
                   sizes="320px"
                 />
-                <div
-                  class="absolute -bottom-4 -right-4 bg-primary-500 text-white p-4 rounded-full shadow-lg"
-                  aria-hidden="true"
-                >
-                  <UIcon name="i-mdi-heart" class="w-8 h-8" />
-                </div>
               </div>
             </div>
           </div>
@@ -126,7 +120,7 @@ setPageSEO({
     </section>
 
     <!-- Main Content -->
-    <PageSection purple>
+    <PageSection padding="sm" primary>
       <!-- About Story -->
       <section class="mb-16">
         <h2 class="text-3xl font-bold text-neutral-900 mb-8 text-center">

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <PageSection purple>
+  <PageSection primary>
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-neutral-900 mb-8 text-center">
         Locatie & Bereikbaarheid

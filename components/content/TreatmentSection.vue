@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <PageSection purple not-prose>
+  <PageSection primary not-prose>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
         <!-- Image -->
         <div v-if="image" class="lg:col-span-1">

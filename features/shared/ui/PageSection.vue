@@ -10,8 +10,8 @@
 
 <script setup lang="ts">
 interface Props {
-  /** Add purple background */
-  purple?: boolean;
+  /** Add primary background */
+  primary?: boolean;
   /** Add gradient background */
   gradient?: boolean;
   /** Custom background color class */
@@ -29,7 +29,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  purple: false,
+  primary: false,
   gradient: false,
   background: undefined,
   padding: 'md',
@@ -57,8 +57,8 @@ const sectionClasses = computed(() => {
   // Background classes
   if (props.gradient) {
     classes.push('bg-gradient-to-br from-primary-50 to-secondary-50');
-  } else if (props.purple) {
-    classes.push('bg-purple-50');
+  } else if (props.primary) {
+    classes.push('bg-primary-50');
   } else if (props.background) {
     classes.push(props.background);
   }

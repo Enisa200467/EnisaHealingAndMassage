@@ -1,19 +1,19 @@
 <template>
   <div>
     <PricingHero />
-    <PageSection purple padding="sm">
+    <PageSection primary padding="sm">
       <PricingHealingSection :healing-treatments="healingData" />
     </PageSection>
     <PageSection padding="sm">
       <PricingMassageSection :massage-treatments="massageData" />
     </PageSection>
-    <PageSection purple padding="sm">
+    <PageSection primary padding="sm">
       <PricingPackagesSection />
     </PageSection>
     <PageSection padding="sm">
       <PricingInfoSection />
     </PageSection>
-    <PageSection purple padding="sm">
+    <PageSection primary padding="sm">
       <PricingCTA />
     </PageSection>
   </div>

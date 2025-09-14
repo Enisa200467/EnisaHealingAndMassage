@@ -29,6 +29,8 @@
           <UNavigationMenu
             class="ml-4"
             arrow
+            color="primary"
+            highlight
             orientation="horizontal"
             :items="desktopNavItems"
             aria-label="Desktop navigatiemenu"

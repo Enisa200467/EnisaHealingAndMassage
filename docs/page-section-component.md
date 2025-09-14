@@ -20,7 +20,7 @@ Created a reusable `PageSection` component to replace the repetitive pattern of:
 
 ## Features
 
-- **Purple Background**: `<PageSection purple>` - adds `bg-purple-50`
+- **Purple Background**: `<PageSection primary>` - adds `bg-purple-50`
 - **Gradient Background**: `<PageSection gradient>` - adds gradient from primary to secondary colors
 - **Custom Background**: `<PageSection background="bg-neutral-50">` - custom background classes
 - **Flexible Padding**: `padding="sm|md|lg"` for different section sizes
@@ -41,7 +41,7 @@ Created a reusable `PageSection` component to replace the repetitive pattern of:
 ### With Purple Background
 
 ```vue
-<PageSection purple>
+<PageSection primary>
   <!-- Your content here -->
 </PageSection>
 ```

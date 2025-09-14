@@ -25,7 +25,7 @@ useSeoMeta({
   <article>
     <BookingHero />
 
-    <PageSection purple>
+    <PageSection primary>
       <div class="max-w-4xl mx-auto">
         <header class="text-center mb-12">
           <h1 class="text-3xl font-bold text-neutral-900 mb-4">

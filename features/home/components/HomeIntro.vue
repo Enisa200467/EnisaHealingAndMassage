@@ -1,5 +1,5 @@
 <template>
-  <PageSection purple aria-labelledby="intro-heading">
+  <PageSection primary aria-labelledby="intro-heading">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
       <UCarousel
         v-slot="{ item }"

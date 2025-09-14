@@ -130,7 +130,7 @@ const reviewStatsForOverview = computed(() => {
   <div>
     <!-- Hero Section -->
     <section
-      class="bg-gradient-to-br from-primary-50 to-secondary-50 py-16 sm:py-24"
+      class="bg-gradient-to-b from-secondary-200 to-primary-50 py-16 sm:py-24"
     >
       <UContainer>
         <div class="max-w-4xl mx-auto text-center">
@@ -148,7 +148,7 @@ const reviewStatsForOverview = computed(() => {
     </section>
 
     <!-- Reviews List -->
-    <PageSection purple>
+    <PageSection primary>
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
         <!-- Reviews Display -->
         <div class="lg:col-span-2">
