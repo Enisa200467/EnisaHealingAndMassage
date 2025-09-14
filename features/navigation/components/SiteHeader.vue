@@ -93,12 +93,14 @@
 
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui';
+import { useTreatmentStore } from '~/features/treatments/store';
 
 const routes = useRoutes();
+const { healingTreatments, massageTreatments } = useTreatmentStore();
 
 // Reactively define treatment navigation items
 const healingNavEntries = computed<NavigationMenuItem[]>(() =>
-  routes.treatments.value.healing.items.map((item) => ({
+  healingTreatments.map((item) => ({
     label: item.title || routes.slugToTitle(item.slug || ''),
     to: item.path,
     icon: item.icon || 'i-mdi-meditation', // Default icon if not specified
@@ -106,7 +108,7 @@ const healingNavEntries = computed<NavigationMenuItem[]>(() =>
 );
 
 const massageNavEntries = computed<NavigationMenuItem[]>(() =>
-  routes.treatments.value.massage.items.map((item) => ({
+  massageTreatments.map((item) => ({
     label: item.title || routes.slugToTitle(item.slug || ''),
     to: item.path,
     icon: item.icon || 'i-mdi-hand-back-right', // Default icon if not specified

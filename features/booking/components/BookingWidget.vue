@@ -48,28 +48,38 @@ const handleBookingClick = () => {
 </script>
 
 <template>
-  <UButton
-    id="Setmore_button_iframe"
-    as="a"
-    href="https://enisahealingmassage.setmore.com"
-    class="booking-widget-pill"
-    color="primary"
-    variant="solid"
-    size="xl"
-    icon="i-mdi-calendar"
-    aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
-    role="button"
-    tabindex="0"
-    @click="handleBookingClick"
-    @keydown.enter="handleBookingClick"
-    @keydown.space.prevent="handleBookingClick"
-  >
-    <span class="hidden sm:inline">Boek Afspraak</span>
-    <span class="sm:hidden">Boek</span>
-  </UButton>
+  <div class="booking-widget-container">
+    <UButton
+      v-if="isScriptLoaded"
+      id="Setmore_button_iframe"
+      as="a"
+      href="https://enisahealingmassage.setmore.com"
+      class="booking-widget-pill"
+      color="primary"
+      variant="solid"
+      size="xl"
+      icon="i-mdi-calendar"
+      aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
+      role="button"
+      tabindex="0"
+      @click="handleBookingClick"
+      @keydown.enter="handleBookingClick"
+      @keydown.space.prevent="handleBookingClick"
+    >
+      <span class="hidden sm:inline">Boek Afspraak</span>
+      <span class="sm:hidden">Boek</span>
+    </UButton>
+  </div>
 </template>
 
 <style scoped>
+.booking-widget-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9999;
+}
+
 .booking-widget-pill {
   position: fixed !important;
   bottom: 1rem !important;

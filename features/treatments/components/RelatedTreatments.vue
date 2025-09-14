@@ -1,12 +1,14 @@
 <script setup lang="ts">
-const routes = useRoutes();
+import { useTreatmentStore } from '../store';
+
+const treatmentStore = useTreatmentStore();
 
 // Get related treatments organized by category
 const healingTreatments = computed(() =>
-  routes.treatments.value.healing.items.slice(0, 3)
+  treatmentStore.healingTreatments.slice(0, 3)
 );
 const massageTreatments = computed(() =>
-  routes.treatments.value.massage.items.slice(0, 3)
+  treatmentStore.massageTreatments.slice(0, 3)
 );
 </script>
 

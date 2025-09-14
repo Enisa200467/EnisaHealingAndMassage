@@ -63,19 +63,22 @@
 </template>
 
 <script setup lang="ts">
+import { useTreatmentStore } from '~/features/treatments/store';
+
 const routes = useRoutes();
+const { healingTreatments, massageTreatments } = useTreatmentStore();
 
 // Group treatments by category for the tabs
 const massageTypes = computed(() => [
   {
     label: 'Helende Behandelingen',
     slot: 'item',
-    massages: routes.treatments.value.healing.items,
+    massages: healingTreatments,
   },
   {
     label: 'Reguliere Massages',
     slot: 'item',
-    massages: routes.treatments.value.massage.items,
+    massages: massageTreatments,
   },
 ]);
 </script>

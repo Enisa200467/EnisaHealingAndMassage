@@ -8,7 +8,7 @@ const { getApprovedReviews, getReviewStats, submitReview } = useReviews();
 
 // Reviews data
 const allReviews = ref<Review[]>([]);
-const reviewStats = ref<ReviewStatsType>({
+const reviewStatsForSeo = ref<ReviewStatsType>({
   total: 0,
   approved: 0,
   pending: 0,
@@ -30,7 +30,7 @@ const loadReviews = async () => {
     ]);
 
     allReviews.value = reviewsResponse.reviews;
-    reviewStats.value = statsResponse;
+    reviewStatsForSeo.value = statsResponse;
   } catch (error) {
     console.error('Error loading reviews:', error);
   } finally {
@@ -50,8 +50,8 @@ const generateReviewSchemas = () => {
     url: businessInfo.url,
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: reviewStats.value.averageRating.toFixed(1),
-      reviewCount: reviewStats.value.approved,
+      ratingValue: reviewStatsForSeo.value.averageRating.toFixed(1),
+      reviewCount: reviewStatsForSeo.value.approved,
       bestRating: 5,
       worstRating: 1,
     },
@@ -82,8 +82,8 @@ watchEffect(() => {
     setPageSEO({
       title: 'Reviews & Ervaringen - Enisa Healing & Massage',
       description: `Lees de ervaringen van onze ${
-        reviewStats.value.approved
-      } cliënten met een gemiddelde score van ${reviewStats.value.averageRating.toFixed(
+        reviewStatsForSeo.value.approved
+      } cliënten met een gemiddelde score van ${reviewStatsForSeo.value.averageRating.toFixed(
         1
       )}/5. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.`,
       path: '/reviews',
@@ -99,10 +99,12 @@ watchEffect(() => {
   }
 });
 
+const hasSubmitted = ref(false);
 // Handle review submission
 const handleReviewSubmission = async (reviewData: Partial<Review>) => {
   const result = await submitReview(reviewData);
   if (result.success) {
+    hasSubmitted.value = true;
     // Optionally reload reviews or show success message
     await loadReviews();
   }
@@ -111,6 +113,16 @@ const handleReviewSubmission = async (reviewData: Partial<Review>) => {
 // Load reviews on mount
 onMounted(() => {
   loadReviews();
+});
+
+const reviewStatsForOverview = computed(() => {
+  return {
+    '1': allReviews.value.filter((r) => r.rating === 1).length,
+    '2': allReviews.value.filter((r) => r.rating === 2).length,
+    '3': allReviews.value.filter((r) => r.rating === 3).length,
+    '4': allReviews.value.filter((r) => r.rating === 4).length,
+    '5': allReviews.value.filter((r) => r.rating === 5).length,
+  };
 });
 </script>
 
@@ -130,28 +142,28 @@ onMounted(() => {
           <p class="text-xl text-neutral-600 mb-8 max-w-2xl mx-auto">
             Lees wat anderen zeggen over hun ervaring en deel je eigen verhaal.
           </p>
-          <ReviewStats :stats="reviewStats" />
+          <ReviewStats :stats="reviewStatsForOverview" />
         </div>
       </UContainer>
     </section>
 
     <!-- Reviews List -->
     <PageSection purple>
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <!-- Reviews Display -->
-          <div class="lg:col-span-2">
-            <ReviewsList
-              :reviews="allReviews"
-              :loading="isLoading"
-              @load-more="loadReviews"
-            />
-          </div>
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <!-- Reviews Display -->
+        <div class="lg:col-span-2">
+          <ReviewsList
+            :reviews="allReviews"
+            :loading="isLoading"
+            @load-more="loadReviews"
+          />
+        </div>
 
-          <!-- Review Form -->
-          <div class="lg:col-span-1">
-            <ReviewForm @submit="handleReviewSubmission" />
-          </div>
+        <!-- Review Form -->
+        <div class="lg:col-span-2">
+          <ReviewForm v-if="!hasSubmitted" @submit="handleReviewSubmission" />
+
+          <UAlert v-else title="Bedankt voor je review!" class="w-1/2" />
         </div>
       </div>
     </PageSection>

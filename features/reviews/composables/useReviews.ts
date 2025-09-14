@@ -6,8 +6,6 @@ import type {
 } from '~/types/reviews';
 
 export const useReviews = () => {
-  const supabase = useSupabaseClient();
-
   /**
    * Submit a new review (public endpoint)
    */
@@ -15,20 +13,18 @@ export const useReviews = () => {
     reviewData: ReviewSubmission
   ): Promise<{ success: boolean; error?: string }> => {
     try {
-      const { error } = await supabase.from('reviews').insert({
-        ...reviewData,
-        status: 'pending',
+      await $fetch('/api/reviews', {
+        method: 'POST',
+        body: reviewData,
       });
 
-      if (error) {
-        console.error('Error submitting review:', error);
-        return { success: false, error: error.message };
-      }
-
       return { success: true };
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting review:', error);
-      return { success: false, error: 'Er is een onverwachte fout opgetreden' };
+      return {
+        success: false,
+        error: error.data?.message || 'Er is een onverwachte fout opgetreden',
+      };
     }
   };
 
@@ -40,33 +36,14 @@ export const useReviews = () => {
     limit = 6
   ): Promise<PaginatedReviews> => {
     try {
-      const offset = (page - 1) * limit;
+      const response = await $fetch<{ data: PaginatedReviews }>(
+        '/api/reviews',
+        {
+          query: { page, limit },
+        }
+      );
 
-      // Get total count
-      const { count } = await supabase
-        .from('reviews')
-        .select('*', { count: 'exact', head: true })
-        .eq('status', 'approved');
-
-      // Get paginated reviews
-      const { data: reviews, error } = await supabase
-        .from('reviews')
-        .select('id, name, treatment, rating, review, created_at')
-        .eq('status', 'approved')
-        .order('created_at', { ascending: false })
-        .range(offset, offset + limit - 1);
-
-      if (error) {
-        throw error;
-      }
-
-      return {
-        reviews: reviews || [],
-        total: count || 0,
-        page,
-        limit,
-        hasMore: (count || 0) > offset + limit,
-      };
+      return response.data;
     } catch (error) {
       console.error('Error fetching approved reviews:', error);
       return {
@@ -84,22 +61,10 @@ export const useReviews = () => {
    */
   const getReviewStats = async (): Promise<ReviewStats> => {
     try {
-      const { data, error } = await supabase
-        .from('review_stats')
-        .select('*')
-        .single();
-
-      if (error) {
-        throw error;
-      }
-
-      return {
-        total: data.total || 0,
-        approved: data.approved || 0,
-        pending: data.pending || 0,
-        rejected: data.rejected || 0,
-        averageRating: parseFloat(data.average_rating) || 0,
-      };
+      const response = await $fetch<{ data: ReviewStats }>(
+        '/api/reviews/stats'
+      );
+      return response.data;
     } catch (error) {
       console.error('Error fetching review stats:', error);
       return {

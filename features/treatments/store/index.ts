@@ -2,7 +2,7 @@ import type { Database } from '~/types/database.types';
 
 type Treatment = Database['public']['Tables']['treatments']['Row'];
 
-interface TreatmentData {
+export interface TreatmentData {
   slug: string;
   path: string;
   title: string;
@@ -18,18 +18,13 @@ interface TreatmentData {
 
 interface TreatmentCategory {
   title: string;
+  type: TreatmentType;
   items: TreatmentData[];
 }
 
-interface TreatmentCategories {
-  [key: string]: TreatmentCategory;
-}
+type TreatmentType = 'healing' | 'massage';
 
-/**
- * Composable for managing treatment data from Supabase
- * Provides dynamic treatment routes and categories
- */
-export const useTreatments = () => {
+export const useTreatmentStore = defineStore('treatments', () => {
   const supabase = useSupabaseClient<Database>();
 
   // Reactive state
@@ -38,8 +33,8 @@ export const useTreatments = () => {
   const error = ref<string | null>(null);
 
   // Computed treatment categories
-  const treatmentCategories = computed<TreatmentCategories>(() => {
-    const categories: TreatmentCategories = {};
+  const treatmentCategories = computed<TreatmentCategory[]>(() => {
+    const categories: TreatmentCategory[] = [];
 
     // Group active treatments by category
     const activeTreatments = treatments.value.filter((t) => t.is_active);
@@ -47,14 +42,19 @@ export const useTreatments = () => {
     activeTreatments.forEach((treatment) => {
       const category = treatment.category || 'other';
 
-      if (!categories[category]) {
-        categories[category] = {
-          title: getCategoryTitle(category),
-          items: [],
-        };
-      }
+      const existingCategory = categories.find(
+        (cat) => cat.type === category.toLocaleLowerCase()
+      );
 
-      categories[category].items.push(formatTreatment(treatment));
+      if (!existingCategory) {
+        categories.push({
+          title: getCategoryTitle(category),
+          items: [formatTreatment(treatment)],
+          type: category as TreatmentType,
+        });
+      } else {
+        existingCategory.items.push(formatTreatment(treatment));
+      }
     });
 
     // Sort items within each category by display_order
@@ -67,6 +67,19 @@ export const useTreatments = () => {
     return categories;
   });
 
+  const healingTreatments = computed(() => {
+    return (
+      treatmentCategories.value.filter((cat) => cat.type === 'healing')[0]
+        ?.items || []
+    );
+  });
+
+  const massageTreatments = computed(() => {
+    return (
+      treatmentCategories.value.filter((cat) => cat.type === 'massage')[0]
+        ?.items || []
+    );
+  });
   const formatDuration = (minutes: number): string => {
     if (minutes >= 60) {
       const hours = Math.floor(minutes / 60);
@@ -163,6 +176,8 @@ export const useTreatments = () => {
     treatments: treatments,
     loading: loading,
     error: error,
+    healingTreatments: healingTreatments,
+    massageTreatments: massageTreatments,
 
     // Computed
     treatmentCategories: treatmentCategories,
@@ -175,7 +190,4 @@ export const useTreatments = () => {
     getAllTreatmentPaths,
     formatTreatment,
   };
-};
-
-// Export types
-export type { TreatmentData, TreatmentCategory, TreatmentCategories };
+});

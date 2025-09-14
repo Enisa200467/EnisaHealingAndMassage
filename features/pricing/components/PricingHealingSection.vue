@@ -10,37 +10,18 @@
       </p>
     </div>
 
-    <!-- Loading State -->
-    <div v-if="loading" class="text-center py-12">
-      <UIcon
-        name="i-mdi-loading"
-        class="w-8 h-8 animate-spin mx-auto mb-4 text-primary-500"
-      />
-      <p class="text-neutral-600">Behandelingen laden...</p>
-    </div>
-
-    <!-- Error State -->
-    <UAlert
-      v-else-if="error"
-      icon="i-mdi-alert-circle"
-      color="error"
-      variant="soft"
-      :title="error"
-      class="mb-6"
-    />
-
     <!-- Treatments Grid -->
-    <div v-else class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <UCard
         v-for="treatment in healingTreatments"
-        :key="treatment.id"
+        :key="treatment.title"
         class="h-full"
       >
         <template #header>
           <div class="flex justify-between items-start">
             <div>
               <h3 class="text-xl font-semibold text-neutral-900 mb-1">
-                {{ treatment.name }}
+                {{ treatment.title }}
               </h3>
               <p class="text-sm text-neutral-500">
                 {{ treatment.duration }}
@@ -99,7 +80,7 @@
             block
             icon="i-mdi-calendar"
           >
-            Boek {{ treatment.name }}
+            Boek {{ treatment.title }}
           </UButton>
         </template>
       </UCard>
@@ -108,6 +89,14 @@
 </template>
 
 <script setup lang="ts">
-const { healingTreatments, getIntensityDots, loading, error } =
-  useDatabasePricing();
+import type { TreatmentData } from '~/features/treatments/store';
+
+const { getIntensityDots } = useDatabasePricing();
+interface Treatment extends TreatmentData {
+  benefits: string[];
+}
+
+defineProps<{
+  healingTreatments: Treatment[];
+}>();
 </script>

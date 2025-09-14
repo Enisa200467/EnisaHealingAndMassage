@@ -33,14 +33,14 @@
     <div v-else class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <UCard
         v-for="treatment in massageTreatments"
-        :key="treatment.id"
+        :key="treatment.title"
         class="h-full"
       >
         <template #header>
           <div class="flex justify-between items-start">
             <div>
               <h3 class="text-xl font-semibold text-neutral-900 mb-1">
-                {{ treatment.name }}
+                {{ treatment.title }}
               </h3>
               <p class="text-sm text-neutral-500">
                 {{ treatment.duration }}
@@ -100,7 +100,7 @@
             icon="i-mdi-calendar"
             color="secondary"
           >
-            Boek {{ treatment.name }}
+            Boek {{ treatment.title }}
           </UButton>
         </template>
       </UCard>
@@ -109,6 +109,15 @@
 </template>
 
 <script setup lang="ts">
-const { massageTreatments, getIntensityDots, loading, error } =
-  useDatabasePricing();
+import type { TreatmentData } from '~/features/treatments/store';
+
+const { getIntensityDots, loading, error } = useDatabasePricing();
+
+interface Treatment extends TreatmentData {
+  benefits: string[];
+}
+
+defineProps<{
+  massageTreatments: Treatment[];
+}>();
 </script>
