@@ -1,16 +1,3 @@
----
-title: Chakra Balancering
-description: Herstel de harmonie en energiestroom in je lichaam met een zachte
-  Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen
-  van emotioneel en fysiek welzijn.
-duration: 60 minuten
-price: € 70
-intensity: 1
-intensityLabel: Zeer Zacht (Energetisch werk)
-icon: i-mdi-sparkles
-category: healing
----
-
 ::treatment-hero
 ---
 intensity: 1

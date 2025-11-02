@@ -26,7 +26,7 @@ const {
 } = useAdminTreatments();
 
 // View states
-type ViewState = 'list' | 'create' | 'edit' | 'delete';
+type ViewState = 'list' | 'create' | 'edit' | 'delete' | 'calendar';
 const currentView = ref<ViewState>('list');
 const editingTreatment = ref<Treatment | null>(null);
 const deletingTreatment = ref<Treatment | null>(null);
@@ -80,6 +80,8 @@ const handleDelete = (treatment: Treatment) => {
   currentView.value = 'delete';
 };
 
+const shouldShowCmsWarning = ref(true);
+
 // Handle form submit
 const handleSubmit = async () => {
   if (editingTreatment.value) {
@@ -89,14 +91,15 @@ const handleSubmit = async () => {
       formData.value
     );
     if (result) {
-      currentView.value = 'list';
+      currentView.value = 'calendar';
       editingTreatment.value = null;
     }
   } else {
     // Create new treatment
     const result = await createTreatment(formData.value);
     if (result) {
-      currentView.value = 'list';
+      currentView.value = 'calendar';
+      shouldShowCmsWarning.value = true;
     }
   }
 };
@@ -223,6 +226,45 @@ const isAuthenticated = computed(() => user.value?.role === 'authenticated');
             @submit="handleSubmit"
             @cancel="handleCancel"
           />
+        </UCard>
+      </div>
+
+      <!-- Calendar Manager -->
+      <div v-else-if="currentView === 'calendar'">
+        <UCard>
+          <UAlert
+            color="warning"
+            variant="subtle"
+            icon="i-lucide-triangle-alert"
+            title="Vergeet niet om de behandeling te controleren!"
+          >
+            <template #description>
+              <p>
+                Controleer of de behandeling correct staat in
+                <a
+                  href="https://go.setmore.com/easy-share"
+                  target="_blank"
+                  class="underline font-medium text-blue-600"
+                  >setmore</a
+                >.
+              </p>
+
+              <p v-if="shouldShowCmsWarning">
+                Voeg de behandeling ook toe aan
+                <a
+                  href="https://nuxt.studio/Enisa200467/enisa-healing-and-massage/content?valueId=treatments&refId=main"
+                  target="_blank"
+                  class="underline font-medium text-blue-600"
+                  >Nuxt Studio</a
+                >.
+              </p>
+            </template>
+            <template #actions>
+              <UButton variant="outline" @click="currentView = 'list'">
+                Terug naar Behandelingen Lijst
+              </UButton>
+            </template>
+          </UAlert>
         </UCard>
       </div>
 

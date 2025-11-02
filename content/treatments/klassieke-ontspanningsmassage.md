@@ -1,7 +1,3 @@
----
-title: 'Klassieke Ontspanningsmassage'
-description: 'Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.'
----
 
 ::treatmentHero
 ---

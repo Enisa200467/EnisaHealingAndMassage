@@ -49,7 +49,6 @@ export interface TreatmentFormData {
 export const TREATMENT_CATEGORIES = [
   { value: 'massage', label: 'Massage' },
   { value: 'healing', label: 'Healing' },
-  { value: 'therapy', label: 'Therapie' },
 ] as const;
 
 export const INTENSITY_LEVELS = [

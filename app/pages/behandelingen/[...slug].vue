@@ -15,9 +15,6 @@ const [{ data: treatment }, treatmentData] = await Promise.all([
   }),
   getTreatmentBySlug(slug),
 ]);
-
-// Provide treatment data to child components via injection
-provide('treatmentData', treatmentData);
 </script>
 
 <template>
