@@ -121,36 +121,6 @@ const sizeClasses = computed(() => {
 
       <!-- Intensity -->
       <div v-if="intensityData" class="space-y-2">
-        <div class="flex justify-between items-center">
-          <span class="text-neutral-600" :class="sizeClasses.text">
-            Intensiteit:
-          </span>
-          <div class="flex items-center gap-2">
-            <!-- Intensity dots -->
-            <div
-              class="flex items-center gap-1"
-              role="img"
-              :aria-label="`Intensiteit ${intensityData.rating} van 5`"
-            >
-              <div
-                v-for="dot in 5"
-                :key="dot"
-                class="w-2 h-2 rounded-full"
-                :class="
-                  dot <= intensityData.rating
-                    ? 'bg-primary-500'
-                    : 'bg-neutral-200'
-                "
-                :aria-hidden="true"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="text-right">
-          <span class="text-neutral-500" :class="sizeClasses.label">
-            {{ intensityData.label }}
-          </span>
-        </div>
         <IntensityIndicator
           :intensity="intensityData.rating"
           :label="intensityLabel"
