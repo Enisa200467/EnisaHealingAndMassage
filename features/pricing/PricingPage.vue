@@ -2,10 +2,18 @@
   <div>
     <PricingHero />
     <PageSection primary padding="sm">
-      <PricingHealingSection :healing-treatments="healingData" />
+      <PricingHealingSection
+        :loading="loading"
+        :error="error"
+        :healing-treatments="healingData"
+      />
     </PageSection>
     <PageSection padding="sm">
-      <PricingMassageSection :massage-treatments="massageData" />
+      <PricingMassageSection
+        :loading="loading"
+        :error="error"
+        :massage-treatments="massageData"
+      />
     </PageSection>
     <PageSection primary padding="sm">
       <PricingPackagesSection />
@@ -20,8 +28,12 @@
 </template>
 
 <script setup lang="ts">
+import { useTreatmentStore } from '../treatments/store';
+
 const { setPageSEO, businessInfo } = useGlobalSEO();
-const { healingTreatments, massageTreatments } = useDatabasePricing();
+const treatmentStore = useTreatmentStore();
+const { healingTreatments, massageTreatments, loading, error } =
+  storeToRefs(treatmentStore);
 const { data: sections } = await useAsyncData(() => {
   return queryCollection('treatments').select('body', 'title').all();
 });
@@ -41,8 +53,8 @@ const benefitList = computed(() => {
 });
 
 const healingData = computed(() =>
-  healingTreatments.map((treatment) => ({
-    ...treatment,
+  healingTreatments.value.map((treatment) => ({
+    treatment: treatment,
     benefits:
       benefitList.value.find((benefit) => benefit.title === treatment.title)
         ?.items || [],
@@ -50,8 +62,8 @@ const healingData = computed(() =>
 );
 
 const massageData = computed(() =>
-  massageTreatments.map((treatment) => ({
-    ...treatment,
+  massageTreatments.value.map((treatment) => ({
+    treatment: treatment,
     benefits:
       benefitList.value.find((benefit) => benefit.title === treatment.title)
         ?.items || [],
@@ -83,7 +95,7 @@ const pricingSchema = computed(() => {
   let position = 1;
 
   // Add healing treatments
-  healingTreatments.forEach((treatment) => {
+  healingTreatments.value.forEach((treatment) => {
     itemListElement.push({
       '@type': 'ListItem',
       position: position++,
@@ -106,13 +118,13 @@ const pricingSchema = computed(() => {
   });
 
   // Add massage treatments
-  massageTreatments.forEach((treatment) => {
+  massageTreatments.value.forEach((treatment) => {
     itemListElement.push({
       '@type': 'ListItem',
       position: position++,
       item: {
         '@type': 'Service',
-        name: treatment.name,
+        name: treatment.title,
         description: treatment.description,
         provider: {
           '@type': 'Organization',

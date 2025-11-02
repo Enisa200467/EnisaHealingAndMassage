@@ -25,6 +25,7 @@ interface TreatmentWithFormatted extends TreatmentData {
  * Composable for fetching treatment data from the database
  * Provides formatted data ready for use in templates
  */
+// TODO used?
 export const useTreatmentData = () => {
   const formatPrice = (priceCents: number): string => {
     return `€ ${(priceCents / 100).toFixed(0)}`;
@@ -53,6 +54,7 @@ export const useTreatmentData = () => {
   };
 
   // Fetch single treatment by slug
+  // TODO used?
   const fetchTreatmentBySlug = async (
     slug: string
   ): Promise<TreatmentWithFormatted | null> => {
@@ -76,6 +78,7 @@ export const useTreatmentData = () => {
   };
 
   // Fetch all active treatments
+  // TODO used?
   const fetchAllTreatments = async (): Promise<TreatmentWithFormatted[]> => {
     try {
       const response = await $fetch<{ data: TreatmentData[] }>(

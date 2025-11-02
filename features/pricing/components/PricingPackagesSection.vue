@@ -77,5 +77,5 @@
 </template>
 
 <script setup lang="ts">
-const { packages } = usePricing();
+const { packages } = useDatabasePricing();
 </script>

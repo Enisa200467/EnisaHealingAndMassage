@@ -11,7 +11,7 @@ useSeoMeta({
 const user = useSupabaseUser();
 
 // Only render if user is authenticated
-const isAuthenticated = computed(() => !!user.value);
+const isAuthenticated = computed(() => user.value?.role === 'authenticated');
 </script>
 
 <template>

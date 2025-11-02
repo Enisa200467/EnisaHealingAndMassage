@@ -58,24 +58,11 @@
           <p class="text-neutral-600">{{ treatment.description }}</p>
 
           <!-- Intensity -->
-          <div class="flex items-center gap-3">
-            <span class="text-sm font-medium text-neutral-700"
-              >Intensiteit:</span
-            >
-            <div class="flex items-center gap-1">
-              <div
-                v-for="(filled, index) in getIntensityDots(treatment.intensity)"
-                :key="index"
-                :class="[
-                  'w-2 h-2 rounded-full',
-                  filled ? 'bg-secondary-500' : 'bg-neutral-200',
-                ]"
-              />
-            </div>
-            <span class="text-sm text-neutral-500">{{
-              treatment.intensityLabel
-            }}</span>
-          </div>
+          <IntensityIndicator
+            :intensity="treatment.intensity"
+            :label="treatment.intensityLabel"
+            size="md"
+          />
 
           <!-- Benefits -->
           <div>
@@ -111,8 +98,6 @@
 <script setup lang="ts">
 import type { TreatmentData } from '~/features/treatments/store';
 
-const { getIntensityDots, loading, error } = useDatabasePricing();
-
 export interface Treatment {
   treatment: TreatmentData;
   benefits: string[];
@@ -120,6 +105,8 @@ export interface Treatment {
 
 const props = defineProps<{
   massageTreatments: Treatment[];
+  loading: boolean;
+  error: string | null;
 }>();
 
 const treatments = props.massageTreatments.map((t) => ({
