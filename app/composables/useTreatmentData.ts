@@ -25,8 +25,7 @@ interface TreatmentWithFormatted extends TreatmentData {
  * Composable for fetching treatment data from the database
  * Provides formatted data ready for use in templates
  */
-// TODO used?
-export const useTreatmentData = () => {
+export const useTreatmentDetailsFormatter = () => {
   const formatPrice = (priceCents: number): string => {
     return `€ ${(priceCents / 100).toFixed(0)}`;
   };
@@ -53,50 +52,7 @@ export const useTreatmentData = () => {
     };
   };
 
-  // Fetch single treatment by slug
-  // TODO used?
-  const fetchTreatmentBySlug = async (
-    slug: string
-  ): Promise<TreatmentWithFormatted | null> => {
-    try {
-      const response = await $fetch<{ data: TreatmentData[] }>(
-        '/api/treatments'
-      );
-      const treatment = response.data.find(
-        (t) => t.slug === slug && t.is_active
-      );
-
-      if (!treatment) {
-        return null;
-      }
-
-      return formatTreatmentData(treatment);
-    } catch (error) {
-      console.error('Error fetching treatment by slug:', error);
-      return null;
-    }
-  };
-
-  // Fetch all active treatments
-  // TODO used?
-  const fetchAllTreatments = async (): Promise<TreatmentWithFormatted[]> => {
-    try {
-      const response = await $fetch<{ data: TreatmentData[] }>(
-        '/api/treatments'
-      );
-      return response.data
-        .filter((t) => t.is_active)
-        .map(formatTreatmentData)
-        .sort((a, b) => a.display_order - b.display_order);
-    } catch (error) {
-      console.error('Error fetching treatments:', error);
-      return [];
-    }
-  };
-
   return {
-    fetchTreatmentBySlug,
-    fetchAllTreatments,
     formatPrice,
     formatDuration,
     formatTreatmentData,

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
 import type { Treatment } from '../types/treatment.types';
 
 interface Props {
@@ -20,23 +21,7 @@ const emit = defineEmits<Emits>();
 // Get dynamic routes
 const routes = useRoutes();
 
-// Format price for display
-const formatPrice = (priceCents: number): string => {
-  return `€ ${(priceCents / 100).toFixed(2)}`;
-};
-
-// Format duration for display
-const formatDuration = (minutes: number): string => {
-  if (minutes >= 60) {
-    const hours = Math.floor(minutes / 60);
-    const remainingMinutes = minutes % 60;
-    if (remainingMinutes === 0) {
-      return `${hours}h`;
-    }
-    return `${hours}h ${remainingMinutes}min`;
-  }
-  return `${minutes}min`;
-};
+const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 
 // Render intensity dots
 const getIntensityDots = (intensity?: number | null): number => {
@@ -196,6 +181,12 @@ const getCategoryColor = (category?: string | null) => {
 
           <!-- Details -->
           <div class="space-y-3">
+            <!-- Id -->
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-neutral-600">ID:</span>
+              <span class="text-sm font-medium">{{ treatment.id }}</span>
+            </div>
+
             <!-- Category -->
             <div class="flex items-center justify-between">
               <span class="text-sm text-neutral-600">Categorie:</span>
