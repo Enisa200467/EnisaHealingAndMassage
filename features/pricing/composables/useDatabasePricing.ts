@@ -50,19 +50,7 @@ export const useDatabasePricing = () => {
     },
   ];
 
-  const treatmentStore = useTreatmentStore();
-
-  // Generate intensity dots
-  const getIntensityDots = (intensity: number) => {
-    return Array.from({ length: 5 }, (_, i) => i < intensity);
-  };
-
   return {
     packages,
-    healingTreatments: treatmentStore.healingTreatments,
-    massageTreatments: treatmentStore.massageTreatments,
-    loading: treatmentStore.loading,
-    error: treatmentStore.error,
-    getIntensityDots,
   };
 };
