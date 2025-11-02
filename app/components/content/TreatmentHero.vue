@@ -81,7 +81,7 @@ const intensityData = computed(() => {
             :price="displayPrice"
             :intensity="intensityData?.rating"
             :intensity-label="intensityData?.label"
-            :show-book-button="true"
+            show-book-button
           />
         </div>
       </div>
