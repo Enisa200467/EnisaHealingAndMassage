@@ -1,15 +1,3 @@
----
-title: Energetische Healing Sessie
-description: Herstel de natuurlijke energiestroom in je lichaam met een
-  intuïtieve energetische healing. Perfect voor diepgaande ontspanning en het
-  oplossen van energetische blokkades.
-duration: 75 minuten
-price: € 85
-intensity: 1
-intensityLabel: Zeer Zacht (Energetisch werk)
-icon: i-mdi-weather-sunny
-category: healing
----
 
 ::treatment-hero
 ---
