@@ -9,6 +9,33 @@
       </template>
 
       <div class="prose prose-neutral max-w-none">
+        <div class="bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-300 rounded-lg p-6 mb-8 shadow-md">
+          <div class="flex items-start gap-4">
+            <UIcon name="i-mdi-book-open-page-variant" class="w-10 h-10 text-purple-600 mt-1 flex-shrink-0" />
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-purple-900 mb-3 flex items-center gap-2">
+                📖 Complete Gids Beschikbaar
+              </h3>
+              <p class="text-purple-800 mb-4 leading-relaxed">
+                Voor een <strong>uitgebreide stap-voor-stap handleiding</strong> over het beheren van behandelingen,
+                inclusief alle content componenten met voorbeelden, troubleshooting en best practices:
+              </p>
+              <a
+                href="https://github.com/Enisa200467/EnisaHealingAndMassage/blob/main/docs/BEHANDELINGEN_BEHEREN.md"
+                target="_blank"
+                class="inline-flex items-center gap-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm hover:shadow-md"
+              >
+                <UIcon name="i-mdi-file-document-outline" class="w-5 h-5" />
+                <span>Bekijk BEHANDELINGEN_BEHEREN.md</span>
+                <UIcon name="i-mdi-open-in-new" class="w-4 h-4" />
+              </a>
+              <p class="text-sm text-purple-700 mt-3">
+                ✅ Geschikt voor niet-developers | 🇳🇱 Volledig in het Nederlands
+              </p>
+            </div>
+          </div>
+        </div>
+
         <p class="text-lg text-neutral-700 mb-6">
           Het behandelingen systeem gebruikt een hybride architectuur waarbij
           gegevens worden opgeslagen in de database en rijke content in markdown

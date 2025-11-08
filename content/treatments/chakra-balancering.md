@@ -1,10 +1,10 @@
-::treatment-hero
+::behandeling-hero
 ---
 id: 75be22cd-31df-48bd-bd9f-337360edb2c4
 ---
 ::
 
-::treatment-section
+::behandeling-sectie
 ---
 items:
   - "Handoplegging: Zachte aanraking of handen net boven de chakra-punten."
@@ -19,8 +19,8 @@ title: Wat kun je verwachten?
 ---
 ::
 
-::two-column-section
-  :::benefit-list
+::twee-kolommen
+  :::voordelen-lijst
   ---
   items:
     - Vermindert stress en bevordert diepe ontspanning
@@ -32,7 +32,7 @@ title: Wat kun je verwachten?
   ---
   :::
 
-  :::for-whom
+  :::voor-wie
   ---
   items:
     - Je uit balans voelt, zowel fysiek als emotioneel
@@ -45,7 +45,7 @@ title: Wat kun je verwachten?
   :::
 ::
 
-::expandable-info
+::uitklap-info
 ---
 title: Meer over chakra balancering
 ---
