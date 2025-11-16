@@ -8,16 +8,49 @@ declare global {
   }
 }
 
-useSeoMeta({
+const { setPageSEO, businessInfo } = useGlobalSEO();
+
+// Generate structured data for booking service
+const bookingServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ReservationService',
+  name: 'Afspraken Boeken - Enisa Healing & Massage',
+  description:
+    'Online afsprakenplanning voor healing en massage behandelingen',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: businessInfo.name,
+    url: businessInfo.url,
+    telephone: businessInfo.telephone,
+    email: businessInfo.email,
+    address: businessInfo.address,
+  },
+  serviceType: 'Massage & Healing Behandelingen',
+  url: `${businessInfo.url}/boeken`,
+  potentialAction: {
+    '@type': 'ReserveAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://enisahealingmassage.setmore.com',
+      actionPlatform: [
+        'http://schema.org/DesktopWebPlatform',
+        'http://schema.org/MobileWebPlatform',
+      ],
+    },
+    result: {
+      '@type': 'Reservation',
+      name: 'Behandeling Reservering',
+    },
+  },
+};
+
+// Set comprehensive SEO with booking schema
+setPageSEO({
   title: 'Boek Een Afspraak - Enisa Healing & Massage',
   description:
     'Boek eenvoudig online een afspraak voor massage of healing behandelingen. Kies je gewenste behandeling, datum en tijd. Direct bevestiging per e-mail.',
-  ogTitle: 'Boek Een Afspraak - Enisa Healing & Massage',
-  ogDescription:
-    'Plan direct je behandeling online. Kies uit healing sessies, massages en ontspanningsbehandelingen.',
-  twitterTitle: 'Boek Een Afspraak - Enisa Healing & Massage',
-  twitterDescription:
-    'Plan direct je behandeling online. Kies uit healing sessies, massages en ontspanningsbehandelingen.',
+  path: '/boeken',
+  structuredData: [bookingServiceSchema],
 });
 </script>
 

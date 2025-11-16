@@ -10,8 +10,9 @@
       role="presentation"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"
       format="webp"
-      quality="80"
+      quality="90"
       preload
+      sizes="100vw"
     />
     <UContainer class="py-32 md:py-48">
       <h1

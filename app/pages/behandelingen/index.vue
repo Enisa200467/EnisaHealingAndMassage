@@ -3,21 +3,11 @@ import { useTreatmentStore } from '~/features/treatments/store';
 
 const routes = useRoutes();
 const treatmentStore = useTreatmentStore();
+const { setPageSEO, businessInfo } = useGlobalSEO();
 
 // Fetch treatments from the database
 
 const { healingTreatments, massageTreatments } = storeToRefs(treatmentStore);
-
-// SEO meta tags
-useSeoMeta({
-  title: 'Alle Behandelingen - Enisa Healing & Massage',
-  description:
-    'Ontdek ons complete aanbod van helende behandelingen en reguliere massages. Van energetische healing tot klassieke ontspanningsmassage. Kies de behandeling die bij jou past.',
-  ogTitle: 'Alle Behandelingen - Enisa Healing & Massage',
-  ogDescription:
-    'Ontdek ons complete aanbod van helende behandelingen en reguliere massages.',
-  ogType: 'website',
-});
 
 // Group treatments by category for the tabs
 const treatmentCategories = computed(() => [
@@ -32,6 +22,66 @@ const treatmentCategories = computed(() => [
     treatments: massageTreatments.value,
   },
 ]);
+
+// Generate structured data for treatment catalog
+const treatmentCatalogSchema = computed(() => {
+  const allTreatments = [
+    ...healingTreatments.value,
+    ...massageTreatments.value,
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    name: 'Behandelingen - Enisa Healing & Massage',
+    description:
+      'Volledig overzicht van helende behandelingen en reguliere massages',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: businessInfo.name,
+      url: businessInfo.url,
+    },
+    itemListElement: allTreatments.map((treatment, index) => ({
+      '@type': 'Offer',
+      position: index + 1,
+      itemOffered: {
+        '@type': 'Service',
+        name: treatment.title,
+        description: treatment.description,
+        category: treatment.category === 'healing' ? 'Healing' : 'Massage',
+      },
+      price: treatment.price?.replace('€', '').trim(),
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: `${businessInfo.url}/behandelingen/${treatment.slug}`,
+    })),
+  };
+});
+
+// Enhanced SEO with structured data
+watchEffect(() => {
+  if (healingTreatments.value.length || massageTreatments.value.length) {
+    setPageSEO({
+      title: 'Alle Behandelingen - Enisa Healing & Massage',
+      description:
+        'Ontdek ons complete aanbod van helende behandelingen en reguliere massages. Van energetische healing tot klassieke ontspanningsmassage. Kies de behandeling die bij jou past.',
+      path: '/behandelingen',
+      type: 'website',
+      structuredData: [treatmentCatalogSchema.value],
+    });
+  } else {
+    // Fallback SEO without structured data
+    useSeoMeta({
+      title: 'Alle Behandelingen - Enisa Healing & Massage',
+      description:
+        'Ontdek ons complete aanbod van helende behandelingen en reguliere massages. Van energetische healing tot klassieke ontspanningsmassage. Kies de behandeling die bij jou past.',
+      ogTitle: 'Alle Behandelingen - Enisa Healing & Massage',
+      ogDescription:
+        'Ontdek ons complete aanbod van helende behandelingen en reguliere massages.',
+      ogType: 'website',
+    });
+  }
+});
 
 const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
 </script>
