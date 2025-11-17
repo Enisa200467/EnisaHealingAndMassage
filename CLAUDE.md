@@ -65,8 +65,9 @@ Server routes are organized by feature in `/server/api/`:
 ### Content Management
 
 - Content source: `/content/treatments/*.md`
-- Content components: `/components/content/` (custom components for use in markdown)
+- Content components: `/app/components/content/` (custom components for use in markdown, named in Dutch)
 - Configuration: `content.config.ts` defines the treatments collection
+- **Documentation**: See `/docs/BEHANDELINGEN_BEHEREN.md` for detailed guide (in Dutch)
 
 ### Database & Auth
 
@@ -101,10 +102,10 @@ Located in `/composables/`:
 
 ### 3. Content Component Patterns
 
-Content components use a special frontmatter syntax in markdown:
+Content components use a special frontmatter syntax in markdown with **Dutch kebab-case names**:
 
 ```markdown
-## ::componentName
+## ::component-naam
 
 key: value
 arrayKey:
@@ -118,16 +119,21 @@ Content body here
 ```
 
 Available content components:
-- `::treatmentHero` - Page header with title, price, duration, intensity
-- `::treatmentSection` - Section with image and bullet points
-- `::infoBox` - Highlighted information box
-- `::benefitList` - List of treatment benefits
-- `::forWhom` - Target audience section
-- `::featureImage` - Optimized full-width image with caption
-- `::expandableInfo` - Collapsible content section
-- `::twoColumnSection` - Two-column layout wrapper
+- `::behandeling-hero` - Page header with title, price, duration, intensity (fetches data from database)
+- `::behandeling-sectie` - Section with image and bullet points
+- `::info-blok` - Highlighted information box
+- `::voordelen-lijst` - List of treatment benefits (nested in `::twee-kolommen`)
+- `::voor-wie` - Target audience section (nested in `::twee-kolommen`)
+- `::afbeelding` - Optimized full-width image with caption
+- `::uitklap-info` - Collapsible content section
+- `::twee-kolommen` - Two-column layout wrapper
+- `::kop` - Custom heading with styling
 
-All content components use `not-prose` class to prevent Tailwind Typography conflicts.
+**Important**:
+- Component names in markdown use **kebab-case** (lowercase with hyphens)
+- Vue component files use **PascalCase** (e.g., `BehandelingHero.vue`)
+- Nested components inside `::twee-kolommen` use `:::` (three colons)
+- All content components use `not-prose` class to prevent Tailwind Typography conflicts
 
 ### 4. Treatment Intensity System
 
@@ -205,18 +211,50 @@ useSeoMeta({
 </template>
 ```
 
-### Treatment Page Frontmatter
-```yaml
+### Treatment Page Structure
+
+Treatment pages combine database data with markdown content. The `::behandeling-hero` component fetches data from the database using the treatment ID:
+
+```markdown
+::behandeling-hero
 ---
-title: Treatment Name
-description: SEO description
-duration: 60 minuten
-price: € 70
-intensity: 3
-intensityLabel: Medium
-icon: i-mdi-icon-name
+id: database-uuid-here
 ---
+::
+
+::behandeling-sectie
+---
+title: Wat kun je verwachten?
+image: /images/treatment.webp
+imageAlt: Beschrijving
+items:
+  - Punt 1
+  - Punt 2
+---
+::
+
+::twee-kolommen
+  :::voordelen-lijst
+  ---
+  title: Belangrijkste Voordelen
+  items:
+    - Voordeel 1
+    - Voordeel 2
+  ---
+  :::
+
+  :::voor-wie
+  ---
+  title: Voor Wie?
+  items:
+    - Kenmerk 1
+    - Kenmerk 2
+  ---
+  :::
+::
 ```
+
+**Sync Requirements**: The treatment slug in the database must match the markdown filename (e.g., `chakra-balancering` in DB → `chakra-balancering.md` in content).
 
 ### Component Auto-Registration
 Components from both `/components/` and `/features/` are auto-registered without path prefix.
@@ -225,9 +263,16 @@ Components from both `/components/` and `/features/` are auto-registered without
 
 Testing utilities are configured via `@nuxt/test-utils` module (see `package.json`).
 
+## Documentation for Non-Developers
+
+- **Treatment Management**: `/docs/BEHANDELINGEN_BEHEREN.md` - Complete guide in Dutch for managing treatments
+- Covers database management, content creation, available components, troubleshooting
+
 ## Notes
 
 - The site language is Dutch - maintain all user-facing content in Dutch
+- Content component names use **kebab-case** in markdown (e.g., `::behandeling-hero`)
+- Vue component files use **PascalCase** (e.g., `BehandelingHero.vue`)
 - This is a health and wellness website - prioritize trust signals and professional presentation
 - Performance and SEO are critical priorities
 - All new features should follow the feature-based architecture pattern
