@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTreatmentStore } from './features/treatments/store';
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 
 const treatmentStore = useTreatmentStore();
 
@@ -7,6 +8,7 @@ const { loading, error } = storeToRefs(treatmentStore);
 </script>
 <template>
   <UApp>
+    <SpeedInsights /> 
     <SkipNavigation />
     <div class="flex flex-col min-h-screen">
       <template v-if="!error && !loading">
