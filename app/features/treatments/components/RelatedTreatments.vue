@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTreatmentStore } from '../store';
 
+// TODO: make SSR friendly if needed
 const treatmentStore = useTreatmentStore();
 
 // Get related treatments organized by category

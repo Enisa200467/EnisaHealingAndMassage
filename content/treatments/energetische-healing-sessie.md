@@ -1,5 +1,5 @@
 
-::treatment-hero
+::behandeling-hero
 ---
 intensity: 1
 duration: 75 minuten
@@ -13,7 +13,7 @@ title: Energetische Healing Sessie
 ---
 ::
 
-::treatment-section
+::behandeling-sectie
 ---
 items:
   - Een intake gesprek om je behoeften te begrijpen
@@ -29,8 +29,8 @@ title: Wat kun je verwachten?
 Tijdens een energetische healing sessie werk ik intuïtief met de natuurlijke energiestroom in je lichaam. Deze zachte behandeling helpt bij het oplossen van energetische blokkades en het herstellen van balans op fysiek, emotioneel en mentaal niveau.
 ::
 
-::two-column-section
-  :::benefit-list
+::twee-kolommen
+  :::voordelen-lijst
   ---
   items:
     - Diepe ontspanning en innerlijke rust
@@ -44,7 +44,7 @@ Tijdens een energetische healing sessie werk ik intuïtief met de natuurlijke en
   ---
   :::
 
-  :::for-whom
+  :::voor-wie
   ---
   items:
     - Op zoek bent naar diepgaande ontspanning
@@ -59,7 +59,7 @@ Tijdens een energetische healing sessie werk ik intuïtief met de natuurlijke en
   :::
 ::
 
-::expandable-info{title="Meer informatie over energetische healing"}
+::uitklap-info{title="Meer informatie over energetische healing"}
 ### Hoe werkt energetische healing?
 
 Energetische healing is gebaseerd op het principe dat alles energie is en dat blokkades in onze energiestroom kunnen leiden tot onbalans en klachten. Tijdens de behandeling werk ik intuïtief met verschillende technieken om je energieveld te harmoniseren.
@@ -77,6 +77,6 @@ Energetische healing is geschikt voor iedereen die openstaat voor deze vorm van 
 Hoewel energetische healing nog niet volledig wetenschappelijk bewezen is, laten studies zien dat hands-on healing technieken kunnen bijdragen aan ontspanning en welzijn door activering van het parasympathische zenuwstelsel.
 ::
 
-::info-box{icon="i-mdi-alert" title="Belangrijke informatie" type="warning"}
+::info-blok{icon="i-mdi-alert" title="Belangrijke informatie" type="warning"}
 Energetische healing is een aanvullende behandeling en vervangt geen medische zorg. Bij ernstige klachten adviseer ik altijd om ook medisch advies in te winnen. Deze behandeling is niet geschikt tijdens de eerste drie maanden van de zwangerschap.
 ::

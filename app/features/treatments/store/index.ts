@@ -154,6 +154,11 @@ export const useTreatmentStore = defineStore('treatments', () => {
     return treatment ? formatTreatment(treatment) : undefined;
   };
 
+  const getTreatmentById = (id: string): TreatmentData | undefined => {
+    const treatment = treatments.value.find((t) => t.id === id && t.is_active);
+    return treatment ? formatTreatment(treatment) : undefined;
+  };
+
   // Check if treatment exists
   const treatmentExists = (slug: string): boolean => {
     return treatments.value.some((t) => t.slug === slug && t.is_active);
@@ -185,6 +190,7 @@ export const useTreatmentStore = defineStore('treatments', () => {
     // Methods
     fetchTreatments,
     getTreatmentBySlug,
+    getTreatmentById,
     treatmentExists,
     getTreatmentPath,
     getAllTreatmentPaths,

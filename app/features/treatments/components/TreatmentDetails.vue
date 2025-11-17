@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
+
 interface Props {
   // Display data
-  duration?: string;
-  price?: string;
+  duration?: number;
+  price?: number | string;
   intensity?: number;
   intensityLabel?: string;
   shortDescription?: string;
@@ -71,6 +73,8 @@ const sizeClasses = computed(() => {
       };
   }
 });
+
+const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 </script>
 
 <template>
@@ -107,7 +111,7 @@ const sizeClasses = computed(() => {
       <div v-if="duration" class="flex justify-between items-center">
         <span class="text-neutral-600" :class="sizeClasses.text">Duur:</span>
         <span class="font-medium text-neutral-900" :class="sizeClasses.text">
-          {{ duration }}
+          {{ formatDuration(duration) }}
         </span>
       </div>
 
@@ -115,7 +119,7 @@ const sizeClasses = computed(() => {
       <div v-if="price" class="flex justify-between items-center">
         <span class="text-neutral-600" :class="sizeClasses.text">Prijs:</span>
         <span class="font-semibold text-primary-600" :class="sizeClasses.price">
-          {{ price }}
+          {{ formatPrice(price) }}
         </span>
       </div>
 

@@ -95,7 +95,20 @@ if (props.treatment || props.treatmentData) {
     };
   }
 
-  // Set comprehensive page SEO
+  // Generate breadcrumb schema for SEO
+  const { generateBreadcrumbSchema } = useGlobalSEO();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: 'Home', path: '/' },
+    { label: 'Behandelingen', path: '/behandelingen' },
+    {
+      label: title,
+      path: `/behandelingen/${
+        props.treatmentData?.slug || props.treatment?.path || ''
+      }`,
+    },
+  ]);
+
+  // Set comprehensive page SEO with breadcrumb schema
   setPageSEO({
     title: `${title} - Enisa Healing & Massage`,
     description: description,
@@ -103,7 +116,7 @@ if (props.treatment || props.treatmentData) {
       props.treatmentData?.slug || props.treatment?.path || ''
     }`,
     type: 'article',
-    structuredData: [healthServiceSchema, treatmentSchema],
+    structuredData: [healthServiceSchema, treatmentSchema, breadcrumbSchema],
   });
 } else {
   // Fallback SEO for treatment not found

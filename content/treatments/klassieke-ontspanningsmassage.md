@@ -1,11 +1,11 @@
 
-::treatmentHero
+::behandeling-hero
 ---
 subtitle: De Klassieke Ontspanningsmassage is een van de meest bekende en populaire massagevormen, gericht op het verminderen van spierspanning en het bevorderen van een diep gevoel van rust en welzijn.
 ---
 ::
 
-::treatmentSection
+::behandeling-sectie
 ---
 title: Wat kun je verwachten?
 image: /images/massage.webp
@@ -19,32 +19,32 @@ items:
 Tijdens deze behandeling maak ik gebruik van traditionele massagetechnieken zoals:
 ::
 
-::twoColumnSection
-::benefitList
----
-title: Belangrijkste Voordelen
-items:
-  - Verlicht spierpijn en stijfheid
-  - Vermindert stress en bevordert ontspanning
-  - Verbetert de bloedcirculatie
-  - Verhoogt het algehele gevoel van welzijn
-  - Kan helpen bij het verbeteren van de slaapkwaliteit
----
+::twee-kolommen
+  :::voordelen-lijst
+  ---
+  title: Belangrijkste Voordelen
+  items:
+    - Verlicht spierpijn en stijfheid
+    - Vermindert stress en bevordert ontspanning
+    - Verbetert de bloedcirculatie
+    - Verhoogt het algehele gevoel van welzijn
+    - Kan helpen bij het verbeteren van de slaapkwaliteit
+  ---
+  :::
+
+  :::voor-wie
+  ---
+  title: 'Deze massage is ideaal als je:'
+  items:
+    - Last hebt van algemene spierspanning of stress
+    - Behoefte hebt aan een moment van pure ontspanning
+    - Je algehele welzijn wilt verbeteren
+    - Nog niet eerder een massage hebt gehad
+  ---
+  :::
 ::
 
-::forWhom
----
-title: 'Deze massage is ideaal als je:'
-items:
-  - Last hebt van algemene spierspanning of stress
-  - Behoefte hebt aan een moment van pure ontspanning
-  - Je algehele welzijn wilt verbeteren
-  - Nog niet eerder een massage hebt gehad
----
-::
-::
-
-::expandableInfo
+::uitklap-info
 ---
 title: Meer over de klassieke massage
 ---

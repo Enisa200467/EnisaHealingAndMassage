@@ -1,15 +1,13 @@
 <script setup lang="ts">
 interface Props {
   title?: string;
-  expanded?: boolean;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  title: 'Meer informatie',
-  expanded: false
+withDefaults(defineProps<Props>(), {
+  title: 'Meer informatie'
 });
 
-const isExpanded = ref(props.expanded);
+const isExpanded = ref(false);
 </script>
 
 <template>
@@ -46,7 +44,7 @@ const isExpanded = ref(props.expanded);
         >
           <div 
             v-show="isExpanded" 
-            :id="`expandable-content-${Math.random().toString(36).substr(2, 9)}`"
+            :id="`expandable-content-${title}`"
             class="overflow-hidden"
             role="region"
             :aria-label="title"
