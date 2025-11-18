@@ -1,63 +1,19 @@
 import type { ContactFormData } from '../types/contact.types';
 
 export const useContact = () => {
-  const toast = useToast();
+  const { execute, loading, error } = useApiCall();
 
   const submitContactForm = async (data: ContactFormData) => {
     try {
-      // Send contact form data to the server API endpoint
-      const response = await $fetch('/api/contact', {
+      const response = await execute('/api/contact', {
         method: 'POST',
         body: data,
-      });
-
-      toast.add({
-        title: 'Bericht verzonden!',
-        description:
-          'Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.',
-        color: 'success',
+        successMessage: 'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.',
       });
 
       return { success: true, data: response };
-    } catch (error: unknown) {
-      // Handle validation errors specifically
-      if (
-        error &&
-        typeof error === 'object' &&
-        'status' in error &&
-        error.status === 400
-      ) {
-        const errorData = error as {
-          data?: { data?: Array<{ message: string }> };
-        };
-        if (errorData.data?.data) {
-          const validationErrors = errorData.data.data
-            .map((issue) => issue.message)
-            .join(', ');
-
-          toast.add({
-            title: 'Validatiefout',
-            description: validationErrors,
-            color: 'error',
-          });
-        } else {
-          toast.add({
-            title: 'Fout bij verzenden',
-            description:
-              'Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op.',
-            color: 'error',
-          });
-        }
-      } else {
-        toast.add({
-          title: 'Fout bij verzenden',
-          description:
-            'Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op.',
-          color: 'error',
-        });
-      }
-
-      return { success: false, error };
+    } catch (err) {
+      return { success: false, error: err };
     }
   };
 
@@ -77,5 +33,7 @@ export const useContact = () => {
   return {
     submitContactForm,
     getContactInfo,
+    loading,
+    error,
   };
 };

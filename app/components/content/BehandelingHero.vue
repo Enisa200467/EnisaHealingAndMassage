@@ -4,14 +4,36 @@ import { type Treatment } from '~/features/admin/types/treatment.types';
 interface Props {
   // Content-based props (fallback)
   id?: string;
+  subtitle?: string;
 }
 
 const props = defineProps<Props>();
 
+// Try to inject treatment data from parent page
+const injectedTreatmentData = inject<any>('treatmentData', null);
 
-// Use injected data or props
+// Only fetch if ID is provided and no injected data
+const shouldFetch = props.id && !injectedTreatmentData;
+const { data: fetchedData, status } = shouldFetch
+  ? await useFetch<Treatment>(`/api/treatments/${props.id}`)
+  : { data: ref(null), status: ref('success') };
 
-const { data: treatmentData, status, error, refresh, clear } = await useFetch<Treatment>(`/api/treatments/${props.id}`);
+// Use injected data or fetched data
+const treatmentData = computed(() => {
+  if (injectedTreatmentData) {
+    // Convert injected data format to Treatment format
+    return {
+      name: injectedTreatmentData.title,
+      description: injectedTreatmentData.description,
+      price_cents: injectedTreatmentData.price ? parseInt(injectedTreatmentData.price.replace(/[€\s]/g, '')) * 100 : undefined,
+      duration_minutes: injectedTreatmentData.duration ? parseInt(injectedTreatmentData.duration) : undefined,
+      icon: injectedTreatmentData.icon,
+      intensity: injectedTreatmentData.intensity,
+      intensity_label: injectedTreatmentData.intensityLabel,
+    } as Treatment;
+  }
+  return fetchedData.value;
+});
 
 // Intensity labels for each rating
 const intensityLabels = {
@@ -24,30 +46,25 @@ const intensityLabels = {
 
 // Computed values that prioritize database data over content data
 const displayTitle = computed(() => treatmentData.value?.name);
-const subtitle = computed(() => treatmentData.value?.description );
-const displayPrice = computed(() => treatmentData.value?.price_cents );
+const displaySubtitle = computed(() => treatmentData.value?.description || props.subtitle);
+const displayPrice = computed(() => treatmentData.value?.price_cents);
 const displayDuration = computed(() => treatmentData.value?.duration_minutes);
-const displayIcon = computed(() => treatmentData.value?.icon );
+const displayIcon = computed(() => treatmentData.value?.icon);
 
 const intensityData = computed(() => {
-  const intensity = treatmentData.value?.intensity ;
+  const intensity = treatmentData.value?.intensity;
   if (!intensity) return null;
-  
+
   const rating = Math.min(Math.max(intensity, 1), 5);
   const label = treatmentData.value?.intensity_label || intensityLabels[rating as keyof typeof intensityLabels];
-  
+
   return { rating, label };
 });
 </script>
 
 <template>
   <section class="not-prose bg-gradient-to-b from-secondary-200 to-primary-50 py-16 sm:py-24">
-    <template v-if="status === 'pending'">
-      <USkeleton />
-    </template>
-    <template v-else>
-
-      <UContainer>
+    <UContainer v-if="displayTitle">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
           <!-- Title Section -->
           <div class="lg:col-span-2">
@@ -57,8 +74,8 @@ const intensityData = computed(() => {
               {{ displayTitle }}
             </h1>
           </div>
-          <p v-if="subtitle" class="text-xl text-neutral-600 leading-relaxed">
-            {{ subtitle }}
+          <p v-if="displaySubtitle" class="text-xl text-neutral-600 leading-relaxed">
+            {{ displaySubtitle }}
           </p>
         </div>
 
@@ -75,6 +92,5 @@ const intensityData = computed(() => {
         </div>
       </div>
     </UContainer>
-          </template>
   </section>
 </template>

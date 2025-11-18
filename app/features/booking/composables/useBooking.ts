@@ -19,8 +19,6 @@ export const useBooking = () => {
     error?: string;
   }> => {
     try {
-      console.log('Submitting booking:', data);
-
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
 

@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
+  // Enable SSR for better initial load
+  ssr: true,
+
   // Add proper i18n configuration and HTML lang attribute
   app: {
     head: {
@@ -45,6 +48,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
     '@pinia/nuxt',
+    'nuxt-security',
   ],
 
   // Feature-based auto-imports
@@ -83,6 +87,16 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
 
+  // Optimize CSS delivery to prevent FOUC
+  experimental: {
+    inlineStyles: true, // Inline critical CSS
+  },
+
+  // Optimize rendering
+  features: {
+    inlineStyles: true, // Inline critical CSS in production
+  },
+
   runtimeConfig: {
     // Private keys (only available on the server-side)
     resendApiKey: process.env.RESEND_API_KEY,
@@ -91,5 +105,61 @@ export default defineNuxtConfig({
     public: {
       // Add public config if needed
     },
+  },
+
+  // Security configuration
+  security: {
+    headers: {
+      // Enable HSTS (HTTP Strict Transport Security)
+      strictTransportSecurity: {
+        maxAge: 31536000,
+        includeSubdomains: true,
+      },
+      // Prevent clickjacking attacks
+      xFrameOptions: 'SAMEORIGIN',
+      // Prevent MIME type sniffing
+      xContentTypeOptions: 'nosniff',
+      // Enable XSS protection
+      xXSSProtection: '1; mode=block',
+      // Referrer policy
+      referrerPolicy: 'strict-origin-when-cross-origin',
+      // Content Security Policy
+      contentSecurityPolicy: {
+        'base-uri': ["'self'"],
+        'font-src': ["'self'", 'https:', 'data:'],
+        'form-action': ["'self'"],
+        'frame-ancestors': ["'self'"],
+        'img-src': ["'self'", 'data:', 'https:', 'blob:'],
+        'object-src': ["'none'"],
+        'script-src-attr': ["'none'"],
+        'style-src': ["'self'", 'https:', "'unsafe-inline'"],
+        'script-src': ["'self'", 'https:', "'unsafe-inline'", "'unsafe-eval'"],
+        'upgrade-insecure-requests': true,
+      },
+    },
+    // Disable CSRF protection - not needed because:
+    // 1. Supabase authentication required for admin routes
+    // 2. Rate limiting on all endpoints
+    // 3. 5-minute session timeout
+    // 4. Input sanitization (DOMPurify)
+    // 5. RLS policies at database level
+    csrf: false,
+    // CORS configuration
+    corsHandler: {
+      origin: process.env.NODE_ENV === 'production'
+        ? 'https://enisahealing.nl'
+        : '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+      credentials: true,
+    },
+    // Additional security options
+    requestSizeLimiter: {
+      maxRequestSizeInBytes: 2000000, // 2MB
+      maxUploadFileRequestInBytes: 8000000, // 8MB
+    },
+    xssValidator: {
+      throwError: false, // Don't throw error, just sanitize
+    },
+    hidePoweredBy: true,
   },
 });
