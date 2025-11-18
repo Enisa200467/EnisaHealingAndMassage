@@ -45,13 +45,13 @@ const sectionClasses = computed(() => {
   // Base padding classes
   switch (props.padding) {
     case 'sm':
-      classes.push('py-12 sm:py-16');
+      classes.push('py-10 sm:py-12');
       break;
     case 'lg':
-      classes.push('py-20 sm:py-32');
+      classes.push('py-16 sm:py-20');
       break;
     default: // 'md'
-      classes.push('py-16 sm:py-24');
+      classes.push('py-12 sm:py-16');
   }
 
   // Background classes

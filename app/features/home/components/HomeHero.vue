@@ -13,14 +13,14 @@
       quality="90"
       preload
     />
-    <UContainer class="py-32 md:py-48">
+    <UContainer class="py-20 md:py-32">
       <h1
         id="hero-heading"
         class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-md"
       >
         Vind Balans en Diepe Ontspanning
       </h1>
-      <p class="mb-8 text-lg leading-8 text-gray-200 lg:text-xl drop-shadow">
+      <p class="mb-6 text-lg leading-8 text-gray-200 lg:text-xl drop-shadow">
         Ervaar de kracht van helende aanraking en gun jezelf een moment van pure
         rust.
       </p>

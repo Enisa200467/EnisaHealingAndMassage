@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-neutral-50 rounded-2xl p-8 mb-16">
+  <section class="bg-neutral-50 rounded-2xl p-8 mb-12">
     <h2 class="text-2xl font-bold text-neutral-900 mb-6 text-center">
       Belangrijke Informatie
     </h2>

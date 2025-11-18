@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-16">
+  <section class="mb-12">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-neutral-900 mb-4">
         Healing Behandelingen

@@ -10,7 +10,7 @@ const routes = useRoutes();
 <template>
   <div class="bg-gradient-to-br from-primary-50 to-secondary-50">
     <!-- Call-to-Action Section -->
-    <section class="py-16 sm:py-24">
+    <section class="py-12 sm:py-16">
       <UContainer>
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
@@ -23,7 +23,7 @@ const routes = useRoutes();
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Quick Booking Card -->
             <UCard class="shadow-lg">
               <template #header>

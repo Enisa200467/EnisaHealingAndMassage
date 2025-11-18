@@ -1,12 +1,12 @@
 <template>
   <footer
     id="footer"
-    class="bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 mt-auto py-12"
+    class="bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 mt-auto py-10"
     role="contentinfo"
     aria-label="Site footer"
   >
     <UContainer>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Links Section (2/3 width) -->
         <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-8">
           <!-- Column 1: Behandelingen -->
@@ -169,7 +169,7 @@
 
       <!-- Copyright -->
       <div
-        class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-400"
+        class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-400"
       >
         &copy; {{ new Date().getFullYear() }} Enisa Healing & Massage. Alle
         rechten voorbehouden.

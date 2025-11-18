@@ -9,7 +9,7 @@
         Locatie & Bereikbaarheid
       </h2>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         <!-- Map Placeholder -->
         <UCard>
           <div

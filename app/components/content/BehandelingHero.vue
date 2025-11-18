@@ -63,9 +63,9 @@ const intensityData = computed(() => {
 </script>
 
 <template>
-  <section class="not-prose bg-gradient-to-b from-secondary-200 to-primary-50 py-16 sm:py-24">
+  <section class="not-prose bg-gradient-to-b from-secondary-200 to-primary-50 py-12 sm:py-16">
     <UContainer v-if="displayTitle">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-start">
           <!-- Title Section -->
           <div class="lg:col-span-2">
             <div class="flex items-center gap-3 mb-6">

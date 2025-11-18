@@ -1,5 +1,5 @@
 <template>
-  <section id="behandelingen" class="py-16 sm:py-24 scroll-mt-20">
+  <section id="behandelingen" class="py-12 sm:py-16 scroll-mt-20">
     <UContainer>
       <div class="text-center">
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -15,7 +15,7 @@
         <UTabs :items="massageTypes" class="w-full">
           <template #item="{ item }">
             <div
-              class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3"
+              class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3"
             >
               <UCard
                 v-for="massage in item.massages"

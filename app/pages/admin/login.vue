@@ -86,7 +86,7 @@ const handleLogin = async () => {
 
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center py-16 sm:py-24"
+    class="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center py-12 sm:py-16"
   >
     <UContainer>
       <div class="max-w-md mx-auto">
