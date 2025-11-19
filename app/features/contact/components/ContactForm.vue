@@ -8,6 +8,9 @@ interface Emits {
 
 const emit = defineEmits<Emits>();
 
+// Client-side sanitization (defense in depth - server still validates)
+const { sanitizeFormData } = useSanitize();
+
 // Form state
 const formData = reactive<ContactFormData>({
   firstName: '',
@@ -28,7 +31,9 @@ const handleSubmit = async () => {
 
   isSubmitting.value = true;
   try {
-    emit('submit', { ...formData });
+    // Sanitize form data before submission
+    const sanitizedData = sanitizeFormData({ ...formData });
+    emit('submit', sanitizedData);
   } finally {
     isSubmitting.value = false;
   }

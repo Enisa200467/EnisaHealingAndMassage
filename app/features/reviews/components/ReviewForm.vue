@@ -6,6 +6,9 @@ const emit = defineEmits<{
   submit: [data: ReviewSubmission];
 }>();
 
+// Client-side sanitization (defense in depth - server still validates)
+const { sanitizeFormData } = useSanitize();
+
 const formData = reactive<ReviewSubmission>({
   name: '',
   email: '',
@@ -23,7 +26,9 @@ const isSubmitting = ref(false);
 const onSubmit = async () => {
   isSubmitting.value = true;
   try {
-    emit('submit', formData);
+    // Sanitize form data before submission
+    const sanitizedData = sanitizeFormData({ ...formData });
+    emit('submit', sanitizedData);
 
     // Reset form after submission
     formData.name = '';
