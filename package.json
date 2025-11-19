@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "NODE_OPTIONS='--max-old-space-size=4096' nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "supabase:types": "dotenv -e .env.development -- supabase gen types typescript --project-id qayvyoqmbebbvcxhsuwf > types/database.types.ts"
@@ -25,7 +25,6 @@
     "bcryptjs": "^3.0.2",
     "eslint": "^9.35.0",
     "h3": "^1.15.4",
-    "isomorphic-dompurify": "^2.32.0",
     "jsonwebtoken": "^9.0.2",
     "nuxt": "4.1.3",
     "nuxt-mcp": "^0.2.4",

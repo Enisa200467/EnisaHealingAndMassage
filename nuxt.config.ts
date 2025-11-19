@@ -106,6 +106,7 @@ export default defineNuxtConfig({
     },
   },
 
+
   // Security configuration
   security: {
     headers: {
