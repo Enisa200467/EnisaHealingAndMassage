@@ -5,7 +5,11 @@ const routes = useRoutes();
 const treatmentStore = useTreatmentStore();
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
-// Fetch treatments from the database
+// Fetch treatments with SSR support
+// If store is empty (SSR), fetch data and populate store
+if (treatmentStore.treatments.length === 0) {
+  await treatmentStore.fetchTreatments();
+}
 
 const { healingTreatments, massageTreatments, loading } = storeToRefs(treatmentStore);
 
