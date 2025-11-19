@@ -103,7 +103,7 @@ export default defineNuxtConfig({
     contactEmail: process.env.CONTACT_EMAIL || 'info@enisahealing.nl',
     // Public keys (also exposed to the client-side)
     public: {
-      // Add public config if needed
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     },
   },
 
@@ -134,6 +134,15 @@ export default defineNuxtConfig({
         'script-src-attr': ["'none'"],
         'style-src': ["'self'", 'https:', "'unsafe-inline'"],
         'script-src': ["'self'", 'https:', "'unsafe-inline'", "'unsafe-eval'"],
+        'connect-src': [
+          "'self'",
+          'https://*.googleapis.com',
+          'https://*.google.com',
+          'https://*.supabase.co',
+          'wss://*.supabase.co',
+          'ws://localhost:*',  // Vite HMR in development
+          'ws://127.0.0.1:*',  // Vite HMR in development (alternative)
+        ],
         'upgrade-insecure-requests': true,
       },
     },

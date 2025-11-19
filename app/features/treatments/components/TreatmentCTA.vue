@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { BUSINESS_INFO } from '~/constants/businessInfo';
+
 interface Props {
   treatment: any;
 }
@@ -101,14 +103,14 @@ const routes = useRoutes();
                       name="i-mdi-phone"
                       class="w-4 h-4 text-secondary-500"
                     />
-                    <span>+31 6 12 34 56 78</span>
+                    <span>{{ BUSINESS_INFO.contact.phoneFormatted }}</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <UIcon
                       name="i-mdi-email"
                       class="w-4 h-4 text-secondary-500"
                     />
-                    <span>info@enisahealing.nl</span>
+                    <span>{{ BUSINESS_INFO.contact.email }}</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <UIcon

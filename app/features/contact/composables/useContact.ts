@@ -1,4 +1,5 @@
 import type { ContactFormData } from '../types/contact.types';
+import { BUSINESS_INFO } from '~/constants/businessInfo';
 
 export const useContact = () => {
   const { execute, loading, error } = useApiCall();
@@ -19,13 +20,15 @@ export const useContact = () => {
 
   const getContactInfo = () => {
     return {
-      phone: '+31612345678',
-      email: 'info@enisahealing.nl',
-      address: 'Voorbeeldstraat 123, 1234 AB Amsterdam',
-      whatsapp: '+31612345678',
+      phone: BUSINESS_INFO.contact.phoneInternational,
+      phoneFormatted: BUSINESS_INFO.contact.phoneFormatted,
+      email: BUSINESS_INFO.contact.email,
+      address: BUSINESS_INFO.address.fullAddress,
+      whatsapp: BUSINESS_INFO.contact.phoneInternational,
       hours: [
-        { day: 'Maandag - Zaterdag', hours: '9:00 - 18:00' },
-        { day: 'Zondag', hours: 'Gesloten' },
+        { day: 'Maandag - Vrijdag', hours: BUSINESS_INFO.hours.monday },
+        { day: 'Zaterdag', hours: BUSINESS_INFO.hours.saturday },
+        { day: 'Zondag', hours: BUSINESS_INFO.hours.sunday },
       ],
     };
   };

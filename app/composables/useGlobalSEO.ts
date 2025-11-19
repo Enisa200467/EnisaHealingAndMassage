@@ -2,6 +2,8 @@
  * Global SEO composable for structured data and meta tags
  */
 
+import { BUSINESS_INFO, getSchemaAddress, getSchemaContactPoint } from '~/constants/businessInfo';
+
 interface StructuredDataItem {
   '@context': string;
   '@type': string;
@@ -25,35 +27,21 @@ interface PostalAddress {
 }
 
 export const useGlobalSEO = () => {
-  // Business information
-  // TODO: Update placeholder values with actual business information
+  // Business information from centralized constant
   const businessInfo = {
-    name: 'Enisa Healing & Massage',
-    url: 'https://enisahealingmassage.nl',
-    telephone: '+31-6-12345678', // TODO: Update with actual phone number
-    email: 'info@enisahealing.nl',
-    description:
-      'Professionele massage en healing praktijk gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.',
-    priceRange: '€40-€90',
+    name: BUSINESS_INFO.name,
+    url: BUSINESS_INFO.url,
+    telephone: BUSINESS_INFO.contact.phoneInternational,
+    email: BUSINESS_INFO.contact.email,
+    description: BUSINESS_INFO.description,
+    priceRange: BUSINESS_INFO.priceRange,
     image: '/images/logo.jpg',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'NL',
-      addressLocality: 'Amsterdam', // TODO: Update with actual city
-      postalCode: '1000 AA', // TODO: Update with actual postal code
-      streetAddress: 'Voorbeeldstraat 123', // TODO: Update with actual street address
-    } as PostalAddress,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+31-6-12345678', // TODO: Update with actual phone number
-      contactType: 'customer service',
-      areaServed: 'NL',
-      availableLanguage: ['Dutch', 'English'],
-    } as ContactPoint,
-    openingHours: ['Mo-Fr 09:00-18:00', 'Sa 09:00-15:00'], // TODO: Verify actual opening hours
+    address: getSchemaAddress() as PostalAddress,
+    contactPoint: getSchemaContactPoint() as ContactPoint,
+    openingHours: BUSINESS_INFO.hours.schemaFormat,
     serviceArea: {
       '@type': 'City',
-      name: 'Amsterdam', // TODO: Verify service area
+      name: BUSINESS_INFO.address.city,
     },
   };
 
