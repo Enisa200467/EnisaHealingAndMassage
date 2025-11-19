@@ -1,6 +1,30 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
+/* Prevent FOUC (Flash of Unstyled Content) */
+/* Ensure minimum styles are applied before Vue hydrates */
+html {
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Smooth font loading - prevent FOUT (Flash of Unstyled Text) */
+@font-face {
+  font-display: swap; /* Use system font until custom font loads */
+}
+
+/* Hide content until Vue is ready to prevent layout shifts */
+#__nuxt {
+  min-height: 100vh;
+}
+
 @theme static {
   --color-rose-v2-50: var(--color-rose-50);
   --color-rose-v2-100: var(--color-rose-100);

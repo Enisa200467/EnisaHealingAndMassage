@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { BUSINESS_INFO } from '~/constants/businessInfo';
+
 interface Props {
   treatment: any;
 }
@@ -10,7 +12,7 @@ const routes = useRoutes();
 <template>
   <div class="bg-gradient-to-br from-primary-50 to-secondary-50">
     <!-- Call-to-Action Section -->
-    <section class="py-16 sm:py-24">
+    <section class="py-12 sm:py-16">
       <UContainer>
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
@@ -23,7 +25,7 @@ const routes = useRoutes();
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Quick Booking Card -->
             <UCard class="shadow-lg">
               <template #header>
@@ -101,14 +103,14 @@ const routes = useRoutes();
                       name="i-mdi-phone"
                       class="w-4 h-4 text-secondary-500"
                     />
-                    <span>+31 6 12 34 56 78</span>
+                    <span>{{ BUSINESS_INFO.contact.phoneFormatted }}</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <UIcon
                       name="i-mdi-email"
                       class="w-4 h-4 text-secondary-500"
                     />
-                    <span>info@enisahealing.nl</span>
+                    <span>{{ BUSINESS_INFO.contact.email }}</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <UIcon

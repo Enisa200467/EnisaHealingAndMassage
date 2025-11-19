@@ -4,7 +4,7 @@
 
 <template>
   <PageSection not-prose>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
       <slot />
     </div>
   </PageSection>

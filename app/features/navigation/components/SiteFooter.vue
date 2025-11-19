@@ -1,12 +1,12 @@
 <template>
   <footer
     id="footer"
-    class="bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 mt-auto py-12"
+    class="bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 mt-auto py-10"
     role="contentinfo"
     aria-label="Site footer"
   >
     <UContainer>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Links Section (2/3 width) -->
         <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-8">
           <!-- Column 1: Behandelingen -->
@@ -169,9 +169,9 @@
 
       <!-- Copyright -->
       <div
-        class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-400"
+        class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-400"
       >
-        &copy; {{ new Date().getFullYear() }} Enisa Healing & Massage. Alle
+        &copy; {{ currentYear }} Enisa Healing & Massage. Alle
         rechten voorbehouden.
       </div>
     </UContainer>
@@ -195,20 +195,39 @@ const footerLinks = computed(() => ({
   ],
 }));
 
-// Reviews data from API
-const reviews = ref<Review[]>([]);
-const reviewStats = ref<ReviewStats>({
-  total: 0,
-  approved: 0,
-  pending: 0,
-  rejected: 0,
-  averageRating: 0,
-});
-const isLoading = ref(true);
+// SSR-compatible reviews data fetching
+const { data: footerReviewsData, pending: isLoading } = await useAsyncData(
+  'footer-reviews',
+  async () => {
+    try {
+      const [reviewsResponse, statsResponse] = await Promise.all([
+        $fetch<{ data: { reviews: Review[] } }>('/api/reviews?limit=4'),
+        $fetch<{ data: ReviewStats }>('/api/reviews/stats'),
+      ]);
+
+      return {
+        reviews: reviewsResponse.data.reviews,
+        stats: statsResponse.data,
+      };
+    } catch (error) {
+      console.error('Error loading reviews data for footer:', error);
+      return {
+        reviews: [],
+        stats: {
+          total: 0,
+          approved: 0,
+          pending: 0,
+          rejected: 0,
+          averageRating: 0,
+        },
+      };
+    }
+  }
+);
 
 // Transform reviews for display
 const displayReviews = computed(() => {
-  return reviews.value.map((review) => ({
+  return (footerReviewsData.value?.reviews || []).map((review) => ({
     id: review.id,
     author: review.name,
     score: review.rating,
@@ -218,42 +237,11 @@ const displayReviews = computed(() => {
 
 // Calculate average score from stats
 const averageScore = computed(() => {
-  return reviewStats.value.averageRating.toFixed(1);
+  return (footerReviewsData.value?.stats.averageRating || 0).toFixed(1);
 });
 
-// Load reviews data
-const loadReviewsData = async () => {
-  try {
-    isLoading.value = true;
-
-    // Fetch both reviews and stats concurrently
-    const [reviewsResponse, statsResponse] = await Promise.all([
-      $fetch<{ data: { reviews: Review[] } }>('/api/reviews?limit=4'), // Get only 4 reviews for footer
-      $fetch<{ data: ReviewStats }>('/api/reviews/stats'),
-    ]);
-
-    reviews.value = reviewsResponse.data.reviews;
-    reviewStats.value = statsResponse.data;
-  } catch (error) {
-    console.error('Error loading reviews data for footer:', error);
-    // Keep empty arrays as fallback - don't show error in footer
-    reviews.value = [];
-    reviewStats.value = {
-      total: 0,
-      approved: 0,
-      pending: 0,
-      rejected: 0,
-      averageRating: 0,
-    };
-  } finally {
-    isLoading.value = false;
-  }
-};
-
-// Load data on component mount
-onMounted(() => {
-  loadReviewsData();
-});
+// SSR-safe current year
+const currentYear = computed(() => new Date().getFullYear());
 </script>
 
 <style scoped>

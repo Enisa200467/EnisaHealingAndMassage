@@ -69,6 +69,7 @@ export default defineEventHandler(async (event) => {
   ];
 
   // Define treatment pages with enhanced metadata
+  // Only include treatments that have corresponding markdown files in /content/treatments/
   const treatmentPages = [
     {
       url: '/behandelingen/energetische-healing-sessie',
@@ -97,33 +98,10 @@ export default defineEventHandler(async (event) => {
       description:
         'Een traditionele ontspanningsmassage voor diepe relaxatie en stressvermindering.',
     },
-    {
-      url: '/behandelingen/zweedse-massage',
-      priority: '0.8',
-      changefreq: 'monthly',
-      lastmod: '2024-11-25',
-      title: 'Zweedse Massage - Enisa Healing & Massage',
-      description:
-        'Klassieke Zweedse massagetechnieken voor spierontspanning en verbeterde circulatie.',
-    },
-    {
-      url: '/behandelingen/sportmassage',
-      priority: '0.8',
-      changefreq: 'monthly',
-      lastmod: '2024-11-25',
-      title: 'Sportmassage - Enisa Healing & Massage',
-      description:
-        'Gespecialiseerde massage voor sporters ter voorkoming en behandeling van blessures.',
-    },
-    {
-      url: '/behandelingen/intuitieve-lichaamsmassage',
-      priority: '0.8',
-      changefreq: 'monthly',
-      lastmod: '2024-11-25',
-      title: 'Intuïtieve Lichaamsmassage - Enisa Healing & Massage',
-      description:
-        'Een persoonlijke, intuïtieve massage afgestemd op de unieke behoeften van je lichaam.',
-    },
+    // TODO: Add more treatments when markdown files are created:
+    // - zweedse-massage.md
+    // - sportmassage.md
+    // - intuitieve-lichaamsmassage.md
   ];
 
   const allPages = [...staticPages, ...treatmentPages];

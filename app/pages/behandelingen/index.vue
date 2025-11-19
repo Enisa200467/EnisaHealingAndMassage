@@ -5,9 +5,13 @@ const routes = useRoutes();
 const treatmentStore = useTreatmentStore();
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
-// Fetch treatments from the database
+// Fetch treatments with SSR support
+// If store is empty (SSR), fetch data and populate store
+if (treatmentStore.treatments.length === 0) {
+  await treatmentStore.fetchTreatments();
+}
 
-const { healingTreatments, massageTreatments } = storeToRefs(treatmentStore);
+const { healingTreatments, massageTreatments, loading } = storeToRefs(treatmentStore);
 
 // Group treatments by category for the tabs
 const treatmentCategories = computed(() => [
@@ -90,7 +94,7 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
   <div class="min-h-screen bg-gray-50">
     <UContainer>
       <!-- Page Header -->
-      <div class="py-16 sm:py-24">
+      <div class="py-12 sm:py-16">
         <div class="text-center">
           <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Alle Behandelingen
@@ -105,11 +109,25 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
 
         <!-- Treatment Categories Tabs -->
         <div class="mt-16">
-          <UTabs :items="treatmentCategories" class="w-full">
+          <!-- Loading State -->
+          <div v-if="loading" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
+            <div v-for="i in 6" :key="i" class="bg-white rounded-lg shadow-sm p-6 space-y-4">
+              <LoadingSkeleton type="circle" width="48px" height="48px" />
+              <LoadingSkeleton type="text" width="60%" />
+              <LoadingSkeleton type="text" count="2" />
+              <div class="flex gap-4">
+                <LoadingSkeleton type="button" width="50%" />
+                <LoadingSkeleton type="button" width="50%" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Treatment Content -->
+          <UTabs v-else :items="treatmentCategories" class="w-full">
             <template #item="{ item }">
               <div
                 v-if="item.treatments && item.treatments.length > 0"
-                class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3"
               >
                 <div
                   v-for="treatment in item.treatments"

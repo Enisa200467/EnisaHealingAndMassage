@@ -70,7 +70,7 @@ setPageSEO({
 <template>
   <article role="main" aria-labelledby="faq-heading">
     <PageSection primary>
-      <header class="mb-16 sm:mb-12">
+      <header class="mb-12 sm:mb-12">
         <h1
           id="faq-heading"
           class="text-3xl font-bold tracking-tight sm:text-4xl"

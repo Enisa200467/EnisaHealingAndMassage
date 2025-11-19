@@ -6,15 +6,23 @@ const slug = Array.isArray(route.params.slug)
   ? route.params.slug.join('/')
   : route.params.slug;
 
-const { getTreatmentBySlug } = useTreatmentStore();
+const treatmentStore = useTreatmentStore();
 
-// Fetch both content and database data
-const [{ data: treatment }, treatmentData] = await Promise.all([
-  useAsyncData(`treatment-${slug}`, () => {
-    return queryCollection('treatments').path(`/treatments/${slug}`).first();
-  }),
-  getTreatmentBySlug(slug),
-]);
+// Fetch content from markdown files
+const { data: treatment } = await useAsyncData(`treatment-${slug}`, () => {
+  return queryCollection('treatments').path(`/treatments/${slug}`).first();
+});
+
+// Fetch database treatment data
+// On server: fetch fresh data
+// On client: use store (populated by plugin) or fetch if empty
+const treatmentData = ref(treatmentStore.getTreatmentBySlug(slug));
+
+// If store is empty (SSR), fetch the treatment from database
+if (!treatmentData.value && treatmentStore.treatments.length === 0) {
+  await treatmentStore.fetchTreatments();
+  treatmentData.value = treatmentStore.getTreatmentBySlug(slug);
+}
 </script>
 
 <template>

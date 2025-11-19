@@ -3,11 +3,16 @@ interface Props {
   title?: string;
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   title: 'Meer informatie'
 });
 
 const isExpanded = ref(false);
+
+// SSR-safe unique ID based on title (consistent between server and client)
+const uniqueId = computed(() => {
+  return `expandable-content-${props.title.toLowerCase().replace(/\s+/g, '-')}`;
+});
 </script>
 
 <template>
@@ -19,7 +24,7 @@ const isExpanded = ref(false);
           size="lg"
           class="w-full justify-between text-left p-6 bg-white/80 hover:bg-white border border-pink-200 rounded-xl shadow-sm"
           :aria-expanded="isExpanded"
-          :aria-controls="`expandable-content-${Math.random().toString(36).substr(2, 9)}`"
+          :aria-controls="uniqueId"
           @click="isExpanded = !isExpanded"
         >
           <div class="flex items-center gap-3">
@@ -42,9 +47,9 @@ const isExpanded = ref(false);
           leave-from-class="opacity-100 max-h-[1000px]"
           leave-to-class="opacity-0 max-h-0"
         >
-          <div 
-            v-show="isExpanded" 
-            :id="`expandable-content-${title}`"
+          <div
+            v-show="isExpanded"
+            :id="uniqueId"
             class="overflow-hidden"
             role="region"
             :aria-label="title"

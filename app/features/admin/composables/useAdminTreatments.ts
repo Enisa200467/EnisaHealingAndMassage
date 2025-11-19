@@ -162,9 +162,6 @@ export const useAdminTreatments = () => {
 
       const updateData = formatForDatabaseUpdate(formData, existingTreatment);
 
-      console.log('Updating treatment with data:', updateData);
-      console.log('Treatment ID:', id);
-
       const response = await $fetch<{ data: Treatment }>(
         `/api/admin/treatments/${id}`,
         {

@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <PageSection primary not-prose>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-center">
         <!-- Image -->
         <div v-if="image" class="lg:col-span-1">
           <div class="relative w-full  object-cover rounded-xl  shadow-lg overflow-hidden">

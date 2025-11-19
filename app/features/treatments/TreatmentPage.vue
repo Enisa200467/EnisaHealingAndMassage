@@ -27,6 +27,9 @@ interface Props {
 
 const props = defineProps<Props>();
 
+// Provide treatment data to child content components
+provide('treatmentData', props.treatmentData);
+
 const { generateHealthServiceSchema, setPageSEO } = useGlobalSEO();
 
 // Define the interface locally since it's not exported

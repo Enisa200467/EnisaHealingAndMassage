@@ -62,7 +62,7 @@ setPageSEO({
   <article role="main" aria-labelledby="about-heading">
     <!-- Hero Section -->
     <section
-      class="bg-gradient-to-b from-secondary-200 to-primary-50 py-16 sm:py-24"
+      class="bg-gradient-to-b from-secondary-200 to-primary-50 py-12 sm:py-16"
       aria-labelledby="about-heading"
     >
       <UContainer>
@@ -122,7 +122,7 @@ setPageSEO({
     <!-- Main Content -->
     <PageSection padding="sm" primary>
       <!-- About Story -->
-      <section class="mb-16">
+      <section class="mb-12">
         <h2 class="text-3xl font-bold text-neutral-900 mb-8 text-center">
           Mijn Verhaal
         </h2>
@@ -149,11 +149,11 @@ setPageSEO({
       </section>
 
       <!-- Qualifications & Experience -->
-      <section class="mb-16">
+      <section class="mb-12">
         <h2 class="text-3xl font-bold text-neutral-900 mb-8 text-center">
           Kwalificaties & Ervaring
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Certifications -->
           <UCard>
             <template #header>
@@ -268,7 +268,7 @@ setPageSEO({
     </PageSection>
     <PageSection>
       <!-- Philosophy -->
-      <section class="mb-16 max-w-3xl mx-auto">
+      <section class="mb-12 max-w-3xl mx-auto">
         <h2 class="text-3xl font-bold text-neutral-900 mb-8 text-center">
           Mijn Filosofie
         </h2>

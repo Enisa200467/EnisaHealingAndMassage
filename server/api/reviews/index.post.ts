@@ -13,12 +13,18 @@ export default defineEventHandler(async (event) => {
   const supabase = serverSupabaseServiceRole(event);
 
   if (event.method === 'POST') {
+    // Apply rate limiting: 3 reviews per day per IP
+    checkRateLimit(event, rateLimitPresets.reviewSubmission);
+
     try {
       const body = await readBody(event);
       const validatedData = reviewSubmissionSchema.parse(body);
 
+      // Sanitize all input fields to prevent XSS attacks
+      const sanitizedData = sanitizeObject(validatedData);
+
       const { error } = await supabase.from('reviews').insert({
-        ...validatedData,
+        ...sanitizedData,
         status: 'pending',
       });
 

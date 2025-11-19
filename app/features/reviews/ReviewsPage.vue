@@ -4,11 +4,30 @@ import type { Review, ReviewStats as ReviewStatsType } from './types/reviews';
 
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
-const { getApprovedReviews, getReviewStats, submitReview } = useReviews();
+const { submitReview } = useReviews();
 
-// Reviews data
-const allReviews = ref<Review[]>([]);
-const reviewStatsForSeo = ref<ReviewStatsType>({
+const currentPage = ref(1);
+const reviewsPerPage = 6;
+
+// SSR-compatible data fetching
+const { data: reviewsData, pending: isLoading, refresh } = await useAsyncData(
+  'reviews-page-data',
+  async () => {
+    const [reviewsResponse, statsResponse] = await Promise.all([
+      $fetch<{ data: { reviews: Review[] } }>(`/api/reviews?page=${currentPage.value}&limit=${reviewsPerPage}`),
+      $fetch<{ data: ReviewStatsType }>('/api/reviews/stats'),
+    ]);
+
+    return {
+      reviews: reviewsResponse.data.reviews,
+      stats: statsResponse.data,
+    };
+  }
+);
+
+// Computed refs from SSR data
+const allReviews = computed(() => reviewsData.value?.reviews || []);
+const reviewStatsForSeo = computed(() => reviewsData.value?.stats || {
   total: 0,
   approved: 0,
   pending: 0,
@@ -16,26 +35,9 @@ const reviewStatsForSeo = ref<ReviewStatsType>({
   averageRating: 0,
 });
 
-const isLoading = ref(true);
-const currentPage = ref(1);
-const reviewsPerPage = 6;
-
-// Load initial data
+// Reload reviews after submission
 const loadReviews = async () => {
-  isLoading.value = true;
-  try {
-    const [reviewsResponse, statsResponse] = await Promise.all([
-      getApprovedReviews(currentPage.value, reviewsPerPage),
-      getReviewStats(),
-    ]);
-
-    allReviews.value = reviewsResponse.reviews;
-    reviewStatsForSeo.value = statsResponse;
-  } catch (error) {
-    console.error('Error loading reviews:', error);
-  } finally {
-    isLoading.value = false;
-  }
+  await refresh();
 };
 
 // Generate review schema once data is loaded
@@ -105,15 +107,10 @@ const handleReviewSubmission = async (reviewData: Partial<Review>) => {
   const result = await submitReview(reviewData);
   if (result.success) {
     hasSubmitted.value = true;
-    // Optionally reload reviews or show success message
+    // Reload reviews after successful submission
     await loadReviews();
   }
 };
-
-// Load reviews on mount
-onMounted(() => {
-  loadReviews();
-});
 
 const reviewStatsForOverview = computed(() => {
   return {
@@ -130,7 +127,7 @@ const reviewStatsForOverview = computed(() => {
   <div>
     <!-- Hero Section -->
     <section
-      class="bg-gradient-to-b from-secondary-200 to-primary-50 py-16 sm:py-24"
+      class="bg-gradient-to-b from-secondary-200 to-primary-50 py-12 sm:py-16"
     >
       <UContainer>
         <div class="max-w-4xl mx-auto text-center">

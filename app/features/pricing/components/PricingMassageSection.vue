@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-16">
+  <section class="mb-12">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-neutral-900 mb-4">
         Massage Behandelingen
@@ -31,10 +31,17 @@
 
     <!-- Treatments Grid -->
     <div v-else class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <UCard
+      <TreatmentDetails
         v-for="treatment in treatments"
         :key="treatment.title"
-        class="h-full"
+        :intensity="treatment.intensity"
+        :intensity-label="treatment.intensityLabel"
+        :short-description="treatment.description"
+        :show-link-button="false"
+        :book-button-text="`Boek ${treatment.title}`"
+        :book-button-link="`/boeken?treatment=${treatment.slug}`"
+        book-button-color="secondary"
+        size="md"
       >
         <template #header>
           <div class="flex justify-between items-start">
@@ -54,43 +61,21 @@
           </div>
         </template>
 
-        <div class="space-y-4">
-          <p class="text-neutral-600">{{ treatment.description }}</p>
-
-          <!-- Intensity -->
-          <IntensityIndicator
-            :intensity="treatment.intensity"
-            :label="treatment.intensityLabel"
-            size="md"
-          />
-
-          <!-- Benefits -->
-          <div>
-            <p class="text-sm font-medium text-neutral-700 mb-2">Voordelen:</p>
-            <ul class="space-y-1">
-              <li
-                v-for="benefit in treatment.benefits"
-                :key="benefit"
-                class="flex items-center gap-2 text-sm text-neutral-600"
-              >
-                <UIcon name="i-mdi-check" class="w-4 h-4 text-green-500" />
-                {{ benefit }}
-              </li>
-            </ul>
-          </div>
+        <!-- Benefits in default slot -->
+        <div>
+          <p class="text-sm font-medium text-neutral-700 mb-2">Voordelen:</p>
+          <ul class="space-y-1">
+            <li
+              v-for="benefit in treatment.benefits"
+              :key="benefit"
+              class="flex items-center gap-2 text-sm text-neutral-600"
+            >
+              <UIcon name="i-mdi-check" class="w-4 h-4 text-green-500" />
+              {{ benefit }}
+            </li>
+          </ul>
         </div>
-
-        <template #footer>
-          <UButton
-            :to="`/boeken?treatment=${treatment.slug}`"
-            block
-            icon="i-mdi-calendar"
-            color="secondary"
-          >
-            Boek {{ treatment.title }}
-          </UButton>
-        </template>
-      </UCard>
+      </TreatmentDetails>
     </div>
   </section>
 </template>

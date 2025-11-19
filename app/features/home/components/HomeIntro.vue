@@ -11,8 +11,8 @@
         aria-label="Fotogalerij van Enisa"
       >
         <NuxtImg
-          :src="item"
-          alt="Enisa Healing & Massage"
+          :src="item.src"
+          :alt="item.alt"
           class="w-full h-full object-cover rounded-lg"
           loading="lazy"
           format="webp"
@@ -50,5 +50,14 @@
 <script setup lang="ts">
 const routes = useRoutes();
 
-const carouselItems = ['/images/massage.webp', '/images/chakra-healing.webp'];
+const carouselItems = [
+  {
+    src: '/images/massage.webp',
+    alt: 'Professionele ontspanningsmassage sessie bij Enisa Healing & Massage',
+  },
+  {
+    src: '/images/chakra-healing.webp',
+    alt: 'Energetische healing en chakra balancering behandeling',
+  },
+];
 </script>

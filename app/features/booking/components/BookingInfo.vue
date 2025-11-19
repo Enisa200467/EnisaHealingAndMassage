@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { BUSINESS_INFO } from '~/constants/businessInfo';
+
 // Information sidebar for booking
 </script>
 
@@ -22,9 +24,9 @@
           <div>
             <p class="font-medium text-neutral-900">Openingstijden</p>
             <div class="text-sm text-neutral-600 space-y-1">
-              <p>Ma - Vr: 09:00 - 18:00</p>
-              <p>Za: 09:00 - 16:00</p>
-              <p>Zo: Gesloten</p>
+              <p>Ma - Vr: {{ BUSINESS_INFO.hours.monday }}</p>
+              <p>Za: {{ BUSINESS_INFO.hours.saturday }}</p>
+              <p>Zo: {{ BUSINESS_INFO.hours.sunday }}</p>
             </div>
           </div>
         </div>
@@ -37,9 +39,8 @@
           <div>
             <p class="font-medium text-neutral-900">Locatie</p>
             <p class="text-sm text-neutral-600">
-              Wellness Centrum<br />
-              Voorbeeldstraat 123<br />
-              1234 AB Amsterdam
+              {{ BUSINESS_INFO.address.street }} {{ BUSINESS_INFO.address.houseNumber }}<br />
+              {{ BUSINESS_INFO.address.postalCode }} {{ BUSINESS_INFO.address.city }}
             </p>
           </div>
         </div>
@@ -49,8 +50,8 @@
           <div>
             <p class="font-medium text-neutral-900">Contact</p>
             <div class="text-sm text-neutral-600 space-y-1">
-              <p>+31 6 12 34 56 78</p>
-              <p>info@enisahealing.nl</p>
+              <p>{{ BUSINESS_INFO.contact.phoneFormatted }}</p>
+              <p>{{ BUSINESS_INFO.contact.email }}</p>
             </div>
           </div>
         </div>

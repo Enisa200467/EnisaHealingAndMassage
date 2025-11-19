@@ -15,15 +15,18 @@ const contactFormSchema = z.object({
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'POST') {
-    throw createError({
-      statusCode: 405,
-      statusMessage: 'Method not allowed',
-    });
+    throw ApiErrors.methodNotAllowed();
   }
+
+  // Apply rate limiting: 5 requests per hour per IP
+  checkRateLimit(event, rateLimitPresets.contactForm);
 
   try {
     const body = await readBody(event);
     const validatedData = contactFormSchema.parse(body);
+
+    // Sanitize all input fields to prevent XSS attacks
+    const sanitizedData = sanitizeObject(validatedData);
 
     // Initialize Resend with API key from environment
     const config = useRuntimeConfig();
@@ -31,59 +34,25 @@ export default defineEventHandler(async (event) => {
     const contactEmail = config.contactEmail;
 
     if (!resendApiKey) {
-      throw createError({
-        statusCode: 500,
-        statusMessage: 'Email service not configured',
-      });
+      throw ApiErrors.serviceUnavailable('E-mailservice is niet geconfigureerd');
     }
 
     if (!contactEmail) {
-      throw createError({
-        statusCode: 500,
-        statusMessage: 'Contact email not configured',
-      });
+      throw ApiErrors.internalError('Contactgegevens zijn niet geconfigureerd');
     }
 
     const resend = new Resend(resendApiKey);
 
-    // Prepare email content
-    const emailSubject = `Nieuw contactformulier: ${validatedData.subject}`;
-    const emailHtml = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #8B5CF6;">Nieuw bericht via contactformulier</h2>
-        
-        <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="margin-top: 0; color: #374151;">Contactgegevens</h3>
-          <p><strong>Naam:</strong> ${validatedData.firstName} ${
-      validatedData.lastName
-    }</p>
-          <p><strong>E-mail:</strong> ${validatedData.email}</p>
-          ${
-            validatedData.phone
-              ? `<p><strong>Telefoon:</strong> ${validatedData.phone}</p>`
-              : ''
-          }
-          <p><strong>Onderwerp:</strong> ${validatedData.subject}</p>
-        </div>
-
-        <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="margin-top: 0; color: #374151;">Bericht</h3>
-          <p style="white-space: pre-line;">${validatedData.message}</p>
-        </div>
-
-        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 14px; color: #6b7280;">
-          <p>Dit bericht is verzonden via het contactformulier op enisahealing.nl</p>
-          <p>Verzonden op: ${new Date().toLocaleString('nl-NL', {
-            timeZone: 'Europe/Amsterdam',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-          })}</p>
-        </div>
-      </div>
-    `;
+    // Prepare email content using template
+    const emailSubject = `Nieuw contactformulier: ${sanitizedData.subject}`;
+    const emailHtml = generateContactFormEmail({
+      firstName: sanitizedData.firstName,
+      lastName: sanitizedData.lastName,
+      email: sanitizedData.email,
+      phone: sanitizedData.phone,
+      subject: sanitizedData.subject,
+      message: sanitizedData.message,
+    });
 
     // Send email to the business owner
     const result = await resend.emails.send({
@@ -91,40 +60,33 @@ export default defineEventHandler(async (event) => {
       to: [contactEmail], // Configurable email from environment variable
       subject: emailSubject,
       html: emailHtml,
-      replyTo: validatedData.email, // Allow easy reply to the customer
+      replyTo: sanitizedData.email, // Allow easy reply to the customer
     });
 
     if (result.error) {
       console.error('Email sending failed:', result.error);
-      throw createError({
-        statusCode: 500,
-        statusMessage: 'Failed to send email',
-      });
+      throw ApiErrors.serviceUnavailable('Kon e-mail niet verzenden. Probeer het later opnieuw.');
     }
 
     // Optionally, you could also store the contact form submission in Supabase
     // for record keeping and follow-up purposes
 
-    return {
-      success: true,
-      message: 'Contact form submitted successfully',
-      emailId: result.data?.id,
-    };
+    return createApiSuccess(
+      { emailId: result.data?.id },
+      'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.'
+    );
   } catch (error) {
     console.error('Contact form submission error:', error);
 
     if (error instanceof z.ZodError) {
-      // Zod validation error
-      throw createError({
-        statusCode: 400,
-        statusMessage: 'Validation failed',
-        data: error.issues,
-      });
+      throw handleZodError(error);
     }
 
-    throw createError({
-      statusCode: 500,
-      statusMessage: 'Internal server error',
-    });
+    // Re-throw if it's already a formatted API error
+    if (error.statusCode) {
+      throw error;
+    }
+
+    throw ApiErrors.internalError();
   }
 });

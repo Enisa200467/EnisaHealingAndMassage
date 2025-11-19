@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import { BUSINESS_INFO, getGoogleMapsUrl } from '~/constants/businessInfo';
+
 // Map and location information for contact page
+const businessLocation = BUSINESS_INFO.location;
+const businessAddress = BUSINESS_INFO.address;
+const googleMapsUrl = getGoogleMapsUrl();
 </script>
 
 <template>
@@ -9,23 +14,16 @@
         Locatie & Bereikbaarheid
       </h2>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <!-- Map Placeholder -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <!-- Interactive Google Map -->
         <UCard>
-          <div
-            class="bg-neutral-100 h-80 flex items-center justify-center rounded-lg"
-          >
-            <div class="text-center">
-              <UIcon
-                name="i-mdi-map"
-                class="w-16 h-16 text-neutral-400 mx-auto mb-4"
-              />
-              <p class="text-neutral-500">Google Maps embed</p>
-              <p class="text-sm text-neutral-400">
-                Hier komt de interactieve kaart
-              </p>
-            </div>
-          </div>
+          <GoogleMap
+            :latitude="businessLocation.latitude"
+            :longitude="businessLocation.longitude"
+            :zoom="16"
+            :marker-title="BUSINESS_INFO.name"
+            height="320px"
+          />
         </UCard>
 
         <!-- Directions -->
@@ -76,13 +74,13 @@
 
           <div class="mt-6">
             <UButton
-              href="https://maps.google.com"
+              :href="googleMapsUrl"
               target="_blank"
               variant="outline"
               icon="i-mdi-directions"
               block
             >
-              Open in Google Maps
+              Routebeschrijving in Google Maps
             </UButton>
           </div>
         </div>

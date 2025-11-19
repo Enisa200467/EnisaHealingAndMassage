@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import { BUSINESS_INFO, getPhoneLink, getEmailLink } from '~/constants/businessInfo';
+
 // Contact information display component
+const whatsappLink = computed(() => {
+  return `https://wa.me/${BUSINESS_INFO.contact.phoneInternational.replace('+', '')}`;
+});
 </script>
 
 <template>
@@ -17,11 +22,11 @@
           <div>
             <h3 class="font-semibold text-neutral-900 mb-2">Telefoon</h3>
             <p class="text-neutral-600 mb-2">
-              <ULink href="tel:+31612345678" class="hover:text-primary-600">
-                +31 6 12 34 56 78
+              <ULink :href="getPhoneLink()" class="hover:text-primary-600">
+                {{ BUSINESS_INFO.contact.phoneFormatted }}
               </ULink>
             </p>
-            <p class="text-sm text-neutral-500">Ma-Za: 9:00 - 18:00 uur</p>
+            <p class="text-sm text-neutral-500">{{ BUSINESS_INFO.hours.schemaFormat.join(', ') }}</p>
           </div>
         </div>
       </UCard>
@@ -36,10 +41,10 @@
             <h3 class="font-semibold text-neutral-900 mb-2">E-mail</h3>
             <p class="text-neutral-600 mb-2">
               <ULink
-                href="mailto:info@enisahealing.nl"
+                :href="getEmailLink()"
                 class="hover:text-secondary-600"
               >
-                info@enisahealing.nl
+                {{ BUSINESS_INFO.contact.email }}
               </ULink>
             </p>
             <p class="text-sm text-neutral-500">Reactie binnen 24 uur</p>
@@ -56,10 +61,10 @@
           <div>
             <h3 class="font-semibold text-neutral-900 mb-2">Locatie</h3>
             <p class="text-neutral-600 mb-2">
-              Voorbeeldstraat 123<br />
-              1234 AB Amsterdam
+              {{ BUSINESS_INFO.address.street }} {{ BUSINESS_INFO.address.houseNumber }}<br />
+              {{ BUSINESS_INFO.address.postalCode }} {{ BUSINESS_INFO.address.city }}
             </p>
-            <p class="text-sm text-neutral-500">Gratis parkeren beschikbaar</p>
+            <p class="text-sm text-neutral-500">Amsterdam Noord</p>
           </div>
         </div>
       </UCard>
@@ -74,11 +79,11 @@
             <h3 class="font-semibold text-neutral-900 mb-2">WhatsApp</h3>
             <p class="text-neutral-600 mb-2">
               <ULink
-                href="https://wa.me/31612345678"
+                :href="whatsappLink"
                 target="_blank"
                 class="hover:text-green-600"
               >
-                +31 6 12 34 56 78
+                {{ BUSINESS_INFO.contact.phoneFormatted }}
               </ULink>
             </p>
             <p class="text-sm text-neutral-500">Voor snelle vragen</p>
@@ -93,7 +98,7 @@
         Boek Direct Online
       </UButton>
       <UButton
-        href="tel:+31612345678"
+        :href="getPhoneLink()"
         size="lg"
         variant="outline"
         icon="i-mdi-phone"

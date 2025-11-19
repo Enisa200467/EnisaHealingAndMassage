@@ -1,6 +1,6 @@
 <template>
   <section
-    class="bg-gradient-to-b from-secondary-200 to-primary-50 py-16 sm:py-24"
+    class="bg-gradient-to-b from-secondary-200 to-primary-50 py-12 sm:py-16"
   >
     <UContainer>
       <div class="max-w-4xl mx-auto text-center">
