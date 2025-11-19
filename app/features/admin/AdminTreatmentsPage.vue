@@ -12,6 +12,9 @@ useSeoMeta({
 // Authentication check - let Supabase handle redirects
 const user = useSupabaseUser();
 
+// Client-side sanitization (defense in depth - server still validates)
+const { sanitizeFormData } = useSanitize();
+
 // Treatment management
 const {
   treatments,
@@ -84,11 +87,14 @@ const shouldShowCmsWarning = ref(true);
 
 // Handle form submit
 const handleSubmit = async () => {
+  // Sanitize form data before submission
+  const sanitizedData = sanitizeFormData(formData.value);
+
   if (editingTreatment.value) {
     // Update existing treatment
     const result = await updateTreatment(
       editingTreatment.value.id,
-      formData.value
+      sanitizedData
     );
     if (result) {
       currentView.value = 'calendar';
@@ -96,7 +102,7 @@ const handleSubmit = async () => {
     }
   } else {
     // Create new treatment
-    const result = await createTreatment(formData.value);
+    const result = await createTreatment(sanitizedData);
     if (result) {
       currentView.value = 'calendar';
       shouldShowCmsWarning.value = true;

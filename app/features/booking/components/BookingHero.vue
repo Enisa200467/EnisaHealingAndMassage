@@ -30,9 +30,9 @@
               name="i-mdi-clock-fast"
               class="w-8 h-8 text-primary-500 mx-auto mb-3"
             />
-            <h3 class="font-semibold text-neutral-900 mb-1">
+            <p class="font-semibold text-neutral-900 mb-1">
               Snel & Gemakkelijk
-            </h3>
+            </p>
             <p class="text-sm text-neutral-600">Boek binnen 2 minuten</p>
           </div>
 
@@ -41,9 +41,9 @@
               name="i-mdi-check-circle"
               class="w-8 h-8 text-green-500 mx-auto mb-3"
             />
-            <h3 class="font-semibold text-neutral-900 mb-1">
+            <p class="font-semibold text-neutral-900 mb-1">
               Direct Bevestigd
-            </h3>
+            </p>
             <p class="text-sm text-neutral-600">Onmiddellijke bevestiging</p>
           </div>
 
@@ -52,9 +52,9 @@
               name="i-mdi-calendar-edit"
               class="w-8 h-8 text-secondary-500 mx-auto mb-3"
             />
-            <h3 class="font-semibold text-neutral-900 mb-1">
+            <p class="font-semibold text-neutral-900 mb-1">
               Flexibel Wijzigen
-            </h3>
+            </p>
             <p class="text-sm text-neutral-600">Tot 24u voor je afspraak</p>
           </div>
         </div>

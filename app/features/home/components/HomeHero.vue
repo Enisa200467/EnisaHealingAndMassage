@@ -6,8 +6,7 @@
     <!-- Background Image using NuxtImg -->
     <NuxtImg
       src="/images/hero.png"
-      alt="rustgevende-lotus-met-roze-achtergrond"
-      role="presentation"
+      alt="Serene lotus flower floating on water with soft pink glow, symbolizing tranquility and healing"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"
       format="png"
       quality="90"

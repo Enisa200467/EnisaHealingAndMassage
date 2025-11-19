@@ -61,9 +61,9 @@ setPageSEO({
     <PageSection primary>
       <div class="max-w-4xl mx-auto">
         <header class="text-center mb-12">
-          <h1 class="text-3xl font-bold text-neutral-900 mb-4">
+          <h2 class="text-3xl font-bold text-neutral-900 mb-4">
             Kies je gewenste behandeling en tijd
-          </h1>
+          </h2>
           <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
             Gebruik onze online agenda om direct een afspraak in te plannen.
             Selecteer je behandeling, kies een beschikbare tijd en ontvang

@@ -101,14 +101,27 @@ watchEffect(() => {
   }
 });
 
-const hasSubmitted = ref(false);
+// Track form submission state
+const isSuccess = ref(false);
+const isError = ref(false);
+const errorMessage = ref('');
+
 // Handle review submission
 const handleReviewSubmission = async (reviewData: Partial<Review>) => {
+  // Reset states
+  isSuccess.value = false;
+  isError.value = false;
+  errorMessage.value = '';
+
   const result = await submitReview(reviewData);
+
   if (result.success) {
-    hasSubmitted.value = true;
+    isSuccess.value = true;
     // Reload reviews after successful submission
     await loadReviews();
+  } else {
+    isError.value = true;
+    errorMessage.value = result.error?.message || 'Er is iets misgegaan. Probeer het later opnieuw.';
   }
 };
 
@@ -145,7 +158,7 @@ const reviewStatsForOverview = computed(() => {
     </section>
 
     <!-- Reviews List -->
-    <PageSection primary>
+    <PageSection primary aria-label="Klantervaringen en review formulier">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
         <!-- Reviews Display -->
         <div class="lg:col-span-2">
@@ -158,9 +171,12 @@ const reviewStatsForOverview = computed(() => {
 
         <!-- Review Form -->
         <div class="lg:col-span-2">
-          <ReviewForm v-if="!hasSubmitted" @submit="handleReviewSubmission" />
-
-          <UAlert v-else title="Bedankt voor je review!" class="w-1/2" />
+          <ReviewForm
+            :is-success="isSuccess"
+            :is-error="isError"
+            :error-message="errorMessage"
+            @submit="handleReviewSubmission"
+          />
         </div>
       </div>
     </PageSection>

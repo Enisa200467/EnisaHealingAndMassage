@@ -128,6 +128,17 @@
             >
             <UIcon name="i-mdi-star" class="w-4 h-4 ml-1 text-yellow-400" />
           </div>
+          <!-- Live region for review carousel announcements -->
+          <div
+            v-if="displayReviews.length > 0"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            class="sr-only"
+          >
+            {{ currentReviewAnnouncement }}
+          </div>
+
           <UCarousel
             v-if="displayReviews.length > 0"
             v-slot="{ item }"
@@ -136,6 +147,9 @@
             arrows
             indicators
             class="w-full max-w-xs mx-auto"
+            aria-label="Klantervaringen carousel"
+            aria-roledescription="carousel"
+            @update:modelValue="onReviewChange"
           >
             <UCard class="text-center">
               <p class="text-sm text-neutral-700 dark:text-neutral-300">
@@ -242,6 +256,20 @@ const averageScore = computed(() => {
 
 // SSR-safe current year
 const currentYear = computed(() => new Date().getFullYear());
+
+// Review carousel accessibility
+const currentReviewIndex = ref(0);
+const currentReviewAnnouncement = computed(() => {
+  const total = displayReviews.value.length;
+  if (total > 0) {
+    return `Review ${currentReviewIndex.value + 1} van ${total}`;
+  }
+  return '';
+});
+
+const onReviewChange = (index: number) => {
+  currentReviewIndex.value = index;
+};
 </script>
 
 <style scoped>

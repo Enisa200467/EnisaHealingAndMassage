@@ -1,27 +1,31 @@
 <template>
   <div>
     <PricingHero />
-    <PageSection primary padding="sm">
+    <PageSection
+      primary
+      padding="sm"
+      aria-label="Healing behandelingen en tarieven"
+    >
       <PricingHealingSection
         :loading="loading"
         :error="error"
         :healing-treatments="healingData"
       />
     </PageSection>
-    <PageSection padding="sm">
+    <PageSection padding="sm" aria-label="Massage behandelingen en tarieven">
       <PricingMassageSection
         :loading="loading"
         :error="error"
         :massage-treatments="massageData"
       />
     </PageSection>
-    <PageSection primary padding="sm">
+    <PageSection primary padding="sm" aria-label="Kortingspakketten">
       <PricingPackagesSection />
     </PageSection>
-    <PageSection padding="sm">
+    <PageSection padding="sm" aria-label="Betalingsinformatie en voorwaarden">
       <PricingInfoSection />
     </PageSection>
-    <PageSection primary padding="sm">
+    <PageSection primary padding="sm" aria-label="Boek een behandeling">
       <PricingCTA />
     </PageSection>
   </div>
