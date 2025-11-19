@@ -3,7 +3,7 @@ import type { AccordionItem } from '@nuxt/ui';
 
 const { generateFAQSchema, setPageSEO } = useGlobalSEO();
 
-const faqItems = ref<AccordionItem[]>([
+const faqItems: AccordionItem[] = [
   {
     label: 'Wat voor soort behandelingen bieden jullie aan?',
     content:
@@ -49,10 +49,10 @@ const faqItems = ref<AccordionItem[]>([
     content:
       'Ja, u kunt uw afspraak tot 24 uur van tevoren kosteloos annuleren of verzetten. Voor wijzigingen binnen 24 uur kunnen kosten in rekening worden gebracht.',
   },
-]);
+];
 
 // Generate structured data for FAQ
-const faqData = faqItems.value.map((item) => ({
+const faqData = faqItems.map((item) => ({
   question: item.label || '',
   answer: item.content || '',
 }));
@@ -68,27 +68,50 @@ setPageSEO({
 </script>
 
 <template>
-  <article role="main" aria-labelledby="faq-heading">
-    <PageSection primary>
-      <header class="mb-12 sm:mb-12">
-        <h1
-          id="faq-heading"
-          class="text-3xl font-bold tracking-tight sm:text-4xl"
-        >
-          Veelgestelde Vragen
-        </h1>
-        <p class="mt-6 text-lg leading-8 text-neutral-600">
-          Hier vind je antwoorden op de meest gestelde vragen over onze
-          behandelingen, werkwijze en praktijk.
-        </p>
-      </header>
+  <div>
+    <FAQHero />
 
-      <section class="max-w-3xl" aria-labelledby="faq-heading">
-        <UAccordion
-          :items="faqItems"
-          aria-label="Veelgestelde vragen over Enisa Healing & Massage"
-        />
-      </section>
+    <PageSection primary>
+      <div class="max-w-3xl mx-auto">
+        <UCard>
+          <UAccordion
+            :items="faqItems"
+            aria-label="Veelgestelde vragen over Enisa Healing & Massage"
+          />
+        </UCard>
+      </div>
     </PageSection>
-  </article>
+
+    <!-- CTA Section -->
+    <PageSection>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">
+          Nog vragen?
+        </h2>
+        <p class="text-lg text-neutral-600 mb-8">
+          Kon je het antwoord op je vraag niet vinden? Neem gerust contact met
+          ons op.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <UButton
+            to="/contact"
+            size="lg"
+            icon="i-mdi-email"
+            aria-label="Ga naar contactpagina"
+          >
+            Neem Contact Op
+          </UButton>
+          <UButton
+            to="/boeken"
+            size="lg"
+            variant="outline"
+            icon="i-mdi-calendar"
+            aria-label="Ga naar boekingspagina"
+          >
+            Afspraak Maken
+          </UButton>
+        </div>
+      </div>
+    </PageSection>
+  </div>
 </template>
