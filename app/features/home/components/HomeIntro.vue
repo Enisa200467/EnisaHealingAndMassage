@@ -1,24 +1,51 @@
 <template>
   <PageSection primary aria-labelledby="intro-heading">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
-      <UCarousel
-        v-slot="{ item }"
-        dots
-        loop
-        :autoplay="{ delay: 3000 }"
-        :items="carouselItems"
-        class="w-full max-w-md mx-auto"
-        aria-label="Fotogalerij van Enisa"
-      >
-        <NuxtImg
-          :src="item.src"
-          :alt="item.alt"
-          class="w-full h-full object-cover rounded-lg"
-          loading="lazy"
-          format="webp"
-          quality="80"
-        />
-      </UCarousel>
+      <div class="relative w-full max-w-md mx-auto">
+        <!-- Carousel Pause/Play Control -->
+        <button
+          @click="toggleAutoplay"
+          class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+          :aria-label="isPaused ? 'Start automatische diavoorstelling' : 'Pauzeer automatische diavoorstelling'"
+          :aria-pressed="!isPaused"
+        >
+          <UIcon
+            :name="isPaused ? 'i-mdi-play' : 'i-mdi-pause'"
+            class="w-5 h-5 text-neutral-700"
+          />
+        </button>
+
+        <!-- Live region for screen reader announcements -->
+        <div
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          class="sr-only"
+        >
+          {{ currentSlideAnnouncement }}
+        </div>
+
+        <UCarousel
+          ref="carouselRef"
+          v-slot="{ item }"
+          dots
+          loop
+          :autoplay="autoplayConfig"
+          :items="carouselItems"
+          class="w-full"
+          aria-label="Fotogalerij van Enisa"
+          @update:modelValue="onSlideChange"
+        >
+          <NuxtImg
+            :src="item.src"
+            :alt="item.alt"
+            class="w-full h-full object-cover rounded-lg"
+            loading="lazy"
+            format="webp"
+            quality="80"
+          />
+        </UCarousel>
+      </div>
 
       <div class="text-center md:text-left">
         <h2 id="intro-heading" class="text-3xl font-bold text-neutral-900 mb-6">
@@ -60,4 +87,44 @@ const carouselItems = [
     alt: 'Energetische healing en chakra balancering behandeling',
   },
 ];
+
+// Carousel accessibility controls
+const isPaused = ref(false);
+const currentSlide = ref(0);
+const carouselRef = ref();
+
+// Computed autoplay config
+const autoplayConfig = computed(() => {
+  return isPaused.value ? false : { delay: 3000 };
+});
+
+// Live region announcement
+const currentSlideAnnouncement = computed(() => {
+  if (carouselItems[currentSlide.value]) {
+    return `Dia ${currentSlide.value + 1} van ${carouselItems.length}`;
+  }
+  return '';
+});
+
+// Toggle autoplay
+const toggleAutoplay = () => {
+  isPaused.value = !isPaused.value;
+};
+
+// Handle slide change
+const onSlideChange = (index: number) => {
+  currentSlide.value = index;
+};
+
+// Pause on keyboard interaction (accessibility)
+onMounted(() => {
+  const carousel = carouselRef.value?.$el;
+  if (carousel) {
+    carousel.addEventListener('focusin', () => {
+      if (!isPaused.value) {
+        isPaused.value = true;
+      }
+    });
+  }
+});
 </script>

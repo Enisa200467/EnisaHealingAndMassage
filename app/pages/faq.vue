@@ -71,7 +71,7 @@ setPageSEO({
   <div>
     <FAQHero />
 
-    <PageSection primary>
+    <PageSection primary aria-label="Veelgestelde vragen">
       <div class="max-w-3xl mx-auto">
         <UCard>
           <UAccordion
@@ -83,7 +83,7 @@ setPageSEO({
     </PageSection>
 
     <!-- CTA Section -->
-    <PageSection>
+    <PageSection aria-label="Neem contact op of maak een afspraak">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">
           Nog vragen?

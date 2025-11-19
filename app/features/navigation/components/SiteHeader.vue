@@ -11,7 +11,7 @@
           size="2xl"
           src="images/logo.webp"
           class="mr-6"
-          alt="Enisa profiel foto"
+          alt="Enisa Healing & Massage logo"
         />
         <span class="font-semibold text-lg">Enisa Healing & Massage</span>
       </ULink>

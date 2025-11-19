@@ -1,6 +1,83 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
+/* ==========================================================================
+   Accessibility - Focus Visible Styles
+   WCAG 2.1 Level AA - 2.4.7 Focus Visible
+   ========================================================================== */
+
+/* Remove default outline, add custom focus-visible styles */
+*:focus {
+  outline: none;
+}
+
+/* Focus-visible for interactive elements */
+*:focus-visible {
+  outline: 3px solid rgb(139 92 246); /* primary-500 */
+  outline-offset: 2px;
+  transition: outline-offset 0.2s ease-in-out;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *:focus-visible {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline: 4px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+/* Specific focus styles for buttons */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgb(139 92 246); /* primary-500 */
+  outline-offset: 2px;
+}
+
+/* Input focus styles */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgb(139 92 246); /* primary-500 */
+  outline-offset: 0px;
+  box-shadow: 0 0 0 3px rgb(237 233 254); /* primary-100 */
+}
+
+/* Skip links special focus */
+.skip-link:focus-visible {
+  outline: 3px solid rgb(251 191 36); /* yellow-400 */
+  outline-offset: 2px;
+}
+
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
 /* Prevent FOUC (Flash of Unstyled Content) */
 /* Ensure minimum styles are applied before Vue hydrates */
 html {

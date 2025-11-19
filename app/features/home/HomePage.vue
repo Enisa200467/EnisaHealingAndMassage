@@ -1,9 +1,9 @@
 <template>
-  <article>
+  <div>
     <HomeHero />
     <HomeIntro />
     <HomeTreatments />
-  </article>
+  </div>
 </template>
 
 <script setup lang="ts">
