@@ -144,18 +144,6 @@ const handleError = () => clearError({ redirect: errorContent.value.ctaLink });
               </UButton>
             </div>
 
-            <!-- Debug Info (only in development) -->
-            <div
-              v-if="process.env.NODE_ENV === 'development'"
-              class="mt-16 p-4 bg-neutral-100 rounded-lg text-left"
-            >
-              <h3 class="text-sm font-semibold text-neutral-900 mb-2">
-                Debug Info (alleen in development):
-              </h3>
-              <pre class="text-xs text-neutral-600 overflow-auto">{{
-                error
-              }}</pre>
-            </div>
           </div>
         </PageSection>
       </main>
