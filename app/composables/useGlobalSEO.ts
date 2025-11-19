@@ -26,10 +26,11 @@ interface PostalAddress {
 
 export const useGlobalSEO = () => {
   // Business information
+  // TODO: Update placeholder values with actual business information
   const businessInfo = {
     name: 'Enisa Healing & Massage',
     url: 'https://enisahealingmassage.nl',
-    telephone: '+31-6-12345678',
+    telephone: '+31-6-12345678', // TODO: Update with actual phone number
     email: 'info@enisahealing.nl',
     description:
       'Professionele massage en healing praktijk gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.',
@@ -38,21 +39,21 @@ export const useGlobalSEO = () => {
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'NL',
-      addressLocality: 'Amsterdam',
-      postalCode: '1000 AA',
-      streetAddress: 'Voorbeeldstraat 123',
+      addressLocality: 'Amsterdam', // TODO: Update with actual city
+      postalCode: '1000 AA', // TODO: Update with actual postal code
+      streetAddress: 'Voorbeeldstraat 123', // TODO: Update with actual street address
     } as PostalAddress,
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+31-6-12345678',
+      telephone: '+31-6-12345678', // TODO: Update with actual phone number
       contactType: 'customer service',
       areaServed: 'NL',
       availableLanguage: ['Dutch', 'English'],
     } as ContactPoint,
-    openingHours: ['Mo-Fr 09:00-18:00', 'Sa 09:00-15:00'],
+    openingHours: ['Mo-Fr 09:00-18:00', 'Sa 09:00-15:00'], // TODO: Verify actual opening hours
     serviceArea: {
       '@type': 'City',
-      name: 'Amsterdam',
+      name: 'Amsterdam', // TODO: Verify service area
     },
   };
 
