@@ -1,7 +1,4 @@
-::behandeling-hero
----
-id: 75be22cd-31df-48bd-bd9f-337360edb2c4
----
+::behandeling-hero{#75be22cd-31df-48bd-bd9f-337360edb2c4}
 ::
 
 ::behandeling-sectie
@@ -45,10 +42,7 @@ title: Wat kun je verwachten?
   :::
 ::
 
-::uitklap-info
----
-title: Meer over chakra balancering
----
+::uitklap-info{title="Meer over chakra balancering"}
 ### De Zeven Hoofdchakra's
 
 Chakra's zijn energiecentra in je lichaam. De zeven hoofdchakra's zijn:

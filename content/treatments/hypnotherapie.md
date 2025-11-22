@@ -7,7 +7,7 @@ id: dd01fafe-5591-4ca2-b460-c18388237f76
 ::behandeling-sectie
 ---
 items:
-  - "Diepe ontspanning: Met mijn stem, adem en energie begeleid ik je naar een rustige, veilige trance."
+  - "Diepe ontspanning: Met mijn stem, adem en energie begeleid ik je naar een rustige, veilige hypnose."
   - "Contact met het onderbewuste: Je bewuste en onderbewuste gaan tijdens de sessie samenwerken."
   - "Helende visualisaties en innerlijk werk: We gebruiken zachte beelden, gevoelens en inzichten om blokkades los te laten."
   - "Energetische ondersteuning: Een combinatie van hypnotherapie en energetische healing voor een volledig herstel van lichaam en geest."
