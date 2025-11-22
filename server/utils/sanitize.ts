@@ -1,27 +1,61 @@
-import DOMPurify from 'isomorphic-dompurify';
+/**
+ * Lightweight server-side sanitization utilities
+ * Replaces isomorphic-dompurify to avoid jsdom/parse5 ESM issues on Vercel
+ */
+
+/**
+ * Strip all HTML tags from a string
+ */
+function stripHtmlTags(input: string): string {
+  return input
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') // Remove script tags first
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '') // Remove style tags
+    .replace(/<[^>]+>/g, '') // Remove all remaining tags
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+/**
+ * Escape HTML special characters
+ */
+function escapeHtml(input: string): string {
+  const map: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  };
+  return input.replace(/[&<>"']/g, (char) => map[char]);
+}
 
 /**
  * Sanitize user input to prevent XSS attacks
  *
  * @param input - The string to sanitize
- * @param options - DOMPurify configuration options
+ * @param options - Sanitization options
  * @returns Sanitized string
  */
-export function sanitizeInput(input: string, options?: DOMPurify.Config): string {
+export function sanitizeInput(
+  input: string,
+  options?: { allowHtml?: boolean }
+): string {
   if (!input || typeof input !== 'string') {
     return '';
   }
 
-  // Default configuration: strip all HTML tags
-  const defaultConfig: DOMPurify.Config = {
-    ALLOWED_TAGS: [], // No HTML tags allowed by default
-    ALLOWED_ATTR: [], // No attributes allowed
-    KEEP_CONTENT: true, // Keep text content, strip tags
-  };
+  // Strip all HTML tags by default
+  let sanitized = stripHtmlTags(input);
 
-  const config = { ...defaultConfig, ...options };
+  // Remove null bytes and other dangerous characters
+  sanitized = sanitized
+    .replace(/\0/g, '')
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
 
-  return DOMPurify.sanitize(input, config).trim();
+  return sanitized.trim();
 }
 
 /**
@@ -62,11 +96,32 @@ export function sanitizeHtml(input: string): string {
     return '';
   }
 
-  const config: DOMPurify.Config = {
-    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'p', 'br'],
-    ALLOWED_ATTR: [],
-    KEEP_CONTENT: true,
-  };
+  const allowedTags = ['b', 'i', 'em', 'strong', 'p', 'br'];
+  const tagPattern = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi;
 
-  return DOMPurify.sanitize(input, config).trim();
+  // First, remove script and style tags completely
+  let sanitized = input
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+
+  // Remove event handlers and javascript: protocols
+  sanitized = sanitized
+    .replace(/\son\w+\s*=\s*["'][^"']*["']/gi, '')
+    .replace(/\shref\s*=\s*["']javascript:[^"']*["']/gi, '');
+
+  // Remove all tags except allowed ones, and strip all attributes
+  sanitized = sanitized.replace(tagPattern, (match, tagName) => {
+    const tag = tagName.toLowerCase();
+    if (allowedTags.includes(tag)) {
+      return match.includes('/') ? `</${tag}>` : `<${tag}>`;
+    }
+    return ''; // Remove non-allowed tags
+  });
+
+  // Remove null bytes and dangerous characters
+  sanitized = sanitized
+    .replace(/\0/g, '')
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+
+  return sanitized.trim();
 }

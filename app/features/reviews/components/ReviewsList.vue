@@ -6,11 +6,31 @@ interface Props {
   loading?: boolean;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+// Generate announcement message for screen readers
+const loadingMessage = computed(() => {
+  if (props.loading) {
+    return 'Reviews worden geladen...';
+  } else if (props.reviews.length === 0) {
+    return 'Geen reviews gevonden. Wees de eerste om een review achter te laten!';
+  } else {
+    return `${props.reviews.length} ${props.reviews.length === 1 ? 'review' : 'reviews'} geladen`;
+  }
+});
 </script>
 
 <template>
   <div class="space-y-6">
+    <!-- Screen reader announcement for loading state -->
+    <div
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      class="sr-only"
+    >
+      {{ loadingMessage }}
+    </div>
     <div v-if="loading" class="space-y-4">
       <div v-for="i in 3" :key="i" class="animate-pulse">
         <UCard>

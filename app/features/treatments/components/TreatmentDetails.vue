@@ -16,13 +16,18 @@ interface Props {
   // Customization
   title?: string;
   icon?: string;
+  bookButtonText?: string;
+  bookButtonLink?: string;
+  bookButtonColor?: 'primary' | 'secondary' | 'green' | 'red' | 'orange';
 }
 
 const props = withDefaults(defineProps<Props>(), {
   showBookButton: true,
   size: 'md',
-  title: 'Behandelingsdetails',
+  title: '',
   icon: 'i-mdi-clock-outline',
+  bookButtonText: 'Afspraak maken',
+  bookButtonColor: 'primary',
 });
 
 const routes = useRoutes();
@@ -79,28 +84,34 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 
 <template>
   <UCard
-    class="shadow-lg border border-primary-200 bg-white"
+    class="shadow-lg border border-primary-200 bg-white h-full"
+    :ui="{
+      base: 'flex flex-col h-full',
+      body: { base: 'flex-1 flex flex-col' }
+    }"
     role="region"
     :aria-labelledby="title ? 'treatment-details-title' : undefined"
   >
     <template #header>
-      <div class="flex items-center gap-2">
-        <UIcon
-          :name="icon"
-          class="w-5 h-5 text-primary-500"
-          aria-hidden="true"
-        />
-        <h2
-          v-if="title"
-          id="treatment-details-title"
-          class="font-semibold text-neutral-900"
-        >
-          {{ title }}
-        </h2>
-      </div>
+      <slot name="header">
+        <div v-if="title" class="flex items-center gap-2">
+          <UIcon
+            :name="icon"
+            class="w-5 h-5 text-primary-500"
+            aria-hidden="true"
+          />
+          <h2
+            id="treatment-details-title"
+            class="font-semibold text-neutral-900"
+          >
+            {{ title }}
+          </h2>
+        </div>
+      </slot>
     </template>
 
-    <div :class="sizeClasses.gap">
+    <!-- Content area with flex-1 to push footer down -->
+    <div :class="[sizeClasses.gap, 'flex flex-col flex-1']">
       <div v-if="shortDescription" class="mb-2">
         <p class="text-sm text-gray-600 line-clamp-3">
           {{ shortDescription }}
@@ -131,6 +142,14 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
           :size="size"
         />
       </div>
+
+      <!-- Spacer to push slot content to bottom -->
+      <div class="flex-1"></div>
+
+      <!-- Custom content slot (e.g., benefits list) -->
+      <div v-if="$slots.default" class="pt-4">
+        <slot />
+      </div>
     </div>
 
     <template v-if="showBookButton || showLinkButton" #footer>
@@ -148,14 +167,15 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
           Meer info
         </UButton>
         <UButton
-          color="primary"
+          v-if="showBookButton"
+          :color="bookButtonColor"
           size="lg"
           block
-          :to="routes.pages.booking"
+          :to="bookButtonLink || routes.pages.booking"
           icon="i-mdi-calendar"
           aria-label="Boek een afspraak voor deze behandeling"
         >
-          Afspraak maken
+          {{ bookButtonText }}
         </UButton>
       </div>
     </template>

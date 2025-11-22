@@ -1,8 +1,31 @@
 <script setup lang="ts">
 import { useContact } from './composables/useContact';
+import type { ContactFormData } from './types/contact.types';
 
 const { submitContactForm } = useContact();
 const { setPageSEO, businessInfo } = useGlobalSEO();
+
+// Track form submission state
+const isSuccess = ref(false);
+const isError = ref(false);
+const errorMessage = ref('');
+
+// Handle form submission
+const handleSubmit = async (data: ContactFormData) => {
+  // Reset states
+  isSuccess.value = false;
+  isError.value = false;
+  errorMessage.value = '';
+
+  const result = await submitContactForm(data);
+
+  if (result.success) {
+    isSuccess.value = true;
+  } else {
+    isError.value = true;
+    errorMessage.value = result.error?.message || 'Er is iets misgegaan. Probeer het later opnieuw.';
+  }
+};
 
 // Generate business contact schema
 const businessContactSchema = {
@@ -60,11 +83,16 @@ setPageSEO({
     <ContactHero />
 
     <!-- Main Content -->
-    <PageSection primary>
+    <PageSection primary aria-label="Contactgegevens en formulier">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <ContactInfo />
-          <ContactForm @submit="submitContactForm" />
+          <ContactForm
+            :is-success="isSuccess"
+            :is-error="isError"
+            :error-message="errorMessage"
+            @submit="handleSubmit"
+          />
         </div>
       </div>
     </PageSection>
