@@ -5,12 +5,13 @@
   >
     <!-- Background Image using NuxtImg -->
     <NuxtImg
-      src="/images/hero.png"
+      src="/images/hero.webp"
       alt="rustgevende-lotus-met-roze-achtergrond"
       role="presentation"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"
-      format="png"
-      quality="90"
+      format="webp"
+      quality="80"
+      fetchpriority="high"
       preload
     />
     <UContainer class="py-20 md:py-32">
