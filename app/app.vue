@@ -1,19 +1,18 @@
-<script setup lang="ts">
-import { useTreatmentStore } from './features/treatments/store';
-
-const treatmentStore = useTreatmentStore();
-
-</script>
 <template>
-	<UApp>
-		<SkipNavigation />
-		<div class="flex flex-col min-h-screen">
-			<SiteHeader />
-			<main id="main-content" class="flex-1" role="main" aria-label="Main content">
-				<NuxtPage />
-			</main>
-			<SiteFooter />
-			<BookingWidget />
-		</div>
-	</UApp>
+  <UApp>
+    <SkipNavigation />
+    <div class="flex flex-col min-h-screen">
+      <SiteHeader />
+      <main
+        id="main-content"
+        class="flex-1"
+        role="main"
+        aria-label="Main content"
+      >
+        <NuxtPage />
+      </main>
+      <SiteFooter />
+      <BookingWidget />
+    </div>
+  </UApp>
 </template>
