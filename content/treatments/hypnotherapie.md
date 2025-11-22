@@ -1,17 +1,18 @@
-::behandeling-hero
----
-id: dd01fafe-5591-4ca2-b460-c18388237f76
----
+::behandeling-hero{#dd01fafe-5591-4ca2-b460-c18388237f76}
 ::
 
 ::behandeling-sectie
 ---
 items:
-  - "Diepe ontspanning: Met mijn stem, adem en energie begeleid ik je naar een rustige, veilige hypnose."
-  - "Contact met het onderbewuste: Je bewuste en onderbewuste gaan tijdens de sessie samenwerken."
-  - "Helende visualisaties en innerlijk werk: We gebruiken zachte beelden, gevoelens en inzichten om blokkades los te laten."
-  - "Energetische ondersteuning: Een combinatie van hypnotherapie en energetische healing voor een volledig herstel van lichaam en geest."
-image: /images/hypnotherapie.webp
+  - "Diepe ontspanning: Met mijn stem, adem en energie begeleid ik je naar een
+    rustige, veilige hypnose."
+  - "Contact met het onderbewuste: Je bewuste en onderbewuste gaan tijdens de
+    sessie samenwerken."
+  - "Helende visualisaties en innerlijk werk: We gebruiken zachte beelden,
+    gevoelens en inzichten om blokkades los te laten."
+  - "Energetische ondersteuning: Een combinatie van hypnotherapie en
+    energetische healing voor een volledig herstel van lichaam en geest."
+image: /images/clock-7791024-1280.jpg
 imageAlt: Sfeerbeeld van een hypnotherapie sessie
 title: Wat kun je verwachten?
 ---
@@ -45,10 +46,7 @@ title: Wat kun je verwachten?
   :::
 ::
 
-::uitklap-info
----
-title: Meer over hypnotherapie
----
+::uitklap-info{title="Meer over hypnotherapie"}
 ### Wat is hypnotherapie?
 
 Hypnotherapie is een zachte, therapeutische methode om contact te maken met je onderbewuste — het deel van jou dat emoties, herinneringen en overtuigingen bewaart. Tijdens een sessie blijf je volledig bewust, maar je kritische geest komt tot rust waardoor inzichten, heling en transformatie kunnen ontstaan.
@@ -66,8 +64,7 @@ Deze methode is veilig, liefdevol en toegankelijk voor iedereen.
 
 ### Hypnotherapie & Energetische Healing
 
-In mijn praktijk combineer ik hypnotherapie met energetische healing.  
-Dit zorgt voor:
+In mijn praktijk combineer ik hypnotherapie met energetische healing. :br Dit zorgt voor:
 
 - Diepere ontspanning
 - Snellere verwerking van emoties
@@ -91,5 +88,4 @@ Tijdens of na de sessie kun je merken:
 - Het is geen showhypnose zoals op tv
 - Meerdere sessies kunnen nodig zijn voor diepere patronen
 - Het is complementair en vervangt geen medische zorg
-
 ::
