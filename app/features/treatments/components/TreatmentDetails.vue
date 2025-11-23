@@ -1,31 +1,34 @@
 <script setup lang="ts">
-import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
+import { useTreatmentDetailsFormatter } from "~/composables/useTreatmentData";
 
 interface Props {
   // Display data
   duration?: number;
-  price?: number | string;
+  price?: number;
+  discountEnabled?: boolean;
+  discountPrice?: number;
   shortDescription?: string;
   showLinkButton?: boolean;
   to?: string;
   showBookButton?: boolean;
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
 
   // Customization
   title?: string;
   icon?: string;
   bookButtonText?: string;
   bookButtonLink?: string;
-  bookButtonColor?: 'primary' | 'secondary' | 'green' | 'red' | 'orange';
+  bookButtonColor?: "primary" | "secondary" | "green" | "red" | "orange";
 }
 
 const props = withDefaults(defineProps<Props>(), {
   showBookButton: true,
-  size: 'md',
-  title: '',
-  icon: 'i-mdi-clock-outline',
-  bookButtonText: 'Afspraak maken',
-  bookButtonColor: 'primary',
+  size: "md",
+  title: "",
+  icon: "i-mdi-clock-outline",
+  bookButtonText: "Afspraak maken",
+  bookButtonColor: "primary",
+  discountEnabled: false,
 });
 
 const routes = useRoutes();
@@ -33,26 +36,26 @@ const routes = useRoutes();
 // Size-based styling
 const sizeClasses = computed(() => {
   switch (props.size) {
-    case 'sm':
+    case "sm":
       return {
-        text: 'text-sm',
-        gap: 'space-y-2',
-        label: 'text-xs',
-        price: 'text-base',
+        text: "text-sm",
+        gap: "space-y-2",
+        label: "text-xs",
+        price: "text-base",
       };
-    case 'lg':
+    case "lg":
       return {
-        text: 'text-base',
-        gap: 'space-y-4',
-        label: 'text-sm',
-        price: 'text-xl',
+        text: "text-base",
+        gap: "space-y-4",
+        label: "text-sm",
+        price: "text-xl",
       };
     default:
       return {
-        text: 'text-sm',
-        gap: 'space-y-3',
-        label: 'text-xs',
-        price: 'text-lg',
+        text: "text-sm",
+        gap: "space-y-3",
+        label: "text-xs",
+        price: "text-lg",
       };
   }
 });
@@ -65,7 +68,7 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
     class="shadow-lg border border-primary-200 bg-white h-full"
     :ui="{
       base: 'flex flex-col h-full',
-      body: { base: 'flex-1 flex flex-col' }
+      body: { base: 'flex-1 flex flex-col' },
     }"
     role="region"
     :aria-labelledby="title ? 'treatment-details-title' : undefined"
@@ -107,7 +110,27 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
       <!-- Price -->
       <div v-if="price" class="flex justify-between items-center">
         <span class="text-neutral-600" :class="sizeClasses.text">Prijs:</span>
-        <span class="font-semibold text-primary-600" :class="sizeClasses.price">
+        <div
+          v-if="discountEnabled && discountPrice"
+          class="flex flex-col items-end gap-1"
+        >
+          <!-- Original priie with strikethrough -->
+          <span
+            class="font-medium text-neutral-500 line-through"
+            :class="sizeClasses.text"
+          >
+            {{ formatPrice(price) }}
+          </span>
+          <!-- Discount price in green -->
+          <span class="font-bold text-green-600" :class="sizeClasses.price">
+            {{ formatPrice(discountPrice) }}
+          </span>
+        </div>
+        <span
+          v-else
+          class="font-semibold text-primary-600"
+          :class="sizeClasses.price"
+        >
           {{ formatPrice(price) }}
         </span>
       </div>

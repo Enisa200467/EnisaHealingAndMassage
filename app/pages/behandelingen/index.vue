@@ -127,6 +127,8 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
                 :icon="treatment.icon"
                 :duration="treatment.duration"
                 :price="treatment.price"
+                :discount-enabled="treatment.discountEnabled"
+                :discount-price="treatment.discountPrice"
                 show-book-button
                 show-link-button
                 :to="getSlug(treatment.slug)"

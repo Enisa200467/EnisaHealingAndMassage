@@ -7,6 +7,8 @@ const updateTreatmentSchema = z.object({
   description: z.string().optional(),
   duration_minutes: z.number().min(1).optional(),
   price_cents: z.number().min(0).optional(),
+  discount_enabled: z.boolean().optional(),
+  discount_price_cents: z.number().min(0).optional(),
   icon: z.string().optional(),
   display_order: z.number().optional(),
   is_active: z.boolean().optional(),

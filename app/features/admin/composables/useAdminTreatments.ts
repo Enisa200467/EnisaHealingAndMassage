@@ -41,6 +41,10 @@ export const useAdminTreatments = () => {
       description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
+      discount_enabled: formData.discount_enabled,
+      discount_price_cents: formData.discount_enabled
+        ? eurosToCents(formData.discount_price_euros)
+        : undefined,
       icon: formData.icon,
       display_order: formData.display_order,
     };
@@ -56,6 +60,10 @@ export const useAdminTreatments = () => {
       description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
+      discount_enabled: formData.discount_enabled,
+      discount_price_cents: formData.discount_enabled
+        ? eurosToCents(formData.discount_price_euros)
+        : undefined,
       icon: formData.icon,
       display_order: formData.display_order,
       is_active: formData.is_active,
@@ -79,6 +87,10 @@ export const useAdminTreatments = () => {
       description: treatment.description || '',
       duration_minutes: treatment.duration_minutes,
       price_euros: centsToEuros(treatment.price_cents),
+      discount_enabled: treatment.discount_enabled || false,
+      discount_price_euros: treatment.discount_price_cents
+        ? centsToEuros(treatment.discount_price_cents)
+        : 0,
       icon: treatment.icon || '',
       display_order: treatment.display_order,
       is_active: treatment.is_active,

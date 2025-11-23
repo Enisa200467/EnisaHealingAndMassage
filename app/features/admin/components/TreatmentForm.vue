@@ -28,11 +28,21 @@ const formData = computed({
 
 // Form validation
 const isFormValid = computed(() => {
-  return (
+  const baseValid =
     formData.value.name.length >= 2 &&
     formData.value.duration_minutes > 0 &&
-    formData.value.price_euros > 0
-  );
+    formData.value.price_euros > 0;
+
+  // If discount is enabled, validate discount price
+  if (formData.value.discount_enabled) {
+    return (
+      baseValid &&
+      formData.value.discount_price_euros > 0 &&
+      formData.value.discount_price_euros < formData.value.price_euros
+    );
+  }
+
+  return baseValid;
 });
 
 const handleSubmit = () => {
@@ -101,6 +111,39 @@ const handleSubmit = () => {
             placeholder="65.00"
             :disabled="loading"
           />
+        </UFormField>
+      </div>
+
+      <!-- Discount Section -->
+      <div class="space-y-4">
+        <UFormField>
+          <UCheckbox
+            v-model="formData.discount_enabled"
+            label="Korting ingeschakeld"
+            :disabled="loading"
+          />
+          <template #help>
+            Toon een kortingsprijs voor deze behandeling
+          </template>
+        </UFormField>
+
+        <!-- Discount Price (only shown when discount is enabled) -->
+        <UFormField
+          v-if="formData.discount_enabled"
+          label="Kortingsprijs (€)"
+          required
+        >
+          <UInput
+            v-model.number="formData.discount_price_euros"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="55.00"
+            :disabled="loading"
+          />
+          <template #help>
+            Moet lager zijn dan de originele prijs
+          </template>
         </UFormField>
       </div>
     </div>

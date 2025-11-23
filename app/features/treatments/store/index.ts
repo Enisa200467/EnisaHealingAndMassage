@@ -12,6 +12,8 @@ export interface TreatmentData {
   intensityLabel?: string;
   duration?: string;
   price?: string;
+  discountEnabled?: boolean;
+  discountPrice?: string;
   display_order?: number;
 }
 
@@ -48,6 +50,10 @@ export const useTreatmentStore = defineStore('treatments', () => {
     intensityLabel: treatment.intensity_label || undefined,
     duration: formatDuration(treatment.duration_minutes),
     price: formatPrice(treatment.price_cents),
+    discountEnabled: treatment.discount_enabled || false,
+    discountPrice: treatment.discount_price_cents
+      ? formatPrice(treatment.discount_price_cents)
+      : undefined,
     display_order: treatment.display_order,
   });
 

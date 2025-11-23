@@ -35,6 +35,8 @@
         v-for="treatment in treatments"
         :key="treatment.title"
         :short-description="treatment.description"
+        :discount-enabled="treatment.discountEnabled"
+        :discount-price="treatment.discountPrice"
         :show-link-button="false"
         :book-button-text="`Boek ${treatment.title}`"
         :book-button-link="`/boeken?treatment=${treatment.slug}`"

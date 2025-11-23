@@ -1,45 +1,48 @@
 <script setup lang="ts">
+import { useVideos } from "~/composables/useVideos";
+
 const { setPageSEO, businessInfo } = useGlobalSEO();
+const { aboutVideos } = useVideos();
 
 // Generate Person schema for Enisa
 const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Enisa',
-  jobTitle: 'Massagetherapeut en Healing Practitioner',
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Enisa",
+  jobTitle: "Massagetherapeut en Healing Practitioner",
   description:
-    'Gecertificeerd massagetherapeut en healing practitioner gespecialiseerd in holistische gezondheid en welzijn.',
+    "Gecertificeerd massagetherapeut en healing practitioner gespecialiseerd in holistische gezondheid en welzijn.",
   worksFor: {
-    '@type': 'Organization',
+    "@type": "Organization",
     name: businessInfo.name,
     url: businessInfo.url,
   },
   hasCredential: [
     {
-      '@type': 'EducationalOccupationalCredential',
-      name: 'Gecertificeerd Massagetherapeut (NVMT)',
-      credentialCategory: 'Professional Certification',
+      "@type": "EducationalOccupationalCredential",
+      name: "Gecertificeerd Massagetherapeut (NVMT)",
+      credentialCategory: "Professional Certification",
     },
     {
-      '@type': 'EducationalOccupationalCredential',
-      name: 'Reiki Master Level III',
-      credentialCategory: 'Professional Certification',
+      "@type": "EducationalOccupationalCredential",
+      name: "Reiki Master Level III",
+      credentialCategory: "Professional Certification",
     },
     {
-      '@type': 'EducationalOccupationalCredential',
-      name: 'Chakra Healing Specialist',
-      credentialCategory: 'Professional Certification',
+      "@type": "EducationalOccupationalCredential",
+      name: "Chakra Healing Specialist",
+      credentialCategory: "Professional Certification",
     },
   ],
   knowsAbout: [
-    'Massage Therapy',
-    'Energy Healing',
-    'Reiki',
-    'Chakra Balancing',
-    'Holistic Health',
-    'Stress Management',
-    'Swedish Massage',
-    'Sports Massage',
+    "Massage Therapy",
+    "Energy Healing",
+    "Reiki",
+    "Chakra Balancing",
+    "Holistic Health",
+    "Stress Management",
+    "Swedish Massage",
+    "Sports Massage",
   ],
   email: businessInfo.email,
   telephone: businessInfo.telephone,
@@ -49,11 +52,11 @@ const personSchema = {
 
 // Set comprehensive SEO with person schema
 setPageSEO({
-  title: 'Over Mij - Enisa Healing & Massage',
+  title: "Over Mij - Enisa Healing & Massage",
   description:
-    'Leer meer over Enisa, gecertificeerd massagetherapeut en healing practitioner met 10+ jaar ervaring. Ontdek haar achtergrond, certificeringen en passie voor holistische gezondheid.',
-  path: '/over-mij',
-  type: 'profile',
+    "Leer meer over Enisa, gecertificeerd massagetherapeut en healing practitioner met 10+ jaar ervaring. Ontdek haar achtergrond, certificeringen en passie voor holistische gezondheid.",
+  path: "/over-mij",
+  type: "profile",
   structuredData: [personSchema],
 });
 </script>
@@ -295,6 +298,15 @@ setPageSEO({
             </div>
           </div>
         </UCard>
+      </section>
+
+      <!-- Video Section -->
+      <section class="mb-12">
+        <VideoCarousel
+          :videos="aboutVideos"
+          heading="Ontdek Meer Over Mijn Werk"
+          aria-label="Video's over Enisa en haar werkwijze"
+        />
       </section>
 
       <!-- Call to Action -->

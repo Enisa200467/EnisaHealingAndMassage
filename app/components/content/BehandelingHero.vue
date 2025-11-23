@@ -9,29 +9,14 @@ interface Props {
 
 const props = defineProps<Props>();
 
-// Try to inject treatment data from parent page
-const injectedTreatmentData = inject<any>('treatmentData', null);
-
-// Only fetch if ID is provided and no injected data
-const shouldFetch = props.id && !injectedTreatmentData;
-const { data: fetchedData, status } = shouldFetch
-  ? await useFetch<Treatment>(`/api/treatments/${props.id}`)
-  : { data: ref(null), status: ref('success') };
-
-// Use injected data or fetched data
-const treatmentData = computed(() => {
-  if (injectedTreatmentData) {
-    // Convert injected data format to Treatment format
-    return {
-      name: injectedTreatmentData.title,
-      description: injectedTreatmentData.description,
-      price_cents: injectedTreatmentData.price ? parseInt(injectedTreatmentData.price.replace(/[€\s]/g, '')) * 100 : undefined,
-      duration_minutes: injectedTreatmentData.duration ? parseInt(injectedTreatmentData.duration) : undefined,
-      icon: injectedTreatmentData.icon,
-    } as Treatment;
+// Always fetch from database for SEO and consistency
+const { data: treatmentData } = await useFetch<Treatment>(
+  `/api/treatments/${props.id}`,
+  {
+    // This will run server-side during SSR, making it SEO-friendly
+    server: true,
   }
-  return fetchedData.value;
-});
+);
 
 // Computed values that prioritize database data over content data
 const displayTitle = computed(() => treatmentData.value?.name);
@@ -39,6 +24,8 @@ const displaySubtitle = computed(() => treatmentData.value?.description || props
 const displayPrice = computed(() => treatmentData.value?.price_cents);
 const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
+const displayDiscountEnabled = computed(() => treatmentData.value?.discount_enabled || false);
+const displayDiscountPrice = computed(() => treatmentData.value?.discount_price_cents);
 </script>
 
 <template>
@@ -64,6 +51,8 @@ const displayIcon = computed(() => treatmentData.value?.icon);
             variant="card"
             :duration="displayDuration"
             :price="displayPrice"
+            :discount-enabled="displayDiscountEnabled"
+            :discount-price="displayDiscountPrice"
             show-book-button
           />
         </div>
