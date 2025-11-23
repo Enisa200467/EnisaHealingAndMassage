@@ -7,6 +7,9 @@ interface Props {
   price?: number;
   discountEnabled?: boolean;
   discountPrice?: number;
+  packageEnabled?: boolean;
+  packageSessions?: number;
+  packagePrice?: number | string;
   shortDescription?: string;
   showLinkButton?: boolean;
   to?: string;
@@ -29,6 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
   bookButtonText: "Afspraak maken",
   bookButtonColor: "primary",
   discountEnabled: false,
+  packageEnabled: false,
 });
 
 const routes = useRoutes();
@@ -133,6 +137,38 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
         >
           {{ formatPrice(price) }}
         </span>
+      </div>
+
+      <!-- Package Deal -->
+      <div
+        v-if="packageEnabled && packageSessions && packagePrice"
+        class="mt-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg border border-purple-200 dark:border-purple-700"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <UIcon
+              name="i-mdi-package-variant"
+              class="w-4 h-4 text-purple-600 dark:text-purple-400"
+            />
+            <span class="font-semibold text-purple-900 dark:text-purple-100" :class="sizeClasses.text">
+              Pakketdeal
+            </span>
+          </div>
+          <UBadge color="purple" variant="subtle" size="xs">
+            Bespaar!
+          </UBadge>
+        </div>
+        <div class="mt-2 flex items-baseline justify-between">
+          <span class="text-purple-800 dark:text-purple-200" :class="sizeClasses.text">
+            {{ packageSessions }} sessies
+          </span>
+          <span
+            class="font-bold text-purple-600 dark:text-purple-400"
+            :class="sizeClasses.price"
+          >
+            {{ formatPrice(packagePrice) }}
+          </span>
+        </div>
       </div>
 
       <!-- Spacer to push slot content to bottom -->

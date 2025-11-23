@@ -45,6 +45,13 @@ export const useAdminTreatments = () => {
       discount_price_cents: formData.discount_enabled
         ? eurosToCents(formData.discount_price_euros)
         : undefined,
+      package_enabled: formData.package_enabled,
+      package_sessions: formData.package_enabled
+        ? formData.package_sessions
+        : undefined,
+      package_price_cents: formData.package_enabled
+        ? eurosToCents(formData.package_price_euros)
+        : undefined,
       icon: formData.icon,
       display_order: formData.display_order,
     };
@@ -63,6 +70,13 @@ export const useAdminTreatments = () => {
       discount_enabled: formData.discount_enabled,
       discount_price_cents: formData.discount_enabled
         ? eurosToCents(formData.discount_price_euros)
+        : undefined,
+      package_enabled: formData.package_enabled,
+      package_sessions: formData.package_enabled
+        ? formData.package_sessions
+        : undefined,
+      package_price_cents: formData.package_enabled
+        ? eurosToCents(formData.package_price_euros)
         : undefined,
       icon: formData.icon,
       display_order: formData.display_order,
@@ -90,6 +104,11 @@ export const useAdminTreatments = () => {
       discount_enabled: treatment.discount_enabled || false,
       discount_price_euros: treatment.discount_price_cents
         ? centsToEuros(treatment.discount_price_cents)
+        : 0,
+      package_enabled: treatment.package_enabled || false,
+      package_sessions: treatment.package_sessions || 5,
+      package_price_euros: treatment.package_price_cents
+        ? centsToEuros(treatment.package_price_cents)
         : 0,
       icon: treatment.icon || '',
       display_order: treatment.display_order,

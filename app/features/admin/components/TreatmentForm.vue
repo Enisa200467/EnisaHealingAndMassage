@@ -35,11 +35,19 @@ const isFormValid = computed(() => {
 
   // If discount is enabled, validate discount price
   if (formData.value.discount_enabled) {
-    return (
-      baseValid &&
+    const discountValid =
       formData.value.discount_price_euros > 0 &&
-      formData.value.discount_price_euros < formData.value.price_euros
-    );
+      formData.value.discount_price_euros < formData.value.price_euros;
+    if (!discountValid) return false;
+  }
+
+  // If package is enabled, validate package fields
+  if (formData.value.package_enabled) {
+    const packageValid =
+      formData.value.package_sessions > 1 &&
+      formData.value.package_price_euros > 0 &&
+      formData.value.package_price_euros < formData.value.price_euros * formData.value.package_sessions;
+    if (!packageValid) return false;
   }
 
   return baseValid;
@@ -145,6 +153,53 @@ const handleSubmit = () => {
             Moet lager zijn dan de originele prijs
           </template>
         </UFormField>
+      </div>
+
+      <!-- Package Section -->
+      <div class="space-y-4">
+        <UFormField>
+          <UCheckbox
+            v-model="formData.package_enabled"
+            label="Pakketaanbieding ingeschakeld"
+            :disabled="loading"
+          />
+          <template #help>
+            Bied deze behandeling aan als pakket van meerdere sessies
+          </template>
+        </UFormField>
+
+        <div
+          v-if="formData.package_enabled"
+          class="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          <!-- Package Sessions -->
+          <UFormField label="Aantal sessies" required>
+            <UInput
+              v-model.number="formData.package_sessions"
+              type="number"
+              min="2"
+              step="1"
+              placeholder="5"
+              :disabled="loading"
+            />
+            <template #help> Minimaal 2 sessies </template>
+          </UFormField>
+
+          <!-- Package Price -->
+          <UFormField label="Pakketprijs (€)" required>
+            <UInput
+              v-model.number="formData.package_price_euros"
+              type="number"
+              min="0"
+              step="0.01"
+              placeholder="250.00"
+              :disabled="loading"
+            />
+            <template #help>
+              Moet lager zijn dan {{ formData.package_sessions }}x de losse prijs
+            </template>
+          </UFormField>
+        </div>
       </div>
     </div>
 

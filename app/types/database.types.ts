@@ -19,6 +19,9 @@ export type Database = {
           price_cents: number
           discount_enabled: boolean
           discount_price_cents: number | null
+          package_enabled: boolean
+          package_sessions: number | null
+          package_price_cents: number | null
           icon: string | null
           is_active: boolean
           display_order: number
@@ -34,6 +37,9 @@ export type Database = {
           price_cents: number
           discount_enabled?: boolean
           discount_price_cents?: number | null
+          package_enabled?: boolean
+          package_sessions?: number | null
+          package_price_cents?: number | null
           icon?: string | null
           is_active?: boolean
           display_order?: number
@@ -49,6 +55,9 @@ export type Database = {
           price_cents?: number
           discount_enabled?: boolean
           discount_price_cents?: number | null
+          package_enabled?: boolean
+          package_sessions?: number | null
+          package_price_cents?: number | null
           icon?: string | null
           is_active?: boolean
           display_order?: number

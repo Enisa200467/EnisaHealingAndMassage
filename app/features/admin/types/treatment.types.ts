@@ -7,6 +7,9 @@ export interface Treatment {
   price_cents: number;
   discount_enabled: boolean;
   discount_price_cents?: number;
+  package_enabled: boolean;
+  package_sessions?: number;
+  package_price_cents?: number;
   icon?: string;
   is_active: boolean;
   display_order: number;
@@ -22,6 +25,9 @@ export interface CreateTreatmentInput {
   price_cents: number;
   discount_enabled?: boolean;
   discount_price_cents?: number;
+  package_enabled?: boolean;
+  package_sessions?: number;
+  package_price_cents?: number;
   icon?: string;
   display_order?: number;
 }
@@ -38,6 +44,9 @@ export interface TreatmentFormData {
   price_euros: number; // For form display, converted to/from price_cents
   discount_enabled: boolean;
   discount_price_euros: number; // For form display, converted to/from discount_price_cents
+  package_enabled: boolean;
+  package_sessions: number; // Number of sessions in package
+  package_price_euros: number; // For form display, converted to/from package_price_cents
   icon: string;
   display_order: number;
   is_active: boolean;
