@@ -8,7 +8,11 @@
     "generate": "NODE_OPTIONS='--max-old-space-size=4096' nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "supabase:types": "dotenv -e .env.development -- supabase gen types typescript --project-id qayvyoqmbebbvcxhsuwf > types/database.types.ts"
+    "supabase:types": "dotenv -e .env.development -- supabase gen types typescript --project-id qayvyoqmbebbvcxhsuwf > types/database.types.ts",
+    "migrate:reviews": "dotenv -e .env -- bun run scripts/upload-reviews.ts",
+    "migrate:reviews:clean": "dotenv -e .env -- bun run scripts/clean-upload-reviews.ts",
+    "adjust:ratings": "dotenv -e .env -- bun run scripts/adjust-ratings.ts",
+    "check:duplicates": "dotenv -e .env -- bun run scripts/check-duplicates.ts"
   },
   "dependencies": {
     "@nuxt/content": "3.4.0",

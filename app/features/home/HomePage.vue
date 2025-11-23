@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import { useVideos } from "~/composables/useVideos";
+import { BUSINESS_INFO, getSchemaAddress, getSchemaContactPoint } from "~/constants/businessInfo";
 
 const { promotionalVideos } = useVideos();
 
@@ -42,38 +43,27 @@ useSeoMeta({
 // Add structured data for the business
 useSchemaOrg([
   defineOrganization({
-    name: "Enisa Healing & Massage",
-    url: "https://enisahealingmassage.nl",
+    name: BUSINESS_INFO.name,
+    url: BUSINESS_INFO.url,
     logo: "/images/logo.jpg",
     sameAs: [
       // Add social media URLs when available
     ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+31-6-12345678",
-      contactType: "customer service",
-      areaServed: "NL",
-      availableLanguage: ["Dutch", "English"],
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "NL",
-      addressLocality: "Amsterdam", // Update with actual location
-      postalCode: "1000 AA", // Update with actual postal code
-    },
+    contactPoint: getSchemaContactPoint(),
+    address: getSchemaAddress(),
   }),
   defineLocalBusiness({
-    name: "Enisa Healing & Massage",
-    description:
-      "Professionele massage en healing praktijk gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.",
+    name: BUSINESS_INFO.name,
+    description: BUSINESS_INFO.description,
     image: "/images/hero-banner.jpg",
-    telephone: "+31-6-12345678",
-    url: "https://enisahealingmassage.nl",
-    priceRange: "€40-€90",
-    openingHours: ["Mo-Fr 09:00-18:00", "Sa 09:00-15:00"],
+    telephone: BUSINESS_INFO.contact.phoneInternational,
+    url: BUSINESS_INFO.url,
+    priceRange: BUSINESS_INFO.priceRange,
+    openingHours: BUSINESS_INFO.hours.schemaFormat,
+    address: getSchemaAddress(),
     serviceArea: {
       "@type": "City",
-      name: "Amsterdam", // Update with actual service area
+      name: BUSINESS_INFO.address.city,
     },
   }),
 ]);

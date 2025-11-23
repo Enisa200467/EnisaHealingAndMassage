@@ -6,7 +6,7 @@ const reviewSubmissionSchema = z.object({
   email: z.string().email('Voer een geldig e-mailadres in'),
   treatment: z.string().optional(),
   rating: z.number().min(1).max(5),
-  review: z.string().min(10).max(1000),
+  review: z.string().min(10).max(5000),
 });
 
 export default defineEventHandler(async (event) => {

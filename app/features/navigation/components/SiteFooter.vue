@@ -235,13 +235,21 @@ const { data: footerReviewsData, pending: isLoading } = await useAsyncData(
   }
 );
 
+// Helper function to truncate review text
+const truncateReviewText = (text: string, maxLength = 150) => {
+  if (text.length <= maxLength) return text;
+  // Find the last space before maxLength to avoid cutting words
+  const truncateAt = text.lastIndexOf(' ', maxLength);
+  return text.substring(0, truncateAt > 0 ? truncateAt : maxLength) + '...';
+};
+
 // Transform reviews for display
 const displayReviews = computed(() => {
   return (footerReviewsData.value?.reviews || []).map((review) => ({
     id: review.id,
     author: review.name,
     score: review.rating,
-    text: review.review,
+    text: truncateReviewText(review.review),
   }));
 });
 
