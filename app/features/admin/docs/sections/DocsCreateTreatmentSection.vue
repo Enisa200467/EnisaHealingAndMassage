@@ -1,12 +1,12 @@
 <script setup lang="ts">
 interface Emits {
-  (e: 'nav-to-content'): void;
+  (e: "nav-to-content"): void;
 }
 
 const emit = defineEmits<Emits>();
 
 const handleNavigateToContent = () => {
-  emit('nav-to-content');
+  emit("nav-to-content");
 };
 </script>
 
@@ -28,7 +28,7 @@ const handleNavigateToContent = () => {
         </div>
 
         <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">
-          1. Database Record Aanmaken
+          1. Nieuwe behandeling aanmaken
         </h3>
         <ol class="space-y-3">
           <li>
@@ -54,20 +54,8 @@ const handleNavigateToContent = () => {
             <strong>Vul de vereiste velden in:</strong>
             <ul class="mt-2">
               <li><strong>Naam:</strong> Volledige naam van de behandeling</li>
-              <li>
-                <strong>Slug:</strong> URL-vriendelijke versie (automatisch
-                gegenereerd)
-              </li>
               <li><strong>Prijs:</strong> In euro's (bijvoorbeeld: 65.00)</li>
               <li><strong>Duur:</strong> In minuten (bijvoorbeeld: 60)</li>
-              <li>
-                <strong>Intensiteit:</strong> Schaal 1-5 (1 = Zeer Zacht, 5 =
-                Zeer Stevig)
-              </li>
-              <li>
-                <strong>Intensiteit Label:</strong> Tekstuele beschrijving
-                (optioneel)
-              </li>
               <li>
                 <strong>Icoon:</strong> Icon naam (bijvoorbeeld: i-mdi-spa)
               </li>
@@ -102,8 +90,8 @@ const handleNavigateToContent = () => {
           2. Content Bestand Aanmaken
         </h3>
         <p class="leading-relaxed mb-4">
-          Na het aanmaken van de database record, moet je een bijbehorend
-          content bestand maken via Nuxt Studio.
+          Na het aanmaken van de behandeling in het dashboard, moet je een
+          bijbehorend content bestand maken via Nuxt Studio.
         </p>
 
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
@@ -117,19 +105,18 @@ const handleNavigateToContent = () => {
                 Ga naar Content Beheer
               </h4>
               <p class="text-blue-800 mb-4 leading-relaxed">
-                Voor gedetailleerde instructies over het aanmaken van content
-                bestanden, het gebruik van templates, en het werken met Nuxt
-                Studio, bekijk de Content Beheer sectie.
-              </p>
-              <p class="text-sm text-blue-700 mb-4">
-                Je vindt daar een complete template en stap-voor-stap
-                instructies voor het maken van behandeling content.
+                Dupliceer een bestaande behandeling en pas de naam van het
+                bestand aan naar de naam zoals aangemaakt in het dashboard.
+                Daarna is het nodig om de tekst en structuur van de kopie aan te
+                passen. Hiervoor is het makkelijkst om de bestaande ChatGPT Bot
+                te gebruiken. Deze is getrained om de data zo te geven dat het
+                makkelijk te kopieren is in de juiste structuur.
               </p>
               <button
                 class="text-sm text-blue-600 font-medium hover:text-blue-800 transition-all duration-200 cursor-pointer bg-blue-100 hover:bg-blue-200 px-4 py-2 rounded-lg border border-blue-300 hover:border-blue-400 hover:shadow-sm flex items-center gap-2 group"
                 @click="handleNavigateToContent"
               >
-                <span>📍 Content Beheer → Content Bestand Template</span>
+                <span>📍 Content Beheer </span>
                 <UIcon
                   name="i-mdi-arrow-right"
                   class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"

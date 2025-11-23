@@ -77,7 +77,7 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
     role="region"
     :aria-labelledby="title ? 'treatment-details-title' : undefined"
   >
-    <template #header>
+    <template #header v-if="title">
       <slot name="header">
         <div v-if="title" class="flex items-center gap-2">
           <UIcon
@@ -103,16 +103,11 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
         </p>
       </div>
 
-      <!-- Duration -->
-      <div v-if="duration" class="flex justify-between items-center">
-        <span class="text-neutral-600" :class="sizeClasses.text">Duur:</span>
-        <span class="font-medium text-neutral-900" :class="sizeClasses.text">
-          {{ formatDuration(duration) }}
-        </span>
-      </div>
-
       <!-- Price -->
-      <div v-if="price" class="flex justify-between items-center">
+      <div
+        v-if="!packageEnabled && price"
+        class="flex justify-between items-center"
+      >
         <span class="text-neutral-600" :class="sizeClasses.text">Prijs:</span>
         <div
           v-if="discountEnabled && discountPrice"
@@ -150,16 +145,19 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
               name="i-mdi-package-variant"
               class="w-4 h-4 text-purple-600 dark:text-purple-400"
             />
-            <span class="font-semibold text-purple-900 dark:text-purple-100" :class="sizeClasses.text">
-              Pakketdeal
+            <span
+              class="font-semibold text-purple-900 dark:text-purple-100"
+              :class="sizeClasses.text"
+            >
+              Pakket
             </span>
           </div>
-          <UBadge color="purple" variant="subtle" size="xs">
-            Bespaar!
-          </UBadge>
         </div>
         <div class="mt-2 flex items-baseline justify-between">
-          <span class="text-purple-800 dark:text-purple-200" :class="sizeClasses.text">
+          <span
+            class="text-purple-800 dark:text-purple-200"
+            :class="sizeClasses.text"
+          >
             {{ packageSessions }} sessies
           </span>
           <span
@@ -169,6 +167,15 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
             {{ formatPrice(packagePrice) }}
           </span>
         </div>
+      </div>
+
+      <!-- Duration -->
+      <div v-if="duration" class="flex justify-between items-center">
+        <span class="text-neutral-600" :class="sizeClasses.text">Duur:</span>
+        <span class="font-medium text-neutral-900" :class="sizeClasses.text">
+          {{ formatDuration(duration) }}
+          {{ packageEnabled ? "per sessie" : "" }}
+        </span>
       </div>
 
       <!-- Spacer to push slot content to bottom -->
