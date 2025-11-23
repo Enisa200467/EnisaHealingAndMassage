@@ -1,4 +1,4 @@
-::behandeling-hero{#dd01fafe-5591-4ca2-b460-c18388237f76}
+::behandeling-hero{id=dd01fafe-5591-4ca2-b460-c18388237f76}
 ::
 
 ::behandeling-sectie
