@@ -7,7 +7,6 @@ export interface TreatmentData {
   path: string;
   title: string;
   description?: string;
-  category?: string;
   icon?: string;
   intensity?: number;
   intensityLabel?: string;
@@ -16,14 +15,6 @@ export interface TreatmentData {
   display_order?: number;
 }
 
-interface TreatmentCategory {
-  title: string;
-  type: TreatmentType;
-  items: TreatmentData[];
-}
-
-type TreatmentType = 'healing' | 'massage';
-
 export const useTreatmentStore = defineStore('treatments', () => {
   const supabase = useSupabaseClient<Database>();
 
@@ -31,55 +22,6 @@ export const useTreatmentStore = defineStore('treatments', () => {
   const treatments = ref<Treatment[]>([]);
   const loading = ref(false);
   const error = ref<string | null>(null);
-
-  // Computed treatment categories
-  const treatmentCategories = computed<TreatmentCategory[]>(() => {
-    const categories: TreatmentCategory[] = [];
-
-    // Group active treatments by category
-    const activeTreatments = treatments.value.filter((t) => t.is_active);
-
-    activeTreatments.forEach((treatment) => {
-      const category = treatment.category || 'other';
-
-      const existingCategory = categories.find(
-        (cat) => cat.type === category.toLocaleLowerCase()
-      );
-
-      if (!existingCategory) {
-        categories.push({
-          title: getCategoryTitle(category),
-          items: [formatTreatment(treatment)],
-          type: category as TreatmentType,
-        });
-      } else {
-        existingCategory.items.push(formatTreatment(treatment));
-      }
-    });
-
-    // Sort items within each category by display_order
-    Object.values(categories).forEach((category) => {
-      category.items.sort(
-        (a, b) => (a.display_order || 0) - (b.display_order || 0)
-      );
-    });
-
-    return categories;
-  });
-
-  const healingTreatments = computed(() => {
-    return (
-      treatmentCategories.value.filter((cat) => cat.type === 'healing')[0]
-        ?.items || []
-    );
-  });
-
-  const massageTreatments = computed(() => {
-    return (
-      treatmentCategories.value.filter((cat) => cat.type === 'massage')[0]
-        ?.items || []
-    );
-  });
   const formatDuration = (minutes: number): string => {
     if (minutes >= 60) {
       const hours = Math.floor(minutes / 60);
@@ -101,7 +43,6 @@ export const useTreatmentStore = defineStore('treatments', () => {
     path: `/behandelingen/${treatment.slug}`,
     title: treatment.name,
     description: treatment.description || undefined,
-    category: treatment.category || undefined,
     icon: treatment.icon || undefined,
     intensity: treatment.intensity || undefined,
     intensityLabel: treatment.intensity_label || undefined,
@@ -109,20 +50,6 @@ export const useTreatmentStore = defineStore('treatments', () => {
     price: formatPrice(treatment.price_cents),
     display_order: treatment.display_order,
   });
-
-  // Get category title with proper formatting
-  const getCategoryTitle = (category: string): string => {
-    const titleMap: Record<string, string> = {
-      healing: 'Healing',
-      massage: 'Massage',
-      therapy: 'Therapie',
-      other: 'Overig',
-    };
-
-    return (
-      titleMap[category] || category.charAt(0).toUpperCase() + category.slice(1)
-    );
-  };
 
   // Fetch treatments from Supabase
   const fetchTreatments = async (): Promise<void> => {
@@ -181,11 +108,6 @@ export const useTreatmentStore = defineStore('treatments', () => {
     treatments: treatments,
     loading: loading,
     error: error,
-    healingTreatments: healingTreatments,
-    massageTreatments: massageTreatments,
-
-    // Computed
-    treatmentCategories: treatmentCategories,
 
     // Methods
     fetchTreatments,

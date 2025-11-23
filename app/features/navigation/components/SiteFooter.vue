@@ -14,31 +14,19 @@
             <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
               Behandelingen
             </h4>
-            <template
-              v-for="category in treatmentCategories"
-              :key="category.title"
-            >
-              <div class="mb-4">
-                <h5
-                  class="font-medium text-neutral-800 dark:text-neutral-200 mb-2"
+            <ul class="space-y-2">
+              <li
+                v-for="treatment in allTreatments"
+                :key="treatment.title"
+              >
+                <ULink
+                  :to="treatment.path"
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
                 >
-                  {{ category.title }}
-                </h5>
-                <ul class="space-y-2">
-                  <li
-                    v-for="treatment in category.items"
-                    :key="treatment.title"
-                  >
-                    <ULink
-                      :to="useTreatmentStore().getTreatmentPath(treatment.slug)"
-                      class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
-                    >
-                      {{ treatment.title }}
-                    </ULink>
-                  </li>
-                </ul>
-              </div>
-            </template>
+                  {{ treatment.title }}
+                </ULink>
+              </li>
+            </ul>
           </div>
 
           <!-- Column 2: Praktijk Info -->
@@ -199,7 +187,15 @@ import type { Review, ReviewStats } from '~/types/reviews';
 // Use routes composable for centralized route management
 const routes = useRoutes();
 
-const { treatmentCategories } = useTreatmentStore();
+const treatmentStore = useTreatmentStore();
+
+// Get all active treatments
+const allTreatments = computed(() => {
+  return treatmentStore.treatments
+    .filter((t) => t.is_active)
+    .map((t) => treatmentStore.formatTreatment(t))
+    .sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
+});
 
 // Reactively define footer links based on routes
 const footerLinks = computed(() => ({

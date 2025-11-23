@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { TreatmentFormData } from '../types/treatment.types';
 import {
-  TREATMENT_CATEGORIES,
-  INTENSITY_LEVELS,
   COMMON_ICONS,
 } from '../types/treatment.types';
 
@@ -33,22 +31,9 @@ const isFormValid = computed(() => {
   return (
     formData.value.name.length >= 2 &&
     formData.value.duration_minutes > 0 &&
-    formData.value.price_euros > 0 &&
-    formData.value.intensity >= 1 &&
-    formData.value.intensity <= 5
+    formData.value.price_euros > 0
   );
 });
-
-// Auto-generate intensity label based on intensity level
-watch(
-  () => formData.value.intensity,
-  (newIntensity) => {
-    const level = INTENSITY_LEVELS.find((l) => l.value === newIntensity);
-    if (level && !formData.value.intensity_label) {
-      formData.value.intensity_label = level.label;
-    }
-  }
-);
 
 const handleSubmit = () => {
   if (isFormValid.value) {
@@ -85,16 +70,6 @@ const handleSubmit = () => {
             :disabled="loading"
           />
         </UFormField>
-
-        <!-- Category -->
-        <UFormField label="Categorie">
-          <USelect
-            v-model="formData.category"
-            :items="TREATMENT_CATEGORIES"
-            placeholder="Selecteer een categorie"
-            :disabled="loading"
-          />
-        </UFormField>
       </div>
     </div>
 
@@ -127,51 +102,6 @@ const handleSubmit = () => {
             :disabled="loading"
           />
         </UFormField>
-      </div>
-    </div>
-
-    <!-- Intensity -->
-    <div class="space-y-4">
-      <h3 class="text-lg font-semibold text-neutral-900">Intensiteit</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Intensity Level -->
-        <UFormField label="Intensiteitsniveau" required>
-          <USelect
-            v-model="formData.intensity"
-            :items="INTENSITY_LEVELS"
-            placeholder="Selecteer intensiteit"
-            :disabled="loading"
-          />
-        </UFormField>
-
-        <!-- Custom Intensity Label -->
-        <UFormField label="Intensiteit label (optioneel)">
-          <UInput
-            v-model="formData.intensity_label"
-            placeholder="Bijv. Zeer Zacht (Energetisch werk)"
-            :disabled="loading"
-          />
-        </UFormField>
-      </div>
-
-      <!-- Intensity Preview -->
-      <div class="flex items-center space-x-2 text-sm text-neutral-600">
-        <span>Preview:</span>
-        <div class="flex space-x-1">
-          <div
-            v-for="i in 5"
-            :key="i"
-            class="w-2 h-2 rounded-full"
-            :class="
-              i <= formData.intensity ? 'bg-primary-500' : 'bg-neutral-300'
-            "
-          />
-        </div>
-        <span>{{
-          formData.intensity_label ||
-          INTENSITY_LEVELS.find((l) => l.value === formData.intensity)?.label
-        }}</span>
       </div>
     </div>
 

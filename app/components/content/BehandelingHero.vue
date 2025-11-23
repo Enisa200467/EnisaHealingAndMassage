@@ -28,21 +28,10 @@ const treatmentData = computed(() => {
       price_cents: injectedTreatmentData.price ? parseInt(injectedTreatmentData.price.replace(/[€\s]/g, '')) * 100 : undefined,
       duration_minutes: injectedTreatmentData.duration ? parseInt(injectedTreatmentData.duration) : undefined,
       icon: injectedTreatmentData.icon,
-      intensity: injectedTreatmentData.intensity,
-      intensity_label: injectedTreatmentData.intensityLabel,
     } as Treatment;
   }
   return fetchedData.value;
 });
-
-// Intensity labels for each rating
-const intensityLabels = {
-  1: 'Zeer Zacht',
-  2: 'Zacht', 
-  3: 'Medium',
-  4: 'Stevig',
-  5: 'Zeer Stevig'
-} as const;
 
 // Computed values that prioritize database data over content data
 const displayTitle = computed(() => treatmentData.value?.name);
@@ -50,16 +39,6 @@ const displaySubtitle = computed(() => treatmentData.value?.description || props
 const displayPrice = computed(() => treatmentData.value?.price_cents);
 const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
-
-const intensityData = computed(() => {
-  const intensity = treatmentData.value?.intensity;
-  if (!intensity) return null;
-
-  const rating = Math.min(Math.max(intensity, 1), 5);
-  const label = treatmentData.value?.intensity_label || intensityLabels[rating as keyof typeof intensityLabels];
-
-  return { rating, label };
-});
 </script>
 
 <template>
@@ -85,8 +64,6 @@ const intensityData = computed(() => {
             variant="card"
             :duration="displayDuration"
             :price="displayPrice"
-            :intensity="intensityData?.rating"
-            :intensity-label="intensityData?.label"
             show-book-button
           />
         </div>

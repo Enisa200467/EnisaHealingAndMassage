@@ -7,22 +7,12 @@ interface TreatmentData {
   path: string;
   title: string;
   description?: string;
-  category?: string;
   icon?: string;
   intensity?: number;
   intensityLabel?: string;
   duration?: string;
   price?: string;
   display_order?: number;
-}
-
-interface TreatmentCategory {
-  title: string;
-  items: TreatmentData[];
-}
-
-interface TreatmentCategories {
-  [key: string]: TreatmentCategory;
 }
 
 /**
@@ -36,36 +26,6 @@ export const useTreatments = () => {
   const treatments = ref<Treatment[]>([]);
   const loading = ref(false);
   const error = ref<string | null>(null);
-
-  // Computed treatment categories
-  const treatmentCategories = computed<TreatmentCategories>(() => {
-    const categories: TreatmentCategories = {};
-
-    // Group active treatments by category
-    const activeTreatments = treatments.value.filter((t) => t.is_active);
-
-    activeTreatments.forEach((treatment) => {
-      const category = treatment.category || 'other';
-
-      if (!categories[category]) {
-        categories[category] = {
-          title: getCategoryTitle(category),
-          items: [],
-        };
-      }
-
-      categories[category].items.push(formatTreatment(treatment));
-    });
-
-    // Sort items within each category by display_order
-    Object.values(categories).forEach((category) => {
-      category.items.sort(
-        (a, b) => (a.display_order || 0) - (b.display_order || 0)
-      );
-    });
-
-    return categories;
-  });
 
   const formatDuration = (minutes: number): string => {
     if (minutes >= 60) {
@@ -88,7 +48,6 @@ export const useTreatments = () => {
     path: `/behandelingen/${treatment.slug}`,
     title: treatment.name,
     description: treatment.description || undefined,
-    category: treatment.category || undefined,
     icon: treatment.icon || undefined,
     intensity: treatment.intensity || undefined,
     intensityLabel: treatment.intensity_label || undefined,
@@ -96,20 +55,6 @@ export const useTreatments = () => {
     price: formatPrice(treatment.price_cents),
     display_order: treatment.display_order,
   });
-
-  // Get category title with proper formatting
-  const getCategoryTitle = (category: string): string => {
-    const titleMap: Record<string, string> = {
-      healing: 'Healing',
-      massage: 'Massage',
-      therapy: 'Therapie',
-      other: 'Overig',
-    };
-
-    return (
-      titleMap[category] || category.charAt(0).toUpperCase() + category.slice(1)
-    );
-  };
 
   // Fetch treatments from Supabase
   const fetchTreatments = async (): Promise<void> => {
@@ -164,9 +109,6 @@ export const useTreatments = () => {
     loading: loading,
     error: error,
 
-    // Computed
-    treatmentCategories: treatmentCategories,
-
     // Methods
     fetchTreatments,
     getTreatmentBySlug,
@@ -178,4 +120,4 @@ export const useTreatments = () => {
 };
 
 // Export types
-export type { TreatmentData, TreatmentCategory, TreatmentCategories };
+export type { TreatmentData };

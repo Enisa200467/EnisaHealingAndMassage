@@ -119,7 +119,7 @@ Content body here
 ```
 
 Available content components:
-- `::behandeling-hero` - Page header with title, price, duration, intensity (fetches data from database)
+- `::behandeling-hero` - Page header with title, price, duration (fetches data from database)
 - `::behandeling-sectie` - Section with image and bullet points
 - `::info-blok` - Highlighted information box
 - `::voordelen-lijst` - List of treatment benefits (nested in `::twee-kolommen`)
@@ -135,18 +135,7 @@ Available content components:
 - Nested components inside `::twee-kolommen` use `:::` (three colons)
 - All content components use `not-prose` class to prevent Tailwind Typography conflicts
 
-### 4. Treatment Intensity System
-
-Treatments use a 1-5 intensity rating:
-- 1: Zeer Zacht (Very Gentle) - energetic work
-- 2: Zacht (Gentle) - light massage
-- 3: Medium - standard pressure
-- 4: Stevig (Firm) - firm pressure
-- 5: Zeer Stevig (Very Firm) - deep tissue
-
-Specify both `intensity` (number) and `intensityLabel` (text) in frontmatter.
-
-### 5. Image Optimization
+### 4. Image Optimization
 
 Always use the `NuxtImg` component:
 
@@ -161,7 +150,7 @@ Always use the `NuxtImg` component:
 />
 ```
 
-### 6. Accessibility Requirements
+### 5. Accessibility Requirements
 
 - Maintain proper heading hierarchy
 - Include ARIA labels for interactive elements

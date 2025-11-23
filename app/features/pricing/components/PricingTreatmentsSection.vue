@@ -2,10 +2,10 @@
   <section class="mb-12">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-neutral-900 mb-4">
-        Massage Behandelingen
+        Alle Behandelingen
       </h2>
       <p class="text-neutral-600 max-w-2xl mx-auto">
-        Professionele massagebehandelingen voor ontspanning, pijnverlichting en
+        Professionele behandelingen voor ontspanning, pijnverlichting en
         verbetering van je algemene welzijn.
       </p>
     </div>
@@ -14,7 +14,7 @@
     <div v-if="loading" class="text-center py-12">
       <UIcon
         name="i-mdi-loading"
-        class="w-8 h-8 animate-spin mx-auto mb-4 text-secondary-500"
+        class="w-8 h-8 animate-spin mx-auto mb-4 text-primary-500"
       />
       <p class="text-neutral-600">Behandelingen laden...</p>
     </div>
@@ -34,13 +34,11 @@
       <TreatmentDetails
         v-for="treatment in treatments"
         :key="treatment.title"
-        :intensity="treatment.intensity"
-        :intensity-label="treatment.intensityLabel"
         :short-description="treatment.description"
         :show-link-button="false"
         :book-button-text="`Boek ${treatment.title}`"
         :book-button-link="`/boeken?treatment=${treatment.slug}`"
-        book-button-color="secondary"
+        book-button-color="primary"
         size="md"
       >
         <template #header>
@@ -54,7 +52,7 @@
               </p>
             </div>
             <div class="text-right">
-              <p class="text-2xl font-bold text-secondary-600">
+              <p class="text-2xl font-bold text-primary-600">
                 {{ treatment.price }}
               </p>
             </div>
@@ -89,12 +87,12 @@ export interface Treatment {
 }
 
 const props = defineProps<{
-  massageTreatments: Treatment[];
+  treatments: Treatment[];
   loading: boolean;
   error: string | null;
 }>();
 
-const treatments = props.massageTreatments.map((t) => ({
+const treatments = props.treatments.map((t) => ({
   ...t.treatment,
   benefits: t.benefits,
 }));

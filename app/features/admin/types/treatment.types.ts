@@ -5,10 +5,7 @@ export interface Treatment {
   description?: string;
   duration_minutes: number;
   price_cents: number;
-  intensity?: number;
-  intensity_label?: string;
   icon?: string;
-  category?: string;
   is_active: boolean;
   display_order: number;
   created_at: string;
@@ -21,10 +18,7 @@ export interface CreateTreatmentInput {
   description?: string;
   duration_minutes: number;
   price_cents: number;
-  intensity?: number;
-  intensity_label?: string;
   icon?: string;
-  category?: string;
   display_order?: number;
 }
 
@@ -38,26 +32,10 @@ export interface TreatmentFormData {
   description: string;
   duration_minutes: number;
   price_euros: number; // For form display, converted to/from price_cents
-  intensity: number;
-  intensity_label: string;
   icon: string;
-  category: string;
   display_order: number;
   is_active: boolean;
 }
-
-export const TREATMENT_CATEGORIES = [
-  { value: 'massage', label: 'Massage' },
-  { value: 'healing', label: 'Healing' },
-] as const;
-
-export const INTENSITY_LEVELS = [
-  { value: 1, label: 'Zeer Zacht' },
-  { value: 2, label: 'Zacht' },
-  { value: 3, label: 'Medium' },
-  { value: 4, label: 'Stevig' },
-  { value: 5, label: 'Zeer Stevig' },
-] as const;
 
 export const COMMON_ICONS = [
   { value: 'i-mdi-sparkles', label: 'Sparkles (Chakra/Energy)' },

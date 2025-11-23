@@ -41,10 +41,7 @@ export const useAdminTreatments = () => {
       description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
-      intensity: formData.intensity,
-      intensity_label: formData.intensity_label,
       icon: formData.icon,
-      category: formData.category,
       display_order: formData.display_order,
     };
   };
@@ -59,10 +56,7 @@ export const useAdminTreatments = () => {
       description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
-      intensity: formData.intensity,
-      intensity_label: formData.intensity_label,
       icon: formData.icon,
-      category: formData.category,
       display_order: formData.display_order,
       is_active: formData.is_active,
     };
@@ -85,10 +79,7 @@ export const useAdminTreatments = () => {
       description: treatment.description || '',
       duration_minutes: treatment.duration_minutes,
       price_euros: centsToEuros(treatment.price_cents),
-      intensity: treatment.intensity || 1,
-      intensity_label: treatment.intensity_label || '',
       icon: treatment.icon || '',
-      category: treatment.category || '',
       display_order: treatment.display_order,
       is_active: treatment.is_active,
     };

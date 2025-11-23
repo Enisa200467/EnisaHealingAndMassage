@@ -5,13 +5,13 @@
         <!-- Carousel Pause/Play Control -->
         <button
           @click="toggleAutoplay"
-          class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+          class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 flex items-center justify-center"
           :aria-label="isPaused ? 'Start automatische diavoorstelling' : 'Pauzeer automatische diavoorstelling'"
           :aria-pressed="!isPaused"
         >
           <UIcon
             :name="isPaused ? 'i-mdi-play' : 'i-mdi-pause'"
-            class="w-5 h-5 text-neutral-700"
+            class="w-5 h-5 text-neutral-700 flex-shrink-0"
           />
         </button>
 

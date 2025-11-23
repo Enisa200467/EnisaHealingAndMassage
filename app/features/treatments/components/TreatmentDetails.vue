@@ -5,8 +5,6 @@ interface Props {
   // Display data
   duration?: number;
   price?: number | string;
-  intensity?: number;
-  intensityLabel?: string;
   shortDescription?: string;
   showLinkButton?: boolean;
   to?: string;
@@ -31,26 +29,6 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const routes = useRoutes();
-
-// Intensity labels for each rating
-const intensityLabels = {
-  1: 'Zeer Zacht',
-  2: 'Zacht',
-  3: 'Medium',
-  4: 'Stevig',
-  5: 'Zeer Stevig',
-} as const;
-
-const intensityData = computed(() => {
-  if (!props.intensity) return null;
-
-  const rating = Math.min(Math.max(props.intensity, 1), 5);
-  const label =
-    props.intensityLabel ||
-    intensityLabels[rating as keyof typeof intensityLabels];
-
-  return { rating, label };
-});
 
 // Size-based styling
 const sizeClasses = computed(() => {
@@ -132,15 +110,6 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
         <span class="font-semibold text-primary-600" :class="sizeClasses.price">
           {{ formatPrice(price) }}
         </span>
-      </div>
-
-      <!-- Intensity -->
-      <div v-if="intensityData" class="space-y-2">
-        <IntensityIndicator
-          :intensity="intensityData.rating"
-          :label="intensityLabel"
-          :size="size"
-        />
       </div>
 
       <!-- Spacer to push slot content to bottom -->

@@ -12,44 +12,43 @@ const { setPageSEO, businessInfo } = useGlobalSEO();
 
 // Generate structured data for booking service
 const bookingServiceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ReservationService',
-  name: 'Afspraken Boeken - Enisa Healing & Massage',
-  description:
-    'Online afsprakenplanning voor healing en massage behandelingen',
+  "@context": "https://schema.org",
+  "@type": "ReservationService",
+  name: "Afspraken Boeken - Enisa Healing & Massage",
+  description: "Online afsprakenplanning voor healing en massage behandelingen",
   provider: {
-    '@type': 'LocalBusiness',
+    "@type": "LocalBusiness",
     name: businessInfo.name,
     url: businessInfo.url,
     telephone: businessInfo.telephone,
     email: businessInfo.email,
     address: businessInfo.address,
   },
-  serviceType: 'Massage & Healing Behandelingen',
+  serviceType: "Massage & Healing Behandelingen",
   url: `${businessInfo.url}/boeken`,
   potentialAction: {
-    '@type': 'ReserveAction',
+    "@type": "ReserveAction",
     target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://enisahealingmassage.setmore.com',
+      "@type": "EntryPoint",
+      urlTemplate: "https://enisahealingmassage.setmore.com",
       actionPlatform: [
-        'http://schema.org/DesktopWebPlatform',
-        'http://schema.org/MobileWebPlatform',
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
       ],
     },
     result: {
-      '@type': 'Reservation',
-      name: 'Behandeling Reservering',
+      "@type": "Reservation",
+      name: "Behandeling Reservering",
     },
   },
 };
 
 // Set comprehensive SEO with booking schema
 setPageSEO({
-  title: 'Boek Een Afspraak - Enisa Healing & Massage',
+  title: "Boek Een Afspraak - Enisa Healing & Massage",
   description:
-    'Boek eenvoudig online een afspraak voor massage of healing behandelingen. Kies je gewenste behandeling, datum en tijd. Direct bevestiging per e-mail.',
-  path: '/boeken',
+    "Boek eenvoudig online een afspraak voor massage of healing behandelingen. Kies je gewenste behandeling, datum en tijd. Direct bevestiging per e-mail.",
+  path: "/boeken",
   structuredData: [bookingServiceSchema],
 });
 </script>
@@ -75,9 +74,8 @@ setPageSEO({
         <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
           <div class="text-center mb-8">
             <UButton
-              id="Setmore_button_iframe"
               as="a"
-              href="https://enisahealingmassage.setmore.com"
+              href="https://enisa-healing-massage.setmore.com"
               class="setmore-booking-button"
               color="primary"
               variant="solid"
@@ -100,13 +98,16 @@ setPageSEO({
 
 <style scoped>
 .setmore-booking-button {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
   min-width: 280px;
 }
 
 .setmore-booking-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 35px -3px rgba(0, 0, 0, 0.15),
+  box-shadow:
+    0 20px 35px -3px rgba(0, 0, 0, 0.15),
     0 8px 10px -2px rgba(0, 0, 0, 0.1);
 }
 

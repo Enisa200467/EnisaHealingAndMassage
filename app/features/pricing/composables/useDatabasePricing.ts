@@ -9,11 +9,8 @@ export interface PricingTreatment {
   duration: string;
   price: string;
   description: string;
-  intensity: number;
-  intensityLabel: string;
   benefits: string[];
   slug: string;
-  category: string;
 }
 
 export interface PricingPackage {
