@@ -32,7 +32,7 @@ const treatmentStore = useTreatmentStore();
 const { loading, error } = storeToRefs(treatmentStore);
 
 const { data: sections } = await useAsyncData(() => {
-  return queryCollection('treatments').select('body', 'title').all();
+  return queryCollection('behandelingen').select('body', 'title').all();
 });
 
 // Get all active treatments sorted by display order

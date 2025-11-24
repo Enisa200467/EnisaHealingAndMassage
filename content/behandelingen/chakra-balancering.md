@@ -1,3 +1,7 @@
+---
+title: Chakra Balancering
+---
+
 ::behandeling-hero{#75be22cd-31df-48bd-bd9f-337360edb2c4}
 ::
 

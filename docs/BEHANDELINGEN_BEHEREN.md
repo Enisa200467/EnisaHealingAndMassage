@@ -39,9 +39,9 @@ Deze twee moeten **gesynchroniseerd** blijven voor een goede werking van de webs
 ## Stap 2: Content Bestand Aanmaken
 
 ### Locatie
-Maak een nieuw bestand aan in: `/content/treatments/[slug].md`
+Maak een nieuw bestand aan in: `/content/behandelingen/[slug].md`
 
-Bijvoorbeeld: `/content/treatments/chakra-balancering.md`
+Bijvoorbeeld: `/content/behandelingen/chakra-balancering.md`
 
 ### Basis Template
 
@@ -291,7 +291,7 @@ caption: Optioneel bijschrift
 Bij het aanmaken of bewerken van een behandeling:
 
 - [ ] Database record heeft juiste informatie (naam, prijs, duur, etc.)
-- [ ] Slug in database komt overeen met bestandsnaam in `/content/treatments/`
+- [ ] Slug in database komt overeen met bestandsnaam in `/content/behandelingen/`
 - [ ] `id` in `::behandeling-hero` komt overeen met database ID
 - [ ] Alle vereiste velden zijn ingevuld
 - [ ] Afbeeldingen bestaan in `/public/images/`

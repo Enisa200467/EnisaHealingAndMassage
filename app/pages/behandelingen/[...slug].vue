@@ -10,7 +10,7 @@ const treatmentStore = useTreatmentStore();
 
 // Fetch content from markdown files
 const { data: treatment } = await useAsyncData(`treatment-${slug}`, () => {
-  return queryCollection('treatments').path(`/treatments/${slug}`).first();
+  return queryCollection('behandelingen').path(`/behandelingen/${slug}`).first();
 });
 
 // Fetch database treatment data

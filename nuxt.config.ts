@@ -29,9 +29,16 @@ export default defineNuxtConfig({
       ],
     },
   },
-  content: {
-    preview: {
-      api: "https://api.nuxt.studio",
+  studio: {
+    // Git repository configuration (owner and repo are required)
+    repository: {
+      provider: "github", // 'github' or 'gitlab'
+      owner: "Enisa200467", // your GitHub/GitLab username or organization
+      repo: "EnisaHealingAndMassage", // your repository name
+      branch: "main", // the branc to commit to (default: 'main')
+    },
+    development: {
+      sync: true,
     },
   },
 
@@ -48,6 +55,7 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@pinia/nuxt",
     "nuxt-security",
+    "nuxt-studio",
   ],
 
   // Feature-based auto-imports
@@ -105,7 +113,6 @@ export default defineNuxtConfig({
       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     },
   },
-
 
   // Security configuration
   security: {
@@ -171,3 +178,4 @@ export default defineNuxtConfig({
     hidePoweredBy: true,
   },
 });
+

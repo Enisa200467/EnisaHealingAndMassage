@@ -64,10 +64,11 @@ Server routes are organized by feature in `/server/api/`:
 
 ### Content Management
 
-- Content source: `/content/treatments/*.md`
+- Content source: `/content/behandelingen/*.md`
 - Content components: `/app/components/content/` (custom components for use in markdown, named in Dutch)
-- Configuration: `content.config.ts` defines the treatments collection
+- Configuration: `content.config.ts` defines the behandelingen collection
 - **Documentation**: See `/docs/BEHANDELINGEN_BEHEREN.md` for detailed guide (in Dutch)
+- **Converting Old Content**: Use `.claude/prompts/convert-treatment-content.md` for comprehensive conversion instructions, or use the `/convert-treatment` slash command
 
 ### Database & Auth
 
