@@ -1,5 +1,5 @@
 ---
-title: Combinatie: Chakra Healing & Hoofdmassage
+title: Chakra Healing & Ontspannings massage 
 ---
 
 ::behandeling-hero{#f3fe5673-1e64-4990-a072-e833f240d13c}

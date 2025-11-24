@@ -42,7 +42,7 @@ const treatmentCatalogSchema = computed(() => {
         name: treatment.title,
         description: treatment.description,
       },
-      price: treatment.price?.replace('€', '').trim(),
+      price: treatment.price ? (treatment.price / 100).toFixed(0) : undefined,
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
       url: `${businessInfo.url}/behandelingen/${treatment.slug}`,

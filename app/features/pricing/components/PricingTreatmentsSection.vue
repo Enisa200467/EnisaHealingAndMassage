@@ -51,12 +51,12 @@
                 {{ treatment.title }}
               </h3>
               <p class="text-sm text-neutral-500">
-                {{ treatment.duration }}
+                {{ formatDuration(treatment.duration) }}
               </p>
             </div>
             <div class="text-right">
               <p class="text-2xl font-bold text-primary-600">
-                {{ treatment.price }}
+                {{ formatPrice(treatment.price) }}
               </p>
             </div>
           </div>
@@ -83,6 +83,7 @@
 
 <script setup lang="ts">
 import type { TreatmentData } from '~/features/treatments/store';
+import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
 
 export interface Treatment {
   treatment: TreatmentData;
@@ -94,6 +95,8 @@ const props = defineProps<{
   loading: boolean;
   error: string | null;
 }>();
+
+const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 
 const treatments = props.treatments.map((t) => ({
   ...t.treatment,

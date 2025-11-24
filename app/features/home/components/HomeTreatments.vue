@@ -12,43 +12,24 @@
 
       <div class="mt-16">
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <UCard
+          <TreatmentDetails
             v-for="treatment in allTreatments"
             :key="treatment.title"
-            class="flex flex-col"
-            variant="outline"
-          >
-            <template #header>
-              <div class="flex items-center">
-                <UIcon
-                  :name="treatment.icon || 'i-mdi-sparkles'"
-                  class="mr-2 text-primary-500"
-                />
-                <h3 class="text-lg font-semibold leading-6">
-                  {{ treatment.title }}
-                </h3>
-              </div>
-            </template>
-
-            <p class="text-sm text-gray-600 grow">
-              {{ treatment.description }}
-            </p>
-
-            <template #footer>
-              <UButton
-                variant="outline"
-                :to="treatment.path"
-                label="Meer Info"
-                size="sm"
-              />
-              <UButton
-                :to="routes.pages.booking"
-                label="Direct Boeken"
-                size="sm"
-                class="ml-2"
-              />
-            </template>
-          </UCard>
+            :title="treatment.title"
+            :icon="treatment.icon || 'i-mdi-sparkles'"
+            :short-description="treatment.description"
+            :price="treatment.price"
+            :discount-enabled="treatment.discountEnabled"
+            :discount-price="treatment.discountPrice"
+            :package-enabled="treatment.packageEnabled"
+            :package-sessions="treatment.packageSessions"
+            :package-price="treatment.packagePrice"
+            :show-link-button="true"
+            :to="treatment.path"
+            :show-book-button="true"
+            book-button-text="Direct Boeken"
+            size="sm"
+          />
         </div>
       </div>
     </UContainer>

@@ -9,7 +9,7 @@ interface Props {
   discountPrice?: number;
   packageEnabled?: boolean;
   packageSessions?: number;
-  packagePrice?: number | string;
+  packagePrice?: number;
   shortDescription?: string;
   showLinkButton?: boolean;
   to?: string;
@@ -68,9 +68,7 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 </script>
 
 <template>
-  <UCard
-    class="shadow-lg border border-primary-200 bg-white"
-    role="region"
+  <TreatmentCard
     :aria-labelledby="title ? 'treatment-details-title' : undefined"
   >
     <template #header v-if="title">
@@ -92,11 +90,27 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
     </template>
 
     <!-- Content area with flex-1 to push footer down -->
-    <div :class="[sizeClasses.gap, 'flex flex-col ']">
+    <div :class="[sizeClasses.gap, 'h-full flex flex-col flex-1']">
       <div v-if="shortDescription" class="mb-2">
         <p class="text-sm text-gray-600 line-clamp-3">
           {{ shortDescription }}
         </p>
+      </div>
+
+      <!-- Custom content slot (e.g., benefits list) -->
+      <div v-if="$slots.default" class="pt-4">
+        <slot />
+      </div>
+      <!-- Spacer to push pricing content to bottom -->
+      <div class="flex-1 mb-auto"></div>
+
+      <!-- Duration -->
+      <div v-if="duration" class="flex justify-between items-center">
+        <span class="text-neutral-600" :class="sizeClasses.text">Duur:</span>
+        <span class="font-medium text-neutral-900" :class="sizeClasses.text">
+          {{ formatDuration(duration) }}
+          {{ packageEnabled ? "per sessie" : "" }}
+        </span>
       </div>
 
       <!-- Price -->
@@ -164,23 +178,6 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
           </span>
         </div>
       </div>
-
-      <!-- Duration -->
-      <div v-if="duration" class="flex justify-between items-center">
-        <span class="text-neutral-600" :class="sizeClasses.text">Duur:</span>
-        <span class="font-medium text-neutral-900" :class="sizeClasses.text">
-          {{ formatDuration(duration) }}
-          {{ packageEnabled ? "per sessie" : "" }}
-        </span>
-      </div>
-
-      <!-- Spacer to push slot content to bottom -->
-      <div class="flex-1"></div>
-
-      <!-- Custom content slot (e.g., benefits list) -->
-      <div v-if="$slots.default" class="pt-4">
-        <slot />
-      </div>
     </div>
 
     <template v-if="showBookButton || showLinkButton" #footer>
@@ -210,5 +207,5 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
         </UButton>
       </div>
     </template>
-  </UCard>
+  </TreatmentCard>
 </template>

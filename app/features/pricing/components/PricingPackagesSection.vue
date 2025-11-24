@@ -10,7 +10,7 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <UCard
         v-for="pkg in packages"
         :key="pkg.name"
@@ -77,5 +77,50 @@
 </template>
 
 <script setup lang="ts">
-const { packages } = useDatabasePricing();
+import { useTreatmentStore } from '~/features/treatments/store';
+import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
+
+const treatmentStore = useTreatmentStore();
+const { formatPrice } = useTreatmentDetailsFormatter();
+
+// Calculate average treatment price from all active treatments
+const averagePrice = computed(() => {
+  const activeTreatments = treatmentStore.treatments.filter((t) => t.is_active);
+  if (activeTreatments.length === 0) return 6500; // Default to €65
+
+  const total = activeTreatments.reduce((sum, t) => sum + t.price_cents, 0);
+  return Math.round(total / activeTreatments.length);
+});
+
+// Generate package deals based on average treatment price
+const packages = computed(() => {
+  const avgPrice = averagePrice.value;
+
+  return [
+    {
+      name: '3 Behandelingen Pakket',
+      description: 'Kies 3 willekeurige behandelingen',
+      originalPrice: formatPrice(avgPrice * 3),
+      discountPrice: formatPrice(Math.round(avgPrice * 3 * 0.90)), // 10% discount
+      savings: formatPrice(Math.round(avgPrice * 3 * 0.10)),
+      validity: '6 maanden geldig',
+    },
+    {
+      name: '5 Behandelingen Pakket',
+      description: 'Kies 5 willekeurige behandelingen',
+      originalPrice: formatPrice(avgPrice * 5),
+      discountPrice: formatPrice(Math.round(avgPrice * 5 * 0.85)), // 15% discount
+      savings: formatPrice(Math.round(avgPrice * 5 * 0.15)),
+      validity: '12 maanden geldig',
+    },
+    {
+      name: '10 Behandelingen Pakket',
+      description: 'Kies 10 willekeurige behandelingen',
+      originalPrice: formatPrice(avgPrice * 10),
+      discountPrice: formatPrice(Math.round(avgPrice * 10 * 0.80)), // 20% discount
+      savings: formatPrice(Math.round(avgPrice * 10 * 0.20)),
+      validity: '18 maanden geldig',
+    },
+  ];
+});
 </script>

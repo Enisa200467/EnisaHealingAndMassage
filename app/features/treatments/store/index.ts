@@ -10,13 +10,13 @@ export interface TreatmentData {
   icon?: string;
   intensity?: number;
   intensityLabel?: string;
-  duration?: string;
-  price?: string;
+  duration?: number;
+  price?: number;
   discountEnabled?: boolean;
-  discountPrice?: string;
+  discountPrice?: number;
   packageEnabled?: boolean;
   packageSessions?: number;
-  packagePrice?: string;
+  packagePrice?: number;
   display_order?: number;
 }
 
@@ -51,17 +51,13 @@ export const useTreatmentStore = defineStore('treatments', () => {
     icon: treatment.icon || undefined,
     intensity: treatment.intensity || undefined,
     intensityLabel: treatment.intensity_label || undefined,
-    duration: formatDuration(treatment.duration_minutes),
-    price: formatPrice(treatment.price_cents),
+    duration: treatment.duration_minutes,
+    price: treatment.price_cents,
     discountEnabled: treatment.discount_enabled || false,
-    discountPrice: treatment.discount_price_cents
-      ? formatPrice(treatment.discount_price_cents)
-      : undefined,
+    discountPrice: treatment.discount_price_cents || undefined,
     packageEnabled: treatment.package_enabled || false,
     packageSessions: treatment.package_sessions || undefined,
-    packagePrice: treatment.package_price_cents
-      ? formatPrice(treatment.package_price_cents)
-      : undefined,
+    packagePrice: treatment.package_price_cents || undefined,
     display_order: treatment.display_order,
   });
 

@@ -100,7 +100,7 @@ const pricingSchema = computed(() => {
       },
       offers: {
         '@type': 'Offer',
-        price: treatment.price?.replace('€', ''),
+        price: treatment.price ? (treatment.price / 100).toFixed(0) : undefined,
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
       },
