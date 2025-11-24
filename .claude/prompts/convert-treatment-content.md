@@ -103,6 +103,16 @@ title: Wat kun je verwachten?
   :::
 ::
 
+<!-- OPTIONEEL: Gebruik ::info-blok alleen voor uitzonderlijke situaties -->
+::info-blok
+---
+title: [Belangrijke aanvullende informatie]
+icon: i-mdi-information
+variant: info
+---
+[Alleen gebruiken voor alternatieve behandelvormen, speciale aanbiedingen, of essentiële informatie die extra aandacht verdient]
+::
+
 ::uitklap-info{title="Meer informatie"}
 ### [Relevante Subtitel]
 
@@ -163,7 +173,44 @@ title: Wat kun je verwachten?
 - `title`: Meestal "Voor Wie?" of "Geschikt voor jou als je"
 - `items`: Array van doelgroep kenmerken (5-7 punten)
 
-### 4. `::uitklap-info`
+### 4. `::info-blok` ⚠️ GEBRUIK SPAARZAAM
+
+**Doel:** Opvallend informatieblok voor belangrijke aanvullende informatie of opties
+
+**BELANGRIJK:** Gebruik dit component alleen voor uitzonderlijke situaties zoals:
+- Alternatieve behandelvormen (bijv. healing op afstand)
+- Tijdelijke aanbiedingen of belangrijke mededelingen
+- Essentiële informatie die extra aandacht verdient
+
+**NIET gebruiken voor:** Standaard informatie die beter past in andere secties
+
+**Velden:**
+- `title`: Titel van het informatieblok
+- `icon`: Icon naam (optioneel, standaard: `i-mdi-information`)
+- `variant`: Kleurenschema - `info` (blauw), `success` (groen), of `warning` (geel)
+- `ctaText`: Tekst voor de actieknop (optioneel)
+- `ctaLink`: Link voor de actieknop (optioneel)
+
+**Inhoud tussen de markers kan markdown bevatten**
+
+**Voorbeeld:**
+```markdown
+::info-blok
+---
+title: Ook mogelijk - Healing op Afstand
+icon: i-mdi-wifi
+variant: info
+ctaText: Plan je healing sessie
+ctaLink: /contact
+---
+**Kan je niet langskomen?** Healing werkt ook uitstekend op afstand. Voor deze behandeling heb ik alleen je voor- en achternaam en een foto nodig.
+
+**Prijs:** €65 voor 45 minuten
+**Werkwijze:** Telefonisch contact voor én na de sessie
+::
+```
+
+### 5. `::uitklap-info`
 
 **Doel:** Inklapbare sectie met uitgebreide informatie
 
@@ -205,6 +252,7 @@ Bij het converteren van oude content naar nieuw formaat:
 - [ ] `::behandeling-hero{#uuid}` met correcte UUID
 - [ ] `::behandeling-sectie` met relevante stappen en afbeelding
 - [ ] `::twee-kolommen` met `:::voordelen-lijst` en `:::voor-wie`
+- [ ] `::info-blok` indien nodig (ALLEEN voor uitzonderlijke situaties)
 - [ ] `::uitklap-info` met uitgebreide informatie
 - [ ] Alle afbeeldingen aanwezig in `/public/images/`
 - [ ] Alt-teksten beschrijvend en compleet
@@ -317,6 +365,7 @@ Na conversie, lever de volgende output:
 - **Afbeeldingen:** Leading slash verplicht (`/images/...`)
 - **Alt-teksten:** Verplicht voor elke afbeelding (SEO + toegankelijkheid)
 - **Frontmatter:** Alleen `title` in frontmatter, rest in componenten
+- **Info-blok gebruik:** `::info-blok` ZEER SPAARZAAM gebruiken - alleen voor uitzonderlijke situaties zoals alternatieve behandelvormen of essentiële mededelingen
 
 ## Test URLs
 
