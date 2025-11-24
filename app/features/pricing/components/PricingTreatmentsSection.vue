@@ -34,6 +34,7 @@
       <TreatmentDetails
         v-for="treatment in treatments"
         :key="treatment.title"
+        :title="treatment.title"
         :short-description="treatment.description"
         :discount-enabled="treatment.discountEnabled"
         :discount-price="treatment.discountPrice"

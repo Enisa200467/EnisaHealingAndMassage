@@ -69,11 +69,7 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 
 <template>
   <UCard
-    class="shadow-lg border border-primary-200 bg-white h-full"
-    :ui="{
-      base: 'flex flex-col h-full',
-      body: { base: 'flex-1 flex flex-col' },
-    }"
+    class="shadow-lg border border-primary-200 bg-white"
     role="region"
     :aria-labelledby="title ? 'treatment-details-title' : undefined"
   >
@@ -96,7 +92,7 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
     </template>
 
     <!-- Content area with flex-1 to push footer down -->
-    <div :class="[sizeClasses.gap, 'flex flex-col flex-1']">
+    <div :class="[sizeClasses.gap, 'flex flex-col ']">
       <div v-if="shortDescription" class="mb-2">
         <p class="text-sm text-gray-600 line-clamp-3">
           {{ shortDescription }}
