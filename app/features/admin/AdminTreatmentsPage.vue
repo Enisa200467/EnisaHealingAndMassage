@@ -34,10 +34,9 @@ const currentView = ref<ViewState>("list");
 const editingTreatment = ref<Treatment | null>(null);
 const deletingTreatment = ref<Treatment | null>(null);
 
-// Form data
+// Form data (metadata only - content lives in markdown)
 const defaultFormData = {
   name: "",
-  description: "",
   duration_minutes: 60,
   price_euros: 65,
   discount_enabled: false,

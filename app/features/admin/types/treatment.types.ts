@@ -1,8 +1,9 @@
+// Core treatment metadata stored in database
+// Content (description, category, intensity) lives in markdown frontmatter
 export interface Treatment {
   id: string;
   name: string;
   slug: string;
-  description?: string;
   duration_minutes: number;
   price_cents: number;
   discount_enabled: boolean;
@@ -20,7 +21,6 @@ export interface Treatment {
 export interface CreateTreatmentInput {
   name: string;
   slug?: string;
-  description?: string;
   duration_minutes: number;
   price_cents: number;
   discount_enabled?: boolean;
@@ -39,7 +39,6 @@ export interface UpdateTreatmentInput extends Partial<CreateTreatmentInput> {
 
 export interface TreatmentFormData {
   name: string;
-  description: string;
   duration_minutes: number;
   price_euros: number; // For form display, converted to/from price_cents
   discount_enabled: boolean;
@@ -50,6 +49,22 @@ export interface TreatmentFormData {
   icon: string;
   display_order: number;
   is_active: boolean;
+}
+
+// Markdown frontmatter structure for treatment content
+export interface TreatmentContent {
+  title: string;
+  description: string;
+  category?: 'healing' | 'massage';
+  intensity?: {
+    level: 1 | 2 | 3 | 4 | 5;
+    label: string;
+  };
+}
+
+// Combined treatment data (database + markdown)
+export interface TreatmentWithContent extends Treatment {
+  content: TreatmentContent;
 }
 
 export const COMMON_ICONS = [

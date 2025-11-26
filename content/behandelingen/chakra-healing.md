@@ -1,5 +1,10 @@
 ---
 title: Chakra Healing
+description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.
+category: healing
+intensity:
+  level: 1
+  label: Zeer Zacht (Energetisch werk)
 ---
 
 ::behandeling-hero{#ea954752-5aee-4c8c-a1a8-328b026b9189}

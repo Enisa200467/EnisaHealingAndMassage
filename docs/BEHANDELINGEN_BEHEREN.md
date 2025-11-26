@@ -5,8 +5,10 @@ Deze gids legt uit hoe je behandelingen toevoegt en beheert op de website.
 ## Overzicht
 
 Behandelingen bestaan uit **twee onderdelen**:
-1. **Database Record** - Basis informatie (naam, prijs, duur, categorie)
-2. **Content Bestand** - Volledige pagina-inhoud (markdown `.md` bestand)
+1. **Database Record** - Basis metadata (naam, prijs, duur, status)
+2. **Content Bestand** - Volledige pagina-inhoud met frontmatter (markdown `.md` bestand)
+
+**Belangrijk**: Content zoals beschrijving, categorie en intensiteit worden beheerd in markdown frontmatter, niet in de database. Dit zorgt voor een enkele bron van waarheid.
 
 De slug moet identiek zijn in beide onderdelen.
 
@@ -18,25 +20,58 @@ De slug moet identiek zijn in beide onderdelen.
 
 1. **Kopieer een bestaand behandeling bestand**
    - Ga naar `/content/behandelingen/`
-   - Kopieer bijv. `chakra-balancering.md`
+   - Kopieer bijv. `chakra-healing.md`
    - Hernoem naar je nieuwe slug (bijv. `nieuwe-behandeling.md`)
 
 2. **Maak database record aan**
    - Ga naar `/admin/treatments`
    - Klik "Nieuwe Behandeling"
-   - Vul alle velden in (zie Database Velden hieronder)
+   - Vul metadata in: naam, prijs, duur, icoon, volgorde
    - Zorg dat de **slug** exact overeenkomt met je bestandsnaam
    - Kopieer het **UUID** na het opslaan
 
 3. **Pas het gekopieerde bestand aan**
    - Open je nieuwe `.md` bestand
+   - **Update frontmatter**: titel, beschrijving, categorie, intensiteit
    - Vervang het `id` in `::behandeling-hero` met het nieuwe UUID
    - Pas alle teksten, afbeeldingen en content aan
    - Upload nieuwe afbeeldingen naar `/public/images/`
 
 4. **Controleer**
    - Preview op `/behandelingen/[slug]`
-   - Check dat prijs, duur en naam kloppen
+   - Check dat prijs, duur, naam én beschrijving kloppen
+
+---
+
+## Markdown Structuur
+
+Behandeling content gebruikt frontmatter voor metadata:
+
+```markdown
+---
+title: Chakra Healing
+description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering.
+category: healing
+intensity:
+  level: 1
+  label: Zeer Zacht (Energetisch werk)
+---
+
+::behandeling-hero{#database-uuid-here}
+::
+
+... rest of content ...
+```
+
+### Frontmatter Velden
+
+| Veld | Voorbeeld | Verplicht? |
+|------|-----------|------------|
+| `title` | "Chakra Healing" | Ja |
+| `description` | Korte beschrijving | Ja |
+| `category` | `healing` of `massage` | Nee |
+| `intensity.level` | `1` tot `5` | Nee |
+| `intensity.label` | "Zeer Zacht" | Nee (als intensity.level aanwezig) |
 
 ---
 
@@ -48,15 +83,13 @@ Vul deze velden in via `/admin/treatments`:
 |------|-----------|-------------|
 | **Naam** | "Chakra Balancering" | Officiële naam |
 | **Slug** | `chakra-balancering` | URL-vriendelijk (auto-gegenereerd) |
-| **Beschrijving** | Korte tekst | Voor overzichtspagina's |
-| **Categorie** | `healing` of `massage` | Type behandeling |
 | **Prijs** | `8500` | In centen (€85,00) |
 | **Duur** | `75` | In minuten |
-| **Intensiteit** | `1` tot `5` | 1=Zeer Zacht, 5=Zeer Stevig |
-| **Intensiteit Label** | "Zeer Zacht (Energetisch)" | Beschrijving intensiteit |
 | **Icon** | `i-mdi-weather-sunny` | Icoon voor display |
 | **Display Order** | `10` | Lager = eerder getoond |
 | **Is Active** | `true` | Moet aan voor zichtbaarheid |
+
+**Let op**: Beschrijving, categorie en intensiteit worden beheerd in markdown frontmatter (zie Markdown Structuur hieronder).
 
 ---
 

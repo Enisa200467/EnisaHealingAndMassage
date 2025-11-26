@@ -31,14 +31,13 @@ export const useAdminTreatments = () => {
     return cents / 100;
   };
 
-  // Convert form data to database format
+  // Convert form data to database format (metadata only - content in markdown)
   const formatForDatabase = (
     formData: TreatmentFormData
   ): CreateTreatmentInput => {
     return {
       name: formData.name,
       slug: generateSlug(formData.name),
-      description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
       discount_enabled: formData.discount_enabled,
@@ -64,7 +63,6 @@ export const useAdminTreatments = () => {
   ) => {
     const baseData = {
       name: formData.name,
-      description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
       discount_enabled: formData.discount_enabled,
@@ -98,7 +96,6 @@ export const useAdminTreatments = () => {
   const formatForForm = (treatment: Treatment): TreatmentFormData => {
     return {
       name: treatment.name,
-      description: treatment.description || '',
       duration_minutes: treatment.duration_minutes,
       price_euros: centsToEuros(treatment.price_cents),
       discount_enabled: treatment.discount_enabled || false,

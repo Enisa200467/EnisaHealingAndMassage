@@ -67,28 +67,32 @@ const handleSubmit = () => {
       <h3 class="text-lg font-semibold text-neutral-900">Basis Informatie</h3>
 
       <!-- Name -->
+      <UFormField label="Behandelingsnaam" required>
+        <UInput
+          v-model="formData.name"
+          placeholder="Bijv. Klassieke Ontspanningsmassage"
+          :disabled="loading"
+        />
+      </UFormField>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <UFormField label="Behandelingsnaam" required>
-          <UInput
-            class="w-2/3"
-            v-model="formData.name"
-            placeholder="Bijv. Klassieke Ontspanningsmassage"
-            :disabled="loading"
-          />
-        </UFormField>
-
-        <!-- Description -->
-        <UFormField label="Beschrijving">
-          <UTextarea
-            class="w-2/3"
-            v-model="formData.description"
-            placeholder="Korte beschrijving van de behandeling..."
-            :rows="3"
-            :disabled="loading"
-          />
-        </UFormField>
-      </div>
+      <!-- Content Info Alert -->
+      <UAlert
+        color="blue"
+        variant="subtle"
+        icon="i-mdi-information"
+        title="Content beheren via Nuxt Studio"
+      >
+        <template #description>
+          Beschrijving, categorie en intensiteit worden beheerd in het markdown
+          bestand via
+          <a
+            href="https://nuxt.studio"
+            target="_blank"
+            class="underline font-medium"
+            >Nuxt Studio</a
+          >. Zie de documentatie voor meer informatie.
+        </template>
+      </UAlert>
     </div>
 
     <!-- Pricing & Duration -->
