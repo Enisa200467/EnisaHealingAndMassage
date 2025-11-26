@@ -83,8 +83,7 @@ const handleSubmit = () => {
         title="Content beheren via Nuxt Studio"
       >
         <template #description>
-          Beschrijving, categorie en intensiteit worden beheerd in het markdown
-          bestand via
+          Beschrijving wordt beheerd in het markdown bestand via
           <a
             href="https://nuxt.studio"
             target="_blank"

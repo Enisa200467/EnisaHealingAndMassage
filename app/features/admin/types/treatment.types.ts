@@ -55,11 +55,6 @@ export interface TreatmentFormData {
 export interface TreatmentContent {
   title: string;
   description: string;
-  category?: 'healing' | 'massage';
-  intensity?: {
-    level: 1 | 2 | 3 | 4 | 5;
-    label: string;
-  };
 }
 
 // Combined treatment data (database + markdown)

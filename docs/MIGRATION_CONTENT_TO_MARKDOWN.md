@@ -15,9 +15,9 @@ Moved content fields from database to markdown frontmatter for single source of 
 
 Removed columns:
 - `description` → Moved to markdown frontmatter
-- `intensity` → Moved to markdown frontmatter
-- `intensity_label` → Moved to markdown frontmatter
-- `category` → Moved to markdown frontmatter
+- `intensity` → Removed (no longer needed)
+- `intensity_label` → Removed (no longer needed)
+- `category` → Removed (no longer needed)
 
 ### 2. TypeScript Types
 
@@ -55,11 +55,7 @@ Added frontmatter:
 ```markdown
 ---
 title: Chakra Healing
-description: Herstel de harmonie en energiestroom...
-category: healing
-intensity:
-  level: 1
-  label: Zeer Zacht (Energetisch werk)
+description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.
 ---
 ```
 
@@ -95,10 +91,6 @@ CREATE TABLE treatments (
 ---
 title: string (required)
 description: string (required)
-category: 'healing' | 'massage' (optional)
-intensity:
-  level: 1 | 2 | 3 | 4 | 5 (optional)
-  label: string (optional)
 ---
 ```
 
@@ -115,8 +107,8 @@ intensity:
 
 For each treatment file in `/content/behandelingen/`:
 
-1. Add frontmatter with `description`, `category`, and `intensity`
-2. Get values from current database record (before migration)
+1. Add frontmatter with `title` and `description`
+2. Get description from current database record (before migration)
 3. Run the database migration to remove columns
 4. Verify frontend still renders correctly
 

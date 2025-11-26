@@ -8,7 +8,7 @@ Behandelingen bestaan uit **twee onderdelen**:
 1. **Database Record** - Basis metadata (naam, prijs, duur, status)
 2. **Content Bestand** - Volledige pagina-inhoud met frontmatter (markdown `.md` bestand)
 
-**Belangrijk**: Content zoals beschrijving, categorie en intensiteit worden beheerd in markdown frontmatter, niet in de database. Dit zorgt voor een enkele bron van waarheid.
+**Belangrijk**: Beschrijving wordt beheerd in markdown frontmatter, niet in de database. Dit zorgt voor een enkele bron van waarheid.
 
 De slug moet identiek zijn in beide onderdelen.
 
@@ -32,7 +32,7 @@ De slug moet identiek zijn in beide onderdelen.
 
 3. **Pas het gekopieerde bestand aan**
    - Open je nieuwe `.md` bestand
-   - **Update frontmatter**: titel, beschrijving, categorie, intensiteit
+   - **Update frontmatter**: titel en beschrijving
    - Vervang het `id` in `::behandeling-hero` met het nieuwe UUID
    - Pas alle teksten, afbeeldingen en content aan
    - Upload nieuwe afbeeldingen naar `/public/images/`
@@ -50,11 +50,7 @@ Behandeling content gebruikt frontmatter voor metadata:
 ```markdown
 ---
 title: Chakra Healing
-description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering.
-category: healing
-intensity:
-  level: 1
-  label: Zeer Zacht (Energetisch werk)
+description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.
 ---
 
 ::behandeling-hero{#database-uuid-here}
@@ -68,10 +64,7 @@ intensity:
 | Veld | Voorbeeld | Verplicht? |
 |------|-----------|------------|
 | `title` | "Chakra Healing" | Ja |
-| `description` | Korte beschrijving | Ja |
-| `category` | `healing` of `massage` | Nee |
-| `intensity.level` | `1` tot `5` | Nee |
-| `intensity.label` | "Zeer Zacht" | Nee (als intensity.level aanwezig) |
+| `description` | Korte beschrijving voor overzichtspagina's | Ja |
 
 ---
 
@@ -89,7 +82,7 @@ Vul deze velden in via `/admin/treatments`:
 | **Display Order** | `10` | Lager = eerder getoond |
 | **Is Active** | `true` | Moet aan voor zichtbaarheid |
 
-**Let op**: Beschrijving, categorie en intensiteit worden beheerd in markdown frontmatter (zie Markdown Structuur hieronder).
+**Let op**: Beschrijving wordt beheerd in markdown frontmatter (zie Markdown Structuur hieronder).
 
 ---
 
