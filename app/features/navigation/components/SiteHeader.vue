@@ -35,15 +35,15 @@
             :items="desktopNavItems"
             aria-label="Desktop navigatiemenu"
           />
-          <!-- TODO: REMOVE and create new button immediately to setmore new url-->
           <UButton
-            id="Setmore_button_iframe"
             class="ml-4"
             size="md"
             as="a"
             href="https://enisahealingmassage.setmore.com"
+            target="_blank"
+            rel="noopener noreferrer"
             icon="i-mdi-calendar"
-            aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem"
+            aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
             :label="'Boek Nu'"
           />
         </template>
@@ -79,13 +79,14 @@
 
       <template #footer>
         <UButton
-          id="Setmore_button_iframe"
           block
           size="md"
           as="a"
           href="https://enisahealingmassage.setmore.com"
+          target="_blank"
+          rel="noopener noreferrer"
           icon="i-mdi-calendar"
-          aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem"
+          aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
           :label="'Boek Nu'"
           @click="closeMobileMenu"
         />

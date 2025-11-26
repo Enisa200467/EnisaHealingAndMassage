@@ -1,13 +1,4 @@
 <script setup lang="ts">
-// Extend Window interface to include setmore
-declare global {
-  interface Window {
-    setmore?: {
-      init: () => void;
-    };
-  }
-}
-
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
 // Generate structured data for booking service
@@ -75,13 +66,15 @@ setPageSEO({
           <div class="text-center mb-8">
             <UButton
               as="a"
-              href="https://enisa-healing-massage.setmore.com"
+              href="https://enisahealingmassage.setmore.com"
+              target="_blank"
+              rel="noopener noreferrer"
               class="setmore-booking-button"
               color="primary"
               variant="solid"
               size="xl"
               icon="i-mdi-calendar-heart"
-              aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling"
+              aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling in nieuw venster"
             >
               Open Agenda & Boek Afspraak
             </UButton>
@@ -119,22 +112,3 @@ setPageSEO({
 }
 </style>
 
-<style>
-/* Global styles for Setmore iframe styling */
-#setmore-fancy-box,
-#setmore-fancy-box-content,
-#iframeContent,
-iframe {
-  border-radius: 12px !important;
-}
-
-/* Ensure the iframe modal has proper styling */
-#setmore-fancy-box {
-  z-index: 10000 !important;
-}
-
-#setmore-fancy-box-content {
-  background: white !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
-}
-</style>
