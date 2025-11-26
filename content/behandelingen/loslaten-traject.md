@@ -1,8 +1,13 @@
 ---
 title: Loslaten Traject
+description: Een intensief begeleidingstraject om oude pijn, blokkades en patronen los te laten. Combinatie van energetische healing, gesprekken en transformatiewerk voor diepe innerlijke verandering.
 ---
 
-::behandeling-hero{#da84341d-d8cd-4db7-bacf-7d2495ecccb4}
+::behandeling-hero
+---
+description: Een intensief begeleidingstraject om oude pijn, blokkades en patronen los te laten. Combinatie van energetische healing, gesprekken en transformatiewerk voor diepe innerlijke verandering.
+id: da84341d-d8cd-4db7-bacf-7d2495ecccb4
+---
 ::
 
 ::behandeling-sectie

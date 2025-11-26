@@ -4,7 +4,7 @@ import { type Treatment } from '~/features/admin/types/treatment.types';
 interface Props {
   // Content-based props (fallback)
   id?: string;
-  subtitle?: string;
+  description?: string;
 }
 
 const props = defineProps<Props>();
@@ -20,7 +20,6 @@ const { data: treatmentData } = await useFetch<Treatment>(
 
 // Computed values that prioritize database data over content data
 const displayTitle = computed(() => treatmentData.value?.name);
-const displaySubtitle = computed(() => treatmentData.value?.description || props.subtitle);
 const displayPrice = computed(() => treatmentData.value?.price_cents);
 const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
@@ -28,7 +27,7 @@ const displayDiscountEnabled = computed(() => treatmentData.value?.discount_enab
 const displayDiscountPrice = computed(() => treatmentData.value?.discount_price_cents);
 const displayPackageEnabled = computed(() => treatmentData.value?.package_enabled || false);
 const displayPackageSessions = computed(() => treatmentData.value?.package_sessions);
-const displayPackagePrice = computed(() => treatmentData.value?.package_price_cents);
+const displayPackagePrice = computed(() => treatmentData.value?.package_price_cents); 
 </script>
 
 <template>
@@ -43,8 +42,8 @@ const displayPackagePrice = computed(() => treatmentData.value?.package_price_ce
               {{ displayTitle }}
             </h1>
           </div>
-          <p v-if="displaySubtitle" class="text-xl text-neutral-600 leading-relaxed">
-            {{ displaySubtitle }}
+          <p v-if="description" class="text-xl text-neutral-600 leading-relaxed">
+            {{ description }}
           </p>
         </div>
 

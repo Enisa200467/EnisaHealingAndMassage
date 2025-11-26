@@ -1,8 +1,13 @@
 ---
-title: Chakra Healing & Ontspannings massage 
+title: Chakra Healing & Ontspanningsmassage
+description: Combineer het beste van twee werelden. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
 ---
 
-::behandeling-hero{#f3fe5673-1e64-4990-a072-e833f240d13c}
+::behandeling-hero
+---
+description: Combineer het beste van twee werelden. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
+id: f3fe5673-1e64-4990-a072-e833f240d13c
+---
 ::
 
 ::behandeling-sectie

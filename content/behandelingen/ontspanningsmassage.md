@@ -1,8 +1,13 @@
 ---
 title: Ontspanningsmassage
+description: Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.
 ---
 
-::behandeling-hero{#42455ff6-98ab-429b-af23-2b7cab41e058}
+::behandeling-hero
+---
+description: Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.
+id: 42455ff6-98ab-429b-af23-2b7cab41e058
+---
 ::
 
 ::behandeling-sectie

@@ -1,8 +1,13 @@
 ---
 title: Energetische Healing
+description: Herstel de natuurlijke energiestroom in je lichaam met een intuïtieve energetische healing. Perfect voor diepgaande ontspanning en het oplossen van energetische blokkades.
 ---
 
-::behandeling-hero{#1cc75141-005d-4d62-a88e-0f93b62370b9}
+::behandeling-hero
+---
+description: Herstel de natuurlijke energiestroom in je lichaam met een intuïtieve energetische healing. Perfect voor diepgaande ontspanning en het oplossen van energetische blokkades.
+id: 1cc75141-005d-4d62-a88e-0f93b62370b9
+---
 ::
 
 ::behandeling-sectie
