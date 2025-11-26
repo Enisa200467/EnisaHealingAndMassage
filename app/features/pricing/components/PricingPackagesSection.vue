@@ -77,19 +77,17 @@
 </template>
 
 <script setup lang="ts">
-import { useTreatmentStore } from '~/features/treatments/store';
 import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
 
-const treatmentStore = useTreatmentStore();
+const { activeTreatments } = useTreatments();
 const { formatPrice } = useTreatmentDetailsFormatter();
 
 // Calculate average treatment price from all active treatments
 const averagePrice = computed(() => {
-  const activeTreatments = treatmentStore.treatments.filter((t) => t.is_active);
-  if (activeTreatments.length === 0) return 6500; // Default to €65
+  if (activeTreatments.value.length === 0) return 6500; // Default to €65
 
-  const total = activeTreatments.reduce((sum, t) => sum + t.price_cents, 0);
-  return Math.round(total / activeTreatments.length);
+  const total = activeTreatments.value.reduce((sum, t) => sum + (t.price || 0), 0);
+  return Math.round(total / activeTreatments.value.length);
 });
 
 // Generate package deals based on average treatment price

@@ -36,32 +36,20 @@
         :key="treatment.title"
         :title="treatment.title"
         :short-description="treatment.description"
+        :duration="treatment.duration"
+        :price="treatment.price"
         :discount-enabled="treatment.discountEnabled"
         :discount-price="treatment.discountPrice"
+        :package-enabled="treatment.packageEnabled"
+        :package-sessions="treatment.packageSessions"
+        :package-price="treatment.packagePrice"
+        :icon="treatment.packageEnabled ? 'i-mdi-package-variant' : treatment.icon || 'i-mdi-clock-outline'"
         :show-link-button="false"
         :book-button-text="`Boek ${treatment.title}`"
         :book-button-link="`/boeken?treatment=${treatment.slug}`"
         book-button-color="primary"
         size="md"
       >
-        <template #header>
-          <div class="flex justify-between items-start">
-            <div>
-              <h3 class="text-xl font-semibold text-neutral-900 mb-1">
-                {{ treatment.title }}
-              </h3>
-              <p class="text-sm text-neutral-500">
-                {{ formatDuration(treatment.duration) }}
-              </p>
-            </div>
-            <div class="text-right">
-              <p class="text-2xl font-bold text-primary-600">
-                {{ formatPrice(treatment.price) }}
-              </p>
-            </div>
-          </div>
-        </template>
-
         <!-- Benefits in default slot -->
         <div>
           <p class="text-sm font-medium text-neutral-700 mb-2">Voordelen:</p>
@@ -82,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TreatmentData } from '~/features/treatments/store';
+import type { TreatmentData } from '~/composables/useTreatments';
 import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
 
 export interface Treatment {
@@ -90,11 +78,17 @@ export interface Treatment {
   benefits: string[];
 }
 
-const props = defineProps<{
-  treatments: Treatment[];
-  loading: boolean;
-  error: string | null;
-}>();
+const props = withDefaults(
+  defineProps<{
+    treatments: Treatment[];
+    loading?: boolean;
+    error?: string | null;
+  }>(),
+  {
+    loading: false,
+    error: null,
+  }
+);
 
 const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 

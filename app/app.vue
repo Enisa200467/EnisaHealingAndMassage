@@ -1,3 +1,9 @@
+<script setup lang="ts">
+// Fetch treatments data during SSR to ensure it's available for header/footer
+// The useTreatments composable handles caching automatically
+const { treatments } = useTreatments();
+</script>
+
 <template>
   <UApp>
     <SkipNavigation />

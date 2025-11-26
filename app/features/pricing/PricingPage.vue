@@ -6,11 +6,7 @@
       padding="sm"
       aria-label="Alle behandelingen en tarieven"
     >
-      <PricingTreatmentsSection
-        :loading="loading"
-        :error="error"
-        :treatments="allTreatmentsData"
-      />
+      <PricingTreatmentsSection :treatments="allTreatmentsData" />
     </PageSection>
     <PageSection primary padding="sm" aria-label="Kortingspakketten">
       <PricingPackagesSection />
@@ -25,22 +21,13 @@
 </template>
 
 <script setup lang="ts">
-import { useTreatmentStore } from '../treatments/store';
-
 const { setPageSEO, businessInfo } = useGlobalSEO();
-const treatmentStore = useTreatmentStore();
-const { loading, error } = storeToRefs(treatmentStore);
 
-const { data: sections } = await useAsyncData(() => {
+// Fetch treatments using the global composable
+const { activeTreatments } = useTreatments();
+
+const { data: sections } = await useAsyncData('pricing-sections', () => {
   return queryCollection('behandelingen').select('body', 'title').all();
-});
-
-// Get all active treatments sorted by display order
-const allTreatments = computed(() => {
-  return treatmentStore.treatments
-    .filter((t) => t.is_active)
-    .map((t) => treatmentStore.formatTreatment(t))
-    .sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
 });
 
 const benefitList = computed(() => {
@@ -58,7 +45,7 @@ const benefitList = computed(() => {
 });
 
 const allTreatmentsData = computed(() =>
-  allTreatments.value.map((treatment) => ({
+  activeTreatments.value.map((treatment) => ({
     treatment: treatment,
     benefits:
       benefitList.value.find((benefit) => benefit.title === treatment.title)
@@ -87,7 +74,7 @@ const pricingSchema = computed(() => {
     };
   }
 
-  const itemListElement: SchemaItem[] = allTreatments.value.map((treatment, index) => ({
+  const itemListElement: SchemaItem[] = activeTreatments.value.map((treatment, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     item: {

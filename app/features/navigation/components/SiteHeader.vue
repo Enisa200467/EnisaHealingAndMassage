@@ -96,18 +96,11 @@
 
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
-import { useTreatmentStore } from "~/features/treatments/store";
 
 const routes = useRoutes();
-const treatmentStore = useTreatmentStore();
 
-// Get all active treatments
-const allTreatments = computed(() => {
-  return treatmentStore.treatments
-    .filter((t) => t.is_active)
-    .map((t) => treatmentStore.formatTreatment(t))
-    .sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
-});
+// Get all active treatments using global composable
+const { activeTreatments: allTreatments } = useTreatments();
 
 // Reactively define treatment navigation items
 const treatmentNavEntries = computed<NavigationMenuItem[]>(() =>

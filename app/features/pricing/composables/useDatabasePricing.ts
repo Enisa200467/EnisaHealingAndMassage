@@ -1,7 +1,4 @@
-import { useTreatmentStore } from '~/features/treatments/store';
 import type { Database } from '~/types/database.types';
-
-type Treatment = Database['public']['Tables']['treatments']['Row'];
 
 export interface PricingTreatment {
   id: string;

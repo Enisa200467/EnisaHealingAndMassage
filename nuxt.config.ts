@@ -138,7 +138,10 @@ export default defineNuxtConfig({
         "frame-ancestors": ["'self'"],
         "img-src": ["'self'", "data:", "https:", "blob:"],
         "object-src": ["'none'"],
-        "script-src-attr": ["'none'"],
+        "script-src-attr": [
+          "'unsafe-hashes'",
+          "'sha256-bwK6T5wZVTANitXbrTsel7kl/PyCjCd/Dq5Qoz3imjM='",
+        ],
         "style-src": ["'self'", "https:", "'unsafe-inline'"],
         "script-src": ["'self'", "https:", "'unsafe-inline'", "'unsafe-eval'"],
         "connect-src": [
@@ -147,6 +150,9 @@ export default defineNuxtConfig({
           "https://*.google.com",
           "https://*.supabase.co",
           "wss://*.supabase.co",
+          "https://api.iconify.design", // Iconify icon CDN
+          "https://api.simplesvg.com", // Iconify fallback CDN
+          "https://api.unisvg.com", // Iconify fallback CDN
           "ws://localhost:*", // Vite HMR in development
           "ws://127.0.0.1:*", // Vite HMR in development (alternative)
         ],

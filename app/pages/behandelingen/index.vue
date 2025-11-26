@@ -1,25 +1,9 @@
 <script setup lang="ts">
-import { useTreatmentStore } from '~/features/treatments/store';
-
 const routes = useRoutes();
-const treatmentStore = useTreatmentStore();
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
-// Fetch treatments with SSR support
-// If store is empty (SSR), fetch data and populate store
-if (treatmentStore.treatments.length === 0) {
-  await treatmentStore.fetchTreatments();
-}
-
-const { loading } = storeToRefs(treatmentStore);
-
-// Get all active treatments sorted by display order
-const allTreatments = computed(() => {
-  return treatmentStore.treatments
-    .filter((t) => t.is_active)
-    .map((t) => treatmentStore.formatTreatment(t))
-    .sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
-});
+// Fetch treatments using the global composable
+const { activeTreatments: allTreatments, loading } = useTreatments();
 
 // Generate structured data for treatment catalog
 const treatmentCatalogSchema = computed(() => {

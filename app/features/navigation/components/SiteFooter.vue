@@ -15,10 +15,7 @@
               Behandelingen
             </h4>
             <ul class="space-y-2">
-              <li
-                v-for="treatment in allTreatments"
-                :key="treatment.title"
-              >
+              <li v-for="treatment in allTreatments" :key="treatment.title">
                 <ULink
                   :to="treatment.path"
                   class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
@@ -107,65 +104,83 @@
           >
             Klantervaringen
           </h4>
-          <div v-if="displayReviews.length > 0" class="text-center mb-4">
-            <span class="font-medium text-neutral-700 dark:text-neutral-300"
-              >Gemiddelde Score:</span
-            >
-            <span class="font-bold text-primary-600 dark:text-primary-400 ml-1"
-              >{{ averageScore }}/5</span
-            >
-            <UIcon name="i-mdi-star" class="w-4 h-4 ml-1 text-yellow-400" />
-          </div>
-          <!-- Live region for review carousel announcements -->
-          <div
-            v-if="displayReviews.length > 0"
-            role="status"
-            aria-live="polite"
-            aria-atomic="true"
-            class="sr-only"
-          >
-            {{ currentReviewAnnouncement }}
-          </div>
+          <ClientOnly>
+            <template v-if="!isLoading && displayReviews.length > 0">
+              <div class="text-center mb-4">
+                <span class="font-medium text-neutral-700 dark:text-neutral-300"
+                  >Gemiddelde Score:</span
+                >
+                <span
+                  class="font-bold text-primary-600 dark:text-primary-400 ml-1"
+                  >{{ averageScore }}/5</span
+                >
+                <UIcon name="i-mdi-star" class="w-4 h-4 ml-1 text-yellow-400" />
+              </div>
 
-          <UCarousel
-            v-if="displayReviews.length > 0"
-            v-slot="{ item }"
-            :items="displayReviews"
-            :ui="{ item: 'basis-full' }"
-            arrows
-            indicators
-            class="w-full max-w-xs mx-auto"
-            aria-label="Klantervaringen carousel"
-            aria-roledescription="carousel"
-            @update:modelValue="onReviewChange"
-          >
-            <UCard class="text-center">
-              <p class="text-sm text-neutral-700 dark:text-neutral-300">
-                "{{ item.text }}"
-              </p>
-              <p
-                class="text-xs font-medium text-neutral-500 dark:text-neutral-400 mt-2"
+              <!-- Live region for review carousel announcements -->
+              <div
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+                class="sr-only"
               >
-                - {{ item.author }}
-              </p>
-            </UCard>
-          </UCarousel>
-          <div
-            v-else-if="isLoading"
-            class="text-center text-sm text-neutral-500 dark:text-neutral-400"
-          >
-            <UIcon
-              name="i-mdi-loading"
-              class="w-4 h-4 animate-spin mx-auto mb-2"
-            />
-            <p>Reviews laden...</p>
-          </div>
-          <p
-            v-else
-            class="text-center text-sm text-neutral-500 dark:text-neutral-400"
-          >
-            Nog geen reviews beschikbaar.
-          </p>
+                {{ currentReviewAnnouncement }}
+              </div>
+
+              <UCarousel
+                v-slot="{ item }"
+                :items="displayReviews"
+                :ui="{ item: 'basis-full' }"
+                arrows
+                indicators
+                class="w-full max-w-xs mx-auto"
+                aria-label="Klantervaringen carousel"
+                aria-roledescription="carousel"
+                @update:modelValue="onReviewChange"
+              >
+                <UCard class="text-center">
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                    "{{ item.text }}"
+                  </p>
+                  <p
+                    class="text-xs font-medium text-neutral-500 dark:text-neutral-400 mt-2"
+                  >
+                    - {{ item.author }}
+                  </p>
+                </UCard>
+              </UCarousel>
+            </template>
+
+            <div
+              v-else-if="isLoading"
+              class="text-center text-sm text-neutral-500 dark:text-neutral-400"
+            >
+              <UIcon
+                name="i-mdi-loading"
+                class="w-4 h-4 animate-spin mx-auto mb-2"
+              />
+              <p>Reviews laden...</p>
+            </div>
+
+            <p
+              v-else
+              class="text-center text-sm text-neutral-500 dark:text-neutral-400"
+            >
+              Nog geen reviews beschikbaar.
+            </p>
+
+            <template #fallback>
+              <div
+                class="text-center text-sm text-neutral-500 dark:text-neutral-400"
+              >
+                <UIcon
+                  name="i-mdi-loading"
+                  class="w-4 h-4 animate-spin mx-auto mb-2"
+                />
+                <p>Reviews laden...</p>
+              </div>
+            </template>
+          </ClientOnly>
         </div>
       </div>
 
@@ -173,46 +188,38 @@
       <div
         class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-400"
       >
-        &copy; {{ currentYear }} Enisa Healing & Massage. Alle
-        rechten voorbehouden.
+        &copy; {{ currentYear }} Enisa Healing & Massage. Alle rechten
+        voorbehouden.
       </div>
     </UContainer>
   </footer>
 </template>
 
 <script setup lang="ts">
-import { useTreatmentStore } from '~/features/treatments/store';
-import type { Review, ReviewStats } from '~/types/reviews';
+import type { Review, ReviewStats } from "~/types/reviews";
 
 // Use routes composable for centralized route management
 const routes = useRoutes();
 
-const treatmentStore = useTreatmentStore();
-
-// Get all active treatments
-const allTreatments = computed(() => {
-  return treatmentStore.treatments
-    .filter((t) => t.is_active)
-    .map((t) => treatmentStore.formatTreatment(t))
-    .sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
-});
+// Get all active treatments using global composable
+const { activeTreatments: allTreatments } = useTreatments();
 
 // Reactively define footer links based on routes
 const footerLinks = computed(() => ({
   info: [
-    { label: 'Veelgestelde Vragen', path: routes.pages.faq },
-    { label: 'Reviews & Ervaringen', path: routes.pages.reviews },
+    { label: "Veelgestelde Vragen", path: routes.pages.faq },
+    { label: "Reviews & Ervaringen", path: routes.pages.reviews },
   ],
 }));
 
 // SSR-compatible reviews data fetching
 const { data: footerReviewsData, pending: isLoading } = await useAsyncData(
-  'footer-reviews',
+  "footer-reviews",
   async () => {
     try {
       const [reviewsResponse, statsResponse] = await Promise.all([
-        $fetch<{ data: { reviews: Review[] } }>('/api/reviews?limit=4'),
-        $fetch<{ data: ReviewStats }>('/api/reviews/stats'),
+        $fetch<{ data: { reviews: Review[] } }>("/api/reviews?limit=4"),
+        $fetch<{ data: ReviewStats }>("/api/reviews/stats"),
       ]);
 
       return {
@@ -220,7 +227,7 @@ const { data: footerReviewsData, pending: isLoading } = await useAsyncData(
         stats: statsResponse.data,
       };
     } catch (error) {
-      console.error('Error loading reviews data for footer:', error);
+      console.error("Error loading reviews data for footer:", error);
       return {
         reviews: [],
         stats: {
@@ -232,15 +239,15 @@ const { data: footerReviewsData, pending: isLoading } = await useAsyncData(
         },
       };
     }
-  }
+  },
 );
 
 // Helper function to truncate review text
 const truncateReviewText = (text: string, maxLength = 150) => {
   if (text.length <= maxLength) return text;
   // Find the last space before maxLength to avoid cutting words
-  const truncateAt = text.lastIndexOf(' ', maxLength);
-  return text.substring(0, truncateAt > 0 ? truncateAt : maxLength) + '...';
+  const truncateAt = text.lastIndexOf(" ", maxLength);
+  return text.substring(0, truncateAt > 0 ? truncateAt : maxLength) + "...";
 };
 
 // Transform reviews for display
@@ -268,7 +275,7 @@ const currentReviewAnnouncement = computed(() => {
   if (total > 0) {
     return `Review ${currentReviewIndex.value + 1} van ${total}`;
   }
-  return '';
+  return "";
 });
 
 const onReviewChange = (index: number) => {
