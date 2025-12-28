@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Contact - Enisa Healing & Massage',
-  description: 'Neem contact op voor vragen over behandelingen, tarieven of om een afspraak te maken. We reageren meestal binnen 24 uur.',
+  description: 'Neem contact op voor vragen over behandelingen, tarieven of om een afspraak te maken. Bel of stuur een WhatsApp bericht.',
   ogTitle: 'Contact - Enisa Healing & Massage',
-  ogDescription: 'Neem contact op voor vragen over behandelingen, tarieven of om een afspraak te maken.',
+  ogDescription: 'Neem contact op voor vragen over behandelingen, tarieven of om een afspraak te maken. Bel of stuur een WhatsApp bericht.',
   ogImage: 'https://enisahealingmassage.nl/images/hero.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',
