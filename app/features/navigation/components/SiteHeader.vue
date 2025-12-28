@@ -35,15 +35,15 @@
             :items="desktopNavItems"
             aria-label="Desktop navigatiemenu"
           />
-
           <UButton
-            id="Setmore_button_iframe"
             class="ml-4"
             size="md"
             as="a"
             href="https://enisahealingmassage.setmore.com"
+            target="_blank"
+            rel="noopener noreferrer"
             icon="i-mdi-calendar"
-            aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem"
+            aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
             :label="'Boek Nu'"
           />
         </template>
@@ -79,13 +79,14 @@
 
       <template #footer>
         <UButton
-          id="Setmore_button_iframe"
           block
           size="md"
           as="a"
           href="https://enisahealingmassage.setmore.com"
+          target="_blank"
+          rel="noopener noreferrer"
           icon="i-mdi-calendar"
-          aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem"
+          aria-label="Boek een afspraak met Enisa Healing & Massage - opent boekingssysteem in nieuw venster"
           :label="'Boek Nu'"
           @click="closeMobileMenu"
         />
@@ -95,70 +96,51 @@
 </template>
 
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui';
-import { useTreatmentStore } from '~/features/treatments/store';
+import type { NavigationMenuItem } from "@nuxt/ui";
 
 const routes = useRoutes();
-const treatmentStore = useTreatmentStore();
-const { healingTreatments, massageTreatments } = storeToRefs(treatmentStore);
+
+// Get all active treatments using global composable
+const { activeTreatments: allTreatments } = useTreatments();
 
 // Reactively define treatment navigation items
-const healingNavEntries = computed<NavigationMenuItem[]>(() =>
-  healingTreatments.value.map((item) => ({
-    label: item.title || routes.slugToTitle(item.slug || ''),
+const treatmentNavEntries = computed<NavigationMenuItem[]>(() =>
+  allTreatments.value.map((item) => ({
+    label: item.title || routes.slugToTitle(item.slug || ""),
     to: item.path,
-    icon: item.icon || 'i-mdi-meditation', // Default icon if not specified
-  }))
-);
-
-const massageNavEntries = computed<NavigationMenuItem[]>(() =>
-  massageTreatments.value.map((item) => ({
-    label: item.title || routes.slugToTitle(item.slug || ''),
-    to: item.path,
-    icon: item.icon || 'i-mdi-hand-back-right', // Default icon if not specified
-  }))
+    icon: item.icon || "i-mdi-sparkles",
+  })),
 );
 
 const mobileNavItems = computed<NavigationMenuItem[]>(() => [
   {
-    label: 'Home',
-    icon: 'i-mdi-home',
+    label: "Home",
+    icon: "i-mdi-home",
     to: routes.pages.home,
   },
   {
-    label: 'Over Mij',
-    icon: 'i-mdi-account',
+    label: "Over Mij",
+    icon: "i-mdi-account",
     to: routes.pages.about,
   },
   {
-    label: 'Behandelingen',
-    icon: 'i-mdi-sparkles',
-    children: [
-      {
-        label: 'Healing',
-        icon: 'i-mdi-meditation',
-        children: healingNavEntries.value,
-      },
-      {
-        label: 'Massage',
-        icon: 'i-mdi-hand-back-right',
-        children: massageNavEntries.value,
-      },
-    ],
+    label: "Behandelingen",
+    icon: "i-mdi-sparkles",
+    children: treatmentNavEntries.value,
   },
   {
-    label: 'Tarieven',
-    icon: 'i-mdi-currency-eur',
+    label: "Tarieven",
+    icon: "i-mdi-currency-eur",
     to: routes.pages.tarieven,
   },
   {
-    label: 'Contact',
-    icon: 'i-mdi-email',
+    label: "Contact",
+    icon: "i-mdi-email",
     to: routes.pages.contact,
   },
   {
-    label: 'Reviews',
-    icon: 'i-mdi-star',
+    label: "Reviews",
+    icon: "i-mdi-star",
     to: routes.pages.reviews,
   },
 ]);
@@ -166,33 +148,33 @@ const mobileNavItems = computed<NavigationMenuItem[]>(() => [
 // Create navigation items with dynamic treatment data
 const desktopNavItems = computed<NavigationMenuItem[]>(() => [
   {
-    label: 'Home',
-    icon: 'i-mdi-home',
+    label: "Home",
+    icon: "i-mdi-home",
     to: routes.pages.home,
   },
   {
-    label: 'Over Mij',
-    icon: 'i-mdi-account',
+    label: "Over Mij",
+    icon: "i-mdi-account",
     to: routes.pages.about,
   },
   {
-    label: 'Behandelingen',
-    icon: 'i-mdi-sparkles',
-    children: [...healingNavEntries.value, ...massageNavEntries.value],
+    label: "Behandelingen",
+    icon: "i-mdi-sparkles",
+    children: treatmentNavEntries.value,
   },
   {
-    label: 'Tarieven',
-    icon: 'i-mdi-currency-eur',
+    label: "Tarieven",
+    icon: "i-mdi-currency-eur",
     to: routes.pages.tarieven,
   },
   {
-    label: 'Contact',
-    icon: 'i-mdi-email',
+    label: "Contact",
+    icon: "i-mdi-email",
     to: routes.pages.contact,
   },
   {
-    label: 'Reviews',
-    icon: 'i-mdi-star',
+    label: "Reviews",
+    icon: "i-mdi-star",
     to: routes.pages.reviews,
   },
 ]);
@@ -209,7 +191,7 @@ const toggleMobileMenu = () => {
     nextTick(() => {
       // Focus first menu item when opening
       const firstMenuItem = document.querySelector(
-        '#mobile-menu button, #mobile-menu a'
+        "#mobile-menu button, #mobile-menu a",
       );
       if (firstMenuItem) {
         (firstMenuItem as HTMLElement).focus();
@@ -225,15 +207,15 @@ const closeMobileMenu = () => {
 // Close mobile menu when escape key is pressed
 onMounted(() => {
   const handleEscape = (event: KeyboardEvent) => {
-    if (event.key === 'Escape' && isMobileMenuOpen.value) {
+    if (event.key === "Escape" && isMobileMenuOpen.value) {
       closeMobileMenu();
     }
   };
 
-  document.addEventListener('keydown', handleEscape);
+  document.addEventListener("keydown", handleEscape);
 
   onUnmounted(() => {
-    document.removeEventListener('keydown', handleEscape);
+    document.removeEventListener("keydown", handleEscape);
   });
 });
 </script>

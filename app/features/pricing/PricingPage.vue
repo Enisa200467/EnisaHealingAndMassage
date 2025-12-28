@@ -4,20 +4,9 @@
     <PageSection
       primary
       padding="sm"
-      aria-label="Healing behandelingen en tarieven"
+      aria-label="Alle behandelingen en tarieven"
     >
-      <PricingHealingSection
-        :loading="loading"
-        :error="error"
-        :healing-treatments="healingData"
-      />
-    </PageSection>
-    <PageSection padding="sm" aria-label="Massage behandelingen en tarieven">
-      <PricingMassageSection
-        :loading="loading"
-        :error="error"
-        :massage-treatments="massageData"
-      />
+      <PricingTreatmentsSection :treatments="allTreatmentsData" />
     </PageSection>
     <PageSection primary padding="sm" aria-label="Kortingspakketten">
       <PricingPackagesSection />
@@ -32,14 +21,13 @@
 </template>
 
 <script setup lang="ts">
-import { useTreatmentStore } from '../treatments/store';
-
 const { setPageSEO, businessInfo } = useGlobalSEO();
-const treatmentStore = useTreatmentStore();
-const { healingTreatments, massageTreatments, loading, error } =
-  storeToRefs(treatmentStore);
-const { data: sections } = await useAsyncData(() => {
-  return queryCollection('treatments').select('body', 'title').all();
+
+// Fetch treatments using the global composable
+const { activeTreatments } = useTreatments();
+
+const { data: sections } = await useAsyncData('pricing-sections', () => {
+  return queryCollection('behandelingen').select('body', 'title').all();
 });
 
 const benefitList = computed(() => {
@@ -56,17 +44,8 @@ const benefitList = computed(() => {
   );
 });
 
-const healingData = computed(() =>
-  healingTreatments.value.map((treatment) => ({
-    treatment: treatment,
-    benefits:
-      benefitList.value.find((benefit) => benefit.title === treatment.title)
-        ?.items || [],
-  }))
-);
-
-const massageData = computed(() =>
-  massageTreatments.value.map((treatment) => ({
+const allTreatmentsData = computed(() =>
+  activeTreatments.value.map((treatment) => ({
     treatment: treatment,
     benefits:
       benefitList.value.find((benefit) => benefit.title === treatment.title)
@@ -95,61 +74,32 @@ const pricingSchema = computed(() => {
     };
   }
 
-  const itemListElement: SchemaItem[] = [];
-  let position = 1;
-
-  // Add healing treatments
-  healingTreatments.value.forEach((treatment) => {
-    itemListElement.push({
-      '@type': 'ListItem',
-      position: position++,
-      item: {
-        '@type': 'Service',
-        name: treatment.title,
-        description: treatment.description,
-        provider: {
-          '@type': 'Organization',
-          name: businessInfo.name,
-        },
-        offers: {
-          '@type': 'Offer',
-          price: treatment.price?.replace('€', ''),
-          priceCurrency: 'EUR',
-          availability: 'https://schema.org/InStock',
-        },
+  const itemListElement: SchemaItem[] = activeTreatments.value.map((treatment, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Service',
+      name: treatment.title,
+      description: treatment.description,
+      provider: {
+        '@type': 'Organization',
+        name: businessInfo.name,
       },
-    });
-  });
-
-  // Add massage treatments
-  massageTreatments.value.forEach((treatment) => {
-    itemListElement.push({
-      '@type': 'ListItem',
-      position: position++,
-      item: {
-        '@type': 'Service',
-        name: treatment.title,
-        description: treatment.description,
-        provider: {
-          '@type': 'Organization',
-          name: businessInfo.name,
-        },
-        offers: {
-          '@type': 'Offer',
-          price: treatment.price.replace('€', ''),
-          priceCurrency: 'EUR',
-          availability: 'https://schema.org/InStock',
-        },
+      offers: {
+        '@type': 'Offer',
+        price: treatment.price ? (treatment.price / 100).toFixed(0) : undefined,
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
       },
-    });
-  });
+    },
+  }));
 
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Tarieven Enisa Healing & Massage',
     description:
-      'Transparante prijzen voor alle healing en massage behandelingen',
+      'Transparante prijzen voor alle behandelingen',
     provider: {
       '@type': 'Organization',
       name: businessInfo.name,
@@ -164,7 +114,7 @@ watchEffect(() => {
   setPageSEO({
     title: 'Tarieven - Enisa Healing & Massage',
     description:
-      'Overzicht van alle tarieven voor massage en healing behandelingen. Transparante prijzen zonder verborgen kosten. Bekijk ook onze kortingspakketten.',
+      'Overzicht van alle tarieven voor behandelingen. Transparante prijzen zonder verborgen kosten. Bekijk ook onze kortingspakketten.',
     path: '/tarieven',
     structuredData: [pricingSchema.value],
   });

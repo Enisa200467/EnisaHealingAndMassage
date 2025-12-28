@@ -1,21 +1,27 @@
-::behandeling-hero{id=dd01fafe-5591-4ca2-b460-c18388237f76}
+---
+title: Hypnotherapie
+description: Ontdek de kracht van je onderbewustzijn met hypnotherapie. Werk aan diepgewortelde patronen, overtuigingen en emoties voor duurzame verandering en persoonlijke groei.
+---
+
+::behandeling-hero
+---
+description: Ontdek de kracht van je onderbewustzijn met hypnotherapie. Werk aan diepgewortelde patronen, overtuigingen en emoties voor duurzame verandering en persoonlijke groei.
+id: dd01fafe-5591-4ca2-b460-c18388237f76
+---
 ::
 
 ::behandeling-sectie
 ---
-items:
-  - "Diepe ontspanning: Met mijn stem, adem en energie begeleid ik je naar een
-    rustige, veilige hypnose."
-  - "Contact met het onderbewuste: Je bewuste en onderbewuste gaan tijdens de
-    sessie samenwerken."
-  - "Helende visualisaties en innerlijk werk: We gebruiken zachte beelden,
-    gevoelens en inzichten om blokkades los te laten."
-  - "Energetische ondersteuning: Een combinatie van hypnotherapie en
-    energetische healing voor een volledig herstel van lichaam en geest."
+title: Wat kun je verwachten?
 image: /images/clock-7791024-1280.jpg
 imageAlt: Sfeerbeeld van een hypnotherapie sessie
-title: Wat kun je verwachten?
+items:
+  - "Diepe ontspanning: Met mijn stem, adem en energie begeleid ik je naar een rustige, veilige hypnose"
+  - "Contact met het onderbewuste: Je bewuste en onderbewuste gaan tijdens de sessie samenwerken"
+  - "Helende visualisaties en innerlijk werk: We gebruiken zachte beelden, gevoelens en inzichten om blokkades los te laten"
+  - "Energetische ondersteuning: Een combinatie van hypnotherapie en energetische healing voor een volledig herstel van lichaam en geest"
 ---
+Tijdens een hypnotherapie sessie begeleid ik je naar een diepe staat van ontspanning, waarin je onderbewustzijn toegankelijk wordt. Door de combinatie van hypnotherapie en energetische healing werk ik op meerdere niveaus om blokkades op te lossen, oude patronen te transformeren en emotionele wonden te helen. Je blijft tijdens de hele sessie volledig bewust en in controle.
 ::
 
 ::twee-kolommen
@@ -89,3 +95,5 @@ Tijdens of na de sessie kun je merken:
 - Meerdere sessies kunnen nodig zijn voor diepere patronen
 - Het is complementair en vervangt geen medische zorg
 ::
+
+\::

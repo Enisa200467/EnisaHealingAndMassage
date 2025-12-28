@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useTreatmentStore } from '~/features/treatments/store';
 import type { ReviewSubmission } from '../types/reviews';
 
 // Define props
@@ -31,10 +30,10 @@ const formData = reactive<ReviewSubmission>({
   treatment: '',
   review: '',
 });
-const { treatments: treatmentsData } = useTreatmentStore();
+const { activeTreatments } = useTreatments();
 
 const treatments = computed(() =>
-  treatmentsData.map((treatment) => treatment.name)
+  activeTreatments.value.map((treatment) => treatment.title)
 );
 const isSubmitting = ref(false);
 const submitStatus = ref<'idle' | 'submitting' | 'success' | 'error'>('idle');

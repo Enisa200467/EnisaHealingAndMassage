@@ -6,79 +6,39 @@
           Ontdek Onze Behandelingen
         </h2>
         <p class="mt-4 text-lg leading-8 text-gray-600">
-          Kies de behandeling die bij jou past: focus op heling of pure
-          ontspanning.
+          Kies de behandeling die bij jou past voor heling en ontspanning.
         </p>
       </div>
 
       <div class="mt-16">
-        <UTabs :items="massageTypes" class="w-full">
-          <template #item="{ item }">
-            <div
-              class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3"
-            >
-              <UCard
-                v-for="massage in item.massages"
-                :key="massage.title"
-                class="flex flex-col"
-                variant="outline"
-              >
-                <template #header>
-                  <div class="flex items-center">
-                    <UIcon
-                      :name="massage.icon || 'i-mdi-sparkles'"
-                      class="mr-2 text-primary-500"
-                    />
-                    <h3 class="text-lg font-semibold leading-6">
-                      {{ massage.title }}
-                    </h3>
-                  </div>
-                </template>
-
-                <p class="text-sm text-gray-600 grow">
-                  {{ massage.description }}
-                </p>
-
-                <template #footer>
-                  <UButton
-                    variant="outline"
-                    :to="massage.path"
-                    label="Meer Info"
-                    size="sm"
-                  />
-                  <UButton
-                    :to="routes.pages.booking"
-                    label="Direct Boeken"
-                    size="sm"
-                    class="ml-2"
-                  />
-                </template>
-              </UCard>
-            </div>
-          </template>
-        </UTabs>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <TreatmentDetails
+            v-for="treatment in allTreatments"
+            :key="treatment.title"
+            :title="treatment.title"
+            :icon="treatment.icon || 'i-mdi-sparkles'"
+            :short-description="treatment.description"
+            :price="treatment.price"
+            :discount-enabled="treatment.discountEnabled"
+            :discount-price="treatment.discountPrice"
+            :package-enabled="treatment.packageEnabled"
+            :package-sessions="treatment.packageSessions"
+            :package-price="treatment.packagePrice"
+            :show-link-button="true"
+            :to="treatment.path"
+            :show-book-button="true"
+            book-button-text="Direct Boeken"
+            size="sm"
+          />
+        </div>
       </div>
     </UContainer>
   </section>
 </template>
 
 <script setup lang="ts">
-import { useTreatmentStore } from '~/features/treatments/store';
-
 const routes = useRoutes();
-const { healingTreatments, massageTreatments } = useTreatmentStore();
 
-// Group treatments by category for the tabs
-const massageTypes = computed(() => [
-  {
-    label: 'Helende Behandelingen',
-    slot: 'item',
-    massages: healingTreatments,
-  },
-  {
-    label: 'Reguliere Massages',
-    slot: 'item',
-    massages: massageTreatments,
-  },
-]);
+// Get all active treatments using global composable
+const { activeTreatments: allTreatments } = useTreatments();
 </script>

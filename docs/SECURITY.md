@@ -37,11 +37,6 @@ Last Updated: 2025-11-17
 - Content Security Policy (CSP)
 - CSRF protection enabled
 
-### ✅ Session Management
-- Admin session timeout: 5 minutes of inactivity
-- Automatic logout on timeout
-- Activity tracking for session renewal
-
 ---
 
 ## Supabase RLS Policies
@@ -238,43 +233,11 @@ CSRF protection is not enabled because the application has multiple other securi
 
 1. **Supabase Authentication** - Admin routes require authentication
 2. **Rate Limiting** - Prevents abuse on all endpoints
-3. **Session Timeout** - 5-minute inactivity logout for admin
-4. **Input Sanitization** - DOMPurify prevents XSS attacks
-5. **RLS Policies** - Database-level access control
-6. **Single Admin User** - Not a multi-user system vulnerable to CSRF
+3. **Input Sanitization** - DOMPurify prevents XSS attacks
+4. **RLS Policies** - Database-level access control
+5. **Single Admin User** - Not a multi-user system vulnerable to CSRF
 
-CSRF is primarily a concern for applications where an attacker could trick an authenticated user into submitting malicious requests from a third-party site. This application's security model (authentication + session timeout + rate limiting) provides equivalent or better protection.
-
----
-
-## Admin Session Management
-
-### Implementation
-
-Location: `/app/features/admin/composables/useAdminSessionTimeout.ts`
-
-### Features
-
-- **Timeout Duration**: 5 minutes of inactivity
-- **Activity Tracking**: Monitors mouse, keyboard, scroll, touch events
-- **Automatic Logout**: Logs out user and redirects to login page
-- **Throttling**: Activity events throttled to 1 second to avoid performance issues
-
-### Usage
-
-```vue
-<script setup>
-const { initSessionTimeout } = useAdminSessionTimeout();
-onMounted(() => {
-  initSessionTimeout();
-});
-</script>
-```
-
-Currently implemented in:
-- `/app/features/admin/AdminPage.vue`
-
-**TODO**: Add to all other admin pages for consistent timeout behavior.
+CSRF is primarily a concern for applications where an attacker could trick an authenticated user into submitting malicious requests from a third-party site. This application's security model (authentication + rate limiting) provides equivalent or better protection.
 
 ---
 

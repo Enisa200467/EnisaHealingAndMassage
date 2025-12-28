@@ -1,14 +1,17 @@
+// Core treatment metadata stored in database
+// Content (description, category, intensity) lives in markdown frontmatter
 export interface Treatment {
   id: string;
   name: string;
   slug: string;
-  description?: string;
   duration_minutes: number;
   price_cents: number;
-  intensity?: number;
-  intensity_label?: string;
+  discount_enabled: boolean;
+  discount_price_cents?: number;
+  package_enabled: boolean;
+  package_sessions?: number;
+  package_price_cents?: number;
   icon?: string;
-  category?: string;
   is_active: boolean;
   display_order: number;
   created_at: string;
@@ -18,13 +21,14 @@ export interface Treatment {
 export interface CreateTreatmentInput {
   name: string;
   slug?: string;
-  description?: string;
   duration_minutes: number;
   price_cents: number;
-  intensity?: number;
-  intensity_label?: string;
+  discount_enabled?: boolean;
+  discount_price_cents?: number;
+  package_enabled?: boolean;
+  package_sessions?: number;
+  package_price_cents?: number;
   icon?: string;
-  category?: string;
   display_order?: number;
 }
 
@@ -35,29 +39,28 @@ export interface UpdateTreatmentInput extends Partial<CreateTreatmentInput> {
 
 export interface TreatmentFormData {
   name: string;
-  description: string;
   duration_minutes: number;
   price_euros: number; // For form display, converted to/from price_cents
-  intensity: number;
-  intensity_label: string;
+  discount_enabled: boolean;
+  discount_price_euros: number; // For form display, converted to/from discount_price_cents
+  package_enabled: boolean;
+  package_sessions: number; // Number of sessions in package
+  package_price_euros: number; // For form display, converted to/from package_price_cents
   icon: string;
-  category: string;
   display_order: number;
   is_active: boolean;
 }
 
-export const TREATMENT_CATEGORIES = [
-  { value: 'massage', label: 'Massage' },
-  { value: 'healing', label: 'Healing' },
-] as const;
+// Markdown frontmatter structure for treatment content
+export interface TreatmentContent {
+  title: string;
+  description: string;
+}
 
-export const INTENSITY_LEVELS = [
-  { value: 1, label: 'Zeer Zacht' },
-  { value: 2, label: 'Zacht' },
-  { value: 3, label: 'Medium' },
-  { value: 4, label: 'Stevig' },
-  { value: 5, label: 'Zeer Stevig' },
-] as const;
+// Combined treatment data (database + markdown)
+export interface TreatmentWithContent extends Treatment {
+  content: TreatmentContent;
+}
 
 export const COMMON_ICONS = [
   { value: 'i-mdi-sparkles', label: 'Sparkles (Chakra/Energy)' },

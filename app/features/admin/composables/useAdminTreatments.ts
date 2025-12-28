@@ -31,20 +31,27 @@ export const useAdminTreatments = () => {
     return cents / 100;
   };
 
-  // Convert form data to database format
+  // Convert form data to database format (metadata only - content in markdown)
   const formatForDatabase = (
     formData: TreatmentFormData
   ): CreateTreatmentInput => {
     return {
       name: formData.name,
       slug: generateSlug(formData.name),
-      description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
-      intensity: formData.intensity,
-      intensity_label: formData.intensity_label,
+      discount_enabled: formData.discount_enabled,
+      discount_price_cents: formData.discount_enabled
+        ? eurosToCents(formData.discount_price_euros)
+        : undefined,
+      package_enabled: formData.package_enabled,
+      package_sessions: formData.package_enabled
+        ? formData.package_sessions
+        : undefined,
+      package_price_cents: formData.package_enabled
+        ? eurosToCents(formData.package_price_euros)
+        : undefined,
       icon: formData.icon,
-      category: formData.category,
       display_order: formData.display_order,
     };
   };
@@ -56,13 +63,20 @@ export const useAdminTreatments = () => {
   ) => {
     const baseData = {
       name: formData.name,
-      description: formData.description,
       duration_minutes: formData.duration_minutes,
       price_cents: eurosToCents(formData.price_euros),
-      intensity: formData.intensity,
-      intensity_label: formData.intensity_label,
+      discount_enabled: formData.discount_enabled,
+      discount_price_cents: formData.discount_enabled
+        ? eurosToCents(formData.discount_price_euros)
+        : undefined,
+      package_enabled: formData.package_enabled,
+      package_sessions: formData.package_enabled
+        ? formData.package_sessions
+        : undefined,
+      package_price_cents: formData.package_enabled
+        ? eurosToCents(formData.package_price_euros)
+        : undefined,
       icon: formData.icon,
-      category: formData.category,
       display_order: formData.display_order,
       is_active: formData.is_active,
     };
@@ -82,13 +96,18 @@ export const useAdminTreatments = () => {
   const formatForForm = (treatment: Treatment): TreatmentFormData => {
     return {
       name: treatment.name,
-      description: treatment.description || '',
       duration_minutes: treatment.duration_minutes,
       price_euros: centsToEuros(treatment.price_cents),
-      intensity: treatment.intensity || 1,
-      intensity_label: treatment.intensity_label || '',
+      discount_enabled: treatment.discount_enabled || false,
+      discount_price_euros: treatment.discount_price_cents
+        ? centsToEuros(treatment.discount_price_cents)
+        : 0,
+      package_enabled: treatment.package_enabled || false,
+      package_sessions: treatment.package_sessions || 5,
+      package_price_euros: treatment.package_price_cents
+        ? centsToEuros(treatment.package_price_cents)
+        : 0,
       icon: treatment.icon || '',
-      category: treatment.category || '',
       display_order: treatment.display_order,
       is_active: treatment.is_active,
     };

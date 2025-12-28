@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { Treatment, TreatmentFormData } from './types/treatment.types';
+import type { Treatment, TreatmentFormData } from "./types/treatment.types";
 
 // SEO Meta
 useSeoMeta({
-  title: 'Behandelingen Beheer - Beheer Dashboard',
+  title: "Behandelingen Beheer - Beheer Dashboard",
   description:
-    'Beheer alle behandelingen en hun details in het admin dashboard.',
-  robots: 'noindex, nofollow',
+    "Beheer alle behandelingen en hun details in het admin dashboard.",
+  robots: "noindex, nofollow",
 });
 
 // Authentication check - let Supabase handle redirects
@@ -29,58 +29,49 @@ const {
 } = useAdminTreatments();
 
 // View states
-type ViewState = 'list' | 'create' | 'edit' | 'delete' | 'calendar';
-const currentView = ref<ViewState>('list');
+type ViewState = "list" | "create" | "edit" | "delete" | "calendar";
+const currentView = ref<ViewState>("list");
 const editingTreatment = ref<Treatment | null>(null);
 const deletingTreatment = ref<Treatment | null>(null);
 
-// Form data
-const formData = ref<TreatmentFormData>({
-  name: '',
-  description: '',
+// Form data (metadata only - content lives in markdown)
+const defaultFormData = {
+  name: "",
   duration_minutes: 60,
   price_euros: 65,
-  intensity: 2,
-  intensity_label: '',
-  icon: '',
-  category: '',
+  discount_enabled: false,
+  package_enabled: false,
+  discount_price_euros: 0,
+  package_price_euros: 0,
+  package_sessions: 0,
+  icon: "",
   display_order: 0,
   is_active: true,
-});
+};
 
+const formData = ref<TreatmentFormData>(defaultFormData);
 // Reset form data
 const resetFormData = () => {
-  formData.value = {
-    name: '',
-    description: '',
-    duration_minutes: 60,
-    price_euros: 65,
-    intensity: 2,
-    intensity_label: '',
-    icon: '',
-    category: '',
-    display_order: treatments.value.length,
-    is_active: true,
-  };
+  formData.value = defaultFormData;
 };
 
 // Handle create treatment
 const handleCreate = () => {
   resetFormData();
-  currentView.value = 'create';
+  currentView.value = "create";
 };
 
 // Handle edit treatment
 const handleEdit = (treatment: Treatment) => {
   editingTreatment.value = treatment;
   formData.value = formatForForm(treatment);
-  currentView.value = 'edit';
+  currentView.value = "edit";
 };
 
 // Handle delete treatment
 const handleDelete = (treatment: Treatment) => {
   deletingTreatment.value = treatment;
-  currentView.value = 'delete';
+  currentView.value = "delete";
 };
 
 const shouldShowCmsWarning = ref(true);
@@ -94,17 +85,17 @@ const handleSubmit = async () => {
     // Update existing treatment
     const result = await updateTreatment(
       editingTreatment.value.id,
-      sanitizedData
+      sanitizedData,
     );
     if (result) {
-      currentView.value = 'calendar';
+      currentView.value = "calendar";
       editingTreatment.value = null;
     }
   } else {
     // Create new treatment
     const result = await createTreatment(sanitizedData);
     if (result) {
-      currentView.value = 'calendar';
+      currentView.value = "calendar";
       shouldShowCmsWarning.value = true;
     }
   }
@@ -112,7 +103,7 @@ const handleSubmit = async () => {
 
 // Handle form cancel
 const handleCancel = () => {
-  currentView.value = 'list';
+  currentView.value = "list";
   editingTreatment.value = null;
   resetFormData();
 };
@@ -122,7 +113,7 @@ const confirmDelete = async () => {
   if (deletingTreatment.value) {
     const success = await deleteTreatment(deletingTreatment.value.id);
     if (success) {
-      currentView.value = 'list';
+      currentView.value = "list";
       deletingTreatment.value = null;
     }
   }
@@ -130,7 +121,7 @@ const confirmDelete = async () => {
 
 // Cancel delete
 const cancelDelete = () => {
-  currentView.value = 'list';
+  currentView.value = "list";
   deletingTreatment.value = null;
 };
 
@@ -146,7 +137,7 @@ onMounted(() => {
 
 // Only render if user is authenticated
 // TODO auth guard?
-const isAuthenticated = computed(() => user.value?.role === 'authenticated');
+const isAuthenticated = computed(() => user.value?.role === "authenticated");
 </script>
 
 <template>

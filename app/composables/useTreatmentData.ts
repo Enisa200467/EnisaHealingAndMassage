@@ -35,15 +35,15 @@ export const useTreatmentDetailsFormatter = () => {
       const hours = Math.floor(minutes / 60);
       const remainingMinutes = minutes % 60;
       if (remainingMinutes === 0) {
-        return `${hours} ${hours === 1 ? 'uur' : 'uur'}`;
+        return `${hours} ${hours === 1 ? "uur" : "uur"}`;
       }
-      return `${hours}u ${remainingMinutes}min`;
+      return `${hours}u ${remainingMinutes} min`;
     }
     return `${minutes} minuten`;
   };
 
   const formatTreatmentData = (
-    treatment: TreatmentData
+    treatment: TreatmentData,
   ): TreatmentWithFormatted => {
     return {
       ...treatment,

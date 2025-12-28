@@ -7,10 +7,12 @@ const createTreatmentSchema = z.object({
   description: z.string().optional(),
   duration_minutes: z.number().min(1),
   price_cents: z.number().min(0),
-  intensity: z.number().min(1).max(5).optional(),
-  intensity_label: z.string().optional(),
+  discount_enabled: z.boolean().optional(),
+  discount_price_cents: z.number().min(0).optional(),
+  package_enabled: z.boolean().optional(),
+  package_sessions: z.number().min(2).optional(),
+  package_price_cents: z.number().min(0).optional(),
   icon: z.string().optional(),
-  category: z.string().optional(),
   display_order: z.number().optional(),
 });
 

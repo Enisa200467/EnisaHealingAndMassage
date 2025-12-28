@@ -23,6 +23,11 @@ const rateLimitStore = new Map<string, RateLimitStore>();
  * @returns true if request is allowed, throws error if rate limit exceeded
  */
 export function checkRateLimit(event: H3Event, config: RateLimitConfig): boolean {
+  // Skip rate limiting in development mode
+  if (process.env.NODE_ENV === 'development') {
+    return true;
+  }
+
   // Get client IP address
   const ip = getRequestIP(event, { xForwardedFor: true }) || 'unknown';
 

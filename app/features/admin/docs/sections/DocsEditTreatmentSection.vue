@@ -9,114 +9,71 @@
       </template>
 
       <div class="prose prose-neutral max-w-none">
-        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">
-          Database Gegevens Wijzigen
-        </h3>
-        <ol class="space-y-3">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Database Wijzigen</h3>
+        <ol class="space-y-3 mb-8">
           <li>
-            <strong>
-              <NuxtLink
-                to="/admin/treatments"
-                class="text-blue-600 hover:text-blue-800 underline"
-              >
-                Ga naar Admin → Behandelingen
-              </NuxtLink>
-            </strong>
-            <p class="text-neutral-600">
-              Je ziet een overzicht van alle behandelingen
-            </p>
-          </li>
-          <li>
-            <strong>Klik op "Bewerken" bij de gewenste behandeling</strong>
-            <p class="text-neutral-600">Dit opent het bewerkingsformulier</p>
-          </li>
-          <li>
-            <strong>Wijzig de gewenste velden</strong>
-            <ul class="mt-2">
-              <li>
-                <strong>Prijs aanpassen:</strong> Directe impact op alle
-                pagina's
-              </li>
-              <li><strong>Duur wijzigen:</strong> Automatisch geformatteerd</li>
-              <li>
-                <strong>Intensiteit:</strong> Update zowel nummer als label
-                indien gewenst
-              </li>
-              <li><strong>Status:</strong> Schakel tussen actief/inactief</li>
-            </ul>
-            <div
-              class="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-2"
+            <NuxtLink
+              to="/admin/treatments"
+              class="text-blue-600 hover:text-blue-800 underline font-semibold"
             >
-              <p class="text-amber-800 text-sm">
-                <strong>⚠️ Belangrijk:</strong> Pas ook de prijs aan in
-                <a
-                  href="https://www.setmore.com/"
-                  target="_blank"
-                  rel="noopener"
-                  class="text-blue-600 hover:text-blue-800 underline"
-                  >Setmore</a
-                >
-                om verwarring bij klanten te voorkomen!
-              </p>
+              Ga naar Admin → Behandelingen
+            </NuxtLink>
+          </li>
+          <li>Klik "Bewerken" bij de gewenste behandeling</li>
+          <li>
+            Wijzig velden (prijs, duur, intensiteit, status)
+            <div
+              class="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-2 text-sm"
+            >
+              <strong>⚠️ Belangrijk:</strong> Pas ook
+              <a
+                href="https://www.setmore.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-blue-600 underline"
+                >Setmore</a
+              >
+              aan bij prijswijzigingen!
             </div>
           </li>
-          <li>
-            <strong>Opslaan</strong>
-            <p class="text-neutral-600">
-              Wijzigingen zijn direct zichtbaar op de website
-            </p>
-          </li>
+          <li>Opslaan (wijzigingen direct zichtbaar)</li>
         </ol>
 
-        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 my-6">
-          <h4
-            class="text-lg font-semibold text-orange-900 mb-2 flex items-center gap-2"
-          >
-            <UIcon name="i-mdi-alert" class="w-5 h-5" />
-            Let op bij Slug wijzigen
-          </h4>
-          <p class="text-orange-800">
-            Als je de slug wijzigt, moet je ook het content bestand hernoemen
-            van
-            <code>/content/treatments/oude-slug.md</code> naar
-            <code>/content/treatments/nieuwe-slug.md</code>
+        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-8">
+          <p class="text-orange-900 font-semibold mb-1">
+            <UIcon name="i-mdi-alert" class="w-5 h-5 inline" />
+            Slug Wijzigen?
+          </p>
+          <p class="text-orange-800 text-sm">
+            Hernoem ook het content bestand:
+            <code>/content/treatments/oude-slug.md</code> →
+            <code>nieuwe-slug.md</code>
           </p>
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">
-          Content Wijzigen
-        </h3>
-        <p>
-          Voor het wijzigen van de rijke content (beschrijvingen, voordelen,
-          etc.):
-        </p>
-        <ol class="space-y-2">
-          <li>
-            Open het bijbehorende <code>.md</code> bestand in
-            <code>/content/treatments/</code>
-          </li>
-          <li>
-            Bewerk de content components zoals
-            <code>::treatmentSection</code>, <code>::benefitList</code>, etc.
-          </li>
-          <li>Sla het bestand op - wijzigingen zijn direct zichtbaar</li>
-        </ol>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Content Wijzigen</h3>
 
-        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
-          <h4
-            class="text-lg font-semibold text-blue-900 mb-2 flex items-center gap-2"
-          >
-            <UIcon name="i-mdi-lightbulb" class="w-5 h-5" />
-            Pro Tip: Nuxt Studio
-          </h4>
-          <p class="text-blue-800">
-            Gebruik Nuxt Studio voor een visuele editor ervaring bij het
-            bewerken van content bestanden. Ga naar
-            <a href="https://nuxt.studio" target="_blank" class="underline"
-              >nuxt.studio</a
-            >
-            en log in met Enisa's GitHub account.
-          </p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+          <div class="flex items-start gap-3">
+            <UIcon name="i-mdi-lightbulb" class="w-6 h-6 text-blue-600 mt-1" />
+            <div>
+              <p class="text-blue-900 font-semibold mb-2">Via Nuxt Studio</p>
+              <ol class="text-blue-800 space-y-1 text-sm">
+                <li>
+                  1. Ga naar
+                  <a
+                    href="https://nuxt.studio"
+                    target="_blank"
+                    class="underline"
+                    >nuxt.studio</a
+                  >
+                </li>
+                <li>2. Open <code>/content/treatments/[slug].md</code></li>
+                <li>3. Bewerk componenten en content</li>
+                <li>4. Publiceer wijzigingen</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
     </UCard>

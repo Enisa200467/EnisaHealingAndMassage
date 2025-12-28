@@ -1,14 +1,13 @@
-import { serverSupabaseServiceRole } from '#supabase/server';
+import { serverSupabaseServiceRole } from "#supabase/server";
 
 export default defineEventHandler(async (event) => {
   const client = serverSupabaseServiceRole(event);
-
   try {
     const { data: treatments, error } = await client
-      .from('treatments')
-      .select('*')
-      .eq('is_active', true)
-      .order('display_order', { ascending: true });
+      .from("treatments")
+      .select("*")
+      .eq("is_active", true)
+      .order("display_order", { ascending: true });
 
     if (error) {
       throw createError({
@@ -21,12 +20,12 @@ export default defineEventHandler(async (event) => {
       data: treatments || [],
     };
   } catch (error: unknown) {
-    if (error && typeof error === 'object' && 'statusCode' in error) {
+    if (error && typeof error === "object" && "statusCode" in error) {
       throw error;
     }
     throw createError({
       statusCode: 500,
-      statusMessage: 'Failed to fetch treatments',
+      statusMessage: "Failed to fetch treatments",
     });
   }
 });

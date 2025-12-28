@@ -69,7 +69,7 @@ export default defineEventHandler(async (event) => {
   ];
 
   // Define treatment pages with enhanced metadata
-  // Only include treatments that have corresponding markdown files in /content/treatments/
+  // Only include treatments that have corresponding markdown files in /content/behandelingen/
   const treatmentPages = [
     {
       url: '/behandelingen/energetische-healing-sessie',

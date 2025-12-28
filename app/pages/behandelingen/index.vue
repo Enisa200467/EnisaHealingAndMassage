@@ -1,60 +1,32 @@
 <script setup lang="ts">
-import { useTreatmentStore } from '~/features/treatments/store';
-
 const routes = useRoutes();
-const treatmentStore = useTreatmentStore();
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
-// Fetch treatments with SSR support
-// If store is empty (SSR), fetch data and populate store
-if (treatmentStore.treatments.length === 0) {
-  await treatmentStore.fetchTreatments();
-}
-
-const { healingTreatments, massageTreatments, loading } = storeToRefs(treatmentStore);
-
-// Group treatments by category for the tabs
-const treatmentCategories = computed(() => [
-  {
-    label: 'Helende Behandelingen',
-    slot: 'item',
-    treatments: healingTreatments.value,
-  },
-  {
-    label: 'Reguliere Massages',
-    slot: 'item',
-    treatments: massageTreatments.value,
-  },
-]);
+// Fetch treatments using the global composable
+const { activeTreatments: allTreatments, loading } = useTreatments();
 
 // Generate structured data for treatment catalog
 const treatmentCatalogSchema = computed(() => {
-  const allTreatments = [
-    ...healingTreatments.value,
-    ...massageTreatments.value,
-  ];
-
   return {
     '@context': 'https://schema.org',
     '@type': 'OfferCatalog',
     name: 'Behandelingen - Enisa Healing & Massage',
     description:
-      'Volledig overzicht van helende behandelingen en reguliere massages',
+      'Volledig overzicht van alle behandelingen',
     provider: {
       '@type': 'LocalBusiness',
       name: businessInfo.name,
       url: businessInfo.url,
     },
-    itemListElement: allTreatments.map((treatment, index) => ({
+    itemListElement: allTreatments.value.map((treatment, index) => ({
       '@type': 'Offer',
       position: index + 1,
       itemOffered: {
         '@type': 'Service',
         name: treatment.title,
         description: treatment.description,
-        category: treatment.category === 'healing' ? 'Healing' : 'Massage',
       },
-      price: treatment.price?.replace('€', '').trim(),
+      price: treatment.price ? (treatment.price / 100).toFixed(0) : undefined,
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
       url: `${businessInfo.url}/behandelingen/${treatment.slug}`,
@@ -64,11 +36,11 @@ const treatmentCatalogSchema = computed(() => {
 
 // Enhanced SEO with structured data
 watchEffect(() => {
-  if (healingTreatments.value.length || massageTreatments.value.length) {
+  if (allTreatments.value.length) {
     setPageSEO({
       title: 'Alle Behandelingen - Enisa Healing & Massage',
       description:
-        'Ontdek ons complete aanbod van helende behandelingen en reguliere massages. Van energetische healing tot klassieke ontspanningsmassage. Kies de behandeling die bij jou past.',
+        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning. Kies de behandeling die bij jou past.',
       path: '/behandelingen',
       type: 'website',
       structuredData: [treatmentCatalogSchema.value],
@@ -78,10 +50,10 @@ watchEffect(() => {
     useSeoMeta({
       title: 'Alle Behandelingen - Enisa Healing & Massage',
       description:
-        'Ontdek ons complete aanbod van helende behandelingen en reguliere massages. Van energetische healing tot klassieke ontspanningsmassage. Kies de behandeling die bij jou past.',
+        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning.',
       ogTitle: 'Alle Behandelingen - Enisa Healing & Massage',
       ogDescription:
-        'Ontdek ons complete aanbod van helende behandelingen en reguliere massages.',
+        'Ontdek ons complete aanbod van behandelingen.',
       ogType: 'website',
     });
   }
@@ -107,10 +79,10 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
           </p>
         </div>
 
-        <!-- Treatment Categories Tabs -->
+        <!-- Treatments Grid -->
         <div class="mt-16">
           <!-- Loading State -->
-          <div v-if="loading" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
+          <div v-if="loading" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div v-for="i in 6" :key="i" class="bg-white rounded-lg shadow-sm p-6 space-y-4">
               <LoadingSkeleton type="circle" width="48px" height="48px" />
               <LoadingSkeleton type="text" width="60%" />
@@ -123,43 +95,40 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
           </div>
 
           <!-- Treatment Content -->
-          <UTabs v-else :items="treatmentCategories" class="w-full">
-            <template #item="{ item }">
-              <div
-                v-if="item.treatments && item.treatments.length > 0"
-                class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3"
-              >
-                <div
-                  v-for="treatment in item.treatments"
-                  :key="treatment.slug"
-                  class="flex flex-col hover:shadow-lg transition-shadow duration-200"
-                  variant="outline"
-                >
-                  <TreatmentDetails
-                    size="sm"
-                    :title="treatment.title"
-                    :short-description="treatment.description"
-                    :icon="treatment.icon"
-                    :duration="treatment.duration"
-                    :price="treatment.price"
-                    :intensity="treatment.intensity"
-                    :intensity-label="treatment.intensityLabel"
-                    show-book-button
-                    show-link-button
-                    :to="getSlug(treatment.slug)"
-                  />
-                </div>
-              </div>
-              <div
-                v-else
-                class="mt-8 text-center py-12 text-gray-500 bg-gray-100 rounded-lg"
-              >
-                <p class="text-lg">
-                  Er zijn momenteel geen behandelingen in deze categorie.
-                </p>
-              </div>
-            </template>
-          </UTabs>
+          <div
+            v-else-if="allTreatments.length > 0"
+            class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+            <div
+              v-for="treatment in allTreatments"
+              :key="treatment.slug"
+              class="flex flex-col hover:shadow-lg transition-shadow duration-200"
+            >
+              <TreatmentDetails
+                size="sm"
+                :title="treatment.title"
+                :short-description="treatment.description"
+                :icon="treatment.icon"
+                :duration="treatment.duration"
+                :price="treatment.price"
+                :discount-enabled="treatment.discountEnabled"
+                :discount-price="treatment.discountPrice"
+                show-book-button
+                show-link-button
+                :to="getSlug(treatment.slug)"
+              />
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div
+            v-else
+            class="mt-8 text-center py-12 text-gray-500 bg-gray-100 rounded-lg"
+          >
+            <p class="text-lg">
+              Er zijn momenteel geen behandelingen beschikbaar.
+            </p>
+          </div>
         </div>
 
         <!-- Call to Action -->

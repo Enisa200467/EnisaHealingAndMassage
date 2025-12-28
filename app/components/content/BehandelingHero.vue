@@ -4,62 +4,30 @@ import { type Treatment } from '~/features/admin/types/treatment.types';
 interface Props {
   // Content-based props (fallback)
   id?: string;
-  subtitle?: string;
+  description?: string;
 }
 
 const props = defineProps<Props>();
 
-// Try to inject treatment data from parent page
-const injectedTreatmentData = inject<any>('treatmentData', null);
-
-// Only fetch if ID is provided and no injected data
-const shouldFetch = props.id && !injectedTreatmentData;
-const { data: fetchedData, status } = shouldFetch
-  ? await useFetch<Treatment>(`/api/treatments/${props.id}`)
-  : { data: ref(null), status: ref('success') };
-
-// Use injected data or fetched data
-const treatmentData = computed(() => {
-  if (injectedTreatmentData) {
-    // Convert injected data format to Treatment format
-    return {
-      name: injectedTreatmentData.title,
-      description: injectedTreatmentData.description,
-      price_cents: injectedTreatmentData.price ? parseInt(injectedTreatmentData.price.replace(/[€\s]/g, '')) * 100 : undefined,
-      duration_minutes: injectedTreatmentData.duration ? parseInt(injectedTreatmentData.duration) : undefined,
-      icon: injectedTreatmentData.icon,
-      intensity: injectedTreatmentData.intensity,
-      intensity_label: injectedTreatmentData.intensityLabel,
-    } as Treatment;
+// Always fetch from database for SEO and consistency
+const { data: treatmentData } = await useFetch<Treatment>(
+  `/api/treatments/${props.id}`,
+  {
+    // This will run server-side during SSR, making it SEO-friendly
+    server: true,
   }
-  return fetchedData.value;
-});
-
-// Intensity labels for each rating
-const intensityLabels = {
-  1: 'Zeer Zacht',
-  2: 'Zacht', 
-  3: 'Medium',
-  4: 'Stevig',
-  5: 'Zeer Stevig'
-} as const;
+);
 
 // Computed values that prioritize database data over content data
 const displayTitle = computed(() => treatmentData.value?.name);
-const displaySubtitle = computed(() => treatmentData.value?.description || props.subtitle);
 const displayPrice = computed(() => treatmentData.value?.price_cents);
 const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
-
-const intensityData = computed(() => {
-  const intensity = treatmentData.value?.intensity;
-  if (!intensity) return null;
-
-  const rating = Math.min(Math.max(intensity, 1), 5);
-  const label = treatmentData.value?.intensity_label || intensityLabels[rating as keyof typeof intensityLabels];
-
-  return { rating, label };
-});
+const displayDiscountEnabled = computed(() => treatmentData.value?.discount_enabled || false);
+const displayDiscountPrice = computed(() => treatmentData.value?.discount_price_cents);
+const displayPackageEnabled = computed(() => treatmentData.value?.package_enabled || false);
+const displayPackageSessions = computed(() => treatmentData.value?.package_sessions);
+const displayPackagePrice = computed(() => treatmentData.value?.package_price_cents); 
 </script>
 
 <template>
@@ -74,8 +42,8 @@ const intensityData = computed(() => {
               {{ displayTitle }}
             </h1>
           </div>
-          <p v-if="displaySubtitle" class="text-xl text-neutral-600 leading-relaxed">
-            {{ displaySubtitle }}
+          <p v-if="description" class="text-xl text-neutral-600 leading-relaxed">
+            {{ description }}
           </p>
         </div>
 
@@ -85,8 +53,11 @@ const intensityData = computed(() => {
             variant="card"
             :duration="displayDuration"
             :price="displayPrice"
-            :intensity="intensityData?.rating"
-            :intensity-label="intensityData?.label"
+            :discount-enabled="displayDiscountEnabled"
+            :discount-price="displayDiscountPrice"
+            :package-enabled="displayPackageEnabled"
+            :package-sessions="displayPackageSessions"
+            :package-price="displayPackagePrice"
             show-book-button
           />
         </div>

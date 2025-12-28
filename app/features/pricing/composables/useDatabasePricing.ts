@@ -1,7 +1,4 @@
-import { useTreatmentStore } from '~/features/treatments/store';
 import type { Database } from '~/types/database.types';
-
-type Treatment = Database['public']['Tables']['treatments']['Row'];
 
 export interface PricingTreatment {
   id: string;
@@ -9,11 +6,8 @@ export interface PricingTreatment {
   duration: string;
   price: string;
   description: string;
-  intensity: number;
-  intensityLabel: string;
   benefits: string[];
   slug: string;
-  category: string;
 }
 
 export interface PricingPackage {

@@ -4,9 +4,39 @@ import type { Review } from '../types/reviews';
 interface Props {
   reviews: Review[];
   loading?: boolean;
+  hasMore?: boolean;
 }
 
 const props = defineProps<Props>();
+const emit = defineEmits<{
+  loadMore: [];
+}>();
+
+// Track expanded state for each review
+const expandedReviews = ref<Set<string>>(new Set());
+
+// Toggle review expansion
+const toggleExpanded = (reviewId: string) => {
+  if (expandedReviews.value.has(reviewId)) {
+    expandedReviews.value.delete(reviewId);
+  } else {
+    expandedReviews.value.add(reviewId);
+  }
+};
+
+// Check if review text should be truncated (more than ~3 lines at ~80 chars/line)
+const shouldTruncate = (text: string) => text.length > 240;
+
+// Get truncated text (approximately 3 lines)
+const getTruncatedText = (text: string) => {
+  if (text.length <= 240) return text;
+  // Find the last space before 240 characters to avoid cutting words
+  const truncateAt = text.lastIndexOf(' ', 240);
+  return text.substring(0, truncateAt > 0 ? truncateAt : 240);
+};
+
+// Check if review is expanded
+const isExpanded = (reviewId: string) => expandedReviews.value.has(reviewId);
 
 // Generate announcement message for screen readers
 const loadingMessage = computed(() => {
@@ -103,7 +133,25 @@ const loadingMessage = computed(() => {
 
           <!-- Review Content -->
           <div class="prose prose-neutral max-w-none">
-            <p class="text-neutral-700 leading-relaxed">{{ review.review }}</p>
+            <p class="text-neutral-700 leading-relaxed whitespace-pre-line">
+              <template v-if="shouldTruncate(review.review) && !isExpanded(review.id)">
+                {{ getTruncatedText(review.review) }}...
+              </template>
+              <template v-else>
+                {{ review.review }}
+              </template>
+            </p>
+
+            <!-- Read More / Read Less Button -->
+            <button
+              v-if="shouldTruncate(review.review)"
+              @click="toggleExpanded(review.id)"
+              class="text-primary-600 hover:text-primary-700 font-medium text-sm mt-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+              :aria-expanded="isExpanded(review.id)"
+              :aria-label="isExpanded(review.id) ? 'Lees minder' : 'Lees meer'"
+            >
+              {{ isExpanded(review.id) ? 'Lees minder' : 'Lees meer' }}
+            </button>
           </div>
 
           <!-- Review Status -->
@@ -120,11 +168,21 @@ const loadingMessage = computed(() => {
 
     <!-- Load More Button -->
     <div
-      v-if="reviews.length > 0 && reviews.length % 10 === 0"
+      v-if="hasMore"
       class="text-center pt-6"
     >
-      <UButton variant="outline" @click="$emit('load-more')">
-        Meer Reviews Laden
+      <UButton
+        variant="outline"
+        size="lg"
+        :loading="loading"
+        @click="emit('loadMore')"
+      >
+        <template v-if="loading">
+          Reviews laden...
+        </template>
+        <template v-else>
+          Meer reviews laden
+        </template>
       </UButton>
     </div>
   </div>

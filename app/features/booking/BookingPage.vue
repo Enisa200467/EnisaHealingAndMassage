@@ -1,55 +1,45 @@
 <script setup lang="ts">
-// Extend Window interface to include setmore
-declare global {
-  interface Window {
-    setmore?: {
-      init: () => void;
-    };
-  }
-}
-
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
 // Generate structured data for booking service
 const bookingServiceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ReservationService',
-  name: 'Afspraken Boeken - Enisa Healing & Massage',
-  description:
-    'Online afsprakenplanning voor healing en massage behandelingen',
+  "@context": "https://schema.org",
+  "@type": "ReservationService",
+  name: "Afspraken Boeken - Enisa Healing & Massage",
+  description: "Online afsprakenplanning voor healing en massage behandelingen",
   provider: {
-    '@type': 'LocalBusiness',
+    "@type": "LocalBusiness",
     name: businessInfo.name,
     url: businessInfo.url,
     telephone: businessInfo.telephone,
     email: businessInfo.email,
     address: businessInfo.address,
   },
-  serviceType: 'Massage & Healing Behandelingen',
+  serviceType: "Massage & Healing Behandelingen",
   url: `${businessInfo.url}/boeken`,
   potentialAction: {
-    '@type': 'ReserveAction',
+    "@type": "ReserveAction",
     target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://enisahealingmassage.setmore.com',
+      "@type": "EntryPoint",
+      urlTemplate: "https://enisahealingmassage.setmore.com",
       actionPlatform: [
-        'http://schema.org/DesktopWebPlatform',
-        'http://schema.org/MobileWebPlatform',
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
       ],
     },
     result: {
-      '@type': 'Reservation',
-      name: 'Behandeling Reservering',
+      "@type": "Reservation",
+      name: "Behandeling Reservering",
     },
   },
 };
 
 // Set comprehensive SEO with booking schema
 setPageSEO({
-  title: 'Boek Een Afspraak - Enisa Healing & Massage',
+  title: "Boek Een Afspraak - Enisa Healing & Massage",
   description:
-    'Boek eenvoudig online een afspraak voor massage of healing behandelingen. Kies je gewenste behandeling, datum en tijd. Direct bevestiging per e-mail.',
-  path: '/boeken',
+    "Boek eenvoudig online een afspraak voor massage of healing behandelingen. Kies je gewenste behandeling, datum en tijd. Direct bevestiging per e-mail.",
+  path: "/boeken",
   structuredData: [bookingServiceSchema],
 });
 </script>
@@ -75,15 +65,16 @@ setPageSEO({
         <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
           <div class="text-center mb-8">
             <UButton
-              id="Setmore_button_iframe"
               as="a"
               href="https://enisahealingmassage.setmore.com"
+              target="_blank"
+              rel="noopener noreferrer"
               class="setmore-booking-button"
               color="primary"
               variant="solid"
               size="xl"
               icon="i-mdi-calendar-heart"
-              aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling"
+              aria-label="Open boekingsagenda - plan uw afspraak voor massage of healing behandeling in nieuw venster"
             >
               Open Agenda & Boek Afspraak
             </UButton>
@@ -100,13 +91,16 @@ setPageSEO({
 
 <style scoped>
 .setmore-booking-button {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
   min-width: 280px;
 }
 
 .setmore-booking-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 35px -3px rgba(0, 0, 0, 0.15),
+  box-shadow:
+    0 20px 35px -3px rgba(0, 0, 0, 0.15),
     0 8px 10px -2px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,22 +112,3 @@ setPageSEO({
 }
 </style>
 
-<style>
-/* Global styles for Setmore iframe styling */
-#setmore-fancy-box,
-#setmore-fancy-box-content,
-#iframeContent,
-iframe {
-  border-radius: 12px !important;
-}
-
-/* Ensure the iframe modal has proper styling */
-#setmore-fancy-box {
-  z-index: 10000 !important;
-}
-
-#setmore-fancy-box-content {
-  background: white !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
-}
-</style>

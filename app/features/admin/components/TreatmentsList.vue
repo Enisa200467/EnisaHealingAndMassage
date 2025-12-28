@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
-import type { Treatment } from '../types/treatment.types';
+import { useTreatmentDetailsFormatter } from "~/composables/useTreatmentData";
+import type { Treatment } from "../types/treatment.types";
 
 interface Props {
   treatments: ReadonlyArray<Treatment>;
@@ -8,8 +8,8 @@ interface Props {
 }
 
 interface Emits {
-  (e: 'edit' | 'delete' | 'toggle-status', treatment: Treatment): void;
-  (e: 'create'): void;
+  (e: "edit" | "delete" | "toggle-status", treatment: Treatment): void;
+  (e: "create"): void;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -22,23 +22,6 @@ const emit = defineEmits<Emits>();
 const routes = useRoutes();
 
 const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
-
-// Render intensity dots
-const getIntensityDots = (intensity?: number | null): number => {
-  return intensity || 1;
-};
-
-// Get category color
-const getCategoryColor = (category?: string | null) => {
-  switch (category) {
-    case 'massage':
-      return 'primary';
-    case 'healing':
-      return 'secondary';
-    default:
-      return 'neutral';
-  }
-};
 </script>
 
 <template>
@@ -134,10 +117,10 @@ const getCategoryColor = (category?: string | null) => {
                   ? formatPrice(
                       Math.round(
                         treatments.reduce((sum, t) => sum + t.price_cents, 0) /
-                          treatments.length
-                      )
+                          treatments.length,
+                      ),
                     )
-                  : '€ 0'
+                  : "€ 0"
               }}
             </p>
           </div>
@@ -187,16 +170,6 @@ const getCategoryColor = (category?: string | null) => {
               <span class="text-sm font-medium">{{ treatment.id }}</span>
             </div>
 
-            <!-- Category -->
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-neutral-600">Categorie:</span>
-              <UBadge
-                :label="treatment.category || 'Algemeen'"
-                variant="subtle"
-                :color="getCategoryColor(treatment.category)"
-              />
-            </div>
-
             <!-- Duration & Price -->
             <div class="flex items-center justify-between">
               <span class="text-sm text-neutral-600">Duur:</span>
@@ -210,28 +183,6 @@ const getCategoryColor = (category?: string | null) => {
               <span class="text-sm font-medium">{{
                 formatPrice(treatment.price_cents)
               }}</span>
-            </div>
-
-            <!-- Intensity -->
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-neutral-600">Intensiteit:</span>
-              <div class="flex items-center space-x-2">
-                <div class="flex space-x-1">
-                  <div
-                    v-for="i in 5"
-                    :key="i"
-                    class="w-2 h-2 rounded-full"
-                    :class="
-                      i <= getIntensityDots(treatment.intensity)
-                        ? 'bg-primary-500'
-                        : 'bg-neutral-300'
-                    "
-                  />
-                </div>
-                <span class="text-xs text-neutral-500">{{
-                  treatment.intensity_label || ''
-                }}</span>
-              </div>
             </div>
 
             <!-- Description -->

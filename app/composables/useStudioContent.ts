@@ -1,5 +1,3 @@
-import { useTreatmentStore } from '~/features/treatments/store';
-
 /**
  * Composable for Studio-integrated content management
  * Combines database-driven data with Studio-managed content
@@ -31,14 +29,13 @@ export const useStudioContent = () => {
   const getDynamicNavigation = async () => {
     try {
       // Get database data through our existing composable
-      const { treatments } = useTreatmentStore();
+      const { activeTreatments } = useTreatments();
 
       return {
-        treatments: treatments.map((treatment) => ({
-          label: treatment.name,
-          to: routes.pages.treatments + '/' + treatment.slug,
+        treatments: activeTreatments.value.map((treatment) => ({
+          label: treatment.title,
+          to: treatment.path,
           icon: treatment.icon,
-          category: treatment.category,
           studioEditUrl: getStudioEditUrl(`treatments/${treatment.slug}.md`),
         })),
         pages: [

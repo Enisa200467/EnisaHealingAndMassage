@@ -8,25 +8,38 @@ const { submitReview } = useReviews();
 
 const currentPage = ref(1);
 const reviewsPerPage = 6;
+const allReviews = ref<Review[]>([]);
+const hasMore = ref(false);
 
 // SSR-compatible data fetching
 const { data: reviewsData, pending: isLoading, refresh } = await useAsyncData(
   'reviews-page-data',
   async () => {
     const [reviewsResponse, statsResponse] = await Promise.all([
-      $fetch<{ data: { reviews: Review[] } }>(`/api/reviews?page=${currentPage.value}&limit=${reviewsPerPage}`),
+      $fetch<{ data: { reviews: Review[]; total: number; hasMore: boolean } }>(`/api/reviews?page=${currentPage.value}&limit=${reviewsPerPage}`),
       $fetch<{ data: ReviewStatsType }>('/api/reviews/stats'),
     ]);
 
     return {
       reviews: reviewsResponse.data.reviews,
+      total: reviewsResponse.data.total,
+      hasMore: reviewsResponse.data.hasMore,
       stats: statsResponse.data,
     };
   }
 );
 
-// Computed refs from SSR data
-const allReviews = computed(() => reviewsData.value?.reviews || []);
+// Initialize reviews and hasMore on mount
+watchEffect(() => {
+  if (reviewsData.value) {
+    // On initial load, replace reviews
+    if (currentPage.value === 1) {
+      allReviews.value = reviewsData.value.reviews;
+    }
+    hasMore.value = reviewsData.value.hasMore;
+  }
+});
+
 const reviewStatsForSeo = computed(() => reviewsData.value?.stats || {
   total: 0,
   approved: 0,
@@ -35,9 +48,26 @@ const reviewStatsForSeo = computed(() => reviewsData.value?.stats || {
   averageRating: 0,
 });
 
-// Reload reviews after submission
-const loadReviews = async () => {
+// Load more reviews (pagination)
+const loadMoreReviews = async () => {
+  currentPage.value += 1;
   await refresh();
+
+  // Append new reviews to existing ones
+  if (reviewsData.value?.reviews) {
+    allReviews.value = [...allReviews.value, ...reviewsData.value.reviews];
+    hasMore.value = reviewsData.value.hasMore;
+  }
+};
+
+// Reload reviews after submission (reset to page 1)
+const loadReviews = async () => {
+  currentPage.value = 1;
+  await refresh();
+  if (reviewsData.value?.reviews) {
+    allReviews.value = reviewsData.value.reviews;
+    hasMore.value = reviewsData.value.hasMore;
+  }
 };
 
 // Generate review schema once data is loaded
@@ -125,13 +155,41 @@ const handleReviewSubmission = async (reviewData: Partial<Review>) => {
   }
 };
 
+// Fetch rating breakdown from stats API
+const { data: ratingBreakdown } = await useAsyncData(
+  'review-rating-breakdown',
+  async () => {
+    try {
+      const response = await $fetch<{ data: { reviews: Review[] } }>('/api/reviews?limit=1000');
+      const allApprovedReviews = response.data.reviews;
+
+      return {
+        '1': allApprovedReviews.filter((r) => r.rating === 1).length,
+        '2': allApprovedReviews.filter((r) => r.rating === 2).length,
+        '3': allApprovedReviews.filter((r) => r.rating === 3).length,
+        '4': allApprovedReviews.filter((r) => r.rating === 4).length,
+        '5': allApprovedReviews.filter((r) => r.rating === 5).length,
+      };
+    } catch (error) {
+      console.error('Error fetching rating breakdown:', error);
+      return {
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0,
+      };
+    }
+  }
+);
+
 const reviewStatsForOverview = computed(() => {
-  return {
-    '1': allReviews.value.filter((r) => r.rating === 1).length,
-    '2': allReviews.value.filter((r) => r.rating === 2).length,
-    '3': allReviews.value.filter((r) => r.rating === 3).length,
-    '4': allReviews.value.filter((r) => r.rating === 4).length,
-    '5': allReviews.value.filter((r) => r.rating === 5).length,
+  return ratingBreakdown.value || {
+    '1': 0,
+    '2': 0,
+    '3': 0,
+    '4': 0,
+    '5': 0,
   };
 });
 </script>
@@ -165,7 +223,8 @@ const reviewStatsForOverview = computed(() => {
           <ReviewsList
             :reviews="allReviews"
             :loading="isLoading"
-            @load-more="loadReviews"
+            :has-more="hasMore"
+            @load-more="loadMoreReviews"
           />
         </div>
 

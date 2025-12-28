@@ -29,9 +29,16 @@ export default defineNuxtConfig({
       ],
     },
   },
-  content: {
-    preview: {
-      api: "https://api.nuxt.studio",
+  studio: {
+    // Git repository configuration (owner and repo are required)
+    repository: {
+      provider: "github", // 'github' or 'gitlab'
+      owner: "Enisa200467", // your GitHub/GitLab username or organization
+      repo: "EnisaHealingAndMassage", // your repository name
+      branch: "main", // the branc to commit to (default: 'main')
+    },
+    development: {
+      sync: true,
     },
   },
 
@@ -48,6 +55,7 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@pinia/nuxt",
     "nuxt-security",
+    "nuxt-studio",
   ],
 
   // Feature-based auto-imports
@@ -106,7 +114,6 @@ export default defineNuxtConfig({
     },
   },
 
-
   // Security configuration
   security: {
     headers: {
@@ -131,7 +138,10 @@ export default defineNuxtConfig({
         "frame-ancestors": ["'self'"],
         "img-src": ["'self'", "data:", "https:", "blob:"],
         "object-src": ["'none'"],
-        "script-src-attr": ["'none'"],
+        "script-src-attr": [
+          "'unsafe-hashes'",
+          "'sha256-bwK6T5wZVTANitXbrTsel7kl/PyCjCd/Dq5Qoz3imjM='",
+        ],
         "style-src": ["'self'", "https:", "'unsafe-inline'"],
         "script-src": ["'self'", "https:", "'unsafe-inline'", "'unsafe-eval'"],
         "connect-src": [
@@ -140,6 +150,9 @@ export default defineNuxtConfig({
           "https://*.google.com",
           "https://*.supabase.co",
           "wss://*.supabase.co",
+          "https://api.iconify.design", // Iconify icon CDN
+          "https://api.simplesvg.com", // Iconify fallback CDN
+          "https://api.unisvg.com", // Iconify fallback CDN
           "ws://localhost:*", // Vite HMR in development
           "ws://127.0.0.1:*", // Vite HMR in development (alternative)
         ],
@@ -171,3 +184,4 @@ export default defineNuxtConfig({
     hidePoweredBy: true,
   },
 });
+

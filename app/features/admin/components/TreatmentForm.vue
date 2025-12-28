@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { TreatmentFormData } from '../types/treatment.types';
 import {
-  TREATMENT_CATEGORIES,
-  INTENSITY_LEVELS,
   COMMON_ICONS,
 } from '../types/treatment.types';
 
@@ -30,25 +28,30 @@ const formData = computed({
 
 // Form validation
 const isFormValid = computed(() => {
-  return (
+  const baseValid =
     formData.value.name.length >= 2 &&
     formData.value.duration_minutes > 0 &&
-    formData.value.price_euros > 0 &&
-    formData.value.intensity >= 1 &&
-    formData.value.intensity <= 5
-  );
-});
+    formData.value.price_euros > 0;
 
-// Auto-generate intensity label based on intensity level
-watch(
-  () => formData.value.intensity,
-  (newIntensity) => {
-    const level = INTENSITY_LEVELS.find((l) => l.value === newIntensity);
-    if (level && !formData.value.intensity_label) {
-      formData.value.intensity_label = level.label;
-    }
+  // If discount is enabled, validate discount price
+  if (formData.value.discount_enabled) {
+    const discountValid =
+      formData.value.discount_price_euros > 0 &&
+      formData.value.discount_price_euros < formData.value.price_euros;
+    if (!discountValid) return false;
   }
-);
+
+  // If package is enabled, validate package fields
+  if (formData.value.package_enabled) {
+    const packageValid =
+      formData.value.package_sessions > 1 &&
+      formData.value.package_price_euros > 0 &&
+      formData.value.package_price_euros < formData.value.price_euros * formData.value.package_sessions;
+    if (!packageValid) return false;
+  }
+
+  return baseValid;
+});
 
 const handleSubmit = () => {
   if (isFormValid.value) {
@@ -64,38 +67,31 @@ const handleSubmit = () => {
       <h3 class="text-lg font-semibold text-neutral-900">Basis Informatie</h3>
 
       <!-- Name -->
+      <UFormField label="Behandelingsnaam" required>
+        <UInput
+          v-model="formData.name"
+          placeholder="Bijv. Klassieke Ontspanningsmassage"
+          :disabled="loading"
+        />
+      </UFormField>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <UFormField label="Behandelingsnaam" required>
-          <UInput
-            class="w-2/3"
-            v-model="formData.name"
-            placeholder="Bijv. Klassieke Ontspanningsmassage"
-            :disabled="loading"
-          />
-        </UFormField>
-
-        <!-- Description -->
-        <UFormField label="Beschrijving">
-          <UTextarea
-            class="w-2/3"
-            v-model="formData.description"
-            placeholder="Korte beschrijving van de behandeling..."
-            :rows="3"
-            :disabled="loading"
-          />
-        </UFormField>
-
-        <!-- Category -->
-        <UFormField label="Categorie">
-          <USelect
-            v-model="formData.category"
-            :items="TREATMENT_CATEGORIES"
-            placeholder="Selecteer een categorie"
-            :disabled="loading"
-          />
-        </UFormField>
-      </div>
+      <!-- Content Info Alert -->
+      <UAlert
+        color="blue"
+        variant="subtle"
+        icon="i-mdi-information"
+        title="Content beheren via Nuxt Studio"
+      >
+        <template #description>
+          Beschrijving wordt beheerd in het markdown bestand via
+          <a
+            href="https://nuxt.studio"
+            target="_blank"
+            class="underline font-medium"
+            >Nuxt Studio</a
+          >. Zie de documentatie voor meer informatie.
+        </template>
+      </UAlert>
     </div>
 
     <!-- Pricing & Duration -->
@@ -128,50 +124,85 @@ const handleSubmit = () => {
           />
         </UFormField>
       </div>
-    </div>
 
-    <!-- Intensity -->
-    <div class="space-y-4">
-      <h3 class="text-lg font-semibold text-neutral-900">Intensiteit</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Intensity Level -->
-        <UFormField label="Intensiteitsniveau" required>
-          <USelect
-            v-model="formData.intensity"
-            :items="INTENSITY_LEVELS"
-            placeholder="Selecteer intensiteit"
+      <!-- Discount Section -->
+      <div class="space-y-4">
+        <UFormField>
+          <UCheckbox
+            v-model="formData.discount_enabled"
+            label="Korting ingeschakeld"
             :disabled="loading"
           />
+          <template #help>
+            Toon een kortingsprijs voor deze behandeling
+          </template>
         </UFormField>
 
-        <!-- Custom Intensity Label -->
-        <UFormField label="Intensiteit label (optioneel)">
+        <!-- Discount Price (only shown when discount is enabled) -->
+        <UFormField
+          v-if="formData.discount_enabled"
+          label="Kortingsprijs (€)"
+          required
+        >
           <UInput
-            v-model="formData.intensity_label"
-            placeholder="Bijv. Zeer Zacht (Energetisch werk)"
+            v-model.number="formData.discount_price_euros"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="55.00"
             :disabled="loading"
           />
+          <template #help>
+            Moet lager zijn dan de originele prijs
+          </template>
         </UFormField>
       </div>
 
-      <!-- Intensity Preview -->
-      <div class="flex items-center space-x-2 text-sm text-neutral-600">
-        <span>Preview:</span>
-        <div class="flex space-x-1">
-          <div
-            v-for="i in 5"
-            :key="i"
-            class="w-2 h-2 rounded-full"
-            :class="
-              i <= formData.intensity ? 'bg-primary-500' : 'bg-neutral-300'
-            "
+      <!-- Package Section -->
+      <div class="space-y-4">
+        <UFormField>
+          <UCheckbox
+            v-model="formData.package_enabled"
+            label="Pakketaanbieding ingeschakeld"
+            :disabled="loading"
           />
+          <template #help>
+            Bied deze behandeling aan als pakket van meerdere sessies
+          </template>
+        </UFormField>
+
+        <div
+          v-if="formData.package_enabled"
+          class="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          <!-- Package Sessions -->
+          <UFormField label="Aantal sessies" required>
+            <UInput
+              v-model.number="formData.package_sessions"
+              type="number"
+              min="2"
+              step="1"
+              placeholder="5"
+              :disabled="loading"
+            />
+            <template #help> Minimaal 2 sessies </template>
+          </UFormField>
+
+          <!-- Package Price -->
+          <UFormField label="Pakketprijs (€)" required>
+            <UInput
+              v-model.number="formData.package_price_euros"
+              type="number"
+              min="0"
+              step="0.01"
+              placeholder="250.00"
+              :disabled="loading"
+            />
+            <template #help>
+              Moet lager zijn dan {{ formData.package_sessions }}x de losse prijs
+            </template>
+          </UFormField>
         </div>
-        <span>{{
-          formData.intensity_label ||
-          INTENSITY_LEVELS.find((l) => l.value === formData.intensity)?.label
-        }}</span>
       </div>
     </div>
 

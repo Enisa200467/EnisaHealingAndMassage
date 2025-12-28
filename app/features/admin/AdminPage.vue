@@ -13,12 +13,6 @@ const routes = useRoutes();
 // Authentication check - let Supabase handle redirects
 const user = useSupabaseUser();
 
-// Initialize session timeout (5 minutes of inactivity)
-const { initSessionTimeout } = useAdminSessionTimeout();
-onMounted(() => {
-  initSessionTimeout();
-});
-
 // Only render if user is authenticated
 const isAuthenticated = computed(() => user.value?.role === 'authenticated');
 </script>

@@ -1,98 +1,140 @@
-<template>
-  <UContainer>
-
- 
-  <div class="not-prose my-6 p-5 rounded-lg border" :class="boxClasses">
-    <div v-if="title || icon" class="flex items-center mb-3">
-      <UIcon
-        v-if="icon"
-        :name="icon"
-        class="w-5 h-5 mr-2 flex-shrink-0"
-        :class="iconClasses"
-        aria-hidden="true"
-      />
-      <h4 v-if="title" class="font-semibold" :class="titleClasses">
-        {{ title }}
-      </h4>
-    </div>
-    <div
-      class="text-sm prose-p:my-1 prose-ul:my-1 prose-li:my-0.5"
-      :class="textClasses"
-    >
-      <!-- This slot will render the Markdown content placed inside the component tags -->
-      <slot />
-    </div>
-  </div> </UContainer>
-</template>
-
 <script setup lang="ts">
-import { computed } from 'vue';
-
 interface Props {
   title?: string;
   icon?: string;
-  type?: 'info' | 'warning' | 'success';
+  variant?: 'info' | 'success' | 'warning';
+  ctaText?: string;
+  ctaLink?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  title: '',
-  icon: '',
-  type: 'info',
+  title: 'Belangrijk',
+  icon: 'i-mdi-information',
+  variant: 'info',
+  ctaText: '',
+  ctaLink: ''
 });
 
-// Computed classes based on the 'type' prop for easy styling variations
-// Using Palette 2 colors (adjust as needed)
-const boxClasses = computed(() => {
-  switch (props.type) {
-    case 'warning':
-      return 'bg-orange-50 border-orange-200 dark:bg-orange-900/30 dark:border-orange-700/50 max-w-3xl';
-    // Add 'success', etc. if needed
-    default: // 'info'
-      return 'bg-purple-50 border-purple-200 dark:bg-purple-900/30 dark:border-purple-700/50 max-w-3xl';
+// Color schemes based on variant
+const colorSchemes = {
+  info: {
+    bg: 'bg-blue-50/80',
+    border: 'border-blue-200',
+    iconColor: 'text-blue-600',
+    titleColor: 'text-blue-900',
+    buttonColor: 'primary'
+  },
+  success: {
+    bg: 'bg-green-50/80',
+    border: 'border-green-200',
+    iconColor: 'text-green-600',
+    titleColor: 'text-green-900',
+    buttonColor: 'success'
+  },
+  warning: {
+    bg: 'bg-amber-50/80',
+    border: 'border-amber-200',
+    iconColor: 'text-amber-600',
+    titleColor: 'text-amber-900',
+    buttonColor: 'warning'
   }
-});
+};
 
-const iconClasses = computed(() => {
-  switch (props.type) {
-    case 'warning':
-      return 'text-orange-500';
-    default:
-      return 'text-purple-500';
-  }
-});
-
-const titleClasses = computed(() => {
-  switch (props.type) {
-    case 'warning':
-      return 'text-orange-800 dark:text-orange-200';
-    default:
-      return 'text-purple-800 dark:text-purple-200';
-  }
-});
-
-const textClasses = computed(() => {
-  switch (props.type) {
-    case 'warning':
-      return 'text-orange-700 dark:text-orange-300';
-    default:
-      return 'text-purple-700 dark:text-purple-300';
-  }
-});
+const colorScheme = computed(() => colorSchemes[props.variant]);
+const showCta = computed(() => props.ctaText && props.ctaLink);
 </script>
 
+<template>
+  <section class="not-prose w-full my-8">
+    <UContainer>
+      <div class="max-w-4xl">
+        <div
+          class="p-6 rounded-xl border-2 shadow-sm"
+          :class="[colorScheme.bg, colorScheme.border]"
+          role="note"
+          aria-live="polite"
+        >
+          <div class="flex items-start gap-4">
+            <UIcon
+              :name="icon"
+              class="w-6 h-6 flex-shrink-0 mt-1"
+              :class="colorScheme.iconColor"
+              aria-hidden="true"
+            />
+            <div class="flex-1 space-y-4">
+              <h3
+                class="text-xl font-semibold"
+                :class="colorScheme.titleColor"
+              >
+                {{ title }}
+              </h3>
+              <div class="prose prose-lg max-w-none info-blok-content">
+                <slot />
+              </div>
+              <div v-if="showCta" class="pt-2">
+                <UButton
+                  :to="ctaLink"
+                  :color="colorScheme.buttonColor"
+                  size="lg"
+                  icon="i-mdi-calendar-check"
+                  trailing
+                >
+                  {{ ctaText }}
+                </UButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </UContainer>
+  </section>
+</template>
+
 <style scoped>
-/* Using 'not-prose' to isolate styling from Tailwind Typography */
-/* Adjust prose classes inside the slot div if needed */
-.prose-p\:my-1 p {
-  margin-top: 0.25rem;
+/* Style slot content (markdown) within info-blok */
+.info-blok-content :deep(p) {
+  color: rgb(55 65 81); /* gray-700 */
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.info-blok-content :deep(p:last-child) {
+  margin-bottom: 0;
+}
+
+.info-blok-content :deep(strong) {
+  font-weight: 600;
+  color: rgb(17 24 39); /* gray-900 */
+}
+
+.info-blok-content :deep(a) {
+  color: rgb(59 130 246); /* blue-500 */
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.info-blok-content :deep(a:hover) {
+  color: rgb(37 99 235); /* blue-600 */
+}
+
+.info-blok-content :deep(ul) {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-blok-content :deep(li) {
+  color: rgb(55 65 81);
+  line-height: 1.6;
   margin-bottom: 0.25rem;
 }
-.prose-ul\:my-1 ul {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-.prose-li\:my-0\.5 li {
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .info-blok-content :deep(p) {
+    font-size: 1.0625rem;
+  }
 }
 </style>
