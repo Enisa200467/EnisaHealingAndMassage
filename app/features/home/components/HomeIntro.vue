@@ -6,7 +6,11 @@
         <button
           @click="toggleAutoplay"
           class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 flex items-center justify-center"
-          :aria-label="isPaused ? 'Start automatische diavoorstelling' : 'Pauzeer automatische diavoorstelling'"
+          :aria-label="
+            isPaused
+              ? 'Start automatische diavoorstelling'
+              : 'Pauzeer automatische diavoorstelling'
+          "
           :aria-pressed="!isPaused"
         >
           <UIcon
@@ -79,12 +83,12 @@ const routes = useRoutes();
 
 const carouselItems = [
   {
-    src: '/images/massage.webp',
-    alt: 'Professionele ontspanningsmassage sessie bij Enisa Healing & Massage',
+    src: "/images/enisa-intro.jpg",
+    alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
   },
   {
-    src: '/images/chakra-healing.webp',
-    alt: 'Energetische healing en chakra balancering behandeling',
+    src: "/images/enisa-healing-in-studio.jpg",
+    alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
   },
 ];
 
@@ -103,7 +107,7 @@ const currentSlideAnnouncement = computed(() => {
   if (carouselItems[currentSlide.value]) {
     return `Dia ${currentSlide.value + 1} van ${carouselItems.length}`;
   }
-  return '';
+  return "";
 });
 
 // Toggle autoplay
@@ -120,7 +124,7 @@ const onSlideChange = (index: number) => {
 onMounted(() => {
   const carousel = carouselRef.value?.$el;
   if (carousel) {
-    carousel.addEventListener('focusin', () => {
+    carousel.addEventListener("focusin", () => {
       if (!isPaused.value) {
         isPaused.value = true;
       }

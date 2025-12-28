@@ -114,11 +114,10 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
       </div>
 
       <!-- Price -->
-      <div
-        v-if="!packageEnabled && price"
-        class="flex justify-between items-center"
-      >
-        <span class="text-neutral-600" :class="sizeClasses.text">Prijs:</span>
+      <div v-if="price" class="flex justify-between items-center">
+        <span class="text-neutral-600" :class="sizeClasses.text">
+          Prijs{{ packageEnabled ? " losse sessie:" : ":" }}
+        </span>
         <div
           v-if="discountEnabled && discountPrice"
           class="flex flex-col items-end gap-1"

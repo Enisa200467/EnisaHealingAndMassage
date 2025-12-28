@@ -39,7 +39,7 @@
             class="ml-4"
             size="md"
             as="a"
-            href="https://enisahealingmassage.setmore.com"
+            href="https://enisa-healing-massage.setmore.com"
             target="_blank"
             rel="noopener noreferrer"
             icon="i-mdi-calendar"
@@ -82,7 +82,7 @@
           block
           size="md"
           as="a"
-          href="https://enisahealingmassage.setmore.com"
+          href="https://enisa-healing-massage.setmore.com"
           target="_blank"
           rel="noopener noreferrer"
           icon="i-mdi-calendar"

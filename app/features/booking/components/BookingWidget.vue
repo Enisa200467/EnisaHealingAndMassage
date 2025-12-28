@@ -6,7 +6,7 @@
   <div class="booking-widget-container">
     <UButton
       as="a"
-      href="https://enisahealingmassage.setmore.com"
+      href="https://enisa-healing-massage.setmore.com"
       target="_blank"
       rel="noopener noreferrer"
       class="booking-widget-pill"
@@ -36,14 +36,18 @@
   right: 1rem !important;
   z-index: 9999;
   border-radius: 9999px;
-  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 25px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
 }
 
 .booking-widget-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 35px -3px rgba(0, 0, 0, 0.15),
+  box-shadow:
+    0 20px 35px -3px rgba(0, 0, 0, 0.15),
     0 8px 10px -2px rgba(0, 0, 0, 0.1);
 }
 
@@ -62,4 +66,3 @@
   }
 }
 </style>
-

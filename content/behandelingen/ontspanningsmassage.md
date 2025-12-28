@@ -19,7 +19,7 @@ items:
   - "Behandeling van nek en schouders"
   - "Zachte druk op marma-punten voor diepere werking"
   - "Narusten en integreren van de behandeling"
-image: /images/ontspanningsmassage.webp
+image: /images/massage.webp
 imageAlt: Ontspannende massage voor diepe rust in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
