@@ -5,7 +5,9 @@ description: Herstel de harmonie en energiestroom in je lichaam met een zachte C
 
 ::behandeling-hero
 ---
-description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.
+description: Herstel de harmonie en energiestroom in je lichaam met een zachte
+  Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen
+  van emotioneel en fysiek welzijn.
 id: ea954752-5aee-4c8c-a1a8-328b026b9189
 ---
 ::
@@ -13,13 +15,13 @@ id: ea954752-5aee-4c8c-a1a8-328b026b9189
 ::behandeling-sectie
 ---
 items:
-  - "Je ligt ontspannen op de behandeltafel, volledig gekleed"
-  - "Reiniging van je aura en lichaam van negatieve energie"
-  - "Energetische scan om blokkades en energiebehoefte te voelen"
-  - "Hands-on healing langs je chakra's, meestal zonder aanraking"
-  - "Oude emoties kunnen loskomen en worden bevrijd"
-  - "Nabespreking en integratie van de ervaring"
-image: /images/chakra-healing-amsterdam.webp
+  - Je ligt ontspannen op de behandeltafel, volledig gekleed
+  - Reiniging van je aura en lichaam van negatieve energie
+  - Energetische scan om blokkades en energiebehoefte te voelen
+  - Hands-on healing langs je chakra's, meestal zonder aanraking
+  - Oude emoties kunnen loskomen en worden bevrijd
+  - Nabespreking en integratie van de ervaring
+image: /images/chakra-healing.webp
 imageAlt: Chakra healing sessie in rustige behandelruimte in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
@@ -96,4 +98,3 @@ Deze behandeling helpt onder andere bij:
 
 Hoewel chakra healing en energetisch werk nog niet volledig wetenschappelijk bewezen zijn, laten studies zien dat hands-on healing technieken kunnen bijdragen aan ontspanning en welzijn door activering van het parasympathische zenuwstelsel.
 ::
-

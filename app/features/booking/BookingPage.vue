@@ -21,7 +21,7 @@ const bookingServiceSchema = {
     "@type": "ReserveAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://enisahealingmassage.setmore.com",
+      urlTemplate: "https://enisa-healing-massage.setmore.com",
       actionPlatform: [
         "http://schema.org/DesktopWebPlatform",
         "http://schema.org/MobileWebPlatform",
@@ -66,7 +66,7 @@ setPageSEO({
           <div class="text-center mb-8">
             <UButton
               as="a"
-              href="https://enisahealingmassage.setmore.com"
+              href="https://enisa-healing-massage.setmore.com"
               target="_blank"
               rel="noopener noreferrer"
               class="setmore-booking-button"
@@ -111,4 +111,3 @@ setPageSEO({
   }
 }
 </style>
-

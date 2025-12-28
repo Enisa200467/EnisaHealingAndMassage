@@ -81,11 +81,11 @@ setPageSEO({
               </h1>
               <p class="text-xl text-neutral-600 mb-8 leading-relaxed">
                 Welkom! Mijn naam is Enisa, energetisch therapeut en
-                hypnotherapeut in Amsterdam Noord. Ik begeleid mensen vanuit het hart
-                en werk met de helende energie die door mijn handen stroomt. Met meer
-                dan 11 jaar ervaring combineer ik energetische therapie, healing en
-                hypnotherapie om mensen te helpen bij hun innerlijke reis naar balans
-                en welzijn.
+                hypnotherapeut in Amsterdam Noord. Ik begeleid mensen vanuit het
+                hart en werk met de helende energie die door mijn handen
+                stroomt. Met meer dan 11 jaar ervaring combineer ik energetische
+                therapie, healing en hypnotherapie om mensen te helpen bij hun
+                innerlijke reis naar balans en welzijn.
               </p>
               <div
                 class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
@@ -135,27 +135,29 @@ setPageSEO({
         <div class="prose prose-lg max-w-3xl mx-auto">
           <p class="text-neutral-600 leading-relaxed mb-6">
             Ik ben geboren in het voormalige Joegoslavië en heb daar gewoond tot
-            mijn 25ste. Na mijn studie economie heb ik gewerkt als manager binnen
-            de detailhandel. Sinds 1993 woon ik in Nederland en sinds 1995 in
-            Amsterdam. Naast mijn school en werk heb ik altijd al mensen geholpen
-            door met mijn handen helende energie te geven. Het helpen van mensen
-            gaf mij zoveel voldoening dat ik besloot hiervan mijn beroep te maken.
+            mijn 25ste. Na mijn studie economie heb ik gewerkt als manager
+            binnen de detailhandel. Sinds 1993 woon ik in Nederland en sinds
+            1995 in Amsterdam. Naast mijn school en werk heb ik altijd al mensen
+            geholpen door met mijn handen helende energie te geven. Het helpen
+            van mensen gaf mij zoveel voldoening dat ik besloot hiervan mijn
+            beroep te maken.
           </p>
           <p class="text-neutral-600 leading-relaxed mb-6">
             Ik beschik al van kinds af aan over de bijzondere gave om mensen
             geneeskrachtige energie te geven die via mijn handen stroomt. Deze
             energie komt niet vanuit mij – ik geef deze door uit het universum.
-            Met mijn handen voel ik in welke delen van het lichaam iemand blokkades
-            of spanning heeft en waar ik de energie mag richten. Het gebeurt vaak
-            dat ik in mijn eigen lichaam aanvoel waar iemand pijn heeft.
+            Met mijn handen voel ik in welke delen van het lichaam iemand
+            blokkades of spanning heeft en waar ik de energie mag richten. Het
+            gebeurt vaak dat ik in mijn eigen lichaam aanvoel waar iemand pijn
+            heeft.
           </p>
           <p class="text-neutral-600 leading-relaxed">
             Om mensen nog beter te kunnen begeleiden, heb ik verschillende
-            opleidingen gevolgd. Ik werk inmiddels meer dan 11 jaar officieel als
-            energetisch therapeut, met veel liefde en toewijding aan mijn vak.
-            Tijdens mijn sessies combineer ik energetische therapie, healing en
-            hypnotherapie op een manier die afgestemd is op de persoon die bij
-            mij komt.
+            opleidingen gevolgd. Ik werk inmiddels meer dan 11 jaar officieel
+            als energetisch therapeut, met veel liefde en toewijding aan mijn
+            vak. Tijdens mijn sessies combineer ik energetische therapie,
+            healing en hypnotherapie op een manier die afgestemd is op de
+            persoon die bij mij komt.
           </p>
         </div>
       </section>
@@ -249,7 +251,8 @@ setPageSEO({
                   class="w-5 h-5 text-yellow-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >340+ positieve recensies op Treatwell, Google en Facebook</span
+                  >340+ positieve recensies op Treatwell, Google en
+                  Facebook</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -331,28 +334,29 @@ setPageSEO({
         </h2>
         <div class="prose prose-lg">
           <p class="text-neutral-600 leading-relaxed mb-6">
-            Door de jaren heen heb ik veel mensen mogen helpen om weer in contact
-            te komen met zichzelf, hun innerlijke rust te hervinden, klachten te
-            verminderen en met een blij gevoel verder te gaan in het leven.
+            Door de jaren heen heb ik veel mensen mogen helpen om weer in
+            contact te komen met zichzelf, hun innerlijke rust te hervinden,
+            klachten te verminderen en met een blij gevoel verder te gaan in het
+            leven.
           </p>
           <p class="text-neutral-600 leading-relaxed mb-6">
-            Voor mij voelt dit als wanneer een klein vogeltje in een kooi langzaam
-            leert vliegen – eerst onzeker, niet wetend waar de uitgang is. Met
-            geduld, vertrouwen en gezamenlijke inspanning lukt het om de vleugels
-            te spreiden en weer te vliegen. Dat moment, wanneer iemand zijn eigen
-            kracht en vrijheid terugvindt, is voor mij een grote zegen en diepe
-            vreugde.
+            Voor mij voelt dit als wanneer een klein vogeltje in een kooi
+            langzaam leert vliegen – eerst onzeker, niet wetend waar de uitgang
+            is. Met geduld, vertrouwen en gezamenlijke inspanning lukt het om de
+            vleugels te spreiden en weer te vliegen. Dat moment, wanneer iemand
+            zijn eigen kracht en vrijheid terugvindt, is voor mij een grote
+            zegen en diepe vreugde.
           </p>
           <p class="text-neutral-600 leading-relaxed mb-6">
             Het allerbelangrijkste voor mij is dat mensen zich bij mij veilig en
-            op hun gemak voelen – alleen dan kan echte heling plaatsvinden. Ik ben
-            daarnaast moeder van twee kinderen, wat mij nog dieper heeft geleerd
-            hoe belangrijk zachtheid, vertrouwen en warmte zijn in het contact met
-            anderen.
+            op hun gemak voelen – alleen dan kan echte heling plaatsvinden. Ik
+            ben daarnaast moeder van twee kinderen, wat mij nog dieper heeft
+            geleerd hoe belangrijk zachtheid, vertrouwen en warmte zijn in het
+            contact met anderen.
           </p>
           <p class="text-neutral-600 leading-relaxed">
-            Vanuit liefde en intuïtie begeleid ik mensen om weer in hun kracht te
-            komen – dat is waar ik mijn diepste voldoening uit haal.
+            Vanuit liefde en intuïtie begeleid ik mensen om weer in hun kracht
+            te komen – dat is waar ik mijn diepste voldoening uit haal.
           </p>
         </div>
       </section>
@@ -362,7 +366,9 @@ setPageSEO({
         <h2 class="text-3xl font-bold text-neutral-900 mb-8 text-center">
           Klachten Waarbij Ik Al Geholpen Heb
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto"
+        >
           <UCard class="text-center">
             <div class="flex flex-col items-center gap-2">
               <UIcon
@@ -449,14 +455,22 @@ setPageSEO({
           </UCard>
           <UCard class="text-center">
             <div class="flex flex-col items-center gap-2">
-              <UIcon name="i-mdi-heart-pulse" class="w-8 h-8 text-primary-500" />
+              <UIcon
+                name="i-mdi-heart-pulse"
+                class="w-8 h-8 text-primary-500"
+              />
               <span class="text-neutral-700">Lusteloosheid</span>
             </div>
           </UCard>
           <UCard class="text-center">
             <div class="flex flex-col items-center gap-2">
-              <UIcon name="i-mdi-shield-heart" class="w-8 h-8 text-primary-500" />
-              <span class="text-neutral-700">Terminale ziekte (verlichting)</span>
+              <UIcon
+                name="i-mdi-shield-heart"
+                class="w-8 h-8 text-primary-500"
+              />
+              <span class="text-neutral-700"
+                >Terminale ziekte (verlichting)</span
+              >
             </div>
           </UCard>
         </div>
@@ -475,13 +489,13 @@ setPageSEO({
               </h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
-              Het leven is een geschenk daarom moeten wij er zuinig op zijn. In het
-              dagelijks leven worden we vaak blootgesteld aan stress. Deze kan
-              verschillende oorzaken hebben, maar ons lichaam reageert er in alle
-              gevallen hetzelfde op. Elke vorm van stress kost namelijk energie en
-              langdurige stress put u op den duur uit. Met behulp van de helende
-              energie die door mijn handen stroomt kan ik ervoor zorgen dat
-              stressklachten verdwijnen.
+              Het leven is een geschenk daarom moeten wij er zuinig op zijn. In
+              het dagelijks leven worden we vaak blootgesteld aan stress. Deze
+              kan verschillende oorzaken hebben, maar ons lichaam reageert er in
+              alle gevallen hetzelfde op. Elke vorm van stress kost namelijk
+              energie en langdurige stress put u op den duur uit. Met behulp van
+              de helende energie die door mijn handen stroomt kan ik ervoor
+              zorgen dat stressklachten verdwijnen.
             </p>
           </UCard>
 
@@ -495,24 +509,26 @@ setPageSEO({
               Een goede vriend heeft maanden lang letterlijk krom gelopen van de
               pijn als gevolg van een hernia. De uitstraling in de benen was
               ondragelijk. Hoe sceptisch hij ook was, onder het mom van baat het
-              niet, schaadt het niet, heb ik hem de energie gegeven. Na een aantal
-              behandelingen was de pijn zover gezakt dat hij weer kon lopen zonder
-              pijn.
+              niet, schaadt het niet, heb ik hem de energie gegeven. Na een
+              aantal behandelingen was de pijn zover gezakt dat hij weer kon
+              lopen zonder pijn.
             </p>
           </UCard>
 
           <UCard>
             <template #header>
-              <h3 class="text-xl font-semibold text-primary-600">Suikerziekte</h3>
+              <h3 class="text-xl font-semibold text-primary-600">
+                Suikerziekte
+              </h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
               Met succes heb ik m'n eigen broer geholpen die geconfronteerd werd
               met de diagnose suikerziekte, bij hem was een suikerspiegel van 16
-              gemeten. Als gevolg hiervan had hij ook veel zenuwpijn in zijn benen
-              en voeten en kon hij slecht slapen. Na slechts 3 weken intensief
-              behandelen, was zijn suikerspiegel weer gedaald tot onder de 6 en is
-              de pijn in zijn benen en voeten verdwenen. Nu de pijn weg is kan hij
-              ook weer normaal slapen.
+              gemeten. Als gevolg hiervan had hij ook veel zenuwpijn in zijn
+              benen en voeten en kon hij slecht slapen. Na slechts 3 weken
+              intensief behandelen, was zijn suikerspiegel weer gedaald tot
+              onder de 6 en is de pijn in zijn benen en voeten verdwenen. Nu de
+              pijn weg is kan hij ook weer normaal slapen.
             </p>
           </UCard>
 
@@ -524,16 +540,17 @@ setPageSEO({
             </template>
             <p class="text-neutral-600 leading-relaxed">
               Een van mijn goede vrienden uit Assen worstelde al lange tijd met
-              verschillende gezondheidsproblemen en toen hij voor de zoveelste keer
-              weer in het ziekenhuis belandde met een longontsteking, meldden de
-              dokters niets meer voor hem te kunnen betekenen. Hij kon elk moment
-              wegzakken in een coma. Ik ben diezelfde dag naar Assen afgereisd en
-              heb hem in het ziekenhuis bezocht. Na twee bezoeken op één dag en nog
-              één de volgende dag, is hij al opgestaan uit bed, heeft zelf gedoucht
-              en een stukje gewandeld door het ziekenhuis. De volgende dag mocht
-              hij naar huis en was er geen spoor meer over van zijn ziekte. De
-              dokters konden dit op geen enkele manier verklaren! Ik was
-              dolgelukkig toen ik dit nieuws hoorde en zijn familie natuurlijk ook.
+              verschillende gezondheidsproblemen en toen hij voor de zoveelste
+              keer weer in het ziekenhuis belandde met een longontsteking,
+              meldden de dokters niets meer voor hem te kunnen betekenen. Hij
+              kon elk moment wegzakken in een coma. Ik ben diezelfde dag naar
+              Assen afgereisd en heb hem in het ziekenhuis bezocht. Na twee
+              bezoeken op één dag en nog één de volgende dag, is hij al
+              opgestaan uit bed, heeft zelf gedoucht en een stukje gewandeld
+              door het ziekenhuis. De volgende dag mocht hij naar huis en was er
+              geen spoor meer over van zijn ziekte. De dokters konden dit op
+              geen enkele manier verklaren! Ik was dolgelukkig toen ik dit
+              nieuws hoorde en zijn familie natuurlijk ook.
             </p>
           </UCard>
 
@@ -544,17 +561,18 @@ setPageSEO({
             <p class="text-neutral-600 leading-relaxed mb-4">
               In een geval heb ik gewerkt met iemand die een hersentumor had die
               niet geheel verwijderd kon worden door middel van een operatie. Ik
-              kan met veel blijdschap in mijn hart zeggen dat de tumor gekrompen is
-              tot een zeer klein formaat. Daarbij zijn de klachten waarmee deze
-              persoon kampte na de operatie, zoals lichte epileptische aanvallen,
-              moeite met spreken en depressie volledig verdwenen.
+              kan met veel blijdschap in mijn hart zeggen dat de tumor gekrompen
+              is tot een zeer klein formaat. Daarbij zijn de klachten waarmee
+              deze persoon kampte na de operatie, zoals lichte epileptische
+              aanvallen, moeite met spreken en depressie volledig verdwenen.
             </p>
             <p class="text-neutral-600 leading-relaxed">
-              Ik wil hier wel bij vertellen dat ik op dat moment niet zeker wist of
-              ik hierbij kon helpen. Ik wilde dit met heel mijn hart, maar wist ook
-              dat het hier om een ernstige ziekte gaat. Ik heb dus toegezegd om het
-              te proberen, maar beloofde niets. Diezelfde nacht werd mij in een
-              droom verteld dat ik de vraag om hulp moest aannemen.
+              Ik wil hier wel bij vertellen dat ik op dat moment niet zeker wist
+              of ik hierbij kon helpen. Ik wilde dit met heel mijn hart, maar
+              wist ook dat het hier om een ernstige ziekte gaat. Ik heb dus
+              toegezegd om het te proberen, maar beloofde niets. Diezelfde nacht
+              werd mij in een droom verteld dat ik de vraag om hulp moest
+              aannemen.
             </p>
           </UCard>
 
@@ -565,18 +583,18 @@ setPageSEO({
               </h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
-              Letterlijk is een wonder gebeurd toen ik gevraagd werd een vriend van
-              m'n vriendin te helpen toen deze in het ziekenhuis lag met een
+              Letterlijk is een wonder gebeurd toen ik gevraagd werd een vriend
+              van m'n vriendin te helpen toen deze in het ziekenhuis lag met een
               ernstige bloedafwijking waarvan het diagnosticeren alleen al weken
               duurde, zo zeldzaam was de aandoening. Voor de behandeling in het
               ziekenhuis werd hij bij elkaar drie weken kunstmatig in coma
               gehouden. De artsen konden uiteindelijk niet veel meer betekenen,
               behalve te stellen dat het maanden zou duren voordat hij hiervan
               hersteld zou zijn. Ik ben daar geweest en heb aan zijn bed energie
-              gegeven. Het wonder gebeurde dat hij na twee dagen al weer naast z'n
-              bed stond en een week later alweer op de fiets naar zijn werk. Dit is
-              naast de ernstige longontsteking toch wel de meest bijzondere
-              ervaring die ik heb mogen hebben.
+              gegeven. Het wonder gebeurde dat hij na twee dagen al weer naast
+              z'n bed stond en een week later alweer op de fiets naar zijn werk.
+              Dit is naast de ernstige longontsteking toch wel de meest
+              bijzondere ervaring die ik heb mogen hebben.
             </p>
           </UCard>
 
@@ -585,16 +603,16 @@ setPageSEO({
               <h3 class="text-xl font-semibold text-primary-600">Botbreuk</h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
-              In 2014 brak mijn zoon zijn knie. Zijn been zwol meteen helemaal op
-              en terwijl wij op straat aan het wachten waren op de ambulance,
-              legde ik mijn handen op zijn been en bad tot god om hem te helpen en
-              te zorgen dat hij geen pijn zou hebben. De pijn verdween bijna
-              onmiddellijk. In het ziekenhuis zagen ze op de röntgenfoto dat zijn
-              been onder de knie gebroken was. De dokter kon niet begrijpen hoe het
-              kon dat hij geen pijn voelde. Mijn zoon kwam uit het ziekenhuis en
-              zijn been genas zonder gevolgen voor zijn groei (de breuklijn liep
-              dwars door de groeischijf). Zijn gips ging er veel eerder af dan de
-              dokter had gezegd.
+              In 2014 brak mijn zoon zijn knie. Zijn been zwol meteen helemaal
+              op en terwijl wij op straat aan het wachten waren op de ambulance,
+              legde ik mijn handen op zijn been en bad tot god om hem te helpen
+              en te zorgen dat hij geen pijn zou hebben. De pijn verdween bijna
+              onmiddellijk. In het ziekenhuis zagen ze op de röntgenfoto dat
+              zijn been onder de knie gebroken was. De dokter kon niet begrijpen
+              hoe het kon dat hij geen pijn voelde. Mijn zoon kwam uit het
+              ziekenhuis en zijn been genas zonder gevolgen voor zijn groei (de
+              breuklijn liep dwars door de groeischijf). Zijn gips ging er veel
+              eerder af dan de dokter had gezegd.
             </p>
           </UCard>
         </div>
@@ -610,10 +628,10 @@ setPageSEO({
             />
             <p class="text-lg text-neutral-700 leading-relaxed">
               Wellicht ten overvloede, maar deze energie en deze gave die ik heb
-              mogen ontvangen is voor iedereen – mensen met religie, mensen zonder
-              religie. Het is zuivere energie van een goede bron, het universum.
-              Het is een liefdevolle energie waarvoor ik zeer dankbaar ben dat ik
-              hem mag overbrengen om u te kunnen helpen.
+              mogen ontvangen is voor iedereen – mensen met religie, mensen
+              zonder religie. Het is zuivere energie van een goede bron, het
+              universum. Het is een liefdevolle energie waarvoor ik zeer
+              dankbaar ben dat ik hem mag overbrengen om u te kunnen helpen.
             </p>
           </div>
         </UCard>

@@ -1,55 +1,121 @@
 ---
-title: Hypnotherapie
-description: Ontdek de kracht van je onderbewustzijn met hypnotherapie. Werk aan diepgewortelde patronen, overtuigingen en emoties voor duurzame verandering en persoonlijke groei.
+title: Hypnotherapie Trajecten
+description: Mijn unieke Hypno/Healing methode combineert diepgaande hypnotherapie met energetische (chakra) healing voor snelle én duurzame transformatie op lichaams-, geest- én zielsniveau.
 ---
 
 ::behandeling-hero
 ---
-description: Ontdek de kracht van je onderbewustzijn met hypnotherapie. Werk aan diepgewortelde patronen, overtuigingen en emoties voor duurzame verandering en persoonlijke groei.
+description: Waar echte transformatie begint. Combinatie van hypnotherapie en
+  energetische healing voor duurzame verandering op mentaal, emotioneel en
+  energetisch niveau.
 id: dd01fafe-5591-4ca2-b460-c18388237f76
 ---
 ::
 
 ::behandeling-sectie
 ---
-title: Wat kun je verwachten?
-image: /images/clock-7791024-1280.jpg
-imageAlt: Sfeerbeeld van een hypnotherapie sessie
 items:
-  - "Diepe ontspanning: Met mijn stem, adem en energie begeleid ik je naar een rustige, veilige hypnose"
-  - "Contact met het onderbewuste: Je bewuste en onderbewuste gaan tijdens de sessie samenwerken"
-  - "Helende visualisaties en innerlijk werk: We gebruiken zachte beelden, gevoelens en inzichten om blokkades los te laten"
-  - "Energetische ondersteuning: Een combinatie van hypnotherapie en energetische healing voor een volledig herstel van lichaam en geest"
+  - Snelle én duurzame resultaten door diepe doorwerking
+  - Minder sessies nodig door combinatie van hypnotherapie en energetische
+    healing
+  - Transformatie op lichaams-, geest- én zielsniveau
+  - Meer innerlijke rust, vertrouwen en levensenergie
+image: /images/enisa-desk-writing.webp
+imageAlt: Hypnotherapie en healing voor transformatie
+title: Mijn unieke Hypno/Healing methode
 ---
-Tijdens een hypnotherapie sessie begeleid ik je naar een diepe staat van ontspanning, waarin je onderbewustzijn toegankelijk wordt. Door de combinatie van hypnotherapie en energetische healing werk ik op meerdere niveaus om blokkades op te lossen, oude patronen te transformeren en emotionele wonden te helen. Je blijft tijdens de hele sessie volledig bewust en in controle.
+Mijn manier van werken gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep vanbinnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
+::
+
+::behandeling-sectie
+---
+items:
+  - "Losse sessie: €130 (60-75 min)"
+  - "3 sessies traject: €345 (60-75 min per sessie)"
+  - "Intake inbegrepen: 30 min via telefoon of video"
+  - Gericht op rust, inzicht en positieve verandering
+image: /images/single-sessions-hypnotherapie.webp
+imageAlt: Hypnomeditatie sessie
+title: Hypnomeditatie – Losse sessie of 3 sessies traject
+---
+Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling. Het 3 sessies traject helpt je om angst, onzekerheid en emotionele spanning te verzachten. Elke sessie werkt dieper in op het onderbewuste, waardoor vastzittende gedachten en oude patronen stap voor stap kunnen loslaten. Voor een duurzaam effect zijn minimaal drie sessies aanbevolen, omdat het onderbewuste werkt in lagen.
+::
+
+::behandeling-sectie
+---
+items:
+  - "Prijs: €595 (betaling in 2 termijnen mogelijk)"
+  - 3 transformatiesessies van 90-120 minuten
+  - Hypnotherapie + energetische/chakra healing
+  - 3 persoonlijke mini-rituelen na elke sessie
+  - 1 korte check-in tussen sessies (max. 10 min)
+  - Intake van 30 min (telefonisch of video)
+image: /images/hypnotherapy-stairs.webp
+imageAlt: Transformatie traject voor diepe heling
+title: Transformatie Traject (3 sessies)
+---
+Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid. Dit traject combineert hypnotherapie en energetische (chakra) healing, volledig afgestemd op jouw proces. De sessies werken op mentaal, emotioneel en energetisch niveau, waardoor heling niet oppervlakkig is, maar diep en duurzaam.
+::
+
+::behandeling-sectie
+---
+items:
+  - "Prijs: €777 (betaling in 2 termijnen mogelijk)"
+  - 4 diepe transformatiesessies van 90-120 minuten
+  - 1 hoofd/gezicht ontspanningsmassage (45 min)
+  - 4 premium rituelen voor heling en integratie
+  - Wekelijkse voice-ondersteuning via WhatsApp
+  - 1 helende audio (5-7 min) persoonlijk voor jou
+  - Korte WhatsApp ondersteuning bij vragen
+image: /images/clock.webp
+imageAlt: Premium traject voor diepe transformatie
+title: Premium Traject (4 sessies)
+---
+Een luxere, diepere en zachtere reis naar innerlijke transformatie. Voor wie niet alleen wil helen, maar een dieper ontwaken wil ervaren. Dit premium traject combineert hypnose, diepe healing, persoonlijke rituelen, wekelijkse ondersteuning en een helende audio — zodat jouw transformatie sneller, zachter en blijvend wordt. Een verfijnde, liefdevolle en intensieve reis die werkt op zielsniveau.
 ::
 
 ::twee-kolommen
   :::voordelen-lijst
   ---
   items:
-    - Vermindert stress, spanning en mentale onrust
-    - Ondersteunt verwerking van oude emoties en overtuigingen
-    - Brengt helderheid, rust en meer energie
-    - Versterkt zelfliefde, zelfvertrouwen en innerlijke kracht
-    - Bevordert herstel bij burn-out en emotionele vermoeidheid
-  title: Belangrijkste Voordelen
+    - Angst en stress verminderen
+    - Verdriet en emotionele druk worden lichter
+    - Oude overtuigingen verzachten of veranderen
+    - Meer rust in hoofd en lichaam
+    - Meer vertrouwen, stabiliteit en helderheid
+    - Diepere verbinding met jezelf
+    - Sneller doorbreken van oude patronen
+    - Sterkere verbinding met je intuïtie
+  title: Wat je gaat merken
   ---
   :::
 
   :::voor-wie
   ---
   items:
-    - Je stress, angst of innerlijke onrust ervaart
-    - Je moeite hebt met loslaten van verdriet, trauma of oude patronen
-    - Je je uitgeput, leeg of geblokkeerd voelt
-    - Je fysieke klachten hebt zonder duidelijke medische oorzaak
-    - Je symptomen van burn-out herkent en verlangt naar herstel
-    - Je oude overtuigingen wilt herprogrammeren
-    - Je wilt terugkeren naar rust, balans en verbinding met jezelf
+    - Je oude patronen, angst of blokkades wilt loslaten
+    - Je emotionele lasten voelt die je wilt transformeren
+    - Je opnieuw verbinding wilt maken met rust en kracht
+    - Je klaar bent voor duurzame verandering van binnenuit
+    - Je een dieper ontwaken wilt ervaren
+    - Je zoekt naar innerlijke helderheid en stabiliteit
+    - Je wilt terugkeren naar wie je werkelijk bent
   title: Voor Wie?
   ---
   :::
+::
+
+::uitklap-info{title="Intake & voorbereiding"}
+Vooraf plannen we een telefonisch intakegesprek van 30 minuten. Op basis van jouw thema's en intentie maak ik een persoonlijke hypnomeditatie, afgestemd op jouw proces en energie, zodat je tijdens de sessie sneller en dieper kunt loslaten.
+
+**Voel je dat dit het moment is? Plan je intakegesprek.**
+Bel of app: 06-22445121
+
+### Annulerings- & betalingsvoorwaarden
+
+- Bij annulering binnen 48 uur wordt de eerste termijn niet terugbetaald
+- De tweede sessie vindt plaats na betaling van de tweede termijn
+- Betalen via overmaken of Tikkie
 ::
 
 ::uitklap-info{title="Meer over hypnotherapie"}
@@ -70,30 +136,19 @@ Deze methode is veilig, liefdevol en toegankelijk voor iedereen.
 
 ### Hypnotherapie & Energetische Healing
 
-In mijn praktijk combineer ik hypnotherapie met energetische healing. :br Dit zorgt voor:
+In mijn praktijk combineer ik hypnotherapie met energetische healing. Dit zorgt voor:
 
 - Diepere ontspanning
 - Snellere verwerking van emoties
 - Betere doorstroming van energie
 - Complete heling van lichaam en geest
-
-### Wat kun je ervaren?
-
-Tijdens of na de sessie kun je merken:
-
-- Zachte ontspanning en innerlijke rust
-- Emotionele ontlading of helderheid
-- Warmte, tintelingen of subtiele energiestromen
-- Inzichten die je verder helpen in je proces
-- Meer balans, focus en zelfvertrouwen in de dagen erna
+- Transformatie op zielsniveau
 
 ### Belangrijk om te weten
 
 - Hypnotherapie is veilig en toegankelijk
 - Je blijft altijd volledig bewust en in controle
 - Het is geen showhypnose zoals op tv
-- Meerdere sessies kunnen nodig zijn voor diepere patronen
+- Het onderbewuste werkt in lagen - meerdere sessies zijn vaak aanbevolen
 - Het is complementair en vervangt geen medische zorg
 ::
-
-\::

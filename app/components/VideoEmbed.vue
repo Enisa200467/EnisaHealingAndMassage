@@ -18,7 +18,10 @@
       v-else-if="error"
       class="bg-red-50 border border-red-200 rounded-lg p-6 text-center"
     >
-      <UIcon name="i-mdi-alert-circle" class="w-8 h-8 mx-auto mb-2 text-red-500" />
+      <UIcon
+        name="i-mdi-alert-circle"
+        class="w-8 h-8 mx-auto mb-2 text-red-500"
+      />
       <p class="text-red-700">{{ error }}</p>
     </div>
   </div>
@@ -32,7 +35,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  aspectRatio: '56.25%', // 16:9 ratio
+  aspectRatio: "56.25%", // 16:9 ratio
 });
 
 const embedUrl = ref<string | null>(null);
@@ -41,12 +44,13 @@ const error = ref<string | null>(null);
 // Extract video ID and platform from URL
 const parseVideoUrl = (url: string) => {
   // YouTube patterns
-  const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+  const youtubeRegex =
+    /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
   const youtubeMatch = url.match(youtubeRegex);
 
   if (youtubeMatch) {
     return {
-      platform: 'youtube',
+      platform: "youtube",
       id: youtubeMatch[1],
     };
   }
@@ -57,7 +61,7 @@ const parseVideoUrl = (url: string) => {
 
   if (vimeoMatch) {
     return {
-      platform: 'vimeo',
+      platform: "vimeo",
       id: vimeoMatch[1],
     };
   }
@@ -70,14 +74,14 @@ const generateEmbedUrl = () => {
   const parsed = parseVideoUrl(props.url);
 
   if (!parsed) {
-    error.value = 'Ongeldige video URL. Gebruik een YouTube of Vimeo link.';
+    error.value = "Ongeldige video URL. Gebruik een YouTube of Vimeo link.";
     return;
   }
 
-  if (parsed.platform === 'youtube') {
+  if (parsed.platform === "youtube") {
     embedUrl.value = `https://www.youtube.com/embed/${parsed.id}?rel=0`;
-  } else if (parsed.platform === 'vimeo') {
-    embedUrl.value = `https://player.vimeo.com/video/${parsed.id}`;
+  } else if (parsed.platform === "vimeo") {
+    embedUrl.value = `https://player.vimeo.com/video/${parsed.id}?autoplay=0&loop=1&muted=0&title=0`;
   }
 };
 
