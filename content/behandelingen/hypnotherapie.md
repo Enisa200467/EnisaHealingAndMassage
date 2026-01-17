@@ -36,7 +36,7 @@ items:
   - Gericht op rust, inzicht en positieve verandering
 image: /images/single-sessions-hypnotherapie.webp
 imageAlt: Hypnomeditatie sessie
-title: Hypnomeditatie – Losse sessie of 3 sessies traject
+title: Hypnomeditatie – 1 sessie of 3 sessies traject
 ---
 Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling. Het 3 sessies traject helpt je om angst, onzekerheid en emotionele spanning te verzachten. Elke sessie werkt dieper in op het onderbewuste, waardoor vastzittende gedachten en oude patronen stap voor stap kunnen loslaten. Voor een duurzaam effect zijn minimaal drie sessies aanbevolen, omdat het onderbewuste werkt in lagen.
 ::

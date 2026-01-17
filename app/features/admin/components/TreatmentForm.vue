@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { TreatmentFormData } from '../types/treatment.types';
-import {
-  COMMON_ICONS,
-} from '../types/treatment.types';
+import type { TreatmentFormData } from "../types/treatment.types";
+import { COMMON_ICONS } from "../types/treatment.types";
 
 interface Props {
   modelValue: TreatmentFormData;
@@ -10,8 +8,8 @@ interface Props {
 }
 
 interface Emits {
-  (e: 'update:modelValue', value: TreatmentFormData): void;
-  (e: 'submit' | 'cancel'): void;
+  (e: "update:modelValue", value: TreatmentFormData): void;
+  (e: "submit" | "cancel"): void;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -23,7 +21,7 @@ const emit = defineEmits<Emits>();
 // Form data reactive reference
 const formData = computed({
   get: () => props.modelValue,
-  set: (value) => emit('update:modelValue', value),
+  set: (value) => emit("update:modelValue", value),
 });
 
 // Form validation
@@ -46,7 +44,8 @@ const isFormValid = computed(() => {
     const packageValid =
       formData.value.package_sessions > 1 &&
       formData.value.package_price_euros > 0 &&
-      formData.value.package_price_euros < formData.value.price_euros * formData.value.package_sessions;
+      formData.value.package_price_euros <
+        formData.value.price_euros * formData.value.package_sessions;
     if (!packageValid) return false;
   }
 
@@ -55,7 +54,7 @@ const isFormValid = computed(() => {
 
 const handleSubmit = () => {
   if (isFormValid.value) {
-    emit('submit');
+    emit("submit");
   }
 };
 </script>
@@ -106,7 +105,6 @@ const handleSubmit = () => {
             type="number"
             min="15"
             max="180"
-            step="15"
             placeholder="60"
             :disabled="loading"
           />
@@ -152,9 +150,7 @@ const handleSubmit = () => {
             placeholder="55.00"
             :disabled="loading"
           />
-          <template #help>
-            Moet lager zijn dan de originele prijs
-          </template>
+          <template #help> Moet lager zijn dan de originele prijs </template>
         </UFormField>
       </div>
 
@@ -199,7 +195,8 @@ const handleSubmit = () => {
               :disabled="loading"
             />
             <template #help>
-              Moet lager zijn dan {{ formData.package_sessions }}x de losse prijs
+              Moet lager zijn dan {{ formData.package_sessions }}x de losse
+              prijs
             </template>
           </UFormField>
         </div>

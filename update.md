@@ -10,12 +10,13 @@
 ### 2.1 Anti-stress behandelingen
 - Anti-stress behandelingen moeten op de website.
 - gebruik oorspronkelijke website 
+https://www.enisahealingenmassage.nl/anti-stress
 
 ### 2.2 Hypnotherapie (structuur)
 - Eerste traject: **2 trajecten per sessie**
 - Daarna: **3 sessies alleen hypnomeditatie**
 - Dit moet duidelijk beschreven worden op de website.
-
+ - structuur moet naar kolommen en niet de ander pagina's volgen. De content is te afwijkend 
 ### 2.3 Titels van behandelingen
 - Titels moeten zijn zoals op mijn oude website, bijvoorbeeld:
   - Loslaten  
@@ -31,7 +32,7 @@
   - met korting worden weergegeven.
 - Dit wil ik samen bekijken en beslissen.
 
----
+--- 
 
 ## 4) Veelgestelde vragen (FAQ)
 - Graag een **FAQ-pagina** toevoegen.
@@ -124,6 +125,9 @@
 
 ---
 
+## 13) Acties 
+- acties te beheren via admin
+- vrij tekst veld wat verschijnt onder tarieven
 ## 13) Slot
 - Sorry voor de vele vragen.
 - Dit is belangrijk voor mij.
