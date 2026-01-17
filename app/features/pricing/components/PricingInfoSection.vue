@@ -41,8 +41,7 @@
         </div>
         <h3 class="font-semibold text-neutral-900 mb-2">Verzekering</h3>
         <p class="text-neutral-600 text-sm">
-          Sommige behandelingen kunnen vergoed worden via aanvullende
-          verzekering.
+          Behandelingen worden niet vergoed door zorgverzekeraars.
         </p>
       </div>
     </div>
@@ -83,8 +82,7 @@
             </h4>
           </template>
           <p class="text-neutral-600 text-sm">
-            Dit hangt af van je aanvullende verzekering. Check dit bij je
-            verzekeraar of vraag naar onze declaratiecodes.
+            Nee, onze behandelingen worden niet vergoed door zorgverzekeraars.
           </p>
         </UCard>
 

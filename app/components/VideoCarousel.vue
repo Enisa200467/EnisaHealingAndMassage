@@ -26,6 +26,7 @@
       v-slot="{ item }"
       :items="videos"
       :ui="{ item: 'basis-full' }"
+      dots
       arrows
       indicators
       class="w-full max-w-4xl mx-auto"
@@ -68,7 +69,7 @@ const props = withDefaults(defineProps<Props>(), {
 // Generate heading ID for accessibility
 const headingId = computed(() => {
   if (props.heading) {
-    return props.heading.toLowerCase().replace(/\s+/g, '-');
+    return props.heading.toLowerCase().replace(/\s+/g, "-");
   }
   return undefined;
 });
@@ -81,7 +82,7 @@ const currentVideoAnnouncement = computed(() => {
     const currentVideo = props.videos[currentVideoIndex.value];
     return `Video ${currentVideoIndex.value + 1} van ${total}: ${currentVideo.title}`;
   }
-  return '';
+  return "";
 });
 
 const onVideoChange = (index: number) => {
