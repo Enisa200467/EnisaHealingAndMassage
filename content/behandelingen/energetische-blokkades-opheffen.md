@@ -1,11 +1,11 @@
 ---
-title: Loslaten Traject
-description: Een intensief begeleidingstraject om oude pijn, blokkades en patronen los te laten. Combinatie van energetische healing, gesprekken en transformatiewerk voor diepe innerlijke verandering.
+title: Energetische Blokkades Opheffen
+description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
 ---
 
 ::behandeling-hero
 ---
-description: Een intensief begeleidingstraject om oude pijn, blokkades en patronen los te laten. Combinatie van energetische healing, gesprekken en transformatiewerk voor diepe innerlijke verandering.
+description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
 id: da84341d-d8cd-4db7-bacf-7d2495ecccb4
 ---
 ::
@@ -18,11 +18,11 @@ items:
   - "Sessie 3 (90 min): Twee meditaties om het proces te integreren - €130"
   - "Sessie 4 (60 min): Afrondende chakra healing behandeling - €85"
   - "Totaal pakket: 4 sessies voor €475 (los boeken: €475)"
-image: /images/loslaten-traject.webp
-imageAlt: Spiritueel traject voor loslaten en persoonlijke groei in Amsterdam Noord
+image: /images/energetische-blokkades-opheffen.webp
+imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Het Loslaten Traject is een gestructureerd programma van vier sessies waarin je ondersteund wordt bij het opheffen van energetische blokkades en het loslaten van oude pijn. Door een gebalanceerde mix van meditaties en healings werk je stap voor stap naar meer vrijheid en innerlijke rust. Loslaten betekent niet vergeten - het betekent voor je eigen geluk kiezen en verder gaan met je leven.
+Het traject Energetische Blokkades Opheffen bestaat uit vier sessies waarin je stap voor stap werkt aan het losmaken van oude patronen en vastzittende energie. Met een combinatie van meditaties en healings ontstaat er meer ruimte, helderheid en innerlijke rust. Loslaten betekent niet vergeten, maar kiezen voor jezelf en verdergaan met vertrouwen.
 ::
 
 ::twee-kolommen
@@ -45,35 +45,35 @@ Het Loslaten Traject is een gestructureerd programma van vier sessies waarin je 
   ---
   items:
     - Je voelt dat er ergens een blokkade zit
-    - Niet vooruit komt in het leven
-    - Merkt dat deuren zich steeds sluiten
-    - Vasthoudt aan verdriet, pijn of boosheid
-    - Herinneringen uit je kindertijd je tegenhouden
-    - Te veel vasthoudt aan het verleden
-    - Jarenlang blijft steken op dezelfde plek
-    - Klaar bent om los te laten en vooruit te gaan
+    - Je komt niet vooruit in het leven
+    - Je merkt dat deuren zich steeds sluiten
+    - Je houdt vast aan verdriet, pijn of boosheid
+    - Herinneringen uit je kindertijd houden je tegen
+    - Je houdt te veel vast aan het verleden
+    - Je blijft al jaren steken op dezelfde plek
+    - Je bent klaar om los te laten en vooruit te gaan
   title: Voor Wie?
   ---
   :::
 ::
 
-::uitklap-info{title="Meer over het Loslaten Traject"}
+::uitklap-info{title="Meer over Energetische Blokkades Opheffen"}
 ### Waarom Vier Sessies?
 
 Dit traject is bewust opgezet als een serie van vier sessies omdat diep loslaten tijd en ruimte nodig heeft. Elke sessie bouwt voort op de vorige, waardoor je stap voor stap dieper kunt gaan in het proces. De afwisseling tussen meditaties en healings zorgt voor een gebalanceerde aanpak die zowel mentaal als energetisch werkt.
 
 ### Wat Betekent Loslaten?
 
-Als je voelt dat er ergens een blokkade zit, dat je niet vooruit komt in het leven, als je merkt dat deuren zich steeds voor je sluiten en dingen niet lukken, dan is het mogelijk dat je nog steeds ergens diep van binnen iets uit het verleden of heden vasthoudt. Dit kan verdriet, pijn, boosheid of ontevredenheid over een gebeurtenis zijn.
+Als je voelt dat er ergens een blokkade zit, je niet vooruit komt in het leven en merkt dat deuren zich steeds sluiten, dan kan het zijn dat je nog iets vasthoudt uit het verleden of het heden. Dat kan verdriet, pijn, boosheid of ontevredenheid zijn over een gebeurtenis.
 
-Het kan ook gaan over herinneringen uit je kindertijd. Dat hoeven geen slechte herinneringen te zijn. Ook te veel vasthouden aan mooie herinneringen kan een blokkade opleveren. Zo kun je ongemerkt jarenlang blijven steken op dezelfde plek.
+Het kan ook gaan om herinneringen uit je kindertijd. Dat hoeven geen slechte herinneringen te zijn. Ook te veel vasthouden aan mooie herinneringen kan een blokkade opleveren. Zo kun je ongemerkt jarenlang blijven steken op dezelfde plek.
 
 **Loslaten betekent niet dat je het moet vergeten.** Loslaten betekent voor je eigen geluk kiezen en verder gaan met je leven.
 
 ### Sessie Opbouw
 
 #### Sessie 1 & 2: Meditaties met Healing (90 minuten - €130 per sessie)
-In de eerste twee sessies combineren we gerichte meditaties met chakra healings. Deze combinatie helpt bij het identificeren en beginnen oplossen van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
+In de eerste twee sessies combineren we gerichte meditaties met chakra healings. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
 
 #### Sessie 3: Twee Meditaties (90 minuten - €130)
 De derde sessie bestaat uit twee meditaties zonder healing. Dit geeft je de ruimte om zelf het proces te integreren en te werken met wat er in de eerste twee sessies is losgekomen. Deze sessie is gericht op acceptatie en vergeving.

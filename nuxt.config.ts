@@ -136,6 +136,12 @@ export default defineNuxtConfig({
         "font-src": ["'self'", "https:", "data:"],
         "form-action": ["'self'"],
         "frame-ancestors": ["'self'"],
+        "frame-src": [
+          "'self'",
+          "https://www.youtube.com",
+          "https://www.youtube-nocookie.com",
+          "https://player.vimeo.com",
+        ],
         "img-src": ["'self'", "data:", "https:", "blob:"],
         "object-src": ["'none'"],
         "script-src-attr": [
@@ -158,6 +164,8 @@ export default defineNuxtConfig({
         ],
         "upgrade-insecure-requests": true,
       },
+      crossOriginEmbedderPolicy: "unsafe-none",
+
     },
     // Disable CSRF protection - not needed because:
     // 1. Supabase authentication required for admin routes

@@ -50,8 +50,7 @@
             <h3 class="font-semibold">Worden de kosten vergoed?</h3>
           </template>
           <p class="text-neutral-600 text-sm">
-            Sommige zorgverzekeraars vergoeden massagetherapie via de
-            aanvullende verzekering. Check dit bij je verzekeraar.
+            Onze behandelingen worden niet vergoed door zorgverzekeraars.
           </p>
         </UCard>
       </div>

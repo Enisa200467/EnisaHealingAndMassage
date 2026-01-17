@@ -9,9 +9,9 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Enisa",
-  jobTitle: "Energetisch Therapeut en Hypnotherapeut",
+  jobTitle: "Energetisch Therapeut gespecialiseerd in Hypnotherapie",
   description:
-    "Energetisch therapeut en hypnotherapeut gespecialiseerd in holistische healing, energetische therapie en hypnotherapie.",
+    "Energetisch therapeut gespecialiseerd in holistische healing, energetische therapie en hypnotherapie.",
   worksFor: {
     "@type": "Organization",
     name: businessInfo.name,
@@ -20,7 +20,7 @@ const personSchema = {
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Erkend Wellnessmasseur (Anand Massage Opleidingen)",
+      name: "Erkend Wellnessmasseur",
       credentialCategory: "Professional Certification",
     },
     {
@@ -54,7 +54,7 @@ const personSchema = {
 setPageSEO({
   title: "Over Mij - Enisa Healing & Massage",
   description:
-    "Leer meer over Enisa, energetisch therapeut en hypnotherapeut met 11+ jaar ervaring. Ontdek haar achtergrond, certificeringen en passie voor holistische healing en energetische therapie.",
+    "Leer meer over Enisa, energetisch therapeut met 11+ jaar ervaring in hypnotherapie. Ontdek haar achtergrond, certificeringen en passie voor holistische healing en energetische therapie.",
   path: "/over-mij",
   type: "profile",
   structuredData: [personSchema],
@@ -80,9 +80,9 @@ setPageSEO({
                 Over Mij
               </h1>
               <p class="text-xl text-neutral-600 mb-8 leading-relaxed">
-                Welkom! Mijn naam is Enisa, energetisch therapeut en
-                hypnotherapeut in Amsterdam Noord. Ik begeleid mensen vanuit het
-                hart en werk met de helende energie die door mijn handen
+                Welkom! Mijn naam is Enisa, energetisch therapeut in Amsterdam
+                Noord met een focus op hypnotherapie. Ik begeleid mensen vanuit
+                het hart en werk met de helende energie die door mijn handen
                 stroomt. Met meer dan 11 jaar ervaring combineer ik energetische
                 therapie, healing en hypnotherapie om mensen te helpen bij hun
                 innerlijke reis naar balans en welzijn.
@@ -185,9 +185,14 @@ setPageSEO({
                   name="i-mdi-check-circle"
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
-                <span class="text-neutral-600"
-                  >Erkend Wellnessmasseur (Anand Massage Opleidingen)</span
-                >
+                <span class="text-neutral-600">Erkend Wellnessmasseur</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <UIcon
+                  name="i-mdi-check-circle"
+                  class="w-5 h-5 text-green-500 mt-0.5"
+                />
+                <span class="text-neutral-600">Mindfulnesstrainer MBSR</span>
               </li>
               <li class="flex items-start gap-3">
                 <UIcon
@@ -195,16 +200,7 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Mindfulnesstrainer MBSR (Mindfulness Academie)</span
-                >
-              </li>
-              <li class="flex items-start gap-3">
-                <UIcon
-                  name="i-mdi-check-circle"
-                  class="w-5 h-5 text-green-500 mt-0.5"
-                />
-                <span class="text-neutral-600"
-                  >Ericksoniaanse Hypnose - Hypnotherapie (UNLP Instituut)</span
+                  >Ericksoniaanse Hypnose - Hypnotherapie</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -251,8 +247,8 @@ setPageSEO({
                   class="w-5 h-5 text-yellow-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >340+ positieve recensies op Treatwell, Google en
-                  Facebook</span
+                  >Positieve recensies op Treatwell, Google, Facebook en deze
+                  website</span
                 >
               </li>
               <li class="flex items-start gap-3">
