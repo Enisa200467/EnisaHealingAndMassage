@@ -139,6 +139,11 @@ const mobileNavItems = computed<NavigationMenuItem[]>(() => [
     to: routes.pages.contact,
   },
   {
+    label: "Anti-stress",
+    icon: "i-mdi-spa",
+    to: routes.pages.antiStress,
+  },
+  {
     label: "Reviews",
     icon: "i-mdi-star",
     to: routes.pages.reviews,
@@ -171,6 +176,11 @@ const desktopNavItems = computed<NavigationMenuItem[]>(() => [
     label: "Contact",
     icon: "i-mdi-email",
     to: routes.pages.contact,
+  },
+  {
+    label: "Anti-stress",
+    icon: "i-mdi-spa",
+    to: routes.pages.antiStress,
   },
   {
     label: "Reviews",
