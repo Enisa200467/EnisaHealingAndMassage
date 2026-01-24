@@ -6,11 +6,16 @@
 
 ---
 
+## 0) AI CODEX init
 ## 2) Behandelingen & inhoud
 ### 2.1 Anti-stress behandelingen
 - Anti-stress behandelingen moeten op de website.
 - gebruik oorspronkelijke website 
 https://www.enisahealingenmassage.nl/anti-stress
+
+### 2.2 Traject ipv pakketen
+- traject
+- admin page met array aan trajecten (naam en id) zodat ze te koppelen zijn aan hypnotherapie bijvoorbeeld
 
 ### 2.2 Hypnotherapie (structuur)
 - Eerste traject: **2 trajecten per sessie**
@@ -128,6 +133,8 @@ https://www.enisahealingenmassage.nl/anti-stress
 ## 13) Acties 
 - acties te beheren via admin
 - vrij tekst veld wat verschijnt onder tarieven
+
+## 14) Google search console
 ## 13) Slot
 - Sorry voor de vele vragen.
 - Dit is belangrijk voor mij.

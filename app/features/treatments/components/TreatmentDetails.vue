@@ -7,6 +7,9 @@ interface Props {
   price?: number;
   discountEnabled?: boolean;
   discountPrice?: number;
+  trajectEnabled?: boolean;
+  trajectSessions?: number;
+  trajectPrice?: number;
   packageEnabled?: boolean;
   packageSessions?: number;
   packagePrice?: number;
@@ -33,9 +36,20 @@ const props = withDefaults(defineProps<Props>(), {
   bookButtonColor: "primary",
   discountEnabled: false,
   packageEnabled: false,
+  trajectEnabled: false,
 });
 
 const routes = useRoutes();
+
+const displayTrajectEnabled = computed(
+  () => props.trajectEnabled ?? props.packageEnabled ?? false
+);
+const displayTrajectSessions = computed(
+  () => props.trajectSessions ?? props.packageSessions
+);
+const displayTrajectPrice = computed(
+  () => props.trajectPrice ?? props.packagePrice
+);
 
 // Size-based styling
 const sizeClasses = computed(() => {
@@ -109,14 +123,14 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
         <span class="text-neutral-600" :class="sizeClasses.text">Duur:</span>
         <span class="font-medium text-neutral-900" :class="sizeClasses.text">
           {{ formatDuration(duration) }}
-          {{ packageEnabled ? "per sessie" : "" }}
+          {{ displayTrajectEnabled ? "per sessie" : "" }}
         </span>
       </div>
 
       <!-- Price -->
       <div v-if="price" class="flex justify-between items-center">
         <span class="text-neutral-600" :class="sizeClasses.text">
-          Prijs{{ packageEnabled ? " losse sessie:" : ":" }}
+          Prijs{{ displayTrajectEnabled ? " losse sessie:" : ":" }}
         </span>
         <div
           v-if="discountEnabled && discountPrice"
@@ -143,22 +157,22 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
         </span>
       </div>
 
-      <!-- Package Deal -->
+      <!-- Traject Deal -->
       <div
-        v-if="packageEnabled && packageSessions && packagePrice"
+        v-if="displayTrajectEnabled && displayTrajectSessions && displayTrajectPrice"
         class="mt-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg border border-purple-200 dark:border-purple-700"
       >
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <UIcon
-              name="i-mdi-package-variant"
+              name="i-mdi-timeline"
               class="w-4 h-4 text-purple-600 dark:text-purple-400"
             />
             <span
               class="font-semibold text-purple-900 dark:text-purple-100"
               :class="sizeClasses.text"
             >
-              Pakket
+              Traject
             </span>
           </div>
         </div>
@@ -167,13 +181,13 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
             class="text-purple-800 dark:text-purple-200"
             :class="sizeClasses.text"
           >
-            {{ packageSessions }} sessies
+            {{ displayTrajectSessions }} sessies
           </span>
           <span
             class="font-bold text-purple-600 dark:text-purple-400"
             :class="sizeClasses.price"
           >
-            {{ formatPrice(packagePrice) }}
+            {{ formatPrice(displayTrajectPrice) }}
           </span>
         </div>
       </div>

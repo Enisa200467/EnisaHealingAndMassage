@@ -2,6 +2,8 @@ import type {
   Treatment,
   CreateTreatmentInput,
   TreatmentFormData,
+  TreatmentTraject,
+  TreatmentTrajectFormData,
 } from '../types/treatment.types';
 
 export const useAdminTreatments = () => {
@@ -35,7 +37,7 @@ export const useAdminTreatments = () => {
   const formatForDatabase = (
     formData: TreatmentFormData
   ): CreateTreatmentInput => {
-    return {
+    const baseData = {
       name: formData.name,
       slug: generateSlug(formData.name),
       duration_minutes: formData.duration_minutes,
@@ -44,23 +46,18 @@ export const useAdminTreatments = () => {
       discount_price_cents: formData.discount_enabled
         ? eurosToCents(formData.discount_price_euros)
         : undefined,
-      package_enabled: formData.package_enabled,
-      package_sessions: formData.package_enabled
-        ? formData.package_sessions
-        : undefined,
-      package_price_cents: formData.package_enabled
-        ? eurosToCents(formData.package_price_euros)
-        : undefined,
       icon: formData.icon,
       display_order: formData.display_order,
     };
+
+    return baseData;
   };
 
   // Convert form data to database format for updates (preserves existing slug if name hasn't changed significantly)
   const formatForDatabaseUpdate = (
     formData: TreatmentFormData,
     existingTreatment?: Treatment
-  ) => {
+  ): Record<string, unknown> => {
     const baseData = {
       name: formData.name,
       duration_minutes: formData.duration_minutes,
@@ -68,13 +65,6 @@ export const useAdminTreatments = () => {
       discount_enabled: formData.discount_enabled,
       discount_price_cents: formData.discount_enabled
         ? eurosToCents(formData.discount_price_euros)
-        : undefined,
-      package_enabled: formData.package_enabled,
-      package_sessions: formData.package_enabled
-        ? formData.package_sessions
-        : undefined,
-      package_price_cents: formData.package_enabled
-        ? eurosToCents(formData.package_price_euros)
         : undefined,
       icon: formData.icon,
       display_order: formData.display_order,
@@ -102,15 +92,39 @@ export const useAdminTreatments = () => {
       discount_price_euros: treatment.discount_price_cents
         ? centsToEuros(treatment.discount_price_cents)
         : 0,
-      package_enabled: treatment.package_enabled || false,
-      package_sessions: treatment.package_sessions || 5,
-      package_price_euros: treatment.package_price_cents
-        ? centsToEuros(treatment.package_price_cents)
-        : 0,
+      trajects: (treatment.trajects || []).map((traject: TreatmentTraject) => ({
+        id: traject.id,
+        sessions: traject.sessions,
+        price_euros: centsToEuros(traject.price_cents),
+        is_active: traject.is_active,
+      })),
       icon: treatment.icon || '',
-      display_order: treatment.display_order,
-      is_active: treatment.is_active,
+      display_order: treatment.display_order || 0,
+      is_active: treatment.is_active ?? true,
     };
+  };
+
+  const createTrajects = async (
+    treatmentId: string,
+    trajects: TreatmentTrajectFormData[]
+  ): Promise<TreatmentTraject[]> => {
+    const payload = trajects.map((traject) => ({
+      id: traject.id,
+      treatment_id: treatmentId,
+      sessions: traject.sessions,
+      price_cents: eurosToCents(traject.price_euros),
+      is_active: traject.is_active,
+    }));
+
+    const response = await $fetch<{ data: TreatmentTraject[] }>(
+      `/api/admin/treatments/${treatmentId}/trajects`,
+      {
+        method: 'PUT',
+        body: { trajects: payload },
+      }
+    );
+
+    return response.data;
   };
 
   // Fetch all treatments
@@ -150,6 +164,10 @@ export const useAdminTreatments = () => {
         }
       );
 
+      if (formData.trajects.length > 0) {
+        await createTrajects(response.data.id, formData.trajects);
+      }
+
       // Refresh the treatments list
       await fetchTreatments();
 
@@ -188,6 +206,8 @@ export const useAdminTreatments = () => {
           body: updateData,
         }
       );
+
+      await createTrajects(id, formData.trajects);
 
       // Refresh the treatments list
       await fetchTreatments();
@@ -302,5 +322,6 @@ export const useAdminTreatments = () => {
     eurosToCents,
     centsToEuros,
     generateSlug,
+    createTrajects,
   };
 };

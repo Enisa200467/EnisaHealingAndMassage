@@ -101,9 +101,9 @@ export const rateLimitPresets = {
     message: 'Je hebt het maximum aantal reviews voor vandaag bereikt. Probeer het morgen opnieuw.',
   },
 
-  // Admin endpoints: 100 requests per hour
+  // Admin endpoints: 500 requests per hour
   adminEndpoint: {
-    maxRequests: 100,
+    maxRequests: 500,
     windowMs: 60 * 60 * 1000, // 1 hour
     message: 'Te veel verzoeken naar het admin paneel. Probeer het later opnieuw.',
   },

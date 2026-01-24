@@ -8,14 +8,13 @@ export interface Treatment {
   price_cents: number;
   discount_enabled: boolean;
   discount_price_cents?: number;
-  package_enabled: boolean;
-  package_sessions?: number;
-  package_price_cents?: number;
-  icon?: string;
-  is_active: boolean;
-  display_order: number;
-  created_at: string;
-  updated_at: string;
+  description?: string | null;
+  icon?: string | null;
+  display_order?: number | null;
+  is_active?: boolean;
+  created_at?: string;
+  updated_at?: string;
+  trajects?: TreatmentTraject[];
 }
 
 export interface CreateTreatmentInput {
@@ -25,9 +24,6 @@ export interface CreateTreatmentInput {
   price_cents: number;
   discount_enabled?: boolean;
   discount_price_cents?: number;
-  package_enabled?: boolean;
-  package_sessions?: number;
-  package_price_cents?: number;
   icon?: string;
   display_order?: number;
 }
@@ -37,15 +33,34 @@ export interface UpdateTreatmentInput extends Partial<CreateTreatmentInput> {
   is_active?: boolean;
 }
 
+export interface TreatmentTraject {
+  id: string;
+  treatment_id: string;
+  sessions: number;
+  price_cents: number;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AdminTreatmentTraject extends TreatmentTraject {
+  treatment?: Treatment;
+}
+
+export interface TreatmentTrajectFormData {
+  id?: string;
+  sessions: number;
+  price_euros: number;
+  is_active: boolean;
+}
+
 export interface TreatmentFormData {
   name: string;
   duration_minutes: number;
   price_euros: number; // For form display, converted to/from price_cents
   discount_enabled: boolean;
   discount_price_euros: number; // For form display, converted to/from discount_price_cents
-  package_enabled: boolean;
-  package_sessions: number; // Number of sessions in package
-  package_price_euros: number; // For form display, converted to/from package_price_cents
+  trajects: TreatmentTrajectFormData[];
   icon: string;
   display_order: number;
   is_active: boolean;

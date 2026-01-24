@@ -1,6 +1,9 @@
 import type { Database } from '~/types/database.types';
 
-type Treatment = Database['public']['Tables']['treatments']['Row'];
+type Treatment = Database['public']['Tables']['treatments']['Row'] & {
+  intensity?: number | null;
+  intensity_label?: string | null;
+};
 
 export interface TreatmentData {
   id: string;
@@ -15,9 +18,6 @@ export interface TreatmentData {
   price?: number;
   discountEnabled?: boolean;
   discountPrice?: number;
-  packageEnabled?: boolean;
-  packageSessions?: number;
-  packagePrice?: number;
   display_order?: number;
   is_active: boolean;
 }
@@ -51,9 +51,6 @@ const formatTreatment = (treatment: Treatment): TreatmentData => ({
   price: treatment.price_cents,
   discountEnabled: treatment.discount_enabled || false,
   discountPrice: treatment.discount_price_cents || undefined,
-  packageEnabled: treatment.package_enabled || false,
-  packageSessions: treatment.package_sessions || undefined,
-  packagePrice: treatment.package_price_cents || undefined,
   display_order: treatment.display_order,
   is_active: treatment.is_active,
 });

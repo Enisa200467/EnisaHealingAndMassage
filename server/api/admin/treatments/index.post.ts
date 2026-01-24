@@ -9,12 +9,21 @@ const createTreatmentSchema = z.object({
   price_cents: z.number().min(0),
   discount_enabled: z.boolean().optional(),
   discount_price_cents: z.number().min(0).optional(),
-  package_enabled: z.boolean().optional(),
-  package_sessions: z.number().min(2).optional(),
-  package_price_cents: z.number().min(0).optional(),
   icon: z.string().optional(),
   display_order: z.number().optional(),
-});
+}).transform((data) => ({
+  ...data,
+  slug:
+    data.slug ??
+    data.name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim(),
+}));
 
 export default defineEventHandler(async (event) => {
   const client = serverSupabaseServiceRole(event);
@@ -23,21 +32,11 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event);
     const validatedData = createTreatmentSchema.parse(body);
 
-    // Generate slug if not provided
-    if (!validatedData.slug) {
-      validatedData.slug = validatedData.name
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-+/g, '-') // Replace multiple hyphens with single
-        .trim();
-    }
+    const insertData = validatedData;
 
     const { data: treatment, error } = await client
       .from('treatments')
-      .insert([validatedData])
+      .insert([insertData])
       .select()
       .single();
 

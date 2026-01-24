@@ -66,6 +66,36 @@ export type Database = {
         }
         Relationships: []
       }
+      treatment_trajects: {
+        Row: {
+          id: string
+          treatment_id: string
+          sessions: number
+          price_cents: number
+          is_active: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          treatment_id: string
+          sessions: number
+          price_cents: number
+          is_active?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          treatment_id?: string
+          sessions?: number
+          price_cents?: number
+          is_active?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       reviews: {
         Row: {
           created_at: string

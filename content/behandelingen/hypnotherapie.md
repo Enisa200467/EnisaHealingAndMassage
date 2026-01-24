@@ -27,51 +27,36 @@ title: Mijn unieke Hypno/Healing methode
 Mijn manier van werken gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep vanbinnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
 ::
 
-::behandeling-sectie
+::traject-kolommen
 ---
 items:
-  - "Losse sessie: €130 (60-75 min)"
-  - "3 sessies traject: €345 (60-75 min per sessie)"
-  - "Intake inbegrepen: 30 min via telefoon of video"
-  - Gericht op rust, inzicht en positieve verandering
-image: /images/single-sessions-hypnotherapie.webp
-imageAlt: Hypnomeditatie sessie
-title: Hypnomeditatie – 1 sessie of 3 sessies traject
+  - id: "41499119-22df-42a9-916a-ac32120f6d5b"
+    title: Hypnomeditatie
+    description: Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling.
+    bullets:
+      - Intake inbegrepen (30 min via telefoon of video)
+      - Gericht op rust, inzicht en positieve verandering
+    ctaText: Plan je intake
+    ctaLink: /boeken
+  - id: "63f29db0-2b00-48e1-98dc-ed055bccfbf0"
+    title: Transformatie traject
+    description: Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid.
+    bullets:
+      - Hypnotherapie + energetische/chakra healing
+      - 3 persoonlijke mini-rituelen
+      - 1 korte check-in tussen sessies
+    ctaText: Start jouw traject
+    ctaLink: /boeken
+  - id: "bd93dfc2-df1e-4906-be98-7329e772c08d"
+    title: Premium traject
+    description: Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
+    bullets:
+      - 1 hoofd/gezicht ontspanningsmassage
+      - Wekelijkse voice-ondersteuning via WhatsApp
+      - 1 persoonlijke helende audio
+    ctaText: Kies premium
+    ctaLink: /boeken
 ---
-Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling. Het 3 sessies traject helpt je om angst, onzekerheid en emotionele spanning te verzachten. Elke sessie werkt dieper in op het onderbewuste, waardoor vastzittende gedachten en oude patronen stap voor stap kunnen loslaten. Voor een duurzaam effect zijn minimaal drie sessies aanbevolen, omdat het onderbewuste werkt in lagen.
-::
-
-::behandeling-sectie
----
-items:
-  - "Prijs: €595 (betaling in 2 termijnen mogelijk)"
-  - 3 transformatiesessies van 90-120 minuten
-  - Hypnotherapie + energetische/chakra healing
-  - 3 persoonlijke mini-rituelen na elke sessie
-  - 1 korte check-in tussen sessies (max. 10 min)
-  - Intake van 30 min (telefonisch of video)
-image: /images/hypnotherapy-stairs.webp
-imageAlt: Transformatie traject voor diepe heling
-title: Transformatie Traject (3 sessies)
----
-Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid. Dit traject combineert hypnotherapie en energetische (chakra) healing, volledig afgestemd op jouw proces. De sessies werken op mentaal, emotioneel en energetisch niveau, waardoor heling niet oppervlakkig is, maar diep en duurzaam.
-::
-
-::behandeling-sectie
----
-items:
-  - "Prijs: €777 (betaling in 2 termijnen mogelijk)"
-  - 4 diepe transformatiesessies van 90-120 minuten
-  - 1 hoofd/gezicht ontspanningsmassage (45 min)
-  - 4 premium rituelen voor heling en integratie
-  - Wekelijkse voice-ondersteuning via WhatsApp
-  - 1 helende audio (5-7 min) persoonlijk voor jou
-  - Korte WhatsApp ondersteuning bij vragen
-image: /images/clock.webp
-imageAlt: Premium traject voor diepe transformatie
-title: Premium Traject (4 sessies)
----
-Een luxere, diepere en zachtere reis naar innerlijke transformatie. Voor wie niet alleen wil helen, maar een dieper ontwaken wil ervaren. Dit premium traject combineert hypnose, diepe healing, persoonlijke rituelen, wekelijkse ondersteuning en een helende audio — zodat jouw transformatie sneller, zachter en blijvend wordt. Een verfijnde, liefdevolle en intensieve reis die werkt op zielsniveau.
 ::
 
 ::twee-kolommen
