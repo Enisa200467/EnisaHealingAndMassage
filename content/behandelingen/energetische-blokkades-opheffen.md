@@ -17,7 +17,7 @@ items:
   - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €130"
   - "Sessie 3 (90 min): Twee meditaties om het proces te integreren - €130"
   - "Sessie 4 (60 min): Afrondende chakra healing behandeling - €85"
-  - "Totaal pakket: 4 sessies voor €475 (los boeken: €475)"
+  - "Traject: 4 sessies voor €475 (los boeken: €475)"
 image: /images/energetische-blokkades-opheffen.webp
 imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?

@@ -25,9 +25,7 @@ const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
 const displayDiscountEnabled = computed(() => treatmentData.value?.discount_enabled || false);
 const displayDiscountPrice = computed(() => treatmentData.value?.discount_price_cents);
-const displayPackageEnabled = computed(() => treatmentData.value?.package_enabled || false);
-const displayPackageSessions = computed(() => treatmentData.value?.package_sessions);
-const displayPackagePrice = computed(() => treatmentData.value?.package_price_cents); 
+
 </script>
 
 <template>
@@ -55,9 +53,6 @@ const displayPackagePrice = computed(() => treatmentData.value?.package_price_ce
             :price="displayPrice"
             :discount-enabled="displayDiscountEnabled"
             :discount-price="displayDiscountPrice"
-            :package-enabled="displayPackageEnabled"
-            :package-sessions="displayPackageSessions"
-            :package-price="displayPackagePrice"
             show-book-button
           />
         </div>

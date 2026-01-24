@@ -9,9 +9,7 @@ const updateTreatmentSchema = z.object({
   price_cents: z.number().min(0).optional(),
   discount_enabled: z.boolean().optional(),
   discount_price_cents: z.number().min(0).optional(),
-  package_enabled: z.boolean().optional(),
-  package_sessions: z.number().min(2).optional(),
-  package_price_cents: z.number().min(0).optional(),
+
   icon: z.string().optional(),
   display_order: z.number().optional(),
   is_active: z.boolean().optional(),

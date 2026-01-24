@@ -35,19 +35,17 @@ const editingTreatment = ref<Treatment | null>(null);
 const deletingTreatment = ref<Treatment | null>(null);
 
 // Form data (metadata only - content lives in markdown)
-const defaultFormData = {
-  name: "",
-  duration_minutes: 60,
-  price_euros: 65,
-  discount_enabled: false,
-  package_enabled: false,
-  discount_price_euros: 0,
-  package_price_euros: 0,
-  package_sessions: 0,
-  icon: "",
-  display_order: 0,
-  is_active: true,
-};
+  const defaultFormData = {
+    name: "",
+    duration_minutes: 60,
+    price_euros: 65,
+    discount_enabled: false,
+    discount_price_euros: 0,
+    trajects: [],
+    icon: "",
+    display_order: 0,
+    is_active: true,
+  };
 
 const formData = ref<TreatmentFormData>(defaultFormData);
 // Reset form data
