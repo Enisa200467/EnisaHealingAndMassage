@@ -1,11 +1,11 @@
 ---
 title: Anti-stress behandeling
-description: Laat spanning wegvloeien met een kalmerende anti-stress behandeling die lichaam en hoofd tot rust brengt. Gericht op diepe ontspanning en herstel van balans.
+description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 ---
 
 ::behandeling-hero
 ---
-description: Laat spanning wegvloeien met een kalmerende anti-stress behandeling die lichaam en hoofd tot rust brengt. Gericht op diepe ontspanning en herstel van balans.
+description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 id: da73f8d9-279a-4d79-8de2-204efaaeaf2b
 ---
 ::
