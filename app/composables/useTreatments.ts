@@ -3,7 +3,15 @@ import type { Database } from '~/types/database.types';
 type Treatment = Database['public']['Tables']['treatments']['Row'] & {
   intensity?: number | null;
   intensity_label?: string | null;
+  treatment_trajects?: TreatmentTrajectRecord[];
+  trajects?: TreatmentTrajectRecord[];
 };
+
+interface TreatmentTrajectRecord {
+  id: string;
+  sessions: number;
+  price_cents: number;
+}
 
 export interface TreatmentData {
   id: string;
@@ -18,6 +26,7 @@ export interface TreatmentData {
   price?: number;
   discountEnabled?: boolean;
   discountPrice?: number;
+  trajects?: TreatmentTrajectRecord[];
   display_order?: number;
   is_active: boolean;
 }
@@ -51,6 +60,7 @@ const formatTreatment = (treatment: Treatment): TreatmentData => ({
   price: treatment.price_cents,
   discountEnabled: treatment.discount_enabled || false,
   discountPrice: treatment.discount_price_cents || undefined,
+  trajects: treatment.trajects || treatment.treatment_trajects || [],
   display_order: treatment.display_order,
   is_active: treatment.is_active,
 });

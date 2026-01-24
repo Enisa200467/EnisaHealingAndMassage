@@ -12,10 +12,17 @@ export default defineEventHandler(async (event) => {
   // Fetch treatment data from the database
   const { data: treatment, error } = await client
     .from('treatments')
-    .select('*')
+    .select('*, treatment_trajects(*)')
     .eq('is_active', true)
     .eq('id', id)
     .single();
 
-  return treatment;
+  if (error || !treatment) {
+    return null;
+  }
+
+  return {
+    ...treatment,
+    trajects: treatment.treatment_trajects || [],
+  };
 });

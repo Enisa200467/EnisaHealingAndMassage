@@ -1,13 +1,9 @@
 <template>
   <section class="mb-12">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-neutral-900 mb-4">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-neutral-900">
         Alle Behandelingen
       </h2>
-      <p class="text-neutral-600 max-w-2xl mx-auto">
-        Professionele behandelingen voor ontspanning, pijnverlichting en
-        verbetering van je algemene welzijn.
-      </p>
     </div>
 
     <!-- Loading State -->
@@ -35,32 +31,37 @@
         v-for="treatment in treatments"
         :key="treatment.title"
         :title="treatment.title"
-        :short-description="treatment.description"
         :duration="treatment.duration"
         :price="treatment.price"
         :discount-enabled="treatment.discountEnabled"
         :discount-price="treatment.discountPrice"
-        :package-enabled="treatment.packageEnabled"
-        :package-sessions="treatment.packageSessions"
-        :package-price="treatment.packagePrice"
-        :icon="treatment.packageEnabled ? 'i-mdi-package-variant' : treatment.icon || 'i-mdi-clock-outline'"
-        :show-link-button="false"
+        :icon="treatment.icon || 'i-mdi-clock-outline'"
+        :show-single-session-label="Boolean(treatment.price) && Boolean(treatment.trajects?.length)"
+        :show-link-button="true"
+        :to="treatment.path"
         :book-button-text="`Boek ${treatment.title}`"
         :book-button-link="`/boeken?treatment=${treatment.slug}`"
         book-button-color="primary"
         size="md"
       >
-        <!-- Benefits in default slot -->
-        <div>
-          <p class="text-sm font-medium text-neutral-700 mb-2">Voordelen:</p>
+        <div
+          v-if="treatment.trajects?.length"
+          class="mt-2 rounded-lg border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-4"
+        >
+          <div class="flex items-center gap-2 text-purple-900 mb-2">
+            <UIcon name="i-mdi-timeline" class="w-4 h-4 text-purple-600" />
+            <p class="text-sm font-semibold">Trajecten</p>
+          </div>
           <ul class="space-y-1">
             <li
-              v-for="benefit in treatment.benefits"
-              :key="benefit"
-              class="flex items-center gap-2 text-sm text-neutral-600"
+              v-for="traject in treatment.trajects"
+              :key="traject.id"
+              class="flex items-center justify-between text-sm text-purple-800"
             >
-              <UIcon name="i-mdi-check" class="w-4 h-4 text-green-500" />
-              {{ benefit }}
+              <span>{{ traject.sessions }} sessies</span>
+              <span class="font-semibold text-purple-700">
+                {{ formatPrice(traject.price_cents) }}
+              </span>
             </li>
           </ul>
         </div>
@@ -73,14 +74,9 @@
 import type { TreatmentData } from '~/composables/useTreatments';
 import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
 
-export interface Treatment {
-  treatment: TreatmentData;
-  benefits: string[];
-}
-
-const props = withDefaults(
+  const props = withDefaults(
   defineProps<{
-    treatments: Treatment[];
+    treatments: TreatmentData[];
     loading?: boolean;
     error?: string | null;
   }>(),
@@ -90,10 +86,6 @@ const props = withDefaults(
   }
 );
 
-const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
-
-const treatments = props.treatments.map((t) => ({
-  ...t.treatment,
-  benefits: t.benefits,
-}));
+const { formatPrice } = useTreatmentDetailsFormatter();
+const treatments = computed(() => props.treatments);
 </script>

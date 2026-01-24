@@ -27,6 +27,37 @@ title: Mijn unieke Hypno/Healing methode
 Mijn manier van werken gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep vanbinnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
 ::
 
+::twee-kolommen
+  :::voordelen-lijst
+  ---
+  items:
+    - Angst en stress verminderen
+    - Verdriet en emotionele druk worden lichter
+    - Oude overtuigingen verzachten of veranderen
+    - Meer rust in hoofd en lichaam
+    - Meer vertrouwen, stabiliteit en helderheid
+    - Diepere verbinding met jezelf
+    - Sneller doorbreken van oude patronen
+    - Sterkere verbinding met je intuïtie
+  title: Wat je gaat merken
+  ---
+  :::
+
+  :::voor-wie
+  ---
+  items:
+    - Je oude patronen, angst of blokkades wilt loslaten
+    - Je emotionele lasten voelt die je wilt transformeren
+    - Je opnieuw verbinding wilt maken met rust en kracht
+    - Je klaar bent voor duurzame verandering van binnenuit
+    - Je een dieper ontwaken wilt ervaren
+    - Je zoekt naar innerlijke helderheid en stabiliteit
+    - Je wilt terugkeren naar wie je werkelijk bent
+  title: Voor Wie?
+  ---
+  :::
+::
+
 ::traject-kolommen
 ---
 items:
@@ -59,36 +90,6 @@ items:
 ---
 ::
 
-::twee-kolommen
-  :::voordelen-lijst
-  ---
-  items:
-    - Angst en stress verminderen
-    - Verdriet en emotionele druk worden lichter
-    - Oude overtuigingen verzachten of veranderen
-    - Meer rust in hoofd en lichaam
-    - Meer vertrouwen, stabiliteit en helderheid
-    - Diepere verbinding met jezelf
-    - Sneller doorbreken van oude patronen
-    - Sterkere verbinding met je intuïtie
-  title: Wat je gaat merken
-  ---
-  :::
-
-  :::voor-wie
-  ---
-  items:
-    - Je oude patronen, angst of blokkades wilt loslaten
-    - Je emotionele lasten voelt die je wilt transformeren
-    - Je opnieuw verbinding wilt maken met rust en kracht
-    - Je klaar bent voor duurzame verandering van binnenuit
-    - Je een dieper ontwaken wilt ervaren
-    - Je zoekt naar innerlijke helderheid en stabiliteit
-    - Je wilt terugkeren naar wie je werkelijk bent
-  title: Voor Wie?
-  ---
-  :::
-::
 
 ::uitklap-info{title="Intake & voorbereiding"}
 Vooraf plannen we een telefonisch intakegesprek van 30 minuten. Op basis van jouw thema's en intentie maak ik een persoonlijke hypnomeditatie, afgestemd op jouw proces en energie, zodat je tijdens de sessie sneller en dieper kunt loslaten.
