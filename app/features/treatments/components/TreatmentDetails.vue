@@ -17,6 +17,8 @@ interface Props {
   showLinkButton?: boolean;
   to?: string;
   showBookButton?: boolean;
+  showSingleSessionLabel?: boolean;
+  singleSessionLabel?: string;
   size?: "sm" | "md" | "lg";
 
   // Customization
@@ -37,6 +39,8 @@ const props = withDefaults(defineProps<Props>(), {
   discountEnabled: false,
   packageEnabled: false,
   trajectEnabled: false,
+  showSingleSessionLabel: false,
+  singleSessionLabel: "Losse sessie",
 });
 
 const routes = useRoutes();
@@ -117,6 +121,12 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
       </div>
       <!-- Spacer to push pricing content to bottom -->
       <div class="flex-1 mb-auto"></div>
+
+      <div v-if="showSingleSessionLabel && price" class="pt-2">
+        <p class="text-sm font-semibold text-neutral-700">
+          {{ singleSessionLabel }}
+        </p>
+      </div>
 
       <!-- Duration -->
       <div v-if="duration" class="flex justify-between items-center">

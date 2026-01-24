@@ -26,32 +26,7 @@ const { setPageSEO, businessInfo } = useGlobalSEO();
 // Fetch treatments using the global composable
 const { activeTreatments } = useTreatments();
 
-const { data: sections } = await useAsyncData('pricing-sections', () => {
-  return queryCollection('behandelingen').select('body', 'title').all();
-});
-
-const benefitList = computed(() => {
-  return (
-    sections.value?.map((section) => {
-      const itemsString = section.body.value[2][2][1][':items'];
-      const items = JSON.parse(itemsString);
-
-      return {
-        title: section.title,
-        items: items as string[],
-      };
-    }) || []
-  );
-});
-
-const allTreatmentsData = computed(() =>
-  activeTreatments.value.map((treatment) => ({
-    treatment: treatment,
-    benefits:
-      benefitList.value.find((benefit) => benefit.title === treatment.title)
-        ?.items || [],
-  }))
-);
+const allTreatmentsData = computed(() => activeTreatments.value);
 
 const pricingSchema = computed(() => {
   interface SchemaItem {

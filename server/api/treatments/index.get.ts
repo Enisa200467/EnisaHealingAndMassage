@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   try {
     const { data: treatments, error } = await client
       .from("treatments")
-      .select("*")
+      .select("*, treatment_trajects(*)")
       .eq("is_active", true)
       .order("display_order", { ascending: true });
 
@@ -16,8 +16,13 @@ export default defineEventHandler(async (event) => {
       });
     }
 
+    const normalized = (treatments || []).map((treatment) => ({
+      ...treatment,
+      trajects: treatment.treatment_trajects || [],
+    }));
+
     return {
-      data: treatments || [],
+      data: normalized,
     };
   } catch (error: unknown) {
     if (error && typeof error === "object" && "statusCode" in error) {
