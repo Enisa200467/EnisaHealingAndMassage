@@ -1,25 +1,5 @@
-# Robots.txt for Enisa Healing & Massage
+# Robots.txt for Enisa Healing & Massage - PREVIEW MODE
 User-Agent: *
-Allow: /
+Disallow: /
 
-# Important content
-Allow: /behandelingen/
-Allow: /over-mij
-Allow: /contact
-Allow: /tarieven
-Allow: /reviews
-Allow: /boeken
-Allow: /faq
-
-# Images and assets
-Allow: /images/
-Allow: /_nuxt/
-
-# Disallow admin paths
-Disallow: /admin/
-
-# Sitemap location  
-Sitemap: https://enisahealingmassage.nl/api/sitemap.xml
-
-# Host preference
-Host: https://enisahealingmassage.nl
+# Site is in preview mode and should not be indexed yet
