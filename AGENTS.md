@@ -24,6 +24,16 @@
 - Features live under `app/features/<feature>/` with local `components/`, `composables/`, and `types/`.
 - Linting is configured in `eslint.config.mjs`; run `bunx eslint .` if you need a manual lint pass.
 
+## Content Editing Focus
+- Content updates should stay within `content/` and existing content components.
+- Under no circumstances should content edits introduce new components, composables, or routes.
+- If content requires a new layout or component, stop and request explicit approval before proceeding.
+
+## Skill Usage
+- When editing content, prioritize the content patterns in `docs/BEHANDELINGEN_BEHEREN.md`.
+- Use any available skills to validate content structure before changing UI code.
+- Treat content tasks as CMS-only unless explicitly asked to adjust app code.
+
 ## Testing Guidelines
 - No automated test suite is currently wired in this repo. If you add tests, document the runner and commands in this file and keep tests close to the feature they cover.
 

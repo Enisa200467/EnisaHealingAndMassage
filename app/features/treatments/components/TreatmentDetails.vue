@@ -7,6 +7,7 @@ interface Props {
   price?: number;
   discountEnabled?: boolean;
   discountPrice?: number;
+  trajects?: { id: string; sessions: number; price_cents: number }[];
   trajectEnabled?: boolean;
   trajectSessions?: number;
   trajectPrice?: number;
@@ -53,6 +54,11 @@ const displayTrajectSessions = computed(
 );
 const displayTrajectPrice = computed(
   () => props.trajectPrice ?? props.packagePrice
+);
+const displayTrajectList = computed(() => props.trajects || []);
+const showTrajectList = computed(() => displayTrajectList.value.length > 0);
+const showSingleTraject = computed(
+  () => displayTrajectEnabled.value && displayTrajectSessions.value && displayTrajectPrice.value
 );
 
 // Size-based styling
@@ -169,7 +175,7 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 
       <!-- Traject Deal -->
       <div
-        v-if="displayTrajectEnabled && displayTrajectSessions && displayTrajectPrice"
+        v-if="showSingleTraject"
         class="mt-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg border border-purple-200 dark:border-purple-700"
       >
         <div class="flex items-center justify-between">
@@ -200,6 +206,28 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
             {{ formatPrice(displayTrajectPrice) }}
           </span>
         </div>
+      </div>
+
+      <div
+        v-if="!price && showTrajectList"
+        class="mt-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200"
+      >
+        <div class="flex items-center gap-2 text-purple-900 mb-2">
+          <UIcon name="i-mdi-timeline" class="w-4 h-4 text-purple-600" />
+          <p class="text-sm font-semibold">Trajecten</p>
+        </div>
+        <ul class="space-y-1">
+          <li
+            v-for="traject in displayTrajectList"
+            :key="traject.id"
+            class="flex items-center justify-between text-sm text-purple-800"
+          >
+            <span>{{ traject.sessions }} sessies</span>
+            <span class="font-semibold text-purple-700">
+              {{ formatPrice(traject.price_cents) }}
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
 

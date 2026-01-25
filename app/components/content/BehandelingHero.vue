@@ -25,6 +25,7 @@ const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
 const displayDiscountEnabled = computed(() => treatmentData.value?.discount_enabled || false);
 const displayDiscountPrice = computed(() => treatmentData.value?.discount_price_cents);
+const displayTrajects = computed(() => treatmentData.value?.trajects || []);
 
 </script>
 
@@ -53,6 +54,7 @@ const displayDiscountPrice = computed(() => treatmentData.value?.discount_price_
             :price="displayPrice"
             :discount-enabled="displayDiscountEnabled"
             :discount-price="displayDiscountPrice"
+            :trajects="displayTrajects"
             show-book-button
           />
         </div>
