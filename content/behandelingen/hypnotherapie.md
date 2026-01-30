@@ -82,9 +82,15 @@ items:
     title: Premium traject
     description: Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
     bullets:
-      - 1 hoofd/gezicht ontspanningsmassage
-      - Wekelijkse voice-ondersteuning via WhatsApp
-      - 1 persoonlijke helende audio
+      - Hypnotherapie + energetische / chakra healing,
+      - Intuïtieve inzichten en begeleiding
+      - 1 hoofd/gezicht
+      - ontspanningsmassa
+      - ge
+      - Integratie & nazorg
+      - 4 premium rituelen
+      - 1 helende audio (5–7 min)
+      - Korte WhatsApp ondersteuning
     ctaText: Kies premium
     ctaLink: /boeken
 ---
