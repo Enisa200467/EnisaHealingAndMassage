@@ -31,13 +31,13 @@ Deze anti-stress behandeling is bedoeld om je hele systeem tot rust te brengen. 
   ---
   items:
     - Minder stress en innerlijke onrust
-    - Diepere ademhaling en ontspanning
-    - Ontspanning van nek, schouders en kaak
-    - Beter slapen en herstellen
-    - Meer focus en mentale helderheid
-    - Vermindering van hoofdpijn of druk op het hoofd
-    - Gevoel van ontspanning in het hele lichaam
-    - Herstel van balans tussen lichaam en geest
+    - Herstel van de balans tussen lichaam en geest
+    - Beter omgaan met stress en druk
+    - Omgaan met belemmerende gedachten over het verleden en het heden
+    - Blokkades uit het verleden en het heden leren loslaten
+    - Jezelf leren waarderen en meer in jezelf gaan geloven
+    - Leren positiever te denken
+    - Je leven opnieuw oppakken en met een frisse blik verdergaan
   title: Belangrijkste Voordelen
   ---
   :::
