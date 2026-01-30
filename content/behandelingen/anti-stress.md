@@ -59,27 +59,13 @@ Deze anti-stress behandeling is bedoeld om je hele systeem tot rust te brengen. 
 ::
 
 ::uitklap-info{title="Meer over de anti-stress behandeling"}
-### Waarom Anti-stress?
+Tijdens de eerste sessie zullen we ook een begin maken aan jouw vision board, waaraan we als een rode draad tot de laatste sessie zullen werken. Een vision board is een middel om je dromen te visualiseren. Het helpt je om je dromen helder te visualiseren en hier bewuster mee bezig te zijn. Het is een collage van de dingen die je wilt doen, die je wilt hebben en degene die je wilt zijn in je leven. Mensen staan vaker stil bij wat ze niet willen dan wat ze wel willen. Door het maken van een vision board sta je stil bij wat je juist wél wil! Het is jouw bord met de dingen die jij wilt bereiken, dus jij bepaalt ook zelf hoe het eruit gaat zien!
 
-Langdurige stress zet het lichaam continu in de "aan-stand". Je spieren spannen aan, je ademhaling wordt oppervlakkig en je hoofd blijft druk. Een anti-stress behandeling helpt het zenuwstelsel om te schakelen naar ontspanning en herstel.
+De frequentie van afspraken bepalen we samen aan de hand van jouw situatie en hoeveel tijd je hebt.
 
-### Werking Op Het Zenuwstelsel
+Bij dit pakket zijn een usb met meditaties en oefeningen om thuis te doen inclusief een vision board*, inbegrepen.
+Wil je stop zeggen tegen stress en jezelf helpen, eindelijk rust krijgen in jouw hoofd en lichaam?
+Boek dan een Anti Stress Sessies en ervaar zelf het verschil in je dagelijkse leven.
 
-Door rustige aanraking en aandachtige massage wordt het parasympathische zenuwstelsel geactiveerd. Dat zorgt voor:
-- Een lagere hartslag en rustige ademhaling
-- Ontspanning van spierspanning
-- Minder mentale onrust
-- Betere slaapkwaliteit
-
-### Aandacht Voor Spanningspunten
-
-Tijdens de behandeling werk ik met zachte druk op ontspanningspunten in nek, schouders, gezicht en hoofd. Deze punten helpen om opgebouwde spanning los te laten en geven vaak direct verlichting.
-
-### Wat Je Kunt Verwachten Na Afloop
-
-Veel mensen voelen zich lichter, rustiger en meer gegrond. Je hoofd voelt helder en je lichaam ontspannen. Het effect kan nog enkele dagen doorwerken, zeker als je daarna voldoende rust neemt.
-
-### Aanbevolen Frequentie
-
-Bij langdurige stress of burn-outklachten is een reeks van 3-4 behandelingen aan te raden. Voor onderhoud is één keer per maand vaak voldoende.
+Betalen per sessie. Anti-Stress Coaching – 8 sessies van 2 uur – € 160 per sessie
 ::
