@@ -84,7 +84,10 @@
             <ul class="space-y-2">
               <li>
                 <UButton
-                  :to="routes.pages.booking"
+                  as="a"
+                  href="https://enisa-healing-massage.setmore.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   variant="link"
                   :padded="false"
                   class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"

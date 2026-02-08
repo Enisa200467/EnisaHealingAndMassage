@@ -124,7 +124,15 @@ const whatsappLink = computed(() => {
 
     <!-- Quick Actions -->
     <div class="flex flex-col sm:flex-row gap-4">
-      <UButton to="/boeken" size="lg" icon="i-mdi-calendar" block>
+      <UButton
+        as="a"
+        href="https://enisa-healing-massage.setmore.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        size="lg"
+        icon="i-mdi-calendar"
+        block
+      >
         Boek Direct Online
       </UButton>
     </div>

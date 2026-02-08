@@ -44,7 +44,7 @@ const props = withDefaults(defineProps<Props>(), {
   singleSessionLabel: "Losse sessie",
 });
 
-const routes = useRoutes();
+const bookingUrl = "https://enisa-healing-massage.setmore.com";
 
 const displayTrajectEnabled = computed(
   () => props.trajectEnabled ?? props.packageEnabled ?? false
@@ -250,7 +250,10 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
           :color="bookButtonColor"
           size="lg"
           block
-          :to="bookButtonLink || routes.pages.booking"
+          as="a"
+          :href="bookButtonLink || bookingUrl"
+          target="_blank"
+          rel="noopener noreferrer"
           icon="i-mdi-calendar"
           aria-label="Boek een afspraak voor deze behandeling"
         >

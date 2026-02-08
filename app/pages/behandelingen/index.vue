@@ -147,7 +147,10 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
               label="Contact Opnemen"
             />
             <UButton
-              :to="routes.pages.booking"
+              as="a"
+              href="https://enisa-healing-massage.setmore.com"
+              target="_blank"
+              rel="noopener noreferrer"
               size="lg"
               variant="outline"
               label="Direct Boeken"

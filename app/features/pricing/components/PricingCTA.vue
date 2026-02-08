@@ -8,7 +8,14 @@
       over de tarieven? Neem gerust contact op.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <UButton to="/boeken" size="lg" icon="i-mdi-calendar">
+      <UButton
+        as="a"
+        href="https://enisa-healing-massage.setmore.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        size="lg"
+        icon="i-mdi-calendar"
+      >
         Boek Een Afspraak
       </UButton>
       <UButton

@@ -15,17 +15,6 @@ The project has been successfully migrated from a traditional horizontal layerin
 │   ├── composables/
 │   │   └── useAdminReviews.ts
 │   └── types/
-├── booking/
-│   ├── BookingPage.vue
-│   ├── components/
-│   │   ├── BookingForm.vue
-│   │   ├── BookingHero.vue
-│   │   ├── BookingInfo.vue
-│   │   └── TimeSlotPicker.vue
-│   ├── composables/
-│   │   └── useBooking.ts
-│   └── types/
-│       └── booking.types.ts
 ├── contact/
 │   ├── ContactPage.vue
 │   ├── components/

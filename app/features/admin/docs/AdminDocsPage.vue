@@ -15,6 +15,7 @@ const routes = useRoutes();
 // Prompt generator state
 const promptForm = reactive({
   url: "",
+  title: "",
   originalText: "",
   newText: "",
 });
@@ -24,7 +25,12 @@ const showCopied = ref(false);
 
 // Generate prompt
 const generatePrompt = () => {
-  if (!promptForm.url || !promptForm.originalText || !promptForm.newText) {
+  if (
+    !promptForm.url ||
+    !promptForm.title ||
+    !promptForm.originalText ||
+    !promptForm.newText
+  ) {
     return;
   }
 
@@ -33,30 +39,42 @@ const generatePrompt = () => {
   try {
     const url = new URL(promptForm.url);
     const path = url.pathname;
+    const normalizedPath = path === "/" ? "/" : path.replace(/\/$/, "");
+    const pageMap: Record<string, string> = {
+      "/": "app/pages/index.vue",
+      "/behandelingen": "app/pages/behandelingen/index.vue",
+      "/contact": "app/pages/contact.vue",
+      "/faq": "app/pages/faq.vue",
+      "/over-mij": "app/pages/over-mij.vue",
+      "/reviews": "app/pages/reviews.vue",
+      "/tarieven": "app/pages/tarieven.vue",
+    };
 
     // Map URL paths to content paths
-    if (path.startsWith("/behandelingen/")) {
-      const slug = path.replace("/behandelingen/", "").replace(/\/$/, "");
+    if (normalizedPath.startsWith("/behandelingen/")) {
+      const slug = normalizedPath.replace("/behandelingen/", "");
       contentPath = `content/behandelingen/${slug}.md`;
-    } else if (path === "/" || path === "") {
-      contentPath = "content/index.md";
+    } else if (pageMap[normalizedPath]) {
+      contentPath = pageMap[normalizedPath];
     } else {
-      // Generic content path
-      contentPath = `content${path}.md`;
+      contentPath = "Bepaal zelf het juiste bestand op basis van de URL";
     }
   } catch {
-    contentPath = "content/[path-to-file].md";
+    contentPath = "Bepaal zelf het juiste bestand op basis van de URL";
   }
 
-  generatedPrompt.value = `Update the following text in ${contentPath}:
+  generatedPrompt.value = `Werk de volgende tekst bij op deze pagina:
+Pagina URL: ${promptForm.url}
+Sectie titel: ${promptForm.title}
+Pagina bestand: ${contentPath}
 
-Original text:
+Originele tekst:
 "${promptForm.originalText}"
 
-Replace with:
+Vervang met:
 "${promptForm.newText}"
 
-Please update this content and verify the change.`;
+Werk dit bij en controleer de wijziging.`;
 
   // Auto-copy to clipboard
   copyToClipboard();
@@ -78,6 +96,7 @@ const copyToClipboard = async () => {
 
 const resetForm = () => {
   promptForm.url = "";
+  promptForm.title = "";
   promptForm.originalText = "";
   promptForm.newText = "";
   generatedPrompt.value = "";
@@ -340,6 +359,24 @@ const resetForm = () => {
                 </p>
               </div>
 
+              <!-- Page Title -->
+              <div>
+                <label
+                  class="block text-sm font-semibold text-neutral-700 mb-2"
+                >
+                  Sectie Titel
+                </label>
+                <UInput
+                  v-model="promptForm.title"
+                  placeholder="Bijv. Introductie"
+                  size="lg"
+                  icon="i-mdi-format-title"
+                />
+                <p class="text-xs text-neutral-500 mt-1">
+                  De titel van de sectie waar je de tekst wilt aanpassen
+                </p>
+              </div>
+
               <!-- Original Text -->
               <div>
                 <label
@@ -383,6 +420,7 @@ const resetForm = () => {
                   icon="i-mdi-auto-fix"
                   :disabled="
                     !promptForm.url ||
+                    !promptForm.title ||
                     !promptForm.originalText ||
                     !promptForm.newText
                   "

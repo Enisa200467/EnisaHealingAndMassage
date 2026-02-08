@@ -74,7 +74,6 @@ Created a reusable `PageSection` component to replace the repetitive pattern of:
 - ✅ `pages/over-mij.vue`
 - ✅ `pages/faq.vue`
 - ✅ `features/contact/ContactPage.vue`
-- ✅ `features/booking/BookingPage.vue`
 - ✅ `features/reviews/ReviewsPage.vue`
 
 ### Components

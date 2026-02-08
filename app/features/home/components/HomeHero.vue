@@ -34,7 +34,10 @@
           class="w-full"
           color="primary"
           size="xl"
-          :to="routes.pages.booking"
+          as="a"
+          href="https://enisa-healing-massage.setmore.com"
+          target="_blank"
+          rel="noopener noreferrer"
           icon="i-mdi-calendar"
           label="Boek Nu Je Sessie"
           aria-label="Boek nu direct een afspraak voor je sessie"
@@ -53,7 +56,3 @@
     </UContainer>
   </section>
 </template>
-
-<script setup lang="ts">
-const routes = useRoutes();
-</script>

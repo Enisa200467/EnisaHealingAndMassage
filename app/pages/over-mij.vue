@@ -96,7 +96,10 @@ setPageSEO({
                   Neem Contact Op
                 </UButton>
                 <UButton
-                  to="/boeken"
+                  as="a"
+                  href="https://enisa-healing-massage.setmore.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   size="lg"
                   variant="outline"
                   icon="i-mdi-calendar"
@@ -643,7 +646,14 @@ setPageSEO({
           massage en healing jouw welzijn kunnen verbeteren.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <UButton to="/boeken" size="lg" icon="i-mdi-calendar">
+          <UButton
+            as="a"
+            href="https://enisa-healing-massage.setmore.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            size="lg"
+            icon="i-mdi-calendar"
+          >
             Boek Een Afspraak
           </UButton>
           <UButton to="/contact" size="lg" variant="outline" icon="i-mdi-phone">
