@@ -23,7 +23,14 @@ image: /images/massage.webp
 imageAlt: Rustgevende anti-stress massage in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Deze anti-stress behandeling is bedoeld om je hele systeem tot rust te brengen. We starten met een korte afstemming en rustige ademhaling. Daarna volgt een zachte massage van rug, nek en schouders, gecombineerd met ontspanning van het hoofd en gezicht. Door gerichte aandacht voor spanningspunten ontstaat er ruimte in het lichaam en rust in het hoofd. Je gaat naar huis met een gevoel van helderheid en ontspanning.
+Wat je gaat leren tijdens de anti stress sessies :
+
+ Omgaan met stress en druk
+ Omgaan met belemmerende gedachten over het verleden en heden
+ Loslaten van blokkades uit het verleden en heden
+Jezelf leren waarderen en in jezelf gaan geloven
+Leren positief te denken
+ Je leven opnieuw oppakken en met een frisse blik verder gaan     
 ::
 
 ::twee-kolommen
