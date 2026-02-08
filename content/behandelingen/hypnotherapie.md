@@ -68,7 +68,7 @@ items:
       - Intake inbegrepen (30 min via telefoon of video)
       - Gericht op rust, inzicht en positieve verandering
     ctaText: Plan je intake
-    ctaLink: /boeken
+    ctaLink: https://enisa-healing-massage.setmore.com
   - id: "63f29db0-2b00-48e1-98dc-ed055bccfbf0"
     title: Transformatie traject
     description: Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid.
@@ -77,7 +77,7 @@ items:
       - 3 persoonlijke mini-rituelen
       - 1 korte check-in tussen sessies
     ctaText: Start jouw traject
-    ctaLink: /boeken
+    ctaLink: https://enisa-healing-massage.setmore.com
   - id: "bd93dfc2-df1e-4906-be98-7329e772c08d"
     title: Premium traject
     description: Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
@@ -86,7 +86,7 @@ items:
       - Wekelijkse voice-ondersteuning via WhatsApp
       - 1 persoonlijke helende audio
     ctaText: Kies premium
-    ctaLink: /boeken
+    ctaLink: https://enisa-healing-massage.setmore.com
 ---
 ::
 

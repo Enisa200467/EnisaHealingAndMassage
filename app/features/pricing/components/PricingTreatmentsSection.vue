@@ -40,7 +40,7 @@
         :show-link-button="true"
         :to="treatment.path"
         :book-button-text="`Boek ${treatment.title}`"
-        :book-button-link="`/boeken?treatment=${treatment.slug}`"
+        :book-button-link="'https://enisa-healing-massage.setmore.com'"
         book-button-color="primary"
         size="md"
       >

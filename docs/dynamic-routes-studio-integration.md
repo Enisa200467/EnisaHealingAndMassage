@@ -19,7 +19,6 @@ const pages = {
   about: '/over-mij',
   treatments: '/behandelingen',
   contact: '/contact',
-  booking: '/boeken',
   // ... more routes
 } as const;
 

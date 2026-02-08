@@ -6,7 +6,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const routes = useRoutes();
+const bookingUrl = "https://enisa-healing-massage.setmore.com";
 </script>
 
 <template>
@@ -70,7 +70,10 @@ const routes = useRoutes();
 
               <template #footer>
                 <UButton
-                  :to="routes.pages.booking"
+                  as="a"
+                  :href="bookingUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   size="lg"
                   block
                   icon="i-mdi-calendar"

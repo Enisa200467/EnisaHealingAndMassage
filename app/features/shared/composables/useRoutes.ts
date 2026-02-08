@@ -16,7 +16,6 @@ export const useRoutes = () => {
     about: '/over-mij',
     treatments: '/behandelingen',
     contact: '/contact',
-    booking: '/boeken',
     faq: '/faq',
     blog: '/blog',
     tarieven: '/tarieven',

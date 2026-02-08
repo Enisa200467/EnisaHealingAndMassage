@@ -102,7 +102,10 @@ setPageSEO({
             Neem Contact Op
           </UButton>
           <UButton
-            to="/boeken"
+            as="a"
+            href="https://enisa-healing-massage.setmore.com"
+            target="_blank"
+            rel="noopener noreferrer"
             size="lg"
             variant="outline"
             icon="i-mdi-calendar"

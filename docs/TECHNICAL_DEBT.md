@@ -13,7 +13,6 @@ Last Updated: 2025-11-17
 #### Removed Debug Console Statements
 
 **Files Updated:**
-- `/app/features/booking/composables/useBooking.ts` - Removed `console.log('Submitting booking:', data)`
 - `/app/features/admin/composables/useAdminTreatments.ts` - Removed 2x `console.log` statements
 
 **Remaining Console Usage:**

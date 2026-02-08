@@ -23,15 +23,6 @@ export default defineEventHandler(async (event) => {
         'Leer meer over Enisa, gecertificeerd massagetherapeut en healing practitioner.',
     },
     {
-      url: '/boeken',
-      priority: '0.9',
-      changefreq: 'weekly',
-      lastmod: currentDate,
-      title: 'Boek Een Afspraak - Enisa Healing & Massage',
-      description:
-        'Boek eenvoudig online een afspraak voor een healing of massage behandeling.',
-    },
-    {
       url: '/contact',
       priority: '0.8',
       changefreq: 'monthly',

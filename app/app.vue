@@ -18,7 +18,6 @@ const { treatments } = useTreatments();
         <NuxtPage />
       </main>
       <SiteFooter />
-      <BookingWidget />
     </div>
   </UApp>
 </template>

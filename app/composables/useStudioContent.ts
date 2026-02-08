@@ -43,7 +43,6 @@ export const useStudioContent = () => {
           { label: 'Over Mij', to: routes.pages.about },
           { label: 'Behandelingen', to: routes.pages.treatments },
           { label: 'Contact', to: routes.pages.contact },
-          { label: 'Boeken', to: routes.pages.booking },
           { label: 'Reviews', to: routes.pages.reviews },
         ],
         admin: [

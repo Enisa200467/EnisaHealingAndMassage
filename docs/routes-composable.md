@@ -14,7 +14,7 @@ const routes = useRoutes();
 <template>
   <!-- Use page routes -->
   <NuxtLink :to="routes.pages.about">Over Mij</NuxtLink>
-  <NuxtLink :to="routes.pages.booking">Boek Nu</NuxtLink>
+  <NuxtLink :to="routes.pages.contact">Contact</NuxtLink>
 
   <!-- Use treatment routes -->
   <NuxtLink :to="routes.treatments['chakra-balancering']">
@@ -33,7 +33,6 @@ pages: {
   about: '/over-mij',
   treatments: '/behandelingen',
   contact: '/contact',
-  booking: '/boeken',
   faq: '/faq',
   blog: '/blog',
   tarieven: '/tarieven',
@@ -179,7 +178,7 @@ const treatmentItems = routes.getTreatmentNavigationItems();
     <UButton>Behandelingen</UButton>
   </UDropdownMenu>
 
-  <UButton :to="routes.pages.booking"> Afspraak maken </UButton>
+  <UButton :to="routes.pages.contact"> Contact opnemen </UButton>
 </template>
 ```
 
@@ -211,8 +210,8 @@ const routes = useRoutes();
 </script>
 
 <template>
-  <UButton :to="routes.pages.booking" size="lg" color="primary">
-    Afspraak maken
+  <UButton :to="routes.pages.contact" size="lg" color="primary">
+    Contact opnemen
   </UButton>
 </template>
 ```

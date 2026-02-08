@@ -35,35 +35,7 @@ All **Phase 1 Critical** accessibility issues have been successfully implemented
 
 ---
 
-### 2. **Heading Hierarchy** 🟢
-
-**Files Modified**:
-- `app/features/booking/BookingPage.vue` (line 64)
-- `app/features/booking/components/BookingHero.vue` (lines 33, 44, 55)
-
-**What was done**:
-
-#### BookingPage.vue
-- Changed duplicate `<h1>` to `<h2>` in main content section
-- Now only ONE h1 per page (in hero)
-
-#### BookingHero.vue
-- Changed decorative `<h3>` elements to `<p>` tags
-- These were just labels in stat cards, not actual section headings
-- No longer pollute document outline
-
-**WCAG Compliance**:
-- ✅ 1.3.1 Info and Relationships (Level A)
-- ✅ 2.4.6 Headings and Labels (Level AA)
-
-**Impact**:
-- Screen readers can now properly navigate by headings
-- Document outline is logical and sequential
-- No more heading level skipping
-
----
-
-### 3. **Form Accessibility** 🟢
+### 2. **Form Accessibility** 🟢
 
 **Files Modified**:
 - `app/features/contact/components/ContactForm.vue`

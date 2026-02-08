@@ -26,7 +26,6 @@ Overall, the site has a **solid accessibility foundation** with good use of sema
 ### 2. **Heading Hierarchy Issues** 🔴
 - **Locations**: Multiple pages
 - **Issues**:
-  - `BookingPage.vue`: Two `<h1>` tags (line 64 and hero component)
   - Some sections jump from h2 to h4, skipping h3
 - **Impact**: Screen readers rely on heading structure for navigation
 - **WCAG**: 1.3.1 Info and Relationships (Level A)
