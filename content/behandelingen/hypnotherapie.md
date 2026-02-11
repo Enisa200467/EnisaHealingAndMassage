@@ -71,7 +71,11 @@ items:
     ctaLink: https://enisa-healing-massage.setmore.com
   - id: "63f29db0-2b00-48e1-98dc-ed055bccfbf0"
     title: Transformatie traject
-    description: Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid.
+    description: |
+      Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid.
+      Betaling mogelijk in 2 termijnen:
+      €297,50 bij het maken van de afspraak
+      €297,50 vóór de tweede sessie
     bullets:
       - Hypnotherapie + energetische/chakra healing
       - 3 persoonlijke mini-rituelen
