@@ -80,7 +80,11 @@ items:
     ctaLink: https://enisa-healing-massage.setmore.com
   - id: "bd93dfc2-df1e-4906-be98-7329e772c08d"
     title: Premium traject
-    description: Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
+    description: |
+      Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
+      Betaling mogelijk in 2 termijnen:
+      €388,50 bij het maken van de afspraak
+      en €388,50 vóór de tweede sessie.
     bullets:
       - 1 hoofd/gezicht ontspanningsmassage
       - Wekelijkse voice-ondersteuning via WhatsApp
