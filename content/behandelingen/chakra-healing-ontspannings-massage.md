@@ -159,7 +159,7 @@ Na deze intensieve behandeling is het belangrijk om goed voor jezelf te zorgen:
 - Goed voor blokkades en emoties
 - Diepere spirituele werking
 
-**Combinatiebehandeling (90 min - €130):**
+**Combinatiebehandeling (90 min - €135):**
 - Volledig geïntegreerde aanpak
 - Werkt op alle niveaus tegelijk
 - Diepste en meest duurzame effect
