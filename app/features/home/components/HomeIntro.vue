@@ -53,7 +53,7 @@
 
       <div class="text-center md:text-left">
         <h2 id="intro-heading" class="text-3xl font-bold text-neutral-900 mb-6">
-          Welkom bij Enisa Healing & Massage
+          Welkom bij Enisa Healing & Massage Amsterdam Noord
         </h2>
         <p class="text-lg text-neutral-600 leading-relaxed mb-8">
           In mijn praktijk combineer ik traditionele massagetechnieken met
