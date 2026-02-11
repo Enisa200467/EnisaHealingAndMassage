@@ -206,20 +206,6 @@ setPageSEO({
                   >Ericksoniaanse Hypnose - Hypnotherapie</span
                 >
               </li>
-              <li class="flex items-start gap-3">
-                <UIcon
-                  name="i-mdi-check-circle"
-                  class="w-5 h-5 text-green-500 mt-0.5"
-                />
-                <span class="text-neutral-600">Energetische Healing</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <UIcon
-                  name="i-mdi-check-circle"
-                  class="w-5 h-5 text-green-500 mt-0.5"
-                />
-                <span class="text-neutral-600">Healing op Afstand</span>
-              </li>
             </ul>
           </UCard>
 
