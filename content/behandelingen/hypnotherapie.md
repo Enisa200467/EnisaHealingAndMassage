@@ -82,6 +82,7 @@ items:
     title: Premium traject
     description: Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
     bullets:
+      - Betaling mogelijk in 2 termijnen: €388,50 bij het maken van de afspraak en €388,50 vóór de tweede sessie.
       - 1 hoofd/gezicht ontspanningsmassage
       - Wekelijkse voice-ondersteuning via WhatsApp
       - 1 persoonlijke helende audio
