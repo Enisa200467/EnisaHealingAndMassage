@@ -179,7 +179,7 @@ setPageSEO({
                   name="i-mdi-certificate"
                   class="w-6 h-6 text-primary-500"
                 />
-                <h3 class="text-xl font-semibold">Certificeringen</h3>
+                <h3 class="text-xl font-semibold">Kwalificaties</h3>
               </div>
             </template>
             <ul class="space-y-3">
