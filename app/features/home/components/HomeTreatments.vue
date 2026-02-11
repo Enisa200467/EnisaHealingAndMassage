@@ -13,7 +13,7 @@
       <div class="mt-16">
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <TreatmentDetails
-            v-for="treatment in allTreatments"
+            v-for="treatment in displayedTreatments"
             :key="treatment.title"
             :title="treatment.title"
             :icon="treatment.icon || 'i-mdi-sparkles'"
@@ -44,4 +44,23 @@ const routes = useRoutes();
 
 // Get all active treatments using global composable
 const { activeTreatments: allTreatments } = useTreatments();
+
+const HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION =
+  'Waar echte transformatie begint. Combinatie van hypnotherapie en energetische healing voor duurzame verandering op mentaal, emotioneel en energetisch niveau.';
+
+const displayedTreatments = computed(() =>
+  allTreatments.value.map((treatment) => {
+    if (
+      treatment.slug === 'hypnotherapie' ||
+      treatment.title.toLowerCase().includes('hypnotherapie')
+    ) {
+      return {
+        ...treatment,
+        description: HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION,
+      };
+    }
+
+    return treatment;
+  })
+);
 </script>
