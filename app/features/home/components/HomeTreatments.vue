@@ -48,6 +48,9 @@ const { activeTreatments: allTreatments } = useTreatments();
 const HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION =
   'Waar echte transformatie begint. Combinatie van hypnotherapie en energetische healing voor duurzame verandering op mentaal, emotioneel en energetisch niveau.';
 
+const ANTI_STRESS_HOMEPAGE_DESCRIPTION =
+  'In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst.';
+
 const displayedTreatments = computed(() =>
   allTreatments.value.map((treatment) => {
     if (
@@ -57,6 +60,16 @@ const displayedTreatments = computed(() =>
       return {
         ...treatment,
         description: HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION,
+      };
+    }
+
+    if (
+      treatment.slug === 'anti-stress' ||
+      treatment.title.toLowerCase().includes('anti stress')
+    ) {
+      return {
+        ...treatment,
+        description: ANTI_STRESS_HOMEPAGE_DESCRIPTION,
       };
     }
 
