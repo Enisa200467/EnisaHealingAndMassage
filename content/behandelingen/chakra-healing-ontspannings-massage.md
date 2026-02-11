@@ -149,7 +149,7 @@ Na deze intensieve behandeling is het belangrijk om goed voor jezelf te zorgen:
 
 ### Vergelijking Met Losse Behandelingen
 
-**Hoofdmassage alleen (50 min - €70):**
+**Hoofdmassage alleen (50 min - €75):**
 - Vooral fysieke ontspanning
 - Goed voor spanning en hoofdpijn
 - Snelle verlichting
