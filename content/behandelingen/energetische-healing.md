@@ -64,7 +64,7 @@ ctaLink: /contact
 ---
 **Kan je niet langskomen?** Healing werkt ook uitstekend op afstand. Voor deze behandeling heb ik alleen je voor- en achternaam en een foto nodig. We spreken een tijd af, bespreken telefonisch je klachten, en daarna stuur ik je gedurende 45 minuten geneeskrachtige energie.
 
-**Prijs:** €65 voor 45 minuten
+**Prijs:** €70 voor 45 minuten
 **Werkwijze:** Telefonisch contact voor én na de sessie
 
 Lees meer over ervaringen met healing op afstand bij [Reacties van klanten](/reviews).
