@@ -86,9 +86,12 @@ items:
       €388,50 bij het maken van de afspraak
       en €388,50 vóór de tweede sessie.
     bullets:
+      - Hypnotherapie + energetische / chakra healing Integratie & nazorg
+      - Intuïtieve inzichten en begeleiding
       - 1 hoofd/gezicht ontspanningsmassage
-      - Wekelijkse voice-ondersteuning via WhatsApp
-      - 1 persoonlijke helende audio
+      - 4 premium rituelen
+      - 1 helende audio (5–7 min)
+      - Korte WhatsApp ondersteuning
     ctaText: Kies premium
     ctaLink: https://enisa-healing-massage.setmore.com
 ---
