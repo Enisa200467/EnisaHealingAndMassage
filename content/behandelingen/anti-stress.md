@@ -68,19 +68,14 @@ Langdurige stress zet het lichaam continu in de "aan-stand". Je spieren spannen 
 
 ### Vision board – jouw persoonlijke kompas en motivatie
 
-Door rustige aanraking en aandachtige massage wordt het parasympathische zenuwstelsel geactiveerd. Dat zorgt voor:
-- Een lagere hartslag en rustige ademhaling
-- Ontspanning van spierspanning
-- Minder mentale onrust
-- Betere slaapkwaliteit
+Tijdens de eerste sessie maken we samen een begin met jouw vision board – een visueel hulpmiddel dat jouw dromen, doelen en intenties concreet maakt.
+Een vision board is een collage van beelden, woorden en symbolen die jouw gewenste toekomst weerspiegelen.
 
-### Aandacht Voor Spanningspunten
+Het helpt je om je focus te versterken, meer richting te geven aan je leven en gemotiveerd te blijven tijdens het hele traject.
+Daarnaast stimuleert het je onderbewuste om kansen en mogelijkheden op te merken die bijdragen aan jouw ontwikkeling, welzijn én het verminderen van stress, zodat je meer oog krijgt voor de positieve kanten van je leven.
 
-Tijdens de behandeling werk ik met zachte druk op ontspanningspunten in nek, schouders, gezicht en hoofd. Deze punten helpen om opgebouwde spanning los te laten en geven vaak direct verlichting.
-
-### Wat Je Kunt Verwachten Na Afloop
-
-Veel mensen voelen zich lichter, rustiger en meer gegrond. Je hoofd voelt helder en je lichaam ontspannen. Het effect kan nog enkele dagen doorwerken, zeker als je daarna voldoende rust neemt.
+Het vision board loopt als een rode draad door het traject tot en met de laatste sessie.
+Het is jouw persoonlijke bord – jij bepaalt zelf hoe het eruitziet en wat erop staat.
 
 ### Aanbevolen frequentie – traject van 8 sessies
 
