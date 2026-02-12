@@ -82,7 +82,7 @@ Tijdens de behandeling werk ik met zachte druk op ontspanningspunten in nek, sch
 
 Veel mensen voelen zich lichter, rustiger en meer gegrond. Je hoofd voelt helder en je lichaam ontspannen. Het effect kan nog enkele dagen doorwerken, zeker als je daarna voldoende rust neemt.
 
-### Aanbevolen Frequentie
+### Aanbevolen frequentie – traject van 8 sessies
 
 Bij langdurige stress of burn-outklachten is een reeks van 3-4 behandelingen aan te raden. Voor onderhoud is één keer per maand vaak voldoende.
 ::
