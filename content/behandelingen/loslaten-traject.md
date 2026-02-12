@@ -10,9 +10,9 @@ Loslaten traject
 ::behandeling-sectie
 ---
 items:
-  - "Sessie 1 (90 min): Meditatie gecombineerd met chakra healing - €130"
-  - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €130"
-  - "Sessie 3 (90 min): Twee meditaties om het proces te integreren - €130"
+  - "Sessie 1 (90 min): Meditatie gecombineerd met chakra healing - €135"
+  - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €135"
+  - "Sessie 3 (90 min): Twee meditaties om het proces te integreren - €135"
   - "Sessie 4 (60 min): Afrondende chakra healing behandeling - €85"
   - "Traject: 4 sessies voor €475 (los boeken: €475)"
 image: /images/energetische-blokkades-opheffen.webp
