@@ -13,12 +13,13 @@ id: da73f8d9-279a-4d79-8de2-204efaaeaf2b
 ::behandeling-sectie
 ---
 items:
-  - "Je komt rustig aan en we stemmen kort af op jouw spanning en behoefte"
-  - "Ademhalingsoefening om het zenuwstelsel te kalmeren"
-  - "Zachte massage van rug, nek en schouders"
-  - "Diepe ontspanning van het hoofd en gezicht"
-  - "Aandacht voor ontspanningspunten (marma-punten)"
-  - "Afronding met een moment van stilte om te integreren"
+  - "We gaan samen op zoek naar blokkades die je kunnen tegenhouden om verder te komen in je leven"
+  - "Mindfulness coaching – leren leven met volle aandacht"
+  - "Verschillende gerichte, begeleide meditaties"
+  - "Energetische healing"
+  - "Chakra healing"
+  - "Praktische huiswerkopdrachten"
+  - "Eén maand na de laatste anti-stress sessie neem ik contact met je op om te vragen hoe het met je gaat. Als afsluiting ontvang je een gratis healing op afstand."
 image: /images/massage.webp
 imageAlt: Rustgevende anti-stress massage in Amsterdam Noord
 title: Wat kun je verwachten?
