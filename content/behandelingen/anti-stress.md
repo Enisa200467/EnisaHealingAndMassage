@@ -66,7 +66,7 @@ Vaak begint de dag met angstige gedachten:( ik wil niet te laat komen op mijn we
 
 Langdurige stress zet het lichaam continu in de "aan-stand". Je spieren spannen aan, je ademhaling wordt oppervlakkig en je hoofd blijft druk. Een anti-stress behandeling helpt het zenuwstelsel om te schakelen naar ontspanning en herstel.
 
-### Werking Op Het Zenuwstelsel
+### Vision board – jouw persoonlijke kompas en motivatie
 
 Door rustige aanraking en aandachtige massage wordt het parasympathische zenuwstelsel geactiveerd. Dat zorgt voor:
 - Een lagere hartslag en rustige ademhaling
