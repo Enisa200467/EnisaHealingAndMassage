@@ -64,7 +64,14 @@ Vaak begint de dag met angstige gedachten:( ik wil niet te laat komen op mijn we
 ::uitklap-info{title="Meer over de anti-stress behandeling"}
 ### Waarom Anti-stress?
 
-Langdurige stress zet het lichaam continu in de "aan-stand". Je spieren spannen aan, je ademhaling wordt oppervlakkig en je hoofd blijft druk. Een anti-stress behandeling helpt het zenuwstelsel om te schakelen naar ontspanning en herstel.
+Langdurige stress zet het lichaam continu in de ‘aan-stand’. Je spieren spannen aan, je ademhaling wordt oppervlakkig en je hoofd blijft druk.
+Anti-stress sessies helpen je om weer te schakelen naar ontspanning en herstel.
+
+Langdurige stress kan ook zorgen voor een gebrek aan zelfvertrouwen, angst om keuzes te maken, verwarring en een gevoel van machteloosheid.
+Deze gevoelens ontstaan vaak door negatieve gedachten, die door stress steeds sterker worden.
+
+Het goede nieuws is: je hoeft niet in deze situatie te blijven als je je daar niet goed bij voelt.
+Er zijn voldoende mogelijkheden om jezelf op een gezonde en evenwichtige manier weer in balans te brengen en stap voor stap vooruit te gaan.
 
 ### Vision board – jouw persoonlijke kompas en motivatie
 
