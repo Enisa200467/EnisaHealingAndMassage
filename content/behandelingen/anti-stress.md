@@ -84,5 +84,14 @@ Veel mensen voelen zich lichter, rustiger en meer gegrond. Je hoofd voelt helder
 
 ### Aanbevolen Frequentie
 
-Bij langdurige stress of burn-outklachten is een reeks van 3-4 behandelingen aan te raden. Voor onderhoud is één keer per maand vaak voldoende.
+Bij langdurige stress- of burn-outklachten is een traject van 8 sessies aan te raden.
+
+De frequentie van de afspraken bepalen we samen, op basis van jouw persoonlijke situatie en de tijd die je beschikbaar hebt.
+Zo kan het traject zowel intensiever worden ingepland (voor wie sneller resultaat wil), als rustiger, in een tempo dat bij jou past.
+
+Bij dit pakket is een USB met begeleide meditaties en oefeningen voor thuis inbegrepen (inclusief een vision board*).
+
+Betaling per sessie
+Anti-Stress Coaching – traject van 8 sessies van 2 uur
+€160 per sessie
 ::
