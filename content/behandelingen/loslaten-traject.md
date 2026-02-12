@@ -69,10 +69,10 @@ Het kan ook gaan om herinneringen uit je kindertijd. Dat hoeven geen slechte her
 
 ### Sessie Opbouw
 
-#### Sessie 1 & 2: Meditaties met Healing (90 minuten - €130 per sessie)
+#### Sessie 1 & 2: Meditaties met Healing (90 minuten - €135 per sessie)
 In de eerste twee sessies combineren we gerichte meditaties met chakra healings. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
 
-#### Sessie 3: Twee Meditaties (90 minuten - €130)
+#### Sessie 3: Twee Meditaties (90 minuten - €135)
 De derde sessie bestaat uit twee meditaties zonder healing. Dit geeft je de ruimte om zelf het proces te integreren en te werken met wat er in de eerste twee sessies is losgekomen. Deze sessie is gericht op acceptatie en vergeving.
 
 #### Sessie 4: Afrondende Chakra Healing (60 minuten - €85)
