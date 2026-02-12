@@ -120,7 +120,7 @@ Bel of app: 06-22445121
 ::uitklap-info{title="Meer over hypnotherapie"}
 ### Wat is hypnotherapie?
 
-Hypnotherapie is een zachte, therapeutische methode om contact te maken met je onderbewuste — het deel van jou dat emoties, herinneringen en overtuigingen bewaart. Tijdens een sessie blijf je volledig bewust, maar je kritische geest komt tot rust waardoor inzichten, heling en transformatie kunnen ontstaan.
+Hypnotherapie is een zachte, therapeutische methode om contact te maken met je onderbewuste — het deel van jou dat emoties, herinneringen en overtuigingen bewaart.
 
 ### Hoe werkt hypnotherapie?
 
