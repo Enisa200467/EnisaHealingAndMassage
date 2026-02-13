@@ -46,6 +46,31 @@ const routes = useRoutes();
 // Get all active treatments using global composable
 const { activeTreatments: allTreatments } = useTreatments();
 
+const { data: treatmentsContent } = await useAsyncData(
+  'home-treatments-content',
+  () => queryCollection('behandelingen').all()
+);
+
+const contentDescriptionsBySlug = computed(() => {
+  const descriptions: Record<string, string> = {};
+
+  (treatmentsContent.value || []).forEach((item) => {
+    if (!item?.path) {
+      return;
+    }
+
+    const slug = item.path.split('/').pop();
+
+    if (!slug || typeof item.description !== 'string') {
+      return;
+    }
+
+    descriptions[slug] = item.description;
+  });
+
+  return descriptions;
+});
+
 const HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION =
   'Waar echte transformatie begint. Combinatie van hypnotherapie en energetische healing voor duurzame verandering op mentaal, emotioneel en energetisch niveau.';
 
@@ -54,6 +79,9 @@ const ANTI_STRESS_HOMEPAGE_DESCRIPTION =
 
 const displayedTreatments = computed(() =>
   allTreatments.value.map((treatment) => {
+    const description =
+      contentDescriptionsBySlug.value[treatment.slug] || treatment.description;
+
     if (
       treatment.slug === 'hypnotherapie' ||
       treatment.title.toLowerCase().includes('hypnotherapie')
@@ -74,7 +102,10 @@ const displayedTreatments = computed(() =>
       };
     }
 
-    return treatment;
+    return {
+      ...treatment,
+      description,
+    };
   })
 );
 </script>

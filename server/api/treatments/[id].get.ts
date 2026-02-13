@@ -12,7 +12,9 @@ export default defineEventHandler(async (event) => {
   // Fetch treatment data from the database
   const { data: treatment, error } = await client
     .from('treatments')
-    .select('*, treatment_trajects(*)')
+    .select(
+      'id, name, slug, duration_minutes, price_cents, discount_enabled, discount_price_cents, icon, display_order, is_active, created_at, updated_at, treatment_trajects(*)',
+    )
     .eq('is_active', true)
     .eq('id', id)
     .single();

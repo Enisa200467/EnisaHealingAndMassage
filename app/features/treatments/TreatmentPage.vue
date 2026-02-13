@@ -44,8 +44,7 @@ if (props.treatment || props.treatmentData) {
   // Use database data when available, fall back to content data
   const title =
     props.treatmentData?.name || props.treatment?.title || 'Treatment';
-  const description =
-    props.treatmentData?.description || props.treatment?.description || '';
+  const description = props.treatment?.description || '';
   const price =
     props.treatmentData?.price_formatted ||
     (props.treatment?.meta?.price as string);
@@ -193,9 +192,6 @@ const breadcrumbs = computed(() => [
       <UContainer>
         <div class="max-w-4xl mx-auto prose prose-lg">
           <h2>{{ treatmentData.name }}</h2>
-          <p v-if="treatmentData.description">
-            {{ treatmentData.description }}
-          </p>
           <p>Meer details over deze behandeling zijn binnenkort beschikbaar.</p>
         </div>
       </UContainer>
