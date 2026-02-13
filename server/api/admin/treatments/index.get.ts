@@ -6,7 +6,9 @@ export default defineEventHandler(async (event) => {
   try {
     const { data: treatments, error } = await client
       .from('treatments')
-      .select('*, treatment_trajects(*)')
+      .select(
+        'id, name, slug, duration_minutes, price_cents, discount_enabled, discount_price_cents, icon, display_order, is_active, created_at, updated_at, treatment_trajects(*)'
+      )
       .order('display_order', { ascending: true });
 
     if (error) {

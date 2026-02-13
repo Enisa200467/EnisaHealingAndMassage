@@ -3,7 +3,7 @@
 useSeoMeta({
   title: 'Behandeling Niet Gevonden - Enisa Healing & Massage',
   description:
-    'De opgevraagde behandeling bestaat niet. Bekijk ons complete aanbod van healing en massage behandelingen.',
+    'De opgevraagde behandeling bestaat niet. Bekijk ons complete aanbod van healing en massage behandelingen in Amsterdam Noord.',
   robots: 'noindex,nofollow',
 });
 
@@ -62,7 +62,7 @@ const popularTreatments = computed(() => [
               <p class="text-neutral-600 leading-relaxed">
                 De opgevraagde behandeling bestaat niet of is momenteel niet
                 beschikbaar. Bekijk ons complete aanbod van healing en massage
-                behandelingen.
+                behandelingen in Amsterdam Noord.
               </p>
             </div>
 

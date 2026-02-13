@@ -46,7 +46,7 @@ const businessContactSchema = {
   priceRange: businessInfo.priceRange,
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Healing & Massage Behandelingen',
+    name: 'Healing & Massage Behandelingen in Amsterdam Noord',
     itemListElement: [
       {
         '@type': 'Offer',
@@ -72,9 +72,9 @@ const businessContactSchema = {
 
 // Set comprehensive page SEO with business schema
 setPageSEO({
-  title: 'Contact - Enisa Healing & Massage',
+  title: 'Contact - Enisa Healing & Massage Amsterdam Noord',
   description:
-    'Neem contact op met Enisa voor vragen over behandelingen, tarieven of om een afspraak in te plannen. Bel of stuur een WhatsApp bericht.',
+    'Neem contact op met Enisa in Amsterdam Noord voor vragen over behandelingen, tarieven of om een afspraak in te plannen. Bel of stuur een WhatsApp bericht.',
   path: '/contact',
   structuredData: [businessContactSchema],
 });

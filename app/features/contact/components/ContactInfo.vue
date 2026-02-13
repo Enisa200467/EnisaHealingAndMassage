@@ -17,6 +17,40 @@ const whatsappLink = computed(() => {
 
     <!-- Contact Cards -->
     <div class="space-y-6 mb-12">
+      <!-- WhatsApp -->
+      <UCard>
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-100 p-3 rounded-full">
+              <UIcon name="i-mdi-whatsapp" class="w-6 h-6 text-green-600" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900 mb-2">WhatsApp</h3>
+              <p class="text-neutral-600 mb-2">
+                <ULink
+                  :href="whatsappLink"
+                  target="_blank"
+                  class="hover:text-green-600 font-medium"
+                >
+                  {{ BUSINESS_INFO.contact.phoneFormatted }}
+                </ULink>
+              </p>
+              <p class="text-sm text-neutral-500">Voor snelle vragen</p>
+            </div>
+          </div>
+          <UButton
+            :href="whatsappLink"
+            target="_blank"
+            size="sm"
+            color="success"
+            icon="i-mdi-whatsapp"
+            aria-label="Open WhatsApp"
+          >
+            WhatsApp
+          </UButton>
+        </div>
+      </UCard>
+
       <!-- Phone -->
       <UCard>
         <div class="flex items-start justify-between gap-4">
@@ -87,39 +121,6 @@ const whatsappLink = computed(() => {
         </div>
       </UCard>
 
-      <!-- WhatsApp -->
-      <UCard>
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex items-start gap-4">
-            <div class="bg-green-100 p-3 rounded-full">
-              <UIcon name="i-mdi-whatsapp" class="w-6 h-6 text-green-600" />
-            </div>
-            <div>
-              <h3 class="font-semibold text-neutral-900 mb-2">WhatsApp</h3>
-              <p class="text-neutral-600 mb-2">
-                <ULink
-                  :href="whatsappLink"
-                  target="_blank"
-                  class="hover:text-green-600 font-medium"
-                >
-                  {{ BUSINESS_INFO.contact.phoneFormatted }}
-                </ULink>
-              </p>
-              <p class="text-sm text-neutral-500">Voor snelle vragen</p>
-            </div>
-          </div>
-          <UButton
-            :href="whatsappLink"
-            target="_blank"
-            size="sm"
-            color="success"
-            icon="i-mdi-whatsapp"
-            aria-label="Open WhatsApp"
-          >
-            WhatsApp
-          </UButton>
-        </div>
-      </UCard>
     </div>
 
     <!-- Quick Actions -->

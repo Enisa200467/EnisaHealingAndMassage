@@ -1,6 +1,6 @@
 ---
 title: Loslaten traject
-description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
+description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten in Amsterdam Noord. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
 ---
 
 ::kop
@@ -19,7 +19,7 @@ image: /images/energetische-blokkades-opheffen.webp
 imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Het Loslaten traject bestaat uit vier sessies waarin je stap voor stap werkt aan het losmaken van oude patronen en vastzittende energie. Met een combinatie van meditaties en healings ontstaat er meer ruimte, helderheid en innerlijke rust. Loslaten betekent niet vergeten, maar kiezen voor jezelf en verdergaan met vertrouwen.
+Het Loslaten traject in mijn praktijk in Amsterdam Noord bestaat uit vier sessies waarin je stap voor stap werkt aan het losmaken van oude patronen en vastzittende energie. Met een combinatie van meditaties en healings ontstaat er meer ruimte, helderheid en innerlijke rust. Loslaten betekent niet vergeten, maar kiezen voor jezelf en verdergaan met vertrouwen.
 ::
 
 ::twee-kolommen

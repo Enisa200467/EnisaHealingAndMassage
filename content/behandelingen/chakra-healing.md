@@ -1,13 +1,13 @@
 ---
 title: Chakra Healing
-description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.
+description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn in Amsterdam Noord.
 ---
 
 ::behandeling-hero
 ---
 description: Herstel de harmonie en energiestroom in je lichaam met een zachte
   Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen
-  van emotioneel en fysiek welzijn.
+  van emotioneel en fysiek welzijn in Amsterdam Noord.
 id: ea954752-5aee-4c8c-a1a8-328b026b9189
 ---
 ::
@@ -25,7 +25,7 @@ image: /images/chakra-healing.webp
 imageAlt: Chakra healing sessie in rustige behandelruimte in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Tijdens een chakra healing sessie werk ik intuïtief met de energiestroom in je lichaam om je zeven hoofdchakra's in balans te brengen. Deze zachte behandeling helpt bij het oplossen van energetische blokkades en het herstellen van balans op fysiek, emotioneel en mentaal niveau. Dankzij mijn jarenlange ervaring en aangeboren gave om genezende energie door te geven, ondersteun ik je in het loslaten van spanningen, pijn en emotionele lasten. Daarnaast ben ik heel goed.
+Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik intuïtief met de energiestroom in je lichaam om je zeven hoofdchakra's in balans te brengen. Deze zachte behandeling helpt bij het oplossen van energetische blokkades en het herstellen van balans op fysiek, emotioneel en mentaal niveau. Dankzij mijn jarenlange ervaring en aangeboren gave om genezende energie door te geven, ondersteun ik je in het loslaten van spanningen, pijn en emotionele lasten. Daarnaast ben ik heel goed.
 ::
 
 ::twee-kolommen

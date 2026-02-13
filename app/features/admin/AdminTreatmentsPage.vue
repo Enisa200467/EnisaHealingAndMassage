@@ -28,6 +28,38 @@ const {
   formatForForm,
 } = useAdminTreatments();
 
+const { data: treatmentsContent } = await useAsyncData(
+  'admin-treatments-content',
+  () => queryCollection('behandelingen').all()
+);
+
+const contentDescriptionsBySlug = computed(() => {
+  const descriptions: Record<string, string> = {};
+
+  (treatmentsContent.value || []).forEach((item) => {
+    if (!item?.path) {
+      return;
+    }
+
+    const slug = item.path.split('/').pop();
+
+    if (!slug || typeof item.description !== 'string') {
+      return;
+    }
+
+    descriptions[slug] = item.description;
+  });
+
+  return descriptions;
+});
+
+const treatmentsWithContent = computed(() => {
+  return treatments.value.map((treatment) => ({
+    ...treatment,
+    description: contentDescriptionsBySlug.value[treatment.slug],
+  }));
+});
+
 // View states
 type ViewState = "list" | "create" | "edit" | "delete" | "calendar";
 const currentView = ref<ViewState>("list");
@@ -159,7 +191,7 @@ const isAuthenticated = computed(() => user.value?.role === "authenticated");
       <!-- Treatments List -->
       <div v-if="currentView === 'list'">
         <TreatmentsList
-          :treatments="treatments"
+          :treatments="treatmentsWithContent"
           :loading="loading"
           @create="handleCreate"
           @edit="handleEdit"

@@ -22,8 +22,8 @@
         Vind Balans en Diepe Ontspanning
       </h1>
       <p class="mb-6 text-lg leading-8 text-gray-200 lg:text-xl drop-shadow">
-        Ervaar de kracht van helende aanraking en gun jezelf een moment van pure
-        rust.
+        Ervaar de kracht van helende aanraking in Amsterdam Noord en gun jezelf
+        een moment van pure rust.
       </p>
       <div
         class="flex flex-col sm:grid sm:grid-cols-2 items-center gap-4 max-w-2xs md:max-w-fit mx-auto"

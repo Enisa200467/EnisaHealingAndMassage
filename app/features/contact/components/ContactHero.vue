@@ -14,8 +14,8 @@
           Contact
         </h1>
         <p class="text-xl text-neutral-600 mb-8 max-w-2xl mx-auto">
-          Heb je vragen over de behandelingen of wil je een afspraak maken? Ik
-          help je graag verder. Neem gerust contact met me op.
+          Heb je vragen over de behandelingen in Amsterdam Noord of wil je een
+          afspraak maken? Ik help je graag verder. Neem gerust contact met me op.
         </p>
       </div>
     </UContainer>

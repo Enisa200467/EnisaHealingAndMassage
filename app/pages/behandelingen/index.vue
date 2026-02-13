@@ -10,9 +10,9 @@ const treatmentCatalogSchema = computed(() => {
   return {
     '@context': 'https://schema.org',
     '@type': 'OfferCatalog',
-    name: 'Behandelingen - Enisa Healing & Massage',
+    name: 'Behandelingen in Amsterdam Noord - Enisa Healing & Massage',
     description:
-      'Volledig overzicht van alle behandelingen',
+      'Volledig overzicht van alle behandelingen in Amsterdam Noord',
     provider: {
       '@type': 'LocalBusiness',
       name: businessInfo.name,
@@ -38,9 +38,9 @@ const treatmentCatalogSchema = computed(() => {
 watchEffect(() => {
   if (allTreatments.value.length) {
     setPageSEO({
-      title: 'Alle Behandelingen - Enisa Healing & Massage',
+      title: 'Alle Behandelingen in Amsterdam Noord - Enisa Healing & Massage',
       description:
-        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning. Kies de behandeling die bij jou past.',
+        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning in Amsterdam Noord. Kies de behandeling die bij jou past.',
       path: '/behandelingen',
       type: 'website',
       structuredData: [treatmentCatalogSchema.value],
@@ -48,12 +48,12 @@ watchEffect(() => {
   } else {
     // Fallback SEO without structured data
     useSeoMeta({
-      title: 'Alle Behandelingen - Enisa Healing & Massage',
+      title: 'Alle Behandelingen in Amsterdam Noord - Enisa Healing & Massage',
       description:
-        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning.',
-      ogTitle: 'Alle Behandelingen - Enisa Healing & Massage',
+        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning in Amsterdam Noord.',
+      ogTitle: 'Alle Behandelingen in Amsterdam Noord - Enisa Healing & Massage',
       ogDescription:
-        'Ontdek ons complete aanbod van behandelingen.',
+        'Ontdek ons complete aanbod van behandelingen in Amsterdam Noord.',
       ogType: 'website',
     });
   }
@@ -74,8 +74,8 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
           <p class="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
             Kies de behandeling die bij jou past. Of je nu op zoek bent naar
             diepe ontspanning, energetische balans of het verlichten van fysieke
-            klachten - er is altijd een behandeling die aansluit bij jouw
-            behoeften.
+            klachten in Amsterdam Noord - er is altijd een behandeling die
+            aansluit bij jouw behoeften.
           </p>
         </div>
 

@@ -15,7 +15,7 @@
         </h1>
         <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
           Hier vind je antwoorden op de meest gestelde vragen over onze
-          behandelingen, werkwijze en praktijk.
+          behandelingen, werkwijze en praktijk in Amsterdam Noord.
         </p>
       </div>
     </UContainer>

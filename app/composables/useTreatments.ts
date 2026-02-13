@@ -52,7 +52,6 @@ const formatTreatment = (treatment: Treatment): TreatmentData => ({
   slug: treatment.slug,
   path: `/behandelingen/${treatment.slug}`,
   title: treatment.name,
-  description: treatment.description || undefined,
   icon: treatment.icon || undefined,
   intensity: treatment.intensity || undefined,
   intensityLabel: treatment.intensity_label || undefined,
