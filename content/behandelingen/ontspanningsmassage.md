@@ -1,11 +1,11 @@
 ---
 title: Ontspanningsmassage
-description: Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.
+description: Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage in Amsterdam Noord. Ideaal om stress te verminderen en tot rust te komen.
 ---
 
 ::behandeling-hero
 ---
-description: Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage. Ideaal om stress te verminderen en tot rust te komen.
+description: Ervaar diepe ontspanning en verlichting van spierspanning met onze traditionele klassieke massage in Amsterdam Noord. Ideaal om stress te verminderen en tot rust te komen.
 id: 42455ff6-98ab-429b-af23-2b7cab41e058
 ---
 ::
@@ -23,7 +23,7 @@ image: /images/massage.webp
 imageAlt: Ontspannende massage voor diepe rust in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Mijn hoofdmassage is een zachte, ontspannende behandeling van het gezicht, hoofd, nek en schouders. Door zachte druk op marma-punten in het hoofd, gezicht en nek komt het zenuwstelsel tot rust. De spanning neemt af, de spieren ontspannen zich en je hoofd voelt weer licht en helder aan. Deze behandeling is ideaal voor mensen die behoefte hebben aan mentale rust en diepe ontspanning.
+Mijn hoofdmassage is een zachte, ontspannende behandeling van het gezicht, hoofd, nek en schouders in mijn praktijk in Amsterdam Noord. Door zachte druk op marma-punten in het hoofd, gezicht en nek komt het zenuwstelsel tot rust. De spanning neemt af, de spieren ontspannen zich en je hoofd voelt weer licht en helder aan. Deze behandeling is ideaal voor mensen die behoefte hebben aan mentale rust en diepe ontspanning.
 ::
 
 ::twee-kolommen

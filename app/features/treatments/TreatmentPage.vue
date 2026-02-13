@@ -126,7 +126,7 @@ if (props.treatment || props.treatmentData) {
   useSeoMeta({
     title: 'Behandeling - Enisa Healing & Massage',
     description:
-      'Ontdek onze professionele healing en massage behandelingen voor ontspanning en welzijn.',
+      'Ontdek onze professionele healing en massage behandelingen in Amsterdam Noord voor ontspanning en welzijn.',
   });
 }
 

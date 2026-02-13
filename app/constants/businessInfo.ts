@@ -56,7 +56,7 @@ export const BUSINESS_INFO: BusinessInfo = {
   name: 'Enisa Healing & Massage',
   tagline: 'Vind Balans en Diepe Ontspanning',
   description:
-    'Professionele massage en healing praktijk gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.',
+    'Professionele massage en healing praktijk in Amsterdam Noord, gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.',
   url: 'https://enisahealingmassage.nl',
   priceRange: '€40-€90',
 

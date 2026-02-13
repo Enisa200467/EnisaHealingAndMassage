@@ -24,19 +24,19 @@ const { promotionalVideos } = useVideos();
 // SEO Meta tags for the homepage
 useSeoMeta({
   title:
-    "Enisa Healing & Massage - Helende Massages & Ontspanning in Nederland",
+    "Enisa Healing & Massage - Helende Massages & Ontspanning in Amsterdam Noord",
   description:
-    "Ervaar diepe ontspanning en heling met persoonlijke massages en behandelingen door Enisa. Boek vandaag nog uw sessie voor rust en balans.",
-  ogTitle: "Enisa Healing & Massage - Helende Massages & Ontspanning",
+    "Ervaar diepe ontspanning en heling in Amsterdam Noord met persoonlijke massages en behandelingen door Enisa. Boek vandaag nog uw sessie voor rust en balans.",
+  ogTitle: "Enisa Healing & Massage - Helende Massages in Amsterdam Noord",
   ogDescription:
-    "Ontdek de kracht van helende aanraking. Persoonlijke massages en energetische behandelingen voor lichaam en geest.",
+    "Ontdek de kracht van helende aanraking in Amsterdam Noord. Persoonlijke massages en energetische behandelingen voor lichaam en geest.",
   ogImage: "/images/hero-banner.jpg",
   ogType: "website",
   ogUrl: "https://enisahealingmassage.nl",
   twitterCard: "summary_large_image",
-  twitterTitle: "Enisa Healing & Massage - Helende Massages & Ontspanning",
+  twitterTitle: "Enisa Healing & Massage - Helende Massages in Amsterdam Noord",
   twitterDescription:
-    "Ontdek de kracht van helende aanraking. Persoonlijke massages en energetische behandelingen voor lichaam en geest.",
+    "Ontdek de kracht van helende aanraking in Amsterdam Noord. Persoonlijke massages en energetische behandelingen voor lichaam en geest.",
   twitterImage: "/images/hero-banner.jpg",
 });
 

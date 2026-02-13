@@ -11,7 +11,7 @@ const personSchema = {
   name: "Enisa",
   jobTitle: "Energetisch Therapeut gespecialiseerd in Hypnotherapie",
   description:
-    "Energetisch therapeut gespecialiseerd in holistische healing, energetische therapie en hypnotherapie.",
+    "Energetisch therapeut in Amsterdam Noord gespecialiseerd in holistische healing, energetische therapie en hypnotherapie.",
   worksFor: {
     "@type": "Organization",
     name: businessInfo.name,
@@ -54,7 +54,7 @@ const personSchema = {
 setPageSEO({
   title: "Over Mij - Enisa Healing & Massage",
   description:
-    "Leer meer over Enisa, energetisch therapeut met 11+ jaar ervaring in hypnotherapie. Ontdek haar achtergrond, certificeringen en passie voor holistische healing en energetische therapie.",
+    "Leer meer over Enisa, energetisch therapeut in Amsterdam Noord met 11+ jaar ervaring in hypnotherapie. Ontdek haar achtergrond, certificeringen en passie voor holistische healing en energetische therapie.",
   path: "/over-mij",
   type: "profile",
   structuredData: [personSchema],

@@ -1,13 +1,13 @@
 ---
 title: Hypnotherapie Trajecten
-description: Mijn unieke Hypno/Healing methode combineert diepgaande hypnotherapie met energetische (chakra) healing voor snelle én duurzame transformatie op lichaams-, geest- én zielsniveau.
+description: Mijn unieke Hypno/Healing methode combineert diepgaande hypnotherapie met energetische (chakra) healing in Amsterdam Noord voor snelle én duurzame transformatie op lichaams-, geest- én zielsniveau.
 ---
 
 ::behandeling-hero
 ---
 description: Waar echte transformatie begint. Combinatie van hypnotherapie en
-  energetische healing voor duurzame verandering op mentaal, emotioneel en
-  energetisch niveau.
+  energetische healing in Amsterdam Noord voor duurzame verandering op mentaal,
+  emotioneel en energetisch niveau.
 id: dd01fafe-5591-4ca2-b460-c18388237f76
 ---
 ::
@@ -24,7 +24,7 @@ image: /images/enisa-desk-writing.webp
 imageAlt: Hypnotherapie en healing voor transformatie
 title: Mijn unieke Hypno/Healing methode
 ---
-Mijn manier van werken gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep vanbinnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
+Mijn manier van werken in mijn praktijk in Amsterdam Noord gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep vanbinnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
 ::
 
 ::twee-kolommen

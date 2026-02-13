@@ -112,10 +112,10 @@ watchEffect(() => {
   if (!isLoading.value && allReviews.value.length) {
     const reviewSchemas = generateReviewSchemas();
     setPageSEO({
-      title: 'Reviews & Ervaringen - Enisa Healing & Massage',
+      title: 'Reviews & Ervaringen - Enisa Healing & Massage Amsterdam Noord',
       description: `Lees de ervaringen van onze ${
         reviewStatsForSeo.value.approved
-      } cliënten met een gemiddelde score van ${reviewStatsForSeo.value.averageRating.toFixed(
+      } cliënten in Amsterdam Noord met een gemiddelde score van ${reviewStatsForSeo.value.averageRating.toFixed(
         1
       )}/5. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.`,
       path: '/reviews',
@@ -124,9 +124,9 @@ watchEffect(() => {
   } else {
     // Fallback SEO without structured data
     useSeoMeta({
-      title: 'Reviews & Ervaringen - Enisa Healing & Massage',
+      title: 'Reviews & Ervaringen - Enisa Healing & Massage Amsterdam Noord',
       description:
-        'Lees de ervaringen van onze cliënten en deel je eigen ervaring. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.',
+        'Lees de ervaringen van onze cliënten in Amsterdam Noord en deel je eigen ervaring. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.',
     });
   }
 });
@@ -208,7 +208,8 @@ const reviewStatsForOverview = computed(() => {
             Reviews & Ervaringen
           </h1>
           <p class="text-xl text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Lees wat anderen zeggen over hun ervaring en deel je eigen verhaal.
+            Lees wat anderen zeggen over hun ervaring in Amsterdam Noord en deel
+            je eigen verhaal.
           </p>
           <ReviewStats :stats="reviewStatsForOverview" />
         </div>

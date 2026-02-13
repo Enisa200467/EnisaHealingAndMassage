@@ -6,7 +6,8 @@
           Ontdek Onze Behandelingen
         </h2>
         <p class="mt-4 text-lg leading-8 text-gray-600">
-          Kies de behandeling die bij jou past voor heling en ontspanning.
+          Kies de behandeling die bij jou past voor heling en ontspanning in
+          Amsterdam Noord.
         </p>
       </div>
 

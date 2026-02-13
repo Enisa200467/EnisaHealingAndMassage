@@ -72,9 +72,9 @@ const pricingSchema = computed(() => {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Tarieven Enisa Healing & Massage',
+    name: 'Tarieven Enisa Healing & Massage Amsterdam Noord',
     description:
-      'Transparante prijzen voor alle behandelingen',
+      'Transparante prijzen voor alle behandelingen in Amsterdam Noord',
     provider: {
       '@type': 'Organization',
       name: businessInfo.name,
@@ -87,9 +87,9 @@ const pricingSchema = computed(() => {
 // Set comprehensive page SEO with dynamic pricing schema
 watchEffect(() => {
   setPageSEO({
-    title: 'Tarieven - Enisa Healing & Massage',
+    title: 'Tarieven - Enisa Healing & Massage Amsterdam Noord',
     description:
-      'Overzicht van alle tarieven voor behandelingen. Transparante prijzen zonder verborgen kosten. Bekijk ook onze kortingspakketten.',
+      'Overzicht van alle tarieven voor behandelingen in Amsterdam Noord. Transparante prijzen zonder verborgen kosten. Bekijk ook onze kortingspakketten.',
     path: '/tarieven',
     structuredData: [pricingSchema.value],
   });

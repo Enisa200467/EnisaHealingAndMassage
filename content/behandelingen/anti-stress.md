@@ -1,11 +1,11 @@
 ---
 title: antistress codex test
-description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
+description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 ---
 
 ::behandeling-hero
 ---
-description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
+description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 id: da73f8d9-279a-4d79-8de2-204efaaeaf2b
 ---
 ::
@@ -24,6 +24,8 @@ image: /images/massage.webp
 imageAlt: Rustgevende anti-stress massage in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
+In mijn praktijk in Amsterdam Noord help ik je stap voor stap terug naar rust en balans.
+
 Voor veel van ons is angst dagelijks aanwezig in ons leven.
 
 Vaak begint de dag met angstige gedachten:( ik wil niet te laat komen op mijn werk, wat als er een file is enz) vanuit die angst ontwikkelt zich stress. We gaan alles snel doen en blijven maar door rennen. Vervolgens kun je last krijgen van bijvoorbeeld maagkrampen, nervositeit en vermoeidheid.

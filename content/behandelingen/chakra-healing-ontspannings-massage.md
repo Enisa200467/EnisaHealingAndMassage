@@ -1,11 +1,11 @@
 ---
 title: Chakra Healing & Ontspanningsmassage
-description: Combineer het beste van twee werelden. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
+description: Combineer het beste van twee werelden in Amsterdam Noord. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
 ---
 
 ::behandeling-hero
 ---
-description: Combineer het beste van twee werelden. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
+description: Combineer het beste van twee werelden in Amsterdam Noord. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
 id: f3fe5673-1e64-4990-a072-e833f240d13c
 ---
 ::
@@ -23,7 +23,7 @@ image: /images/chakra-healing.webp
 imageAlt: Combinatiebehandeling van chakra healing en hoofdmassage in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en massage. Ik begin met een ontspannende hoofd- en gezichtsmassage, zodat je lichaam zich volledig kan ontspannen. Daarna werk ik met helende energie om blokkades los te maken, spanning te verminderen en de energiestroom in balans te brengen. Deze behandeling werkt zowel op fysiek, emotioneel als energetisch niveau.
+Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en massage in mijn praktijk in Amsterdam Noord. Ik begin met een ontspannende hoofd- en gezichtsmassage, zodat je lichaam zich volledig kan ontspannen. Daarna werk ik met helende energie om blokkades los te maken, spanning te verminderen en de energiestroom in balans te brengen. Deze behandeling werkt zowel op fysiek, emotioneel als energetisch niveau.
 ::
 
 ::twee-kolommen
