@@ -37,8 +37,11 @@ const googleMapsUrl = getGoogleMapsUrl();
                 </div>
               </template>
               <p class="text-neutral-600 text-sm">
-                Gratis parkeren direct voor de deur. Vanaf de A10 ring
-                Amsterdam, afrit S109 richting centrum.
+                Vanaf de A10 Ring Amsterdam neem je de afrit S118 richting
+                IJplein / Amsterdam Noord.<br>
+                Rijd naar IJplein 69.<br>
+                Er is betaald parkeren rondom IJplein en in de buurt van het
+                gebouw (meestal ± € 2,50 per uur).
               </p>
             </UCard>
 
