@@ -35,7 +35,7 @@ const faqItems: AccordionItem[] = [
       'Tijdens uw eerste afspraak nemen we uitgebreid de tijd voor een intake gesprek om uw behoeften en verwachtingen te bespreken. Vervolgens wordt de behandeling volledig op maat uitgevoerd.',
   },
   {
-    label: 'Zijn de behandelingen geschikt voor zwangere vrouwen?',
+    label: 'Zijn de behandelingen geschikt tijdens de zwangerschap?',
     content: `Ja, gezichtsmassage, healing en meditatie zijn ook mogelijk tijdens de zwangerschap. Ik werk op een zachte en veilige manier. Vermeld bij het boeken dat je zwanger bent.
 
 En hypnotherapie tijdens de zwangerschap?
