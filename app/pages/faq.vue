@@ -36,8 +36,21 @@ const faqItems: AccordionItem[] = [
   },
   {
     label: 'Zijn de behandelingen geschikt voor zwangere vrouwen?',
-    content:
-      'Ja, wij bieden speciale zwangerschapsmassages aan die veilig zijn tijdens de zwangerschap. Gelieve dit wel vooraf te vermelden bij het boeken.',
+    content: `Ja, gezichtsmassage, healing en meditatie zijn ook mogelijk tijdens de zwangerschap. Ik werk op een zachte en veilige manier. Vermeld bij het boeken dat je zwanger bent.
+
+En hypnotherapie tijdens de zwangerschap?
+Hypnotherapie is mogelijk in overleg en gericht op:
+✔ ontspanningshypnose
+✔ stressvermindering
+✔ zelfvertrouwen
+✔ verbinding met de baby
+✔ positieve affirmaties
+✔ rust en ademhaling
+
+Tijdens de zwangerschap werk ik niet met:
+❌ diep regressiewerk (trauma of emotionele catharsis)
+❌ sterke emotionele ontlading
+❌ intensief loslaten van oud zeer`,
   },
   {
     label: 'Hoe lang duurt een gemiddelde behandeling?',
