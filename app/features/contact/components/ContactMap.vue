@@ -56,8 +56,23 @@ const googleMapsUrl = getGoogleMapsUrl();
                 </div>
               </template>
               <p class="text-neutral-600 text-sm">
-                5 minuten lopen vanaf tramhalte Voorbeeldplein (lijn 2, 5).
-                Vanaf Amsterdam Centraal 20 minuten met tram.
+                <span class="font-medium">Veerboot:</span><br>
+                Vanaf Amsterdam Centraal neem je de GVB-veerboot (lijn F2)
+                naar IJplein.<br>
+                De overtocht duurt ongeveer 5 minuten.<br>
+                Vanaf de veerboot is het slechts 1–2 minuten lopen naar IJplein
+                69.<br><br>
+
+                <span class="font-medium"
+                  >Met metro en bus (vanuit Amsterdam of Amsterdam
+                  Centraal):</span
+                ><br>
+                Neem metro 52 (Noord/Zuidlijn) en stap uit bij station
+                Noord.<br>
+                Vanaf station Noord neem je bus 38 en stap je uit bij halte
+                Valkenweg.<br>
+                Vanaf daar is het ongeveer 350 meter lopen (± 5 minuten) naar
+                IJplein 69.
               </p>
             </UCard>
 
