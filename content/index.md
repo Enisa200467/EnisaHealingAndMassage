@@ -1,0 +1,1 @@
+Hypnose (Ericksoniaanse methode) helpt je om contact te maken met je onderbewuste, waar overtuigingen, emoties en patronen opgeslagen liggen. Het is een krachtige maar rustige methode om stress, onzekerheid, verdriet of blokkades te transformeren in rust, vertrouwen en nieuwe energie.
