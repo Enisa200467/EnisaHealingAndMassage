@@ -27,7 +27,7 @@ const faqItems: AccordionItem[] = [
   {
     label: 'Is er parkeergelegenheid?',
     content:
-      'Ja, er is voldoende gratis parkeergelegenheid in de buurt van de praktijk.',
+      'Ja, er is parkeergelegenheid direct voor het gebouw. Parkeren is betaald (ongeveer € 2,50 per uur).',
   },
   {
     label: 'Wat kan ik verwachten tijdens mijn eerste behandeling?',
