@@ -7,7 +7,7 @@ const faqItems: AccordionItem[] = [
   {
     label: 'Wat voor soort behandelingen bieden jullie aan?',
     content:
-      'Wij bieden een scala aan behandelingen gericht op zowel heling als ontspanning, waaronder energetische healing, intuïtieve massages en klassieke ontspanningsmassages. Bekijk onze behandelingenpagina voor een volledig overzicht.',
+      'Wij bieden een scala aan behandelingen gericht op zowel heling als ontspanning, waaronder energetische healing, intuïtieve massages en hypnotherapie. Bekijk onze behandelingenpagina voor een volledig overzicht.',
   },
   {
     label: 'Hoe kan ik een afspraak boeken?',
