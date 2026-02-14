@@ -78,7 +78,7 @@ export const BUSINESS_INFO: BusinessInfo = {
     phone: '06 22445121',
     phoneFormatted: '06 224 451 21', // Spaced for readability
     phoneInternational: '+31622445121', // International format for tel: links
-    email: 'info@enisahealing.nl',
+    email: 'info@enisahealingenmassage.nl',
   },
 
   // TODO: Verify actual opening hours
