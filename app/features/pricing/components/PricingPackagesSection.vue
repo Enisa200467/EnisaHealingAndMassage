@@ -93,7 +93,7 @@ const packages = computed(() => {
   return [
     {
       name: '3 Behandelingen Pakket',
-      description: 'Healing / chakra healing',
+      description: 'Energetische healing of chakra healing',
       originalPrice: '€ 255',
       discountPrice: '€ 225',
       savings: '€ 30',
