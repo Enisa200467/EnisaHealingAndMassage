@@ -63,7 +63,15 @@ Mijn manier van werken in mijn praktijk in Amsterdam Noord gaat verder dan stand
 items:
   - id: "41499119-22df-42a9-916a-ac32120f6d5b"
     title: Hypnomeditatie
-    description: Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling.
+    description: |
+      Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling.
+
+      1 sessies
+      € 135
+
+      3 sessies
+
+      € 345
     bullets:
       - Intake inbegrepen (30 min via telefoon of video)
       - Gericht op rust, inzicht en positieve verandering
