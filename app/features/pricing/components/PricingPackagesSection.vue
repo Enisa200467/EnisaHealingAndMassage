@@ -118,13 +118,12 @@ const packages = computed(() => {
     },
     {
       name: '10 Behandelingen Pakket',
-      description: 'Kies 10 willekeurige behandelingen',
-      originalPrice: formatPrice(avgPrice * 10),
-      discountPrice: formatPrice(Math.round(avgPrice * 10 * 0.80)), // 20% discount
-      savings: formatPrice(Math.round(avgPrice * 10 * 0.20)),
-      validity: '18 maanden geldig',
+      description: 'Energetische healing of chakra healing',
+      originalPrice: '€ 850',
+      discountPrice: '€ 750',
+      savings: '€ 100',
+      validity: '12 maanden geldig',
       benefits: [
-        'Vrije keuze uit alle behandelingen',
         'Geen vervaldatum stress',
         'Overdraagbaar aan familie/vrienden',
       ],
