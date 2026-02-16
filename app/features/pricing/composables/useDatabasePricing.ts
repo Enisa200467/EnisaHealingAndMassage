@@ -28,7 +28,7 @@ export const useDatabasePricing = () => {
   const packages: PricingPackage[] = [
     {
       name: '3 Behandelingen Pakket',
-      description: 'Kies 3 willekeurige behandelingen',
+      description: 'Energetische healing of chakra healing',
       originalPrice: '€210',
       discountPrice: '€190',
       savings: '€20',
