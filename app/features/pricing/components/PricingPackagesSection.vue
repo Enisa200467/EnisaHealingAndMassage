@@ -104,14 +104,13 @@ const packages = computed(() => {
       ],
     },
     {
-      name: '5 Behandelingen Pakket',
-      description: 'Kies 5 willekeurige behandelingen',
-      originalPrice: formatPrice(avgPrice * 5),
-      discountPrice: formatPrice(Math.round(avgPrice * 5 * 0.85)), // 15% discount
-      savings: formatPrice(Math.round(avgPrice * 5 * 0.15)),
-      validity: '12 maanden geldig',
+      name: '6 Behandelingen Pakket',
+      description: 'Healing / chakra healing',
+      originalPrice: '€ 510',
+      discountPrice: '€ 450',
+      savings: '€ 60',
+      validity: '6 maanden geldig',
       benefits: [
-        'Vrije keuze uit alle behandelingen',
         'Geen vervaldatum stress',
         'Overdraagbaar aan familie/vrienden',
       ],
