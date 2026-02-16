@@ -50,17 +50,13 @@
           <div class="bg-neutral-50 p-4 rounded-lg">
             <h4 class="font-medium text-neutral-900 mb-2">Pakket voordelen:</h4>
             <ul class="space-y-1 text-sm text-neutral-600">
-              <li class="flex items-center gap-2">
+              <li
+                v-for="benefit in pkg.benefits"
+                :key="benefit"
+                class="flex items-center gap-2"
+              >
                 <UIcon name="i-mdi-check" class="w-4 h-4 text-green-500" />
-                Vrije keuze uit alle behandelingen
-              </li>
-              <li class="flex items-center gap-2">
-                <UIcon name="i-mdi-check" class="w-4 h-4 text-green-500" />
-                Geen vervaldatum stress
-              </li>
-              <li class="flex items-center gap-2">
-                <UIcon name="i-mdi-check" class="w-4 h-4 text-green-500" />
-                Overdraagbaar aan familie/vrienden
+                {{ benefit }}
               </li>
             </ul>
           </div>
@@ -97,11 +93,15 @@ const packages = computed(() => {
   return [
     {
       name: '3 Behandelingen Pakket',
-      description: 'Kies 3 willekeurige behandelingen',
-      originalPrice: formatPrice(avgPrice * 3),
-      discountPrice: formatPrice(Math.round(avgPrice * 3 * 0.90)), // 10% discount
-      savings: formatPrice(Math.round(avgPrice * 3 * 0.10)),
-      validity: '6 maanden geldig',
+      description: 'Healing / chakra healing',
+      originalPrice: '€ 255',
+      discountPrice: '€ 225',
+      savings: '€ 30',
+      validity: '3 maanden geldig',
+      benefits: [
+        'Geen vervaldatum stress',
+        'Overdraagbaar aan familie/vrienden',
+      ],
     },
     {
       name: '5 Behandelingen Pakket',
@@ -110,6 +110,11 @@ const packages = computed(() => {
       discountPrice: formatPrice(Math.round(avgPrice * 5 * 0.85)), // 15% discount
       savings: formatPrice(Math.round(avgPrice * 5 * 0.15)),
       validity: '12 maanden geldig',
+      benefits: [
+        'Vrije keuze uit alle behandelingen',
+        'Geen vervaldatum stress',
+        'Overdraagbaar aan familie/vrienden',
+      ],
     },
     {
       name: '10 Behandelingen Pakket',
@@ -118,6 +123,11 @@ const packages = computed(() => {
       discountPrice: formatPrice(Math.round(avgPrice * 10 * 0.80)), // 20% discount
       savings: formatPrice(Math.round(avgPrice * 10 * 0.20)),
       validity: '18 maanden geldig',
+      benefits: [
+        'Vrije keuze uit alle behandelingen',
+        'Geen vervaldatum stress',
+        'Overdraagbaar aan familie/vrienden',
+      ],
     },
   ];
 });
