@@ -159,7 +159,7 @@ setPageSEO({
             opleidingen gevolgd. Ik werk inmiddels meer dan 11 jaar officieel
             als energetisch therapeut, met veel liefde en toewijding aan mijn
             vak. Tijdens mijn sessies combineer ik energetische therapie,
-            healing en hypnotherapie op een manier die afgestemd is op de
+            chakra healing en hypnotherapie op een manier die afgestemd is op de
             persoon die bij mij komt.
           </p>
         </div>
