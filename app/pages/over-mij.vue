@@ -80,12 +80,13 @@ setPageSEO({
                 Over Mij
               </h1>
               <p class="text-xl text-neutral-600 mb-8 leading-relaxed">
-                Welkom! Mijn naam is Enisa, energetisch therapeut in Amsterdam
-                Noord met een focus op hypnotherapie. Ik begeleid mensen vanuit
-                het hart en werk met de helende energie die door mijn handen
-                stroomt. Met meer dan 11 jaar ervaring combineer ik energetische
-                therapie, healing en hypnotherapie om mensen te helpen bij hun
-                innerlijke reis naar balans en welzijn.
+                Welkom! Mijn naam is Enisa Erovic, energetisch therapeut in
+                Amsterdam Noord met een focus op hypnotherapie. Ik begeleid
+                mensen vanuit het hart en werk met de helende energie die door
+                mijn handen stroomt. Met meer dan 11 jaar ervaring combineer ik
+                energetische therapie, chakra healing, hypnotherapie en massage
+                om mensen te helpen bij hun innerlijke reis naar balans en
+                welzijn.
               </p>
               <div
                 class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
