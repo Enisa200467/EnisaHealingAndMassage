@@ -114,6 +114,14 @@ Na afloop van de behandeling zal de energie nog enkele dagen doorwerken in je li
 
 Je kunt je na de behandeling direct beter voelen, maar soms komt het voor dat het een paar dagen duurt voor je het effect echt ervaart. Dit verschilt per aandoening en per persoon. Het lichaam zorgt ervoor dat de energie op die plaatsen komt waar het precies nodig is.
 
+Behandeladvies & frequentie
+
+Voor een duurzaam en zichtbaar resultaat adviseer ik meestal minimaal 3 behandelingen. Hoeveel sessies nodig zijn, hangt af van jouw klachten en hoe lang deze al aanwezig zijn – fysiek of emotioneel.
+
+Voor de eerste twee sessies is het aan te raden niet langer dan 2 weken tussenruimte te laten. De energie bouwt zich namelijk op en werkt verder door in het systeem.
+
+Wanneer de basis is gelegd, kunnen behandelingen om de 3 à 4 weken worden ingepland, afhankelijk van jouw proces en behoefte.
+
 ### Na de Behandeling
 
 Het is belangrijk dat je na de behandeling lekker gaat ontspannen en veel water drinkt, zodat vrijgekomen afvalstoffen snel je lichaam kunnen verlaten.
