@@ -78,6 +78,7 @@ const ANTI_STRESS_HOMEPAGE_DESCRIPTION =
   'In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst.';
 
 const HYPNOTHERAPIE_HOMEPAGE_PRICE_CENTS = 13000;
+const LOSLATEN_TRAJECT_HOMEPAGE_PRICE_CENTS = 13500;
 
 const displayedTreatments = computed(() =>
   allTreatments.value.map((treatment) => {
@@ -102,6 +103,17 @@ const displayedTreatments = computed(() =>
       return {
         ...treatment,
         description: ANTI_STRESS_HOMEPAGE_DESCRIPTION,
+      };
+    }
+
+    if (
+      treatment.slug === 'loslaten-traject' ||
+      treatment.title.toLowerCase().includes('loslaten traject')
+    ) {
+      return {
+        ...treatment,
+        description,
+        price: LOSLATEN_TRAJECT_HOMEPAGE_PRICE_CENTS,
       };
     }
 
