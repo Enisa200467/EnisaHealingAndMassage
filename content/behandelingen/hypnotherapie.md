@@ -63,7 +63,16 @@ Mijn manier van werken in mijn praktijk in Amsterdam Noord gaat verder dan stand
 items:
   - id: "41499119-22df-42a9-916a-ac32120f6d5b"
     title: Hypnomeditatie
-    description: Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling.
+    description: |
+      Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling.
+
+      1 sessie
+
+      Prijs: €130
+
+      3 sessies
+
+      € 345
     bullets:
       - Intake inbegrepen (30 min via telefoon of video)
       - Gericht op rust, inzicht en positieve verandering
@@ -74,9 +83,10 @@ items:
     description: |
       Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid.
 
-      Betaling mogelijk in 2 termijnen:
-      €297,50 bij het maken van de afspraak
-      €297,50 vóór de tweede sessie
+      Betaling in 2 termijnen mogelijk
+
+      € 297,50 bij het maken van de afspraak
+      € 297,50 vóór de tweede sessie
     bullets:
       - Hypnotherapie + energetische/chakra healing
       - 3 persoonlijke mini-rituelen
