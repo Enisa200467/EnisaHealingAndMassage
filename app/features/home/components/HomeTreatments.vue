@@ -77,6 +77,8 @@ const HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION =
 const ANTI_STRESS_HOMEPAGE_DESCRIPTION =
   'In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst.';
 
+const HYPNOTHERAPIE_HOMEPAGE_PRICE_CENTS = 13000;
+
 const displayedTreatments = computed(() =>
   allTreatments.value.map((treatment) => {
     const description =
@@ -89,6 +91,7 @@ const displayedTreatments = computed(() =>
       return {
         ...treatment,
         description: HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION,
+        price: HYPNOTHERAPIE_HOMEPAGE_PRICE_CENTS,
       };
     }
 
