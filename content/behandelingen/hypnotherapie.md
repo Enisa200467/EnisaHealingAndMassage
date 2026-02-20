@@ -24,7 +24,7 @@ image: /images/enisa-desk-writing.webp
 imageAlt: Hypnotherapie en healing voor transformatie
 title: Mijn unieke Hypno/Healing methode
 ---
-Mijn manier van werken in mijn praktijk in Amsterdam Noord gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep vanbinnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
+Mijn manier van werken in mijn praktijk in Amsterdam Noord gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep van binnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
 ::
 
 ::twee-kolommen
