@@ -492,12 +492,12 @@ setPageSEO({
               </h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
-              Een goede vriend heeft maanden lang letterlijk krom gelopen van de
+              Een goede vriend heeft maandenlang letterlijk krom gelopen van de
               pijn als gevolg van een hernia. De uitstraling in de benen was
-              ondragelijk. Hoe sceptisch hij ook was, onder het mom van baat het
-              niet, schaadt het niet, heb ik hem de energie gegeven. Na een
-              aantal behandelingen was de pijn zover gezakt dat hij weer kon
-              lopen zonder pijn.
+              ondragelijk. Hoe sceptisch hij ook was, onder het mom van “baat
+              het niet, schaadt het niet”, heb ik hem energie gegeven. Na een
+              aantal behandelingen was er een opmerkelijke verbetering en was de
+              pijn zover gezakt dat hij weer zonder pijn kon lopen.
             </p>
           </UCard>
 
