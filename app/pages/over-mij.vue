@@ -597,11 +597,11 @@ setPageSEO({
             <p class="text-neutral-600 leading-relaxed">
               In 2014 brak mijn zoon zijn knie. Zijn been zwol meteen helemaal
               op en terwijl wij op straat aan het wachten waren op de ambulance,
-              legde ik mijn handen op zijn been en bad tot god om hem te helpen
-              en te zorgen dat hij geen pijn zou hebben. De pijn verdween bijna
-              onmiddellijk. In het ziekenhuis zagen ze op de röntgenfoto dat
-              zijn been onder de knie gebroken was. De dokter kon niet begrijpen
-              hoe het kon dat hij geen pijn voelde. Mijn zoon kwam uit het
+              legde ik mijn handen op zijn been en bad tot God om hem te helpen
+              en te zorgen dat hij geen pijn zou hebben. De pijn nam bijna
+              onmiddellijk af. In het ziekenhuis zagen ze op de röntgenfoto dat
+              zijn been onder de knie gebroken was. De dokter vond het
+              opmerkelijk dat hij geen pijn voelde. Mijn zoon kwam uit het
               ziekenhuis en zijn been genas zonder gevolgen voor zijn groei (de
               breuklijn liep dwars door de groeischijf). Zijn gips ging er veel
               eerder af dan de dokter had gezegd.
