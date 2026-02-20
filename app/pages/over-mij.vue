@@ -524,19 +524,24 @@ setPageSEO({
                 Bijna Fatale Longontsteking
               </h3>
             </template>
-            <p class="text-neutral-600 leading-relaxed">
+            <p class="text-neutral-600 leading-relaxed mb-4">
               Een van mijn goede vrienden uit Assen worstelde al lange tijd met
               verschillende gezondheidsproblemen en toen hij voor de zoveelste
-              keer weer in het ziekenhuis belandde met een longontsteking,
-              meldden de dokters niets meer voor hem te kunnen betekenen. Hij
-              kon elk moment wegzakken in een coma. Ik ben diezelfde dag naar
-              Assen afgereisd en heb hem in het ziekenhuis bezocht. Na twee
-              bezoeken op één dag en nog één de volgende dag, is hij al
-              opgestaan uit bed, heeft zelf gedoucht en een stukje gewandeld
-              door het ziekenhuis. De volgende dag mocht hij naar huis en was er
-              geen spoor meer over van zijn ziekte. De dokters konden dit op
-              geen enkele manier verklaren! Ik was dolgelukkig toen ik dit
-              nieuws hoorde en zijn familie natuurlijk ook.
+              keer weer in het ziekenhuis belandde met een longontsteking, was
+              zijn situatie zeer ernstig. Hij verkeerde in een kwetsbare
+              toestand.
+            </p>
+            <p class="text-neutral-600 leading-relaxed mb-4">
+              Ik ben diezelfde dag naar Assen afgereisd en heb hem in het
+              ziekenhuis bezocht om hem energetische ondersteuning te geven. Na
+              twee bezoeken op één dag en nog één de volgende dag, trad er een
+              duidelijke positieve verandering op. Hij stond op uit bed, kon
+              zelf douchen en maakte een stukje wandeling door het ziekenhuis.
+            </p>
+            <p class="text-neutral-600 leading-relaxed">
+              De volgende dag mocht hij naar huis. Zijn herstel verliep
+              opvallend snel. Voor mij was dit een bijzonder en dankbaar
+              moment, en voor zijn familie natuurlijk ook.
             </p>
           </UCard>
 
