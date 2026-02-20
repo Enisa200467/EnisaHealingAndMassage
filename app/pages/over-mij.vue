@@ -574,20 +574,25 @@ setPageSEO({
                 Bij Artsen Onbekende Afwijking in het Bloed
               </h3>
             </template>
-            <p class="text-neutral-600 leading-relaxed">
-              Letterlijk is een wonder gebeurd toen ik gevraagd werd een vriend
-              van m'n vriendin te helpen toen deze in het ziekenhuis lag met een
-              ernstige bloedafwijking waarvan het diagnosticeren alleen al weken
-              duurde, zo zeldzaam was de aandoening. Voor de behandeling in het
-              ziekenhuis werd hij bij elkaar drie weken kunstmatig in coma
-              gehouden. De artsen konden uiteindelijk niet veel meer betekenen,
-              behalve te stellen dat het maanden zou duren voordat hij hiervan
-              hersteld zou zijn. Ik ben daar geweest en heb aan zijn bed energie
-              gegeven. Het wonder gebeurde dat hij na twee dagen al weer naast
-              z'n bed stond en een week later alweer op de fiets naar zijn werk.
-              Dit is naast de ernstige longontsteking toch wel de meest
-              bijzondere ervaring die ik heb mogen hebben.
-            </p>
+            <div class="space-y-4 text-neutral-600 leading-relaxed">
+              <p>
+                Letterlijk is er iets bijzonders gebeurd toen ik gevraagd werd
+                een vriend van mijn vriendin te helpen die in een ziekenhuis in
+                Duitsland lag met een ernstige bloedafwijking, waarvan het
+                diagnosticeren alleen al weken duurde, zo zeldzaam was de
+                aandoening. Voor zijn behandeling in het ziekenhuis werd hij in
+                totaal drie weken kunstmatig in coma gehouden. De artsen gaven
+                aan dat het herstel maanden zou kunnen duren.
+              </p>
+              <p>
+                Ik ben daarheen gereisd en heb aan zijn bed energie gegeven.
+                Kort daarna trad er een opvallende positieve verandering op: na
+                twee dagen stond hij al naast zijn bed en een week later zat
+                hij weer op de fiets richting zijn werk. Dit is, naast de
+                ernstige longontsteking, een van de meest bijzondere ervaringen
+                die ik heb mogen meemaken.
+              </p>
+            </div>
           </UCard>
 
           <UCard>
