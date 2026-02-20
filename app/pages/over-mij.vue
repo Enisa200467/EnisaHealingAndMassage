@@ -455,7 +455,7 @@ setPageSEO({
                 class="w-8 h-8 text-primary-500"
               />
               <span class="text-neutral-700"
-                >Terminale ziekte (verlichting)</span
+                >Emotionele blokkades</span
               >
             </div>
           </UCard>
