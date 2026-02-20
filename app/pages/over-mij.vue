@@ -552,10 +552,11 @@ setPageSEO({
             <p class="text-neutral-600 leading-relaxed mb-4">
               In een geval heb ik gewerkt met iemand die een hersentumor had die
               niet geheel verwijderd kon worden door middel van een operatie. Ik
-              kan met veel blijdschap in mijn hart zeggen dat de tumor gekrompen
-              is tot een zeer klein formaat. Daarbij zijn de klachten waarmee
-              deze persoon kampte na de operatie, zoals lichte epileptische
-              aanvallen, moeite met spreken en depressie volledig verdwenen.
+              kan met veel blijdschap in mijn hart zeggen dat er een duidelijke
+              verkleining werd waargenomen tot een zeer klein formaat. Daarbij
+              zijn de klachten waarmee deze persoon kampte na de operatie, zoals
+              lichte epileptische aanvallen, moeite met spreken en depressie
+              volledig verdwenen.
             </p>
             <p class="text-neutral-600 leading-relaxed">
               Ik wil hier wel bij vertellen dat ik op dat moment niet zeker wist
