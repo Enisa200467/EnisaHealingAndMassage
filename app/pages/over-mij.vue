@@ -508,13 +508,13 @@ setPageSEO({
               </h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
-              Met succes heb ik m'n eigen broer geholpen die geconfronteerd werd
-              met de diagnose suikerziekte, bij hem was een suikerspiegel van 16
-              gemeten. Als gevolg hiervan had hij ook veel zenuwpijn in zijn
-              benen en voeten en kon hij slecht slapen. Na slechts 3 weken
-              intensief behandelen, was zijn suikerspiegel weer gedaald tot
-              onder de 6 en is de pijn in zijn benen en voeten verdwenen. Nu de
-              pijn weg is kan hij ook weer normaal slapen.
+              Met succes heb ik mijn eigen broer ondersteund toen hij
+              geconfronteerd werd met de diagnose suikerziekte. Hij had veel
+              zenuwpijn in zijn benen en voeten en kon slecht slapen. Na een
+              periode van intensieve behandelingen werd een duidelijke
+              verbetering waargenomen: zijn bloedsuikerwaarden stabiliseerden
+              en de pijn in zijn benen en voeten nam sterk af. Doordat de pijn
+              verminderde, kon hij ook weer beter slapen.
             </p>
           </UCard>
 
