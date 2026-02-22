@@ -8,6 +8,7 @@ interface TrajectContentItem {
   bullets?: string[];
   ctaText?: string;
   ctaLink?: string;
+  treatmentId?: string;
 }
 
 interface TrajectRecord {
@@ -16,9 +17,16 @@ interface TrajectRecord {
   price_cents: number;
 }
 
+interface TreatmentRecord {
+  id: string;
+  duration_minutes: number;
+  price_cents: number;
+}
+
 interface TrajectDisplayItem extends TrajectContentItem {
   sessions?: number;
   price_cents?: number;
+  duration_minutes?: number;
 }
 
 const props = defineProps<{
@@ -29,7 +37,13 @@ const trajectIds = computed(() =>
   (props.items || []).map((item) => item.id).filter(Boolean)
 );
 
-const { formatPrice } = useTreatmentDetailsFormatter();
+const treatmentIds = computed(() =>
+  (props.items || [])
+    .map((item) => item.treatmentId)
+    .filter(Boolean)
+);
+
+const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
 
 const trajectQuery = computed(() => ({
   ids: trajectIds.value.join(","),
@@ -43,6 +57,24 @@ const { data: trajectData } = await useAsyncData(
   {
     default: () => ({ data: [] }),
     watch: [trajectQuery],
+  }
+);
+
+const { data: treatmentData } = await useAsyncData(
+  async () => {
+    if (!treatmentIds.value.length) {
+      return [];
+    }
+    const results = await Promise.all(
+      treatmentIds.value.map((id) =>
+        $fetch<TreatmentRecord | null>(`/api/treatments/${id}`)
+      )
+    );
+    return results.filter(Boolean) as TreatmentRecord[];
+  },
+  {
+    default: () => [],
+    watch: [treatmentIds],
   }
 );
 
@@ -60,13 +92,25 @@ const trajectMap = computed(() => {
   return map;
 });
 
+const treatmentMap = computed(() => {
+  const map = new Map<string, TreatmentRecord>();
+  (treatmentData.value || []).forEach((treatment) => {
+    map.set(treatment.id, treatment);
+  });
+  return map;
+});
+
 const mergedTrajects = computed<TrajectDisplayItem[]>(() =>
   (props.items || []).map((item) => {
     const meta = trajectMap.value.get(item.id);
+    const treatmentMeta = item.treatmentId
+      ? treatmentMap.value.get(item.treatmentId)
+      : undefined;
     return {
       ...item,
       sessions: meta?.sessions,
-      price_cents: meta?.price_cents,
+      price_cents: meta?.price_cents ?? treatmentMeta?.price_cents,
+      duration_minutes: treatmentMeta?.duration_minutes,
     };
   })
 );
@@ -74,14 +118,17 @@ const mergedTrajects = computed<TrajectDisplayItem[]>(() =>
 
 <template>
   <PageSection primary not-prose>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <UCard v-for="item in mergedTrajects" :key="item.id" class="p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+      <UCard v-for="item in mergedTrajects" :key="item.id" class="p-5">
         <div class="space-y-4">
           <div>
             <h3 class="text-xl font-semibold text-neutral-900">
               {{ item.title }}
             </h3>
-            <p v-if="item.description" class="text-neutral-600 mt-2">
+            <p
+              v-if="item.description"
+              class="text-neutral-600 mt-2 whitespace-pre-line"
+            >
               {{ item.description }}
             </p>
           </div>
@@ -90,6 +137,15 @@ const mergedTrajects = computed<TrajectDisplayItem[]>(() =>
             <p class="text-sm text-neutral-600">
               {{ item.sessions }} sessies
             </p>
+            <p class="text-lg font-semibold text-primary-600">
+              {{ formatPrice(item.price_cents) }}
+            </p>
+          </div>
+
+          <div
+            v-else-if="item.duration_minutes && item.price_cents"
+            class="space-y-1"
+          >
             <p class="text-lg font-semibold text-primary-600">
               {{ formatPrice(item.price_cents) }}
             </p>

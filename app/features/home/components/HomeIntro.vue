@@ -58,9 +58,9 @@
         <p class="text-lg text-neutral-600 leading-relaxed mb-8">
           In mijn praktijk in Amsterdam Noord combineer ik chakra healing,
           energetische healing, massage en hypnotherapie met moderne methoden om
-          jou te helpen bij het vinden van balans en welzijn. Elke behandeling is
-          aangepast aan jouw unieke behoeften en gericht op het ondersteunen van
-          jouw natuurlijke genezingsproces.
+          jou te helpen bij het vinden van balans en welzijn. Elke behandeling
+          is aangepast aan jouw unieke behoeften en gericht op het ondersteunen
+          van jouw natuurlijke genezingsproces.
         </p>
         <p class="text-neutral-600 leading-relaxed mb-8">
           Of je nu komt voor ontspanning, pijnverlichting, of spirituele groei,
@@ -84,12 +84,40 @@ const routes = useRoutes();
 
 const carouselItems = [
   {
+    src: "/images/enisa-schilderij.png",
+    alt: "Close-up van Enisa, energetisch therapeut in Amsterdam Noord",
+  },
+  {
     src: "/images/enisa-intro.jpg",
     alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
   },
   {
     src: "/images/enisa-healing-in-studio.jpg",
     alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
+  },
+  {
+    src: "/images/healing-behandeling.jpg",
+    alt: "Healing behandeling in de praktijk van Enisa",
+  },
+  {
+    src: "/images/healing-behandeling-2.jpg",
+    alt: "Energetische healing sessie in een rustige behandelruimte",
+  },
+  {
+    src: "/images/healing-behandeling-3.jpg",
+    alt: "Healing behandeling met zachte handoplegging",
+  },
+  {
+    src: "/images/healing-behandeling-4.jpg",
+    alt: "Ontspannende healing behandeling bij Enisa",
+  },
+  {
+    src: "/images/buddha.jpg",
+    alt: "Buddha beeld in de praktijk voor een rustige sfeer",
+  },
+  {
+    src: "/images/bos.jpg",
+    alt: "Rustig boslandschap dat ontspanning en balans uitstraalt",
   },
 ];
 

@@ -19,7 +19,7 @@ items:
   - "Overgang naar energetische chakra healing"
   - "Loslaten van blokkades en spanningen"
   - "Herstel van de energiestroom en balans"
-image: /images/chakra-healing.webp
+image: /images/hoofd-massage.jpg
 imageAlt: Combinatiebehandeling van chakra healing en hoofdmassage in Amsterdam Noord
 title: Wat kun je verwachten?
 ---

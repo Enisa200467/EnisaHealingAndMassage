@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import '@nuxt/ui';
+@import "tailwindcss";
+@import "@nuxt/ui";
 
 /* ==========================================================================
    Accessibility - Focus Visible Styles
@@ -82,7 +82,13 @@ select:focus-visible {
 /* Ensure minimum styles are applied before Vue hydrates */
 html {
   background-color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 
 body {
@@ -119,8 +125,9 @@ body {
   --color-amber-v2-100: #f1dfe0;
   --color-amber-v2-200: #e3c0c2;
   --color-amber-v2-300: #d29fa1;
-  --color-amber-v2-400: #ad7274; /* base */
-  --color-amber-v2-500: #925e60;
+  --color-amber-v2-400: #e8999d;
+  --color-amber-v2-500: #e8999d;
+  /* --color-amber-v2-400: #bf787b; */
   --color-amber-v2-600: #794c4e;
   --color-amber-v2-700: #613c3d;
   --color-amber-v2-800: #4a2c2d;

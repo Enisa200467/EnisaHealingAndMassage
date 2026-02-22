@@ -191,8 +191,14 @@
       <div
         class="mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-center text-sm text-neutral-500 dark:text-neutral-400"
       >
-        &copy; {{ currentYear }} Enisa Healing & Massage. Alle rechten
-        voorbehouden.
+        <p>
+          Mijn behandelingen bieden energetische ondersteuning en zijn geen
+          vervanging van medische of psychologische zorg.
+        </p>
+        <p>
+          &copy; {{ currentYear }} Enisa Healing & Massage. Alle rechten
+          voorbehouden.
+        </p>
       </div>
     </UContainer>
   </footer>

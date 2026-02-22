@@ -20,7 +20,7 @@ items:
     healing
   - Transformatie op lichaams-, geest- én zielsniveau
   - Meer innerlijke rust, vertrouwen en levensenergie
-image: /images/enisa-desk-writing.webp
+image: /images/single-sessions-hypnotherapie.webp
 imageAlt: Hypnotherapie en healing voor transformatie
 title: Mijn unieke Hypno/Healing methode
 ---
@@ -61,10 +61,21 @@ Mijn manier van werken in mijn praktijk in Amsterdam Noord gaat verder dan stand
 ::traject-kolommen
 ---
 items:
+  - id: "c8ad40a0-7c7f-47a3-b6c4-2b3f1a6a7d3b"
+    title: Losse sessie hypnomeditatie
+    description: Een losse hypnomeditatie sessie voor wie eerst wil kennismaken of een gerichte vraag heeft.
+    treatmentId: dd01fafe-5591-4ca2-b460-c18388237f76
+    bullets:
+      - "Duur: 1u 15 min per sessie"
+      - Persoonlijke begeleiding afgestemd op jouw thema
+      - Ruimte voor rust, inzicht en ontspanning
+    ctaText: Plan losse sessie
+    ctaLink: https://enisa-healing-massage.setmore.com
   - id: "41499119-22df-42a9-916a-ac32120f6d5b"
     title: Hypnomeditatie
     description: Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling.
     bullets:
+      - "Duur: 1u 15 min per sessie"
       - Intake inbegrepen (30 min via telefoon of video)
       - Gericht op rust, inzicht en positieve verandering
     ctaText: Plan je intake
@@ -78,6 +89,7 @@ items:
       €297,50 bij het maken van de afspraak
       €297,50 vóór de tweede sessie
     bullets:
+      - "Duur: 2u per sessie"
       - Hypnotherapie + energetische/chakra healing
       - 3 persoonlijke mini-rituelen
       - 1 korte check-in tussen sessies
@@ -87,10 +99,12 @@ items:
     title: Premium traject
     description: |
       Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
+
       Betaling mogelijk in 2 termijnen:
       €388,50 bij het maken van de afspraak
       en €388,50 vóór de tweede sessie.
     bullets:
+      - "Duur: 2u per sessie"
       - Hypnotherapie + energetische/chakra healing
       - Integratie & nazorg
       - Intuïtieve inzichten en begeleiding

@@ -3,8 +3,11 @@ title: Loslaten traject
 description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten in Amsterdam Noord. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
 ---
 
-::kop
-Loslaten traject
+::behandeling-hero
+---
+description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten in Amsterdam Noord. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
+id: da84341d-d8cd-4db7-bacf-7d2495ecccb4
+---
 ::
 
 ::behandeling-sectie
@@ -15,7 +18,7 @@ items:
   - "Sessie 3 (90 min): Twee meditaties om het proces te integreren - €135"
   - "Sessie 4 (60 min): Afrondende chakra healing behandeling - €85"
   - "Traject: 4 sessies voor €475 (los boeken: €475)"
-image: /images/energetische-blokkades-opheffen.webp
+image: /images/loslaten-traject.jpg
 imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
