@@ -455,7 +455,7 @@ setPageSEO({
                 class="w-8 h-8 text-primary-500"
               />
               <span class="text-neutral-700"
-                >Terminale ziekte (verlichting)</span
+                >Emotionele blokkades</span
               >
             </div>
           </UCard>
@@ -492,12 +492,12 @@ setPageSEO({
               </h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
-              Een goede vriend heeft maanden lang letterlijk krom gelopen van de
+              Een goede vriend heeft maandenlang letterlijk krom gelopen van de
               pijn als gevolg van een hernia. De uitstraling in de benen was
-              ondragelijk. Hoe sceptisch hij ook was, onder het mom van baat het
-              niet, schaadt het niet, heb ik hem de energie gegeven. Na een
-              aantal behandelingen was de pijn zover gezakt dat hij weer kon
-              lopen zonder pijn.
+              ondragelijk. Hoe sceptisch hij ook was, onder het mom van “baat
+              het niet, schaadt het niet”, heb ik hem energie gegeven. Na een
+              aantal behandelingen was er een opmerkelijke verbetering en was de
+              pijn zover gezakt dat hij weer zonder pijn kon lopen.
             </p>
           </UCard>
 
@@ -508,13 +508,13 @@ setPageSEO({
               </h3>
             </template>
             <p class="text-neutral-600 leading-relaxed">
-              Met succes heb ik m'n eigen broer geholpen die geconfronteerd werd
-              met de diagnose suikerziekte, bij hem was een suikerspiegel van 16
-              gemeten. Als gevolg hiervan had hij ook veel zenuwpijn in zijn
-              benen en voeten en kon hij slecht slapen. Na slechts 3 weken
-              intensief behandelen, was zijn suikerspiegel weer gedaald tot
-              onder de 6 en is de pijn in zijn benen en voeten verdwenen. Nu de
-              pijn weg is kan hij ook weer normaal slapen.
+              Met succes heb ik mijn eigen broer ondersteund toen hij
+              geconfronteerd werd met de diagnose suikerziekte. Hij had veel
+              zenuwpijn in zijn benen en voeten en kon slecht slapen. Na een
+              periode van intensieve behandelingen werd een duidelijke
+              verbetering waargenomen: zijn bloedsuikerwaarden stabiliseerden
+              en de pijn in zijn benen en voeten nam sterk af. Doordat de pijn
+              verminderde, kon hij ook weer beter slapen.
             </p>
           </UCard>
 
@@ -524,19 +524,24 @@ setPageSEO({
                 Bijna Fatale Longontsteking
               </h3>
             </template>
-            <p class="text-neutral-600 leading-relaxed">
+            <p class="text-neutral-600 leading-relaxed mb-4">
               Een van mijn goede vrienden uit Assen worstelde al lange tijd met
               verschillende gezondheidsproblemen en toen hij voor de zoveelste
-              keer weer in het ziekenhuis belandde met een longontsteking,
-              meldden de dokters niets meer voor hem te kunnen betekenen. Hij
-              kon elk moment wegzakken in een coma. Ik ben diezelfde dag naar
-              Assen afgereisd en heb hem in het ziekenhuis bezocht. Na twee
-              bezoeken op één dag en nog één de volgende dag, is hij al
-              opgestaan uit bed, heeft zelf gedoucht en een stukje gewandeld
-              door het ziekenhuis. De volgende dag mocht hij naar huis en was er
-              geen spoor meer over van zijn ziekte. De dokters konden dit op
-              geen enkele manier verklaren! Ik was dolgelukkig toen ik dit
-              nieuws hoorde en zijn familie natuurlijk ook.
+              keer weer in het ziekenhuis belandde met een longontsteking, was
+              zijn situatie zeer ernstig. Hij verkeerde in een kwetsbare
+              toestand.
+            </p>
+            <p class="text-neutral-600 leading-relaxed mb-4">
+              Ik ben diezelfde dag naar Assen afgereisd en heb hem in het
+              ziekenhuis bezocht om hem energetische ondersteuning te geven. Na
+              twee bezoeken op één dag en nog één de volgende dag, trad er een
+              duidelijke positieve verandering op. Hij stond op uit bed, kon
+              zelf douchen en maakte een stukje wandeling door het ziekenhuis.
+            </p>
+            <p class="text-neutral-600 leading-relaxed">
+              De volgende dag mocht hij naar huis. Zijn herstel verliep
+              opvallend snel. Voor mij was dit een bijzonder en dankbaar
+              moment, en voor zijn familie natuurlijk ook.
             </p>
           </UCard>
 
@@ -547,10 +552,11 @@ setPageSEO({
             <p class="text-neutral-600 leading-relaxed mb-4">
               In een geval heb ik gewerkt met iemand die een hersentumor had die
               niet geheel verwijderd kon worden door middel van een operatie. Ik
-              kan met veel blijdschap in mijn hart zeggen dat de tumor gekrompen
-              is tot een zeer klein formaat. Daarbij zijn de klachten waarmee
-              deze persoon kampte na de operatie, zoals lichte epileptische
-              aanvallen, moeite met spreken en depressie volledig verdwenen.
+              kan met veel blijdschap in mijn hart zeggen dat er een duidelijke
+              verkleining werd waargenomen tot een zeer klein formaat. Daarbij
+              zijn de klachten waarmee deze persoon kampte na de operatie, zoals
+              lichte epileptische aanvallen, moeite met spreken en depressie
+              volledig verdwenen.
             </p>
             <p class="text-neutral-600 leading-relaxed">
               Ik wil hier wel bij vertellen dat ik op dat moment niet zeker wist
@@ -568,20 +574,25 @@ setPageSEO({
                 Bij Artsen Onbekende Afwijking in het Bloed
               </h3>
             </template>
-            <p class="text-neutral-600 leading-relaxed">
-              Letterlijk is een wonder gebeurd toen ik gevraagd werd een vriend
-              van m'n vriendin te helpen toen deze in het ziekenhuis lag met een
-              ernstige bloedafwijking waarvan het diagnosticeren alleen al weken
-              duurde, zo zeldzaam was de aandoening. Voor de behandeling in het
-              ziekenhuis werd hij bij elkaar drie weken kunstmatig in coma
-              gehouden. De artsen konden uiteindelijk niet veel meer betekenen,
-              behalve te stellen dat het maanden zou duren voordat hij hiervan
-              hersteld zou zijn. Ik ben daar geweest en heb aan zijn bed energie
-              gegeven. Het wonder gebeurde dat hij na twee dagen al weer naast
-              z'n bed stond en een week later alweer op de fiets naar zijn werk.
-              Dit is naast de ernstige longontsteking toch wel de meest
-              bijzondere ervaring die ik heb mogen hebben.
-            </p>
+            <div class="space-y-4 text-neutral-600 leading-relaxed">
+              <p>
+                Letterlijk is er iets bijzonders gebeurd toen ik gevraagd werd
+                een vriend van mijn vriendin te helpen die in een ziekenhuis in
+                Duitsland lag met een ernstige bloedafwijking, waarvan het
+                diagnosticeren alleen al weken duurde, zo zeldzaam was de
+                aandoening. Voor zijn behandeling in het ziekenhuis werd hij in
+                totaal drie weken kunstmatig in coma gehouden. De artsen gaven
+                aan dat het herstel maanden zou kunnen duren.
+              </p>
+              <p>
+                Ik ben daarheen gereisd en heb aan zijn bed energie gegeven.
+                Kort daarna trad er een opvallende positieve verandering op: na
+                twee dagen stond hij al naast zijn bed en een week later zat
+                hij weer op de fiets richting zijn werk. Dit is, naast de
+                ernstige longontsteking, een van de meest bijzondere ervaringen
+                die ik heb mogen meemaken.
+              </p>
+            </div>
           </UCard>
 
           <UCard>
@@ -591,11 +602,11 @@ setPageSEO({
             <p class="text-neutral-600 leading-relaxed">
               In 2014 brak mijn zoon zijn knie. Zijn been zwol meteen helemaal
               op en terwijl wij op straat aan het wachten waren op de ambulance,
-              legde ik mijn handen op zijn been en bad tot god om hem te helpen
-              en te zorgen dat hij geen pijn zou hebben. De pijn verdween bijna
-              onmiddellijk. In het ziekenhuis zagen ze op de röntgenfoto dat
-              zijn been onder de knie gebroken was. De dokter kon niet begrijpen
-              hoe het kon dat hij geen pijn voelde. Mijn zoon kwam uit het
+              legde ik mijn handen op zijn been en bad tot God om hem te helpen
+              en te zorgen dat hij geen pijn zou hebben. De pijn nam bijna
+              onmiddellijk af. In het ziekenhuis zagen ze op de röntgenfoto dat
+              zijn been onder de knie gebroken was. De dokter vond het
+              opmerkelijk dat hij geen pijn voelde. Mijn zoon kwam uit het
               ziekenhuis en zijn been genas zonder gevolgen voor zijn groei (de
               breuklijn liep dwars door de groeischijf). Zijn gips ging er veel
               eerder af dan de dokter had gezegd.
