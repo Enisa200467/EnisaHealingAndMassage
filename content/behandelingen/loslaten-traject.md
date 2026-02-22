@@ -3,8 +3,11 @@ title: Loslaten traject
 description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten in Amsterdam Noord. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
 ---
 
-::kop
-Loslaten traject
+::behandeling-hero
+---
+description: Een intensief traject om energetische blokkades op te heffen en oude pijn los te laten in Amsterdam Noord. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
+id: da84341d-d8cd-4db7-bacf-7d2495ecccb4
+---
 ::
 
 ::behandeling-sectie

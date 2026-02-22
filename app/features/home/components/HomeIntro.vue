@@ -84,12 +84,40 @@ const routes = useRoutes();
 
 const carouselItems = [
   {
+    src: "/images/enisa_closup.jpg",
+    alt: "Close-up van Enisa, energetisch therapeut in Amsterdam Noord",
+  },
+  {
     src: "/images/enisa-intro.jpg",
     alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
   },
   {
     src: "/images/enisa-healing-in-studio.jpg",
     alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
+  },
+  {
+    src: "/images/healing-behandeling.jpg",
+    alt: "Healing behandeling in de praktijk van Enisa",
+  },
+  {
+    src: "/images/healing-behandeling-2.jpg",
+    alt: "Energetische healing sessie in een rustige behandelruimte",
+  },
+  {
+    src: "/images/healing-behandeling-3.jpg",
+    alt: "Healing behandeling met zachte handoplegging",
+  },
+  {
+    src: "/images/healing-behandeling-4.jpg",
+    alt: "Ontspannende healing behandeling bij Enisa",
+  },
+  {
+    src: "/images/buddha.jpg",
+    alt: "Buddha beeld in de praktijk voor een rustige sfeer",
+  },
+  {
+    src: "/images/bos.jpg",
+    alt: "Rustig boslandschap dat ontspanning en balans uitstraalt",
   },
 ];
 

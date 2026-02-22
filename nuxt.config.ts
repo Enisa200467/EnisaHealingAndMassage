@@ -38,7 +38,7 @@ export default defineNuxtConfig({
       branch: "main", // the branc to commit to (default: 'main')
     },
     development: {
-      sync: true,
+      sync: false,
     },
   },
 
@@ -165,7 +165,6 @@ export default defineNuxtConfig({
         "upgrade-insecure-requests": true,
       },
       crossOriginEmbedderPolicy: "unsafe-none",
-
     },
     // Disable CSRF protection - not needed because:
     // 1. Supabase authentication required for admin routes
@@ -192,4 +191,3 @@ export default defineNuxtConfig({
     hidePoweredBy: true,
   },
 });
-

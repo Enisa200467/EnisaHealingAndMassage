@@ -31,6 +31,10 @@ const averageRating = computed(() => {
   return weightedSum / totalRatings;
 });
 
+const averageRatingRounded = computed(() => {
+  return Number(averageRating.value.toFixed(1));
+});
+
 const total = computed(() => {
   return (
     ratings.value['1'] +
@@ -62,10 +66,10 @@ const recommendationRate = computed(() => {
       <!-- Average Rating -->
       <div class="text-center">
         <div class="flex items-center justify-center mb-2">
-          <StarRating v-model="averageRating" size="lg" />
+          <StarRating v-model="averageRatingRounded" size="lg" />
         </div>
         <div class="text-3xl font-bold text-neutral-900 mb-1">
-          {{ averageRating.toFixed(1) }}
+          {{ averageRatingRounded.toFixed(1) }}
         </div>
         <p class="text-sm text-neutral-600">Gemiddelde waardering</p>
       </div>

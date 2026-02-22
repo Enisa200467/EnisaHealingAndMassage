@@ -24,11 +24,6 @@ image: /images/massage.webp
 imageAlt: Rustgevende anti-stress massage in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-In mijn praktijk in Amsterdam Noord help ik je stap voor stap terug naar rust en balans.
-
-Voor veel van ons is angst dagelijks aanwezig in ons leven.
-
-Vaak begint de dag met angstige gedachten:( ik wil niet te laat komen op mijn werk, wat als er een file is enz) vanuit die angst ontwikkelt zich stress. We gaan alles snel doen en blijven maar door rennen. Vervolgens kun je last krijgen van bijvoorbeeld maagkrampen, nervositeit en vermoeidheid.
 ::
 
 ::twee-kolommen
