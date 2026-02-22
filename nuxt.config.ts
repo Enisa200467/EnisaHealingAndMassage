@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "robots", content: "noindex, nofollow" },
+        { name: "robots", content: "index, follow" },
         { name: "theme-color", content: "#8b5cf6" }, // Primary purple color
         { name: "format-detection", content: "telephone=no" },
         { name: "msapplication-TileColor", content: "#8b5cf6" },
