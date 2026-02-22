@@ -20,7 +20,7 @@ items:
     healing
   - Transformatie op lichaams-, geest- én zielsniveau
   - Meer innerlijke rust, vertrouwen en levensenergie
-image: /images/enisa-desk-writing.webp
+image: /images/single-sessions-hypnotherapie.webp
 imageAlt: Hypnotherapie en healing voor transformatie
 title: Mijn unieke Hypno/Healing methode
 ---

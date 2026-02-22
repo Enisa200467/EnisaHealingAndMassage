@@ -58,9 +58,9 @@
         <p class="text-lg text-neutral-600 leading-relaxed mb-8">
           In mijn praktijk in Amsterdam Noord combineer ik chakra healing,
           energetische healing, massage en hypnotherapie met moderne methoden om
-          jou te helpen bij het vinden van balans en welzijn. Elke behandeling is
-          aangepast aan jouw unieke behoeften en gericht op het ondersteunen van
-          jouw natuurlijke genezingsproces.
+          jou te helpen bij het vinden van balans en welzijn. Elke behandeling
+          is aangepast aan jouw unieke behoeften en gericht op het ondersteunen
+          van jouw natuurlijke genezingsproces.
         </p>
         <p class="text-neutral-600 leading-relaxed mb-8">
           Of je nu komt voor ontspanning, pijnverlichting, of spirituele groei,
@@ -84,7 +84,7 @@ const routes = useRoutes();
 
 const carouselItems = [
   {
-    src: "/images/enisa_closup.jpg",
+    src: "/images/enisa-schilderij.png",
     alt: "Close-up van Enisa, energetisch therapeut in Amsterdam Noord",
   },
   {

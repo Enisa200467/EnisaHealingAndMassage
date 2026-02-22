@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
+import { useTreatmentDetailsFormatter } from "~/composables/useTreatmentData";
 
 const { activeTreatments } = useTreatments();
 const { formatPrice } = useTreatmentDetailsFormatter();
@@ -82,7 +82,10 @@ const { formatPrice } = useTreatmentDetailsFormatter();
 const averagePrice = computed(() => {
   if (activeTreatments.value.length === 0) return 6500; // Default to €65
 
-  const total = activeTreatments.value.reduce((sum, t) => sum + (t.price || 0), 0);
+  const total = activeTreatments.value.reduce(
+    (sum, t) => sum + (t.price || 0),
+    0,
+  );
   return Math.round(total / activeTreatments.value.length);
 });
 
@@ -92,40 +95,31 @@ const packages = computed(() => {
 
   return [
     {
-      name: '3 Behandelingen Pakket',
-      description: 'Energetische healing of chakra healing',
-      originalPrice: '€ 255',
-      discountPrice: '€ 225',
-      savings: '€ 30',
-      validity: '3 maanden geldig',
-      benefits: [
-        'Geen vervaldatum stress',
-        'Overdraagbaar aan familie/vrienden',
-      ],
+      name: "3 Behandelingen Pakket",
+      description: "Energetische healing of chakra healing",
+      originalPrice: "€ 255",
+      discountPrice: "€ 225",
+      savings: "€ 30",
+      validity: "3 maanden geldig",
+      benefits: ["Geen vervaldatum", "Overdraagbaar aan familie/vrienden"],
     },
     {
-      name: '6 Behandelingen Pakket',
-      description: 'Energetische healing of chakra healing',
-      originalPrice: '€ 510',
-      discountPrice: '€ 450',
-      savings: '€ 60',
-      validity: '6 maanden geldig',
-      benefits: [
-        'Geen vervaldatum stress',
-        'Overdraagbaar aan familie/vrienden',
-      ],
+      name: "6 Behandelingen Pakket",
+      description: "Energetische healing of chakra healing",
+      originalPrice: "€ 510",
+      discountPrice: "€ 450",
+      savings: "€ 60",
+      validity: "6 maanden geldig",
+      benefits: ["Geen vervaldatum", "Overdraagbaar aan familie/vrienden"],
     },
     {
-      name: '10 Behandelingen Pakket',
-      description: 'Energetische healing of chakra healing',
-      originalPrice: '€ 850',
-      discountPrice: '€ 750',
-      savings: '€ 100',
-      validity: '12 maanden geldig',
-      benefits: [
-        'Geen vervaldatum stress',
-        'Overdraagbaar aan familie/vrienden',
-      ],
+      name: "10 Behandelingen Pakket",
+      description: "Energetische healing of chakra healing",
+      originalPrice: "€ 850",
+      discountPrice: "€ 750",
+      savings: "€ 100",
+      validity: "12 maanden geldig",
+      benefits: ["Geen vervaldatum", "Overdraagbaar aan familie/vrienden"],
     },
   ];
 });

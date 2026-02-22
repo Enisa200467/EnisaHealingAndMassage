@@ -20,7 +20,7 @@ items:
   - "Chakra healing"
   - "Praktische huiswerkopdrachten"
   - "Eén maand na de laatste anti-stress sessie neem ik contact met je op om te vragen hoe het met je gaat. Als afsluiting ontvang je een gratis healing op afstand."
-image: /images/massage.webp
+image: /images/bos.jpg
 imageAlt: Rustgevende anti-stress massage in Amsterdam Noord
 title: Wat kun je verwachten?
 ---

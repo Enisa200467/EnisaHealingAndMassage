@@ -109,6 +109,7 @@ const treatmentNavEntries = computed<NavigationMenuItem[]>(() =>
     label: item.title || routes.slugToTitle(item.slug || ""),
     to: item.path,
     icon: item.icon || "i-mdi-sparkles",
+    onSelect: closeMobileMenu,
   })),
 );
 
@@ -117,31 +118,37 @@ const mobileNavItems = computed<NavigationMenuItem[]>(() => [
     label: "Home",
     icon: "i-mdi-home",
     to: routes.pages.home,
+    onSelect: closeMobileMenu,
   },
   {
     label: "Over Mij",
     icon: "i-mdi-account",
     to: routes.pages.about,
+    onSelect: closeMobileMenu,
   },
   {
     label: "Behandelingen",
     icon: "i-mdi-sparkles",
     children: treatmentNavEntries.value,
+    onSelect: closeMobileMenu,
   },
   {
     label: "Tarieven",
     icon: "i-mdi-currency-eur",
     to: routes.pages.tarieven,
+    onSelect: closeMobileMenu,
   },
   {
     label: "Contact",
     icon: "i-mdi-email",
     to: routes.pages.contact,
+    onSelect: closeMobileMenu,
   },
   {
     label: "Reviews",
     icon: "i-mdi-star",
     to: routes.pages.reviews,
+    onSelect: closeMobileMenu,
   },
 ]);
 

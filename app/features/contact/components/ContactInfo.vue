@@ -102,6 +102,22 @@ const whatsappLink = computed(() => {
         </div>
       </UCard>
 
+      <!-- KVK -->
+      <UCard>
+        <div class="flex items-start gap-4">
+          <div class="bg-secondary-100 p-3 rounded-full">
+            <UIcon
+              name="i-mdi-office-building"
+              class="w-6 h-6 text-secondary-600"
+            />
+          </div>
+          <div>
+            <h3 class="font-semibold text-neutral-900 mb-2">KVK nummer</h3>
+            <p class="text-neutral-600 mb-2">62885081</p>
+          </div>
+        </div>
+      </UCard>
+
       <!-- Location -->
       <UCard>
         <div class="flex items-start gap-4">
@@ -120,7 +136,6 @@ const whatsappLink = computed(() => {
           </div>
         </div>
       </UCard>
-
     </div>
 
     <!-- Quick Actions -->
