@@ -1,5 +1,5 @@
 ---
-title: antistress codex test
+title: antistress
 description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 ---
 
