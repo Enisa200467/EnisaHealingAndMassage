@@ -1,11 +1,11 @@
 ---
 title: Ontspanningsmassage
-description: Ervaar diepe ontspanning en verlichting van spierspanning met mijn ayurvedische ontspanningsmassage voor hoofd, gezicht, nek en schouders in Amsterdam Noord. Ideaal om stress te verminderen 
+description: Ervaar diepe ontspanning en verlichting van spierspanning met mijn ayurvedische ontspanningsmassage voor hoofd, gezicht, nek en schouders in Amsterdam Noord. Ideaal om stress te verminderen en tot rust te komen.
 ---
 
 ::behandeling-hero
 ---
-description: Ervaar diepe ontspanning en verlichting van spierspanning met mijn ayurvedische ontspanningsmassage voor hoofd, gezicht, nek en schouders in Amsterdam Noord. Ideaal om stress te verminderen 
+description: Ervaar diepe ontspanning en verlichting van spierspanning met mijn ayurvedische ontspanningsmassage voor hoofd, gezicht, nek en schouders in Amsterdam Noord. Ideaal om stress te verminderen en tot rust te komen.
 id: 42455ff6-98ab-429b-af23-2b7cab41e058
 ---
 ::
