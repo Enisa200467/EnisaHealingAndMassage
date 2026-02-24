@@ -19,7 +19,7 @@ Allow: /_nuxt/
 Disallow: /admin/
 
 # Sitemap location  
-Sitemap: https://enisahealingmassage.nl/api/sitemap.xml
+Sitemap: https://enisahealingenmassage.nl/api/sitemap.xml
 
 # Host preference
-Host: https://enisahealingmassage.nl 
+Host: https://enisahealingenmassage.nl 
