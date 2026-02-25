@@ -1,5 +1,5 @@
-import { readdir, stat } from "node:fs/promises";
-import { join } from "node:path";
+import type { H3Event } from "h3";
+import { queryCollection } from "@nuxt/content/server";
 
 export default defineEventHandler(async (event) => {
   const baseUrl = "https://enisahealingenmassage.nl";
@@ -63,7 +63,7 @@ export default defineEventHandler(async (event) => {
   ];
 
   // Define treatment pages based on markdown files in /content/behandelingen/
-  const treatmentPages = await loadTreatmentPages(currentDate);
+  const treatmentPages = await loadTreatmentPages(event, currentDate);
 
   const allPages = [...staticPages, ...treatmentPages];
 
@@ -87,39 +87,52 @@ ${allPages
   return sitemap;
 });
 
-const loadTreatmentPages = async (fallbackDate: string) => {
-  const treatmentsDir = join(process.cwd(), "content", "behandelingen");
-
+const loadTreatmentPages = async (event: H3Event, fallbackDate: string) => {
   try {
-    const entries = await readdir(treatmentsDir, { withFileTypes: true });
-    const treatmentFiles = entries.filter(
-      (entry) => entry.isFile() && entry.name.endsWith(".md"),
-    );
-
-    const pages = await Promise.all(
-      treatmentFiles.map(async (entry) => {
-        const slug = entry.name.replace(/\.md$/, "");
-        const filePath = join(treatmentsDir, entry.name);
-        let lastmod = fallbackDate;
-
-        try {
-          const fileStat = await stat(filePath);
-          lastmod = fileStat.mtime.toISOString().split("T")[0];
-        } catch {
-          lastmod = fallbackDate;
+    const docs = await queryCollection(event, "behandelingen").all();
+    const pages = docs
+      .map((doc) => {
+        const path = "path" in doc && typeof doc.path === "string" ? doc.path : null;
+        if (!path) {
+          return null;
         }
 
+        const meta = doc as unknown as Record<string, unknown>;
+        const lastmodValue =
+          meta.updatedAt ??
+          meta._updatedAt ??
+          meta.modifiedAt ??
+          meta.date ??
+          meta._date;
+        const lastmod = toDateString(lastmodValue, fallbackDate);
+
         return {
-          url: `/behandelingen/${slug}`,
+          url: path,
           priority: "0.8",
           changefreq: "monthly",
           lastmod,
         };
-      }),
-    );
+      })
+      .filter((page): page is { url: string; priority: string; changefreq: string; lastmod: string } =>
+        Boolean(page),
+      )
+      .sort((a, b) => a.url.localeCompare(b.url));
 
-    return pages.sort((a, b) => a.url.localeCompare(b.url));
+    return pages;
   } catch {
     return [];
   }
+};
+
+const toDateString = (value: unknown, fallbackDate: string) => {
+  if (!value) {
+    return fallbackDate;
+  }
+
+  const date = new Date(value instanceof Date ? value.toISOString() : String(value));
+  if (Number.isNaN(date.getTime())) {
+    return fallbackDate;
+  }
+
+  return date.toISOString().split("T")[0];
 };
