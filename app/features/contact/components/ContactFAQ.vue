@@ -29,9 +29,7 @@
             <h3 class="font-semibold">Wat moet ik meenemen?</h3>
           </template>
           <p class="text-neutral-600 text-sm">
-            Je hoeft niets mee te nemen. Handdoeken en alle benodigdheden zijn
-            aanwezig. Draag comfortabele kleding die je makkelijk uit kunt
-            trekken.
+            Niets, ik zorg voor alles zodat jij volledig kunt ontspannen.
           </p>
         </UCard>
 
