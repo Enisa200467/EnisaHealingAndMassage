@@ -1,3 +1,6 @@
+import { readdir, stat } from "node:fs/promises";
+import { join } from "node:path";
+
 export default defineEventHandler(async (event) => {
   const baseUrl = "https://enisahealingenmassage.nl";
   const currentDate = new Date().toISOString().split("T")[0];
@@ -59,38 +62,8 @@ export default defineEventHandler(async (event) => {
     },
   ];
 
-  // Define treatment pages with enhanced metadata
-  // Only include treatments that have corresponding markdown files in /content/behandelingen/
-  const treatmentPages = [
-    {
-      url: "/behandelingen/anti-stress",
-      priority: "0.8",
-      changefreq: "monthly",
-      lastmod: "2024-11-25",
-      title: "Anti Stress - Enisa Healing & Massage",
-      description:
-        "Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan.",
-    },
-    {
-      url: "/behandelingen/chakra-healing",
-      priority: "0.8",
-      changefreq: "monthly",
-      lastmod: "2024-11-25",
-      title: "Chakra Healing - Enisa Healing & Massage",
-      description:
-        "Breng je chakras in balans en herstel de energiestroom door je lichaam.",
-    },
-    {
-      url: "/behandelingen/hypnotherapie",
-      priority: "0.8",
-      changefreq: "monthly",
-      lastmod: "2024-11-25",
-      title: "Hypnotherapie - Enisa Healing & Massage",
-      description:
-        "Combinatie van hypnotherapie en energetische healing in Amsterdam Noord voor duurzame verandering op mentaal, emotioneel en energetisch niveau",
-    },
-    // TODO: Add more treatments when markdown files are created:
-  ];
+  // Define treatment pages based on markdown files in /content/behandelingen/
+  const treatmentPages = await loadTreatmentPages(currentDate);
 
   const allPages = [...staticPages, ...treatmentPages];
 
@@ -113,3 +86,40 @@ ${allPages
 
   return sitemap;
 });
+
+const loadTreatmentPages = async (fallbackDate: string) => {
+  const treatmentsDir = join(process.cwd(), "content", "behandelingen");
+
+  try {
+    const entries = await readdir(treatmentsDir, { withFileTypes: true });
+    const treatmentFiles = entries.filter(
+      (entry) => entry.isFile() && entry.name.endsWith(".md"),
+    );
+
+    const pages = await Promise.all(
+      treatmentFiles.map(async (entry) => {
+        const slug = entry.name.replace(/\.md$/, "");
+        const filePath = join(treatmentsDir, entry.name);
+        let lastmod = fallbackDate;
+
+        try {
+          const fileStat = await stat(filePath);
+          lastmod = fileStat.mtime.toISOString().split("T")[0];
+        } catch {
+          lastmod = fallbackDate;
+        }
+
+        return {
+          url: `/behandelingen/${slug}`,
+          priority: "0.8",
+          changefreq: "monthly",
+          lastmod,
+        };
+      }),
+    );
+
+    return pages.sort((a, b) => a.url.localeCompare(b.url));
+  } catch {
+    return [];
+  }
+};

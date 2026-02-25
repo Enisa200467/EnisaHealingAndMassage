@@ -6,6 +6,57 @@ export default defineNuxtConfig({
   // Enable SSR for better initial load
   ssr: true,
 
+  routeRules: {
+    "/contact-afspraak": {
+      redirect: {
+        to: "https://enisa-healing-massage.setmore.com/",
+        statusCode: 301,
+      },
+    },
+    "/contact-afspraak/": {
+      redirect: {
+        to: "https://enisa-healing-massage.setmore.com/",
+        statusCode: 301,
+      },
+    },
+    "/enisahealingenmassage-nl-reviews": {
+      redirect: {
+        to: "/reviews",
+        statusCode: 301,
+      },
+    },
+    "/enisahealingenmassage-nl-reviews/": {
+      redirect: {
+        to: "/reviews",
+        statusCode: 301,
+      },
+    },
+    "/healing-op-afstand": {
+      redirect: {
+        to: "/behandelingen/energetische-healing",
+        statusCode: 301,
+      },
+    },
+    "/healing-op-afstand/": {
+      redirect: {
+        to: "/behandelingen/energetische-healing",
+        statusCode: 301,
+      },
+    },
+    "/prijzen": {
+      redirect: {
+        to: "/tarieven",
+        statusCode: 301,
+      },
+    },
+    "/prijzen/": {
+      redirect: {
+        to: "/tarieven",
+        statusCode: 301,
+      },
+    },
+  },
+
   // Add proper i18n configuration and HTML lang attribute
   app: {
     head: {
@@ -93,11 +144,6 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
-
-  // Optimize CSS delivery to prevent FOUC
-  experimental: {
-    inlineStyles: true, // Inline critical CSS
-  },
 
   // Optimize rendering
   features: {
