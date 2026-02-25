@@ -17,7 +17,7 @@ const faqItems: AccordionItem[] = [
   {
     label: 'Wat moet ik meenemen naar mijn afspraak?',
     content:
-      'U hoeft niets speciaals mee te nemen. Draag comfortabele kleding. Handdoeken en andere benodigdheden worden door ons verzorgd.',
+      'Niets, ik zorg voor alles zodat jij volledig kunt ontspannen.',
   },
   {
     label: 'Wat zijn de openingstijden?',
