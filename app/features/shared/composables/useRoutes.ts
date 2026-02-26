@@ -17,6 +17,7 @@ export const useRoutes = () => {
     treatments: '/behandelingen',
     contact: '/contact',
     faq: '/faq',
+    antiStress: '/anti-stress',
     blog: '/blog',
     tarieven: '/tarieven',
     reviews: '/reviews',
