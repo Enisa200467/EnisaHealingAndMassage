@@ -4,15 +4,18 @@
     aria-labelledby="hero-heading"
   >
     <!-- Background Image using NuxtImg -->
-    <NuxtImg
+    <img
       src="/images/hero.webp"
+      srcset="/images/hero.webp 2752w"
+      sizes="100vw"
       alt="Serene lotus flower floating on water with soft pink glow, symbolizing tranquility and healing"
       role="presentation"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"
-      format="webp"
-      quality="80"
+      width="2752"
+      height="1536"
       fetchpriority="high"
-      preload
+      loading="eager"
+      decoding="async"
     />
     <UContainer class="py-20 md:py-32">
       <h1

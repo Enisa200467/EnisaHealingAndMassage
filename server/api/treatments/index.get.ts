@@ -1,9 +1,10 @@
 import { serverSupabaseServiceRole } from "#supabase/server";
 
-export default defineEventHandler(async (event) => {
-  const client = serverSupabaseServiceRole(event);
-  try {
-    const { data: treatments, error } = await client
+export default defineCachedEventHandler(
+  async (event) => {
+    const client = serverSupabaseServiceRole(event);
+    try {
+      const { data: treatments, error } = await client
       .from("treatments")
       .select(
         "id, name, slug, duration_minutes, price_cents, discount_enabled, discount_price_cents, icon, display_order, is_active, created_at, updated_at, treatment_trajects(*)",
@@ -23,6 +24,12 @@ export default defineEventHandler(async (event) => {
       trajects: treatment.treatment_trajects || [],
     }));
 
+    setHeader(
+      event,
+      "Cache-Control",
+      "public, max-age=0, s-maxage=600, stale-while-revalidate=86400",
+    );
+
     return {
       data: normalized,
     };
@@ -35,4 +42,9 @@ export default defineEventHandler(async (event) => {
       statusMessage: "Failed to fetch treatments",
     });
   }
-});
+  },
+  {
+    maxAge: 600,
+    staleMaxAge: 86400,
+  },
+);

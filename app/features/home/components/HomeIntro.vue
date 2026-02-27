@@ -1,54 +1,64 @@
 <template>
   <PageSection primary aria-labelledby="intro-heading">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
-      <div class="relative w-full max-w-md mx-auto">
-        <!-- Carousel Pause/Play Control -->
-        <button
-          @click="toggleAutoplay"
-          class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 flex items-center justify-center"
-          :aria-label="
-            isPaused
-              ? 'Start automatische diavoorstelling'
-              : 'Pauzeer automatische diavoorstelling'
-          "
-          :aria-pressed="!isPaused"
-        >
-          <UIcon
-            :name="isPaused ? 'i-mdi-play' : 'i-mdi-pause'"
-            class="w-5 h-5 text-neutral-700 flex-shrink-0"
-          />
-        </button>
+      <div ref="carouselObserver" class="relative w-full max-w-md mx-auto">
+        <template v-if="isCarouselVisible">
+          <!-- Carousel Pause/Play Control -->
+          <button
+            @click="toggleAutoplay"
+            class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 flex items-center justify-center"
+            :aria-label="
+              isPaused
+                ? 'Start automatische diavoorstelling'
+                : 'Pauzeer automatische diavoorstelling'
+            "
+            :aria-pressed="!isPaused"
+          >
+            <UIcon
+              :name="isPaused ? 'i-mdi-play' : 'i-mdi-pause'"
+              class="w-5 h-5 text-neutral-700 flex-shrink-0"
+            />
+          </button>
 
-        <!-- Live region for screen reader announcements -->
+          <!-- Live region for screen reader announcements -->
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            class="sr-only"
+          >
+            {{ currentSlideAnnouncement }}
+          </div>
+
+          <LazyCarousel
+            ref="carouselRef"
+            v-slot="{ item }"
+            dots
+            loop
+            :autoplay="autoplayConfig"
+            :items="carouselItems"
+            class="w-full"
+            aria-label="Fotogalerij van Enisa"
+            @update:modelValue="onSlideChange"
+          >
+            <NuxtImg
+              :src="item.src"
+              :alt="item.alt"
+              class="w-full h-full object-cover rounded-lg"
+              width="900"
+              height="1200"
+              sizes="(min-width: 768px) 384px, 80vw"
+              loading="lazy"
+              format="webp"
+              quality="80"
+            />
+          </LazyCarousel>
+        </template>
         <div
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-          class="sr-only"
-        >
-          {{ currentSlideAnnouncement }}
-        </div>
-
-        <UCarousel
-          ref="carouselRef"
-          v-slot="{ item }"
-          dots
-          loop
-          :autoplay="autoplayConfig"
-          :items="carouselItems"
-          class="w-full"
-          aria-label="Fotogalerij van Enisa"
-          @update:modelValue="onSlideChange"
-        >
-          <NuxtImg
-            :src="item.src"
-            :alt="item.alt"
-            class="w-full h-full object-cover rounded-lg"
-            loading="lazy"
-            format="webp"
-            quality="80"
-          />
-        </UCarousel>
+          v-else
+          class="w-full aspect-[3/4] rounded-lg bg-neutral-100"
+          aria-hidden="true"
+        />
       </div>
 
       <div class="text-center md:text-left">
@@ -81,6 +91,9 @@
 
 <script setup lang="ts">
 const routes = useRoutes();
+const LazyCarousel = defineAsyncComponent(
+  () => import("~/components/LazyCarousel.vue"),
+);
 
 const carouselItems = [
   {
@@ -125,6 +138,9 @@ const carouselItems = [
 const isPaused = ref(false);
 const currentSlide = ref(0);
 const carouselRef = ref();
+const carouselObserver = ref<HTMLElement | null>(null);
+const isCarouselVisible = ref(false);
+let observer: IntersectionObserver | null = null;
 
 // Computed autoplay config
 const autoplayConfig = computed(() => {
@@ -149,15 +165,57 @@ const onSlideChange = (index: number) => {
   currentSlide.value = index;
 };
 
-// Pause on keyboard interaction (accessibility)
+const focusInHandler = () => {
+  if (!isPaused.value) {
+    isPaused.value = true;
+  }
+};
+
+const setupObserver = () => {
+  if (!carouselObserver.value || isCarouselVisible.value) {
+    return;
+  }
+
+  if (typeof IntersectionObserver === "undefined") {
+    isCarouselVisible.value = true;
+    return;
+  }
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        isCarouselVisible.value = true;
+        observer?.disconnect();
+        observer = null;
+      }
+    },
+    { rootMargin: "200px" },
+  );
+
+  observer.observe(carouselObserver.value);
+};
+
 onMounted(() => {
+  setupObserver();
+});
+
+watch(isCarouselVisible, async (visible) => {
+  if (!visible) {
+    return;
+  }
+
+  await nextTick();
   const carousel = carouselRef.value?.$el;
   if (carousel) {
-    carousel.addEventListener("focusin", () => {
-      if (!isPaused.value) {
-        isPaused.value = true;
-      }
-    });
+    carousel.addEventListener("focusin", focusInHandler);
   }
+});
+
+onUnmounted(() => {
+  const carousel = carouselRef.value?.$el;
+  if (carousel) {
+    carousel.removeEventListener("focusin", focusInHandler);
+  }
+  observer?.disconnect();
 });
 </script>

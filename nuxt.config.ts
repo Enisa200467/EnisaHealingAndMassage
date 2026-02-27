@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   ssr: true,
 
   routeRules: {
+    "/": {
+      swr: 3600,
+    },
     "/contact-afspraak": {
       redirect: {
         to: "https://enisa-healing-massage.setmore.com/",

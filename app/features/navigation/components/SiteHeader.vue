@@ -7,11 +7,14 @@
         class="flex items-center"
         aria-label="Naar homepage - Enisa Healing & Massage"
       >
-        <UAvatar
-          size="2xl"
-          src="images/logo.webp"
-          class="mr-6"
+        <img
+          src="/images/logo.webp"
           alt="Enisa Healing & Massage logo"
+          class="mr-6 h-14 w-14 rounded-full object-cover"
+          width="56"
+          height="56"
+          loading="eager"
+          decoding="async"
         />
         <span class="font-semibold text-lg">Enisa Healing & Massage</span>
       </ULink>
