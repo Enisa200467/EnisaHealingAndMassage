@@ -36,22 +36,28 @@
             dots
             loop
             :autoplay="autoplayConfig"
-            :items="carouselItems"
+            :items="visibleCarouselItems"
             class="w-full"
             aria-label="Fotogalerij van Enisa"
             @update:modelValue="onSlideChange"
           >
-            <NuxtImg
-              :src="item.src"
-              :alt="item.alt"
-              class="w-full h-full object-cover rounded-lg"
-              width="900"
-              height="1200"
-              sizes="(min-width: 768px) 384px, 80vw"
-              loading="lazy"
-              format="webp"
-              quality="80"
-            />
+            <div
+              class="relative w-full aspect-[3/2] overflow-hidden rounded-lg"
+            >
+              <NuxtImg
+                :src="item.src"
+                :alt="item.alt"
+                class="w-full h-full object-cover"
+                :width="448"
+                :height="299"
+                sizes="(max-width: 768px) 90vw, 448px"
+                :loading="item === carouselItems[0] ? 'eager' : 'lazy'"
+                :fetchpriority="item === carouselItems[0] ? 'high' : 'auto'"
+                format="webp"
+                quality="80"
+                @load="onFirstImageLoad(item)"
+              />
+            </div>
           </LazyCarousel>
         </template>
         <div
@@ -97,42 +103,44 @@ const LazyCarousel = defineAsyncComponent(
 
 const carouselItems = [
   {
-    src: "/images/enisa-schilderij.png",
+    src: "/images/enisa-schilderij.webp",
     alt: "Close-up van Enisa, energetisch therapeut in Amsterdam Noord",
   },
   {
-    src: "/images/enisa-intro.jpg",
+    src: "/images/enisa-intro.webp",
     alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
   },
   {
-    src: "/images/enisa-healing-in-studio.jpg",
-    alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
-  },
-  {
-    src: "/images/healing-behandeling.jpg",
+    src: "/images/healing-behandeling.webp",
     alt: "Healing behandeling in de praktijk van Enisa",
   },
   {
-    src: "/images/healing-behandeling-2.jpg",
+    src: "/images/healing-behandeling-2.webp",
     alt: "Energetische healing sessie in een rustige behandelruimte",
   },
   {
-    src: "/images/healing-behandeling-3.jpg",
+    src: "/images/healing-behandeling-3.webp",
     alt: "Healing behandeling met zachte handoplegging",
   },
   {
-    src: "/images/healing-behandeling-4.jpg",
+    src: "/images/praktijk-wacht-ruimte.webp",
+    alt: "Wachtruimte Enisa Healing & Massage Amsterdam Noord",
+  },
+  {
+    src: "/images/healing-behandeling-4.webp",
     alt: "Ontspannende healing behandeling bij Enisa",
   },
   {
-    src: "/images/buddha.jpg",
+    src: "/images/buddha.webp",
     alt: "Buddha beeld in de praktijk voor een rustige sfeer",
   },
-  {
-    src: "/images/bos.jpg",
-    alt: "Rustig boslandschap dat ontspanning en balans uitstraalt",
-  },
 ];
+
+const itemsToRender = ref(1);
+const hasStartedBatchLoad = ref(false);
+const visibleCarouselItems = computed(() => {
+  return carouselItems.slice(0, itemsToRender.value);
+});
 
 // Carousel accessibility controls
 const isPaused = ref(false);
@@ -163,6 +171,27 @@ const toggleAutoplay = () => {
 // Handle slide change
 const onSlideChange = (index: number) => {
   currentSlide.value = index;
+};
+
+const loadNextBatch = () => {
+  if (itemsToRender.value >= carouselItems.length) {
+    return;
+  }
+
+  itemsToRender.value = Math.min(carouselItems.length, itemsToRender.value + 3);
+
+  if (itemsToRender.value < carouselItems.length) {
+    setTimeout(loadNextBatch, 250);
+  }
+};
+
+const onFirstImageLoad = (item: (typeof carouselItems)[number]) => {
+  if (hasStartedBatchLoad.value || item !== carouselItems[0]) {
+    return;
+  }
+
+  hasStartedBatchLoad.value = true;
+  setTimeout(loadNextBatch, 150);
 };
 
 const focusInHandler = () => {

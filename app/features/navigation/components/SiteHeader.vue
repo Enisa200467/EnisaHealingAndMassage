@@ -7,12 +7,15 @@
         class="flex items-center"
         aria-label="Naar homepage - Enisa Healing & Massage"
       >
-        <img
+        <NuxtImg
           src="/images/logo.webp"
           alt="Enisa Healing & Massage logo"
           class="mr-6 h-14 w-14 rounded-full object-cover"
           width="56"
           height="56"
+          sizes="56px"
+          format="webp"
+          quality="80"
           loading="eager"
           decoding="async"
         />

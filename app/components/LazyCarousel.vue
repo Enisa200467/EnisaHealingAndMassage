@@ -1,6 +1,6 @@
 <template>
-  <UCarousel v-bind="$attrs">
-    <slot />
+  <UCarousel v-bind="$attrs" v-slot="slotProps">
+    <slot v-bind="slotProps" />
   </UCarousel>
 </template>
 

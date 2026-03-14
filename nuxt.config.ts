@@ -22,6 +22,30 @@ export default defineNuxtConfig({
         statusCode: 301,
       },
     },
+    "/over-enisa": {
+      redirect: {
+        to: "/over-mij",
+        statusCode: 301,
+      },
+    },
+    "/over-enisa/": {
+      redirect: {
+        to: "/over-mij",
+        statusCode: 301,
+      },
+    },
+    "/over-enise": {
+      redirect: {
+        to: "/over-mij",
+        statusCode: 301,
+      },
+    },
+    "/over-enise/": {
+      redirect: {
+        to: "/over-mij",
+        statusCode: 301,
+      },
+    },
     "/enisahealingenmassage-nl-reviews": {
       redirect: {
         to: "/reviews",
@@ -43,6 +67,114 @@ export default defineNuxtConfig({
     "/healing-op-afstand/": {
       redirect: {
         to: "/behandelingen/energetische-healing",
+        statusCode: 301,
+      },
+    },
+    "/faq-veelgestelde-vragen": {
+      redirect: {
+        to: "/faq",
+        statusCode: 301,
+      },
+    },
+    "/faq-veelgestelde-vragen/": {
+      redirect: {
+        to: "/faq",
+        statusCode: 301,
+      },
+    },
+    "/chakra-healing-amsterdam-noord": {
+      redirect: {
+        to: "/behandelingen/chakra-healing",
+        statusCode: 301,
+      },
+    },
+    "/chakra-healing-amsterdam-noord/": {
+      redirect: {
+        to: "/behandelingen/chakra-healing",
+        statusCode: 301,
+      },
+    },
+    "/hypno-trajecten": {
+      redirect: {
+        to: "/behandelingen/hypnotherapie",
+        statusCode: 301,
+      },
+    },
+    "/hypno-trajecten/": {
+      redirect: {
+        to: "/behandelingen/hypnotherapie",
+        statusCode: 301,
+      },
+    },
+    "/energetische-healing": {
+      redirect: {
+        to: "/behandelingen/energetische-healing",
+        statusCode: 301,
+      },
+    },
+    "/energetische-healing/": {
+      redirect: {
+        to: "/behandelingen/energetische-healing",
+        statusCode: 301,
+      },
+    },
+    "/ontspanningmassage": {
+      redirect: {
+        to: "/behandelingen/ontspanningsmassage",
+        statusCode: 301,
+      },
+    },
+    "/ontspanningmassage/": {
+      redirect: {
+        to: "/behandelingen/ontspanningsmassage",
+        statusCode: 301,
+      },
+    },
+    "/behandelingen/loslaten-traject": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/behandelingen/loslaten-traject/": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/energetische-blokkades-opheffen": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/energetische-blokkades-opheffen/": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/hypnotherapie-amsterdam-noord": {
+      redirect: {
+        to: "/behandelingen/hypnotherapie",
+        statusCode: 301,
+      },
+    },
+    "/hypnotherapie-amsterdam-noord/": {
+      redirect: {
+        to: "/behandelingen/hypnotherapie",
+        statusCode: 301,
+      },
+    },
+    "/anti-stress": {
+      redirect: {
+        to: "/behandelingen/anti-stress",
+        statusCode: 301,
+      },
+    },
+    "/anti-stress/": {
+      redirect: {
+        to: "/behandelingen/anti-stress",
         statusCode: 301,
       },
     },

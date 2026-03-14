@@ -35,7 +35,7 @@ export const useGlobalSEO = () => {
     email: BUSINESS_INFO.contact.email,
     description: BUSINESS_INFO.description,
     priceRange: BUSINESS_INFO.priceRange,
-    image: '/images/logo.jpg',
+    image: '/images/logo.webp',
     address: getSchemaAddress() as PostalAddress,
     contactPoint: getSchemaContactPoint() as ContactPoint,
     openingHours: BUSINESS_INFO.hours.schemaFormat,

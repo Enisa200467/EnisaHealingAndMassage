@@ -52,17 +52,6 @@ useSeoMeta({
   twitterImage: "/images/hero.webp",
 });
 
-useHead({
-  link: [
-    {
-      rel: "preload",
-      as: "image",
-      href: "/images/hero.webp",
-      fetchpriority: "high",
-    },
-  ],
-});
-
 // Add structured data for the business
 useSchemaOrg([
   defineOrganization({

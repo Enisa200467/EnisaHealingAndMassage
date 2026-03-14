@@ -542,10 +542,15 @@ const resetForm = () => {
                   <div
                     class="rounded-lg overflow-hidden border-2 border-neutral-200 shadow-lg"
                   >
-                    <img
-                      src="/images/admin/codex-home-screen.png"
+                    <NuxtImg
+                      src="/images/admin/codex-home-screen.webp"
                       alt="Computer scherm met Codex interface"
                       class="w-full object-contain"
+                      format="webp"
+                      quality="80"
+                      sizes="(max-width: 1024px) 100vw, 800px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <p class="text-sm text-neutral-500 mt-2 italic">
@@ -673,10 +678,15 @@ const resetForm = () => {
                   <div
                     class="rounded-lg overflow-hidden border-2 border-primary-300 shadow-lg"
                   >
-                    <img
-                      src="/images/admin/codex-home-screen.png"
+                    <NuxtImg
+                      src="/images/admin/codex-home-screen.webp"
                       alt="Tekst plakken in chat interface"
                       class="w-full object-contain"
+                      format="webp"
+                      quality="80"
+                      sizes="(max-width: 1024px) 100vw, 800px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div
@@ -713,10 +723,15 @@ const resetForm = () => {
                   <div
                     class="rounded-lg overflow-hidden border-2 border-neutral-200 shadow-lg"
                   >
-                    <img
-                      src="/images/admin/codex-pr-bekijken.png"
+                    <NuxtImg
+                      src="/images/admin/codex-pr-bekijken.webp"
                       alt="Link naar pull request bekijken"
                       class="w-full object-contain"
+                      format="webp"
+                      quality="80"
+                      sizes="(max-width: 1024px) 100vw, 800px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div
@@ -754,10 +769,15 @@ const resetForm = () => {
                   <div
                     class="rounded-lg overflow-hidden border-2 border-neutral-200 shadow-lg"
                   >
-                    <img
-                      src="/images/admin/preview-vercel.png"
+                    <NuxtImg
+                      src="/images/admin/preview-vercel.webp"
                       alt="Vercel preview deploy link"
                       class="w-full object-contain"
+                      format="webp"
+                      quality="80"
+                      sizes="(max-width: 1024px) 100vw, 800px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div
@@ -794,10 +814,15 @@ const resetForm = () => {
                   <div
                     class="rounded-lg overflow-hidden border-2 border-amber-300 shadow-lg"
                   >
-                    <img
-                      src="/images/admin/click-to-bypass-rules.png"
+                    <NuxtImg
+                      src="/images/admin/click-to-bypass-rules.webp"
                       alt="Bypass branch protections selecteren"
                       class="w-full object-contain"
+                      format="webp"
+                      quality="80"
+                      sizes="(max-width: 1024px) 100vw, 800px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div
@@ -832,10 +857,15 @@ const resetForm = () => {
                   <div
                     class="rounded-lg overflow-hidden border-2 border-teal-300 shadow-lg"
                   >
-                    <img
-                      src="/images/admin/click-to-confirm-merge.png"
+                    <NuxtImg
+                      src="/images/admin/click-to-confirm-merge.webp"
                       alt="Confirm merge knop"
                       class="w-full object-contain"
+                      format="webp"
+                      quality="80"
+                      sizes="(max-width: 1024px) 100vw, 800px"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div
