@@ -2,7 +2,7 @@ import type { H3Event } from "h3";
 import { queryCollection } from "@nuxt/content/server";
 
 export default defineEventHandler(async (event) => {
-  const baseUrl = "https://enisahealingenmassage.nl";
+  const baseUrl = "https://www.enisahealingenmassage.nl";
   const currentDate = new Date().toISOString().split("T")[0];
 
   // Define static pages with last modified dates and metadata

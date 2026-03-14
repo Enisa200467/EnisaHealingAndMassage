@@ -114,10 +114,10 @@ setPageSEO({
             <div class="flex justify-center lg:justify-end">
               <div class="relative">
                 <NuxtImg
-                  src="/images/enisa-intro.jpg"
+                  src="/images/enisa-intro.webp"
                   alt="Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie"
                   class="w-80 h-80 object-cover rounded-full shadow-2xl"
-                  format="jpg"
+                  format="webp"
                   quality="80"
                   loading="eager"
                   sizes="320px"

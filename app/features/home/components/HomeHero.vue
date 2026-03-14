@@ -6,13 +6,18 @@
     <!-- Background Image using NuxtImg -->
     <NuxtImg
       src="/images/hero.webp"
+      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1280px"
       alt="Serene lotus flower floating on water with soft pink glow, symbolizing tranquility and healing"
       role="presentation"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"
+      width="2752"
+      height="1536"
       format="webp"
-      quality="80"
-      fetchpriority="high"
+      quality="70"
       preload
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
     />
     <UContainer class="py-20 md:py-32">
       <h1

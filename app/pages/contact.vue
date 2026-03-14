@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'Neem contact op in Amsterdam Noord voor vragen over behandelingen, tarieven of om een afspraak te maken. Bel of stuur een WhatsApp bericht.',
   ogTitle: 'Contact - Enisa Healing & Massage Amsterdam Noord',
   ogDescription: 'Neem contact op in Amsterdam Noord voor vragen over behandelingen, tarieven of om een afspraak te maken. Bel of stuur een WhatsApp bericht.',
-  ogImage: 'https://enisahealingmassage.nl/images/hero.png',
+  ogImage: 'https://enisahealingmassage.nl/images/hero.webp',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Contact - Enisa Healing & Massage Amsterdam Noord',
   twitterDescription: 'Neem contact op in Amsterdam Noord voor vragen over behandelingen, tarieven of om een afspraak te maken.',
-  twitterImage: 'https://enisahealingmassage.nl/images/hero.png',
+  twitterImage: 'https://enisahealingmassage.nl/images/hero.webp',
 });
 </script>
 

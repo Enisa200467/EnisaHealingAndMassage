@@ -17,7 +17,7 @@ items:
   - Scannen van het lichaam om energetische blokkades te voelen
   - Doorsturen van geneeskrachtige energie naar waar het nodig is
   - Ervaren van warmte en rustgevende energie door je hele lichaam
-image: /images/healing-behandeling-4.jpg
+image: /images/healing-behandeling-4.webp
 imageAlt: Energetische healing behandeling met geneeskrachtige energie
 title: Wat kun je verwachten?
 ---

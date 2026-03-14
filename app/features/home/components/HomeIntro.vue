@@ -1,54 +1,70 @@
 <template>
   <PageSection primary aria-labelledby="intro-heading">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
-      <div class="relative w-full max-w-md mx-auto">
-        <!-- Carousel Pause/Play Control -->
-        <button
-          @click="toggleAutoplay"
-          class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 flex items-center justify-center"
-          :aria-label="
-            isPaused
-              ? 'Start automatische diavoorstelling'
-              : 'Pauzeer automatische diavoorstelling'
-          "
-          :aria-pressed="!isPaused"
-        >
-          <UIcon
-            :name="isPaused ? 'i-mdi-play' : 'i-mdi-pause'"
-            class="w-5 h-5 text-neutral-700 flex-shrink-0"
-          />
-        </button>
+      <div ref="carouselObserver" class="relative w-full max-w-md mx-auto">
+        <template v-if="isCarouselVisible">
+          <!-- Carousel Pause/Play Control -->
+          <button
+            @click="toggleAutoplay"
+            class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 flex items-center justify-center"
+            :aria-label="
+              isPaused
+                ? 'Start automatische diavoorstelling'
+                : 'Pauzeer automatische diavoorstelling'
+            "
+            :aria-pressed="!isPaused"
+          >
+            <UIcon
+              :name="isPaused ? 'i-mdi-play' : 'i-mdi-pause'"
+              class="w-5 h-5 text-neutral-700 flex-shrink-0"
+            />
+          </button>
 
-        <!-- Live region for screen reader announcements -->
+          <!-- Live region for screen reader announcements -->
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            class="sr-only"
+          >
+            {{ currentSlideAnnouncement }}
+          </div>
+
+          <LazyCarousel
+            ref="carouselRef"
+            v-slot="{ item }"
+            dots
+            loop
+            :autoplay="autoplayConfig"
+            :items="visibleCarouselItems"
+            class="w-full"
+            aria-label="Fotogalerij van Enisa"
+            @update:modelValue="onSlideChange"
+          >
+            <div
+              class="relative w-full aspect-[3/2] overflow-hidden rounded-lg"
+            >
+              <NuxtImg
+                :src="item.src"
+                :alt="item.alt"
+                class="w-full h-full object-cover"
+                :width="448"
+                :height="299"
+                sizes="(max-width: 768px) 90vw, 448px"
+                :loading="item === carouselItems[0] ? 'eager' : 'lazy'"
+                :fetchpriority="item === carouselItems[0] ? 'high' : 'auto'"
+                format="webp"
+                quality="80"
+                @load="onFirstImageLoad(item)"
+              />
+            </div>
+          </LazyCarousel>
+        </template>
         <div
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-          class="sr-only"
-        >
-          {{ currentSlideAnnouncement }}
-        </div>
-
-        <UCarousel
-          ref="carouselRef"
-          v-slot="{ item }"
-          dots
-          loop
-          :autoplay="autoplayConfig"
-          :items="carouselItems"
-          class="w-full"
-          aria-label="Fotogalerij van Enisa"
-          @update:modelValue="onSlideChange"
-        >
-          <NuxtImg
-            :src="item.src"
-            :alt="item.alt"
-            class="w-full h-full object-cover rounded-lg"
-            loading="lazy"
-            format="webp"
-            quality="80"
-          />
-        </UCarousel>
+          v-else
+          class="w-full aspect-[3/4] rounded-lg bg-neutral-100"
+          aria-hidden="true"
+        />
       </div>
 
       <div class="text-center md:text-left">
@@ -81,50 +97,58 @@
 
 <script setup lang="ts">
 const routes = useRoutes();
+const LazyCarousel = defineAsyncComponent(
+  () => import("~/components/LazyCarousel.vue"),
+);
 
 const carouselItems = [
   {
-    src: "/images/enisa-schilderij.png",
+    src: "/images/enisa-schilderij.webp",
     alt: "Close-up van Enisa, energetisch therapeut in Amsterdam Noord",
   },
   {
-    src: "/images/enisa-intro.jpg",
+    src: "/images/enisa-intro.webp",
     alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
   },
   {
-    src: "/images/enisa-healing-in-studio.jpg",
-    alt: "Enisa - Gecertificeerd massagetherapeut en healing practitioner met meer dan 10 jaar ervaring in holistische therapie",
-  },
-  {
-    src: "/images/healing-behandeling.jpg",
+    src: "/images/healing-behandeling.webp",
     alt: "Healing behandeling in de praktijk van Enisa",
   },
   {
-    src: "/images/healing-behandeling-2.jpg",
+    src: "/images/healing-behandeling-2.webp",
     alt: "Energetische healing sessie in een rustige behandelruimte",
   },
   {
-    src: "/images/healing-behandeling-3.jpg",
+    src: "/images/healing-behandeling-3.webp",
     alt: "Healing behandeling met zachte handoplegging",
   },
   {
-    src: "/images/healing-behandeling-4.jpg",
+    src: "/images/praktijk-wacht-ruimte.webp",
+    alt: "Wachtruimte Enisa Healing & Massage Amsterdam Noord",
+  },
+  {
+    src: "/images/healing-behandeling-4.webp",
     alt: "Ontspannende healing behandeling bij Enisa",
   },
   {
-    src: "/images/buddha.jpg",
+    src: "/images/buddha.webp",
     alt: "Buddha beeld in de praktijk voor een rustige sfeer",
   },
-  {
-    src: "/images/bos.jpg",
-    alt: "Rustig boslandschap dat ontspanning en balans uitstraalt",
-  },
 ];
+
+const itemsToRender = ref(1);
+const hasStartedBatchLoad = ref(false);
+const visibleCarouselItems = computed(() => {
+  return carouselItems.slice(0, itemsToRender.value);
+});
 
 // Carousel accessibility controls
 const isPaused = ref(false);
 const currentSlide = ref(0);
 const carouselRef = ref();
+const carouselObserver = ref<HTMLElement | null>(null);
+const isCarouselVisible = ref(false);
+let observer: IntersectionObserver | null = null;
 
 // Computed autoplay config
 const autoplayConfig = computed(() => {
@@ -149,15 +173,78 @@ const onSlideChange = (index: number) => {
   currentSlide.value = index;
 };
 
-// Pause on keyboard interaction (accessibility)
+const loadNextBatch = () => {
+  if (itemsToRender.value >= carouselItems.length) {
+    return;
+  }
+
+  itemsToRender.value = Math.min(carouselItems.length, itemsToRender.value + 3);
+
+  if (itemsToRender.value < carouselItems.length) {
+    setTimeout(loadNextBatch, 250);
+  }
+};
+
+const onFirstImageLoad = (item: (typeof carouselItems)[number]) => {
+  if (hasStartedBatchLoad.value || item !== carouselItems[0]) {
+    return;
+  }
+
+  hasStartedBatchLoad.value = true;
+  setTimeout(loadNextBatch, 150);
+};
+
+const focusInHandler = () => {
+  if (!isPaused.value) {
+    isPaused.value = true;
+  }
+};
+
+const setupObserver = () => {
+  if (!carouselObserver.value || isCarouselVisible.value) {
+    return;
+  }
+
+  if (typeof IntersectionObserver === "undefined") {
+    isCarouselVisible.value = true;
+    return;
+  }
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        isCarouselVisible.value = true;
+        observer?.disconnect();
+        observer = null;
+      }
+    },
+    { rootMargin: "200px" },
+  );
+
+  observer.observe(carouselObserver.value);
+};
+
 onMounted(() => {
+  setupObserver();
+});
+
+watch(isCarouselVisible, async (visible) => {
+  if (!visible) {
+    return;
+  }
+
+  await nextTick();
   const carousel = carouselRef.value?.$el;
   if (carousel) {
-    carousel.addEventListener("focusin", () => {
-      if (!isPaused.value) {
-        isPaused.value = true;
-      }
-    });
+    carousel.addEventListener("focusin", focusInHandler);
   }
+});
+
+onUnmounted(() => {
+  const carousel = carouselRef.value?.$el;
+  if (carousel) {
+    carousel.removeEventListener("focusin", focusInHandler);
+  }
+  observer?.disconnect();
 });
 </script>

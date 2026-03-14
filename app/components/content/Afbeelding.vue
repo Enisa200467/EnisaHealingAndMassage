@@ -7,7 +7,7 @@
       format="webp"
       quality="80"
       loading="lazy"
-      sizes="sm:100vw md:80vw lg:600px"
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 600px"
     />
     <figcaption
       v-if="caption"

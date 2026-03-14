@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'Transparante prijzen voor alle massages en behandelingen in Amsterdam Noord. Van helende behandelingen tot ontspanningsmassages. Bekijk het complete prijsoverzicht.',
   ogTitle: 'Tarieven - Enisa Healing & Massage Amsterdam Noord',
   ogDescription: 'Transparante prijzen voor alle massages en behandelingen in Amsterdam Noord.',
-  ogImage: 'https://enisahealingmassage.nl/images/hero.png',
+  ogImage: 'https://enisahealingmassage.nl/images/hero.webp',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Tarieven - Enisa Healing & Massage Amsterdam Noord',
   twitterDescription: 'Transparante prijzen voor alle massages en behandelingen in Amsterdam Noord.',
-  twitterImage: 'https://enisahealingmassage.nl/images/hero.png',
+  twitterImage: 'https://enisahealingmassage.nl/images/hero.webp',
 });
 </script>
 

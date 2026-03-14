@@ -19,7 +19,7 @@ defineProps<{
               format="webp"
               quality="90"
               loading="lazy"
-              sizes="sm:100vw lg:33vw"
+              sizes="(max-width: 1024px) 100vw, 33vw"
             />
           </div>
         </div>
