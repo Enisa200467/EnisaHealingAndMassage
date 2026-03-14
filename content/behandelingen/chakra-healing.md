@@ -21,7 +21,7 @@ items:
   - Hands-on healing langs je chakra's, meestal zonder aanraking
   - Oude emoties kunnen loskomen en worden bevrijd
   - Nabespreking en integratie van de ervaring
-image: /images/enisa-healing-in-studio.webp
+image: /images/enisa-healing-handen-in-de-lucht.webp
 imageAlt: Chakra healing sessie in rustige behandelruimte in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
