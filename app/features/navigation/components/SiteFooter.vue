@@ -216,6 +216,7 @@ const { activeTreatments: allTreatments } = useTreatments();
 // Reactively define footer links based on routes
 const footerLinks = computed(() => ({
   info: [
+    { label: "Anti-stress", path: routes.pages.antiStress },
     { label: "Veelgestelde Vragen", path: routes.pages.faq },
     { label: "Reviews & Ervaringen", path: routes.pages.reviews },
   ],
