@@ -1,0 +1,1 @@
+Welkom! Mijn naam is Enisa, energetische healer in Amsterdam Noord met een focus op hypnotherapie. Ik begeleid mensen vanuit het hart en werk met de helende energie die door mijn handen stroomt. Met meer dan 11 jaar ervaring combineer ik energetische therapie, chakra healing, hypnotherapie en massage om mensen te helpen bij hun innerlijke reis naar balans en welzijn.
