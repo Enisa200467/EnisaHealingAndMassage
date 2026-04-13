@@ -25,7 +25,7 @@ image: /images/enisa-healing-handen-in-de-lucht.jpg
 imageAlt: Chakra healing sessie in rustige behandelruimte in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik intuïtief met de energiestroom in je lichaam om je zeven hoofdchakra's in balans te brengen. Deze zachte behandeling helpt bij het oplossen van energetische blokkades en het herstellen van balans op fysiek, emotioneel en mentaal niveau. Dankzij mijn jarenlange ervaring en aangeboren gave om genezende energie door te geven, ondersteun ik je in het loslaten van spanningen, pijn en emotionele lasten. Daarnaast ben ik heel goed.
+Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik intuïtief met de energiestroom in je lichaam om je zeven hoofdchakra's in balans te brengen. Deze zachte behandeling helpt bij het oplossen van energetische blokkades en het herstellen van balans op fysiek, emotioneel en mentaal niveau. Dankzij mijn jarenlange ervaring en aangeboren gave om genezende energie door te geven, ondersteun ik je in het loslaten van spanningen, pijn en emotionele lasten. Daarnaast voel ik intuïtief aan wat jij nodig hebt, zodat de behandeling bij jou past.
 ::
 
 ::twee-kolommen
