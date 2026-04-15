@@ -24,7 +24,7 @@
         id="hero-heading"
         class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-md"
       >
-        Vind Balans en Diepe Ontspanning
+        Vind Balans en Diepe Ontspanning in Amsterdam Noord
       </h1>
       <p class="mb-6 text-lg leading-8 text-gray-200 lg:text-xl drop-shadow">
         Ervaar de kracht van helende aanraking in Amsterdam Noord en gun jezelf
