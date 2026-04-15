@@ -133,6 +133,12 @@ const mobileNavItems = computed<NavigationMenuItem[]>(() => [
     onSelect: closeMobileMenu,
   },
   {
+    label: "Keltisch Trouwen",
+    icon: "i-mdi-heart",
+    to: routes.pages.keltischTrouwen,
+    onSelect: closeMobileMenu,
+  },
+  {
     label: "Behandelingen",
     icon: "i-mdi-sparkles",
     children: treatmentNavEntries.value,
@@ -169,6 +175,11 @@ const desktopNavItems = computed<NavigationMenuItem[]>(() => [
     label: "Over Mij",
     icon: "i-mdi-account",
     to: routes.pages.about,
+  },
+  {
+    label: "Keltisch Trouwen",
+    icon: "i-mdi-heart",
+    to: routes.pages.keltischTrouwen,
   },
   {
     label: "Behandelingen",
