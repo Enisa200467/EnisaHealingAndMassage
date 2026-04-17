@@ -21,7 +21,7 @@ image: /images/healing-behandeling-4.webp
 imageAlt: Energetische healing behandeling met geneeskrachtige energie
 title: Wat kun je verwachten?
 ---
-Sinds 2014 geef ik met veel liefde healings in mijn praktijk in Amsterdam Noord. De behandeling gebeurt vrijwel zonder lichamelijke aanraking, waarbij je oude energie loslaat en blokkades worden opgeheven. Je lichaam ontvangt precies de energie die het nodig heeft voor herstel en balans.
+Sinds 2014 geef ik met veel liefde healings in mijn praktijk in Amsterdam Noord. Als geboren healer voel ik intuïtief aan wat er nodig is om balans te brengen in jouw lichaam én in je leven. De energie helpt bij het opruimen van blokkades die je kunnen belemmeren op gebieden zoals werk, relaties en familie. Je ontvangt precies de helderheid en kracht die nodig is voor herstel op alle vlakken van je levenspad.
 ::
 
 ::twee-kolommen
