@@ -41,7 +41,7 @@ const googleMapsUrl = getGoogleMapsUrl();
                 IJplein / Amsterdam Noord.<br>
                 Rijd naar IJplein 69.<br>
                 Er is betaald parkeren rondom IJplein en in de buurt van het
-                gebouw (meestal ± € 2,50 per uur).
+                gebouw (meestal ± € 3,00 per uur).
               </p>
             </UCard>
 
