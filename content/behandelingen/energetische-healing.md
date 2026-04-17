@@ -1,11 +1,11 @@
 ---
 title: Energetische Healing
-description: Herstel de natuurlijke energiestroom in je lichaam met een intuïtieve energetische healing in Amsterdam Noord. Perfect voor diepgaande ontspanning en het oplossen van energetische blokkades.
+description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met Energetische Healing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
 ---
 
 ::behandeling-hero
 ---
-description: Herstel de natuurlijke energiestroom in je lichaam met een intuïtieve energetische healing in Amsterdam Noord. Perfect voor diepgaande ontspanning en het oplossen van energetische blokkades.
+description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met Energetische Healing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
 id: 1cc75141-005d-4d62-a88e-0f93b62370b9
 ---
 ::
