@@ -46,7 +46,7 @@ Sinds 2014 geef ik met veel liefde healings in mijn praktijk in Amsterdam Noord.
     - Je fysieke pijn of klachten wilt verlichten
     - Je slecht slaapt of last hebt van hoofdpijn
     - Je sneller wilt herstellen van blessures
-    - Je emotionele blokkades wilt loslaten
+    - Je innerlijke rust wilt vinden
     - Je energie van anderen wilt loslaten
     - Je maandelijks jezelf een reset wilt gunnen
   title: Voor Wie?
