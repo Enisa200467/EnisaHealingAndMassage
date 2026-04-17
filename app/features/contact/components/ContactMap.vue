@@ -64,15 +64,16 @@ const googleMapsUrl = getGoogleMapsUrl();
                 69.<br><br>
 
                 <span class="font-medium"
-                  >Met metro en bus (vanuit Amsterdam of Amsterdam
-                  Centraal):</span
-                ><br>
-                Neem metro 52 (Noord/Zuidlijn) en stap uit bij station
-                Noord.<br>
-                Vanaf station Noord neem je bus 38 en stap je uit bij halte
-                Valkenweg.<br>
-                Vanaf daar is het ongeveer 350 meter lopen (± 5 minuten) naar
-                IJplein 69.
+                  >Met metro en bus (vanuit Amsterdam Centraal):</span
+                ><br><br>
+                Neem Metro 52 (Noord/Zuidlijn) in de richting van Noord.<br><br>
+                Stap uit bij de eerste halte na het Centraal Station: Station
+                Noorderpark.<br><br>
+                Neem vanaf Station Noorderpark Bus 34 (richting Olof
+                Palmeplein).<br><br>
+                Stap uit bij de halte Valkenweg.<br><br>
+                Vanaf daar is het nog ongeveer 350 meter lopen (± 5 minuten)
+                naar IJplein 69.
               </p>
             </UCard>
 
