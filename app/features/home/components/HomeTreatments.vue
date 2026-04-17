@@ -3,7 +3,7 @@
     <UContainer>
       <div class="text-center">
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-          Ontdek Onze Behandelingen
+          Ontdek Mijn Behandelingen
         </h2>
         <p class="mt-4 text-lg leading-8 text-gray-600">
           Kies de behandeling die bij jou past voor heling en ontspanning in
