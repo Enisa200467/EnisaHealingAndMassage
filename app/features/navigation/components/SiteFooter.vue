@@ -56,6 +56,9 @@
                   Tarieven
                 </ULink>
               </li>
+              <li class="text-neutral-600 dark:text-neutral-300 text-sm">
+                Amsterdam Noord
+              </li>
             </ul>
           </div>
 
