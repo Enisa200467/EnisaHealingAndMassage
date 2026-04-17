@@ -42,13 +42,13 @@ Sinds 2014 geef ik met veel liefde healings in mijn praktijk in Amsterdam Noord.
   :::voor-wie
   ---
   items:
-    - Je last hebt van chronische vermoeidheid of stress
+    - Je last hebt van stress of chronische vermoeidheid
     - Je fysieke pijn of klachten wilt verlichten
     - Je slecht slaapt of last hebt van hoofdpijn
     - Je sneller wilt herstellen van blessures
-    - Je innerlijke rust wilt vinden
-    - Je energie van anderen wilt loslaten
-    - Je maandelijks jezelf een reset wilt gunnen
+    - Je innerlijke rust en helderheid zoekt op je levenspad
+    - Je de energie van anderen wilt loslaten
+    - Je jezelf maandelijks een energetische reset gunt
   title: Voor Wie?
   ---
   :::
