@@ -15,7 +15,7 @@ const allTreatments = computed(() => activeTreatments.value.slice(0, 6));
         Andere Behandelingen
       </h2>
       <p class="text-neutral-600 max-w-2xl mx-auto">
-        Ontdek onze andere behandelingen die perfect kunnen aanvullen op jouw welzijnsreis.
+        Ontdek mijn andere behandelingen die een mooie aanvulling kunnen zijn op jouw welzijnsreis.
       </p>
     </header>
 
