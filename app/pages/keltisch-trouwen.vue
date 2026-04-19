@@ -3,8 +3,11 @@
     <section class="text-center space-y-6">
       <UBadge color="primary" variant="soft" size="lg">Nieuwe service</UBadge>
       <h1 class="text-4xl md:text-5xl font-bold text-primary-700">
-        Keltisch Trouwen
+        Keltische Handfasting & Spirituele Huwelijkszegening
       </h1>
+      <h2 class="text-2xl md:text-3xl font-semibold text-primary-600">
+        Een unieke en authentieke verbintenis door Enisa
+      </h2>
       <p class="mx-auto max-w-3xl text-lg text-gray-700 leading-relaxed">
         Welkom op de tijdelijke servicepagina voor Keltisch Trouwen. Hier komt
         binnenkort de volledige uitleg over de ceremonie, opbouw en mogelijkheden.
