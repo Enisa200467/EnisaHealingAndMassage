@@ -13,6 +13,7 @@ export const useRoutes = () => {
   // Static page routes
   const pages = {
     home: '/',
+    keltischTrouwen: '/keltisch-trouwen',
     about: '/over-mij',
     treatments: '/behandelingen',
     contact: '/contact',
