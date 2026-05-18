@@ -5,7 +5,30 @@
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
           Ontdek Mijn Behandelingen
         </h2>
-        <p class="mt-4 text-lg leading-8 text-gray-600">
+        <div
+          class="mx-auto mt-6 max-w-3xl rounded-3xl border border-amber-200/80 bg-gradient-to-r from-amber-50 via-white to-orange-50 px-6 py-6 shadow-sm ring-1 ring-black/5"
+        >
+          <p class="text-xl font-semibold tracking-tight text-neutral-900 sm:text-2xl">
+            Vertrouwd door meer dan 350 cliënten
+          </p>
+          <div
+            class="mt-3 flex items-center justify-center gap-1.5"
+            aria-label="5 van de 5 sterren"
+          >
+            <UIcon
+              v-for="star in 5"
+              :key="star"
+              name="i-mdi-star"
+              class="h-7 w-7 text-amber-500"
+              aria-hidden="true"
+            />
+          </div>
+          <p class="mt-3 text-base font-medium leading-7 text-neutral-700 sm:text-lg">
+            Gemiddeld beoordeeld met 5 sterren op Google, Treatwell en mijn
+            website.
+          </p>
+        </div>
+        <p class="mt-5 text-lg leading-8 text-gray-600">
           Kies de behandeling die bij jou past voor heling en ontspanning in
           Amsterdam Noord.
         </p>
