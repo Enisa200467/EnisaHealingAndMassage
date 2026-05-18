@@ -50,6 +50,14 @@
               </li>
               <li>
                 <ULink
+                  :to="routes.pages.keltischeHandfasting"
+                  class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
+                >
+                  Keltische Handfasting
+                </ULink>
+              </li>
+              <li>
+                <ULink
                   :to="routes.pages.tarieven"
                   class="text-neutral-600 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm"
                 >

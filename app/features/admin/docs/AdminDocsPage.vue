@@ -45,6 +45,7 @@ const generatePrompt = () => {
       "/behandelingen": "app/pages/behandelingen/index.vue",
       "/contact": "app/pages/contact.vue",
       "/faq": "app/pages/faq.vue",
+      "/keltische-handfasting": "app/pages/keltische-handfasting.vue",
       "/over-mij": "app/pages/over-mij.vue",
       "/reviews": "app/pages/reviews.vue",
       "/tarieven": "app/pages/tarieven.vue",

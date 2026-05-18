@@ -26,6 +26,15 @@ export default defineEventHandler(async (event) => {
         "Leer meer over Enisa, gecertificeerd massagetherapeut en healing practitioner.",
     },
     {
+      url: "/keltische-handfasting",
+      priority: "0.7",
+      changefreq: "monthly",
+      lastmod: currentDate,
+      title: "Keltische Handfasting - Enisa Healing & Massage",
+      description:
+        "Ontdek binnenkort meer over Keltische Handfasting ceremonies, symboliek en persoonlijke afstemming.",
+    },
+    {
       url: "/contact",
       priority: "0.8",
       changefreq: "monthly",

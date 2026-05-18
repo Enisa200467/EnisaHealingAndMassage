@@ -90,6 +90,7 @@ export const useMultiPageSEOAudit = () => {
     const titleMap: Record<string, string> = {
       home: 'Homepage',
       about: 'Over Mij',
+      keltischeHandfasting: 'Keltische Handfasting',
       treatments: 'Behandelingen Overzicht',
       contact: 'Contact',
       booking: 'Boeken',
