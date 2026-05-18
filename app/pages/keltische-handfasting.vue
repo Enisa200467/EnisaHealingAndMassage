@@ -203,10 +203,10 @@ setPageSEO({
           </div>
         </div>
 
-        <figure class="space-y-4">
+        <figure class="max-w-xl mx-auto lg:max-w-none">
           <div class="overflow-hidden rounded-[1.75rem] shadow-xl">
             <NuxtImg
-              src="/images/handfasting/hands-ribbons-detail.webp"
+              src="/images/handfasting/hands-ribbons-detail.webp?v=2"
               alt="Detail van handen en linten tijdens een handfasting ceremonie"
               class="w-full h-full object-cover aspect-[4/5] md:aspect-[5/4]"
               width="1200"
@@ -217,7 +217,9 @@ setPageSEO({
               quality="82"
             />
           </div>
-          <figcaption class="text-sm text-neutral-500 text-center">
+          <figcaption
+            class="mt-4 rounded-2xl bg-white/80 px-5 py-3 text-sm italic leading-relaxed text-neutral-600 text-center shadow-sm ring-1 ring-primary-100"
+          >
             De verbinding van harten, gesymboliseerd door handfasting.
           </figcaption>
         </figure>
@@ -225,8 +227,8 @@ setPageSEO({
     </PageSection>
 
     <PageSection aria-labelledby="about-heading">
-      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
-        <div>
+      <div class="max-w-6xl mx-auto">
+        <div class="max-w-3xl mb-10">
           <h2
             id="about-heading"
             class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6"
@@ -243,51 +245,42 @@ setPageSEO({
             maar ook echt landt. Voor jullie, en voor iedereen die erbij
             aanwezig is.
           </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <UCard>
-              <template #header>
-                <div class="flex items-center gap-3">
-                  <UIcon
-                    name="i-mdi-candle"
-                    class="w-6 h-6 text-primary-500"
-                  />
-                  <h3 class="text-lg font-semibold">Rust in het moment</h3>
-                </div>
-              </template>
-              <p class="text-neutral-600">
-                Een ceremonie die gedragen voelt en waarin aandacht belangrijker
-                is dan vormelijkheid.
-              </p>
-            </UCard>
-
-            <UCard>
-              <template #header>
-                <div class="flex items-center gap-3">
-                  <UIcon
-                    name="i-mdi-microphone"
-                    class="w-6 h-6 text-secondary-500"
-                  />
-                  <h3 class="text-lg font-semibold">Warme begeleiding</h3>
-                </div>
-              </template>
-              <p class="text-neutral-600">
-                Heldere begeleiding tijdens de ceremonie, zodat jullie je kunnen
-                richten op elkaar en op de beleving.
-              </p>
-            </UCard>
-          </div>
         </div>
 
-        <div class="grid grid-cols-1 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+          <UCard class="h-full">
+            <template #header>
+              <div class="flex items-center gap-3">
+                <UIcon
+                  name="i-mdi-candle"
+                  class="w-6 h-6 text-primary-500"
+                />
+                <h3 class="text-lg font-semibold">Rust in het moment</h3>
+              </div>
+            </template>
+            <div class="space-y-4">
+              <p class="text-neutral-700 leading-relaxed">
+                Ik help jullie vertragen, zodat de ceremonie niet alleen mooi
+                oogt, maar ook echt gevoeld wordt. Er ontstaat ruimte voor
+                aandacht, verbinding en aanwezigheid in het moment zelf.
+              </p>
+              <blockquote
+                class="border-l-2 border-primary-200 pl-4 text-sm italic leading-relaxed text-neutral-500"
+              >
+                “Hier komt een echte quote van een bruidspaar over de rust, de
+                warmte en de oprechtheid van de ceremonie.”
+              </blockquote>
+            </div>
+          </UCard>
+
           <div class="overflow-hidden rounded-[1.75rem] shadow-xl">
             <NuxtImg
               src="/images/handfasting/enisa-with-guest.webp"
               alt="Enisa lachend samen met een gast tijdens de ceremonie"
-              class="w-full h-full object-cover aspect-[4/5]"
+              class="w-full h-full object-cover aspect-[5/4]"
               width="1000"
-              height="1250"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              height="800"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               loading="lazy"
               format="webp"
               quality="82"
@@ -298,15 +291,40 @@ setPageSEO({
             <NuxtImg
               src="/images/handfasting/enisa-microphone.webp"
               alt="Enisa met microfoon tijdens een spirituele huwelijksceremonie"
-              class="w-full h-full object-cover aspect-[4/5]"
+              class="w-full h-full object-cover aspect-[5/4]"
               width="1000"
-              height="1250"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              height="800"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               loading="lazy"
               format="webp"
               quality="82"
             />
           </div>
+
+          <UCard class="h-full">
+            <template #header>
+              <div class="flex items-center gap-3">
+                <UIcon
+                  name="i-mdi-microphone"
+                  class="w-6 h-6 text-secondary-500"
+                />
+                <h3 class="text-lg font-semibold">Warme begeleiding</h3>
+              </div>
+            </template>
+            <div class="space-y-4">
+              <p class="text-neutral-700 leading-relaxed">
+                Ik begeleid het ritueel met aandacht en zachtheid, zodat jullie
+                je veilig en ontspannen kunnen richten op elkaar en op de
+                beleving van de ceremonie.
+              </p>
+              <blockquote
+                class="border-l-2 border-secondary-200 pl-4 text-sm italic leading-relaxed text-neutral-500"
+              >
+                “Hier komt een echte quote van een bruidspaar over de
+                begeleiding, de sfeer en hoe persoonlijk het moment voelde.”
+              </blockquote>
+            </div>
+          </UCard>
         </div>
       </div>
     </PageSection>
