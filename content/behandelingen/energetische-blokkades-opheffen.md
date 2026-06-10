@@ -14,7 +14,7 @@ id: da84341d-d8cd-4db7-bacf-7d2495ecccb4
 ---
 items:
   - "Sessie 1 (120 min): Meditatie gecombineerd met chakra healing - €160"
-  - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €160"
+  - "Sessie 2 (120 min): Meditatie en healing voor diepere verwerking - €160"
   - "Sessie 3 (120 min): Twee meditaties om het proces te integreren met healing - €160"
   - "Traject: 3 sessies voor €480 (Losse sessies: €160 per sessie)"
 image: /images/loslaten-traject.webp
@@ -74,7 +74,7 @@ Het kan ook gaan om herinneringen uit je kindertijd. Dat hoeven geen slechte her
 #### Sessie 1: Meditatie met Chakra Healing (120 minuten - €160)
 De eerste sessie combineert een geleide meditatie met chakra healing. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
 
-#### Sessie 2: Meditatie en Healing voor Diepere Verwerking (90 minuten - €160)
+#### Sessie 2: Meditatie en Healing voor Diepere Verwerking (120 minuten - €160)
 In de tweede sessie gaan we dieper in op wat er in de eerste sessie is losgekomen. Met meditatie en healing werk je aan het verwerken van oude pijn en patronen. Deze sessie is gericht op acceptatie en vergeving.
 
 #### Sessie 3: Meditaties met Healing ter Integratie (120 minuten - €160)
