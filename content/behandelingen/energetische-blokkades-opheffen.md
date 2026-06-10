@@ -13,11 +13,11 @@ id: da84341d-d8cd-4db7-bacf-7d2495ecccb4
 ::behandeling-sectie
 ---
 items:
-  - "Sessie 1 (90 min): Meditatie gecombineerd met chakra healing - €130"
-  - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €130"
-  - "Sessie 3 (90 min): Twee meditaties om het proces te integreren - €130"
-  - "Sessie 4 (60 min): Afrondende chakra healing behandeling - €85"
-  - "Traject: 4 sessies voor €475 (los boeken: €475)"
+  - "Sessie 1 (120 min): Meditatie gecombineerd met chakra healing - €160"
+  - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €160"
+  - "Sessie 3 (120 min): Twee meditaties om het proces te integreren  met healing - €160"
+  - "Traject: 3 sessies voor €480"
+  - "(Losse sessies: €160 per sessie)"
 image: /images/loslaten-traject.webp
 imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?
