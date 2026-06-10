@@ -13,16 +13,15 @@ id: da84341d-d8cd-4db7-bacf-7d2495ecccb4
 ::behandeling-sectie
 ---
 items:
-  - "Sessie 1 (90 min): Meditatie gecombineerd met chakra healing - €130"
-  - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €130"
-  - "Sessie 3 (90 min): Twee meditaties om het proces te integreren - €130"
-  - "Sessie 4 (60 min): Afrondende chakra healing behandeling - €85"
-  - "Traject: 4 sessies voor €475 (los boeken: €475)"
+  - "Sessie 1 (120 min): Meditatie gecombineerd met chakra healing - €160"
+  - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking - €160"
+  - "Sessie 3 (120 min): Twee meditaties om het proces te integreren met healing - €160"
+  - "Traject: 3 sessies voor €480 (Losse sessies: €160 per sessie)"
 image: /images/loslaten-traject.webp
 imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
-Het traject Energetische blokkades opheffen in mijn praktijk in Amsterdam Noord bestaat uit vier sessies waarin je stap voor stap werkt aan het losmaken van oude patronen en vastzittende energie. Met een combinatie van meditaties en healings ontstaat er meer ruimte, helderheid en innerlijke rust. Loslaten betekent niet vergeten, maar kiezen voor jezelf en verdergaan met vertrouwen.
+Het traject Energetische blokkades opheffen in mijn praktijk in Amsterdam Noord bestaat uit drie sessies waarin je stap voor stap werkt aan het losmaken van oude patronen en vastzittende energie. Met een combinatie van meditaties en healings ontstaat er meer ruimte, helderheid en innerlijke rust. Loslaten betekent niet vergeten, maar kiezen voor jezelf en verdergaan met vertrouwen.
 ::
 
 ::twee-kolommen
@@ -58,9 +57,9 @@ Het traject Energetische blokkades opheffen in mijn praktijk in Amsterdam Noord 
 ::
 
 ::uitklap-info{title="Meer over Energetische blokkades opheffen"}
-### Waarom Vier Sessies?
+### Waarom Drie Sessies?
 
-Dit traject is bewust opgezet als een serie van vier sessies omdat diep loslaten tijd en ruimte nodig heeft. Elke sessie bouwt voort op de vorige, waardoor je stap voor stap dieper kunt gaan in het proces. De afwisseling tussen meditaties en healings zorgt voor een gebalanceerde aanpak die zowel mentaal als energetisch werkt.
+Dit traject is bewust opgezet als een serie van drie sessies omdat diep loslaten tijd en ruimte nodig heeft. Elke sessie bouwt voort op de vorige, waardoor je stap voor stap dieper kunt gaan in het proces. In elke sessie wordt meditatie gecombineerd met healing of chakra healing, voor een gebalanceerde aanpak die zowel mentaal als energetisch werkt.
 
 ### Wat Betekent Loslaten?
 
@@ -72,14 +71,14 @@ Het kan ook gaan om herinneringen uit je kindertijd. Dat hoeven geen slechte her
 
 ### Sessie Opbouw
 
-#### Sessie 1 & 2: Meditaties met Healing (90 minuten - €130 per sessie)
-In de eerste twee sessies combineren we gerichte meditaties met chakra healings. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
+#### Sessie 1: Meditatie met Chakra Healing (120 minuten - €160)
+De eerste sessie combineert een geleide meditatie met chakra healing. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
 
-#### Sessie 3: Twee Meditaties (90 minuten - €130)
-De derde sessie bestaat uit twee meditaties zonder healing. Dit geeft je de ruimte om zelf het proces te integreren en te werken met wat er in de eerste twee sessies is losgekomen. Deze sessie is gericht op acceptatie en vergeving.
+#### Sessie 2: Meditatie en Healing voor Diepere Verwerking (90 minuten - €160)
+In de tweede sessie gaan we dieper in op wat er in de eerste sessie is losgekomen. Met meditatie en healing werk je aan het verwerken van oude pijn en patronen. Deze sessie is gericht op acceptatie en vergeving.
 
-#### Sessie 4: Afrondende Chakra Healing (60 minuten - €85)
-De laatste sessie is een volledige chakra healing behandeling. Hiermee ronden we het traject af en zorgen we dat alle energieën weer in balans zijn. Deze behandeling helpt om het loslatingsproces af te sluiten en je energetisch te verzegelen.
+#### Sessie 3: Meditaties met Healing ter Integratie (120 minuten - €160)
+De derde sessie bestaat uit twee meditaties gecombineerd met healing. Dit geeft je de ruimte om het proces te integreren en alles wat is losgekomen een plek te geven. We ronden het traject af en zorgen dat alle energieën weer in balans zijn.
 
 ### Waar Help Dit Traject Bij?
 
@@ -108,7 +107,7 @@ Het doel van dit traject is om je vrij te maken van oude patronen en blokkades d
 
 ### Na Het Traject
 
-Na afloop van de vier sessies heb je niet alleen geleerd om los te laten, maar ook tools gekregen om dit zelf te blijven doen. De meditaties en inzichten die je opdoet zijn waardevolle middelen die je je hele leven kunt gebruiken.
+Na afloop van de drie sessies heb je niet alleen geleerd om los te laten, maar ook tools gekregen om dit zelf te blijven doen. De meditaties en inzichten die je opdoet zijn waardevolle middelen die je je hele leven kunt gebruiken.
 
 Veel mensen ervaren na het traject:
 - Meer energie en levenskracht
