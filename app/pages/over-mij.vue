@@ -20,22 +20,22 @@ const personSchema = {
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
-      name: "SoulKey Therapy Practitioner – SoulKey Academy (opgeleid door Peter Kupers)",
+      name: "Gecertificeerd SoulKey Therapy Practitioner – SoulKey Academy (opgeleid door Peter Kupers)",
       credentialCategory: "Professional Certification",
     },
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Ericksoniaanse Hypnotherapie – UNLP Academie",
+      name: "Gecertificeerd Ericksoniaanse Hypnose – UNLP Academie",
       credentialCategory: "Professional Certification",
     },
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Mindfulness MBSR Trainer – Centrum voor Mindfulness Amsterdam (opgeleid door drs. Rob Brandsma)",
+      name: "Gecertificeerd Mindfulness MBSR Trainer – Centrum voor Mindfulness Amsterdam (opgeleid door drs. Rob Brandsma)",
       credentialCategory: "Professional Certification",
     },
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Erkend Wellnessmasseur – Anand Opleidingen",
+      name: "Gediplomeerd Erkend Wellnessmasseur – Anand Opleidingen",
       credentialCategory: "Professional Certification",
     },
   ],
@@ -195,8 +195,8 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >SoulKey Therapy Practitioner – SoulKey Academy (opgeleid door
-                  Peter Kupers)</span
+                  >Gecertificeerd SoulKey Therapy Practitioner – SoulKey Academy
+                  (opgeleid door Peter Kupers)</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -205,7 +205,7 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Ericksoniaanse Hypnotherapie – UNLP Academie</span
+                  >Gecertificeerd Ericksoniaanse Hypnose – UNLP Academie</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -214,8 +214,8 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Mindfulness MBSR Trainer – Centrum voor Mindfulness Amsterdam
-                  (opgeleid door drs. Rob Brandsma)</span
+                  >Gecertificeerd Mindfulness MBSR Trainer – Centrum voor Mindfulness
+                  Amsterdam (opgeleid door drs. Rob Brandsma)</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -224,7 +224,7 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Erkend Wellnessmasseur – Anand Opleidingen</span
+                  >Gediplomeerd Erkend Wellnessmasseur – Anand Opleidingen</span
                 >
               </li>
             </ul>
