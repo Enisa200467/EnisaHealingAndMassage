@@ -101,7 +101,7 @@ const ANTI_STRESS_HOMEPAGE_DESCRIPTION =
   'In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst.';
 
 const HYPNOTHERAPIE_HOMEPAGE_PRICE_CENTS = 13000;
-const ENERGETISCHE_BLOKKADES_OPHEFFEN_HOMEPAGE_PRICE_CENTS = 13500;
+const ENERGETISCHE_BLOKKADES_OPHEFFEN_HOMEPAGE_PRICE_CENTS = 16000;
 
 const displayedTreatments = computed(() =>
   allTreatments.value.map((treatment) => {
