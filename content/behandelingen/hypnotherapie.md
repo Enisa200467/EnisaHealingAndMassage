@@ -136,36 +136,42 @@ Bel of app: 06-22445121
 ::
 
 ::uitklap-info{title="Meer over hypnotherapie"}
-### Wat is hypnotherapie?
+Veel van wat we denken, voelen en doen gebeurt automatisch. Zonder dat we ons daarvan bewust zijn, worden keuzes, reacties en emoties vaak beïnvloed door eerdere ervaringen en overtuigingen.
 
-Hypnotherapie is een zachte, therapeutische methode om contact te maken met je onderbewuste — het deel van jou dat emoties, herinneringen en overtuigingen bewaart. Tijdens een sessie blijf je volledig bewust, maar je kritische geest komt tot rust waardoor inzichten, heling en transformatie kunnen ontstaan.
+Hypnotherapie richt zich op het onderbewuste. Hier liggen vaak de patronen opgeslagen die ervoor zorgen dat bepaalde situaties zich blijven herhalen, ook wanneer je bewust graag iets wilt veranderen.
 
-### Hoe werkt hypnotherapie?
+Door meer inzicht te krijgen in deze diepere processen ontstaat er ruimte voor nieuwe keuzes, andere perspectieven en persoonlijke ontwikkeling.
 
-Tijdens een sessie:
+Hypnotherapie wordt vaak ingezet bij:
 
-- Kom je in een diepe staat van ontspanning
-- Communiceert het onderbewuste met het bewuste
-- Kunnen oude patronen, angst of blokkades oplossen
-- Ontstaat er ruimte voor rust, helderheid en nieuwe energie
+- Angst en onzekerheid
+- Stress en spanning
+- Piekeren
+- Laag zelfbeeld
+- Perfectionisme
+- Moeite met loslaten
+- Terugkerende gedragspatronen
+- Emotionele blokkades
+- Persoonlijke ontwikkeling
+- Vergroten van zelfvertrouwen
 
-Deze methode is veilig, liefdevol en toegankelijk voor iedereen.
+### Waarom kiezen voor Ericksoniaanse hypnose?
 
-### Hypnotherapie & Energetische Healing
+Ericksoniaanse hypnose is een zachte en natuurlijke vorm van hypnose, ontwikkeld door psychiater Milton Erickson.
 
-In mijn praktijk combineer ik hypnotherapie met energetische healing. Dit zorgt voor:
+In plaats van directe opdrachten te geven, wordt gewerkt met suggesties, verbeelding en de natuurlijke mogelijkheden van het onderbewuste. Hierdoor ervaren veel mensen deze vorm van hypnose als ontspannen, veilig en toegankelijk.
 
-- Diepere ontspanning
-- Snellere verwerking van emoties
-- Betere doorstroming van energie
-- Complete heling van lichaam en geest
-- Transformatie op zielsniveau
+Het doel is niet om iets te forceren, maar om verandering van binnenuit te ondersteunen.
 
 ### Belangrijk om te weten
 
-- Hypnotherapie is veilig en toegankelijk
-- Je blijft altijd volledig bewust en in controle
-- Het is geen showhypnose zoals op tv
-- Het onderbewuste werkt in lagen - meerdere sessies zijn vaak aanbevolen
-- Het is complementair en vervangt geen medische zorg
+- Hypnotherapie is een veilige en natuurlijke methode.
+- Je blijft tijdens de sessie altijd bewust aanwezig.
+- Je behoudt zelf de controle en kunt op ieder moment reageren.
+- Hypnose is niet hetzelfde als slapen. Je bevindt je in een diepe staat van ontspanning en gerichte aandacht.
+- Het is geen showhypnose zoals op televisie.
+- Iedere persoon ervaart hypnose op zijn of haar eigen manier.
+- Verandering is een persoonlijk proces en het aantal sessies verschilt per persoon en per hulpvraag.
+- Voor diepgewortelde patronen, overtuigingen of langdurige klachten kunnen meerdere sessies passend zijn.
+- Hypnotherapie is complementair en vervangt geen medische behandeling of diagnose.
 ::
