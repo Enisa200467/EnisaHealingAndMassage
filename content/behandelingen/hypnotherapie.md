@@ -61,13 +61,15 @@ In mijn praktijk in Amsterdam Noord werk ik met een rustige, persoonlijke en res
 ---
 items:
   - id: "c8ad40a0-7c7f-47a3-b6c4-2b3f1a6a7d3b"
-    title: Losse sessie hypnomeditatie
-    description: Een losse hypnomeditatie sessie voor wie eerst wil kennismaken of een gerichte vraag heeft.
+    title: Hypnotherapie
+    description: Een persoonlijke sessie met Ericksoniaanse hypnose om inzicht te krijgen in terugkerende patronen, beperkende overtuigingen en onbewuste processen die invloed hebben op jouw dagelijks leven.
     treatmentId: dd01fafe-5591-4ca2-b460-c18388237f76
+    sessions: 1
+    price_cents: 15500
     bullets:
-      - "Duur: 1u 15 min per sessie"
-      - Persoonlijke begeleiding afgestemd op jouw thema
-      - Ruimte voor rust, inzicht en ontspanning
+      - "Duur: 90 minuten"
+      - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
+      - Gericht op inzicht, persoonlijke groei en positieve verandering vanuit het onderbewuste
     ctaText: Plan losse sessie
     ctaLink: https://enisa-healing-massage.setmore.com
   - id: "41499119-22df-42a9-916a-ac32120f6d5b"
