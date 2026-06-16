@@ -5,9 +5,10 @@ description: Ericksoniaanse hypnotherapie in Amsterdam Noord voor diepe ontspann
 
 ::behandeling-hero
 ---
-description: Waar echte transformatie begint. Combinatie van hypnotherapie en
-  energetische healing in Amsterdam Noord voor duurzame verandering op mentaal,
-  emotioneel en energetisch niveau.
+description: Met behulp van Ericksoniaanse hypnose begeleid ik je in Amsterdam
+  Noord bij stress, angst, onzekerheid, het versterken van zelfvertrouwen en het
+  doorbreken van terugkerende patronen. Ook mogelijk in combinatie met chakra
+  healing.
 id: dd01fafe-5591-4ca2-b460-c18388237f76
 ---
 ::
