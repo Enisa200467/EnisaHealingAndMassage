@@ -9,6 +9,9 @@ interface TrajectContentItem {
   ctaText?: string;
   ctaLink?: string;
   treatmentId?: string;
+  sessions?: number;
+  price_cents?: number;
+  duration_minutes?: number;
 }
 
 interface TrajectRecord {
@@ -108,9 +111,10 @@ const mergedTrajects = computed<TrajectDisplayItem[]>(() =>
       : undefined;
     return {
       ...item,
-      sessions: meta?.sessions,
-      price_cents: meta?.price_cents ?? treatmentMeta?.price_cents,
-      duration_minutes: treatmentMeta?.duration_minutes,
+      sessions: item.sessions ?? meta?.sessions,
+      price_cents:
+        item.price_cents ?? meta?.price_cents ?? treatmentMeta?.price_cents,
+      duration_minutes: item.duration_minutes ?? treatmentMeta?.duration_minutes,
     };
   })
 );
