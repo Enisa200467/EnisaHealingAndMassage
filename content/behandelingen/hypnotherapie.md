@@ -1,6 +1,6 @@
 ---
 title: Hypnotherapie Trajecten
-description: Mijn unieke Hypno/Healing methode combineert diepgaande hypnotherapie met energetische (chakra) healing in Amsterdam Noord voor snelle én duurzame transformatie op lichaams-, geest- én zielsniveau.
+description: Ericksoniaanse hypnotherapie in Amsterdam Noord voor diepe ontspanning, inzicht in onbewuste patronen en persoonlijke begeleiding in jouw tempo.
 ---
 
 ::behandeling-hero
@@ -14,17 +14,15 @@ id: dd01fafe-5591-4ca2-b460-c18388237f76
 
 ::behandeling-sectie
 ---
-items:
-  - Snelle én duurzame resultaten door diepe doorwerking
-  - Minder sessies nodig door combinatie van hypnotherapie en energetische
-    healing
-  - Transformatie op lichaams-, geest- én zielsniveau
-  - Meer innerlijke rust, vertrouwen en levensenergie
 image: /images/single-sessions-hypnotherapie.webp
 imageAlt: Hypnotherapie en healing voor transformatie
-title: Mijn unieke Hypno/Healing methode
+title: De kracht van Ericksoniaanse hypnose
 ---
-Mijn manier van werken in mijn praktijk in Amsterdam Noord gaat verder dan standaard hypnotherapie. Ware verandering ontstaat niet aan de oppervlakte — maar diep van binnen: in het onderbewuste, in het lichaam en in jouw energetisch systeem. Door de unieke combinatie van hypnotherapie en energetische (chakra) healing vindt heling niet alleen mentaal en emotioneel plaats, maar ook op energetisch en zielsniveau.
+Hypnotherapie richt zich op het onderbewuste. Veel van onze gedachten, overtuigingen, emoties en automatische reacties ontstaan buiten ons bewuste denken. Hierdoor kunnen bepaalde patronen zich blijven herhalen, ook wanneer je bewust graag iets wilt veranderen.
+
+Met behulp van Ericksoniaanse hypnose begeleid ik je naar een diepe staat van ontspanning en gerichte aandacht. In deze toestand ontstaat ruimte om onbewuste patronen, overtuigingen en emotionele reacties te onderzoeken en meer inzicht te krijgen in wat jou mogelijk belemmert.
+
+In mijn praktijk in Amsterdam Noord werk ik met een rustige, persoonlijke en respectvolle benadering. Iedere sessie wordt afgestemd op jouw situatie, jouw hulpvraag en jouw tempo.
 ::
 
 ::twee-kolommen
