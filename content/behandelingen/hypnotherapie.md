@@ -123,16 +123,23 @@ items:
 
 
 ::uitklap-info{title="Gratis kennismakings- en intakegesprek"}
-Vooraf plannen we een telefonisch intakegesprek van 30 minuten. Op basis van jouw thema's en intentie maak ik een persoonlijke hypnomeditatie, afgestemd op jouw proces en energie, zodat je tijdens de sessie sneller en dieper kunt loslaten.
+Vooraf plannen we een gratis kennismakings- en intakegesprek van 30 minuten via WhatsApp (met of zonder video).
 
-**Voel je dat dit het moment is? Plan je intakegesprek.**
-Bel of app: 06-22445121
+Tijdens dit gesprek bespreken we jouw hulpvraag, wensen en doelen. Samen kijken we welke sessie het beste aansluit bij jouw situatie en wat je kunt verwachten van de begeleiding.
+
+Dit gesprek geeft je de mogelijkheid om vragen te stellen en rustig kennis te maken voordat we de sessie inplannen.
+
+**Voel je dat dit het juiste moment is?**
+
+Plan eenvoudig online jouw gratis kennismakingsgesprek via de agenda op deze website.
+
+Of neem contact met mij op via:
+
+Telefoon / WhatsApp: 06-22445121
 
 ### Annulerings- & betalingsvoorwaarden
 
-- Bij annulering binnen 48 uur wordt de eerste termijn niet terugbetaald
-- De tweede sessie vindt plaats na betaling van de tweede termijn
-- Betalen via overmaken of Tikkie
+Bij annulering binnen 48 uur voor de afspraak ben ik genoodzaakt de gereserveerde tijd in rekening te brengen.
 ::
 
 ::uitklap-info{title="Meer over hypnotherapie"}
