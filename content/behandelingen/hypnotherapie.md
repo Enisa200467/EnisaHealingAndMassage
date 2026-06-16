@@ -45,13 +45,14 @@ In mijn praktijk in Amsterdam Noord werk ik met een rustige, persoonlijke en res
   :::voor-wie
   ---
   items:
-    - Je oude patronen, angst of blokkades wilt loslaten
-    - Je emotionele lasten voelt die je wilt transformeren
-    - Je opnieuw verbinding wilt maken met rust en kracht
-    - Je klaar bent voor duurzame verandering van binnenuit
-    - Je een dieper ontwaken wilt ervaren
-    - Je zoekt naar innerlijke helderheid en stabiliteit
-    - Je wilt terugkeren naar wie je werkelijk bent
+    - Je last hebt van angst, stress of onzekerheid
+    - Je steeds terugvalt in dezelfde patronen
+    - Je negatieve overtuigingen wilt doorbreken
+    - Je meer zelfvertrouwen wilt ontwikkelen
+    - Je minder wilt piekeren en meer rust wilt ervaren
+    - Je beter wilt omgaan met emoties en reacties
+    - Je openstaat voor verandering vanuit het onderbewuste
+    - Je klaar bent voor persoonlijke groei en positieve verandering
   title: Voor Wie?
   ---
   :::
