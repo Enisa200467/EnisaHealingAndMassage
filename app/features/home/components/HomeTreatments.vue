@@ -95,7 +95,7 @@ const contentDescriptionsBySlug = computed(() => {
 });
 
 const HYPNOTHERAPIE_HOMEPAGE_DESCRIPTION =
-  'Waar echte transformatie begint. Combinatie van hypnotherapie en energetische healing voor duurzame verandering op mentaal, emotioneel en energetisch niveau.';
+  'Met behulp van Ericksoniaanse hypnose begeleid ik je in Amsterdam Noord bij stress, angst, onzekerheid, het versterken van zelfvertrouwen en het doorbreken van terugkerende patronen. Ook mogelijk in combinatie met chakra healing.';
 
 const ANTI_STRESS_HOMEPAGE_DESCRIPTION =
   'In deze sessies leer je om bewust aanwezig te zijn in het hier en nu. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst.';
