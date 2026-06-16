@@ -30,14 +30,14 @@ In mijn praktijk in Amsterdam Noord werk ik met een rustige, persoonlijke en res
   :::voordelen-lijst
   ---
   items:
-    - Angst en stress verminderen
-    - Verdriet en emotionele druk worden lichter
-    - Oude overtuigingen verzachten of veranderen
+    - Minder piekeren en mentale onrust
+    - Minder angst, spanning en onzekerheid
+    - Negatieve overtuigingen verzachten of veranderen
     - Meer rust in hoofd en lichaam
-    - Meer vertrouwen, stabiliteit en helderheid
-    - Diepere verbinding met jezelf
-    - Sneller doorbreken van oude patronen
-    - Sterkere verbinding met je intuïtie
+    - Meer zelfvertrouwen en innerlijke kracht
+    - Meer helderheid in keuzes en beslissingen
+    - Oude patronen sneller herkennen en doorbreken
+    - Sterkere verbinding met jezelf
   title: Wat je gaat merken
   ---
   :::
