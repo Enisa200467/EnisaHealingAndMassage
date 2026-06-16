@@ -122,7 +122,7 @@ items:
 ::
 
 
-::uitklap-info{title="Intake & voorbereiding"}
+::uitklap-info{title="Gratis kennismakings- en intakegesprek"}
 Vooraf plannen we een telefonisch intakegesprek van 30 minuten. Op basis van jouw thema's en intentie maak ik een persoonlijke hypnomeditatie, afgestemd op jouw proces en energie, zodat je tijdens de sessie sneller en dieper kunt loslaten.
 
 **Voel je dat dit het moment is? Plan je intakegesprek.**
