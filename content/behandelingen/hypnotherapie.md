@@ -71,12 +71,14 @@ items:
     ctaText: Plan losse sessie
     ctaLink: https://enisa-healing-massage.setmore.com
   - id: "41499119-22df-42a9-916a-ac32120f6d5b"
-    title: Hypnomeditatie
-    description: Een zachte en veilige methode om positieve verandering van binnenuit te ondersteunen — zonder aanraking of fysieke behandeling.
+    title: Hypnotherapie & Chakra Healing
+    description: Een uitgebreide sessie waarin ik de kracht van hypnotherapie combineer met chakra healing. Deze combinatie kan waardevol zijn wanneer mentale patronen en emotionele belasting met elkaar verbonden zijn en je behoefte hebt aan een bredere, holistische benadering.
+    sessions: 1
+    price_cents: 22900
     bullets:
-      - "Duur: 1u 15 min per sessie"
-      - Intake inbegrepen (30 min via telefoon of video)
-      - Gericht op rust, inzicht en positieve verandering
+      - "Duur: 150 minuten"
+      - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
+      - Gericht op inzicht, emotionele verwerking en een diepere verbinding tussen hoofd, gevoel en energie
     ctaText: Plan je intake
     ctaLink: https://enisa-healing-massage.setmore.com
   - id: "63f29db0-2b00-48e1-98dc-ed055bccfbf0"
