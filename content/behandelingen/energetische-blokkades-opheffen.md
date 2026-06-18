@@ -71,7 +71,7 @@ Het kan ook gaan om herinneringen uit je kindertijd. Dat hoeven geen slechte her
 
 ### Sessie Opbouw
 
-#### Sessie 1: Meditatie met Chakra Healing (120 minuten - €160)
+#### Sessie 1: Meditatie met Chakra Healing
 De eerste sessie combineert een geleide meditatie met chakra healing. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
 
 #### Sessie 2: Meditatie en Healing voor Diepere Verwerking (120 minuten - €160)
