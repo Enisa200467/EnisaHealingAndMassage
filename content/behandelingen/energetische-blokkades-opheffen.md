@@ -74,10 +74,10 @@ Het kan ook gaan om herinneringen uit je kindertijd. Dat hoeven geen slechte her
 #### Sessie 1: Meditatie met Chakra Healing
 De eerste sessie combineert een geleide meditatie met chakra healing. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
 
-#### Sessie 2: Meditatie en Healing voor Diepere Verwerking 
+#### Sessie 2: Meditatie en Healing voor Diepere Verwerking
 In de tweede sessie gaan we dieper in op wat er in de eerste sessie is losgekomen. Met meditatie en healing werk je aan het verwerken van oude pijn en patronen, waarbij we ons specifiek richten op het helen van het innerlijke kind. Deze sessie is volledig gericht op acceptatie en innerlijke rust.
 
-#### Sessie 3: Meditaties met Healing ter Integratie (120 minuten - €160)
+#### Sessie 3: Meditaties met Healing ter Integratie
 De derde sessie bestaat uit twee meditaties gecombineerd met healing. Dit geeft je de ruimte om het proces te integreren en alles wat is losgekomen een plek te geven. We ronden het traject af en zorgen dat alle energieën weer in balans zijn.
 
 ### Waar Help Dit Traject Bij?
