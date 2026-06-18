@@ -1,5 +1,5 @@
 ---
-title: Hypnotherapie Trajecten
+title: Hypnotherapie
 description: Ericksoniaanse hypnotherapie in Amsterdam Noord voor diepe ontspanning, inzicht in onbewuste patronen en persoonlijke begeleiding in jouw tempo.
 ---
 
@@ -83,40 +83,6 @@ items:
       - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
       - Gericht op inzicht, emotionele verwerking en een diepere verbinding tussen hoofd, gevoel en energie
     ctaText: Plan je intake
-    ctaLink: https://enisa-healing-massage.setmore.com
-  - id: "63f29db0-2b00-48e1-98dc-ed055bccfbf0"
-    title: Transformatie traject
-    description: |
-      Voor mensen die voelen dat het tijd is om oude patronen, angst, blokkades en emotionele lasten los te laten — en opnieuw verbinding te maken met rust, kracht en innerlijke helderheid.
-
-      Betaling mogelijk in 2 termijnen:
-      €297,50 bij het maken van de afspraak
-      €297,50 vóór de tweede sessie
-    bullets:
-      - "Duur: 2u per sessie"
-      - Hypnotherapie + energetische/chakra healing
-      - 3 persoonlijke mini-rituelen
-      - 1 korte check-in tussen sessies
-    ctaText: Start jouw traject
-    ctaLink: https://enisa-healing-massage.setmore.com
-  - id: "bd93dfc2-df1e-4906-be98-7329e772c08d"
-    title: Premium traject
-    description: |
-      Een luxere, diepere en zachtere reis naar innerlijke transformatie met extra ondersteuning en rituelen.
-
-      Betaling mogelijk in 2 termijnen:
-      €388,50 bij het maken van de afspraak
-      en €388,50 vóór de tweede sessie.
-    bullets:
-      - "Duur: 2u per sessie"
-      - Hypnotherapie + energetische/chakra healing
-      - Integratie & nazorg
-      - Intuïtieve inzichten en begeleiding
-      - 1 hoofd/gezicht ontspanningsmassage
-      - 4 premium rituelen.
-      - 1 persoonlijke helende audio
-      - Korte WhatsApp ondersteuning
-    ctaText: Kies premium
     ctaLink: https://enisa-healing-massage.setmore.com
 ---
 ::
