@@ -3,23 +3,27 @@ import { type Treatment } from '~/features/admin/types/treatment.types';
 
 interface Props {
   // Content-based props (fallback)
+  title?: string;
   id?: string;
   description?: string;
 }
 
 const props = defineProps<Props>();
 
-// Always fetch from database for SEO and consistency
-const { data: treatmentData } = await useFetch<Treatment>(
-  `/api/treatments/${props.id}`,
-  {
+const treatmentData = ref<Treatment | null>(null);
+
+// Fetch from database for SEO and consistency when a database ID is available.
+if (props.id) {
+  const { data } = await useFetch<Treatment>(`/api/treatments/${props.id}`, {
     // This will run server-side during SSR, making it SEO-friendly
     server: true,
-  }
-);
+  });
+
+  treatmentData.value = data.value;
+}
 
 // Computed values that prioritize database data over content data
-const displayTitle = computed(() => treatmentData.value?.name);
+const displayTitle = computed(() => treatmentData.value?.name || props.title);
 const displayPrice = computed(() => treatmentData.value?.price_cents);
 const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
@@ -47,7 +51,7 @@ const displayTrajects = computed(() => treatmentData.value?.trajects || []);
         </div>
 
         <!-- Price Box -->
-        <div class="lg:col-span-1">
+        <div v-if="treatmentData" class="lg:col-span-1">
           <TreatmentDetails
             variant="card"
             :duration="displayDuration"

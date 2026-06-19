@@ -178,6 +178,30 @@ export default defineNuxtConfig({
         statusCode: 301,
       },
     },
+    "/soulkey": {
+      redirect: {
+        to: "/behandelingen/soulkey",
+        statusCode: 301,
+      },
+    },
+    "/soulkey/": {
+      redirect: {
+        to: "/behandelingen/soulkey",
+        statusCode: 301,
+      },
+    },
+    "/soulkey-therapy": {
+      redirect: {
+        to: "/behandelingen/soulkey",
+        statusCode: 301,
+      },
+    },
+    "/soulkey-therapy/": {
+      redirect: {
+        to: "/behandelingen/soulkey",
+        statusCode: 301,
+      },
+    },
     "/prijzen": {
       redirect: {
         to: "/tarieven",
@@ -239,7 +263,6 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "nuxt-schema-org",
     "@nuxt/scripts",
-    "@pinia/nuxt",
     "nuxt-security",
     "nuxt-studio",
   ],
