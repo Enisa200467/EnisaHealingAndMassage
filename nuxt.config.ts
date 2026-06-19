@@ -190,6 +190,12 @@ export default defineNuxtConfig({
         statusCode: 301,
       },
     },
+    "/behandelingen/regressietherapie-soulkey-therapy": {
+      swr: 3600,
+    },
+    "/behandelingen/regressietherapie-soulkey-therapy/": {
+      swr: 3600,
+    },
   },
 
   // Add proper i18n configuration and HTML lang attribute
@@ -239,7 +245,6 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "nuxt-schema-org",
     "@nuxt/scripts",
-    "@pinia/nuxt",
     "nuxt-security",
     "nuxt-studio",
   ],

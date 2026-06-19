@@ -1,8 +1,17 @@
 <script setup lang="ts">
-// Get first 6 treatments for related section using global composable
-const { activeTreatments } = useTreatments();
+const { data: treatmentsContent } = await useAsyncData(
+  'related-treatments-content',
+  () => queryCollection('behandelingen').all()
+);
 
-const allTreatments = computed(() => activeTreatments.value.slice(0, 6));
+const allTreatments = computed(() =>
+  (treatmentsContent.value || []).slice(0, 6).map((treatment) => ({
+    slug: treatment.path?.split('/').pop() || treatment.title,
+    title: treatment.title,
+    description: treatment.description,
+    path: treatment.path,
+  }))
+);
 </script>
 
 <template>

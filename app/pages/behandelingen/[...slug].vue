@@ -9,9 +9,9 @@ const { data: treatment } = await useAsyncData(`treatment-${slug}`, () => {
   return queryCollection('behandelingen').path(`/behandelingen/${slug}`).first();
 });
 
-// Fetch database treatment data using global composable
-const { getTreatmentBySlug } = useTreatments();
-const treatmentData = computed(() => getTreatmentBySlug(slug));
+// Keep treatment pages content-first so preview-only markdown routes can render
+// before a matching database treatment record exists.
+const treatmentData = computed(() => null);
 </script>
 
 <template>

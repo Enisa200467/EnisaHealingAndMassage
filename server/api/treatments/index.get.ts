@@ -2,8 +2,8 @@ import { serverSupabaseServiceRole } from "#supabase/server";
 
 export default defineCachedEventHandler(
   async (event) => {
-    const client = serverSupabaseServiceRole(event);
     try {
+      const client = serverSupabaseServiceRole(event);
       const { data: treatments, error } = await client
       .from("treatments")
       .select(
@@ -34,6 +34,12 @@ export default defineCachedEventHandler(
       data: normalized,
     };
   } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+
+    if (message.includes("Missing server key") || message.includes("URL and Key are required")) {
+      return { data: [] };
+    }
+
     if (error && typeof error === "object" && "statusCode" in error) {
       throw error;
     }

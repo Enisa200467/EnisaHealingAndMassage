@@ -9,14 +9,15 @@ interface Props {
 
 const props = defineProps<Props>();
 
-// Always fetch from database for SEO and consistency
-const { data: treatmentData } = await useFetch<Treatment>(
-  `/api/treatments/${props.id}`,
-  {
-    // This will run server-side during SSR, making it SEO-friendly
-    server: true,
-  }
-);
+// Fetch database data when a CMS/database id is provided.
+// Some preview-only content pages may not have a database record yet; in that
+// case, skip the API call so direct preview URLs can still render from content.
+const { data: treatmentData } = props.id
+  ? await useFetch<Treatment>(`/api/treatments/${props.id}`, {
+      // This will run server-side during SSR, making it SEO-friendly
+      server: true,
+    })
+  : { data: ref<Treatment | null>(null) };
 
 // Computed values that prioritize database data over content data
 const displayTitle = computed(() => treatmentData.value?.name);
