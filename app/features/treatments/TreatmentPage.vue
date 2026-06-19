@@ -112,7 +112,7 @@ if (props.treatment || props.treatmentData) {
 
   // Set comprehensive page SEO with breadcrumb schema
   setPageSEO({
-    title: `${title} - Enisa Healing & Massage`,
+    title: (props.treatment?.seoTitle as string) || `${title} - Enisa Healing & Massage`,
     description: description,
     path: `/behandelingen/${
       props.treatmentData?.slug || props.treatment?.path || ''

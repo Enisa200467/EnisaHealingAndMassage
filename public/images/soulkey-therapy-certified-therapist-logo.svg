@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="175" viewBox="0 0 300 175" role="img" aria-label="SoulKey Therapy Certified Therapist logo">
+  <rect width="300" height="175" fill="#fff"/>
+  <g transform="translate(150 82)">
+    <circle r="70" fill="#050505"/>
+    <circle r="52" fill="#050505" stroke="#f8f8f8" stroke-width="2"/>
+    <path d="M-61,-20 A65,65 0 0,1 61,-20" fill="none" stroke="#f8f8f8" stroke-width="1.5"/>
+    <text x="0" y="-48" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">SOULKEY THERAPY</text>
+    <text x="0" y="59" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="middle">WWW.MASTERSOULKEY.COM</text>
+    <path d="M-15,35 C-5,10 5,10 15,35" fill="none" stroke="#b52b2b" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-10" rx="10" ry="22" fill="none" stroke="#d9b0a3" stroke-width="4"/>
+  </g>
+  <path d="M0,72 L51,48 L51,126 L0,102 L18,87 Z" fill="#41ad49"/>
+  <path d="M300,72 L249,48 L249,126 L300,102 L282,87 Z" fill="#41ad49"/>
+  <path d="M26,55 L274,55 L260,112 L40,112 Z" fill="#a6d887"/>
+  <text x="150" y="92" fill="#222" font-family="Arial Black, Impact, sans-serif" font-size="31" font-weight="900" text-anchor="middle" transform="skewX(-5)">CERTIFIED THERAPIST</text>
+</svg>
