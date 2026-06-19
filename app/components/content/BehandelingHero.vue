@@ -4,43 +4,79 @@ import { type Treatment } from '~/features/admin/types/treatment.types';
 interface Props {
   // Content-based props (fallback)
   id?: string;
+  title?: string;
+  subtitle?: string;
   description?: string;
 }
 
 const props = defineProps<Props>();
 
-// Always fetch from database for SEO and consistency
-const { data: treatmentData } = await useFetch<Treatment>(
-  `/api/treatments/${props.id}`,
-  {
-    // This will run server-side during SSR, making it SEO-friendly
+const isUuid = (value?: string) =>
+  Boolean(
+    value?.match(
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
+    ),
+  );
+
+const injectedTreatmentData = inject<Ref<Treatment | null | undefined> | null>(
+  'treatmentData',
+  null,
+);
+
+let fetchedTreatmentData = ref<Treatment | null>(null);
+
+// Fetch from database for SEO and consistency when the content provides a UUID.
+if (isUuid(props.id)) {
+  const { data } = await useFetch<Treatment>(`/api/treatments/${props.id}`, {
     server: true,
-  }
+  });
+
+  fetchedTreatmentData = data;
+}
+
+const treatmentData = computed(
+  () => fetchedTreatmentData.value || injectedTreatmentData?.value || null,
 );
 
 // Computed values that prioritize database data over content data
-const displayTitle = computed(() => treatmentData.value?.name);
+const displayTitle = computed(() => props.title || treatmentData.value?.name);
 const displayPrice = computed(() => treatmentData.value?.price_cents);
 const displayDuration = computed(() => treatmentData.value?.duration_minutes);
 const displayIcon = computed(() => treatmentData.value?.icon);
-const displayDiscountEnabled = computed(() => treatmentData.value?.discount_enabled || false);
-const displayDiscountPrice = computed(() => treatmentData.value?.discount_price_cents);
+const displayDiscountEnabled = computed(
+  () => treatmentData.value?.discount_enabled || false,
+);
+const displayDiscountPrice = computed(
+  () => treatmentData.value?.discount_price_cents,
+);
 const displayTrajects = computed(() => treatmentData.value?.trajects || []);
-
 </script>
 
 <template>
-  <section class="not-prose bg-gradient-to-b from-secondary-200 to-primary-50 py-12 sm:py-16">
+  <section
+    class="not-prose bg-gradient-to-b from-secondary-200 to-primary-50 py-12 sm:py-16"
+  >
     <UContainer v-if="displayTitle">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-start">
-          <!-- Title Section -->
-          <div class="lg:col-span-2">
-            <div class="flex items-center gap-3 mb-6">
-            <UIcon v-if="displayIcon" :name="displayIcon" class="w-8 h-8 text-primary-600" aria-hidden="true" />
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-start">
+        <!-- Title Section -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <UIcon
+              v-if="displayIcon"
+              :name="displayIcon"
+              class="w-8 h-8 text-primary-600"
+              aria-hidden="true"
+            />
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900">
               {{ displayTitle }}
             </h1>
           </div>
+          <p
+            v-if="subtitle"
+            class="text-lg sm:text-xl text-neutral-900 leading-relaxed mb-3"
+          >
+            {{ subtitle }}
+          </p>
           <p v-if="description" class="text-xl text-neutral-600 leading-relaxed">
             {{ description }}
           </p>

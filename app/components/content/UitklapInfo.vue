@@ -142,6 +142,25 @@ const uniqueId = computed(() => {
   margin-bottom: 0.25rem;
 }
 
+
+.additional-info :deep(.prose a) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgb(255 95 125);
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  box-shadow: 0 10px 15px -3px rgb(255 95 125 / 0.25);
+}
+
+.additional-info :deep(.prose a:hover) {
+  background: rgb(236 72 153);
+  color: white;
+}
+
 /* Responsive adjustments */
 @media (min-width: 1024px) {
   .additional-info :deep(h3) {
