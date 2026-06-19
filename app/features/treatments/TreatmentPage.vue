@@ -3,7 +3,8 @@ import type { TreatmentsCollectionItem } from '@nuxt/content';
 
 interface TreatmentData {
   id: string;
-  name: string;
+  name?: string;
+  title?: string;
   slug: string;
   description?: string;
   duration_minutes: number;
@@ -43,7 +44,10 @@ interface StructuredDataItem {
 if (props.treatment || props.treatmentData) {
   // Use database data when available, fall back to content data
   const title =
-    props.treatmentData?.name || props.treatment?.title || 'Treatment';
+    props.treatmentData?.name ||
+    props.treatmentData?.title ||
+    props.treatment?.title ||
+    'Treatment';
   const description = props.treatment?.description || '';
   const price =
     props.treatmentData?.price_formatted ||
@@ -136,7 +140,11 @@ const breadcrumbs = computed(() => [
     path: `/behandelingen/${
       props.treatmentData?.slug || props.treatment?.path || ''
     }`,
-    label: props.treatmentData?.name || props.treatment?.title || 'Behandeling',
+    label:
+      props.treatmentData?.name ||
+      props.treatmentData?.title ||
+      props.treatment?.title ||
+      'Behandeling',
     icon: 'i-mdi-sparkles',
   },
 ]);
@@ -191,14 +199,16 @@ const breadcrumbs = computed(() => [
     <div v-else-if="treatmentData" class="py-16">
       <UContainer>
         <div class="max-w-4xl mx-auto prose prose-lg">
-          <h2>{{ treatmentData.name }}</h2>
+          <h2>{{ treatmentData.name || treatmentData.title }}</h2>
           <p>Meer details over deze behandeling zijn binnenkort beschikbaar.</p>
         </div>
       </UContainer>
     </div>
 
     <!-- Call-to-Action Section -->
-    <TreatmentCTA :treatment="treatment || { title: treatmentData?.name }" />
+    <TreatmentCTA
+      :treatment="treatment || { title: treatmentData?.name || treatmentData?.title }"
+    />
 
     <!-- Related Treatments -->
     <RelatedTreatments />
