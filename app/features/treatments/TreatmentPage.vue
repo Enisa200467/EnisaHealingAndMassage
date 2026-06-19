@@ -44,6 +44,10 @@ if (props.treatment || props.treatmentData) {
   // Use database data when available, fall back to content data
   const title =
     props.treatmentData?.name || props.treatment?.title || 'Treatment';
+  const seoTitle =
+    (props.treatment as
+      | (TreatmentsCollectionItem & { seoTitle?: string })
+      | null)?.seoTitle || `${title} - Enisa Healing & Massage`;
   const description = props.treatment?.description || '';
   const price =
     props.treatmentData?.price_formatted ||
@@ -112,7 +116,7 @@ if (props.treatment || props.treatmentData) {
 
   // Set comprehensive page SEO with breadcrumb schema
   setPageSEO({
-    title: `${title} - Enisa Healing & Massage`,
+    title: seoTitle,
     description: description,
     path: `/behandelingen/${
       props.treatmentData?.slug || props.treatment?.path || ''

@@ -1,0 +1,15 @@
+export const soulKeyTherapyTreatment = {
+  id: '25acdc01-2698-42fc-ba91-925b612777ed',
+  name: 'SoulKey Therapy – Regressietherapie, Vorige levens, Life Between Lives & Zielsbewustzijn',
+  slug: 'regressietherapie-soulkey-therapy',
+  duration_minutes: 180,
+  price_cents: 19500,
+  discount_enabled: false,
+  discount_price_cents: null,
+  icon: 'i-mdi-sparkles',
+  display_order: 35,
+  is_active: true,
+  created_at: '2026-06-19T00:00:00.000Z',
+  updated_at: '2026-06-19T00:00:00.000Z',
+  treatment_trajects: [],
+};

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Rustige lichte natuurtonen voor SoulKey Therapy</title>
+  <desc id="desc">Abstracte zachte beige en gouden vormen met lichte cirkels voor innerlijke rust en bewustwording.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf7ef"/>
+      <stop offset="0.52" stop-color="#efe3cf"/>
+      <stop offset="1" stop-color="#d7bd8f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="65%" cy="30%" r="45%">
+      <stop offset="0" stop-color="#fffaf0" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#fff2d8" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#fff2d8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <circle cx="670" cy="310" r="225" fill="none" stroke="#fffaf0" stroke-width="4" opacity="0.55"/>
+  <circle cx="670" cy="310" r="320" fill="none" stroke="#fffaf0" stroke-width="3" opacity="0.32"/>
+  <path d="M0 560 C150 500 255 590 410 545 C570 498 706 515 850 565 C1010 620 1110 545 1200 575 L1200 800 L0 800 Z" fill="#d2b57d" opacity="0.43" filter="url(#soft)"/>
+  <path d="M0 642 C180 610 305 675 455 632 C640 580 760 640 925 665 C1050 684 1130 630 1200 650 L1200 800 L0 800 Z" fill="#b99662" opacity="0.38" filter="url(#soft)"/>
+  <path d="M0 710 C150 685 292 725 440 702 C610 675 765 720 930 705 C1045 694 1135 670 1200 690 L1200 800 L0 800 Z" fill="#8f7a61" opacity="0.28" filter="url(#soft)"/>
+</svg>

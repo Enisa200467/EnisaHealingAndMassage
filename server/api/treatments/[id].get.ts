@@ -1,13 +1,21 @@
 import { serverSupabaseServiceRole } from '#supabase/server';
+import { soulKeyTherapyTreatment } from '~~/server/utils/soulKeyTherapyTreatment';
 
 export default defineEventHandler(async (event) => {
-  const client = serverSupabaseServiceRole(event);
-
   const id = getRouterParam(event, 'id');
 
   if (!id) {
     return null;
   }
+
+  if (id === soulKeyTherapyTreatment.id) {
+    return {
+      ...soulKeyTherapyTreatment,
+      trajects: soulKeyTherapyTreatment.treatment_trajects,
+    };
+  }
+
+  const client = serverSupabaseServiceRole(event);
 
   // Fetch treatment data from the database
   const { data: treatment, error } = await client
