@@ -133,7 +133,7 @@ const mobileNavItems = computed<NavigationMenuItem[]>(() => [
     onSelect: closeMobileMenu,
   },
   {
-    label: "Keltische Handfasting",
+    label: "Trouwritueel met handvasten",
     icon: "i-mdi-heart",
     to: routes.pages.keltischeHandfasting,
     onSelect: closeMobileMenu,
@@ -177,7 +177,7 @@ const desktopNavItems = computed<NavigationMenuItem[]>(() => [
     to: routes.pages.about,
   },
   {
-    label: "Keltische Handfasting",
+    label: "Trouwritueel met handvasten",
     icon: "i-mdi-heart",
     to: routes.pages.keltischeHandfasting,
   },

@@ -42,7 +42,7 @@ export const useStudioContent = () => {
           { label: 'Home', to: routes.pages.home },
           { label: 'Over Mij', to: routes.pages.about },
           {
-            label: 'Keltische Handfasting',
+            label: 'Trouwritueel met handvasten',
             to: routes.pages.keltischeHandfasting,
           },
           { label: 'Behandelingen', to: routes.pages.treatments },

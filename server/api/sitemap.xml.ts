@@ -30,9 +30,9 @@ export default defineEventHandler(async (event) => {
       priority: "0.7",
       changefreq: "monthly",
       lastmod: currentDate,
-      title: "Keltische Handfasting - Enisa Healing & Massage",
+      title: "Trouwritueel met handvasten - Enisa Healing & Massage",
       description:
-        "Ontdek binnenkort meer over Keltische Handfasting ceremonies, symboliek en persoonlijke afstemming.",
+        "Ontdek een persoonlijk trouwritueel met handvasten, vol symboliek en afgestemd op jullie verhaal.",
     },
     {
       url: "/contact",

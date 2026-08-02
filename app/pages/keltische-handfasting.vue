@@ -6,7 +6,7 @@ const routes = useRoutes();
 
 const faqItems: AccordionItem[] = [
   {
-    label: "Wat is een Handfasting ceremonie?",
+    label: "Wat is een handvastenritueel?",
     content:
       "Een symbolisch ritueel waarbij de handen van het paar worden verbonden met linten. Het staat symbool voor jullie bewuste keuze en verbintenis.",
   },
@@ -30,7 +30,7 @@ const faqData = faqItems.map((item) => ({
 const galleryItems = [
   {
     src: "/images/handfasting/flowers-detail.webp",
-    alt: "Bloemendetail tijdens een Keltische Handfasting ceremonie",
+    alt: "Bloemendetail tijdens een handvastenritueel",
   },
   {
     src: "/images/handfasting/couple-portrait.webp",
@@ -44,9 +44,9 @@ const galleryItems = [
 
 setPageSEO({
   title:
-    "Keltische Handfasting & Spirituele Huwelijkszegening - Enisa Healing & Massage Amsterdam Noord",
+    "Trouwritueel met handvasten - Enisa Healing & Massage Amsterdam Noord",
   description:
-    "Ervaar een unieke en authentieke Keltische Handfasting & spirituele huwelijkszegening door Enisa. Persoonlijk, symbolisch en volledig afgestemd op jullie liefdesverhaal.",
+    "Ervaar een persoonlijk trouwritueel met handvasten door Enisa. Een symbolische verbintenis van verbondenheid, trouw, eenheid, liefde en wederzijdse belofte.",
   path: "/keltische-handfasting",
   image: "/images/handfasting/hero-tree-ceremony.webp",
   structuredData: [generateFAQSchema(faqData)],
@@ -66,12 +66,13 @@ setPageSEO({
               id="handfasting-heading"
               class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4"
             >
-              Keltische Handfasting & Spirituele Huwelijkszegening
+              Trouwritueel met handvasten
             </h1>
             <h2
               class="text-xl sm:text-2xl lg:text-3xl font-medium text-primary-700 mb-6"
             >
-              Een unieke en authentieke verbintenis door Enisa
+              Een symbool voor verbondenheid, trouw, eenheid, liefde en
+              wederzijdse belofte.
             </h2>
 
             <div
@@ -95,10 +96,9 @@ setPageSEO({
               class="max-w-4xl mx-auto text-lg sm:text-xl text-neutral-600 leading-relaxed"
             >
               Stap in een wereld waar liefde, traditie en energie samenkomen.
-              Ik nodig jullie uit om de magie van een Keltische ceremonie te
-              beleven, een moment van pure verbinding, diep geworteld in de
-              wijsheid van de natuur, maar volledig afgestemd op jullie unieke
-              verhaal. Geen theater, maar echte emotie.
+              Ik nodig jullie uit om een trouwritueel met handvasten te
+              beleven: een moment van pure verbinding, volledig afgestemd op
+              jullie unieke verhaal. Geen theater, maar echte emotie.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ setPageSEO({
             <div class="overflow-hidden rounded-[2rem] shadow-2xl">
               <NuxtImg
                 src="/images/handfasting/hero-tree-ceremony.webp"
-                alt="Keltische Handfasting ceremonie onder een boom in de natuur"
+                alt="Trouwritueel met handvasten onder een boom in de natuur"
                 class="w-full h-full object-cover aspect-[16/10] lg:aspect-[21/9]"
                 width="1600"
                 height="900"
@@ -255,22 +255,43 @@ setPageSEO({
                   name="i-mdi-candle"
                   class="w-6 h-6 text-primary-500"
                 />
-                <h3 class="text-lg font-semibold">Rust in het moment</h3>
+                <h3 class="text-lg font-semibold">
+                  Wat jullie mogen verwachten
+                </h3>
               </div>
             </template>
-            <div class="space-y-4">
-              <p class="text-neutral-700 leading-relaxed">
-                Ik help jullie vertragen, zodat de ceremonie niet alleen mooi
-                oogt, maar ook echt gevoeld wordt. Er ontstaat ruimte voor
-                aandacht, verbinding en aanwezigheid in het moment zelf.
-              </p>
-              <blockquote
-                class="border-l-2 border-primary-200 pl-4 text-sm italic leading-relaxed text-neutral-500"
-              >
-                “Hier komt een echte quote van een bruidspaar over de rust, de
-                warmte en de oprechtheid van de ceremonie.”
-              </blockquote>
-            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-neutral-700">
+                <UIcon
+                  name="i-mdi-check-circle"
+                  class="w-5 h-5 text-primary-500 mt-0.5 shrink-0"
+                />
+                <span>
+                  Een ceremonie die afgestemd is op jullie verhaal en jullie
+                  intentie.
+                </span>
+              </li>
+              <li class="flex items-start gap-3 text-neutral-700">
+                <UIcon
+                  name="i-mdi-check-circle"
+                  class="w-5 h-5 text-primary-500 mt-0.5 shrink-0"
+                />
+                <span>
+                  Rust, zachtheid en echte aandacht voor wat er in het moment
+                  gebeurt.
+                </span>
+              </li>
+              <li class="flex items-start gap-3 text-neutral-700">
+                <UIcon
+                  name="i-mdi-check-circle"
+                  class="w-5 h-5 text-primary-500 mt-0.5 shrink-0"
+                />
+                <span>
+                  Een beleving die niet alleen mooi is om te zien, maar ook lang
+                  voelbaar blijft.
+                </span>
+              </li>
+            </ul>
           </UCard>
 
           <div class="overflow-hidden rounded-[1.75rem] shadow-xl">
@@ -308,22 +329,37 @@ setPageSEO({
                   name="i-mdi-microphone"
                   class="w-6 h-6 text-secondary-500"
                 />
-                <h3 class="text-lg font-semibold">Warme begeleiding</h3>
+                <h3 class="text-lg font-semibold">Ceremonie-elementen</h3>
               </div>
             </template>
-            <div class="space-y-4">
-              <p class="text-neutral-700 leading-relaxed">
-                Ik begeleid het ritueel met aandacht en zachtheid, zodat jullie
-                je veilig en ontspannen kunnen richten op elkaar en op de
-                beleving van de ceremonie.
-              </p>
-              <blockquote
-                class="border-l-2 border-secondary-200 pl-4 text-sm italic leading-relaxed text-neutral-500"
-              >
-                “Hier komt een echte quote van een bruidspaar over de
-                begeleiding, de sfeer en hoe persoonlijk het moment voelde.”
-              </blockquote>
-            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-neutral-700">
+                <UIcon
+                  name="i-mdi-star-four-points"
+                  class="w-5 h-5 text-secondary-500 mt-0.5 shrink-0"
+                />
+                <span>Het verbinden van de handen met linten.</span>
+              </li>
+              <li class="flex items-start gap-3 text-neutral-700">
+                <UIcon
+                  name="i-mdi-star-four-points"
+                  class="w-5 h-5 text-secondary-500 mt-0.5 shrink-0"
+                />
+                <span>
+                  Symboliek van licht, intentie en zegen binnen de ceremonie.
+                </span>
+              </li>
+              <li class="flex items-start gap-3 text-neutral-700">
+                <UIcon
+                  name="i-mdi-star-four-points"
+                  class="w-5 h-5 text-secondary-500 mt-0.5 shrink-0"
+                />
+                <span>
+                  Ruimte voor persoonlijke woorden, geloften of betekenisvolle
+                  rituelen.
+                </span>
+              </li>
+            </ul>
           </UCard>
         </div>
       </div>
@@ -340,10 +376,9 @@ setPageSEO({
           </h2>
           <div class="space-y-5 text-lg text-neutral-600 leading-relaxed">
             <p>
-              De investering voor een Keltische Handfasting & spirituele
-              huwelijkszegening is
+              De investering voor een trouwritueel met handvasten is
               <span class="font-semibold text-neutral-900">
-                € 588,- exclusief reiskosten
+                € 555,- exclusief reiskosten
               </span>
               .
             </p>
@@ -427,7 +462,7 @@ setPageSEO({
           indicators
           arrows
           class="w-full"
-          aria-label="Fotocarrousel van Keltische Handfasting ceremonie"
+          aria-label="Fotocarrousel van een trouwritueel met handvasten"
           aria-roledescription="carousel"
         >
           <figure class="overflow-hidden rounded-[1.5rem] shadow-lg bg-white">
@@ -462,7 +497,7 @@ setPageSEO({
         <UCard>
           <UAccordion
             :items="faqItems"
-            aria-label="Veelgestelde vragen over Keltische Handfasting"
+            aria-label="Veelgestelde vragen over handvasten"
           />
         </UCard>
       </div>
