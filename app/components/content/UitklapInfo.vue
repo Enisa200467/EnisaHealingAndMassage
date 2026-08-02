@@ -1,9 +1,11 @@
 <script setup lang="ts">
 interface Props {
+  compact?: boolean;
   title?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  compact: false,
   title: 'Meer informatie'
 });
 
@@ -17,7 +19,7 @@ const uniqueId = computed(() => {
 
 <template>
   <section class="additional-info w-full">
-    <UContainer class="sm:pb-24 sm:pt-6 py-10">
+    <UContainer :class="props.compact ? 'sm:pb-12 sm:pt-6 py-8' : 'sm:pb-24 sm:pt-6 py-10'">
       <div class="max-w-4xl">
         <UButton
           variant="subtle"

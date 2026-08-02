@@ -60,7 +60,7 @@ const googleMapsUrl = getGoogleMapsUrl();
                 Vanaf Amsterdam Centraal neem je de GVB-veerboot (lijn F2)
                 naar IJplein.<br>
                 De overtocht duurt ongeveer 5 minuten.<br>
-                Vanaf de veerboot is het slechts 1–2 minuten lopen naar IJplein
+                Vanaf de veerboot is het slechts 1 tot 2 minuten lopen naar IJplein
                 69.<br><br>
 
                 <span class="font-medium"

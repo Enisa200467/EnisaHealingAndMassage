@@ -6,7 +6,7 @@ const { treatments } = useTreatments();
 
 <template>
   <UApp>
-    <SkipNavigation />
+    <AppSkipNavigation />
     <div class="flex flex-col min-h-screen">
       <SiteHeader />
       <main

@@ -27,7 +27,7 @@
       aria-hidden="true"
     />
     <template v-else>
-      <LazyCarousel
+      <AppCarousel
         v-if="videos.length > 0"
         v-slot="{ item }"
         :items="videos"
@@ -41,7 +41,7 @@
         @update:modelValue="onVideoChange"
       >
         <VideoEmbed :url="item.url" :title="item.title" />
-      </LazyCarousel>
+      </AppCarousel>
 
       <!-- Empty state -->
       <div
@@ -73,8 +73,8 @@ const props = withDefaults(defineProps<Props>(), {
   ariaLabel: undefined,
 });
 
-const LazyCarousel = defineAsyncComponent(
-  () => import("~/components/LazyCarousel.vue"),
+const AppCarousel = defineAsyncComponent(
+  () => import("~/components/AppCarousel.vue"),
 );
 
 const carouselObserver = ref<HTMLElement | null>(null);
