@@ -3,6 +3,7 @@ import { type Treatment } from '~/features/admin/types/treatment.types';
 
 interface Props {
   // Content-based props (fallback)
+  bookButtonText?: string;
   id?: string;
   description?: string;
 }
@@ -55,6 +56,7 @@ const displayTrajects = computed(() => treatmentData.value?.trajects || []);
             :discount-enabled="displayDiscountEnabled"
             :discount-price="displayDiscountPrice"
             :trajects="displayTrajects"
+            :book-button-text="bookButtonText"
             show-book-button
           />
         </div>

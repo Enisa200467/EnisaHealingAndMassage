@@ -116,7 +116,7 @@ Je kunt je na de behandeling direct beter voelen, maar soms komt het voor dat he
 
 Behandeladvies & frequentie
 
-Voor een duurzaam en zichtbaar resultaat adviseer ik meestal minimaal 3 behandelingen. Hoeveel sessies nodig zijn, hangt af van jouw klachten en hoe lang deze al aanwezig zijn – fysiek of emotioneel.
+Voor een duurzaam en zichtbaar resultaat adviseer ik meestal minimaal 3 behandelingen. Hoeveel sessies nodig zijn, hangt af van jouw klachten en hoe lang deze al aanwezig zijn, fysiek of emotioneel.
 
 Voor de eerste twee sessies is het aan te raden niet langer dan 2 weken tussenruimte te laten. De energie bouwt zich namelijk op en werkt verder door in het systeem.
 

@@ -20,22 +20,22 @@ const personSchema = {
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Gecertificeerd SoulKey Therapy Practitioner – SoulKey Academy (opgeleid door Peter Kupers)",
+      name: "Gecertificeerd SoulKey Therapy Practitioner (SoulKey Academy, opgeleid door Peter Kupers)",
       credentialCategory: "Professional Certification",
     },
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Gecertificeerd Ericksoniaanse Hypnose – UNLP Academie",
+      name: "Gecertificeerd Ericksoniaanse Hypnose (UNLP Academie)",
       credentialCategory: "Professional Certification",
     },
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Gecertificeerd Mindfulness MBSR Trainer – Centrum voor Mindfulness Amsterdam (opgeleid door drs. Rob Brandsma)",
+      name: "Gecertificeerd Mindfulness MBSR Trainer (Centrum voor Mindfulness Amsterdam, opgeleid door drs. Rob Brandsma)",
       credentialCategory: "Professional Certification",
     },
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Gediplomeerd Erkend Wellnessmasseur – Anand Opleidingen",
+      name: "Gediplomeerd Erkend Wellnessmasseur (Anand Opleidingen)",
       credentialCategory: "Professional Certification",
     },
   ],
@@ -154,7 +154,7 @@ setPageSEO({
           <p class="text-neutral-600 leading-relaxed mb-6">
             Ik beschik al van kinds af aan over de bijzondere gave om mensen
             geneeskrachtige energie te geven die via mijn handen stroomt. Deze
-            energie komt niet vanuit mij – ik geef deze door uit het universum.
+            energie komt niet vanuit mij, ik geef deze door uit het universum.
             Met mijn handen voel ik in welke delen van het lichaam iemand
             blokkades of spanning heeft en waar ik de energie mag richten. Het
             gebeurt vaak dat ik in mijn eigen lichaam aanvoel waar iemand pijn
@@ -195,8 +195,8 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Gecertificeerd SoulKey Therapy Practitioner – SoulKey Academy
-                  (opgeleid door Peter Kupers)</span
+                  >Gecertificeerd SoulKey Therapy Practitioner (SoulKey Academy,
+                  opgeleid door Peter Kupers)</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -205,7 +205,7 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Gecertificeerd Ericksoniaanse Hypnose – UNLP Academie</span
+                  >Gecertificeerd Ericksoniaanse Hypnose (UNLP Academie)</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -214,8 +214,8 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Gecertificeerd Mindfulness MBSR Trainer – Centrum voor Mindfulness
-                  Amsterdam (opgeleid door drs. Rob Brandsma)</span
+                  >Gecertificeerd Mindfulness MBSR Trainer (Centrum voor Mindfulness
+                  Amsterdam, opgeleid door drs. Rob Brandsma)</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -224,7 +224,7 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Gediplomeerd Erkend Wellnessmasseur – Anand Opleidingen</span
+                  >Gediplomeerd Erkend Wellnessmasseur (Anand Opleidingen)</span
                 >
               </li>
             </ul>
@@ -347,7 +347,7 @@ setPageSEO({
           </p>
           <p class="text-neutral-600 leading-relaxed mb-6">
             Voor mij voelt dit als wanneer een klein vogeltje in een kooi
-            langzaam leert vliegen – eerst onzeker, niet wetend waar de uitgang
+            langzaam leert vliegen: eerst onzeker, niet wetend waar de uitgang
             is. Met geduld, vertrouwen en gezamenlijke inspanning lukt het om de
             vleugels te spreiden en weer te vliegen. Dat moment, wanneer iemand
             zijn eigen kracht en vrijheid terugvindt, is voor mij een grote
@@ -355,14 +355,14 @@ setPageSEO({
           </p>
           <p class="text-neutral-600 leading-relaxed mb-6">
             Het allerbelangrijkste voor mij is dat mensen zich bij mij veilig en
-            op hun gemak voelen – alleen dan kan echte heling plaatsvinden. Ik
+            op hun gemak voelen, alleen dan kan echte heling plaatsvinden. Ik
             ben daarnaast moeder van twee kinderen, wat mij nog dieper heeft
             geleerd hoe belangrijk zachtheid, vertrouwen en warmte zijn in het
             contact met anderen.
           </p>
           <p class="text-neutral-600 leading-relaxed">
             Vanuit liefde en intuïtie begeleid ik mensen om weer in hun kracht
-            te komen – dat is waar ik mijn diepste voldoening uit haal.
+            te komen. Dat is waar ik mijn diepste voldoening uit haal.
           </p>
         </div>
       </section>
@@ -645,7 +645,7 @@ setPageSEO({
             />
             <p class="text-lg text-neutral-700 leading-relaxed">
               Wellicht ten overvloede, maar deze energie en deze gave die ik heb
-              mogen ontvangen is voor iedereen – mensen met religie, mensen
+              mogen ontvangen is voor iedereen: mensen met religie, mensen
               zonder religie. Het is zuivere energie van een goede bron, het
               universum. Het is een liefdevolle energie waarvoor ik zeer
               dankbaar ben dat ik hem mag overbrengen om u te kunnen helpen.

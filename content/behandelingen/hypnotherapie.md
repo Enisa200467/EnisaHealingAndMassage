@@ -9,6 +9,7 @@ description: Met behulp van Ericksoniaanse hypnose begeleid ik je in Amsterdam
   Noord bij stress, angst, onzekerheid, het versterken van zelfvertrouwen en het
   doorbreken van terugkerende patronen. Ook mogelijk in combinatie met chakra
   healing.
+bookButtonText: Intake inplannen
 id: dd01fafe-5591-4ca2-b460-c18388237f76
 ---
 ::
@@ -71,7 +72,7 @@ items:
       - "Duur: 90 minuten"
       - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
       - Gericht op inzicht, persoonlijke groei en positieve verandering vanuit het onderbewuste
-    ctaText: Plan losse sessie
+    ctaText: Plan je intake
     ctaLink: https://enisa-healing-massage.setmore.com
   - id: "41499119-22df-42a9-916a-ac32120f6d5b"
     title: Hypnotherapie & Chakra Healing

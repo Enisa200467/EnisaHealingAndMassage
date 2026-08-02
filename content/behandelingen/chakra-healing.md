@@ -64,7 +64,7 @@ Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik in
 ::uitklap-info{title="Meer over chakra healing en genezende energie"}
 ### De Zeven Hoofdchakra's
 
-Chakra healing is gericht op het in balans brengen van de zeven hoofdchakra's in het lichaam – energetische centra die verbonden zijn met ons fysieke, mentale, emotionele en spirituele welzijn. Deze energiecentra reguleren de energiestroom door je hele systeem.
+Chakra healing is gericht op het in balans brengen van de zeven hoofdchakra's in het lichaam, energetische centra die verbonden zijn met ons fysieke, mentale, emotionele en spirituele welzijn. Deze energiecentra reguleren de energiestroom door je hele systeem.
 
 ### Genezende Energie
 

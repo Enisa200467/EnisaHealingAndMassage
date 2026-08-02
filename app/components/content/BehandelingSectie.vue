@@ -3,6 +3,7 @@ defineProps<{
   title?: string;
   image?: string;
   imageAlt?: string;
+  imageVariant?: 'portrait';
   items?: string[];
 }>();
 </script>
@@ -11,7 +12,7 @@ defineProps<{
   <PageSection primary not-prose>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-center">
         <!-- Image -->
-        <div v-if="image" class="lg:col-span-1">
+        <div v-if="image" class="lg:col-span-1" :class="{ 'portrait-image': imageVariant === 'portrait' }">
           <div class="relative w-full  object-cover rounded-xl  shadow-lg overflow-hidden">
             <NuxtPicture
               :src="image"
@@ -52,3 +53,17 @@ defineProps<{
       </div>
   </PageSection>
 </template>
+
+<style scoped>
+.portrait-image :deep(img) {
+  height: 20rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .portrait-image :deep(img) {
+    height: 32rem;
+  }
+}
+</style>

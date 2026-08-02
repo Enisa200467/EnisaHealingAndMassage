@@ -30,7 +30,7 @@
             {{ currentSlideAnnouncement }}
           </div>
 
-          <LazyCarousel
+          <AppCarousel
             ref="carouselRef"
             v-slot="{ item }"
             dots
@@ -58,7 +58,7 @@
                 @load="onFirstImageLoad(item)"
               />
             </div>
-          </LazyCarousel>
+          </AppCarousel>
         </template>
         <div
           v-else
@@ -97,8 +97,8 @@
 
 <script setup lang="ts">
 const routes = useRoutes();
-const LazyCarousel = defineAsyncComponent(
-  () => import("~/components/LazyCarousel.vue"),
+const AppCarousel = defineAsyncComponent(
+  () => import("~/components/AppCarousel.vue"),
 );
 
 const carouselItems = [
