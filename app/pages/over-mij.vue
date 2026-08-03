@@ -20,7 +20,7 @@ const personSchema = {
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Gecertificeerd SoulKey Therapy Practitioner (SoulKey Academy, opgeleid door Peter Kupers)",
+      name: "Gecertificeerd SoulKey Therapy Practitioner Regressietherapie (SoulKey Academy)",
       credentialCategory: "Professional Certification",
     },
     {
@@ -30,7 +30,7 @@ const personSchema = {
     },
     {
       "@type": "EducationalOccupationalCredential",
-      name: "Gecertificeerd Mindfulness MBSR Trainer (Centrum voor Mindfulness Amsterdam, opgeleid door drs. Rob Brandsma)",
+      name: "Gecertificeerd Mindfulness MBSR Trainer (Centrum voor Mindfulness Amsterdam)",
       credentialCategory: "Professional Certification",
     },
     {
@@ -195,8 +195,8 @@ setPageSEO({
                   class="w-5 h-5 text-green-500 mt-0.5"
                 />
                 <span class="text-neutral-600"
-                  >Gecertificeerd SoulKey Therapy Practitioner (SoulKey Academy,
-                  opgeleid door Peter Kupers)</span
+                  >Gecertificeerd SoulKey Therapy Practitioner Regressietherapie
+                  (SoulKey Academy)</span
                 >
               </li>
               <li class="flex items-start gap-3">
@@ -215,7 +215,7 @@ setPageSEO({
                 />
                 <span class="text-neutral-600"
                   >Gecertificeerd Mindfulness MBSR Trainer (Centrum voor Mindfulness
-                  Amsterdam, opgeleid door drs. Rob Brandsma)</span
+                  Amsterdam)</span
                 >
               </li>
               <li class="flex items-start gap-3">
