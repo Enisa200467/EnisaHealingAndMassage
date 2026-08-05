@@ -41,6 +41,10 @@ export const useStudioContent = () => {
         pages: [
           { label: 'Home', to: routes.pages.home },
           { label: 'Over Mij', to: routes.pages.about },
+          {
+            label: 'Trouwritueel met handvasten',
+            to: routes.pages.keltischeHandfasting,
+          },
           { label: 'Behandelingen', to: routes.pages.treatments },
           { label: 'Contact', to: routes.pages.contact },
           { label: 'Reviews', to: routes.pages.reviews },
