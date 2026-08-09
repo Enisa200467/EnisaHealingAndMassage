@@ -19,6 +19,7 @@ items:
   - "Sessie 4 (60 min): Afrondende chakra healing behandeling – €85"
   - "Ook te boeken als traject:"
   - "3 sessies van 2 uur – €160 per sessie"
+  - "Tijdelijk €30 korting op het volledige traject"
 image: /images/loslaten-traject.webp
 imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?
