@@ -59,9 +59,9 @@ Het traject Energetische blokkades opheffen in mijn praktijk in Amsterdam Noord 
 ::
 
 ::uitklap-info{title="Meer over Energetische blokkades opheffen"}
-### Waarom Drie Sessies?
+### Waarom Vier Sessies?
 
-Dit traject is bewust opgezet als een serie van drie sessies omdat diep loslaten tijd en ruimte nodig heeft. Elke sessie bouwt voort op de vorige, waardoor je stap voor stap dieper kunt gaan in het proces. In elke sessie wordt meditatie gecombineerd met healing of chakra healing, voor een gebalanceerde aanpak die zowel mentaal als energetisch werkt.
+Dit traject is bewust opgezet als een serie van vier sessies omdat diep loslaten tijd en ruimte nodig heeft. Elke sessie bouwt voort op de vorige, waardoor je stap voor stap dieper kunt gaan in het proces. Tijdens het traject worden meditatie, healing en chakra healing ingezet voor een gebalanceerde aanpak die zowel mentaal als energetisch werkt.
 
 ### Wat Betekent Loslaten?
 
@@ -69,18 +69,7 @@ Als je voelt dat er ergens een blokkade zit, je niet vooruit komt in het leven e
 
 Het kan ook gaan om herinneringen uit je kindertijd. Dat hoeven geen slechte herinneringen te zijn. Ook te veel vasthouden aan mooie herinneringen kan een blokkade opleveren. Zo kun je ongemerkt jarenlang blijven steken op dezelfde plek.
 
-**Loslaten betekent niet dat je het moet vergeten.** Loslaten betekent voor je eigen geluk kiezen en verder gaan met je leven.
-
-### Sessie Opbouw
-
-#### Sessie 1: Meditatie met Chakra Healing
-De eerste sessie combineert een geleide meditatie met chakra healing. Deze combinatie helpt bij het herkennen en losmaken van blokkades. Je leert contact maken met jezelf op een diepere laag en voelt waar energie vastzit.
-
-#### Sessie 2: Meditatie en Healing voor Diepere Verwerking
-In de tweede sessie gaan we dieper in op wat er in de eerste sessie is losgekomen. Met meditatie en healing werk je aan het verwerken van oude pijn en patronen, waarbij we ons specifiek richten op het helen van het innerlijke kind. Deze sessie is volledig gericht op acceptatie en innerlijke rust.
-
-#### Sessie 3: Meditaties met Healing ter Integratie
-De derde sessie bestaat uit twee meditaties gecombineerd met healing. Dit geeft je de ruimte om het proces te integreren en alles wat is losgekomen een plek te geven. We ronden het traject af en zorgen dat alle energieën weer in balans zijn.
+Loslaten betekent niet dat je het moet vergeten. Loslaten betekent voor je eigen geluk kiezen en verder gaan met je leven.
 
 ### Waar Help Dit Traject Bij?
 
