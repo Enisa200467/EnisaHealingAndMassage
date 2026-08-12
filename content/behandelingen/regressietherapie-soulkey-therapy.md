@@ -17,19 +17,13 @@ id: a5889aac-e18b-4ed9-92a0-4bd0bf05bf11
 ::behandeling-sectie
 ---
 
-title: Regressietherapie & SoulKey Therapy De reis van je ziel
+title: Regressietherapie & SoulKey Therapy – De reis van je ziel
 image: /images/soulkey.jpg
 imageAlt: Symbolische SoulKey Therapy-reis naar innerlijke helderheid
 imageVariant: portrait
 ---
 
-Heb je het gevoel dat bepaalde situaties, emoties of relaties zich steeds herhalen? Loop je telkens tegen dezelfde patronen aan en vraag je je af waarom? Of voel je een diep verlangen om jezelf beter te begrijpen en antwoorden te vinden op vragen die verder gaan dan het dagelijkse, bewuste denken?
-
-Soms ligt de oorsprong van een hardnekkig patroon niet in wat je je vandaag bewust kunt herinneren. SoulKey Therapy is een doorontwikkelde vorm van regressietherapie en hypnotherapie waarin ruimte ontstaat om ervaringen uit vorige levens, de periode tussen levens (Life Between Lives) en jouw zielsbewustzijn te onderzoeken.
-
-Iedere sessie verloopt op een unieke manier. Er is geen vast script en niets wordt geforceerd. Wat zich tijdens de sessie aandient, sluit precies aan bij wat voor jou op dat moment van betekenis is. De één ervaart heldere beelden, de ander diepe gevoelens, een innerlijk weten of een combinatie daarvan.
-
-Mijn begeleiding is rustig, persoonlijk en volledig afgestemd op jouw tempo. Ik creëer een veilige, oordeelvrije omgeving waarin je op een ontspannen manier dieper contact kunt maken met jezelf en met de inzichten die zich aandienen.
+SoulKey Therapy is een doorontwikkelde vorm van regressietherapie en hypnotherapie waarin ruimte ontstaat om te onderzoeken wat zich vanuit jouw onderbewustzijn aandient. Dat kan zich uiten als ervaringen die aanvoelen als vorige levens, de periode tussen levens (Life Between Lives) of inzichten op het niveau van zielsbewustzijn. Iedere ervaring is persoonlijk en wordt niet vooraf ingevuld.
 ::
 
 ::twee-kolommen
@@ -85,11 +79,7 @@ Bij annulering binnen 48 uur voor de afspraak ben ik genoodzaakt de gereserveerd
 ---
 items:
 
-- SoulKey Therapy is een veilige, beproefde en respectvolle methode
-- Je blijft tijdens de gehele sessie volledig bewust aanwezig; je verliest nooit de controle of je eigen vrije wil
-- Je hoeft niet in reïncarnatie te geloven om de therapeutische waarde van deze methode te ervaren. Het onderbewustzijn werkt via beelden en symbolen die voor jou betekenisvol en helend kunnen zijn
-- Niet iedereen ziet beelden. Je kunt de sessie ook ervaren door gevoelens, geluiden of een diep innerlijk weten
-- Deze behandeling is complementair (aanvullend) en vervangt geen reguliere medische of psychologische zorg
+- Niet iedereen ziet beelden. Je kunt de sessie ook ervaren via gevoelens, wat je in je lichaam voelt of een diep innerlijk weten.
 title: Belangrijk om te weten
 
 ---
@@ -99,15 +89,15 @@ title: Belangrijk om te weten
 
 ### Vorige levens
 
-Tijdens de sessie kan er een spontane regressie ontstaan naar ervaringen uit vorige levens. Dit helpt om huidige angsten, relaties of onverklaarbare gevoelens in een heel nieuw daglicht te zien. De therapeutische waarde ligt in de betekenis en de bevrijding die deze herinneringen brengen voor het leven dat je nu leidt.
+Tijdens de sessie kan er een spontane regressie ontstaan naar ervaringen die zich aandienen als een vorig leven. Dit kan helpen om terugkerende patronen, angsten, relaties of emoties vanuit een nieuw perspectief te begrijpen. De therapeutische waarde ligt in de inzichten die bijdragen aan jouw leven van nu.
 
 ### Life Between Lives
 
-Deze laag geeft toegang tot de periode tussen levens in: het bestaan als ziel. Veel cliënten ervaren hier ontmoetingen met hun zielengroep of gidsen en krijgen heldere antwoorden over de keuzes en afspraken die voorafgaand aan dit huidige leven zijn gemaakt.
+Deze vorm richt zich op wat zich tussen twee levens aandient. Sommige mensen ervaren diepe rust, inzichten of een gevoel van verbondenheid. Wat zich tijdens de sessie laat zien of voelen is voor iedereen uniek en wordt niet vooraf ingevuld.
 
 ### Zielsbewustzijn
 
-Hier stem je direct af op de wijsheid van jouw eigen ziel. Het helpt je stil te staan bij vragen zoals: Welke lessen mag ik hier leren? Wat past werkelijk bij mij? En hoe kan ik volledig in mijn eigen kracht gaan staan? Dit zorgt voor een sterke verankering van zelfvertrouwen en innerlijke rust.
+Deze vorm helpt je om in contact te komen met een diepere laag van jezelf en met de wijsheid die zich van binnenuit aandient. Het helpt je stil te staan bij vragen zoals: Welke lessen mag ik hier leren? Wat past werkelijk bij mij? En hoe kan ik volledig in mijn eigen kracht gaan staan? Dit kan bijdragen aan meer zelfvertrouwen, innerlijke rust en bewustere keuzes.
 ::
 
 ::uitklap-info{title="Veelgestelde vragen"}
