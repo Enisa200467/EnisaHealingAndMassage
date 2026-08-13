@@ -133,6 +133,12 @@ const mobileNavItems = computed<NavigationMenuItem[]>(() => [
     onSelect: closeMobileMenu,
   },
   {
+    label: "Trouwritueel met handvasten",
+    icon: "i-mdi-heart",
+    to: routes.pages.keltischeHandfasting,
+    onSelect: closeMobileMenu,
+  },
+  {
     label: "Behandelingen",
     icon: "i-mdi-sparkles",
     children: treatmentNavEntries.value,
@@ -169,6 +175,11 @@ const desktopNavItems = computed<NavigationMenuItem[]>(() => [
     label: "Over Mij",
     icon: "i-mdi-account",
     to: routes.pages.about,
+  },
+  {
+    label: "Trouwritueel met handvasten",
+    icon: "i-mdi-heart",
+    to: routes.pages.keltischeHandfasting,
   },
   {
     label: "Behandelingen",

@@ -14,6 +14,7 @@ export const useRoutes = () => {
   const pages = {
     home: '/',
     about: '/over-mij',
+    keltischeHandfasting: '/keltische-handfasting',
     treatments: '/behandelingen',
     contact: '/contact',
     faq: '/faq',
