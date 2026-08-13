@@ -99,7 +99,7 @@ title: Belangrijk om te weten
 
 ### Vorige levens
 
-Tijdens de sessie kan er een spontane regressie ontstaan naar ervaringen uit vorige levens. Dit helpt om huidige angsten, relaties of onverklaarbare gevoelens in een heel nieuw daglicht te zien. De therapeutische waarde ligt in de betekenis en de bevrijding die deze herinneringen brengen voor het leven dat je nu leidt.
+Tijdens de sessie kan er een spontane regressie ontstaan naar ervaringen die zich aandienen als een vorig leven. Dit kan helpen om terugkerende patronen, angsten, relaties of emoties vanuit een nieuw perspectief te begrijpen. De therapeutische waarde ligt in de inzichten die bijdragen aan jouw leven van nu.
 
 ### Life Between Lives
 
