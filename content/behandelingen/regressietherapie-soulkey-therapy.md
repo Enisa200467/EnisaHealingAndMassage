@@ -103,7 +103,7 @@ Tijdens de sessie kan er een spontane regressie ontstaan naar ervaringen die zic
 
 ### Life Between Lives
 
-Deze laag geeft toegang tot de periode tussen levens in: het bestaan als ziel. Veel cliënten ervaren hier ontmoetingen met hun zielengroep of gidsen en krijgen heldere antwoorden over de keuzes en afspraken die voorafgaand aan dit huidige leven zijn gemaakt.
+Life Between Lives richt zich op de periode tussen levens. Veel mensen ervaren hier een diep gevoel van rust, verbondenheid en inzicht. Sommigen beleven een ontmoeting die zij ervaren als een gids, zielengroep of een andere vorm van bewustzijn. Anderen ontvangen juist waardevolle inzichten, gevoelens of een diep innerlijk weten. Iedere ervaring is persoonlijk en ontstaat op een natuurlijke manier, zonder vooraf te worden ingevuld.
 
 ### Zielsbewustzijn
 
