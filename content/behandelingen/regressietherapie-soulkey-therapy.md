@@ -107,7 +107,7 @@ Deze laag geeft toegang tot de periode tussen levens in: het bestaan als ziel. V
 
 ### Zielsbewustzijn
 
-Hier stem je direct af op de wijsheid van jouw eigen ziel. Het helpt je stil te staan bij vragen zoals: Welke lessen mag ik hier leren? Wat past werkelijk bij mij? En hoe kan ik volledig in mijn eigen kracht gaan staan? Dit zorgt voor een sterke verankering van zelfvertrouwen en innerlijke rust.
+Zielsbewustzijn nodigt je uit om contact te maken met de wijsheid van jouw eigen ziel en vanuit een ruimer perspectief naar jezelf en jouw leven te kijken. Er kan ruimte ontstaan voor diepere inzichten over wie je bent, wat werkelijk bij je past en welke richting je in je leven wilt volgen. Het nodigt je uit om stil te staan bij vragen zoals: Welke lessen mag ik hier leren? Wat geeft mij energie? En hoe kan ik meer leven vanuit vertrouwen en mijn eigen kracht? Dit kan bijdragen aan meer zelfvertrouwen, innerlijke rust en het maken van bewustere keuzes.
 ::
 
 ::uitklap-info{title="Veelgestelde vragen"}
