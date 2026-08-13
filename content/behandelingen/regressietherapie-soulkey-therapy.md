@@ -25,7 +25,7 @@ imageVariant: portrait
 
 Heb je het gevoel dat bepaalde situaties, emoties of relaties zich steeds herhalen? Loop je telkens tegen dezelfde patronen aan en vraag je je af waarom? Of voel je een diep verlangen om jezelf beter te begrijpen en antwoorden te vinden op vragen die verder gaan dan het dagelijkse, bewuste denken?
 
-Soms ligt de oorsprong van een hardnekkig patroon niet in wat je je vandaag bewust kunt herinneren. SoulKey Therapy is een doorontwikkelde vorm van regressietherapie en hypnotherapie waarin ruimte ontstaat om ervaringen uit vorige levens, de periode tussen levens (Life Between Lives) en jouw zielsbewustzijn te onderzoeken.
+Soms ligt de oorsprong van een hardnekkig patroon niet in wat je je vandaag bewust kunt herinneren. SoulKey Therapy is een doorontwikkelde vorm van regressietherapie en hypnotherapie waarin ruimte ontstaat om te onderzoeken wat zich vanuit jouw onderbewustzijn aandient. Dat kan zich uiten als ervaringen die aanvoelen als vorige levens, de periode tussen levens (Life Between Lives) of inzichten op het niveau van zielsbewustzijn. Iedere ervaring is persoonlijk en wordt niet vooraf ingevuld.
 
 Iedere sessie verloopt op een unieke manier. Er is geen vast script en niets wordt geforceerd. Wat zich tijdens de sessie aandient, sluit precies aan bij wat voor jou op dat moment van betekenis is. De één ervaart heldere beelden, de ander diepe gevoelens, een innerlijk weten of een combinatie daarvan.
 
