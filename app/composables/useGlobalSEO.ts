@@ -84,6 +84,12 @@ export const useGlobalSEO = () => {
       serviceArea: businessInfo.serviceArea,
       priceRange: businessInfo.priceRange,
       image: businessInfo.image,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: BUSINESS_INFO.location.latitude,
+        longitude: BUSINESS_INFO.location.longitude,
+      },
+      hasMap: `https://www.google.com/maps/search/?api=1&query=${BUSINESS_INFO.location.latitude},${BUSINESS_INFO.location.longitude}`,
     };
   };
 
@@ -107,20 +113,22 @@ export const useGlobalSEO = () => {
   const generateServiceSchema = (
     serviceName: string,
     description: string,
-    price?: string,
-    duration?: string,
+    price: string | undefined,
+    duration: string | undefined,
+    path: string,
   ) => {
+    const serviceUrl = new URL(path, `${businessInfo.url}/`).toString();
+
     return {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": `${businessInfo.url}#service-${serviceName
-        .toLowerCase()
-        .replace(/\s+/g, "-")}`,
+      "@id": `${serviceUrl}#service`,
       name: serviceName,
       description,
+      url: serviceUrl,
       provider: {
         "@type": "LocalBusiness",
-        "@id": businessInfo.url,
+        "@id": `${businessInfo.url}/#localbusiness`,
         name: businessInfo.name,
         url: businessInfo.url,
         address: businessInfo.address,
@@ -132,6 +140,7 @@ export const useGlobalSEO = () => {
             price: price.replace("€ ", "").replace(",", "."),
             priceCurrency: "EUR",
             availability: "https://schema.org/InStock",
+            url: serviceUrl,
           }
         : undefined,
       ...(duration && { duration }),
@@ -156,16 +165,16 @@ export const useGlobalSEO = () => {
       url: `${businessInfo.url}${path}`,
       author: {
         "@type": "Person",
-        name: "Enisa",
-        jobTitle: "Massagetherapeut en Healing Practitioner",
+        name: "Enisa Erovic",
+        jobTitle: "Behandelaar",
       },
       publisher: {
         "@type": "Organization",
         name: businessInfo.name,
         url: businessInfo.url,
       },
-      datePublished: datePublished || new Date().toISOString(),
-      dateModified: dateModified || new Date().toISOString(),
+      ...(datePublished && { datePublished }),
+      ...(dateModified && { dateModified }),
       mainEntityOfPage: {
         "@type": "WebPage",
         "@id": `${businessInfo.url}${path}`,
@@ -177,12 +186,15 @@ export const useGlobalSEO = () => {
   const setPageSEO = (options: {
     title: string;
     description: string;
-    path: string;
+    path?: string;
     image?: string;
     type?: "website" | "article" | "book" | "profile";
+    robots?: string;
     structuredData?: StructuredDataItem[];
   }) => {
-    const canonical = new URL(options.path, `${businessInfo.url}/`).toString();
+    const canonical = options.path
+      ? new URL(options.path, `${businessInfo.url}/`).toString()
+      : undefined;
     const image = new URL(
       options.image || businessInfo.image,
       `${businessInfo.url}/`,
@@ -191,6 +203,7 @@ export const useGlobalSEO = () => {
     useSeoMeta({
       title: options.title,
       description: options.description,
+      robots: options.robots,
       ogTitle: options.title,
       ogDescription: options.description,
       ogImage: image,
@@ -203,13 +216,15 @@ export const useGlobalSEO = () => {
     });
 
     useHead({
-      link: [
-        {
-          key: "canonical",
-          rel: "canonical",
-          href: canonical,
-        },
-      ],
+      link: canonical
+        ? [
+            {
+              key: "canonical",
+              rel: "canonical",
+              href: canonical,
+            },
+          ]
+        : [],
       script: (options.structuredData || []).map((data, index) => ({
         key: `structured-data-${index}`,
         type: "application/ld+json",
