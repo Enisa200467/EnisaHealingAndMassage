@@ -1,29 +1,30 @@
 import type {
-  Review,
   ReviewSubmission,
   ReviewStats,
   PaginatedReviews,
-} from '~/types/reviews';
+} from "../types/reviews";
 
 export const useReviews = () => {
   /**
    * Submit a new review (public endpoint)
    */
   const submitReview = async (
-    reviewData: ReviewSubmission
+    reviewData: ReviewSubmission,
   ): Promise<{ success: boolean; error?: string }> => {
     try {
-      await $fetch('/api/reviews', {
-        method: 'POST',
+      await $fetch("/api/reviews", {
+        method: "POST",
         body: reviewData,
       });
 
       return { success: true };
-    } catch (error: any) {
-      console.error('Error submitting review:', error);
+    } catch (error: unknown) {
+      console.error("Error submitting review:", error);
+      const apiError = error as { data?: { message?: string } };
       return {
         success: false,
-        error: error.data?.message || 'Er is een onverwachte fout opgetreden',
+        error:
+          apiError.data?.message || "Er is een onverwachte fout opgetreden",
       };
     }
   };
@@ -33,19 +34,19 @@ export const useReviews = () => {
    */
   const getApprovedReviews = async (
     page = 1,
-    limit = 6
+    limit = 6,
   ): Promise<PaginatedReviews> => {
     try {
       const response = await $fetch<{ data: PaginatedReviews }>(
-        '/api/reviews',
+        "/api/reviews",
         {
           query: { page, limit },
-        }
+        },
       );
 
       return response.data;
     } catch (error) {
-      console.error('Error fetching approved reviews:', error);
+      console.error("Error fetching approved reviews:", error);
       return {
         reviews: [],
         total: 0,
@@ -62,11 +63,11 @@ export const useReviews = () => {
   const getReviewStats = async (): Promise<ReviewStats> => {
     try {
       const response = await $fetch<{ data: ReviewStats }>(
-        '/api/reviews/stats'
+        "/api/reviews/stats",
       );
       return response.data;
     } catch (error) {
-      console.error('Error fetching review stats:', error);
+      console.error("Error fetching review stats:", error);
       return {
         total: 0,
         approved: 0,

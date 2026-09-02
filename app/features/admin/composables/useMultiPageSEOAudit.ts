@@ -1,7 +1,7 @@
 interface SEOIssue {
   test: string;
   message: string;
-  severity: 'error' | 'warning' | 'info';
+  severity: "error" | "warning" | "info";
 }
 
 interface SEOResults {
@@ -52,11 +52,12 @@ interface PageAuditResults {
 interface AuditableRoute {
   path: string;
   title: string;
-  category: 'page' | 'treatment';
+  category: "page" | "treatment";
 }
 
 export const useMultiPageSEOAudit = () => {
   const routes = useRoutes();
+  const { activeTreatments } = useTreatments();
 
   // Get all auditable routes (exclude admin pages)
   const getAuditableRoutes = (): AuditableRoute[] => {
@@ -67,18 +68,16 @@ export const useMultiPageSEOAudit = () => {
       auditableRoutes.push({
         path,
         title: getPageTitle(key, path),
-        category: 'page',
+        category: "page",
       });
     });
 
-    // Add treatment pages
-    Object.values(routes.treatments).forEach((category) => {
-      category.items.forEach((treatment) => {
-        auditableRoutes.push({
-          path: treatment.path,
-          title: treatment.title,
-          category: 'treatment',
-        });
+    // Add active treatment pages from database-backed route data
+    activeTreatments.value.forEach((treatment) => {
+      auditableRoutes.push({
+        path: treatment.path,
+        title: treatment.title,
+        category: "treatment",
       });
     });
 
@@ -88,15 +87,15 @@ export const useMultiPageSEOAudit = () => {
   // Helper function to get page title based on route key
   const getPageTitle = (key: string, path: string): string => {
     const titleMap: Record<string, string> = {
-      home: 'Homepage',
-      about: 'Over Mij',
-      treatments: 'Behandelingen Overzicht',
-      contact: 'Contact',
-      booking: 'Boeken',
-      faq: 'Veelgestelde Vragen',
-      blog: 'Blog',
-      tarieven: 'Tarieven',
-      reviews: 'Reviews',
+      home: "Homepage",
+      about: "Over Mij",
+      treatments: "Behandelingen Overzicht",
+      contact: "Contact",
+      booking: "Boeken",
+      faq: "Veelgestelde Vragen",
+      blog: "Blog",
+      tarieven: "Tarieven",
+      reviews: "Reviews",
     };
 
     return titleMap[key] || path;
@@ -104,7 +103,7 @@ export const useMultiPageSEOAudit = () => {
 
   // Audit a single page by fetching its HTML
   const auditSinglePage = async (
-    route: AuditableRoute
+    route: AuditableRoute,
   ): Promise<PageAuditResults> => {
     const result: PageAuditResults = {
       url: route.path,
@@ -133,7 +132,7 @@ export const useMultiPageSEOAudit = () => {
 
         const html = await response.text();
         const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
+        const doc = parser.parseFromString(html, "text/html");
 
         // Run SEO audit on the parsed document
         result.seo = await runSEOAuditOnDocument(doc);
@@ -155,7 +154,7 @@ export const useMultiPageSEOAudit = () => {
       }
     } catch (error) {
       result.error =
-        error instanceof Error ? error.message : 'Unknown error occurred';
+        error instanceof Error ? error.message : "Unknown error occurred";
     } finally {
       result.isLoading = false;
     }
@@ -169,24 +168,24 @@ export const useMultiPageSEOAudit = () => {
     let passed = 0;
 
     // Check meta title
-    const title = doc.querySelector('title')?.textContent;
+    const title = doc.querySelector("title")?.textContent;
     if (!title) {
       issues.push({
-        test: 'Title Tag',
-        message: 'Missing title tag',
-        severity: 'error',
+        test: "Title Tag",
+        message: "Missing title tag",
+        severity: "error",
       });
     } else if (title.length < 30) {
       issues.push({
-        test: 'Title Tag',
-        message: 'Title too short (< 30 characters)',
-        severity: 'warning',
+        test: "Title Tag",
+        message: "Title too short (< 30 characters)",
+        severity: "warning",
       });
     } else if (title.length > 60) {
       issues.push({
-        test: 'Title Tag',
-        message: 'Title too long (> 60 characters)',
-        severity: 'warning',
+        test: "Title Tag",
+        message: "Title too long (> 60 characters)",
+        severity: "warning",
       });
     } else {
       passed++;
@@ -195,54 +194,54 @@ export const useMultiPageSEOAudit = () => {
     // Check meta description
     const description = doc
       .querySelector('meta[name="description"]')
-      ?.getAttribute('content');
+      ?.getAttribute("content");
     if (!description) {
       issues.push({
-        test: 'Meta Description',
-        message: 'Missing meta description',
-        severity: 'error',
+        test: "Meta Description",
+        message: "Missing meta description",
+        severity: "error",
       });
     } else if (description.length < 120) {
       issues.push({
-        test: 'Meta Description',
-        message: 'Description too short (< 120 characters)',
-        severity: 'warning',
+        test: "Meta Description",
+        message: "Description too short (< 120 characters)",
+        severity: "warning",
       });
     } else if (description.length > 160) {
       issues.push({
-        test: 'Meta Description',
-        message: 'Description too long (> 160 characters)',
-        severity: 'warning',
+        test: "Meta Description",
+        message: "Description too long (> 160 characters)",
+        severity: "warning",
       });
     } else {
       passed++;
     }
 
     // Check H1 tags
-    const h1Tags = doc.querySelectorAll('h1');
+    const h1Tags = doc.querySelectorAll("h1");
     if (h1Tags.length === 0) {
       issues.push({
-        test: 'H1 Tag',
-        message: 'No H1 tag found',
-        severity: 'error',
+        test: "H1 Tag",
+        message: "No H1 tag found",
+        severity: "error",
       });
     } else if (h1Tags.length > 1) {
       issues.push({
-        test: 'H1 Tag',
-        message: 'Multiple H1 tags found',
-        severity: 'warning',
+        test: "H1 Tag",
+        message: "Multiple H1 tags found",
+        severity: "warning",
       });
     } else {
       passed++;
     }
 
     // Check images without alt text
-    const imagesWithoutAlt = doc.querySelectorAll('img:not([alt])');
+    const imagesWithoutAlt = doc.querySelectorAll("img:not([alt])");
     if (imagesWithoutAlt.length > 0) {
       issues.push({
-        test: 'Image Alt Text',
+        test: "Image Alt Text",
         message: `${imagesWithoutAlt.length} images missing alt text`,
-        severity: 'error',
+        severity: "error",
       });
     } else {
       passed++;
@@ -252,9 +251,9 @@ export const useMultiPageSEOAudit = () => {
     const canonical = doc.querySelector('link[rel="canonical"]');
     if (!canonical) {
       issues.push({
-        test: 'Canonical URL',
-        message: 'Missing canonical URL',
-        severity: 'warning',
+        test: "Canonical URL",
+        message: "Missing canonical URL",
+        severity: "warning",
       });
     } else {
       passed++;
@@ -267,9 +266,9 @@ export const useMultiPageSEOAudit = () => {
 
     if (!ogTitle || !ogDescription || !ogImage) {
       issues.push({
-        test: 'Open Graph',
-        message: 'Missing essential Open Graph tags',
-        severity: 'warning',
+        test: "Open Graph",
+        message: "Missing essential Open Graph tags",
+        severity: "warning",
       });
     } else {
       passed++;
@@ -288,24 +287,24 @@ export const useMultiPageSEOAudit = () => {
 
   // Get performance metrics from document
   const getPerformanceMetricsFromDocument = (
-    doc: Document
+    doc: Document,
   ): PerformanceMetrics => {
     return {
-      domElements: doc.querySelectorAll('*').length,
-      images: doc.querySelectorAll('img').length,
-      headings: doc.querySelectorAll('h1, h2, h3, h4, h5, h6').length,
-      links: doc.querySelectorAll('a').length,
+      domElements: doc.querySelectorAll("*").length,
+      images: doc.querySelectorAll("img").length,
+      headings: doc.querySelectorAll("h1, h2, h3, h4, h5, h6").length,
+      links: doc.querySelectorAll("a").length,
     };
   };
 
   // Basic A11y analysis from document (limited without rendered DOM)
   const getBasicA11yFromDocument = (doc: Document): A11yResults => {
-    const issues: A11yResults['issues'] = [];
+    const issues: A11yResults["issues"] = [];
     let passed = 0;
     let failed = 0;
 
     // Check images without alt text
-    const imagesWithoutAlt = doc.querySelectorAll('img:not([alt])');
+    const imagesWithoutAlt = doc.querySelectorAll("img:not([alt])");
     if (imagesWithoutAlt.length > 0) {
       issues.push({
         passed: false,
@@ -317,12 +316,12 @@ export const useMultiPageSEOAudit = () => {
     }
 
     // Check form inputs without labels
-    const inputs = doc.querySelectorAll('input, textarea, select');
+    const inputs = doc.querySelectorAll("input, textarea, select");
     let inputsWithoutLabels = 0;
     inputs.forEach((input) => {
-      const id = input.getAttribute('id');
-      const ariaLabel = input.getAttribute('aria-label');
-      const ariaLabelledby = input.getAttribute('aria-labelledby');
+      const id = input.getAttribute("id");
+      const ariaLabel = input.getAttribute("aria-label");
+      const ariaLabelledby = input.getAttribute("aria-labelledby");
       const label = id ? doc.querySelector(`label[for="${id}"]`) : null;
 
       if (!label && !ariaLabel && !ariaLabelledby) {
@@ -368,9 +367,9 @@ export const useMultiPageSEOAudit = () => {
 
     // We can't check actual content, but we can note what should be checked
     issues.push({
-      test: 'Page Analysis',
-      message: 'Unable to fetch page content for detailed analysis',
-      severity: 'info',
+      test: "Page Analysis",
+      message: "Unable to fetch page content for detailed analysis",
+      severity: "info",
     });
 
     // Basic validation based on route
@@ -406,7 +405,7 @@ export const useMultiPageSEOAudit = () => {
         {
           passed: false,
           message:
-            'Unable to analyze accessibility - page content not accessible',
+            "Unable to analyze accessibility - page content not accessible",
         },
       ],
     };
@@ -422,7 +421,7 @@ export const useMultiPageSEOAudit = () => {
     for (let i = 0; i < routes.length; i += batchSize) {
       const batch = routes.slice(i, i + batchSize);
       const batchResults = await Promise.all(
-        batch.map((route) => auditSinglePage(route))
+        batch.map((route) => auditSinglePage(route)),
       );
       results.push(...batchResults);
 

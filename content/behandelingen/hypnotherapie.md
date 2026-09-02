@@ -1,10 +1,14 @@
 ---
 title: Hypnotherapie
 description: Ericksoniaanse hypnotherapie in Amsterdam Noord voor diepe ontspanning, inzicht in onbewuste patronen en persoonlijke begeleiding in jouw tempo.
+seoTitle: "Hypnotherapie Amsterdam Noord | Enisa Healing"
+seoDescription: "Hypnotherapie in Amsterdam Noord met Ericksoniaanse hypnose. Krijg inzicht in onbewuste patronen en werk in jouw tempo aan rust en zelfvertrouwen."
+updatedAt: "2026-09-02"
 ---
 
 ::behandeling-hero
 ---
+
 description: Met behulp van Ericksoniaanse hypnose begeleid ik je in Amsterdam
   Noord bij stress, angst, onzekerheid, het versterken van zelfvertrouwen en het
   doorbreken van terugkerende patronen. Ook mogelijk in combinatie met chakra
@@ -12,14 +16,17 @@ description: Met behulp van Ericksoniaanse hypnose begeleid ik je in Amsterdam
 bookButtonText: Intake inplannen
 id: dd01fafe-5591-4ca2-b460-c18388237f76
 ---
+
 ::
 
 ::behandeling-sectie
 ---
+
 image: /images/single-sessions-hypnotherapie.webp
 imageAlt: Hypnotherapie en healing voor transformatie
 title: De kracht van Ericksoniaanse hypnose
 ---
+
 Hypnotherapie richt zich op het onderbewuste. Veel van onze gedachten, overtuigingen, emoties en automatische reacties ontstaan buiten ons bewuste denken. Hierdoor kunnen bepaalde patronen zich blijven herhalen, ook wanneer je bewust graag iets wilt veranderen.
 
 Met behulp van Ericksoniaanse hypnose begeleid ik je naar een diepe staat van ontspanning en gerichte aandacht. In deze toestand ontstaat ruimte om onbewuste patronen, overtuigingen en emotionele reacties te onderzoeken en meer inzicht te krijgen in wat jou mogelijk belemmert.
@@ -31,30 +38,34 @@ In mijn praktijk in Amsterdam Noord werk ik met een rustige, persoonlijke en res
   :::voordelen-lijst
   ---
   items:
-    - Minder piekeren en mentale onrust
-    - Minder angst, spanning en onzekerheid
-    - Negatieve overtuigingen verzachten of veranderen
-    - Meer rust in hoofd en lichaam
-    - Meer zelfvertrouwen en innerlijke kracht
-    - Meer helderheid in keuzes en beslissingen
-    - Oude patronen sneller herkennen en doorbreken
-    - Sterkere verbinding met jezelf
+
+- Minder piekeren en mentale onrust
+- Minder angst, spanning en onzekerheid
+- Negatieve overtuigingen verzachten of veranderen
+- Meer rust in hoofd en lichaam
+- Meer zelfvertrouwen en innerlijke kracht
+- Meer helderheid in keuzes en beslissingen
+- Oude patronen sneller herkennen en doorbreken
+- Sterkere verbinding met jezelf
   title: Wat je gaat merken
+
   ---
   :::
 
   :::voor-wie
   ---
   items:
-    - Je last hebt van angst, stress of onzekerheid
-    - Je steeds terugvalt in dezelfde patronen
-    - Je negatieve overtuigingen wilt doorbreken
-    - Je meer zelfvertrouwen wilt ontwikkelen
-    - Je minder wilt piekeren en meer rust wilt ervaren
-    - Je beter wilt omgaan met emoties en reacties
-    - Je openstaat voor verandering vanuit het onderbewuste
-    - Je klaar bent voor persoonlijke groei en positieve verandering
+
+- Je last hebt van angst, stress of onzekerheid
+- Je steeds terugvalt in dezelfde patronen
+- Je negatieve overtuigingen wilt doorbreken
+- Je meer zelfvertrouwen wilt ontwikkelen
+- Je minder wilt piekeren en meer rust wilt ervaren
+- Je beter wilt omgaan met emoties en reacties
+- Je openstaat voor verandering vanuit het onderbewuste
+- Je klaar bent voor persoonlijke groei en positieve verandering
   title: Voor Wie?
+
   ---
   :::
 ::
@@ -62,32 +73,33 @@ In mijn praktijk in Amsterdam Noord werk ik met een rustige, persoonlijke en res
 ::traject-kolommen
 ---
 items:
-  - id: "c8ad40a0-7c7f-47a3-b6c4-2b3f1a6a7d3b"
+
+- id: "c8ad40a0-7c7f-47a3-b6c4-2b3f1a6a7d3b"
     title: Hypnotherapie
     description: Een persoonlijke sessie met Ericksoniaanse hypnose om inzicht te krijgen in terugkerende patronen, beperkende overtuigingen en onbewuste processen die invloed hebben op jouw dagelijks leven.
     treatmentId: dd01fafe-5591-4ca2-b460-c18388237f76
     sessions: 1
     price_cents: 15500
     bullets:
-      - "Duur: 90 minuten"
-      - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
-      - Gericht op inzicht, persoonlijke groei en positieve verandering vanuit het onderbewuste
+  - "Duur: 90 minuten"
+  - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
+  - Gericht op inzicht, persoonlijke groei en positieve verandering vanuit het onderbewuste
     ctaText: Plan je intake
-    ctaLink: https://enisa-healing-massage.setmore.com
-  - id: "41499119-22df-42a9-916a-ac32120f6d5b"
+    ctaLink: <https://enisa-healing-massage.setmore.com>
+- id: "41499119-22df-42a9-916a-ac32120f6d5b"
     title: Hypnotherapie & Chakra Healing
     description: Een uitgebreide sessie waarin ik de kracht van hypnotherapie combineer met chakra healing. Deze combinatie kan waardevol zijn wanneer mentale patronen en emotionele belasting met elkaar verbonden zijn en je behoefte hebt aan een bredere, holistische benadering.
     sessions: 1
     price_cents: 22900
     bullets:
-      - "Duur: 150 minuten"
-      - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
-      - Gericht op inzicht, emotionele verwerking en een diepere verbinding tussen hoofd, gevoel en energie
+  - "Duur: 150 minuten"
+  - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
+  - Gericht op inzicht, emotionele verwerking en een diepere verbinding tussen hoofd, gevoel en energie
     ctaText: Plan je intake
-    ctaLink: https://enisa-healing-massage.setmore.com
+    ctaLink: <https://enisa-healing-massage.setmore.com>
+
 ---
 ::
-
 
 ::uitklap-info{title="Gratis kennismakings- en intakegesprek"}
 Vooraf plannen we een gratis kennismakings- en intakegesprek van 30 minuten via WhatsApp (met of zonder video).

@@ -7,35 +7,27 @@ useSeoMeta({
   robots: 'noindex,nofollow',
 });
 
-const routes = useRoutes();
+if (import.meta.server) {
+  setResponseStatus(404);
+}
 
-// Popular treatments for display
-const popularTreatments = computed(() => [
+const popularTreatments = [
   {
-    name: 'Chakra Balancering',
+    name: 'Chakra Healing',
     icon: 'i-mdi-sparkles',
-    path:
-      routes.treatments.value.healing.items.find(
-        (item) => item.slug === 'chakra-balancering'
-      )?.path || '/behandelingen/chakra-balancering',
+    path: '/behandelingen/chakra-healing',
   },
   {
-    name: 'Klassieke Ontspanningsmassage',
+    name: 'Hypnotherapie',
+    icon: 'i-mdi-head-lightbulb',
+    path: '/behandelingen/hypnotherapie',
+  },
+  {
+    name: 'Ontspanningsmassage',
     icon: 'i-mdi-spa',
-    path:
-      routes.treatments.value.massage.items.find(
-        (item) => item.slug === 'klassieke-ontspanningsmassage'
-      )?.path || '/behandelingen/klassieke-ontspanningsmassage',
+    path: '/behandelingen/ontspanningsmassage',
   },
-  {
-    name: 'Sportmassage',
-    icon: 'i-mdi-lightning-bolt',
-    path:
-      routes.treatments.value.massage.items.find(
-        (item) => item.slug === 'sportmassage'
-      )?.path || '/behandelingen/sportmassage',
-  },
-]);
+];
 </script>
 
 <template>

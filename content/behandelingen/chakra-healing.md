@@ -1,30 +1,37 @@
 ---
 title: Chakra Healing
 description: Herstel je innerlijke balans en laat energetische blokkades van je chakra's los. Ervaar een diepe transformatie en hernieuwde levensenergie bij mijn praktijk in Amsterdam Noord. Ik richt mij op het vrijmaken van blokkades om je emotionele en fysieke welzijn volledig te herstellen.
+seoTitle: "Chakra Healing Amsterdam Noord | Enisa Healing"
+seoDescription: "Chakra healing in Amsterdam Noord voor meer rust en energetische balans. Persoonlijke sessie voor ontspanning en het loslaten van blokkades."
+updatedAt: "2026-09-02"
 ---
 
 ::behandeling-hero
 ---
+
 description: Herstel je innerlijke balans en laat energetische blokkades van
   je chakra's los. Ervaar een diepe transformatie en hernieuwde levensenergie bij
   mijn praktijk in Amsterdam Noord. Ik richt mij op het vrijmaken van blokkades
   om je emotionele en fysieke welzijn volledig te herstellen.
 id: ea954752-5aee-4c8c-a1a8-328b026b9189
 ---
+
 ::
 
 ::behandeling-sectie
 ---
 items:
-  - Je ligt ontspannen op de behandeltafel, volledig gekleed
-  - Reiniging van je aura en lichaam van negatieve energie
-  - Energetische scan om blokkades en energiebehoefte te voelen
-  - Hands-on healing langs je chakra's, meestal zonder aanraking
-  - Oude emoties kunnen loskomen en worden bevrijd
-  - Nabespreking en integratie van de ervaring
+
+- Je ligt ontspannen op de behandeltafel, volledig gekleed
+- Reiniging van je aura en lichaam van negatieve energie
+- Energetische scan om blokkades en energiebehoefte te voelen
+- Hands-on healing langs je chakra's, meestal zonder aanraking
+- Oude emoties kunnen loskomen en worden bevrijd
+- Nabespreking en integratie van de ervaring
 image: /images/enisa-healing-handen-in-de-lucht.jpg
 imageAlt: Chakra healing sessie in rustige behandelruimte in Amsterdam Noord
 title: Wat kun je verwachten?
+
 ---
 Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik intuïtief met de energiestroom in je lichaam om je zeven hoofdchakra’s in balans te brengen. Deze diepgaande en ontspannende behandeling helpt bij het oplossen van energetische blokkades en het herstellen van balans op fysiek, emotioneel en mentaal niveau. Dankzij mijn jarenlange ervaring en aangeboren gave om genezende energie door te geven, ondersteun ik je bij het loslaten van spanningen, pijn en emotionele lasten. Daarnaast voel ik intuïtief aan wat jij nodig hebt, zodat de behandeling bij jou past.
 ::
@@ -33,35 +40,40 @@ Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik in
   :::voordelen-lijst
   ---
   items:
-    - Diepe ontspanning en innerlijke rust
-    - Oplossen van energetische blokkades
-    - Versterking van je zelfhelend vermogen
-    - Vermindering van stress en vermoeidheid
-    - Emotionele balans en helderheid
-    - Verbetering van de energiestroom
-    - Verhoging van vitaliteit en levenslust
-    - Loslaten van andermans energie
+
+- Diepe ontspanning en innerlijke rust
+- Oplossen van energetische blokkades
+- Versterking van je zelfhelend vermogen
+- Vermindering van stress en vermoeidheid
+- Emotionele balans en helderheid
+- Verbetering van de energiestroom
+- Verhoging van vitaliteit en levenslust
+- Loslaten van andermans energie
   title: Belangrijkste Voordelen
+
   ---
   :::
 
   :::voor-wie
   ---
   items:
-    - Vermoeidheid en stress ervaart
-    - Last hebt van slapeloosheid of hoofdpijn
-    - Fysieke pijnen hebt (maag, darm, ontstekingen, huid)
-    - Emotionele disbalans voelt (angsten, verdriet, boosheid)
-    - Energetische overbelasting ervaart
-    - Oude emoties wilt loslaten en bevrijden
-    - Op zoek bent naar innerlijke rust en persoonlijke groei
-    - Meer verbonden wilt zijn met jezelf
+
+- Vermoeidheid en stress ervaart
+- Last hebt van slapeloosheid of hoofdpijn
+- Fysieke pijnen hebt (maag, darm, ontstekingen, huid)
+- Emotionele disbalans voelt (angsten, verdriet, boosheid)
+- Energetische overbelasting ervaart
+- Oude emoties wilt loslaten en bevrijden
+- Op zoek bent naar innerlijke rust en persoonlijke groei
+- Meer verbonden wilt zijn met jezelf
   title: Voor Wie?
+
   ---
   :::
 ::
 
 ::uitklap-info{title="Meer over chakra healing en genezende energie"}
+
 ### De Zeven Hoofdchakra's
 
 Chakra healing is gericht op het in balans brengen van de zeven hoofdchakra's in het lichaam, energetische centra die verbonden zijn met ons fysieke, mentale, emotionele en spirituele welzijn. Deze energiecentra reguleren de energiestroom door je hele systeem.

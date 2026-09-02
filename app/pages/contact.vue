@@ -1,15 +1,13 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Contact - Enisa Healing & Massage Amsterdam Noord',
-  description: 'Neem contact op in Amsterdam Noord voor vragen over behandelingen, tarieven of om een afspraak te maken. Bel of stuur een WhatsApp bericht.',
-  ogTitle: 'Contact - Enisa Healing & Massage Amsterdam Noord',
-  ogDescription: 'Neem contact op in Amsterdam Noord voor vragen over behandelingen, tarieven of om een afspraak te maken. Bel of stuur een WhatsApp bericht.',
-  ogImage: 'https://enisahealingmassage.nl/images/hero.webp',
-  ogType: 'website',
-  twitterCard: 'summary_large_image',
-  twitterTitle: 'Contact - Enisa Healing & Massage Amsterdam Noord',
-  twitterDescription: 'Neem contact op in Amsterdam Noord voor vragen over behandelingen, tarieven of om een afspraak te maken.',
-  twitterImage: 'https://enisahealingmassage.nl/images/hero.webp',
+const { generateBusinessSchema, setPageSEO } = useGlobalSEO();
+
+setPageSEO({
+  title: 'Contact | Enisa Healing & Massage Amsterdam Noord',
+  description:
+    'Neem contact op met Enisa in Amsterdam Noord voor vragen over behandelingen, tarieven of een afspraak. Bel, mail of stuur een WhatsApp-bericht.',
+  path: '/contact',
+  image: '/images/hero.webp',
+  structuredData: [generateBusinessSchema()],
 });
 </script>
 

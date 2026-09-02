@@ -1,15 +1,12 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Klantreviews - Enisa Healing & Massage Amsterdam Noord',
-  description: 'Lees ervaringen van klanten in Amsterdam Noord over helende massages en behandelingen. Ontdek waarom mensen terugkomen voor ontspanning en balans.',
-  ogTitle: 'Klantreviews - Enisa Healing & Massage Amsterdam Noord',
-  ogDescription: 'Lees ervaringen van klanten in Amsterdam Noord over helende massages en behandelingen.',
-  ogImage: 'https://enisahealingmassage.nl/images/hero.webp',
-  ogType: 'website',
-  twitterCard: 'summary_large_image',
-  twitterTitle: 'Klantreviews - Enisa Healing & Massage Amsterdam Noord',
-  twitterDescription: 'Lees ervaringen van klanten in Amsterdam Noord over helende massages en behandelingen.',
-  twitterImage: 'https://enisahealingmassage.nl/images/hero.webp',
+const { setPageSEO } = useGlobalSEO();
+
+setPageSEO({
+  title: 'Reviews | Enisa Healing & Massage Amsterdam Noord',
+  description:
+    'Lees ervaringen van cliënten met massage, healing en hypnotherapie bij Enisa in Amsterdam Noord, of deel jouw eigen ervaring met de praktijk.',
+  path: '/reviews',
+  image: '/images/hero.webp',
 });
 </script>
 
