@@ -2,16 +2,20 @@
  * Global SEO composable for structured data and meta tags
  */
 
-import { BUSINESS_INFO, getSchemaAddress, getSchemaContactPoint } from '~/constants/businessInfo';
+import {
+  BUSINESS_INFO,
+  getSchemaAddress,
+  getSchemaContactPoint,
+} from "~/constants/businessInfo";
 
 interface StructuredDataItem {
-  '@context': string;
-  '@type': string;
+  "@context": string;
+  "@type": string;
   [key: string]: unknown;
 }
 
 interface ContactPoint {
-  '@type': string;
+  "@type": string;
   telephone: string;
   contactType: string;
   areaServed: string;
@@ -19,7 +23,7 @@ interface ContactPoint {
 }
 
 interface PostalAddress {
-  '@type': string;
+  "@type": string;
   addressCountry: string;
   addressLocality: string;
   postalCode: string;
@@ -35,106 +39,30 @@ export const useGlobalSEO = () => {
     email: BUSINESS_INFO.contact.email,
     description: BUSINESS_INFO.description,
     priceRange: BUSINESS_INFO.priceRange,
-    image: '/images/logo.webp',
+    image: `${BUSINESS_INFO.url}/images/logo.webp`,
     address: getSchemaAddress() as PostalAddress,
     contactPoint: getSchemaContactPoint() as ContactPoint,
     openingHours: BUSINESS_INFO.hours.schemaFormat,
     serviceArea: {
-      '@type': 'City',
+      "@type": "City",
       name: BUSINESS_INFO.address.city,
     },
   };
 
-  // Generate structured data for health services
-  const generateHealthServiceSchema = (
-    serviceName: string,
-    description: string,
-    price?: string
-  ) => {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'MedicalBusiness',
-      '@id': `${businessInfo.url}#${serviceName
-        .toLowerCase()
-        .replace(/\s+/g, '-')}`,
-      name: serviceName,
-      description,
-      provider: {
-        '@type': 'Organization',
-        name: businessInfo.name,
-        url: businessInfo.url,
-      },
-      offers: price
-        ? {
-            '@type': 'Offer',
-            price: price.replace('€ ', '').replace(',', '.'),
-            priceCurrency: 'EUR',
-            availability: 'https://schema.org/InStock',
-          }
-        : undefined,
-      availableService: {
-        '@type': 'MedicalProcedure',
-        name: serviceName,
-        description,
-      },
-    };
-  };
-
   // Generate FAQ structured data
   const generateFAQSchema = (
-    faqs: Array<{ question: string; answer: string }>
+    faqs: Array<{ question: string; answer: string }>,
   ) => {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
       mainEntity: faqs.map((faq) => ({
-        '@type': 'Question',
+        "@type": "Question",
         name: faq.question,
         acceptedAnswer: {
-          '@type': 'Answer',
+          "@type": "Answer",
           text: faq.answer,
         },
-      })),
-    };
-  };
-
-  // Generate review/rating schema for business
-  const generateReviewSchema = (
-    reviews: Array<{
-      name: string;
-      rating: number;
-      review: string;
-      created_at: string;
-    }>,
-    averageRating: number,
-    totalReviews: number
-  ) => {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      '@id': businessInfo.url,
-      name: businessInfo.name,
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: averageRating.toFixed(1),
-        reviewCount: totalReviews,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      review: reviews.map((review) => ({
-        '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: review.name,
-        },
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: review.rating,
-          bestRating: 5,
-          worstRating: 1,
-        },
-        reviewBody: review.review,
-        datePublished: review.created_at,
       })),
     };
   };
@@ -142,9 +70,9 @@ export const useGlobalSEO = () => {
   // Generate business/organization schema
   const generateBusinessSchema = () => {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      '@id': businessInfo.url,
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": businessInfo.url,
       name: businessInfo.name,
       description: businessInfo.description,
       url: businessInfo.url,
@@ -161,13 +89,13 @@ export const useGlobalSEO = () => {
 
   // Generate breadcrumb structured data
   const generateBreadcrumbSchema = (
-    breadcrumbs: Array<{ label: string; path: string }>
+    breadcrumbs: Array<{ label: string; path: string }>,
   ) => {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
       itemListElement: breadcrumbs.map((crumb, index) => ({
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: index + 1,
         name: crumb.label,
         item: `${businessInfo.url}${crumb.path}`,
@@ -180,18 +108,19 @@ export const useGlobalSEO = () => {
     serviceName: string,
     description: string,
     price?: string,
-    duration?: string
+    duration?: string,
   ) => {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      '@id': `${businessInfo.url}#service-${serviceName
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${businessInfo.url}#service-${serviceName
         .toLowerCase()
-        .replace(/\s+/g, '-')}`,
+        .replace(/\s+/g, "-")}`,
       name: serviceName,
       description,
       provider: {
-        '@type': 'Organization',
+        "@type": "LocalBusiness",
+        "@id": businessInfo.url,
         name: businessInfo.name,
         url: businessInfo.url,
         address: businessInfo.address,
@@ -199,15 +128,15 @@ export const useGlobalSEO = () => {
       },
       offers: price
         ? {
-            '@type': 'Offer',
-            price: price.replace('€ ', '').replace(',', '.'),
-            priceCurrency: 'EUR',
-            availability: 'https://schema.org/InStock',
-            ...(duration && { validThrough: duration }),
+            "@type": "Offer",
+            price: price.replace("€ ", "").replace(",", "."),
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
           }
         : undefined,
+      ...(duration && { duration }),
       areaServed: businessInfo.serviceArea,
-      category: 'Health and Wellness',
+      category: "Wellness",
     };
   };
 
@@ -217,29 +146,29 @@ export const useGlobalSEO = () => {
     description: string,
     path: string,
     datePublished?: string,
-    dateModified?: string
+    dateModified?: string,
   ) => {
     return {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
+      "@context": "https://schema.org",
+      "@type": "Article",
       headline: title,
       description,
       url: `${businessInfo.url}${path}`,
       author: {
-        '@type': 'Person',
-        name: 'Enisa',
-        jobTitle: 'Massagetherapeut en Healing Practitioner',
+        "@type": "Person",
+        name: "Enisa",
+        jobTitle: "Massagetherapeut en Healing Practitioner",
       },
       publisher: {
-        '@type': 'Organization',
+        "@type": "Organization",
         name: businessInfo.name,
         url: businessInfo.url,
       },
       datePublished: datePublished || new Date().toISOString(),
       dateModified: dateModified || new Date().toISOString(),
       mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `${businessInfo.url}${path}`,
+        "@type": "WebPage",
+        "@id": `${businessInfo.url}${path}`,
       },
     };
   };
@@ -250,11 +179,14 @@ export const useGlobalSEO = () => {
     description: string;
     path: string;
     image?: string;
-    type?: 'website' | 'article' | 'book' | 'profile';
+    type?: "website" | "article" | "book" | "profile";
     structuredData?: StructuredDataItem[];
   }) => {
-    const canonical = `${businessInfo.url}${options.path}`;
-    const image = options.image || businessInfo.image;
+    const canonical = new URL(options.path, `${businessInfo.url}/`).toString();
+    const image = new URL(
+      options.image || businessInfo.image,
+      `${businessInfo.url}/`,
+    ).toString();
 
     useSeoMeta({
       title: options.title,
@@ -262,44 +194,33 @@ export const useGlobalSEO = () => {
       ogTitle: options.title,
       ogDescription: options.description,
       ogImage: image,
-      ogType: options.type || 'website',
+      ogType: options.type || "website",
       ogUrl: canonical,
-      twitterCard: 'summary_large_image',
+      twitterCard: "summary_large_image",
       twitterTitle: options.title,
       twitterDescription: options.description,
       twitterImage: image,
     });
 
-    // Set canonical URL separately
     useHead({
       link: [
         {
-          rel: 'canonical',
+          key: "canonical",
+          rel: "canonical",
           href: canonical,
         },
       ],
+      script: (options.structuredData || []).map((data, index) => ({
+        key: `structured-data-${index}`,
+        type: "application/ld+json",
+        innerHTML: JSON.stringify(data),
+      })),
     });
-
-    // Add structured data if provided
-    if (options.structuredData) {
-      for (const data of options.structuredData) {
-        useHead({
-          script: [
-            {
-              type: 'application/ld+json',
-              innerHTML: JSON.stringify(data),
-            },
-          ],
-        });
-      }
-    }
   };
 
   return {
     businessInfo,
-    generateHealthServiceSchema,
     generateFAQSchema,
-    generateReviewSchema,
     generateBusinessSchema,
     generateBreadcrumbSchema,
     generateServiceSchema,

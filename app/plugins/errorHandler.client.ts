@@ -7,39 +7,39 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // Handle Vue errors
   nuxtApp.vueApp.config.errorHandler = (error, instance, info) => {
-    console.error('Vue Error:', error);
-    console.error('Component:', instance);
-    console.error('Error Info:', info);
+    console.error("Vue Error:", error);
+    console.error("Component:", instance);
+    console.error("Error Info:", info);
 
     // Show user-friendly error message
     toast.add({
-      id: 'vue-error',
-      title: 'Er is een fout opgetreden',
-      description: 'Sorry, er ging iets mis. Probeer de pagina te vernieuwen.',
-      color: 'red',
-      icon: 'i-heroicons-exclamation-triangle',
-      timeout: 5000,
+      id: "vue-error",
+      title: "Er is een fout opgetreden",
+      description: "Sorry, er ging iets mis. Probeer de pagina te vernieuwen.",
+      color: "error",
+      icon: "i-heroicons-exclamation-triangle",
+      duration: 5000,
     });
 
     // In production, you could send this to an error tracking service
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === "production") {
       // TODO: Send to error tracking service (e.g., Sentry, LogRocket)
       // trackError(error, { component: instance, info });
     }
   };
 
   // Handle unhandled promise rejections
-  if (process.client) {
-    window.addEventListener('unhandledrejection', (event) => {
-      console.error('Unhandled Promise Rejection:', event.reason);
+  if (import.meta.client) {
+    window.addEventListener("unhandledrejection", (event) => {
+      console.error("Unhandled Promise Rejection:", event.reason);
 
       toast.add({
-        id: 'promise-rejection',
-        title: 'Verbindingsfout',
-        description: 'Er is een fout opgetreden bij het laden van gegevens.',
-        color: 'red',
-        icon: 'i-heroicons-exclamation-triangle',
-        timeout: 5000,
+        id: "promise-rejection",
+        title: "Verbindingsfout",
+        description: "Er is een fout opgetreden bij het laden van gegevens.",
+        color: "error",
+        icon: "i-heroicons-exclamation-triangle",
+        duration: 5000,
       });
 
       // Prevent default browser error handling
@@ -51,17 +51,17 @@ export default defineNuxtPlugin((nuxtApp) => {
   return {
     provide: {
       handleError: (error: Error, context?: string) => {
-        console.error(`Error in ${context || 'Unknown context'}:`, error);
+        console.error(`Error in ${context || "Unknown context"}:`, error);
 
         toast.add({
           id: `error-${Date.now()}`,
-          title: 'Er ging iets mis',
+          title: "Er ging iets mis",
           description: context
             ? `Fout bij ${context}. Probeer het opnieuw.`
-            : 'Er is een onverwachte fout opgetreden.',
-          color: 'red',
-          icon: 'i-heroicons-exclamation-triangle',
-          timeout: 5000,
+            : "Er is een onverwachte fout opgetreden.",
+          color: "error",
+          icon: "i-heroicons-exclamation-triangle",
+          duration: 5000,
         });
       },
     },

@@ -57,9 +57,9 @@ const personSchema = {
 
 // Set comprehensive SEO with person schema
 setPageSEO({
-  title: "Over Mij - Enisa Healing & Massage",
+  title: "Over Enisa | Healing & Massage Amsterdam Noord",
   description:
-    "Leer meer over Enisa, energetisch therapeut in Amsterdam Noord met 11+ jaar ervaring in hypnotherapie. Ontdek haar achtergrond, certificeringen en passie voor holistische healing en energetische therapie.",
+    "Maak kennis met Enisa Erovic, energetisch therapeut in Amsterdam Noord. Lees over haar ervaring, persoonlijke werkwijze en opleidingen.",
   path: "/over-mij",
   type: "profile",
   structuredData: [personSchema],

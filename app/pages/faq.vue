@@ -72,7 +72,7 @@ const faqData = faqItems.map((item) => ({
 
 // Set comprehensive SEO with structured data
 setPageSEO({
-  title: 'Veelgestelde Vragen - Enisa Healing & Massage Amsterdam Noord',
+  title: 'Veelgestelde vragen | Enisa Healing Amsterdam Noord',
   description:
     'Vind antwoorden op veelgestelde vragen over behandelingen, boekingen en meer bij Enisa Healing & Massage in Amsterdam Noord.',
   path: '/faq',

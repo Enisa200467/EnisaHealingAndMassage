@@ -142,7 +142,7 @@
                 class="w-full max-w-xs mx-auto"
                 aria-label="Klantervaringen carousel"
                 aria-roledescription="carousel"
-                @update:modelValue="onReviewChange"
+                @update:model-value="onReviewChange"
               >
                 <UCard class="text-center">
                   <p class="text-sm text-neutral-700 dark:text-neutral-300">
@@ -208,7 +208,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Review, ReviewStats } from "~/types/reviews";
+import type { Review, ReviewStats } from '~/features/reviews/types/reviews';
 
 // Use routes composable for centralized route management
 const routes = useRoutes();

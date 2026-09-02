@@ -1,4 +1,7 @@
-import type { Review, ReviewStats, PaginatedReviews } from '~/types/reviews';
+import type {
+  ReviewStats,
+  PaginatedReviews,
+} from "~/features/reviews/types/reviews";
 
 export const useAdminReviews = () => {
   /**
@@ -7,7 +10,7 @@ export const useAdminReviews = () => {
   const getAllReviews = async (
     page = 1,
     limit = 10,
-    status?: 'pending' | 'approved' | 'rejected'
+    status?: "pending" | "approved" | "rejected",
   ): Promise<PaginatedReviews> => {
     try {
       const params = new URLSearchParams({
@@ -17,11 +20,11 @@ export const useAdminReviews = () => {
       });
 
       const { data } = await $fetch<{ data: PaginatedReviews }>(
-        `/api/admin/reviews?${params}`
+        `/api/admin/reviews?${params}`,
       );
       return data;
     } catch (error) {
-      console.error('Error fetching all reviews:', error);
+      console.error("Error fetching all reviews:", error);
       return {
         reviews: [],
         total: 0,
@@ -37,12 +40,12 @@ export const useAdminReviews = () => {
    */
   const updateReviewStatus = async (
     reviewId: string,
-    status: 'approved' | 'rejected',
-    adminEmail: string
+    status: "approved" | "rejected",
+    adminEmail: string,
   ): Promise<{ success: boolean; error?: string }> => {
     try {
       await $fetch(`/api/admin/reviews/${reviewId}`, {
-        method: 'PATCH',
+        method: "PATCH",
         body: {
           status,
           reviewed_by: adminEmail,
@@ -51,11 +54,12 @@ export const useAdminReviews = () => {
       });
 
       return { success: true };
-    } catch (error: any) {
-      console.error('Error updating review status:', error);
+    } catch (error: unknown) {
+      console.error("Error updating review status:", error);
+      const apiError = error as { data?: { message?: string } };
       return {
         success: false,
-        error: error.data?.message || 'Er is een fout opgetreden',
+        error: apiError.data?.message || "Er is een fout opgetreden",
       };
     }
   };
@@ -64,19 +68,20 @@ export const useAdminReviews = () => {
    * Delete review (admin only)
    */
   const deleteReview = async (
-    reviewId: string
+    reviewId: string,
   ): Promise<{ success: boolean; error?: string }> => {
     try {
       await $fetch(`/api/admin/reviews/${reviewId}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
 
       return { success: true };
-    } catch (error: any) {
-      console.error('Error deleting review:', error);
+    } catch (error: unknown) {
+      console.error("Error deleting review:", error);
+      const apiError = error as { data?: { message?: string } };
       return {
         success: false,
-        error: error.data?.message || 'Er is een fout opgetreden',
+        error: apiError.data?.message || "Er is een fout opgetreden",
       };
     }
   };
@@ -87,11 +92,11 @@ export const useAdminReviews = () => {
   const getDetailedStats = async (): Promise<ReviewStats> => {
     try {
       const { data } = await $fetch<{ data: ReviewStats }>(
-        '/api/admin/reviews/stats'
+        "/api/admin/reviews/stats",
       );
       return data;
     } catch (error) {
-      console.error('Error fetching detailed stats:', error);
+      console.error("Error fetching detailed stats:", error);
       return {
         total: 0,
         approved: 0,

@@ -53,20 +53,20 @@ export interface BusinessInfo {
 }
 
 export const BUSINESS_INFO: BusinessInfo = {
-  name: 'Enisa Healing & Massage',
-  tagline: 'Vind Balans en Diepe Ontspanning',
+  name: "Enisa Healing & Massage",
+  tagline: "Vind Balans en Diepe Ontspanning",
   description:
-    'Professionele massage en healing praktijk in Amsterdam Noord, gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.',
-  url: 'https://enisahealingmassage.nl',
-  priceRange: '€40-€90',
+    "Professionele massage en healing praktijk in Amsterdam Noord, gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.",
+  url: "https://www.enisahealingenmassage.nl",
+  priceRange: "€40-€90",
 
   address: {
-    street: 'IJplein',
-    houseNumber: '69',
-    postalCode: '1021 LB',
-    city: 'Amsterdam',
-    country: 'Nederland',
-    fullAddress: 'IJplein 69, 1021 LB Amsterdam',
+    street: "IJplein",
+    houseNumber: "69",
+    postalCode: "1021 LB",
+    city: "Amsterdam",
+    country: "Nederland",
+    fullAddress: "IJplein 69, 1021 LB Amsterdam",
   },
 
   location: {
@@ -75,22 +75,22 @@ export const BUSINESS_INFO: BusinessInfo = {
   },
 
   contact: {
-    phone: '06 22445121',
-    phoneFormatted: '06 224 451 21', // Spaced for readability
-    phoneInternational: '+31622445121', // International format for tel: links
-    email: 'info@enisahealingenmassage.nl',
+    phone: "06 22445121",
+    phoneFormatted: "06 224 451 21", // Spaced for readability
+    phoneInternational: "+31622445121", // International format for tel: links
+    email: "info@enisahealingenmassage.nl",
   },
 
   // TODO: Verify actual opening hours
   hours: {
-    monday: '09:00-18:00',
-    tuesday: '09:00-18:00',
-    wednesday: '09:00-18:00',
-    thursday: '09:00-18:00',
-    friday: '09:00-18:00',
-    saturday: '09:00-15:00',
-    sunday: 'Gesloten',
-    schemaFormat: ['Mo-Fr 09:00-18:00', 'Sa 09:00-15:00'],
+    monday: "09:00-18:00",
+    tuesday: "09:00-18:00",
+    wednesday: "09:00-18:00",
+    thursday: "09:00-18:00",
+    friday: "09:00-18:00",
+    saturday: "09:00-15:00",
+    sunday: "Gesloten",
+    schemaFormat: ["Mo-Fr 09:00-18:00", "Sa 09:00-15:00"],
   },
 
   social: {
@@ -121,21 +121,21 @@ export const getEmailLink = () => {
 // Schema.org formatted address
 export const getSchemaAddress = () => {
   return {
-    '@type': 'PostalAddress',
+    "@type": "PostalAddress",
     streetAddress: `${BUSINESS_INFO.address.street} ${BUSINESS_INFO.address.houseNumber}`,
     addressLocality: BUSINESS_INFO.address.city,
     postalCode: BUSINESS_INFO.address.postalCode,
-    addressCountry: 'NL',
+    addressCountry: "NL",
   };
 };
 
 // Schema.org formatted contact point
 export const getSchemaContactPoint = () => {
   return {
-    '@type': 'ContactPoint',
+    "@type": "ContactPoint",
     telephone: BUSINESS_INFO.contact.phoneInternational,
-    contactType: 'customer service',
-    areaServed: 'NL',
-    availableLanguage: ['Dutch', 'English'],
+    contactType: "customer service",
+    areaServed: "NL",
+    availableLanguage: ["Dutch", "English"],
   };
 };

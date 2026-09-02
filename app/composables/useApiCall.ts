@@ -12,7 +12,7 @@
  *   });
  * };
  */
-export function useApiCall<T = any>() {
+export function useApiCall<T = unknown>() {
   const toast = useToast();
   const loading = ref(false);
   const error = ref<Error | null>(null);
@@ -27,18 +27,18 @@ export function useApiCall<T = any>() {
   const execute = async (
     url: string,
     options?: {
-      method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
-      body?: any;
+      method?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+      body?: object;
       successMessage?: string;
       errorMessage?: string;
       showSuccessToast?: boolean;
       showErrorToast?: boolean;
       onSuccess?: (data: T) => void;
-      onError?: (error: any) => void;
-    }
+      onError?: (error: unknown) => void;
+    },
   ) => {
     const {
-      method = 'GET',
+      method = "GET",
       body,
       successMessage,
       errorMessage,
@@ -63,11 +63,11 @@ export function useApiCall<T = any>() {
       if (showSuccessToast && successMessage) {
         toast.add({
           id: `success-${Date.now()}`,
-          title: 'Gelukt!',
+          title: "Gelukt!",
           description: successMessage,
-          color: 'green',
-          icon: 'i-heroicons-check-circle',
-          timeout: 5000,
+          color: "success",
+          icon: "i-heroicons-check-circle",
+          duration: 5000,
         });
       }
 
@@ -77,23 +77,28 @@ export function useApiCall<T = any>() {
       }
 
       return response;
-    } catch (err: any) {
-      console.error('API call failed:', err);
-      error.value = err;
+    } catch (err: unknown) {
+      console.error("API call failed:", err);
+      const normalizedError =
+        err instanceof Error ? err : new Error("Er is een fout opgetreden");
+      const apiError = err as {
+        data?: { error?: { message?: string } };
+      };
+      error.value = normalizedError;
 
       // Extract error message from standardized API error response
       const apiErrorMessage =
-        err.data?.error?.message || err.message || 'Er is een fout opgetreden';
+        apiError.data?.error?.message || normalizedError.message;
 
       // Show error toast
       if (showErrorToast) {
         toast.add({
           id: `error-${Date.now()}`,
-          title: 'Fout',
+          title: "Fout",
           description: errorMessage || apiErrorMessage,
-          color: 'red',
-          icon: 'i-heroicons-exclamation-triangle',
-          timeout: 7000,
+          color: "error",
+          icon: "i-heroicons-exclamation-triangle",
+          duration: 7000,
         });
       }
 

@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-const { setPageSEO, businessInfo } = useGlobalSEO();
+const { businessInfo } = useGlobalSEO();
 
 // Fetch treatments using the global composable
 const { activeTreatments } = useTreatments();
@@ -42,7 +42,7 @@ const pricingSchema = computed(() => {
       };
       offers: {
         "@type": string;
-        price: string;
+        price?: string;
         priceCurrency: string;
         availability: string;
       };
@@ -56,9 +56,11 @@ const pricingSchema = computed(() => {
       item: {
         "@type": "Service",
         name: treatment.title,
-        description: treatment.description,
+        description:
+          treatment.description ||
+          `Behandeling bij Enisa Healing & Massage in Amsterdam Noord`,
         provider: {
-          "@type": "Organization",
+          "@type": "LocalBusiness",
           name: businessInfo.name,
         },
         offers: {
@@ -88,14 +90,13 @@ const pricingSchema = computed(() => {
   };
 });
 
-// Set comprehensive page SEO with dynamic pricing schema
-watchEffect(() => {
-  setPageSEO({
-    title: "Tarieven - Enisa Healing & Massage Amsterdam Noord",
-    description:
-      "Overzicht van alle tarieven voor behandelingen in Amsterdam Noord. Transparante prijzen zonder verborgen kosten. Bekijk ook onze kortingspakketten.",
-    path: "/tarieven",
-    structuredData: [pricingSchema.value],
-  });
-});
+useHead(() => ({
+  script: [
+    {
+      key: 'pricing-schema',
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(pricingSchema.value),
+    },
+  ],
+}));
 </script>

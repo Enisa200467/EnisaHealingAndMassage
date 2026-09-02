@@ -1,28 +1,35 @@
 ---
 title: antistress
 description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
+seoTitle: "Anti-stress behandeling Amsterdam Noord | Enisa Healing"
+seoDescription: "Anti-stress behandeling in Amsterdam Noord met mindfulness, meditatie en healing. Krijg meer rust, vertrouwen en grip op terugkerende spanning."
+updatedAt: "2026-09-02"
 ---
 
 ::behandeling-hero
 ---
+
 description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 id: da73f8d9-279a-4d79-8de2-204efaaeaf2b
 ---
+
 ::
 
 ::behandeling-sectie
 ---
 items:
-  - "We gaan samen op zoek naar blokkades die je kunnen tegenhouden om verder te komen in je leven"
-  - "Mindfulness coaching: leren leven met volle aandacht"
-  - "Verschillende gerichte, begeleide meditaties"
-  - "Energetische healing"
-  - "Chakra healing"
-  - "Praktische huiswerkopdrachten"
-  - "Eén maand na de laatste anti-stress sessie neem ik contact met je op om te vragen hoe het met je gaat. Als afsluiting ontvang je een gratis healing op afstand."
+
+- "We gaan samen op zoek naar blokkades die je kunnen tegenhouden om verder te komen in je leven"
+- "Mindfulness coaching: leren leven met volle aandacht"
+- "Verschillende gerichte, begeleide meditaties"
+- "Energetische healing"
+- "Chakra healing"
+- "Praktische huiswerkopdrachten"
+- "Eén maand na de laatste anti-stress sessie neem ik contact met je op om te vragen hoe het met je gaat. Als afsluiting ontvang je een gratis healing op afstand."
 image: /images/bos.webp
 imageAlt: Rustgevende anti-stress massage in Amsterdam Noord
 title: Wat kun je verwachten?
+
 ---
 ::
 
@@ -30,35 +37,40 @@ title: Wat kun je verwachten?
   :::voordelen-lijst
   ---
   items:
-    - Minder stress en innerlijke onrust
-    - Diepere ademhaling en ontspanning
-    - Ontspanning van nek, schouders en kaak
-    - Beter slapen en herstellen
-    - Meer focus en mentale helderheid
-    - Vermindering van hoofdpijn of druk op het hoofd
-    - Gevoel van ontspanning in het hele lichaam
-    - Herstel van balans tussen lichaam en geest
+
+- Minder stress en innerlijke onrust
+- Diepere ademhaling en ontspanning
+- Ontspanning van nek, schouders en kaak
+- Beter slapen en herstellen
+- Meer focus en mentale helderheid
+- Vermindering van hoofdpijn of druk op het hoofd
+- Gevoel van ontspanning in het hele lichaam
+- Herstel van balans tussen lichaam en geest
   title: Belangrijkste Voordelen
+
   ---
   :::
 
   :::voor-wie
   ---
   items:
-    - Veel spanning ervaart door werk of thuissituatie
-    - Moeite hebt met ontspannen of "uit" te staan
-    - Last hebt van stressgerelateerde klachten
-    - Snel overprikkeld raakt
-    - Slecht slaapt of onrustige nachten hebt
-    - Spanning voelt in nek, schouders of kaak
-    - Hoofdpijn ervaart bij stress
-    - Behoefte hebt aan rust en herstel
+
+- Veel spanning ervaart door werk of thuissituatie
+- Moeite hebt met ontspannen of "uit" te staan
+- Last hebt van stressgerelateerde klachten
+- Snel overprikkeld raakt
+- Slecht slaapt of onrustige nachten hebt
+- Spanning voelt in nek, schouders of kaak
+- Hoofdpijn ervaart bij stress
+- Behoefte hebt aan rust en herstel
   title: Voor Wie?
+
   ---
   :::
 ::
 
 ::uitklap-info{title="Meer over de anti-stress behandeling"}
+
 ### Waarom Anti-stress?
 
 Langdurige stress zet het lichaam continu in de ‘aan-stand’. Je spieren spannen aan, je ademhaling wordt oppervlakkig en je hoofd blijft druk.

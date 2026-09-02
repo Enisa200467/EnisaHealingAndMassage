@@ -1,7 +1,9 @@
 ---
 title: Regressietherapie Amsterdam Noord
 description: Ontdek SoulKey Therapy en regressietherapie in Amsterdam Noord. Krijg diepgaand inzicht in terugkerende patronen, vorige levens, Life Between Lives en zielsbewustzijn binnen een veilige, persoonlijke omgeving.
-seoTitle: Regressietherapie Amsterdam Noord | SoulKey Therapy: Vorige levens, Life Between Lives & Zielsbewustzijn | Enisa Healing & Massage
+seoTitle: "Regressietherapie Amsterdam Noord | SoulKey Therapy"
+seoDescription: "Regressietherapie en SoulKey Therapy in Amsterdam Noord. Onderzoek terugkerende patronen, vorige levens en Life Between Lives in een veilige setting."
+updatedAt: "2026-09-02"
 ---
 
 ::behandeling-hero

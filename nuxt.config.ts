@@ -7,9 +7,6 @@ export default defineNuxtConfig({
   ssr: true,
 
   routeRules: {
-    "/": {
-      swr: 3600,
-    },
     "/contact-afspraak": {
       redirect: {
         to: "https://enisa-healing-massage.setmore.com/",
@@ -58,6 +55,30 @@ export default defineNuxtConfig({
         statusCode: 301,
       },
     },
+    "/reacties-van-klanten": {
+      redirect: {
+        to: "/reviews",
+        statusCode: 301,
+      },
+    },
+    "/reacties-van-klanten/": {
+      redirect: {
+        to: "/reviews",
+        statusCode: 301,
+      },
+    },
+    "/wwwenisahealingenmassage-nl-home": {
+      redirect: {
+        to: "/",
+        statusCode: 301,
+      },
+    },
+    "/wwwenisahealingenmassage-nl-home/": {
+      redirect: {
+        to: "/",
+        statusCode: 301,
+      },
+    },
     "/healing-op-afstand": {
       redirect: {
         to: "/behandelingen/energetische-healing",
@@ -89,6 +110,18 @@ export default defineNuxtConfig({
       },
     },
     "/chakra-healing-amsterdam-noord/": {
+      redirect: {
+        to: "/behandelingen/chakra-healing",
+        statusCode: 301,
+      },
+    },
+    "/chakra-healing": {
+      redirect: {
+        to: "/behandelingen/chakra-healing",
+        statusCode: 301,
+      },
+    },
+    "/chakra-healing/": {
       redirect: {
         to: "/behandelingen/chakra-healing",
         statusCode: 301,
@@ -149,6 +182,30 @@ export default defineNuxtConfig({
       },
     },
     "/energetische-blokkades-opheffen/": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/energetischeblokkadesopheffen": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/energetischeblokkadesopheffen/": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/spiritueel-energetisch-blokkades-opheffen-amsterdam": {
+      redirect: {
+        to: "/behandelingen/energetische-blokkades-opheffen",
+        statusCode: 301,
+      },
+    },
+    "/spiritueel-energetisch-blokkades-opheffen-amsterdam/": {
       redirect: {
         to: "/behandelingen/energetische-blokkades-opheffen",
         statusCode: 301,
@@ -272,7 +329,7 @@ export default defineNuxtConfig({
   supabase: {
     redirectOptions: {
       login: "/admin/login",
-      callback: "/",
+      callback: "/admin/login",
       include: ["/admin(/*)?"],
       exclude: undefined,
       saveRedirectToCookie: false,
@@ -357,7 +414,9 @@ export default defineNuxtConfig({
     // CORS configuration
     corsHandler: {
       origin:
-        process.env.NODE_ENV === "production" ? "https://enisahealing.nl" : "*",
+        process.env.NODE_ENV === "production"
+          ? "https://www.enisahealingenmassage.nl"
+          : "*",
       methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
       credentials: true,
     },

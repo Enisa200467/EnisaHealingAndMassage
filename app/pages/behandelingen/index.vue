@@ -24,7 +24,9 @@ const treatmentCatalogSchema = computed(() => {
       itemOffered: {
         '@type': 'Service',
         name: treatment.title,
-        description: treatment.description,
+        description:
+          treatment.description ||
+          `Behandeling bij Enisa Healing & Massage in Amsterdam Noord`,
       },
       price: treatment.price ? (treatment.price / 100).toFixed(0) : undefined,
       priceCurrency: 'EUR',
@@ -34,30 +36,24 @@ const treatmentCatalogSchema = computed(() => {
   };
 });
 
-// Enhanced SEO with structured data
-watchEffect(() => {
-  if (allTreatments.value.length) {
-    setPageSEO({
-      title: 'Alle Behandelingen in Amsterdam Noord - Enisa Healing & Massage',
-      description:
-        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning in Amsterdam Noord. Kies de behandeling die bij jou past.',
-      path: '/behandelingen',
-      type: 'website',
-      structuredData: [treatmentCatalogSchema.value],
-    });
-  } else {
-    // Fallback SEO without structured data
-    useSeoMeta({
-      title: 'Alle Behandelingen in Amsterdam Noord - Enisa Healing & Massage',
-      description:
-        'Ontdek ons complete aanbod van behandelingen voor heling en ontspanning in Amsterdam Noord.',
-      ogTitle: 'Alle Behandelingen in Amsterdam Noord - Enisa Healing & Massage',
-      ogDescription:
-        'Ontdek ons complete aanbod van behandelingen in Amsterdam Noord.',
-      ogType: 'website',
-    });
-  }
+setPageSEO({
+  title: 'Behandelingen Amsterdam Noord | Enisa Healing & Massage',
+  description:
+    'Ontdek massage, chakra healing, hypnotherapie en andere behandelingen voor ontspanning en balans bij Enisa in Amsterdam Noord.',
+  path: '/behandelingen',
 });
+
+useHead(() => ({
+  script: allTreatments.value.length
+    ? [
+        {
+          key: 'treatment-catalog-schema',
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(treatmentCatalogSchema.value),
+        },
+      ]
+    : [],
+}));
 
 const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
 </script>

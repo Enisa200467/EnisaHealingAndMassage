@@ -1,24 +1,6 @@
 <script setup lang="ts">
 import type { TreatmentsCollectionItem } from '@nuxt/content';
-
-interface TreatmentData {
-  id: string;
-  name: string;
-  slug: string;
-  description?: string;
-  duration_minutes: number;
-  price_cents: number;
-  price_formatted: string;
-  duration_formatted: string;
-  intensity?: number;
-  intensity_label?: string;
-  icon?: string;
-  category?: string;
-  is_active: boolean;
-  display_order: number;
-  created_at: string;
-  updated_at: string;
-}
+import type { TreatmentData } from '~/composables/useTreatments';
 
 interface Props {
   treatment: TreatmentsCollectionItem | null;
@@ -30,106 +12,62 @@ const props = defineProps<Props>();
 // Provide treatment data to child content components
 provide('treatmentData', props.treatmentData);
 
-const { generateHealthServiceSchema, setPageSEO } = useGlobalSEO();
+const { generateBreadcrumbSchema, generateServiceSchema, setPageSEO } =
+  useGlobalSEO();
 
-// Define the interface locally since it's not exported
-interface StructuredDataItem {
-  '@context': string;
-  '@type': string;
-  [key: string]: unknown;
-}
+const getContentMeta = (key: string) => {
+  const meta = props.treatment?.meta;
+  if (!meta || typeof meta !== 'object') return undefined;
 
-// Enhanced SEO with structured data for health services
+  const value = (meta as Record<string, unknown>)[key];
+  return typeof value === 'string' ? value : undefined;
+};
+
+const treatmentSlug =
+  props.treatmentData?.slug ||
+  props.treatment?.path?.split('/').filter(Boolean).at(-1) ||
+  '';
+const treatmentPath = `/behandelingen/${treatmentSlug}`;
+
 if (props.treatment || props.treatmentData) {
-  // Use database data when available, fall back to content data
   const title =
-    props.treatmentData?.name || props.treatment?.title || 'Treatment';
-  const seoTitle =
-    typeof props.treatment?.meta?.seoTitle === 'string'
-      ? props.treatment.meta.seoTitle
-      : undefined;
-  const description = props.treatment?.description || '';
-  const price =
-    props.treatmentData?.price_formatted ||
-    (props.treatment?.meta?.price as string);
+    props.treatmentData?.title || props.treatment?.title || 'Behandeling';
+  const description =
+    getContentMeta('seoDescription') ||
+    props.treatment?.description ||
+    props.treatmentData?.description ||
+    '';
+  const seoTitle = getContentMeta('seoTitle');
+  const price = props.treatmentData?.price
+    ? `€ ${(props.treatmentData.price / 100).toFixed(0)}`
+    : undefined;
+  const duration = props.treatmentData?.duration
+    ? `PT${props.treatmentData.duration}M`
+    : undefined;
 
-  // Generate structured data for this specific treatment
-  const healthServiceSchema = generateHealthServiceSchema(
+  const serviceSchema = generateServiceSchema(
     title,
     description,
-    price
+    price,
+    duration
   );
-
-  // Additional treatment-specific schema
-  const treatmentSchema: StructuredDataItem = {
-    '@context': 'https://schema.org',
-    '@type': 'MedicalProcedure',
-    name: title,
-    description: description,
-    provider: {
-      '@type': 'Organization',
-      name: 'Enisa Healing & Massage',
-      url: 'https://enisahealingmassage.nl',
-    },
-    bodyLocation: {
-      '@type': 'AnatomicalStructure',
-      name: 'Body',
-    },
-  };
-
-  // Add optional fields - prioritize database data
-  if (props.treatmentData?.duration_minutes) {
-    treatmentSchema.duration = `PT${props.treatmentData.duration_minutes}M`;
-  } else if (props.treatment?.meta?.duration) {
-    treatmentSchema.duration = `PT${props.treatment.meta.duration}`;
-  }
-
-  if (props.treatmentData?.price_formatted) {
-    treatmentSchema.cost = {
-      '@type': 'MonetaryAmount',
-      currency: 'EUR',
-      value: (props.treatmentData.price_cents / 100).toString(),
-    };
-  } else if (
-    props.treatment?.meta?.price &&
-    typeof props.treatment.meta.price === 'string'
-  ) {
-    treatmentSchema.cost = {
-      '@type': 'MonetaryAmount',
-      currency: 'EUR',
-      value: props.treatment.meta.price.replace('€ ', '').replace(',', '.'),
-    };
-  }
-
-  // Generate breadcrumb schema for SEO
-  const { generateBreadcrumbSchema } = useGlobalSEO();
   const breadcrumbSchema = generateBreadcrumbSchema([
     { label: 'Home', path: '/' },
     { label: 'Behandelingen', path: '/behandelingen' },
-    {
-      label: title,
-      path: `/behandelingen/${
-        props.treatmentData?.slug || props.treatment?.path || ''
-      }`,
-    },
+    { label: title, path: treatmentPath },
   ]);
 
-  // Set comprehensive page SEO with breadcrumb schema
   setPageSEO({
     title: seoTitle || `${title} - Enisa Healing & Massage`,
-    description: description,
-    path: `/behandelingen/${
-      props.treatmentData?.slug || props.treatment?.path || ''
-    }`,
-    type: 'article',
-    structuredData: [healthServiceSchema, treatmentSchema, breadcrumbSchema],
+    description,
+    path: treatmentPath,
+    structuredData: [serviceSchema, breadcrumbSchema],
   });
 } else {
-  // Fallback SEO for treatment not found
   useSeoMeta({
     title: 'Behandeling - Enisa Healing & Massage',
     description:
-      'Ontdek onze professionele healing en massage behandelingen in Amsterdam Noord voor ontspanning en welzijn.',
+      'Ontdek professionele healing- en massagebehandelingen in Amsterdam Noord voor ontspanning en welzijn.',
   });
 }
 
@@ -137,10 +75,9 @@ const breadcrumbs = computed(() => [
   { path: '/', label: 'Home', icon: 'i-mdi-home' },
   { path: '/behandelingen', label: 'Behandelingen', icon: 'i-mdi-heart-pulse' },
   {
-    path: `/behandelingen/${
-      props.treatmentData?.slug || props.treatment?.path || ''
-    }`,
-    label: props.treatmentData?.name || props.treatment?.title || 'Behandeling',
+    path: treatmentPath,
+    label:
+      props.treatmentData?.title || props.treatment?.title || 'Behandeling',
     icon: 'i-mdi-sparkles',
   },
 ]);
@@ -202,7 +139,7 @@ const breadcrumbs = computed(() => [
     </div>
 
     <!-- Call-to-Action Section -->
-    <TreatmentCTA :treatment="treatment || { title: treatmentData?.name }" />
+    <TreatmentCTA :treatment="treatment || { title: treatmentData?.title }" />
 
     <!-- Related Treatments -->
     <RelatedTreatments />

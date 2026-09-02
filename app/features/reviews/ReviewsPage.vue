@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useReviews } from './composables/useReviews';
-import type { Review, ReviewStats as ReviewStatsType } from './types/reviews';
-
-const { setPageSEO, businessInfo } = useGlobalSEO();
+import type { Review } from './types/reviews';
 
 const { submitReview } = useReviews();
 
@@ -15,17 +13,11 @@ const hasMore = ref(false);
 const { data: reviewsData, pending: isLoading, refresh } = await useAsyncData(
   'reviews-page-data',
   async () => {
-    const [reviewsResponse, statsResponse] = await Promise.all([
-      $fetch<{ data: { reviews: Review[]; total: number; hasMore: boolean } }>(`/api/reviews?page=${currentPage.value}&limit=${reviewsPerPage}`),
-      $fetch<{ data: ReviewStatsType }>('/api/reviews/stats'),
-    ]);
+    const reviewsResponse = await $fetch<{
+      data: { reviews: Review[]; total: number; hasMore: boolean };
+    }>(`/api/reviews?page=${currentPage.value}&limit=${reviewsPerPage}`);
 
-    return {
-      reviews: reviewsResponse.data.reviews,
-      total: reviewsResponse.data.total,
-      hasMore: reviewsResponse.data.hasMore,
-      stats: statsResponse.data,
-    };
+    return reviewsResponse.data;
   }
 );
 
@@ -38,14 +30,6 @@ watchEffect(() => {
     }
     hasMore.value = reviewsData.value.hasMore;
   }
-});
-
-const reviewStatsForSeo = computed(() => reviewsData.value?.stats || {
-  total: 0,
-  approved: 0,
-  pending: 0,
-  rejected: 0,
-  averageRating: 0,
 });
 
 // Load more reviews (pagination)
@@ -69,67 +53,6 @@ const loadReviews = async () => {
     hasMore.value = reviewsData.value.hasMore;
   }
 };
-
-// Generate review schema once data is loaded
-const generateReviewSchemas = () => {
-  if (!allReviews.value.length) return [];
-
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': businessInfo.url,
-    name: businessInfo.name,
-    url: businessInfo.url,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: reviewStatsForSeo.value.averageRating.toFixed(1),
-      reviewCount: reviewStatsForSeo.value.approved,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    review: allReviews.value.map((review) => ({
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: review.name,
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      reviewBody: review.review,
-      datePublished: review.created_at,
-    })),
-  };
-
-  return [organizationSchema];
-};
-
-// Set enhanced SEO with review schema after data loads
-watchEffect(() => {
-  if (!isLoading.value && allReviews.value.length) {
-    const reviewSchemas = generateReviewSchemas();
-    setPageSEO({
-      title: 'Reviews & Ervaringen - Enisa Healing & Massage Amsterdam Noord',
-      description: `Lees de ervaringen van onze ${
-        reviewStatsForSeo.value.approved
-      } cliënten in Amsterdam Noord met een gemiddelde score van ${reviewStatsForSeo.value.averageRating.toFixed(
-        1
-      )}/5. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.`,
-      path: '/reviews',
-      structuredData: reviewSchemas,
-    });
-  } else {
-    // Fallback SEO without structured data
-    useSeoMeta({
-      title: 'Reviews & Ervaringen - Enisa Healing & Massage Amsterdam Noord',
-      description:
-        'Lees de ervaringen van onze cliënten in Amsterdam Noord en deel je eigen ervaring. Ontdek waarom mensen kiezen voor Enisa Healing & Massage.',
-    });
-  }
-});
 
 // Track form submission state
 const isSuccess = ref(false);

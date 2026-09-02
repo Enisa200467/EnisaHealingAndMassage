@@ -5,6 +5,7 @@ Deze gids legt uit hoe je behandelingen toevoegt en beheert op de website.
 ## Overzicht
 
 Behandelingen bestaan uit **twee onderdelen**:
+
 1. **Database Record** - Basis metadata (naam, prijs, duur, status)
 2. **Content Bestand** - Volledige pagina-inhoud met frontmatter (markdown `.md` bestand)
 
@@ -32,7 +33,7 @@ De slug moet identiek zijn in beide onderdelen.
 
 3. **Pas het gekopieerde bestand aan**
    - Open je nieuwe `.md` bestand
-   - **Update frontmatter**: titel en beschrijving
+   - **Update frontmatter**: titel, beschrijving, SEO-velden en wijzigingsdatum
    - Vervang het `id` in `::behandeling-hero` met het nieuwe UUID
    - Pas alle teksten, afbeeldingen en content aan
    - Upload nieuwe afbeeldingen naar `/public/images/`
@@ -51,6 +52,9 @@ Behandeling content gebruikt frontmatter voor metadata:
 ---
 title: Chakra Healing
 description: Herstel de harmonie en energiestroom in je lichaam met een zachte Chakra Balancering. Gericht op het vrijmaken van blokkades en het bevorderen van emotioneel en fysiek welzijn.
+seoTitle: "Chakra Healing Amsterdam Noord | Enisa Healing"
+seoDescription: "Chakra healing in Amsterdam Noord voor meer rust en energetische balans. Persoonlijke sessie voor ontspanning en het loslaten van blokkades."
+updatedAt: "2026-09-02"
 ---
 
 ::behandeling-hero{#database-uuid-here}
@@ -65,6 +69,9 @@ description: Herstel de harmonie en energiestroom in je lichaam met een zachte C
 |------|-----------|------------|
 | `title` | "Chakra Healing" | Ja |
 | `description` | Korte beschrijving voor overzichtspagina's | Ja |
+| `seoTitle` | Unieke Google-titel van circa 30-60 tekens | Ja |
+| `seoDescription` | Unieke Google-omschrijving van circa 120-160 tekens | Ja |
+| `updatedAt` | Datum van inhoudelijke wijziging (`YYYY-MM-DD`) voor sitemap | Ja |
 
 ---
 
@@ -93,6 +100,7 @@ Alle componenten gebruiken **kebab-case** in markdown. Geneste componenten (binn
 ### Verplicht Component
 
 **`::behandeling-hero`**
+
 - Toont titel, prijs, duur, intensiteit
 - **Vereist**: `id` (UUID uit database)
 
@@ -135,9 +143,13 @@ Alle componenten gebruiken **kebab-case** in markdown. Geneste componenten (binn
 ## Checklist
 
 Bij aanmaken/bewerken:
+
 - [ ] Database slug = bestandsnaam
 - [ ] `id` in `::behandeling-hero` = database UUID
 - [ ] Alle afbeeldingen bestaan in `/public/images/`
 - [ ] Alt-teksten zijn ingevuld
+- [ ] `seoTitle` is uniek en circa 30-60 tekens
+- [ ] `seoDescription` is uniek en circa 120-160 tekens
+- [ ] `updatedAt` bevat de datum van de laatste inhoudelijke wijziging
 - [ ] Preview werkt op `/behandelingen/[slug]`
 - [ ] `is_active = true` in database
