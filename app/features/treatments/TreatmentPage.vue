@@ -49,7 +49,8 @@ if (props.treatment || props.treatmentData) {
     title,
     description,
     price,
-    duration
+    duration,
+    treatmentPath
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
     { label: 'Home', path: '/' },

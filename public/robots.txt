@@ -2,21 +2,9 @@
 User-Agent: *
 Allow: /
 
-# Important content
-Allow: /behandelingen/
-Allow: /over-mij
-Allow: /contact
-Allow: /tarieven
-Allow: /reviews
-Allow: /boeken
-Allow: /faq
-
-# Images and assets
-Allow: /images/
-Allow: /_nuxt/
-
-# Disallow admin paths
+# Keep administrative and machine-only endpoints out of crawl queues.
 Disallow: /admin/
+Disallow: /api/
 
 # Sitemap location
 Sitemap: https://www.enisahealingenmassage.nl/sitemap.xml
