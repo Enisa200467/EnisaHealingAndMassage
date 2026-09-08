@@ -121,6 +121,17 @@ Telefoon / WhatsApp: 06-22445121
 Bij annulering binnen 48 uur voor de afspraak ben ik genoodzaakt de gereserveerde tijd in rekening te brengen.
 ::
 
+::info-blok
+---
+
+ctaLink: <https://enisa-healing-massage.setmore.com>
+ctaText: Plan je intake
+icon: i-mdi-calendar-check
+variant: info
+title: Plan je intake
+---
+::
+
 ::uitklap-info{title="Meer over hypnotherapie"}
 Veel van wat we denken, voelen en doen gebeurt automatisch. Zonder dat we ons daarvan bewust zijn, worden keuzes, reacties en emoties vaak beïnvloed door eerdere ervaringen en overtuigingen.
 
