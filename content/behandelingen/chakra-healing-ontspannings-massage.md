@@ -62,7 +62,6 @@ Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en m
 - Behoefte hebt aan hernieuwde balans
 - Zowel fysieke als energetische klachten hebt
 - Jezelf echt iets goeds wilt doen
-- Diepere ontspanning zoekt dan alleen massage
   title: Voor Wie?
 
   ---
