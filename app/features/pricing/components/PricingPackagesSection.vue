@@ -101,7 +101,7 @@ const packages = computed(() => {
       discountPrice: "€ 225",
       savings: "€ 30",
       validity: "3 maanden geldig",
-      benefits: ["Geen vervaldatum", "Overdraagbaar aan familie/vrienden"],
+      benefits: ["Overdraagbaar aan familie/vrienden"],
     },
     {
       name: "6 Behandelingen Pakket",
@@ -110,7 +110,7 @@ const packages = computed(() => {
       discountPrice: "€ 450",
       savings: "€ 60",
       validity: "6 maanden geldig",
-      benefits: ["Geen vervaldatum", "Overdraagbaar aan familie/vrienden"],
+      benefits: ["Overdraagbaar aan familie/vrienden"],
     },
     {
       name: "10 Behandelingen Pakket",
@@ -119,7 +119,7 @@ const packages = computed(() => {
       discountPrice: "€ 750",
       savings: "€ 100",
       validity: "12 maanden geldig",
-      benefits: ["Geen vervaldatum", "Overdraagbaar aan familie/vrienden"],
+      benefits: ["Overdraagbaar aan familie/vrienden"],
     },
   ];
 });
