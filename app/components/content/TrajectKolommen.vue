@@ -139,7 +139,7 @@ const mergedTrajects = computed<TrajectDisplayItem[]>(() =>
 
           <div v-if="item.sessions && item.price_cents" class="space-y-1">
             <p class="text-sm text-neutral-600">
-              {{ item.sessions }} sessies
+              {{ item.sessions }} {{ item.sessions === 1 ? "sessie" : "sessies" }}
             </p>
             <p class="text-lg font-semibold text-primary-600">
               {{ formatPrice(item.price_cents) }}
