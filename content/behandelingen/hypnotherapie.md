@@ -81,9 +81,9 @@ items:
     sessions: 1
     price_cents: 16000
     bullets:
-  - "Duur: 120 minuten"
-  - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
-  - Gericht op inzicht, persoonlijke groei en positieve verandering vanuit het onderbewuste
+      - "Duur: 120 minuten"
+      - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
+      - Gericht op inzicht, persoonlijke groei en positieve verandering vanuit het onderbewuste
     ctaText: Plan je intake
     ctaLink: <https://enisa-healing-massage.setmore.com>
 - id: "41499119-22df-42a9-916a-ac32120f6d5b"
