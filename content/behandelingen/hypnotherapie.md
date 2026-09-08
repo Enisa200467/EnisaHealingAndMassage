@@ -3,7 +3,7 @@ title: Hypnotherapie
 description: Ericksoniaanse hypnotherapie in Amsterdam Noord voor diepe ontspanning, inzicht in onbewuste patronen en persoonlijke begeleiding in jouw tempo.
 seoTitle: "Hypnotherapie Amsterdam Noord | Enisa Healing"
 seoDescription: "Hypnotherapie in Amsterdam Noord met Ericksoniaanse hypnose. Krijg inzicht in onbewuste patronen en werk in jouw tempo aan rust en zelfvertrouwen."
-updatedAt: "2026-09-02"
+updatedAt: "2026-09-08"
 ---
 
 ::behandeling-hero
@@ -90,7 +90,7 @@ items:
     title: Hypnotherapie & Chakra Healing
     description: Een uitgebreide sessie waarin ik de kracht van hypnotherapie combineer met chakra healing. Deze combinatie kan waardevol zijn wanneer mentale patronen en emotionele belasting met elkaar verbonden zijn en je behoefte hebt aan een bredere, holistische benadering.
     sessions: 1
-    price_cents: 22900
+    price_cents: 23000
     bullets:
   - "Duur: 150 minuten"
   - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
