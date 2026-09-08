@@ -71,7 +71,7 @@ Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en m
 
 ::uitklap-info{title="Meer over de combinatiebehandeling"}
 
-### Het Beste Van Twee Werelden
+### De Kracht van Massage en Healing
 
 Deze combinatiebehandeling verenigt het beste van twee krachtige behandelvormen: de fysieke ontspanning van massage en de energetische werking van chakra healing. Door deze twee te combineren, ontstaat een synergetisch effect waarbij het totaal meer is dan de som der delen.
 
