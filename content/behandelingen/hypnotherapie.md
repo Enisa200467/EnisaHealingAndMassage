@@ -115,6 +115,17 @@ Plan eenvoudig online jouw gratis kennismakingsgesprek via de agenda op deze web
 Of neem contact met mij op via:
 
 Telefoon / WhatsApp: 06-22445121
+::
+
+::info-blok
+---
+
+ctaLink: /contact-afspraak
+ctaText: Boek een gratis kennismakings & intakegesprek
+icon: i-mdi-calendar-check
+variant: info
+title: Plan je intake
+---
 
 ### Annulerings- & betalingsvoorwaarden
 
