@@ -45,7 +45,7 @@ const loadTreatmentPages = async (event: H3Event): Promise<SitemapPage[]> => {
 
     return docs
       .flatMap((doc) => {
-        if (typeof doc.path !== "string") return [];
+        if (!isCanonicalTreatmentPath(doc.path)) return [];
 
         const meta =
           doc.meta && typeof doc.meta === "object"
@@ -62,6 +62,9 @@ const loadTreatmentPages = async (event: H3Event): Promise<SitemapPage[]> => {
     return [];
   }
 };
+
+const isCanonicalTreatmentPath = (path: unknown): path is string =>
+  typeof path === "string" && /^\/behandelingen\/[^/?#]+$/.test(path);
 
 const createUrlEntry = (page: SitemapPage) => {
   const location = new URL(page.url, `${BUSINESS_INFO.url}/`).toString();

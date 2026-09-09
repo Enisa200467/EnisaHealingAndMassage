@@ -64,8 +64,6 @@
 </template>
 
 <script setup lang="ts">
-const routes = useRoutes();
-
 // Get all active treatments using global composable
 const { activeTreatments: allTreatments } = useTreatments();
 

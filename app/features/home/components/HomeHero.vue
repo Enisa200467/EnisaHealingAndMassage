@@ -7,8 +7,8 @@
     <NuxtImg
       src="/images/hero.webp"
       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1280px"
-      alt="Serene lotus flower floating on water with soft pink glow, symbolizing tranquility and healing"
-      role="presentation"
+      alt=""
+      aria-hidden="true"
       class="absolute inset-0 object-cover w-full h-full -z-10 brightness-75"
       width="2752"
       height="1536"

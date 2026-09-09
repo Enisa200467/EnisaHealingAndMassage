@@ -39,7 +39,7 @@
             :items="visibleCarouselItems"
             class="w-full"
             aria-label="Fotogalerij van Enisa"
-            @update:modelValue="onSlideChange"
+            @update:model-value="onSlideChange"
           >
             <div
               class="relative w-full aspect-[3/2] overflow-hidden rounded-lg"
