@@ -3,7 +3,7 @@ title: antistress
 description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 seoTitle: "Anti-stress behandeling Amsterdam Noord | Enisa Healing"
 seoDescription: "Anti-stress behandeling in Amsterdam Noord met mindfulness, meditatie en healing. Krijg meer rust, vertrouwen en grip op terugkerende spanning."
-updatedAt: "2026-09-02"
+updatedAt: "2026-09-23"
 ---
 
 ::behandeling-hero
@@ -95,14 +95,11 @@ Het is jouw persoonlijke bord: jij bepaalt zelf hoe het eruitziet en wat erop st
 
 ### Aanbevolen frequentie: traject van 8 sessies
 
-Bij langdurige stress- of burn-outklachten is een traject van 8 sessies aan te raden.
+Uit mijn ervaring met cliënten weet ik dat langdurige stress- of burn-outklachten tijd en herhaling nodig kunnen hebben. Daarom werk ik met een compleet traject van 8 sessies. Iedere sessie heeft een eigen focus en biedt nieuwe inzichten, oefeningen en ondersteuning, zodat je stap voor stap leert om anders met stress om te gaan en meer rust en balans in je dagelijks leven te creëren.
 
-De frequentie van de afspraken bepalen we samen, op basis van jouw persoonlijke situatie en de tijd die je beschikbaar hebt.
-Zo kan het traject zowel intensiever worden ingepland (voor wie sneller resultaat wil), als rustiger, in een tempo dat bij jou past.
+De eerste 3 sessies vinden bij voorkeur eenmaal per week plaats. Daarna plannen we de sessies eenmaal per twee weken, zodat je voldoende tijd hebt om wat je tijdens de sessies hebt ervaren en geleerd rustig te laten bezinken en toe te passen.
 
-Bij dit pakket is een USB met begeleide meditaties en oefeningen voor thuis inbegrepen (inclusief een vision board*).
+Anti-Stress traject: 8 sessies van 2,5 uur – €1.560
 
-Betaling per sessie
-Anti-Stress Coaching: traject van 8 sessies van 2 uur
-€160 per sessie
+Betaling is mogelijk in 2 termijnen van €780. De eerste termijn wordt betaald bij aanvang van het traject. De tweede termijn wordt één maand na de eerste betaling betaald.
 ::
