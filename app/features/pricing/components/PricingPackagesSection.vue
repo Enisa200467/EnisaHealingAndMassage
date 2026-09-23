@@ -97,8 +97,8 @@ const packages = computed(() => {
     {
       name: "3 Behandelingen Pakket",
       description: "Energetische healing of chakra healing",
-      originalPrice: "€ 255",
-      discountPrice: "€ 225",
+      originalPrice: "€ 297",
+      discountPrice: "€ 267",
       savings: "€ 30",
       validity: "3 maanden geldig",
       benefits: ["Overdraagbaar aan familie/vrienden"],
@@ -106,8 +106,8 @@ const packages = computed(() => {
     {
       name: "6 Behandelingen Pakket",
       description: "Energetische healing of chakra healing",
-      originalPrice: "€ 510",
-      discountPrice: "€ 450",
+      originalPrice: "€ 594",
+      discountPrice: "€ 534",
       savings: "€ 60",
       validity: "6 maanden geldig",
       benefits: ["Overdraagbaar aan familie/vrienden"],
@@ -115,8 +115,8 @@ const packages = computed(() => {
     {
       name: "10 Behandelingen Pakket",
       description: "Energetische healing of chakra healing",
-      originalPrice: "€ 850",
-      discountPrice: "€ 750",
+      originalPrice: "€ 990",
+      discountPrice: "€ 890",
       savings: "€ 100",
       validity: "12 maanden geldig",
       benefits: ["Overdraagbaar aan familie/vrienden"],
