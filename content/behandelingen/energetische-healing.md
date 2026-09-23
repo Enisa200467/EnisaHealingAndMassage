@@ -3,7 +3,7 @@ title: Energetische Healing
 description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met Energetische Healing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
 seoTitle: "Energetische Healing Amsterdam Noord | Enisa Healing"
 seoDescription: "Energetische healing in Amsterdam Noord voor ontspanning en balans. Persoonlijke sessie gericht op stress, vermoeidheid en energetische blokkades."
-updatedAt: "2026-09-02"
+updatedAt: "2026-09-23"
 ---
 
 ::behandeling-hero
@@ -77,10 +77,10 @@ ctaLink: /contact
 
 **Kan je niet langskomen?** Healing werkt ook uitstekend op afstand. Voor deze behandeling heb ik alleen je voor- en achternaam en een foto nodig. We spreken een tijd af, bespreken telefonisch je klachten, en daarna stuur ik je gedurende 45 minuten geneeskrachtige energie.
 
-**Prijs:** €70 voor 45 minuten
+**Prijs:** €80 voor 45 minuten
 **Werkwijze:** Telefonisch contact voor én na de sessie
 
-Lees meer over ervaringen met healing op afstand bij [Reacties van klanten](/reviews).
+Lees meer over ervaringen met healing op afstand bij [Reviews](/reviews).
 ::
 
 ::uitklap-info{title="Meer informatie over Energetische Healing"}
