@@ -4,6 +4,7 @@
       <h2 class="text-3xl font-bold text-neutral-900">
         Alle Behandelingen
       </h2>
+      <p>De aangegeven behandeltijd is de totale tijd die ik voor jouw afspraak reserveer, inclusief een kort gesprek vooraf en een rustige afronding na de behandeling.</p>
     </div>
 
     <!-- Loading State -->

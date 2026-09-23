@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  updatedAt: '2026-09-23',
+});
+
 const { setPageSEO } = useGlobalSEO();
 
 setPageSEO({
