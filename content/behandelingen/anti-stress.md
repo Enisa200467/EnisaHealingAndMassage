@@ -9,7 +9,7 @@ updatedAt: "2026-09-23"
 ::behandeling-hero
 ---
 
-description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
+description: In deze Anti-Stress sessies in Amsterdam Noord leer je om bewust aanwezig te zijn in het hier en nu. Je leert anders omgaan met stress en krijgt meer inzicht in jezelf en je gedachten. Zo kun je stap voor stap je leven weer oppakken en met een frisse blik verdergaan. Ondersteund door Mindfulness Coaching, meditaties, Energetische Healing en Chakra Healing. Meer rust. Meer vertrouwen in jezelf. Bewuster genieten van het leven.
 id: da73f8d9-279a-4d79-8de2-204efaaeaf2b
 ---
 
@@ -38,15 +38,14 @@ title: Wat kun je verwachten?
   ---
   items:
 
-- Minder stress en innerlijke onrust
-- Diepere ademhaling en ontspanning
-- Ontspanning van nek, schouders en kaak
-- Beter slapen en herstellen
-- Meer focus en mentale helderheid
-- Vermindering van hoofdpijn of druk op het hoofd
-- Gevoel van ontspanning in het hele lichaam
-- Herstel van balans tussen lichaam en geest
-  title: Belangrijkste Voordelen
+- Bewuster omgaan met stress en stressreacties
+- Bewuster omgaan met belemmerende gedachten
+- Positiever denken en meer vertrouwen in jezelf
+- Communiceren met aandacht
+- Contact maken met je innerlijke kind
+- Jezelf meer leren waarderen
+- Je eigen energie en grenzen beter leren bewaken
+  title: "Voordelen van deze behandeling:"
 
   ---
   :::
