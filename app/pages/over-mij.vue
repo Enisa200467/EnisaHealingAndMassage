@@ -8,12 +8,15 @@ const { aboutVideos } = useVideos();
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${businessInfo.url}/over-mij#enisa-erovic`,
   name: "Enisa",
   jobTitle: "Energetisch Therapeut gespecialiseerd in Hypnotherapie",
   description:
     "Energetisch therapeut in Amsterdam Noord gespecialiseerd in holistische healing, energetische therapie en hypnotherapie.",
+  image: `${businessInfo.url}/images/enisa-intro.webp`,
   worksFor: {
-    "@type": "Organization",
+    "@type": "LocalBusiness",
+    "@id": `${businessInfo.url}/#localbusiness`,
     name: businessInfo.name,
     url: businessInfo.url,
   },
