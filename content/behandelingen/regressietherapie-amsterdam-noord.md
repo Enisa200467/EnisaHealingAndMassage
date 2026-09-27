@@ -8,17 +8,14 @@ updatedAt: "2026-09-02"
 
 ::behandeling-hero
 ---
-
 description: SoulKey Therapy Vorige levens, Life Between Lives & Zielsbewustzijn. Een diepgaande regressiemethode in Amsterdam Noord voor wie helderheid wil krijgen in terugkerende patronen, levensvragen en bewustwording op zielsniveau.
 bookButtonText: Intake inplannen
 id: a5889aac-e18b-4ed9-92a0-4bd0bf05bf11
 ---
-
 ::
 
 ::behandeling-sectie
 ---
-
 title: Regressietherapie & SoulKey Therapy De reis van je ziel
 image: /images/soulkey.jpg
 imageAlt: Symbolische SoulKey Therapy-reis naar innerlijke helderheid
@@ -37,20 +34,16 @@ Mijn begeleiding is rustig, persoonlijk en volledig afgestemd op jouw tempo. Ik 
 ::twee-kolommen
   :::voordelen-lijst
   ---
-
-items: ["Diepgaand inzicht in hardnekkige, terugkerende patronen", "Meer begrip en compassie voor jezelf en jouw unieke levenspad", "Nieuwe, helende perspectieven op relaties en ingrijpende gebeurtenissen", "Een diepe innerlijke rust en mentale helderheid", "Versterking van jouw intuïtie en innerlijk weten", "Bewustere keuzes kunnen maken vanuit vertrouwen", "Krachtige persoonlijke en spirituele groei"]
+  items: ["Diepgaand inzicht in hardnekkige, terugkerende patronen", "Meer begrip en compassie voor jezelf en jouw unieke levenspad", "Nieuwe, helende perspectieven op relaties en ingrijpende gebeurtenissen", "Een diepe innerlijke rust en mentale helderheid", "Versterking van jouw intuïtie en innerlijk weten", "Bewustere keuzes kunnen maken vanuit vertrouwen", "Krachtige persoonlijke en spirituele groei"]
   title: "Wat kan SoulKey Therapy jou brengen?"
   ---
-
   :::
 
   :::voor-wie
   ---
-
-items: ["Je steeds terugvalt in dezelfde emotionele of gedragspatronen", "Je op zoek bent naar antwoorden op wezenlijke, diepere levensvragen", "Je nieuwsgierig bent naar regressietherapie of ervaringen uit vorige levens", "Je interesse hebt in Life Between Lives en zielsbewustzijn", "Je jouw persoonlijke of spirituele ontwikkeling naar een diepere laag wilt brengen", "Je lichamelijke of emotionele klachten ervaart en wilt onderzoeken of deze een diepere, energetische oorsprong hebben", "Je meer zicht wilt krijgen op jouw specifieke levenslessen en levensdoel", "Je openstaat voor een veilige en respectvolle vorm van diep innerlijk onderzoek"]
+  items: ["Je steeds terugvalt in dezelfde emotionele of gedragspatronen", "Je op zoek bent naar antwoorden op wezenlijke, diepere levensvragen", "Je nieuwsgierig bent naar regressietherapie of ervaringen uit vorige levens", "Je interesse hebt in Life Between Lives en zielsbewustzijn", "Je jouw persoonlijke of spirituele ontwikkeling naar een diepere laag wilt brengen", "Je lichamelijke of emotionele klachten ervaart en wilt onderzoeken of deze een diepere, energetische oorsprong hebben", "Je meer zicht wilt krijgen op jouw specifieke levenslessen en levensdoel", "Je openstaat voor een veilige en respectvolle vorm van diep innerlijk onderzoek"]
   title: "Voor wie?"
   ---
-
   :::
 ::
 
@@ -70,7 +63,6 @@ De sessie duurt 2,5 tot 3 uur. In online agenda is hiervoor 3 uur gereserveerd.
 
 ::info-blok
 ---
-
 ctaLink: /contact-afspraak
 ctaText: Boek een gratis kennismakings & intakegesprek
 icon: i-mdi-calendar-check
@@ -86,19 +78,16 @@ Bij annulering binnen 48 uur voor de afspraak ben ik genoodzaakt de gereserveerd
 ::behandeling-sectie
 ---
 items:
-
-- SoulKey Therapy is een veilige, beproefde en respectvolle methode
-- Je blijft tijdens de gehele sessie volledig bewust aanwezig; je verliest nooit de controle of je eigen vrije wil
-- Je hoeft niet in reïncarnatie te geloven om de therapeutische waarde van deze methode te ervaren. Het onderbewustzijn werkt via beelden en symbolen die voor jou betekenisvol en helend kunnen zijn
-- Niet iedereen ziet beelden. Je kunt de sessie ook ervaren door gevoelens, geluiden of een diep innerlijk weten
-- Deze behandeling is complementair (aanvullend) en vervangt geen reguliere medische of psychologische zorg
+  - SoulKey Therapy is een veilige, beproefde en respectvolle methode
+  - Je blijft tijdens de gehele sessie volledig bewust aanwezig; je verliest nooit de controle of je eigen vrije wil
+  - Je hoeft niet in reïncarnatie te geloven om de therapeutische waarde van deze methode te ervaren. Het onderbewustzijn werkt via beelden en symbolen die voor jou betekenisvol en helend kunnen zijn
+  - Niet iedereen ziet beelden. Je kunt de sessie ook ervaren door gevoelens, geluiden of een diep innerlijk weten
+  - Deze behandeling is complementair (aanvullend) en vervangt geen reguliere medische of psychologische zorg
 title: Belangrijk om te weten
-
 ---
 ::
 
 ::uitklap-info{title="Meer weten over regressietherapie & SoulKey Therapy"}
-
 ### Vorige levens
 
 Tijdens de sessie kan er een spontane regressie ontstaan naar ervaringen die zich aandienen als een vorig leven. Dit kan helpen om terugkerende patronen, angsten, relaties of emoties vanuit een nieuw perspectief te begrijpen. De therapeutische waarde ligt in de inzichten die bijdragen aan jouw leven van nu.
@@ -113,7 +102,6 @@ Zielsbewustzijn nodigt je uit om contact te maken met de wijsheid van jouw eigen
 ::
 
 ::uitklap-info{title="Veelgestelde vragen"}
-
 ### Is SoulKey Therapy hetzelfde als standaard regressietherapie?
 
 Nee. SoulKey Therapy gaat een stap verder. Naast regressietherapie is er ook ruimte voor Life Between Lives en het contact met jouw zielsbewustzijn.

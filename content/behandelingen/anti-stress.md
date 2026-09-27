@@ -8,28 +8,24 @@ updatedAt: "2026-09-23"
 
 ::behandeling-hero
 ---
-
 description: In deze Anti-Stress sessies in Amsterdam Noord leer je om bewust aanwezig te zijn in het hier en nu. Je leert anders omgaan met stress en krijgt meer inzicht in jezelf en je gedachten. Zo kun je stap voor stap je leven weer oppakken en met een frisse blik verdergaan. Ondersteund door Mindfulness Coaching, meditaties, Energetische Healing en Chakra Healing. Meer rust. Meer vertrouwen in jezelf. Meer genieten van het leven.
 id: da73f8d9-279a-4d79-8de2-204efaaeaf2b
 ---
-
 ::
 
 ::behandeling-sectie
 ---
 items:
-
-- "We gaan samen op zoek naar blokkades die je kunnen tegenhouden om verder te komen in je leven"
-- "Mindfulness coaching: leren leven met volle aandacht"
-- "Verschillende gerichte, begeleide meditaties"
-- "Energetische healing"
-- "Chakra healing"
-- "Praktische huiswerkopdrachten"
-- "Eén maand na de laatste anti-stress sessie neem ik contact met je op om te vragen hoe het met je gaat. Als afsluiting ontvang je een gratis healing op afstand."
+  - "We gaan samen op zoek naar blokkades die je kunnen tegenhouden om verder te komen in je leven"
+  - "Mindfulness coaching: leren leven met volle aandacht"
+  - "Verschillende gerichte, begeleide meditaties"
+  - "Energetische healing"
+  - "Chakra healing"
+  - "Praktische huiswerkopdrachten"
+  - "Eén maand na de laatste anti-stress sessie neem ik contact met je op om te vragen hoe het met je gaat. Als afsluiting ontvang je een gratis healing op afstand."
 image: /images/bos.webp
 imageAlt: Rustgevende anti-stress massage in Amsterdam Noord
 title: Wat kun je verwachten?
-
 ---
 ::
 
@@ -38,30 +34,26 @@ title: Wat kun je verwachten?
   ---
   items: ["Bewuster omgaan met stress en stressreacties", "Belemmerende gedachten herkennen en er anders mee omgaan", "Positiever denken en meer vertrouwen in jezelf", "Communiceren met aandacht", "Contact maken met je innerlijke kind", "Jezelf meer leren waarderen", "Je eigen energie en grenzen beter leren bewaken"]
   title: "Voordelen van deze behandeling:"
-
   ---
   :::
 
   :::voor-wie
   ---
   items:
-
-- Veel spanning ervaart door werk of thuissituatie
-- Moeite hebt met ontspannen of "uit" te staan
-- Last hebt van stressgerelateerde klachten
-- Snel overprikkeld raakt
-- Slecht slaapt of onrustige nachten hebt
-- Spanning voelt in nek, schouders of kaak
-- Hoofdpijn ervaart bij stress
-- Behoefte hebt aan rust en herstel
+    - Veel spanning ervaart door werk of thuissituatie
+    - Moeite hebt met ontspannen of "uit" te staan
+    - Last hebt van stressgerelateerde klachten
+    - Snel overprikkeld raakt
+    - Slecht slaapt of onrustige nachten hebt
+    - Spanning voelt in nek, schouders of kaak
+    - Hoofdpijn ervaart bij stress
+    - Behoefte hebt aan rust en herstel
   title: Voor Wie?
-
   ---
   :::
 ::
 
 ::uitklap-info{title="Meer over de anti-stress behandeling"}
-
 ### Waarom Anti-stress?
 
 Langdurige stress zet het lichaam continu in de ‘aan-stand’. Je spieren spannen aan, je ademhaling wordt oppervlakkig en je hoofd blijft druk.
