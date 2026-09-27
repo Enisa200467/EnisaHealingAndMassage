@@ -48,7 +48,7 @@ Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik in
   :::voor-wie
   ---
   items:
-    - Vermoeidheid en stress ervaart
+    - Stress en mentale onrust ervaart
     - Onrustig slaapt of veel piekert
     - Emotionele disbalans voelt (angsten, verdriet, boosheid)
     - Energetische overbelasting ervaart
@@ -69,7 +69,7 @@ variant: info
 
 **Chakra healing** richt zich op je zeven hoofdchakra's, de energiecentra in je lichaam. Ik werk met mijn handen langs je chakra's om ze in balans te brengen. Fijn als je vooral emotioneel vastzit of meer innerlijke balans zoekt.
 
-**[Energetische lichaamshealing](/behandelingen/energetische-healing)** is breder en richt zich vooral op je lichaam. Ik stuur de energie naar de plekken waar jouw lichaam het nodig heeft. Fijn als je je lichamelijk moe, gespannen of uit balans voelt. Ook mogelijk op afstand.
+**[Energetische lichaamshealing](/behandelingen/energetische-healing)** is breder en richt zich vooral op je lichaam. Ik scan je lichaam met mijn handen om te voelen waar de energetische blokkades zitten, en stuur de energie daar naartoe. Fijn bij fysieke klachten zoals vermoeidheid, pijn of slecht slapen. Ook mogelijk op afstand.
 
 Twijfel je? [Neem contact op](/contact), dan kijken we samen wat bij jou past.
 ::
