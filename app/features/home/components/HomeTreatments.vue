@@ -17,7 +17,7 @@
         </p>
       </div>
 
-      <ul class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+      <ul class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 lg:gap-8">
         <li v-for="treatment in featuredTreatments" :key="treatment.slug">
           <article
             class="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-xl"
@@ -34,7 +34,7 @@
                 format="webp"
                 quality="80"
                 loading="lazy"
-                sizes="sm:100vw md:33vw lg:400px"
+                sizes="sm:100vw md:50vw xl:320px"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div
@@ -71,7 +71,7 @@
                 />
                 <span>Sessie van {{ formatDuration(treatment.duration) }}</span>
               </p>
-              <div class="mt-6 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+              <div class="mt-6 flex flex-col gap-3 md:flex-row xl:flex-col">
                 <UButton
                   :to="treatment.path"
                   color="primary"
@@ -104,9 +104,10 @@
       <div class="mt-10 text-center">
         <UButton
           :to="routes.pages.treatments"
-          color="neutral"
-          variant="ghost"
-          size="lg"
+          color="primary"
+          variant="outline"
+          size="xl"
+          class="px-6 font-semibold"
           trailing-icon="i-mdi-arrow-right"
         >
           Bekijk alle behandelingen
@@ -147,7 +148,7 @@ const { activeTreatments } = useTreatments();
 
 const bookingUrl = 'https://enisa-healing-massage.setmore.com';
 
-// Top three treatments promoted on the homepage, in display order.
+// Treatments promoted on the homepage, in display order.
 // Title and duration come from the database; copy and image live here.
 const FEATURED_TREATMENTS = [
   {
@@ -179,6 +180,17 @@ const FEATURED_TREATMENTS = [
       "Breng je zeven hoofdchakra's weer in balans en laat energetische blokkades los, voor meer innerlijke rust en levensenergie.",
     image: '/images/enisa-healing-handen-in-de-lucht.jpg',
     imageAlt: 'Chakra healing sessie in rustige behandelruimte in Amsterdam Noord',
+  },
+  {
+    slug: 'chakra-healing-ontspannings-massage',
+    fallbackTitle: 'Chakra Healing & Ontspanningsmassage',
+    tagline: 'Massage & healing',
+    icon: 'i-mdi-spa',
+    teaser:
+      'Een ontspannende hoofd-, nek- en schoudermassage, gevolgd door chakra healing. Twee behandelingen in één sessie.',
+    image: '/images/hoofd-massage.webp',
+    imageAlt:
+      'Combinatiebehandeling van chakra healing en hoofdmassage in Amsterdam Noord',
   },
 ];
 
