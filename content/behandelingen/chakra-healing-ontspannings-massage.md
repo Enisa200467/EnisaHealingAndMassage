@@ -38,7 +38,10 @@ Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en m
   ---
   items:
 
-- Twee behandelvormen. Eén krachtige ervaring.
+- "Aantrekkelijke combinatieprijs: € 145 in plaats van € 175. € 30 voordeel."
+- "Tijdsbesparend: Twee behandelingen in één sessie van 90 minuten."
+- Mentale & fysieke ontspanning
+- "Persoonlijke aandacht: Inclusief voor- en nagesprek."
 
   ---
   :::
