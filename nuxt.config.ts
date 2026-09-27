@@ -6,7 +6,22 @@ export default defineNuxtConfig({
   // Enable SSR for better initial load
   ssr: true,
 
+  site: {
+    url: "https://www.enisahealingenmassage.nl",
+    name: "Enisa Healing & Massage",
+  },
+
   routeRules: {
+    "/admin": {
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+      },
+    },
+    "/admin/**": {
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+      },
+    },
     "/contact-afspraak": {
       redirect: {
         to: "https://enisa-healing-massage.setmore.com/",
@@ -296,6 +311,7 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "nuxt-schema-org",
     "@nuxt/scripts",
+    "@vercel/analytics/nuxt",
     "@pinia/nuxt",
     "nuxt-security",
     "nuxt-studio",

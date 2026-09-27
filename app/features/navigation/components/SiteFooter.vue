@@ -11,9 +11,9 @@
         <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-8">
           <!-- Column 1: Behandelingen -->
           <div>
-            <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
+            <h2 class="font-semibold text-neutral-900 dark:text-white mb-3">
               Behandelingen
-            </h4>
+            </h2>
             <ul class="space-y-2">
               <li v-for="treatment in allTreatments" :key="treatment.title">
                 <ULink
@@ -28,9 +28,9 @@
 
           <!-- Column 2: Praktijk Info -->
           <div>
-            <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
+            <h2 class="font-semibold text-neutral-900 dark:text-white mb-3">
               Praktijk
-            </h4>
+            </h2>
             <ul class="space-y-2">
               <li>
                 <ULink
@@ -64,9 +64,9 @@
 
           <!-- Column 3: Informatie -->
           <div>
-            <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
+            <h2 class="font-semibold text-neutral-900 dark:text-white mb-3">
               Informatie
-            </h4>
+            </h2>
             <ul class="space-y-2">
               <li v-for="(item, index) in footerLinks.info" :key="index">
                 <ULink
@@ -81,9 +81,9 @@
 
           <!-- Column 4: Boeken -->
           <div>
-            <h4 class="font-semibold text-neutral-900 dark:text-white mb-3">
+            <h2 class="font-semibold text-neutral-900 dark:text-white mb-3">
               Afspraak
-            </h4>
+            </h2>
             <ul class="space-y-2">
               <li>
                 <UButton
@@ -105,11 +105,11 @@
 
         <!-- Reviews Section (1/3 width) -->
         <div class="md:col-span-1">
-          <h4
+          <h2
             class="font-semibold text-neutral-900 dark:text-white mb-3 text-center"
           >
             Klantervaringen
-          </h4>
+          </h2>
           <ClientOnly>
             <template v-if="!isLoading && displayReviews.length > 0">
               <div class="text-center mb-4">

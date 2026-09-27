@@ -3,32 +3,28 @@ title: Chakra Healing & Ontspanningsmassage
 description: Ervaar de combinatie van chakra healing en ontspanningsmassage in Amsterdam Noord. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
 seoTitle: "Chakra Healing & Massage Amsterdam Noord | Enisa"
 seoDescription: "Combineer chakra healing en ontspanningsmassage in Amsterdam Noord. Ervaar meer fysieke rust, energetische balans en ruimte voor herstel."
-updatedAt: "2026-09-23"
+updatedAt: "2026-09-27"
 ---
 
 ::behandeling-hero
 ---
-
 description: Ervaar de combinatie van chakra healing en ontspanningsmassage in Amsterdam Noord. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
 id: f3fe5673-1e64-4990-a072-e833f240d13c
 ---
-
 ::
 
 ::behandeling-sectie
 ---
 items:
-
-- "Start met ontspannende hoofd- en gezichtsmassage"
-- "Massage van nek en schouders"
-- "Je lichaam komt volledig tot rust"
-- "Overgang naar energetische chakra healing"
-- "Loslaten van negatieve energie en spanningen"
-- "Herstel van de energiestroom en balans"
+  - "Start met ontspannende hoofd- en gezichtsmassage"
+  - "Massage van nek en schouders"
+  - "Je lichaam komt volledig tot rust"
+  - "Overgang naar energetische chakra healing"
+  - "Loslaten van negatieve energie en spanningen"
+  - "Herstel van de energiestroom en balans"
 image: /images/hoofd-massage.webp
 imageAlt: Combinatiebehandeling van chakra healing en hoofdmassage in Amsterdam Noord
 title: Wat kun je verwachten?
-
 ---
 Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en massage in mijn praktijk in Amsterdam Noord. Ik begin met een ontspannende hoofd- en gezichtsmassage, zodat je lichaam zich volledig kan ontspannen. Daarna werk ik met helende energie om ongewenste en negatieve energie los te laten, spanning te verminderen en de energiestroom in balans te brengen. Deze behandeling werkt zowel op fysiek, emotioneel als energetisch niveau.
 ::
@@ -37,29 +33,25 @@ Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en m
   :::voordelen-lijst
   ---
   items: ["Combinatieprijs: € 145 in plaats van € 175. € 30 voordeel.", "Tijdsbesparend: Twee behandelingen in één sessie van 90 minuten.", "Mentale & fysieke ontspanning", "Persoonlijke aandacht: Inclusief voor- en nagesprek."]
-
   ---
   :::
 
   :::voor-wie
   ---
   items:
-
-- Vermoeidheid en innerlijke onrust ervaart
-- Stress op meerdere niveaus voelt
-- Fysieke pijn of spanning in hoofd, nek en schouders hebt
-- Emotionele blokkades ervaart
-- Behoefte hebt aan hernieuwde balans
-- Zowel fysieke als energetische klachten hebt
-- Jezelf echt iets goeds wilt doen
+    - Vermoeidheid en innerlijke onrust ervaart
+    - Stress op meerdere niveaus voelt
+    - Fysieke pijn of spanning in hoofd, nek en schouders hebt
+    - Emotionele blokkades ervaart
+    - Behoefte hebt aan hernieuwde balans
+    - Zowel fysieke als energetische klachten hebt
+    - Jezelf echt iets goeds wilt doen
   title: Voor Wie?
-
   ---
   :::
 ::
 
 ::uitklap-info{title="Meer over de combinatiebehandeling"}
-
 ### De Kracht van Massage en Healing
 
 Deze combinatiebehandeling verenigt het beste van twee krachtige behandelvormen: de fysieke ontspanning van massage en de energetische werking van chakra healing. Door deze twee te combineren, ontstaat een synergetisch effect waarbij het totaal meer is dan de som der delen.

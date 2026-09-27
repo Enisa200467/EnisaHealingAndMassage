@@ -39,7 +39,7 @@
             :items="visibleCarouselItems"
             class="w-full"
             aria-label="Fotogalerij van Enisa"
-            @update:modelValue="onSlideChange"
+            @update:model-value="onSlideChange"
           >
             <div
               class="relative w-full aspect-[3/2] overflow-hidden rounded-lg"
@@ -73,7 +73,7 @@
         </h2>
         <p class="text-lg text-neutral-600 leading-relaxed mb-8">
           In mijn praktijk combineer ik chakra healing, energetische
-          healing, massage en hypnotherapie met moderne methoden om jou te
+          lichaamshealing, massage en hypnotherapie met moderne methoden om jou te
           helpen bij het vinden van balans en welzijn. Elke behandeling
           is aangepast aan jouw unieke behoeften en gericht op het ondersteunen
           van jouw natuurlijke genezingsproces.

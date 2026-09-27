@@ -58,7 +58,7 @@ export const BUSINESS_INFO: BusinessInfo = {
   description:
     "Professionele massage en healing praktijk in Amsterdam Noord, gespecialiseerd in ontspanning, stressvermindering en energetische behandelingen.",
   url: "https://www.enisahealingenmassage.nl",
-  priceRange: "€40-€90",
+  priceRange: "€80-€195",
 
   address: {
     street: "IJplein",

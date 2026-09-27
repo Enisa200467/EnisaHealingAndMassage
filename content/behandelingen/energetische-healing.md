@@ -1,32 +1,28 @@
 ---
-title: Energetische Healing
-description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met Energetische Healing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
-seoTitle: "Energetische Healing Amsterdam Noord | Enisa Healing"
-seoDescription: "Energetische healing in Amsterdam Noord voor ontspanning en balans. Persoonlijke sessie gericht op stress, vermoeidheid en energetische blokkades."
-updatedAt: "2026-09-23"
+title: Energetische lichaamshealing
+description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met energetische lichaamshealing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
+seoTitle: "Energetische lichaamshealing Amsterdam Noord | Enisa"
+seoDescription: "Energetische lichaamshealing in Amsterdam Noord: healing gericht op je lichaam, voor ontspanning, nieuwe energie en herstel. Ook als healing op afstand."
+updatedAt: "2026-09-27"
 ---
 
 ::behandeling-hero
 ---
-
-description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met Energetische Healing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
+description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met energetische lichaamshealing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
 id: 1cc75141-005d-4d62-a88e-0f93b62370b9
 ---
-
 ::
 
 ::behandeling-sectie
 ---
 items:
-
-- Reiniging van je aura en lichaam van negatieve energie
-- Scannen van het lichaam om energetische blokkades te voelen
-- Doorsturen van geneeskrachtige energie naar waar het nodig is
-- Ervaren van warmte en rustgevende energie door je hele lichaam
+  - Reiniging van je aura en lichaam van negatieve energie
+  - Scannen van het lichaam om energetische blokkades te voelen
+  - Doorsturen van geneeskrachtige energie naar waar het nodig is
+  - Ervaren van warmte en rustgevende energie door je hele lichaam
 image: /images/healing-behandeling-4.webp
 imageAlt: Energetische healing behandeling met geneeskrachtige energie
 title: Wat kun je verwachten?
-
 ---
 Sinds 2014 geef ik met veel liefde healings in mijn praktijk in Amsterdam Noord. Als geboren healer voel ik intuïtief aan wat er nodig is om balans te brengen in jouw lichaam én in je leven. De energie helpt bij het opruimen van blokkades die je kunnen belemmeren op gebieden zoals werk, relaties en familie. Je ontvangt precies de helderheid en kracht die nodig is voor herstel op alle vlakken van je levenspad.
 ::
@@ -35,39 +31,34 @@ Sinds 2014 geef ik met veel liefde healings in mijn praktijk in Amsterdam Noord.
   :::voordelen-lijst
   ---
   items:
-
-- Vermindering van vermoeidheid en meer energie
-- Afname van stress en spanning
-- Verlichting van fysieke pijn en klachten
-- Beter slapen en minder hoofdpijn
-- Sneller herstel bij ontstekingen en blessures
-- Versterkt zelfhelend vermogen van het lichaam
-- Meer ontspanning en innerlijke rust
+    - Diepe lichamelijke ontspanning
+    - Minder spanning in je lichaam
+    - Meer energie en vitaliteit
+    - Rustiger slapen
+    - Ondersteuning van je natuurlijke herstelvermogen
+    - Een licht en opgeladen gevoel
+    - Meer innerlijke rust
   title: Belangrijkste Voordelen
-
   ---
   :::
 
   :::voor-wie
   ---
   items:
-
-- Je last hebt van stress of chronische vermoeidheid
-- Je fysieke pijn of klachten wilt verlichten
-- Je slecht slaapt of last hebt van hoofdpijn
-- Je sneller wilt herstellen van blessures
-- Je innerlijke rust en helderheid zoekt op je levenspad
-- Je de energie van anderen wilt loslaten
-- Je jezelf maandelijks een energetische reset gunt
+    - Je last hebt van stress of chronische vermoeidheid
+    - Je fysieke pijn of klachten wilt verlichten
+    - Je slecht slaapt of last hebt van hoofdpijn
+    - Je sneller wilt herstellen van blessures
+    - Je innerlijke rust en helderheid zoekt op je levenspad
+    - Je de energie van anderen wilt loslaten
+    - Je jezelf maandelijks een energetische reset gunt
   title: Voor Wie?
-
   ---
   :::
 ::
 
 ::info-blok
 ---
-
 title: Ook mogelijk - Healing op Afstand
 icon: i-mdi-wifi
 variant: info
@@ -83,8 +74,19 @@ ctaLink: /contact
 Lees meer over ervaringen met healing op afstand bij [Reviews](/reviews).
 ::
 
-::uitklap-info{title="Meer informatie over Energetische Healing"}
+::info-blok
+---
+title: Zoek je vooral emotionele balans?
+icon: i-mdi-help-circle-outline
+variant: info
+---
 
+**[Chakra healing](/behandelingen/chakra-healing)** richt zich op je zeven hoofdchakra's, de energiecentra in je lichaam. Ik werk met mijn handen langs je chakra's om ze in balans te brengen. Fijn als je vooral emotioneel vastzit of meer innerlijke balans zoekt.
+
+Twijfel je? [Neem contact op](/contact), dan kijken we samen wat bij jou past.
+::
+
+::uitklap-info{title="Meer informatie over energetische lichaamshealing"}
 ### De Gave van Healing
 
 Ik beschik al van kinds af aan over de gave om geneeskrachtige energie via mijn handen door te geven aan anderen. Inmiddels heb ik vele jaren ervaring als healer en kan ik zeggen dat energetische healing effectief is bij het behandelen van diverse klachten.
@@ -102,6 +104,8 @@ Healing is werkzaam bij onder andere:
 - Huiduitslag en huidklachten
 - Verschillende ontstekingen in het lichaam
 - Blessures en sportblessures
+
+Energetische lichaamshealing is een aanvullende behandeling en vervangt geen reguliere medische zorg. Heb je lichamelijke klachten, raadpleeg dan ook altijd je huisarts.
 
 ### Hoe Werkt Healing?
 
@@ -128,7 +132,7 @@ Na afloop van de behandeling zal de energie nog enkele dagen doorwerken in je li
 
 Je kunt je na de behandeling direct beter voelen, maar soms komt het voor dat het een paar dagen duurt voor je het effect echt ervaart. Dit verschilt per aandoening en per persoon. Het lichaam zorgt ervoor dat de energie op die plaatsen komt waar het precies nodig is.
 
-Behandeladvies & frequentie
+### Behandeladvies & frequentie
 
 Voor een duurzaam en zichtbaar resultaat adviseer ik meestal minimaal 3 behandelingen. Hoeveel sessies nodig zijn, hangt af van jouw klachten en hoe lang deze al aanwezig zijn, fysiek of emotioneel.
 

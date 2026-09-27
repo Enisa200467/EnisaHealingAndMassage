@@ -96,7 +96,7 @@ const packages = computed(() => {
   return [
     {
       name: "3 Behandelingen Pakket",
-      description: "Energetische healing of chakra healing",
+      description: "Energetische lichaamshealing of chakra healing",
       originalPrice: "€ 297",
       discountPrice: "€ 267",
       savings: "€ 30",
@@ -105,7 +105,7 @@ const packages = computed(() => {
     },
     {
       name: "6 Behandelingen Pakket",
-      description: "Energetische healing of chakra healing",
+      description: "Energetische lichaamshealing of chakra healing",
       originalPrice: "€ 594",
       discountPrice: "€ 534",
       savings: "€ 60",
@@ -114,7 +114,7 @@ const packages = computed(() => {
     },
     {
       name: "10 Behandelingen Pakket",
-      description: "Energetische healing of chakra healing",
+      description: "Energetische lichaamshealing of chakra healing",
       originalPrice: "€ 990",
       discountPrice: "€ 890",
       savings: "€ 100",
