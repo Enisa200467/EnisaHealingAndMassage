@@ -3,7 +3,7 @@ title: Hypnotherapie
 description: Ericksoniaanse hypnotherapie in Amsterdam Noord voor diepe ontspanning, inzicht in onbewuste patronen en persoonlijke begeleiding in jouw tempo.
 seoTitle: "Hypnotherapie Amsterdam Noord | Enisa Healing"
 seoDescription: "Hypnotherapie in Amsterdam Noord met Ericksoniaanse hypnose. Krijg inzicht in onbewuste patronen en werk in jouw tempo aan rust en zelfvertrouwen."
-updatedAt: "2026-09-08"
+updatedAt: "2026-09-27"
 ---
 
 ::behandeling-hero

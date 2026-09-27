@@ -3,7 +3,7 @@ title: Ontspanningsmassage
 description: Ervaar diepe ontspanning en verlichting van spierspanning met mijn ayurvedische ontspanningsmassage voor hoofd, gezicht, nek en schouders in Amsterdam Noord. Ideaal om stress te verminderen en tot rust te komen.
 seoTitle: "Ontspanningsmassage Amsterdam Noord | Enisa Healing"
 seoDescription: "Ontspanningsmassage in Amsterdam Noord voor hoofd, gezicht, nek en schouders. Verminder stress en spierspanning in een rustige praktijk aan het IJplein."
-updatedAt: "2026-09-02"
+updatedAt: "2026-09-27"
 ---
 
 ::behandeling-hero

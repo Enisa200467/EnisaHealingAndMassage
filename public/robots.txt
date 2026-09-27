@@ -8,7 +8,6 @@ Allow: /over-mij
 Allow: /contact
 Allow: /tarieven
 Allow: /reviews
-Allow: /boeken
 Allow: /faq
 
 # Images and assets

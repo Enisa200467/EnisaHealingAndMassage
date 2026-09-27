@@ -110,7 +110,7 @@ const loadingMessage = computed(() => {
                 {{ review.name.charAt(0).toUpperCase() }}
               </div>
               <div>
-                <h4 class="font-medium text-neutral-900">{{ review.name }}</h4>
+                <p class="font-medium text-neutral-900">{{ review.name }}</p>
                 <div class="flex items-center gap-2">
                   <StarRating v-model="review.rating" size="sm" />
                   <span class="text-sm text-neutral-500">

@@ -3,7 +3,7 @@ title: Chakra Healing & Ontspanningsmassage
 description: Ervaar de combinatie van chakra healing en ontspanningsmassage in Amsterdam Noord. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
 seoTitle: "Chakra Healing & Massage Amsterdam Noord | Enisa"
 seoDescription: "Combineer chakra healing en ontspanningsmassage in Amsterdam Noord. Ervaar meer fysieke rust, energetische balans en ruimte voor herstel."
-updatedAt: "2026-09-23"
+updatedAt: "2026-09-27"
 ---
 
 ::behandeling-hero

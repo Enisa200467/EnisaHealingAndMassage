@@ -3,7 +3,7 @@ title: antistress
 description: In deze sessies leer je om bewust aanwezig te zijn in het hier en nu in Amsterdam Noord. Waardoor je meer rust en tevredenheid zult ervaren en meer vertrouwen zult krijgen in jezelf en de toekomst. Je kunt na deze sessies je leven weer oppakken en met een frisse blik verder gaan. Ondersteund door Mindfulness Coaching, meditaties, Healing, Chakra healing.
 seoTitle: "Anti-stress behandeling Amsterdam Noord | Enisa Healing"
 seoDescription: "Anti-stress behandeling in Amsterdam Noord met mindfulness, meditatie en healing. Krijg meer rust, vertrouwen en grip op terugkerende spanning."
-updatedAt: "2026-09-23"
+updatedAt: "2026-09-27"
 ---
 
 ::behandeling-hero
