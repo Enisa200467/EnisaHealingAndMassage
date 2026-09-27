@@ -95,7 +95,6 @@ Deze behandeling werkt simultaan op drie niveaus:
 
 #### Energetisch Niveau
 
-- Opheffen van energetische blokkades
 - Herstel van de chakra balans
 - Verbetering van de energiestroom
 - Activering van het zelfhelend vermogen
