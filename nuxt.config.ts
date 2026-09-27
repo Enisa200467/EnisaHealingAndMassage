@@ -6,6 +6,11 @@ export default defineNuxtConfig({
   // Enable SSR for better initial load
   ssr: true,
 
+  site: {
+    url: "https://www.enisahealingenmassage.nl",
+    name: "Enisa Healing & Massage",
+  },
+
   routeRules: {
     "/admin": {
       headers: {

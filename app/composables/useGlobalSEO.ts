@@ -72,7 +72,7 @@ export const useGlobalSEO = () => {
     return {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": businessInfo.url,
+      "@id": `${businessInfo.url}/#localbusiness`,
       name: businessInfo.name,
       description: businessInfo.description,
       url: businessInfo.url,
