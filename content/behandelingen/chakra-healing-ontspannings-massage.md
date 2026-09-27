@@ -3,7 +3,7 @@ title: Chakra Healing & Ontspanningsmassage
 description: Ervaar de combinatie van chakra healing en ontspanningsmassage in Amsterdam Noord. Energetische chakra healing voor innerlijke balans gevolgd door een ontspannende massage voor fysieke rust. Een holistische behandeling voor lichaam en geest.
 seoTitle: "Chakra Healing & Massage Amsterdam Noord | Enisa"
 seoDescription: "Combineer chakra healing en ontspanningsmassage in Amsterdam Noord. Ervaar meer fysieke rust, energetische balans en ruimte voor herstel."
-updatedAt: "2026-09-23"
+updatedAt: "2026-09-27"
 ---
 
 ::behandeling-hero
@@ -36,9 +36,16 @@ Voor een diepere werking bied ik deze combinatiebehandeling aan van healing en m
 ::twee-kolommen
   :::voordelen-lijst
   ---
+  subtitle: "Voordelen van deze combinatiebehandeling:"
   items:
 
-- Twee behandelvormen. Eén krachtige ervaring.
+- label: "Aantrekkelijke combinatieprijs:"
+  text: "€ 145,- in plaats van € 175,-"
+  note: "(u bespaart € 30,-)."
+- label: "Tijdsbesparend:"
+  text: "Twee krachtige behandelingen in één vloeiende sessie van 90 minuten."
+- label: "Volledige ervaring:"
+  text: "Inclusief een rustig voorgesprek en nazorg voor het beste resultaat."
 
   ---
   :::
