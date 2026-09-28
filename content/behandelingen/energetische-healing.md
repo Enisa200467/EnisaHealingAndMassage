@@ -3,7 +3,7 @@ title: Energetische lichaamshealing
 description: Ervaar je fysieke pijn, chronische vermoeidheid of emotionele disbalans? In mijn praktijk in Amsterdam Noord richt ik mij met energetische lichaamshealing op het verlichten van fysieke en emotionele klachten door het ondersteunen van je natuurlijke herstelproces.
 seoTitle: "Energetische lichaamshealing Amsterdam Noord | Enisa"
 seoDescription: "Energetische lichaamshealing in Amsterdam Noord: healing gericht op je lichaam, voor ontspanning, nieuwe energie en herstel. Ook als healing op afstand."
-updatedAt: "2026-09-27"
+updatedAt: "2026-09-28"
 ---
 
 ::behandeling-hero
