@@ -31,13 +31,11 @@ Sinds 2014 geef ik met veel liefde healings in mijn praktijk in Amsterdam Noord.
   :::voordelen-lijst
   ---
   items:
-    - Diepe lichamelijke ontspanning
-    - Minder spanning in je lichaam
-    - Meer energie en vitaliteit
-    - Rustiger slapen
-    - Ondersteuning van je natuurlijke herstelvermogen
-    - Een licht en opgeladen gevoel
-    - Meer innerlijke rust
+    - Diepe lichamelijke ontspanning en minder spanning in het lichaam
+    - Verlichting bij fysieke pijn, hoofdpijn en migraine
+    - Sneller herstel bij wonden en na blessures of een operatie
+    - Meer energie bij vermoeidheid en uitputting
+    - Ondersteuning van het natuurlijke herstelvermogen
   title: Belangrijkste Voordelen
   ---
   :::
