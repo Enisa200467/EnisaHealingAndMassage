@@ -3,7 +3,7 @@ title: Chakra Healing
 description: Breng je zeven hoofdchakra's weer in balans. Met chakra healing in Amsterdam Noord werk ik met mijn handen langs je chakra's om energetische blokkades los te laten. Voor meer emotionele balans, innerlijke rust en hernieuwde levensenergie.
 seoTitle: "Chakra Healing Amsterdam Noord | Enisa Healing"
 seoDescription: "Chakra healing in Amsterdam Noord: breng je zeven chakra's in balans voor meer emotionele rust. Persoonlijke sessie voor het loslaten van blokkades."
-updatedAt: "2026-09-27"
+updatedAt: "2026-09-28"
 ---
 
 ::behandeling-hero
@@ -33,14 +33,11 @@ Tijdens een chakra healing sessie in mijn praktijk in Amsterdam Noord werk ik in
   :::voordelen-lijst
   ---
   items:
-    - Diepe ontspanning en innerlijke rust
-    - Oplossen van energetische blokkades
-    - Ondersteuning van je zelfherstellend vermogen
-    - Vermindering van stress en vermoeidheid
-    - Emotionele balans en helderheid
-    - Verbetering van de energiestroom
-    - Verhoging van vitaliteit en levenslust
-    - Loslaten van andermans energie
+    - Activeert en balanceert de zeven hoofdchakra’s
+    - Zuivert ongewenste en negatieve energie
+    - Bevordert een vrije en evenwichtige energiestroom
+    - Werkt op emotioneel, mentaal, fysiek en energetisch niveau
+    - Brengt lichaam en energie weer in harmonie
   title: Belangrijkste Voordelen
   ---
   :::
