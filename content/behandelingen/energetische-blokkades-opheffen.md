@@ -3,7 +3,7 @@ title: Energetische blokkades opheffen
 description: Energetische blokkades opheffen in Amsterdam Noord met een intensief traject om oude pijn los te laten. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
 seoTitle: "Energetische blokkades opheffen Amsterdam Noord | Enisa"
 seoDescription: "Energetische blokkades opheffen in Amsterdam Noord met meditatie en healing. Werk stap voor stap aan loslaten, innerlijke rust en nieuwe ruimte."
-updatedAt: "2026-09-27"
+updatedAt: "2026-09-28"
 ---
 
 ::behandeling-hero
