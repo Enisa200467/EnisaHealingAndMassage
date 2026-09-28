@@ -47,10 +47,16 @@ const formatPrice = (priceCents: number): string => {
   return `€ ${(priceCents / 100).toFixed(0)}`;
 };
 
+const treatmentPaths: Record<string, string> = {
+  'energetische-lichaamshealing': '/behandelingen/energetische-healing',
+  'chakra-healing-ontspanningsmassage':
+    '/behandelingen/chakra-healing-ontspannings-massage',
+};
+
 const formatTreatment = (treatment: Treatment): TreatmentData => ({
   id: treatment.id,
   slug: treatment.slug,
-  path: `/behandelingen/${treatment.slug}`,
+  path: treatmentPaths[treatment.slug] || `/behandelingen/${treatment.slug}`,
   title: treatment.name,
   icon: treatment.icon || undefined,
   intensity: treatment.intensity || undefined,
