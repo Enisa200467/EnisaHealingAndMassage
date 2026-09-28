@@ -19,7 +19,7 @@ items:
   - "Sessie 1 (90 min): Meditatie gecombineerd met chakra healing – €140"
   - "Sessie 2 (90 min): Meditatie en healing voor diepere verwerking – €140"
   - "Sessie 3 (90 min): Twee meditaties om het proces te integreren – €140"
-  - "Sessie 4 (1u 15 min): Afrondende chakra healing behandeling – €99"
+  - "Sessie 4 (1u 15 min): Afrondende chakra healing behandeling – €95"
   - "Ook te boeken als traject:"
   - "3 sessies van 2 uur – €165 per sessie"
 image: /images/loslaten-traject.webp
