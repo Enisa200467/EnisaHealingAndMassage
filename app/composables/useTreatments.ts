@@ -47,10 +47,21 @@ const formatPrice = (priceCents: number): string => {
   return `€ ${(priceCents / 100).toFixed(0)}`;
 };
 
+const treatmentRouteSlugs: Record<string, string> = {
+  'energetische-lichaamshealing': 'energetische-healing',
+  'chakra-healing-ontspanningsmassage':
+    'chakra-healing-ontspannings-massage',
+};
+
+const getDatabaseSlug = (slug: string): string =>
+  Object.entries(treatmentRouteSlugs).find(
+    ([, routeSlug]) => routeSlug === slug
+  )?.[0] || slug;
+
 const formatTreatment = (treatment: Treatment): TreatmentData => ({
   id: treatment.id,
   slug: treatment.slug,
-  path: `/behandelingen/${treatment.slug}`,
+  path: `/behandelingen/${treatmentRouteSlugs[treatment.slug] || treatment.slug}`,
   title: treatment.name,
   icon: treatment.icon || undefined,
   intensity: treatment.intensity || undefined,
@@ -96,7 +107,10 @@ export const useTreatments = () => {
 
   // Get treatment by slug
   const getTreatmentBySlug = (slug: string): TreatmentData | undefined => {
-    return treatments.value.find((t) => t.slug === slug && t.is_active);
+    const databaseSlug = getDatabaseSlug(slug);
+    return treatments.value.find(
+      (t) => t.slug === databaseSlug && t.is_active
+    );
   };
 
   // Get treatment by ID
@@ -106,12 +120,15 @@ export const useTreatments = () => {
 
   // Check if treatment exists
   const treatmentExists = (slug: string): boolean => {
-    return treatments.value.some((t) => t.slug === slug && t.is_active);
+    const databaseSlug = getDatabaseSlug(slug);
+    return treatments.value.some(
+      (t) => t.slug === databaseSlug && t.is_active
+    );
   };
 
   // Generate treatment path
   const getTreatmentPath = (slug: string): string => {
-    return `/behandelingen/${slug}`;
+    return `/behandelingen/${treatmentRouteSlugs[slug] || slug}`;
   };
 
   // Get all treatment paths for navigation
