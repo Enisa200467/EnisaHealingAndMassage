@@ -192,9 +192,16 @@ export const useGlobalSEO = () => {
     robots?: string;
     structuredData?: StructuredDataItem[];
   }) => {
-    const canonical = options.path
-      ? new URL(options.path, `${businessInfo.url}/`).toString()
-      : undefined;
+    // Never turn missing or interpolated placeholder paths into canonicals.
+    const path = options.path?.trim();
+    const canonical =
+      path?.startsWith("/") &&
+      !path.startsWith("//") &&
+      !path.split(/[/?#]/).some((segment) =>
+        segment === "undefined" || segment === "null",
+      )
+        ? new URL(path, `${businessInfo.url}/`).toString()
+        : undefined;
     const image = new URL(
       options.image || businessInfo.image,
       `${businessInfo.url}/`,

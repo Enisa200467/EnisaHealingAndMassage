@@ -31,7 +31,7 @@ const treatmentCatalogSchema = computed(() => {
       price: treatment.price ? (treatment.price / 100).toFixed(0) : undefined,
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
-      url: `${businessInfo.url}/behandelingen/${treatment.slug}`,
+      url: `${businessInfo.url}${treatment.path}`,
     })),
   };
 });
@@ -54,8 +54,6 @@ useHead(() => ({
       ]
     : [],
 }));
-
-const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
 </script>
 
 <template>
@@ -111,7 +109,7 @@ const getSlug = (slug: string) => `${routes.pages.treatments}/${slug}`;
                 :discount-price="treatment.discountPrice"
                 show-book-button
                 show-link-button
-                :to="getSlug(treatment.slug)"
+                :to="treatment.path"
               />
             </div>
           </div>

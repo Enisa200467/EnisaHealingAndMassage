@@ -103,6 +103,10 @@ const AppCarousel = defineAsyncComponent(
 
 const carouselItems = [
   {
+    src: "/images/enisa-podium.webp",
+    alt: "Enisa spreekt met een microfoon tijdens een bijeenkomst",
+  },
+  {
     src: "/images/enisa-schilderij.webp",
     alt: "Close-up van Enisa, energetisch therapeut in Amsterdam Noord",
   },
