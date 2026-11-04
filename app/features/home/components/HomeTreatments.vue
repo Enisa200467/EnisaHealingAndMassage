@@ -36,6 +36,10 @@
                 loading="lazy"
                 sizes="sm:100vw md:50vw xl:320px"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                :style="{
+                  objectPosition:
+                    treatment.slug === 'hypnotherapie' ? 'center 15%' : undefined,
+                }"
               />
               <div
                 class="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-neutral-900/10 to-transparent"
@@ -168,8 +172,8 @@ const FEATURED_TREATMENTS = [
     icon: 'i-mdi-head-lightbulb-outline',
     teaser:
       'Met Ericksoniaanse hypnose werk je aan rust, zelfvertrouwen en het doorbreken van patronen. Ook mogelijk in combinatie met chakra healing.',
-    image: '/images/single-sessions-hypnotherapie.webp',
-    imageAlt: 'Hypnotherapie sessie in een rustige praktijk in Amsterdam Noord',
+    image: '/images/hypnotherapie-enisa.webp',
+    imageAlt: 'Portret van Enisa, hypnotherapeut in Amsterdam Noord',
   },
   {
     slug: 'chakra-healing',

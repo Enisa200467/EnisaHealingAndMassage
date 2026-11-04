@@ -72,7 +72,6 @@ items:
     description: Een persoonlijke sessie met Ericksoniaanse hypnose om inzicht te krijgen in terugkerende patronen, beperkende overtuigingen en onbewuste processen die invloed hebben op jouw dagelijks leven.
     treatmentId: dd01fafe-5591-4ca2-b460-c18388237f76
     sessions: 1
-    price_cents: 16000
     bullets:
       - "Duur: 120 minuten"
       - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)

@@ -3,7 +3,7 @@ title: Energetische blokkades opheffen
 description: Energetische blokkades opheffen in Amsterdam Noord met een intensief traject om oude pijn los te laten. Met meditatie, healing en transformatiewerk werk je toe naar meer rust en vrijheid.
 seoTitle: "Energetische blokkades opheffen Amsterdam Noord | Enisa"
 seoDescription: "Energetische blokkades opheffen in Amsterdam Noord met meditatie en healing. Werk stap voor stap aan loslaten, innerlijke rust en nieuwe ruimte."
-updatedAt: "2026-09-28"
+updatedAt: "2026-10-07"
 ---
 
 ::behandeling-hero
@@ -22,7 +22,7 @@ items:
   - "Sessie 4 (1u 15 min): Afrondende chakra healing behandeling – €95"
   - "Ook te boeken als traject:"
   - "3 sessies van 2 uur – €165 per sessie"
-image: /images/loslaten-traject.webp
+image: /images/energetische-blokkades-loslaten.webp
 imageAlt: Traject voor het opheffen van energetische blokkades in Amsterdam Noord
 title: Wat kun je verwachten?
 ---
