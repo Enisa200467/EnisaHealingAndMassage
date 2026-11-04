@@ -23,11 +23,9 @@ const getContentMeta = (key: string) => {
   return typeof value === 'string' ? value : undefined;
 };
 
-const treatmentSlug =
-  props.treatmentData?.slug ||
-  props.treatment?.path?.split('/').filter(Boolean).at(-1) ||
-  '';
-const treatmentPath = `/behandelingen/${treatmentSlug}`;
+// Markdown paths and mapped public paths must take precedence over database slugs.
+const treatmentPath =
+  props.treatment?.path || props.treatmentData?.path || '/behandelingen';
 
 if (props.treatment || props.treatmentData) {
   const title =

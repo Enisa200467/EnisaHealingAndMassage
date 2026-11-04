@@ -94,6 +94,30 @@ export default defineNuxtConfig({
         statusCode: 301,
       },
     },
+    "/behandelingen/energetische-lichaamshealing": {
+      redirect: {
+        to: "/behandelingen/energetische-healing",
+        statusCode: 301,
+      },
+    },
+    "/behandelingen/energetische-lichaamshealing/": {
+      redirect: {
+        to: "/behandelingen/energetische-healing",
+        statusCode: 301,
+      },
+    },
+    "/behandelingen/chakra-healing-ontspanningsmassage": {
+      redirect: {
+        to: "/behandelingen/chakra-healing-ontspannings-massage",
+        statusCode: 301,
+      },
+    },
+    "/behandelingen/chakra-healing-ontspanningsmassage/": {
+      redirect: {
+        to: "/behandelingen/chakra-healing-ontspannings-massage",
+        statusCode: 301,
+      },
+    },
     "/healing-op-afstand": {
       redirect: {
         to: "/behandelingen/energetische-healing",
