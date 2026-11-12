@@ -22,11 +22,11 @@
     <UContainer class="py-20 md:py-32">
       <h1
         id="hero-heading"
-        class="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-md"
+        class="mb-4 text-center text-2xl font-bold leading-snug tracking-tight text-white sm:text-3xl lg:text-[2rem] drop-shadow-md"
       >
         Ervaar de Kracht van Helende Energie voor Lichaam en Geest
         <br />
-        Amsterdam-Noord
+        Amsterdam Noord
       </h1>
       <p class="mb-6 text-lg leading-8 text-gray-200 lg:text-xl drop-shadow">
         Ervaar de kracht van helende aanraking in Amsterdam Noord en gun jezelf
