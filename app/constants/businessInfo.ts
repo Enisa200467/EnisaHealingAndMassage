@@ -81,16 +81,15 @@ export const BUSINESS_INFO: BusinessInfo = {
     email: "info@enisahealingenmassage.nl",
   },
 
-  // TODO: Verify actual opening hours
   hours: {
-    monday: "09:00-18:00",
-    tuesday: "09:00-18:00",
-    wednesday: "09:00-18:00",
-    thursday: "09:00-18:00",
-    friday: "09:00-18:00",
-    saturday: "09:00-15:00",
+    monday: "12:00-21:00",
+    tuesday: "12:00-21:00",
+    wednesday: "12:00-21:00",
+    thursday: "12:00-21:00",
+    friday: "12:00-21:00",
+    saturday: "12:00-16:00",
     sunday: "Gesloten",
-    schemaFormat: ["Mo-Fr 09:00-18:00", "Sa 09:00-15:00"],
+    schemaFormat: ["Mo-Fr 12:00-21:00", "Sa 12:00-16:00"],
   },
 
   social: {
