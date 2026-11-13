@@ -2,9 +2,9 @@
 const { generateBusinessSchema, setPageSEO } = useGlobalSEO();
 
 setPageSEO({
-  title: 'Massage & Healing Amsterdam Noord | Enisa Healing',
+  title: 'Chakra Healing & Massage Amsterdam-Noord | Enisa Healing',
   description:
-    'Massage en healing in Amsterdam Noord voor diepe ontspanning, meer balans en persoonlijke aandacht in een rustige praktijk aan het IJplein.',
+    'Pijn, stress, lichamelijke spanning of emotionele blokkades? Chakra healing, energetische healing, massage en hypnotherapie in Amsterdam-Noord. Boek online.',
   path: '/',
   image: '/images/hero.webp',
   structuredData: [generateBusinessSchema()],
