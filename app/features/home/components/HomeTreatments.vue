@@ -12,8 +12,8 @@
         >
           Ontdek Mijn Behandelingen
         </h2>
-        <p class="mt-4 text-lg leading-8 text-gray-600">
-          Amsterdam-Noord
+        <p class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Amsterdam Noord
         </p>
       </div>
 

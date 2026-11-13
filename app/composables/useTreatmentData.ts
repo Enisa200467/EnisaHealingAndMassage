@@ -61,7 +61,7 @@ export const useTreatmentDetailsFormatter = () => {
 
 // Verified service IDs. Unknown treatments keep the existing general booking URL.
 export const setmoreServiceUrl = (serviceId: string): string =>
-  `https://enisa-healing-massage.setmore.com/book?products=${serviceId}&staff=e7b4b92e-1bbe-4a2d-92bb-14beb062a883&staffSelected=true&step=time-slot&type=service`;
+  `https://enisa-healing-massage.setmore.com/services/${serviceId}`;
 
 const treatmentServiceIds: Record<string, string> = {
   'chakra-healing': '2148ffb2-310a-4cb5-8bc0-533c72422382',
