@@ -156,26 +156,6 @@ const bookingUrl = 'https://enisa-healing-massage.setmore.com';
 // Title and duration come from the database; copy and image live here.
 const FEATURED_TREATMENTS = [
   {
-    slug: 'regressietherapie-amsterdam-noord',
-    fallbackTitle: 'Regressietherapie & SoulKey Therapy',
-    tagline: 'Reis van je ziel',
-    icon: 'i-mdi-infinity',
-    teaser:
-      'Krijg diepgaand inzicht in terugkerende patronen, vorige levens en Life Between Lives, in een veilige en persoonlijke setting.',
-    image: '/images/soulkey.jpg',
-    imageAlt: 'Symbolische SoulKey Therapy-reis naar innerlijke helderheid',
-  },
-  {
-    slug: 'hypnotherapie',
-    fallbackTitle: 'Hypnotherapie',
-    tagline: 'Werken met je onderbewuste',
-    icon: 'i-mdi-head-lightbulb-outline',
-    teaser:
-      'Met Ericksoniaanse hypnose werk je aan rust, zelfvertrouwen en het doorbreken van patronen. Ook mogelijk in combinatie met chakra healing.',
-    image: '/images/hypnotherapie-enisa.webp',
-    imageAlt: 'Portret van Enisa, hypnotherapeut in Amsterdam Noord',
-  },
-  {
     slug: 'chakra-healing',
     fallbackTitle: 'Chakra Healing',
     tagline: 'Emotionele balans',
@@ -195,6 +175,26 @@ const FEATURED_TREATMENTS = [
     image: '/images/hoofd-massage.webp',
     imageAlt:
       'Combinatiebehandeling van chakra healing en hoofdmassage in Amsterdam Noord',
+  },
+  {
+    slug: 'regressietherapie-amsterdam-noord',
+    fallbackTitle: 'Regressietherapie & SoulKey Therapy',
+    tagline: 'Reis van je ziel',
+    icon: 'i-mdi-infinity',
+    teaser:
+      'Krijg diepgaand inzicht in terugkerende patronen, vorige levens en Life Between Lives, in een veilige en persoonlijke setting.',
+    image: '/images/soulkey.jpg',
+    imageAlt: 'Symbolische SoulKey Therapy-reis naar innerlijke helderheid',
+  },
+  {
+    slug: 'hypnotherapie',
+    fallbackTitle: 'Hypnotherapie',
+    tagline: 'Werken met je onderbewuste',
+    icon: 'i-mdi-head-lightbulb-outline',
+    teaser:
+      'Met Ericksoniaanse hypnose werk je aan rust, zelfvertrouwen en het doorbreken van patronen. Ook mogelijk in combinatie met chakra healing.',
+    image: '/images/hypnotherapie-enisa.webp',
+    imageAlt: 'Portret van Enisa, hypnotherapeut in Amsterdam Noord',
   },
 ];
 
