@@ -138,7 +138,7 @@ const breadcrumbs = computed(() => [
     </div>
 
     <!-- Call-to-Action Section -->
-    <TreatmentCTA :treatment="treatment || { title: treatmentData?.title }" />
+    <TreatmentCTA :treatment="treatment || { title: treatmentData?.title }" :treatment-path="treatmentPath" />
 
     <!-- Related Treatments -->
     <RelatedTreatments />

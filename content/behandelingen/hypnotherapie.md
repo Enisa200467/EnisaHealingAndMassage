@@ -77,7 +77,7 @@ items:
       - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
       - Gericht op inzicht, persoonlijke groei en positieve verandering vanuit het onderbewuste
     ctaText: Plan je intake
-    ctaLink: https://enisa-healing-massage.setmore.com
+    ctaLink: https://enisa-healing-massage.setmore.com/book?products=337d6c1c-e1fa-4a0a-b45f-f404eaac22ce&staff=e7b4b92e-1bbe-4a2d-92bb-14beb062a883&staffSelected=true&step=time-slot&type=service
   - id: "41499119-22df-42a9-916a-ac32120f6d5b"
     title: Hypnotherapie & Chakra Healing
     description: Een uitgebreide sessie waarin ik de kracht van hypnotherapie combineer met chakra healing. Deze combinatie kan waardevol zijn wanneer mentale patronen en emotionele belasting met elkaar verbonden zijn en je behoefte hebt aan een bredere, holistische benadering.
@@ -88,7 +88,7 @@ items:
       - Inclusief gratis kennismakings- en intakegesprek (30 minuten via WhatsApp met of zonder video)
       - Gericht op inzicht, emotionele verwerking en een diepere verbinding tussen hoofd, gevoel en energie
     ctaText: Plan je intake
-    ctaLink: https://enisa-healing-massage.setmore.com
+    ctaLink: https://enisa-healing-massage.setmore.com/book?products=337d6c1c-e1fa-4a0a-b45f-f404eaac22ce&staff=e7b4b92e-1bbe-4a2d-92bb-14beb062a883&staffSelected=true&step=time-slot&type=service
 ---
 ::
 
@@ -110,7 +110,7 @@ Telefoon / WhatsApp: 06-22445121
 
 ::info-blok
 ---
-ctaLink: /contact-afspraak
+ctaLink: https://enisa-healing-massage.setmore.com/book?products=337d6c1c-e1fa-4a0a-b45f-f404eaac22ce&staff=e7b4b92e-1bbe-4a2d-92bb-14beb062a883&staffSelected=true&step=time-slot&type=service
 ctaText: Boek een gratis kennismakings & intakegesprek
 icon: i-mdi-calendar-check
 variant: info

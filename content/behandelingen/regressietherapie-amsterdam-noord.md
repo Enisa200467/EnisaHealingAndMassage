@@ -63,7 +63,7 @@ De sessie duurt 2,5 tot 3 uur. In online agenda is hiervoor 3 uur gereserveerd.
 
 ::info-blok
 ---
-ctaLink: /contact-afspraak
+ctaLink: https://enisa-healing-massage.setmore.com/book?products=337d6c1c-e1fa-4a0a-b45f-f404eaac22ce&staff=e7b4b92e-1bbe-4a2d-92bb-14beb062a883&staffSelected=true&step=time-slot&type=service
 ctaText: Boek een gratis kennismakings & intakegesprek
 icon: i-mdi-calendar-check
 variant: info

@@ -58,3 +58,40 @@ export const useTreatmentDetailsFormatter = () => {
     formatTreatmentData,
   };
 };
+
+// Verified service IDs. Unknown treatments keep the existing general booking URL.
+export const setmoreServiceUrl = (serviceId: string): string =>
+  `https://enisa-healing-massage.setmore.com/book?products=${serviceId}&staff=e7b4b92e-1bbe-4a2d-92bb-14beb062a883&staffSelected=true&step=time-slot&type=service`;
+
+const treatmentServiceIds: Record<string, string> = {
+  'chakra-healing': '2148ffb2-310a-4cb5-8bc0-533c72422382',
+  'chakra-healing-ontspannings-massage': 'e5e0bdc9-d082-411c-9004-49db8fb89442',
+  'chakra-healing-ontspanningsmassage': 'e5e0bdc9-d082-411c-9004-49db8fb89442',
+  'energetische-healing': 'e468911f-41d4-4a48-bff8-199340927928',
+  'energetische-lichaamshealing': 'e468911f-41d4-4a48-bff8-199340927928',
+  'ontspanningsmassage': 'aaa5749c-4bc8-4df0-9fc0-8eb2cba5cc94',
+  'anti-stress': 'a7168302-dd8d-4b96-8e4e-748488656c3c',
+  'hypnotherapie': '337d6c1c-e1fa-4a0a-b45f-f404eaac22ce',
+  'regressietherapie-amsterdam-noord': '337d6c1c-e1fa-4a0a-b45f-f404eaac22ce',
+};
+
+const treatmentSlug = (path: string): string =>
+  path.replace(/\/$/, '').split('/').pop() || '';
+
+export const isIntakeTreatment = (path: string): boolean =>
+  ['hypnotherapie', 'regressietherapie-amsterdam-noord'].includes(treatmentSlug(path));
+
+export const isBlockadesTreatment = (path: string): boolean =>
+  treatmentSlug(path) === 'energetische-blokkades-opheffen';
+
+// On overview pages, visitors choose their trajectory on the existing detail page.
+export const treatmentBookingUrl = (path: string): string => {
+  if (isBlockadesTreatment(path)) return '/behandelingen/energetische-blokkades-opheffen';
+  const serviceId = treatmentServiceIds[treatmentSlug(path)];
+  return serviceId ? setmoreServiceUrl(serviceId) : 'https://enisa-healing-massage.setmore.com';
+};
+
+export const blockadesBookingOptions = [
+  { label: 'Boek traject 3 sessies', href: setmoreServiceUrl('c6bf84bc-9e4e-4d1f-bc80-89d4578653e4') },
+  { label: 'Boek traject 4 sessies', href: setmoreServiceUrl('6d6dd807-cb0e-4527-a6ac-f4198c5ecfa4') },
+];

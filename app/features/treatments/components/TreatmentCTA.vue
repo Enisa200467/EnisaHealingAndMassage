@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { treatmentBookingUrl, isBlockadesTreatment, blockadesBookingOptions } from '~/composables/useTreatmentData';
 import { BUSINESS_INFO } from '~/constants/businessInfo';
 
 interface Props {
   treatment: any;
+  treatmentPath?: string;
 }
 
 const props = defineProps<Props>();
-const bookingUrl = "https://enisa-healing-massage.setmore.com";
+const bookingUrl = computed(() => treatmentBookingUrl(props.treatmentPath || ''));
+const bookingOptions = computed(() => isBlockadesTreatment(props.treatmentPath || '') ? blockadesBookingOptions : undefined);
 </script>
 
 <template>
@@ -69,7 +72,25 @@ const bookingUrl = "https://enisa-healing-massage.setmore.com";
               </div>
 
               <template #footer>
+                <div v-if="bookingOptions" class="flex flex-col gap-3">
+                  <UButton
+                    v-for="option in bookingOptions"
+                    :key="option.href"
+                    as="a"
+                    :href="option.href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="primary"
+                    size="lg"
+                    block
+                    class="h-11"
+                    icon="i-mdi-calendar"
+                  >
+                    {{ option.label }}
+                  </UButton>
+                </div>
                 <UButton
+                  v-else
                   as="a"
                   :href="bookingUrl"
                   target="_blank"
