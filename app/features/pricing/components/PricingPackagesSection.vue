@@ -63,8 +63,8 @@
         </div>
 
         <template #footer>
-          <UButton to="/contact" block variant="outline" icon="i-mdi-email">
-            Informeer naar dit pakket
+          <UButton :to="setmoreServiceUrl(pkg.serviceId)" target="_blank" rel="noopener noreferrer" block variant="outline" icon="i-mdi-calendar">
+            Boek nu
           </UButton>
         </template>
       </UCard>
@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import { useTreatmentDetailsFormatter } from "~/composables/useTreatmentData";
+import { setmoreServiceUrl, useTreatmentDetailsFormatter } from "~/composables/useTreatmentData";
 
 const { activeTreatments } = useTreatments();
 const { formatPrice } = useTreatmentDetailsFormatter();
@@ -96,6 +96,7 @@ const packages = computed(() => {
   return [
     {
       name: "3 Behandelingen Pakket",
+      serviceId: "4fd2b67f-504e-417e-abf1-d841e3c16d04",
       description: "Energetische lichaamshealing of chakra healing",
       originalPrice: "€ 285",
       discountPrice: "€ 255",
@@ -105,6 +106,7 @@ const packages = computed(() => {
     },
     {
       name: "6 Behandelingen Pakket",
+      serviceId: "5492eab3-cea6-4827-99b9-4c052b833695",
       description: "Energetische lichaamshealing of chakra healing",
       originalPrice: "€ 570",
       discountPrice: "€ 510",
@@ -114,6 +116,7 @@ const packages = computed(() => {
     },
     {
       name: "10 Behandelingen Pakket",
+      serviceId: "973d4731-f775-49ba-b31d-af0d078e8c74",
       description: "Energetische lichaamshealing of chakra healing",
       originalPrice: "€ 950",
       discountPrice: "€ 850",

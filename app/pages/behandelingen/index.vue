@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { treatmentBookingUrl, isBlockadesTreatment, isIntakeTreatment } from '~/composables/useTreatmentData';
 const routes = useRoutes();
 const { setPageSEO, businessInfo } = useGlobalSEO();
 
@@ -107,6 +108,8 @@ useHead(() => ({
                 :price="treatment.price"
                 :discount-enabled="treatment.discountEnabled"
                 :discount-price="treatment.discountPrice"
+                :book-button-link="treatmentBookingUrl(treatment.path)"
+                :book-button-text="isBlockadesTreatment(treatment.path) ? 'Bekijk de trajecten' : isIntakeTreatment(treatment.path) ? 'Plan gratis intake' : 'Afspraak maken'"
                 show-book-button
                 show-link-button
                 :to="treatment.path"

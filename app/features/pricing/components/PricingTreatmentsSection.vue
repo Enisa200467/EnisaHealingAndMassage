@@ -40,8 +40,8 @@
         :show-single-session-label="Boolean(treatment.price) && Boolean(treatment.trajects?.length)"
         :show-link-button="true"
         :to="treatment.path"
-        :book-button-text="`Boek ${treatment.title}`"
-        :book-button-link="'https://enisa-healing-massage.setmore.com'"
+        :book-button-text="isBlockadesTreatment(treatment.path) ? 'Bekijk de trajecten' : isIntakeTreatment(treatment.path) ? 'Plan gratis intake' : `Boek ${treatment.title}`"
+        :book-button-link="treatmentBookingUrl(treatment.path)"
         book-button-color="primary"
         size="md"
       >
@@ -73,7 +73,7 @@
 
 <script setup lang="ts">
 import type { TreatmentData } from '~/composables/useTreatments';
-import { useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
+import { treatmentBookingUrl, isBlockadesTreatment, isIntakeTreatment, useTreatmentDetailsFormatter } from '~/composables/useTreatmentData';
 
   const props = withDefaults(
   defineProps<{

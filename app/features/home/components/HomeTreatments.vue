@@ -12,8 +12,8 @@
         >
           Ontdek Mijn Behandelingen
         </h2>
-        <p class="mt-4 text-lg leading-8 text-gray-600">
-          Mijn meest gekozen behandelingen in Amsterdam Noord.
+        <p class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Amsterdam Noord
         </p>
       </div>
 
@@ -87,7 +87,7 @@
                   Lees meer
                 </UButton>
                 <UButton
-                  :to="bookingUrl"
+                  :to="treatmentBookingUrl(treatment.path)"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="primary"
@@ -97,7 +97,7 @@
                   icon="i-mdi-calendar"
                   :aria-label="`Boek ${treatment.title} direct (opent in nieuw venster)`"
                 >
-                  Direct boeken
+                  {{ isIntakeTreatment(treatment.path) ? 'Plan gratis intake' : 'Direct boeken' }}
                 </UButton>
               </div>
             </div>
@@ -146,11 +146,10 @@
 </template>
 
 <script setup lang="ts">
+import { treatmentBookingUrl, isIntakeTreatment } from '~/composables/useTreatmentData';
 const routes = useRoutes();
 const { formatDuration } = useTreatmentDetailsFormatter();
 const { activeTreatments } = useTreatments();
-
-const bookingUrl = 'https://enisa-healing-massage.setmore.com';
 
 // Treatments promoted on the homepage, in display order.
 // Title and duration come from the database; copy and image live here.

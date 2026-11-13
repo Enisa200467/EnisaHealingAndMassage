@@ -27,6 +27,7 @@ interface Props {
   icon?: string;
   bookButtonText?: string;
   bookButtonLink?: string;
+  bookButtonOptions?: { label: string; href: string }[];
   bookButtonColor?: "primary" | "secondary" | "green" | "red" | "orange";
 }
 
@@ -232,7 +233,7 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
     </div>
 
     <template v-if="showBookButton || showLinkButton" #footer>
-      <div class="flex flex-col md:flex-row gap-4">
+      <div :class="bookButtonOptions?.length ? 'flex flex-col gap-3' : 'flex flex-col md:flex-row gap-4'">
         <UButton
           v-if="showLinkButton && to"
           color="primary"
@@ -245,14 +246,31 @@ const { formatPrice, formatDuration } = useTreatmentDetailsFormatter();
         >
           Meer info
         </UButton>
+        <template v-if="showBookButton && bookButtonOptions?.length">
+          <UButton
+            v-for="option in bookButtonOptions"
+            :key="option.href"
+            :color="bookButtonColor"
+            size="lg"
+            block
+            class="h-11"
+            as="a"
+            :href="option.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon="i-mdi-calendar"
+          >
+            {{ option.label }}
+          </UButton>
+        </template>
         <UButton
-          v-if="showBookButton"
+          v-else-if="showBookButton"
           :color="bookButtonColor"
           size="lg"
           block
           as="a"
           :href="bookButtonLink || bookingUrl"
-          target="_blank"
+          :target="bookButtonLink?.startsWith('/') ? undefined : '_blank'"
           rel="noopener noreferrer"
           icon="i-mdi-calendar"
           aria-label="Boek een afspraak voor deze behandeling"

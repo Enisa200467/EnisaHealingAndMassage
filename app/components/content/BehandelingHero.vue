@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { treatmentBookingUrl, isBlockadesTreatment, blockadesBookingOptions } from '~/composables/useTreatmentData';
 import { type Treatment } from '~/features/admin/types/treatment.types';
 
 interface Props {
@@ -57,6 +58,8 @@ const displayTrajects = computed(() => treatmentData.value?.trajects || []);
             :discount-price="displayDiscountPrice"
             :trajects="displayTrajects"
             :book-button-text="bookButtonText"
+            :book-button-link="treatmentBookingUrl(treatmentData?.slug || '')"
+            :book-button-options="isBlockadesTreatment(treatmentData?.slug || '') ? blockadesBookingOptions : undefined"
             show-book-button
           />
         </div>
